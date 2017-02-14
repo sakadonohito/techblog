@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/mysql/index.xml</link>
+    <description>Recent content in Mysql on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
+      <link>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B2.html</link>
+      <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B2.html</guid>
+      <description>&lt;p&gt;・botoが使えないってエラーになる。&lt;/p&gt;
+
+&lt;p&gt;　→次のURLで解決 &lt;a href=&#34;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&#34;&gt;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか&lt;/p&gt;
+
+&lt;p&gt;　　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか&lt;/p&gt;
+
+&lt;p&gt;・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを&lt;/p&gt;
+
+&lt;p&gt;　使ったら成功した。なんで？&lt;/p&gt;
+
+&lt;p&gt;・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。&lt;/p&gt;
+
+&lt;p&gt;・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。&lt;/p&gt;
+
+&lt;p&gt;　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。&lt;/p&gt;
+
+&lt;p&gt;　なので「NameVirtuakHost *:80」の記述があれば、その後&lt;virtualhost *:80&gt;VirtualHostディレクティブが&lt;/p&gt;
+
+&lt;p&gt;　ないといけない。&lt;/p&gt;
+
+&lt;p&gt;もしも&lt;/virtualhost&gt;&lt;virtualhost {{hostname}}:80&gt;みたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。&lt;/p&gt;
+
+&lt;p&gt;整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。&lt;/p&gt;
+
+&lt;p&gt;・Ubuntuに入ってるApache2のVirtualHostの有効化無効化&lt;/p&gt;
+
+&lt;p&gt;　sites-availableディレクトリにVirtualHost設定書く&lt;/p&gt;
+
+&lt;p&gt;　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化&lt;/p&gt;
+
+&lt;p&gt;・Hostの指定が足りない！？&lt;/p&gt;
+
+&lt;p&gt;Could not reliably determine the server&amp;#8217;s fully qualified domain name, using for ServerName&lt;/p&gt;
+
+&lt;p&gt;こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った&lt;/p&gt;
+
+&lt;p&gt;　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、&lt;/p&gt;
+
+&lt;p&gt;　そこに{{hostname}}.localを追記する処理追加&lt;/p&gt;
+
+&lt;p&gt;・Ansible用MySQLの設定追加&lt;/p&gt;
+
+&lt;p&gt;Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)&lt;/p&gt;
+
+&lt;p&gt;host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)&lt;/p&gt;
+
+&lt;p&gt;リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要&lt;/p&gt;
+
+&lt;p&gt;・netstat -ant で現在使ってるポートとか観れる&lt;/p&gt;
+
+&lt;p&gt;　(適当な解釈、後で意味をちゃんと調べる&amp;#8230;かも)&lt;/p&gt;
+
+&lt;p&gt;・MySQLが外部からつながらぬ&lt;/p&gt;
+
+&lt;p&gt;webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。&lt;/p&gt;
+
+&lt;p&gt;my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。&lt;/p&gt;
+
+&lt;p&gt;これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。&lt;/p&gt;
+
+&lt;p&gt;・ApacheのRewriteの設定漏れ&lt;/p&gt;
+
+&lt;p&gt;UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。&lt;/p&gt;
+
+&lt;p&gt;　AllowOverride をAllにしなかった。。。&lt;/p&gt;
+
+&lt;p&gt;ということで？今のところ、Vagrantで作成したVMにMySQLやApacheの設定、それからWordPressの設置は出来るように&lt;/p&gt;
+
+&lt;p&gt;なりました。&lt;/p&gt;
+
+&lt;p&gt;それとEC2インスタンスを作成することもできた。合わせ技は&amp;#8230;別々に動かせばよくね？という事で今回のテーマはここまで。&lt;/p&gt;
+
+&lt;p&gt;&lt;/virtualhost&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
+      <link>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B.html</link>
+      <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B.html</guid>
+      <description>
+
+&lt;p&gt;Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。&lt;/p&gt;
+
+&lt;p&gt;の、前にAWSのS3試したので。&lt;/p&gt;
+
+&lt;p&gt;・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る&lt;/p&gt;
+
+&lt;p&gt;・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折&lt;/p&gt;
+
+&lt;p&gt;・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。&lt;/p&gt;
+
+&lt;p&gt;・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。&lt;/p&gt;
+
+&lt;h4 id=&#34;ansible試す&#34;&gt;Ansible試す&lt;/h4&gt;
+
+&lt;p&gt;・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。&lt;/p&gt;
+
+&lt;p&gt;・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる&lt;/p&gt;
+
+&lt;p&gt;・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。&lt;/p&gt;
+
+&lt;p&gt;・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う&lt;/p&gt;
+
+&lt;p&gt;・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ&lt;/p&gt;
+
+&lt;p&gt;以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事&lt;/p&gt;
+
+&lt;p&gt;・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう&lt;/p&gt;
+
+&lt;p&gt;・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>macにphpMyAdmin</title>
+      <link>http://tech.k-zak.com/macphpmyadmin.html</link>
+      <pubDate>Fri, 03 Sep 2010 15:42:34 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/macphpmyadmin.html</guid>
+      <description>&lt;p&gt;忘れないうちにメモ&lt;/p&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  前のMacBokでは成功して、今回新しく購入したMacBookProでなかなかうまくいかなかった事をメモ。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  て、実はただの勘違いだったんですけど。。。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  環境はMac OS X 10.6 ( 64bitで常時起動 )
+&lt;/div&gt;
+
+&lt;div&gt;
+  ここにApache2.2?とPHP5.3.2が初めから入っているので、MySQL入れて
+&lt;/div&gt;
+
+&lt;div&gt;
+  phpMyAdminを入れる。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  １、MySQL入れる
+&lt;/div&gt;
+
+&lt;div&gt;
+  　MySQLのサイトからdmgをダウンロード。理由は楽だから。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://dev.mysql.com/downloads/mysql/5.1.html&#34;&gt;http://dev.mysql.com/downloads/mysql/5.1.html&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ２、MySQLのPATHを通す
+&lt;/div&gt;
+
+&lt;div&gt;
+  　例として(自分の場合)emacsで.bash_profileを編集
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  $ sudo -s emacs
+&lt;/div&gt;
+
+&lt;div&gt;
+  ( emacsが起動しました )
+&lt;/div&gt;
+
+&lt;div&gt;
+  C-x C-f ( Ctrl + x その後 Ctrl + f でファイル開く )
+&lt;/div&gt;
+
+&lt;div&gt;
+   ~/.bash_profileをミニバッファに入力してEnter
+&lt;/div&gt;
+
+&lt;div&gt;
+  ( .bash_profileの中身が開く)
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &amp;#8211;以下中身の記述(追記部分のみ)&amp;#8211;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  PATH=/usr/local/mysql/bin:$PATH ( MySQLにログインするコマンド用 )
+&lt;/div&gt;
+
+&lt;div&gt;
+  PATH=/usr/local/mysql/support-files:$PATH ( MySQLのサービス起動・停止用)
+&lt;/div&gt;
+
+&lt;div&gt;
+  ※ファイルの最後にexport $PATHを忘れずに！
+&lt;/div&gt;
+
+&lt;div&gt;
+  &amp;#8211;追記部分終了&amp;#8211;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  これで、
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  $ mysql.server start (or stor or restart)
+&lt;/div&gt;
+
+&lt;div&gt;
+  　でサービスの操作。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  $ mysql ( -u root -p sample )
+&lt;/div&gt;
+
+&lt;div&gt;
+  　て感じでMySQLにログインできる。
+&lt;/div&gt;
+
+&lt;div&gt;
+  初めてログインする時にrootのパスワード決めた気がする。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  インストールから設定まで、参照した記事
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://mialweb.ddo.jp/jam/?p=127&#34;&gt;http://mialweb.ddo.jp/jam/?p=127&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  本題の前が長いな・・・
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ３、phpMyAdminを入れる　※今日の本題！！！
+&lt;/div&gt;
+
+&lt;div&gt;
+  　まずは、ダウンロード。phpmyadminでぐぐればすぐでてくるでしょ。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　※URL忘れた
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  　簡単に設定してアクセス！・・・前にも経験しましたが、この時アラートが
+&lt;/div&gt;
+
+&lt;div&gt;
+  　表示されます。「mcrypt拡張がなんたら」と。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  　で、ここで詰まりました。以前の記憶をもとに有効と思われるキーワードで
+&lt;/div&gt;
+
+&lt;div&gt;
+  　色々と検索して試すも駄目。何が原因だったかというと、自分がちゃんと
+&lt;/div&gt;
+
+&lt;div&gt;
+  　理解していなかったのと、思い込みでした(爆
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  　先に正解を
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  　?) libmcryptとPHPをダウンロード。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　?) libcrypt-2.5.8.tar.gzみたいのを解凍してそのディレクトリをターミナル上で
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　カレントにします。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　?)ぱんちざこまんど
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　$ export CFLAGS=&amp;#8221;-arch x86_64&amp;#8243; ※本当はもっと指定があったけどこれだけしかやらなかったです。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　$ sudo -s ./congirure -disable&amp;#8211;posix-threads &amp;#8211;enable-static
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　$ sudo -s make
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　$ sudo -s make install
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　※常にroot権限で実行できるよう毎回sudoコマンドつけてました。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　自分はここで、libmcrypt.so or mcrypt.so なるライブラリファイルができないぞーうおー！！！
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　って１週間近く悩んでました。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　んで、XAMPP落としてきてその中身のファイルぱくればいいんじゃね？
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　とかやってましたが、先ほど「mcrypt.soファイル出来るのこのあとの作業でじゃん？」と
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　気づきました。時間を返せ＠自分。。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　という事で続き。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　ダウンロードしてきたPHPを解凍し、ターミナル上で以下のディレクトリに移動します。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　$ cd ( ダウンロードしたパス＆ )/php-(ダウンロードしたバージョン)/ext/mcrypt/
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　$ sudo -s phpize
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　$ sudo -s ./configure
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　$ sudo -s make
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　はい！ちゃんと作られました！！！ mcrypt.soが！
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　後はこいつを現在使っているPHPのextensionディレクトリに放り込む。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　php.iniにextensionsの設定していなければ設定してください。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　こうしてapacheを再起動してみると、ちゃんと適用されましたーーーーー！
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　参考記事
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a style=&#34;text-decoration: underline;&#34; href=&#34;http://hatomugi.sakura.ne.jp/forum.php?id=200&#34;&gt;http://hatomugi.sakura.ne.jp/forum.php?id=200&lt;/a&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

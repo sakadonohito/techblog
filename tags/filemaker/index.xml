@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Filemaker on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/filemaker/index.xml</link>
+    <description>Recent content in Filemaker on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/filemaker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
+      <link>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</link>
+      <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</guid>
+      <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;概要としては、FileMaker Server の XML公開を使う。&lt;/p&gt;
+
+&lt;p&gt;Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。&lt;/p&gt;
+
+&lt;p&gt;◆ハマった事：サンプルPHPの内容&lt;/p&gt;
+
+&lt;p&gt;サンプルのPHPをよく読んでなかった。。。&lt;/p&gt;
+
+&lt;p&gt;JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。&lt;/p&gt;
+
+&lt;p&gt;-db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに&lt;/p&gt;
+
+&lt;p&gt;u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数&lt;/p&gt;
+
+&lt;p&gt;ていうのがくっついてPHPにpostされてくる。&lt;/p&gt;
+
+&lt;p&gt;それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。&lt;/p&gt;
+
+&lt;p&gt;そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。&lt;/p&gt;
+
+&lt;p&gt;なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。&lt;/p&gt;
+
+&lt;p&gt;サンプルって事でいろいろハードコーディングされてるけど、気にしない。&lt;/p&gt;
+
+&lt;p&gt;◆ハマった：Nginxの設定&lt;/p&gt;
+
+&lt;p&gt;欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら&lt;/p&gt;
+
+&lt;p&gt;WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。&lt;/p&gt;
+
+&lt;p&gt;これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。&lt;/p&gt;
+
+&lt;p&gt;しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。&lt;/p&gt;
+
+&lt;p&gt;※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても&lt;/p&gt;
+
+&lt;p&gt;　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。&lt;/p&gt;
+
+&lt;p&gt;その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。&lt;/p&gt;
+
+&lt;p&gt;最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。&lt;/p&gt;
+
+&lt;p&gt;自分はUbuntuの環境なので、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo apt-get install nginx-extras&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)&lt;/p&gt;
+
+&lt;p&gt;more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;&lt;/p&gt;
+
+&lt;p&gt;を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！&lt;/p&gt;
+
+&lt;p&gt;これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。&lt;/p&gt;
+
+&lt;p&gt;いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>フレームワークちょいちょい</title>
+      <link>http://tech.k-zak.com/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A1%E3%82%87%E3%81%84%E3%81%A1%E3%82%87%E3%81%84.html</link>
+      <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A1%E3%82%87%E3%81%84%E3%81%A1%E3%82%87%E3%81%84.html</guid>
+      <description>&lt;p&gt;ここ最近はフレームワークを少し触ってる。&lt;/p&gt;
+
+&lt;p&gt;Perl：Mojolicious::Lite&lt;/p&gt;
+
+&lt;p&gt;→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に&lt;/p&gt;
+
+&lt;p&gt;各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/&lt;/p&gt;
+
+&lt;p&gt;layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。&lt;/p&gt;
+
+&lt;p&gt;このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Ruby：Sinatra&lt;/p&gt;
+
+&lt;p&gt;→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか&lt;/p&gt;
+
+&lt;p&gt;ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。&lt;/p&gt;
+
+&lt;p&gt;これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;PHP：FuelPHP&lt;/p&gt;
+
+&lt;p&gt;→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。&lt;/p&gt;
+
+&lt;p&gt;これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや&lt;/p&gt;
+
+&lt;p&gt;コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは&lt;/p&gt;
+
+&lt;p&gt;public/assetsて階層に配置するんですね。&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。&lt;/p&gt;
+
+&lt;p&gt;OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート&lt;/p&gt;
+
+&lt;p&gt;出来ないとかで&amp;#8230;&amp;#8230;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FileMakerとRubyのSinatra</title>
+      <link>http://tech.k-zak.com/filemaker%E3%81%A8ruby%E3%81%AEsinatra.html</link>
+      <pubDate>Sat, 07 Jan 2012 10:50:19 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/filemaker%E3%81%A8ruby%E3%81%AEsinatra.html</guid>
+      <description>&lt;p&gt;Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？&lt;/p&gt;
+
+&lt;p&gt;と思ったのでやってみました。&lt;/p&gt;
+
+&lt;p&gt;gihyo.jp:第９回 SinatraとSequel・Hamlで掲示板アプリを作る&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gihyo.jp/dev/serial/01/ruby/0009&#34;&gt;http://gihyo.jp/dev/serial/01/ruby/0009&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;が自分がチュートリアル(以下、見本)としてやってみみたもので、これのmodel部分をFileMakerに&lt;/p&gt;
+
+&lt;p&gt;置換えました。&lt;/p&gt;
+
+&lt;p&gt;※FileMakerやRuby、Sinatraそのものの細かい説明は省きます。&lt;/p&gt;
+
+&lt;p&gt;最終的な階層は以下(見本のファイルも混在してます)&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;&lt;/p&gt;
+
+&lt;pre&gt;app/
+    start.rb
+    model/
+           comment.rb
+    view /
+           layout.haml
+           index.haml
+           fmbbs.haml
+           style.sass&lt;/pre&gt;
+
+&lt;p&gt;&amp;#8212;&lt;/p&gt;
+
+&lt;p&gt;FileMaker部分&lt;/p&gt;
+
+&lt;p&gt;・bbsテーブルの作成、カラムは見本のapp/model/comment.rb内で定義しているクラス&lt;/p&gt;
+
+&lt;p&gt;Commentsを真似て定義。但し、posted_dateはFileMaker側ではtimestamp型で作成時に自動で&lt;/p&gt;
+
+&lt;p&gt;現在のタイムスタンプが入るよう設定。&lt;/p&gt;
+
+&lt;p&gt;Ruby部分&lt;/p&gt;
+
+&lt;p&gt;・app/model/comment.rbにFileMakerとの接続クラス追加&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;以下をcomment.rbに追加&amp;#8212;&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34;&gt;require &#39;rfm&#39;
+class FMServer
+  def initialize()
+    @FM_CONFIG = {
+      :host =&amp;gt; &#34;FileMakerServerの接続先IP&#34;,
+      :account_name =&amp;gt; &#34;FileMakerFileのログインアカウント&#34;,
+      :password =&amp;gt; &#34;FileMakerFileのログインパスワード&#34;,
+      :database =&amp;gt; &#34;FileMakerFileの名前&#34;,
+      :ssl =&amp;gt; false,
+      :root_cert =&amp;gt; false,
+    }
+    @fm = Rfm::Server.new(@FM_CONFIG)
+  end
+
+  def listAll(lay,sortCond)
+    return @fm[@FM_CONFIG[:database]][lay].all(sortCond)
+  end
+
+  def create(lay,obj)
+    @fm[@FM_CONFIG[:database]][lay].create(obj)
+  end
+end&lt;/pre&gt;
+
+&lt;p&gt;・hamlを編集(追加)&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;app/view/fmbbs.haml&lt;/p&gt;
+
+&lt;pre&gt;%form{:method=&amp;gt;&#34;POST&#34;,:action =&amp;gt; &#39;/fmcomment&#39;}
+  %input{:type=&amp;gt;&#34;hidden&#34;,:name=&amp;gt;&#34;_method&#34;,:value=&amp;gt;&#34;PUT&#34;}
+  %table
+    %tr
+      %td 名前
+      %td
+        %input{:type=&amp;gt;&#34;text&#34;,:name=&amp;gt;&#34;name&#34;}
+    %tr
+      %td タイトル
+      %td
+        %input{:type=&amp;gt;&#34;text&#34;,:name=&amp;gt;&#34;title&#34;}
+    %tr
+      %td 内容
+      %td
+        %textarea{:name=&amp;gt;&#34;message&#34;,:cols=&amp;gt;60,:rows=&amp;gt;8}
+    %tr
+      %td
+      %td
+        %input{:type=&amp;gt;&#34;submit&#34;}
+
+- @comments.each do |comment|
+  .comment
+    %h2= h comment.title
+    .info
+      %span.name== by #{h comment.name}
+      %span.date== (#{timestamp_text(comment.posted_date)})
+
+    .message
+      == #{formatted_text(comment.message)}&lt;/pre&gt;
+
+&lt;p&gt;※HamlはPythonのようにインデントが文法になってるので注意！&lt;/p&gt;
+
+&lt;p&gt;・app/start.rbを編集&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;app/start.rbを以下のように変更&amp;#8212;&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34;&gt;#/usr/bin/ruby
+
+require &#39;rubygems&#39;
+require &#39;sinatra&#39;
+require &#39;model/comment.rb&#39;
+require &#39;sass&#39;
+
+helpers do
+  include Rack::Utils;alias_method :h, :escape_html
+  #追加
+  def timestamp_text(date)
+    date.strftime(&#34;%Y/%m/%d %H:%M:%S&#34;)
+  end
+  #追加
+  def formatted_text(text)
+    Rack::Utils.escape_html(text).gsub(/n/,&#34;&#34;)
+  end
+end
+
+get &#39;/style.css&#39; do
+  content_type &#39;text/css&#39;,:charset =&amp;gt; &#39;utf-8&#39;
+  sass :style
+end
+
+get &#39;/&#39; do
+  @comments = Comments.order_by(:posted_date.desc)
+  haml :index
+end
+
+put &#39;/comment&#39; do
+  Comments.create({
+    :name =&amp;gt; request[:name],
+    :title =&amp;gt; request[:title],
+    :message =&amp;gt; request[:message],
+    :posted_date =&amp;gt; Time.now,
+  })
+  redirect &#39;/&#39;
+end
+
+#追加
+get &#39;/fmbbs&#39; do
+  fm = FMServer.new
+  @comments = fm.listAll(&#34;bbs&#34;,{:sort_field =&amp;gt; &#34;posted_date&#34;,:sort_order =&amp;gt; &#39;descend&#39;})
+  haml :fmbbs
+end
+
+#追加
+put &#39;/fmcomment&#39; do
+  fm = FMServer.new
+  obj = {
+    :name =&amp;gt; request[:name],
+    :title =&amp;gt; request[:title],
+    :message =&amp;gt; request[:message],
+    #posted_dateは含めない
+  }
+  fm.create(&#34;bbs&#34;,obj)
+  redirect &#39;/fmbbs&#39;
+end&lt;/pre&gt;
+
+&lt;p&gt;・rfm(lardawge-rfm)をインストールするの忘れずに！&lt;/p&gt;
+
+&lt;p&gt;$ sudo gem install lardawge-rfm&lt;/p&gt;
+
+&lt;p&gt;GitHub：&lt;a href=&#34;https://github.com/lardawge/rfm&#34;&gt;https://github.com/lardawge/rfm&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これでstart.rbのある位置をカレントにして&lt;/p&gt;
+
+&lt;p&gt;$ ruby -rubygems start.rb&lt;/p&gt;
+
+&lt;p&gt;これで&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://localhost:4567/fmbbs&#34;&gt;http://localhost:4567/fmbbs&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;で試せます。簡単ですね！&lt;/p&gt;
+
+&lt;p&gt;今回、自分がつまずいた所は、&lt;/p&gt;
+
+&lt;p&gt;１，rfm経由でFileMakerにレコード作成(多分編集も同じ)でtimestamp型のカラムに値を&lt;/p&gt;
+
+&lt;p&gt;設定するための方法が分からなかった。※DateTime型だとエラーになる、整形してもエラー&lt;/p&gt;
+
+&lt;p&gt;になる。なんでや！&lt;/p&gt;
+
+&lt;p&gt;→読み込みは出来るので、FileMaker側で作成時自動で値設定にした。&lt;/p&gt;
+
+&lt;p&gt;２，投稿済みデータの降順ソートがうまくいかない！&lt;/p&gt;
+
+&lt;p&gt;→lardawge-rfmでは降順の指定が&amp;#8221;desc&amp;#8221;ではなく、&amp;#8221;descend&amp;#8221;だった。&lt;/p&gt;
+
+&lt;p&gt;Railsでやるほどじゃないけどちょっと簡単にFileMakerとWebアプリつなぎたいとか、これで&lt;/p&gt;
+
+&lt;p&gt;どうでしょうか？&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WebフレームワークとFileMaker</title>
+      <link>http://tech.k-zak.com/webfilemaker.html</link>
+      <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/webfilemaker.html</guid>
+      <description>&lt;p&gt;FileMaker用のブログに書こうかと思ったけどこちらに書く&lt;/p&gt;
+
+&lt;div&gt;
+  FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの
+&lt;/div&gt;
+
+&lt;div&gt;
+  データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて
+&lt;/div&gt;
+
+&lt;div&gt;
+  ２つの方法があります。
+&lt;/div&gt;
+
+&lt;div&gt;
+  １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する
+&lt;/div&gt;
+
+&lt;div&gt;
+  ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。
+&lt;/div&gt;
+
+&lt;div&gt;
+  ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では
+&lt;/div&gt;
+
+&lt;div&gt;
+  載っていない文法のXMLが返ってくる。
+&lt;/div&gt;
+
+&lt;div&gt;
+  具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に
+&lt;/div&gt;
+
+&lt;div&gt;
+  rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが
+&lt;/div&gt;
+
+&lt;div&gt;
+  rowタグの中にあるのではなく、本当に&amp;#8221;col&amp;#8221;という名のタグが入っているからメタタグの
+&lt;/div&gt;
+
+&lt;div&gt;
+  カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  で、世間ではどうしているのかというと、
+&lt;/div&gt;
+
+&lt;div&gt;
+  a,FileMaker文法を解釈するxsltで開発
+&lt;/div&gt;
+
+&lt;div&gt;
+  b,PHPでライブラリが出ているのでそれを使う(FX.php)
+&lt;/div&gt;
+
+&lt;div&gt;
+  c,Rubyでライブラリが出ているのでそれを使う(rfm)
+&lt;/div&gt;
+
+&lt;div&gt;
+  d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ってところ。
+&lt;/div&gt;
+
+&lt;div&gt;
+  実際にはFX.phpを利用するのがメジャーでしょう。。
+&lt;/div&gt;
+
+&lt;div&gt;
+  これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、
+&lt;/div&gt;
+
+&lt;div&gt;
+  案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は
+&lt;/div&gt;
+
+&lt;div&gt;
+  ある程度覚えておいたほうが良いと思う。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを
+&lt;/div&gt;
+
+&lt;div&gt;
+  作れさえすれば、言語は何でも良いという事。
+&lt;/div&gt;
+
+&lt;div&gt;
+  なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。
+&lt;/div&gt;
+
+&lt;div&gt;
+  Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど
+&lt;/div&gt;
+
+&lt;div&gt;
+  Perlは自分には無理。そもそもPerlがほぼ分からない。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては
+&lt;/div&gt;
+
+&lt;div&gt;
+  Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている
+&lt;/div&gt;
+
+&lt;div&gt;
+  ようなので、将来性は微妙。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの
+&lt;/div&gt;
+
+&lt;div&gt;
+  両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを
+&lt;/div&gt;
+
+&lt;div&gt;
+  継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  PHPのFX.phpはCodeIgniterやCakePHPでモデルとして使えるような方法が出来ている。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  一方、Rubyのはちょっと分かりづらい。いや正確にはRailsを理解しないまま試し他自分が
+&lt;/div&gt;
+
+&lt;div&gt;
+  悪いのですけど。。。
+&lt;/div&gt;
+
+&lt;div&gt;
+  現状では、Railsの設定でActiveRecordを使わない設定にしてControllerに全て処理を書く
+&lt;/div&gt;
+
+&lt;div&gt;
+  みたいなやり方になってしまうようです。
+&lt;/div&gt;
+
+&lt;div&gt;
+  Railsの仕組みやRubyのmix-inの仕組みとか理解できると別の方法が見つかりそうですけど。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ◆PHPでFileMaker
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・FX.php &lt;a href=&#34;http://msyk.net/fmp/fx_ja/&#34;&gt;http://msyk.net/fmp/fx_ja/&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・CodeIgniter でFX.php
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://codeigniter.com/wiki/FilemakerPro_Database_Integration/&#34;&gt;http://codeigniter.com/wiki/FilemakerPro_Database_Integration/&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・CakePHPでFX.php &lt;a href=&#34;http://www.beezwax.net/solutions/FMCakeMix&#34;&gt;http://www.beezwax.net/solutions/FMCakeMix&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ◆RubyでFileMaker
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・rfm &lt;a href=&#34;http://www.famlog.jp/rfm/&#34;&gt;http://www.famlog.jp/rfm/&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ◆PythonでFileMaker
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・PyFileMaker &lt;a href=&#34;http://code.google.com/p/pyfilemaker/&#34;&gt;http://code.google.com/p/pyfilemaker/&lt;/a&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

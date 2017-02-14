@@ -1,0 +1,269 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>Perl勉強してるメモ１</title>
+  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://tech.k-zak.com"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">開発メモてきな</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+<div class="content">
+
+  <div class="article">
+    <div class="title">Perl勉強してるメモ１</div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description"><p>何故か最近Perlの勉強を始めた。</p>
+
+<p>気になった箇所のまとめ、</p>
+
+<p>■変数と型</p>
+
+<p>・普通(単一)のデータはスカラー変数で扱う：$val = &#8216;Hello&#8217;;</p>
+
+<p>・配列は「$」の代わりに「＠」でも中の要素を扱う時は「$」でインデックスの指定は[]</p>
+
+<p>：@array = (1,2,3,4,5); print $array[0] # 1</p>
+
+<p>・ハッシュは「$」の代わりに「%」でも中の要素を扱う時は「$」で指定は{}</p>
+
+<p>：%hash = (&#8216;a&#8217;=&gt;&#8217;1&#8242;,&#8217;b&#8217;=&gt;&#8217;2&#8217;); print $hash{a} # 1</p>
+
+<p>■変数スコープ</p>
+
+<p>・{}ブロックでスコープは仕切られている。そのため変数はmyを使ってスコープを意識した変数宣言を</p>
+
+<p>すると良いとされている。</p>
+
+<p>・ファイルスコープは実は１ファイル１パッケージ的な扱いでパッケージスコープ。</p>
+
+<p>・例えばファイル直下の位置で$cgi = CGI-&gt;new; とかやっておけば、subを呼ぶ時に毎回$cgiを</p>
+
+<p>引数として渡す必要はない。</p>
+
+<p>参考 Gist：<a href="https://gist.github.com/3855891" title="https://gist.github.com/3855891">https://gist.github.com/3855891</a></p>
+
+<p>&nbsp;</p>
+
+<p>■リファレンス</p>
+
+<p>・C言語で言うところのポインタ？配列やハッシュをサブルーチンに渡す際に変数のリファレンスを</p>
+
+<p>渡す。そうしないと呼び出し先では１つの引数データに連結されてしまっているのでうまく復元できない。</p>
+
+<p>・リファレンスで渡された値をsubスコープ内の新たな変数に入れてデリファレンスして編集すると、</p>
+
+<p>元の変数の値が変わっている。デリファレンスした値を新たな変数に入れて編集した場合は影響しない。</p>
+
+<p>参考Gist：<a href="https://gist.github.com/3850245" title="https://gist.github.com/3850245">https://gist.github.com/3850245</a></p>
+
+<p><a href="https://gist.github.com/3856617" title="https://gist.github.com/3856617">https://gist.github.com/3856617</a></p>
+
+<p>&nbsp;</p>
+
+<p>■ファイルの扱いなど</p>
+
+<p>・use IO=&gt;&#8217;utf8&#8242;; としておくとUTF-8でファイルIOで扱う。</p>
+
+<p>・ファイルハンドルはレキシカルスコープ変数を使うようにしましょう。</p>
+
+<p>・またopen関数は3引数の形で使いましょう。</p>
+
+<p>open(my $fh,&rsquo;&lt;&#8216;,$file_path);</p>
+
+<p>&nbsp;</p>
+
+<p>■モジュールについて</p>
+
+<p>・use strict;と use warnings; はワンライナー(or実験)以外では必ずつけましょう。</p>
+
+<p>・use feature &#8216;say&#8217;;とするとsay関数が使える。これはprint関数+改行らしい。便利。</p>
+
+<p>・自作外部ファイル、PHPでいうところのrequire用ファイルのようなファイルは拡張子を</p>
+
+<p>「.pm」にする。</p>
+
+<p>&nbsp;</p>
+
+<p>■他</p>
+
+<p>・qq や qw は便利なので積極的に使って行きましょう。</p>
+
+<p>例：qq(<input type=&#8221;text&#8221; name=&#8221;name&#8221; id=&#8221;name_id&#8221; class=&#8221;input&#8221; value=&#8221;$cgi->{name}&#8221;/&gt;);</p>
+
+<p>て感じで使える。</p>
+
+<p>&nbsp;</p>
+
+<p>まぁ、こんな感じで。</p>
+</div>
+    <div class="tags">
+      9 Oct 2012
+      
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+       
+    </div>
+    
+  </div>
+
+</div>
+
+<paper-item>
+  
+    <a href="http://tech.k-zak.com/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A1%E3%82%87%E3%81%84%E3%81%A1%E3%82%87%E3%81%84.html"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+  
+    <div class="flex"></div>
+  
+    <a href="http://tech.k-zak.com/%E7%8F%BE%E7%8A%B6%E6%95%B4%E7%90%86.html"><paper-fab icon="chevron-right"></paper-fab></a>
+  
+</paper-item>
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>

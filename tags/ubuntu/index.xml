@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/ubuntu/index.xml</link>
+    <description>Recent content in Ubuntu on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>嘘でしょう。。。</title>
+      <link>http://tech.k-zak.com/%E5%98%98%E3%81%A7%E3%81%97%E3%82%87%E3%81%86.html</link>
+      <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E5%98%98%E3%81%A7%E3%81%97%E3%82%87%E3%81%86.html</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://kazunoko.sakura.ne.jp/wordpress/wp-content/uploads/2009/10/chanmio.jpg&#34; rel=&#34;attachment wp-att-193&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-193&#34; src=&#34;http://kazunoko.sakura.ne.jp/wordpress/wp-content/uploads/2009/10/chanmio.jpg&#34; alt=&#34;chanmio&#34; width=&#34;128&#34; height=&#34;128&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。&lt;/p&gt;
+
+&lt;p&gt;実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。&lt;/p&gt;
+
+&lt;h3 id=&#34;悩まされていた問題&#34;&gt;悩まされていた問題&lt;/h3&gt;
+
+&lt;p&gt;会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。&lt;/p&gt;
+
+&lt;p&gt;VMのネットワーク設定を「Macと共有」の時は問題なくて「自動検出」にするとVMのUbuntuのIPが正しく設定されない。&lt;/p&gt;
+
+&lt;h3 id=&#34;ひとまず解決&#34;&gt;ひとまず解決？&lt;/h3&gt;
+
+&lt;p&gt;前提として、このUbuntuはDesktop 14.04LTSです。なのでUbuntuServerの場合は違うかも。&lt;/p&gt;
+
+&lt;p&gt;/etc/NetworkManager/system-connections/ 配下のネットワークの設定ファイルのファイル名に日本語(マルチバイト文字)が含まれていたので、ASCII文字のみに変更。&lt;/p&gt;
+
+&lt;p&gt;/etc/NetworkManager/system-connections/ のファイル名を変更したものを開く&lt;/p&gt;
+
+&lt;p&gt;この設定ファイルの中の「connection」にあるidの設定を変更したファイル名に合わせる。&lt;/p&gt;
+
+&lt;p&gt;これだけでネットワークつながるようになった。というかipが正しくふられるようになった。&lt;/p&gt;
+
+&lt;p&gt;まさかのマルチバイト文字ファイル名問題？&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu14.04 でphpでメール受信とか</title>
+      <link>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</link>
+      <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</guid>
+      <description>&lt;p&gt;## install postfix&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install postfix postfix-dev sasl2-bin&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;## Settings&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf&lt;/p&gt;
+
+&lt;p&gt;sudo emacs -nw /etc/postfix/main.cf&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;### 参考&lt;/p&gt;
+
+&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;### gmailに転送する設定に変更&lt;/p&gt;
+
+&lt;p&gt;relayhostにgmailを指定&lt;/p&gt;
+
+&lt;p&gt;パスワードの設定とかね。&lt;/p&gt;
+
+&lt;p&gt;## phpでメールを受信出来るよう設定&lt;/p&gt;
+
+&lt;p&gt;メールサーバ受信DNS設定とか面倒だからやめた。&lt;/p&gt;
+
+&lt;p&gt;phpinfoを見ると案の定imap入ってませんでしたので、php5.5系の落としてきてimapのディレクトリ移動してphpize&lt;/p&gt;
+
+&lt;p&gt;### configureで失敗する&lt;/p&gt;
+
+&lt;p&gt;configureしたらutf8_mime2text()がうんたらと出てきた。&lt;/p&gt;
+
+&lt;p&gt;ググると、どうもphpにimapとかメール関係入れる時にライブラリが足りないと出るエラーのようだ。&lt;/p&gt;
+
+&lt;p&gt;sudo apt-cache search libc-client&lt;/p&gt;
+
+&lt;p&gt;→libc-client2007e libc-client2007e-dev てのが出てくるので両方インストール&lt;/p&gt;
+
+&lt;p&gt;### imapうまく動かない？&lt;/p&gt;
+
+&lt;p&gt;この後無事imapインストールできたけどなぜか受信出来ない。いろいろ調べて片っ端からSSL関連インストールしたけどうまくいかない。&lt;/p&gt;
+
+&lt;p&gt;### 何が原因だったのか不明&lt;/p&gt;
+
+&lt;p&gt;結局、何かのSSL関係のライブラリインストールが最初足りなくてGmail受信失敗してた。&lt;/p&gt;
+
+&lt;p&gt;gmailからさくらのレンサバのメールアカウントで試した場合はアカウント名の指定を間違えてた。&lt;/p&gt;
+
+&lt;p&gt;テストで受信するだけだから、普通のimapアカウントの場合はnotlsをflagにつける。&lt;/p&gt;
+
+&lt;p&gt;gmailの場合は/ssl/novalidation-certみたいのつける&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
+      <link>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</link>
+      <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</guid>
+      <description>&lt;p&gt;古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ&lt;/p&gt;
+
+&lt;p&gt;最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。&lt;/p&gt;
+
+&lt;p&gt;502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。&lt;/p&gt;
+
+&lt;p&gt;結局、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install fcgiwrap
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも&lt;br /&gt;
+/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo sysv-rc-conf on fcgiwrap
+sudo service fcgiwrap start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でFastCGIが動くようになる。&lt;br /&gt;
+最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、&lt;br /&gt;
+参考：&lt;a href=&#34;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&#34;&gt;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&lt;/a&gt;&lt;br /&gt;
+これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。&lt;/p&gt;
+
+&lt;p&gt;Nginxの設定はlocationディレクティブだけ抜粋すると&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#拡張子が.plで終わるリクエストの場合
+location ~ \.pl$ {
+    try_files $uri = 404;
+    gzip off;
+    #インストールしたfcgiwrapのソケットファイルのパス
+    fastcgi_pass unix:/var/run/fcgiwrap.socket;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    #/etc/nginx/fastcgi_paramsの内容を読み込む。
+    include fastcgi_params;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service nginx restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで適用にperl書いて(シェバンはもちろん#!/usr/bin/env perl ですよ)試したら動きました。&lt;/p&gt;
+
+&lt;p&gt;自分はplenvを使っているのですが、システムのperl読み込まれてライブラリねーぞゴルァなった事があった。謎。&lt;br /&gt;
+plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
+
+&lt;p&gt;この記事書いてる時に見つけた他の方のWeb。先にここを見つけたかった。。。&lt;br /&gt;
+参考：&lt;a href=&#34;http://ekzemplaro.org/data_base/doc/web_server/nginx/&#34;&gt;http://ekzemplaro.org/data_base/doc/web_server/nginx/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;やれやれですよ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>新しく開発環境作成中</title>
+      <link>http://tech.k-zak.com/%E6%96%B0%E3%81%97%E3%81%8F%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E4%BD%9C%E6%88%90%E4%B8%AD.html</link>
+      <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E6%96%B0%E3%81%97%E3%81%8F%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E4%BD%9C%E6%88%90%E4%B8%AD.html</guid>
+      <description>
+
+&lt;h3 id=&#34;ubuntu14-64bit-のvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;イメージからVMWareFusionに作成&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ターミナルから LANG=C xdg-user-dirs-gtk-update を実行
+LANG=C xdg-user-dirs-gtk-update&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;設定画面が出てくるので、そのままOK&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;VMWare toolsをインストール&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開&lt;/li&gt;
+&lt;li&gt;展開したディレクトリの中に入ってインストール実行&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;aptのアップデートとアップグレード
+    sudo apt-get update&lt;br /&gt;
+    sudo apt-get upgrade&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Dropboxクライアントのインストール&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール&lt;/li&gt;
+&lt;li&gt;Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Emacsのインストール
+    sudo apt-get install emacs24&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成&lt;/li&gt;
+&lt;li&gt;作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった
+ln -s ~/Dropbox/emacs.d ~/emacs.d&lt;br /&gt;
+mv ~/emacs.d ~/.emacs.d
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;バージョン管理のインストール
+    sudo apt-get install git&lt;br /&gt;
+    sudo apt-get install mercurial&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;nginxのインストール
+    sudo apt-get install nginx&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;xEnvや各バージョンのインストールに必要になる諸々のインストール
+    sudo add-apt-repository ppa:webupd8team/java&lt;br /&gt;
+    sudo apt-get update&lt;br /&gt;
+    sudo apt-get install oracle-java7-installer ※for jruby&lt;br /&gt;
+    sudo apt-get install oracle-java8-installer ※必要であれば。&lt;br /&gt;
+    sudo update-alternatives &amp;ndash;config java&lt;br /&gt;
+    ※java7を選択する&lt;br /&gt;
+    sudo apt-get install g++ ※これをインストールしないとインストール失敗する&lt;br /&gt;
+    sudo apt-get install libssl-dev ※これをインストールしないとインストール失敗する&lt;br /&gt;
+    sudo apt-get install build-essential ※pyenvで必要になるようだ&lt;br /&gt;
+    sudo apt-get install curl ※ndenv install &amp;ndash;list で必要になる&lt;br /&gt;
+    sudo apt-get install libjpeg-dev ※phpのインストールで必要になる&lt;br /&gt;
+    sudo apt-get install re2c ※phpのインストールで必要になる&lt;br /&gt;
+    sudo apt-get install bison ※phpのインストールで必要になる&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;rbenvのインストール
+    git clone &lt;a href=&#34;https://github.com/sstephenson/rbenv.git&#34;&gt;https://github.com/sstephenson/rbenv.git&lt;/a&gt; ~/.rbenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/sstephenson/ruby-build.git&#34;&gt;https://github.com/sstephenson/ruby-build.git&lt;/a&gt; ~/.rbenv/plugins/ruby-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.rbenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${rbenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;plenvのインストール
+    git clone &lt;a href=&#34;https://github.com/tokuhirom/plenv.git&#34;&gt;https://github.com/tokuhirom/plenv.git&lt;/a&gt; ~/.plenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/tokuhirom/Perl-Build.git&#34;&gt;https://github.com/tokuhirom/Perl-Build.git&lt;/a&gt; ~/.plenv/plugins/perl-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.plenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${plenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pyenvのインストール
+    git clone &lt;a href=&#34;https://github.com/yyuu/pyenv.git&#34;&gt;https://github.com/yyuu/pyenv.git&lt;/a&gt; ~/.pyenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/yyuu/python-virtualenv.git&#34;&gt;https://github.com/yyuu/python-virtualenv.git&lt;/a&gt; ~/.pyenv/plugins/python-virtualenv&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.pyenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${pyenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ndenvのインストール
+    git clone &lt;a href=&#34;https://github.com/riywo/ndenv.git&#34;&gt;https://github.com/riywo/ndenv.git&lt;/a&gt; ~/.ndenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/riywo/node-build.git&#34;&gt;https://github.com/riywo/node-build.git&lt;/a&gt; ~/.ndenv/plugins/node-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.ndenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${ndenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;phpenvのインストール
+    git clone &lt;a href=&#34;https://github.com/CHH/phpenv.git&#34;&gt;https://github.com/CHH/phpenv.git&lt;/a&gt; ~/.phpenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/CHH/php-build.git&#34;&gt;https://github.com/CHH/php-build.git&lt;/a&gt; ~/.phpenv/plugins/php-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.phpenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${phpenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;rubyのインストールとjrubyのインストール
+    rbenv install 1.9.3-p547&lt;br /&gt;
+    rbenv install 2.1.2&lt;br /&gt;
+    rbenv install jruby-1.7.15&lt;br /&gt;
+    rbenv global 2.1.2&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;perlのインストール
+    plenv install 5.20.0&lt;br /&gt;
+    plenv global 5.20.0&lt;br /&gt;
+    plenv rehash&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pyenvのインストール
+    pyenv install jython-2.5.3&lt;br /&gt;
+    pyenv install 3.4.1&lt;br /&gt;
+    pyenv install 2.7.8&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ndenvのインストール
+    ndenv install v0.11.13&lt;br /&gt;
+    ndenv global v0.11.13&lt;br /&gt;
+    ndenv rehash&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;phpenvのインストール
+    phpenv install 5.5.16&lt;br /&gt;
+    phpenv install 5.6.0&lt;br /&gt;
+    phpenv global 5.5.16&lt;br /&gt;
+    phpenv rehash&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;php-fpmの設定
+    -: listen = 127.0.0.1:9000&lt;br /&gt;
+    +: /home/{{myhome}}/.phpenv/versions/5.5.16/var/run/php-fpm.sock&lt;br /&gt;
+    -: ;request_terminate_timeout = 0&lt;br /&gt;
+    +: request_terminate_timeout = 0&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;php.iniの設定&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;適宜timeoutやmax_sizeの調整&lt;/li&gt;
+&lt;li&gt;timezoneの設定&lt;/li&gt;
+&lt;li&gt;mbstringの設定&lt;/li&gt;
+&lt;li&gt;拡張ライブラリ分の追記&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mysqlのインストール
+    sudo apt-get install mysq&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;nginxの設定&lt;/p&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;conf.dに作成した場合はそのままで良いが、site-availableに作成した場合はsite-enableにシンボリックリンクを作成する&lt;/p&gt;
+
+&lt;p&gt;unicornで動かすredmineの分も記述する。※内容詳細は次のリンク(過去記事参照)&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;unicornでredmineの設定
+    sudo apt-get install zlib1g-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libsqlite3-dev libpcre3-dev libncurses-dev libgdbm-dev tk-dev libmagickwand-dev&lt;br /&gt;
+    sudo apt-get install python-software-properties sysv-rc-conf&lt;br /&gt;
+    gem update&lt;br /&gt;
+    gem install bundler&lt;br /&gt;
+    gem install mysql2
+    gem install rails
+    gem install rake
+    echo &amp;ldquo;gem &amp;lsquo;unicorn&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
+    echo &amp;ldquo;gem &amp;lsquo;psych&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
+    bundle install &amp;ndash;without rmagick development test sqlite postgresql
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以降の作業については過去の記事を参照する。&lt;a href=&#34;http://kazunoko.sakura.ne.jp/wordpress/?p=240&#34;&gt;2014年の目標達成進捗管理的な&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;20140916&#34;&gt;20140916&lt;/h2&gt;
+
+&lt;h3 id=&#34;memo&#34;&gt;memo&lt;/h3&gt;
+
+&lt;p&gt;Ubuntu(64bit)のphpenvにldap入れるのに詰まった事。&lt;/p&gt;
+
+&lt;p&gt;ldapのライブラリの場所に問題があったらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ln -s /usr/lib/x86_64-linux-gnu/libldap_r.so /usr/lib/libldap_r.so  
+sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ubuntu(64bit)のphpenvにpdo-oci入れるのに詰まった事。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ln -s /home/{{myhome}}/work/oracle/libclntsh.so.11.1 /home/{{myhome}}/work/oracle/libclntsh.so  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;phpenvでphpizeで忘れていたこと。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./configure --with-php-config=/home/.phpenv/versions/5.5.16/bin/php-config ※phpizeの対象を指定する必要がある
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdownのプラグインいれたけど、散々な結果。ウケる。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

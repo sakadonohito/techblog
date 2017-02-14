@@ -1,0 +1,432 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>Posts</title>
+  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://tech.k-zak.com"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">開発メモてきな</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+<div class="content">
+
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/apacheredmine_virtualhost.html">apacheでredmine virtualhost設定</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。
+   で、急遽同タイプのを買いなおしてHDD移植してOS再インストールとかして   つまったapacheでredmine再設定をここにメモす。     なぜこんなことが起きたのか。。それはOS再インストールした際に、apacheの   virtualhost.confが初期化され、redmine用の設定が消えたからです。   再設定のため、webや本を見ながら書いたつもりの設定ではCSS等が読み込まれなんだ   ( °д°)ﾅﾝﾃﾞ？     結局関係ないと思ってたところが関係してた(apacheの設定とか理解してなかった)   という話。     以下が正常に動いた設定(virtualhost)      #Redmine用   
+ ServerAdmin oira@virtualhostDomain 
+ DocumentRoot &#8220;redmineのある場所/redmine/public&#8221; 
+ ServerName virtualhostDomain 
+ ErrorLog &#8220;/private/var/log/apache2/virtualhostDomain-error_log&#8221; 
+ CustomLog &#8220;/private/var/log/apache2/virtualhostDomain-access_log&#8221; common 
+ 
+ RailsBaseURI / ※redmine専用のバーチャルホストのため、ルートを指定</div>
+    <div class="tags">
+      25 Jun 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/redmine/">#Redmine</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/cakephp.html">CakePHPでぐはぁ</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ
+   どうもPHP5.3で動かすと非推奨なコードが沢山あるらしく、そのエラーが   ドバドバでるの。で、その対処法のメモ。絶対また忘れるので。。。     ぐぐったら沢山でてきまする。     cake/libs/configure.phpの自分がDLしたCakePHPだと110行目から少し下あたりにある   $reportingという変数にエラーの定数を格納する箇所で、従来の&#8217;E_ALL&#8217;に非推奨エラーの   定数は除外するよう編集する。こんな感じ   前：$reporting = E_ALL   後：$reporting = E_ALL & ~E_DEPRECATED   場所がよく分からなかったらエラー定数(E_ALL)で検索すればいいよ。  </div>
+    <div class="tags">
+      14 Jun 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/cakephp/">#CakePHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/webfilemaker.html">WebフレームワークとFileMaker</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">FileMaker用のブログに書こうかと思ったけどこちらに書く
+ FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの   データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて   ２つの方法があります。   １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する   ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。     で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。     ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。   ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では   載っていない文法のXMLが返ってくる。   具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に   rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが   rowタグの中にあるのではなく、本当に&#8221;col&#8221;という名のタグが入っているからメタタグの   カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー     で、世間ではどうしているのかというと、   a,FileMaker文法を解釈するxsltで開発   b,PHPでライブラリが出ているのでそれを使う(FX.php)   c,Rubyでライブラリが出ているのでそれを使う(rfm)   d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)     ってところ。   実際にはFX.phpを利用するのがメジャーでしょう。。   これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、   案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は   ある程度覚えておいたほうが良いと思う。     ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを   作れさえすれば、言語は何でも良いという事。   なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。   Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど   Perlは自分には無理。そもそもPerlがほぼ分からない。     Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては   Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている   ようなので、将来性は微妙。     Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの   両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを   継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。     PHPのFX.</div>
+    <div class="tags">
+      29 May 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/emacs.html">emacs初めてみようか</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている
+ 軽いけどまだまだ完成度の低いKodに代わりテキストエディタを探そうと思い   emacsを試すことにした。     まずはインストール。自分のPCはMacBookPro10.6なのでemacs23.xを入れる事に   最初に入れたのは22.2のアプリタイプのもの、   CarbonEmacs   http://www.apple.com/jp/downloads/macosx/tools/carbonemacs.html   http://homepage.mac.com/zenitani/emacs-j.html     いや、折角なのでちゃんと最新のでやりましょう。と探して次に見つけたのが   Aquamacs2.0 http://sourceforge.jp/magazine/10/05/12/090234   これでもよかったんでしょうけど、普通のemacs23.xを入れようとさらに探し、   MacPortsからインストールの方法を見つける。   http://d.hatena.ne.jp/tomoya/20090210/1234297520     入れるものを間違えたのか、自分のやつだとGUIの設定画面がでない。。。   ざっと、通し見したブログ   「CarbonからCocoaへ&#8211;Snow LeopardでEmacs 23を使う」   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20409879/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410292/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410578/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410802/     最初はマウスでメニューとか開いてコマンド実行、ヘルプのところに   「Emacs Tutorial (choose language)」てのがあるのでそれを実行。言語はお好みで。   中身を見ながら試す。     初めはどうしたら「filename.</div>
+    <div class="tags">
+      29 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/php.html">PHPのフレームワーク試す</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">PHPのフレームワークをいくつか試してみた。
+ 以下、試したフレームワーク名と参考にしたチュートリアルサイト及び記事     ・CakePHP   本家？の日本語版サイトのチュートリアルを試す。   http://book.cakephp.org/ja/view/1528/CakePHPブログチュートリアル     ・Zend Framework   これも本家？の翻訳サイトにあるチュートリアルを試す。   http://web-rhodia.com/zf-tutorial/     ・Symfony   これは日本symfonyユーザー会サイトのチュートリアルを試す。   http://www.symfony.gr.jp/docs/for-beginners/blog-tutorial/01-introduction     ・CodeIgniter   ここは、調度良いのチュートリアルが見つからなかった。。。   http://codeigniter.jp/user_guide_ja/toc.html   http://d.hatena.ne.jp/it-tech-dm/20091025/1256465675       感想としては、   CakePHP:1.1や1.2で何回か触ったことあり、特に詰まることもなく、あっさり   お試し終了。他のフレームワークとの比較用(基準)として今回チュート   リアルを試しました。   感触としては、ちょろっとだけ触ったことあるRailsに似ていて(マネしたんだ   から当たり前)これを覚えとくとRuby on Rails も憶えやすくなるなんてお得。   構造的にも自分にとっては、理解しやすい。     Zend Framework:これは、自分にはあいそうもありません。。大文字から始まる単語を   アンダースコアでつなぐ名前のつけ方は慣れていなくて、非常に違和感があ   りました。あと、チュートリアルひと通りコーディングしたけど、画面真っ白   エンコードか、URLの問題かな。。。生理的に受け付けない感じ。     Symfony:チュートリアルがCakePHPのチュートリアルを参考に作ってあるだけあって   とっつきやすかった。比較としてこっちは何だかJavaのStrutsを簡単にしたような   印象を受けました。あとyaml設定ファイル多い。     CodeIgniter:これは、チュートリアルがちゃんと見つからなかったこともあり、まともに   試せていない。手本にしたブログ記事の内容はコーディングしてみたけど、   BaseURLの記述がおかしいのか、どこかのディレクトリのパーミッションの   問題か動きませんでした。   印象としては、あんまりフレームワークっぽくない(至れり尽くせりではない)。   でも、軽いとか必要最小限とかの評価を良く耳にするので、ちゃんと動くところ   まで持って行ってから評価したいと思っています。     今回のお試しの結果、自分の中での評価順位は   １，CakePHP   ２，Symfony   ３，CodeIgniter (暫定)   ４，Zend Framework     以上、PHP低レベル者が勝手にフレームワークを評価してみました。      </div>
+    <div class="tags">
+      24 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/cakephp/">#CakePHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/codeigniter/">#CodeIgniter</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/symfony/">#Symfony</a>
+        
+          <a href="http://tech.k-zak.com/tags/zend-framework/">#Zend Framework</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/memo.html">Django お勉強 Part3</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description"> 引き続きDjangoのお勉強。今回はDjango Projectのチュートリアルであばば。     参考：http://djangoproject.jp/doc/ja/1.0/intro/tutorial01.html#intro-tutorial01     最後の方まで順調だったのですが、最後の汎用ビューでつまりました。   同じようなところで詰まって、解決された方のブログを見つけたので、   それを参考に解決しました。    参考：http://ntm.ex-blog.net/archives/91
+   よくあることですが、チュートリアルそのままやってても、説明不足の箇所が   あって、それが原因でうまく動作しなくあるっていうやつです。     １，汎用ビューを使う設定したら、該当テンプレートファイルの名称を   規則に沿った名前にしないといけない。     ２，チュートリアルの通りにコードを編集すると、今まで「poll」という名の   オブジェクトだった箇所を「object」という名前に編集しないといけない。     解決した後から再度チュートリアルを読むと、説明不足というよりは、   翻訳の関係で分かり難い文章になってしまっている。という感じ。     確かにどこを変えないといけないか書いてあるといえば書いてあるのですが、   自分みたいなアホウは良く解らんでした(つまりどこをどう編集すべきなのか   理解できなかった)。     日本語って難しいですね。。。    </div>
+    <div class="tags">
+      21 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/django/">#Django</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/django_part2.html">Django お勉強 Part2</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">古いDBMagazineに載ってたDjangoのチュートリアル的なものを   試してみたら、また詰まった。     正しいかどうかは別にして解決したメモ     症状：見本通りにコード書いたらエラー出た。(reverse関数)   views.pyファイルの◯◯メソッドのreturnにDjango組込みのreverse関数   を使って、画面遷移させようとした。     雑誌の通りにコーディングしたら、エラーが出た。   意訳：その関数の引数argsはシーケンスじゃないと駄目だぜ、おまいの    はlongだぜ。   最初、どう書いたかというと、   return HttpResponseRedirect(reverse(&#8216;enkai.enkai_app.views.detail&#8217;,args=(e.id)))     はて？と思い、引数の値を固定値にしてみた   return HttpResponseRedirect(reverse(&#8216;enkai.enkai_app.views.detail&#8217;,args=(1)))   そしたら今度は「おまいのはintだぜ」ってエラーになった。      これは引数に与えるデータ型が問題なのだと考え至ったがpython初心者   の自分はエラーメッセージ中の「シーケンス」の意味を理解していなか   った。      次に固定値で与えてる引数を文字列として与えてみた。   return HttpResponseRedirect(reverse(&#8216;enkai.</div>
+    <div class="tags">
+      20 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/django/">#Django</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/django.html">Django お勉強</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">PythonのDjangoのお勉強記録
+   いろいろとつまったのでメモ。     まず試したのはCodoZineのチュートリアル記事   Djangoチュートリアル前篇：　http://codezine.jp/article/detail/4065   Djangoチュートリアル後編：　http://codezine.jp/article/detail/4264   ※記事内のインストールや参考記事のURLは割愛     ０，環境はMacOSX10.6 Pythonはインストール済み   １，チュートリアルにしたがってDjangoインストール→プロジェクト作成、MySQLにDB作成   →アプリケーション作成   チュートリアルではDBはSQLiteだったけど、なんとなくMySQLを使った   ２，チュートリアルにしたがって写経   以上。     時折詰まったので、後はそのポイント     ・Pythonの文法にうっかりハマる。   自動でインデントしてくれるエディタを使っていると、改行時に自動でインデントしてくれますよね   それを忘れて、別のメソッドを続けて書く時にはインデント位置を戻さないといけないのに、   うっかりインデントされたままコード書き続けて、自爆するので気をつけましょう   views.pyで定義したはずのものが(ビューメソッド？)見つからないエラーが出たら真っ先に   インデントや誤字を疑いましょう。     ・動作するのに必要な記述の説明が抜けている。追加ファイルの事。   当たり前の事といえばそれまでなのですが、views.</div>
+    <div class="tags">
+      19 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/django/">#Django</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/java_dwr.html">JavaのDWRって何さ　設定メモ</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。   原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを   作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。     アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？     DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで   構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。   とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを   簡単にJavaScript上で扱う仕組み？な感じ。     参考URL：   DWRのサイト　http://directwebremoting.org/dwr/index.html   2007の@ITの記事　http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html     具体的な手順の説明   １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を   落とす。   ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル   ２つを入れる。   ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな   あと、このクラスの定義のパッケージは何でも良い。   ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも   良い。この時、実在しない(dwr.jarが自動生成する)JSをタグに書いておく   ※説明たるいので、サイトとか参照して下さい。   どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。   ５，dwr用のxmlとweb.</div>
+    <div class="tags">
+      13 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/java/">#Java</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/post_2.html">ちっともすすまない</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">前に更新したのはいつの頃か・・・
+   中身に進歩がないのが更新がない証拠。。     先日、MovableTypeにもう一つブログ追加しました。   元々Microsoftのスペースっていうブログの場所でゲームとか趣味関連の少し   やってたんですが、閉鎖されたので、心機一転こちらで始めました。     この間、初めてAmazonアソシエイトのIDとったのでのリンクバシバシ貼ろうと思います。     このブログで書くようなジャンルの事では、最近NetBeansをインスコしてみました。   Eclipseでは無視してたんですが、サンプルプロジェクト作成して中のコード読むのって   結構勉強になるんじゃないかって考えてます。     まだまともに触れてないレベルですが、NetBeansはEclipseに比べて軽い気がします。   まぁ、設定とかプラグインとかそういうところは圧倒的にEclipseなんでしょうけど。     今はNetBeansでRuby on Rails　のサンプル作成したら、Railsのバージョンがおかしいとか   エラー出てハマってます(-_- 😉   ここのブログは今後、作業日誌的な、勉強、開発そういったことを何かしたら   それを簡潔に書く。そうやって続けていこうかと。     いつになったら図や画像ありの記事になれるのか・・・     NetBeansの日本語サイト：http://ja.netbeans.org/  </div>
+    <div class="tags">
+      10 Apr 2011
+       
+    </div>
+  </div>
+
+
+</div>
+
+
+<paper-item>
+  
+    <a href="/post/page/5/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+  
+    <div class="flex"></div>
+  
+    <a href="/post/page/7/"><paper-fab icon="chevron-right"></paper-fab></a>
+  
+</paper-item>
+
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>

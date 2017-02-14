@@ -1,0 +1,470 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta name="generator" content="Hugo 0.18.1" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>開発メモてきな</title>
+  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://tech.k-zak.com"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">開発メモてきな</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+<div class="content">
+
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/nginx%E3%81%A7permission-denied.html">NginxでPermission denied</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">開発環境
+OS:Ubuntu12?
+Webサーバー：Nginx
+という環境下でWindowsでホストしていたお客さんのサイトを持ってきて改修しようとしたら、
+jsやらcssやら画像やらが軒のみPermission denied でエラーでて表示されない。
+ググってみたけれども該当するものがない。
+※自身のテスト用のものなどはちゃんと画像等問題なく読み込める。オーナーや権限も問題ない
+んで、ざっとファイル見ててなんとなく気になって「Thumbs.db」を削除したら表示されるようになった。
+Nginxのセキュリティ機能？なのでしょうか。仕組みは調べていない。ちゃんと勉強が必要ですね。
+追記：どうも原因は別にあったかも。再現できない。</div>
+    <div class="tags">
+      16 Jan 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/nginx/">#nginx</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014%E5%B9%B4%E3%81%AE%E7%9B%AE%E6%A8%99%E9%81%94%E6%88%90%E9%80%B2%E6%8D%97%E7%AE%A1%E7%90%86%E7%9A%84%E3%81%AA.html">2014年の目標達成進捗管理的な</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
+事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
+とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
+そういう話を聞いたので、ならば達成出来るように達成可能と思えるような目標をredmineでマイルストーンをチケットとして分解して期日を設定して進捗管理するのはどうだろうかと考えた。
+要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。
+という事で設定作業開始
+環境:  ホストOS：OS X10.9 ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T)) nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します) ruby2.0.0dev(rbenv) unicorn4.7.0 rails3.2.16 redmine2.4.2  rbenvにruby2.0を追加してデフォルトにする rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。
+参考：rbenvを利用して複数バージョンのRubyをインストール
+~$ rbenv install 2.0.0rc-2 ~$ rbenv global 2.0.0rc-2 ~$ rbenv rehash ※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
+rehashの時だけsh-rehashがうんたらってエラーになる。
+ruby2.0の状態でgem update でアップデートしてbundler入れる。
+~$ gem update ~$ gem install bundler ~$ gem install mysql2 ~$ ~/.rbenv/bin/rbenv rehash  MySQL側の準備 redmienユーザーの作成と
+データベース：redmineの作成
+redmine入れる ここから最新のredmineをダウンロード(今回は2.4.2)
+うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。
+DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。
+redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。
+~$ cd redmineディレクトリの場所 ~$ echo "gem 'unicorn'"  Gemfile.</div>
+    <div class="tags">
+      4 Jan 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/bundler/">#bundler</a>
+        
+          <a href="http://tech.k-zak.com/tags/nginx/">#nginx</a>
+        
+          <a href="http://tech.k-zak.com/tags/rails/">#rails</a>
+        
+          <a href="http://tech.k-zak.com/tags/rbenv/">#rbenv</a>
+        
+          <a href="http://tech.k-zak.com/tags/redmine/">#Redmine</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+          <a href="http://tech.k-zak.com/tags/unicorn/">#unicorn</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/javascript%E3%81%A77%E3%81%AE%E5%80%8D%E6%95%B0%E3%81%A87%E3%81%AE%E3%81%A4%E3%81%8F%E6%95%B0%E5%AD%97%E3%81%AE%E6%99%82%E3%81%A0%E3%81%91true.html">JavaScriptで7の倍数と7のつく数字の時だけtrue</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">Javascriptてこんな書き方できるのか
+◆7の倍数か7の付く数字の場合のみtrueを返す。
+var nana = function(num){ var arr = [0]; for(var i=1;i&lt; =num;i++){ arr.push( (!(i%7)||/7/.test(i))||i ); } return arr; };  7の剰余が0ではない、もしくは７が含まれる数字が真なら論理値(true)、そうでなければ数値(i)
+最初はおぉ？って思ったけれど、こうしてみるとさして不思議でもないか。</div>
+    <div class="tags">
+      22 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/fizzbuzz.html">fizzbuzz</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">Javascriptでfizzbuzz
+◆シンプルなやつ
+var fizzbuzz = function(num){ //3の倍数の時はFizz //5の倍数の時はBuzz //3かつ5の倍数の時はFizzBuzz var arr = [0]; for(var i=1;i&lt;=num;i++){ arr.push([i,"Fizz","Buzz","FizzBuzz"] [(0==i%3)+(0==i%5)*2] ); } return arr; }; =を使わないなら論理値を整数に戻すみたいな面倒なことやる。剰余を用いないならいろいろごちゃごちゃやる。
+とりあえず可読性とシンプルさから考えるとこんな書き方になるのかな。</div>
+    <div class="tags">
+      22 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/%E3%83%91%E3%82%B9%E3%82%AB%E3%83%AB%E3%81%AE%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B.html">パスカルのなんとか</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">今回は、パスカルの三角定理？みたいなやつ
+PHPでは、
+&lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(',',$arr)."\n"; } ?&gt; Perlでは、
+#!/usr/bin/perl use strict; use warnings; my $num = &lt;stdin; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(',',@list)."\n"; } &lt;/stdin Pythonでは、</div>
+    <div class="tags">
+      22 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/%E5%B9%B3%E6%96%B9%E6%A0%B9%E3%82%8D%E3%81%98%E3%81%8F.html">平方根ろじく</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">平方根で最も少ない桁数で0から9までの数字が揃うのは何？
+Pythonでチャレンジ
+#!usr/bin/python #--*-- coding: utf-8 --*-- import math from decimal import * def change_list(num): return list(str(num).replace('.','')) def check_num10(num_list): #num_list max length is 28 (default Decimal) s = set() i = 0 for x in num_list: s.add(x) i += 1 if len(s) == 10: return i #set length shorter than 10 return False return False if __name__ == '__main__': #上限100万でLoop max_loop = 1000000 k = False #桁数 i = False #数値 for x in range(0,max_loop): result = check_num10(change_list(Decimal(x).</div>
+    <div class="tags">
+      8 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA06.html">コーディングリハビリ06</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">リハビリその3
+今回は、バブルソート
+PHPでは、
+&lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(',',$arr)."\n"; } ?&gt; Perlでは、
+#!/usr/bin/perl use strict; use warnings; my $num = &lt;STDIN&gt;; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(',',@list)."\n"; }  Pythonでは、</div>
+    <div class="tags">
+      8 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA05.html">コーディングリハビリ05</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">昨日の文字チェックをPHP以外で試す。
+与えられた文字列が全てユニークな文字で構成されているかのチェック。
+PHPは前回やっているので、今回は掲載無し。
+Perlでは、
+#!/usr/bin/perl use strict; use warnings; sub check_unique{ my $str = shift; my $len = length($str); for(my $i=0;$i&lt;$len;$i++){ my $char = substr($str,$i); if(index($str,$char) != rindex($str,$char)){ return "False"; } } return "True"; } my $input = '1234567890-=\`!@#$%^&*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:"asdfghjkl;\'zxcvbnm,./ZXCVBNM&lt;&gt;?'; #my $input = &lt;STDIN&gt;; #chomp($input); print check_unique($input)."\n"; Pythonでは、
+#!/usr/bin/python #--*-- coding: utf-8 --*-- import datetime def check_unique(str): set_str = set(list(str)) if len(str) == len(set_str): return True else: return False if __name__ == "</div>
+    <div class="tags">
+      8 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA04.html">コーディングリハビリ04</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">今回は与えられた文字列が全てユニークな文字の構成かどうか調べる。
+そういう問題を出されてスマートに答えられなかったので、調べた。
+1,回答した内容を修正したもの
+2,PHPのリファレンス見てて思いついた方法
+3,文字列のままチェック
+4,PHPの関数とか出てこなくて回答できなかった、頭の中にあったロジックを具現化したもの
+　配列に変換してshiftしながらチェックする方法
+どうも実行してみると2や3が早いようだ。1文字でもユニークでなければFalseにする3が内容によっては最速
+やはり何回も配列を操作するとコストが高くなりますね。模範解答が欲しい。</div>
+    <div class="tags">
+      6 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA03.html">コーディングリハビリ03</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">リハビリその3
+今回は、バブルソート
+PHPでは、
+&lt;?php function bubble_sort(array $arr,$r){ if(1 == $r){ return $arr; } $len = count($arr)-1; for($i=0;$i&lt;$len;$i++){ if($arr[$i] &gt; $arr[$i+1]){ $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } return bubble_sort($arr,$r-1); } $input = trim(fgets(STDIN)); $arr = explode(",",$input); echo implode(",",bubble_sort($arr,count($arr)))."\n"; ?&gt; Perlでは、
+#!/usr/bin/perl use strict; use warnings; sub bubble_sort{ my($arr,$r) = @_; my @arr = @{$arr}; if(1 == $r){ return @arr; }else{ my $len = @arr; for(my $i=0;$i&lt;$len-1;$i++){ if($arr[$i] &gt; $arr[$i+1]){ my $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } bubble_sort(\@arr,$r-1) } } my $input = &lt;STDIN&gt;; chomp($input); my @arr = split(',',$input); print join("</div>
+    <div class="tags">
+      6 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+       
+    </div>
+  </div>
+
+
+</div>
+
+
+<paper-item>
+  
+    <a href="/page/2/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+  
+    <div class="flex"></div>
+  
+    <a href="/page/4/"><paper-fab icon="chevron-right"></paper-fab></a>
+  
+</paper-item>
+
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>

@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/php/index.xml</link>
+    <description>Recent content in Php on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
+      <link>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</link>
+      <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</guid>
+      <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;概要としては、FileMaker Server の XML公開を使う。&lt;/p&gt;
+
+&lt;p&gt;Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。&lt;/p&gt;
+
+&lt;p&gt;◆ハマった事：サンプルPHPの内容&lt;/p&gt;
+
+&lt;p&gt;サンプルのPHPをよく読んでなかった。。。&lt;/p&gt;
+
+&lt;p&gt;JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。&lt;/p&gt;
+
+&lt;p&gt;-db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに&lt;/p&gt;
+
+&lt;p&gt;u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数&lt;/p&gt;
+
+&lt;p&gt;ていうのがくっついてPHPにpostされてくる。&lt;/p&gt;
+
+&lt;p&gt;それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。&lt;/p&gt;
+
+&lt;p&gt;そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。&lt;/p&gt;
+
+&lt;p&gt;なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。&lt;/p&gt;
+
+&lt;p&gt;サンプルって事でいろいろハードコーディングされてるけど、気にしない。&lt;/p&gt;
+
+&lt;p&gt;◆ハマった：Nginxの設定&lt;/p&gt;
+
+&lt;p&gt;欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら&lt;/p&gt;
+
+&lt;p&gt;WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。&lt;/p&gt;
+
+&lt;p&gt;これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。&lt;/p&gt;
+
+&lt;p&gt;しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。&lt;/p&gt;
+
+&lt;p&gt;※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても&lt;/p&gt;
+
+&lt;p&gt;　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。&lt;/p&gt;
+
+&lt;p&gt;その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。&lt;/p&gt;
+
+&lt;p&gt;最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。&lt;/p&gt;
+
+&lt;p&gt;自分はUbuntuの環境なので、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo apt-get install nginx-extras&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)&lt;/p&gt;
+
+&lt;p&gt;more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;&lt;/p&gt;
+
+&lt;p&gt;を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！&lt;/p&gt;
+
+&lt;p&gt;これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。&lt;/p&gt;
+
+&lt;p&gt;いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu14.04 でphpでメール受信とか</title>
+      <link>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</link>
+      <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</guid>
+      <description>&lt;p&gt;## install postfix&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install postfix postfix-dev sasl2-bin&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;## Settings&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf&lt;/p&gt;
+
+&lt;p&gt;sudo emacs -nw /etc/postfix/main.cf&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;### 参考&lt;/p&gt;
+
+&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;### gmailに転送する設定に変更&lt;/p&gt;
+
+&lt;p&gt;relayhostにgmailを指定&lt;/p&gt;
+
+&lt;p&gt;パスワードの設定とかね。&lt;/p&gt;
+
+&lt;p&gt;## phpでメールを受信出来るよう設定&lt;/p&gt;
+
+&lt;p&gt;メールサーバ受信DNS設定とか面倒だからやめた。&lt;/p&gt;
+
+&lt;p&gt;phpinfoを見ると案の定imap入ってませんでしたので、php5.5系の落としてきてimapのディレクトリ移動してphpize&lt;/p&gt;
+
+&lt;p&gt;### configureで失敗する&lt;/p&gt;
+
+&lt;p&gt;configureしたらutf8_mime2text()がうんたらと出てきた。&lt;/p&gt;
+
+&lt;p&gt;ググると、どうもphpにimapとかメール関係入れる時にライブラリが足りないと出るエラーのようだ。&lt;/p&gt;
+
+&lt;p&gt;sudo apt-cache search libc-client&lt;/p&gt;
+
+&lt;p&gt;→libc-client2007e libc-client2007e-dev てのが出てくるので両方インストール&lt;/p&gt;
+
+&lt;p&gt;### imapうまく動かない？&lt;/p&gt;
+
+&lt;p&gt;この後無事imapインストールできたけどなぜか受信出来ない。いろいろ調べて片っ端からSSL関連インストールしたけどうまくいかない。&lt;/p&gt;
+
+&lt;p&gt;### 何が原因だったのか不明&lt;/p&gt;
+
+&lt;p&gt;結局、何かのSSL関係のライブラリインストールが最初足りなくてGmail受信失敗してた。&lt;/p&gt;
+
+&lt;p&gt;gmailからさくらのレンサバのメールアカウントで試した場合はアカウント名の指定を間違えてた。&lt;/p&gt;
+
+&lt;p&gt;テストで受信するだけだから、普通のimapアカウントの場合はnotlsをflagにつける。&lt;/p&gt;
+
+&lt;p&gt;gmailの場合は/ssl/novalidation-certみたいのつける&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2014年を振り返る サーバーサイドプログラミング</title>
+      <link>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html</link>
+      <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html</guid>
+      <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る&lt;/p&gt;
+
+&lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;
+
+&lt;p&gt;Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。&lt;/p&gt;
+
+&lt;p&gt;Perl,Python,Rubyについては全然触れなくてフラストレーション。&lt;/p&gt;
+
+&lt;p&gt;PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。&lt;/p&gt;
+
+&lt;p&gt;本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。&lt;/p&gt;
+
+&lt;p&gt;家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。&lt;/p&gt;
+
+&lt;p&gt;PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は&lt;/p&gt;
+
+&lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;
+
+&lt;p&gt;Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>新しく開発環境作成中</title>
+      <link>http://tech.k-zak.com/%E6%96%B0%E3%81%97%E3%81%8F%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E4%BD%9C%E6%88%90%E4%B8%AD.html</link>
+      <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E6%96%B0%E3%81%97%E3%81%8F%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E4%BD%9C%E6%88%90%E4%B8%AD.html</guid>
+      <description>
+
+&lt;h3 id=&#34;ubuntu14-64bit-のvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;イメージからVMWareFusionに作成&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ターミナルから LANG=C xdg-user-dirs-gtk-update を実行
+LANG=C xdg-user-dirs-gtk-update&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;設定画面が出てくるので、そのままOK&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;VMWare toolsをインストール&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開&lt;/li&gt;
+&lt;li&gt;展開したディレクトリの中に入ってインストール実行&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;aptのアップデートとアップグレード
+    sudo apt-get update&lt;br /&gt;
+    sudo apt-get upgrade&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Dropboxクライアントのインストール&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール&lt;/li&gt;
+&lt;li&gt;Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Emacsのインストール
+    sudo apt-get install emacs24&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成&lt;/li&gt;
+&lt;li&gt;作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった
+ln -s ~/Dropbox/emacs.d ~/emacs.d&lt;br /&gt;
+mv ~/emacs.d ~/.emacs.d
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;バージョン管理のインストール
+    sudo apt-get install git&lt;br /&gt;
+    sudo apt-get install mercurial&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;nginxのインストール
+    sudo apt-get install nginx&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;xEnvや各バージョンのインストールに必要になる諸々のインストール
+    sudo add-apt-repository ppa:webupd8team/java&lt;br /&gt;
+    sudo apt-get update&lt;br /&gt;
+    sudo apt-get install oracle-java7-installer ※for jruby&lt;br /&gt;
+    sudo apt-get install oracle-java8-installer ※必要であれば。&lt;br /&gt;
+    sudo update-alternatives &amp;ndash;config java&lt;br /&gt;
+    ※java7を選択する&lt;br /&gt;
+    sudo apt-get install g++ ※これをインストールしないとインストール失敗する&lt;br /&gt;
+    sudo apt-get install libssl-dev ※これをインストールしないとインストール失敗する&lt;br /&gt;
+    sudo apt-get install build-essential ※pyenvで必要になるようだ&lt;br /&gt;
+    sudo apt-get install curl ※ndenv install &amp;ndash;list で必要になる&lt;br /&gt;
+    sudo apt-get install libjpeg-dev ※phpのインストールで必要になる&lt;br /&gt;
+    sudo apt-get install re2c ※phpのインストールで必要になる&lt;br /&gt;
+    sudo apt-get install bison ※phpのインストールで必要になる&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;rbenvのインストール
+    git clone &lt;a href=&#34;https://github.com/sstephenson/rbenv.git&#34;&gt;https://github.com/sstephenson/rbenv.git&lt;/a&gt; ~/.rbenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/sstephenson/ruby-build.git&#34;&gt;https://github.com/sstephenson/ruby-build.git&lt;/a&gt; ~/.rbenv/plugins/ruby-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.rbenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${rbenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;plenvのインストール
+    git clone &lt;a href=&#34;https://github.com/tokuhirom/plenv.git&#34;&gt;https://github.com/tokuhirom/plenv.git&lt;/a&gt; ~/.plenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/tokuhirom/Perl-Build.git&#34;&gt;https://github.com/tokuhirom/Perl-Build.git&lt;/a&gt; ~/.plenv/plugins/perl-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.plenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${plenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pyenvのインストール
+    git clone &lt;a href=&#34;https://github.com/yyuu/pyenv.git&#34;&gt;https://github.com/yyuu/pyenv.git&lt;/a&gt; ~/.pyenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/yyuu/python-virtualenv.git&#34;&gt;https://github.com/yyuu/python-virtualenv.git&lt;/a&gt; ~/.pyenv/plugins/python-virtualenv&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.pyenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${pyenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ndenvのインストール
+    git clone &lt;a href=&#34;https://github.com/riywo/ndenv.git&#34;&gt;https://github.com/riywo/ndenv.git&lt;/a&gt; ~/.ndenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/riywo/node-build.git&#34;&gt;https://github.com/riywo/node-build.git&lt;/a&gt; ~/.ndenv/plugins/node-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.ndenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${ndenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;phpenvのインストール
+    git clone &lt;a href=&#34;https://github.com/CHH/phpenv.git&#34;&gt;https://github.com/CHH/phpenv.git&lt;/a&gt; ~/.phpenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/CHH/php-build.git&#34;&gt;https://github.com/CHH/php-build.git&lt;/a&gt; ~/.phpenv/plugins/php-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.phpenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${phpenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;rubyのインストールとjrubyのインストール
+    rbenv install 1.9.3-p547&lt;br /&gt;
+    rbenv install 2.1.2&lt;br /&gt;
+    rbenv install jruby-1.7.15&lt;br /&gt;
+    rbenv global 2.1.2&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;perlのインストール
+    plenv install 5.20.0&lt;br /&gt;
+    plenv global 5.20.0&lt;br /&gt;
+    plenv rehash&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pyenvのインストール
+    pyenv install jython-2.5.3&lt;br /&gt;
+    pyenv install 3.4.1&lt;br /&gt;
+    pyenv install 2.7.8&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ndenvのインストール
+    ndenv install v0.11.13&lt;br /&gt;
+    ndenv global v0.11.13&lt;br /&gt;
+    ndenv rehash&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;phpenvのインストール
+    phpenv install 5.5.16&lt;br /&gt;
+    phpenv install 5.6.0&lt;br /&gt;
+    phpenv global 5.5.16&lt;br /&gt;
+    phpenv rehash&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;php-fpmの設定
+    -: listen = 127.0.0.1:9000&lt;br /&gt;
+    +: /home/{{myhome}}/.phpenv/versions/5.5.16/var/run/php-fpm.sock&lt;br /&gt;
+    -: ;request_terminate_timeout = 0&lt;br /&gt;
+    +: request_terminate_timeout = 0&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;php.iniの設定&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;適宜timeoutやmax_sizeの調整&lt;/li&gt;
+&lt;li&gt;timezoneの設定&lt;/li&gt;
+&lt;li&gt;mbstringの設定&lt;/li&gt;
+&lt;li&gt;拡張ライブラリ分の追記&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mysqlのインストール
+    sudo apt-get install mysq&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;nginxの設定&lt;/p&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;conf.dに作成した場合はそのままで良いが、site-availableに作成した場合はsite-enableにシンボリックリンクを作成する&lt;/p&gt;
+
+&lt;p&gt;unicornで動かすredmineの分も記述する。※内容詳細は次のリンク(過去記事参照)&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;unicornでredmineの設定
+    sudo apt-get install zlib1g-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libsqlite3-dev libpcre3-dev libncurses-dev libgdbm-dev tk-dev libmagickwand-dev&lt;br /&gt;
+    sudo apt-get install python-software-properties sysv-rc-conf&lt;br /&gt;
+    gem update&lt;br /&gt;
+    gem install bundler&lt;br /&gt;
+    gem install mysql2
+    gem install rails
+    gem install rake
+    echo &amp;ldquo;gem &amp;lsquo;unicorn&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
+    echo &amp;ldquo;gem &amp;lsquo;psych&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
+    bundle install &amp;ndash;without rmagick development test sqlite postgresql
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以降の作業については過去の記事を参照する。&lt;a href=&#34;http://kazunoko.sakura.ne.jp/wordpress/?p=240&#34;&gt;2014年の目標達成進捗管理的な&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;20140916&#34;&gt;20140916&lt;/h2&gt;
+
+&lt;h3 id=&#34;memo&#34;&gt;memo&lt;/h3&gt;
+
+&lt;p&gt;Ubuntu(64bit)のphpenvにldap入れるのに詰まった事。&lt;/p&gt;
+
+&lt;p&gt;ldapのライブラリの場所に問題があったらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ln -s /usr/lib/x86_64-linux-gnu/libldap_r.so /usr/lib/libldap_r.so  
+sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ubuntu(64bit)のphpenvにpdo-oci入れるのに詰まった事。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ln -s /home/{{myhome}}/work/oracle/libclntsh.so.11.1 /home/{{myhome}}/work/oracle/libclntsh.so  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;phpenvでphpizeで忘れていたこと。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./configure --with-php-config=/home/.phpenv/versions/5.5.16/bin/php-config ※phpizeの対象を指定する必要がある
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdownのプラグインいれたけど、散々な結果。ウケる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PHPのファイルアップロードについて</title>
+      <link>http://tech.k-zak.com/php%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</link>
+      <pubDate>Sun, 07 Sep 2014 17:34:12 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/php%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</guid>
+      <description>&lt;p&gt;PHPで大きなファイルアップロードを作成する&lt;/p&gt;
+
+&lt;p&gt;・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。&lt;/p&gt;
+
+&lt;p&gt;・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file&lt;/p&gt;
+
+&lt;p&gt;・phpの設定でmax_file_size,post_max_size,タイムアウト、memory_limitなどの設定が必要&lt;/p&gt;
+
+&lt;p&gt;・Apacheのバージョンが古いと2だか4GBが上限。という噂。&lt;/p&gt;
+
+&lt;p&gt;・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PHPあべし！</title>
+      <link>http://tech.k-zak.com/php%E3%81%82%E3%81%B9%E3%81%97.html</link>
+      <pubDate>Sat, 02 Aug 2014 15:34:29 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/php%E3%81%82%E3%81%B9%E3%81%97.html</guid>
+      <description>&lt;p&gt;最近PHP触ってて「あべし！」ってなった事。&lt;/p&gt;
+
+&lt;p&gt;PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。&lt;/p&gt;
+
+&lt;p&gt;愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>パスカルのなんとか</title>
+      <link>http://tech.k-zak.com/%E3%83%91%E3%82%B9%E3%82%AB%E3%83%AB%E3%81%AE%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B.html</link>
+      <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%83%91%E3%82%B9%E3%82%AB%E3%83%AB%E3%81%AE%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B.html</guid>
+      <description>&lt;p&gt;今回は、パスカルの三角定理？みたいなやつ&lt;/p&gt;
+
+&lt;p&gt;PHPでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
+$num = trim(fgets(STDIN));
+
+$num = ($num)?(int)$num:10;
+
+$arr = array(1);
+for($i=0;$i&amp;lt;$num;$i++){
+
+    $len = count($arr);
+    $tmp = array(1);
+    for($j=0;$j&amp;lt;$len-1;$j++){
+        array_push($tmp,$arr[$j]+$arr[$j+1]);
+    }
+    array_push($tmp,1);
+    $arr = $tmp;
+    echo join(&#39;,&#39;,$arr).&#34;\n&#34;;
+}
+?&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;Perlでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $num = &amp;lt;stdin&gt;;
+chomp($num);
+
+$num ||= 10;
+
+my @list = (1);
+
+for(my $i=0;$i&amp;lt;$num;$i++){
+    my $len = @list;
+    my @tmp = (1);
+    for(my $j=0;$j&amp;lt;$len-1;$j++){
+        push(@tmp,$list[$j]+$list[$j+1]);
+    }
+    push(@tmp,1);
+    @list = @tmp;
+    print join(&#39;,&#39;,@list).&#34;\n&#34;;
+}
+&amp;lt;/stdin&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pythonでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
+if __name__ == &#39;__main__&#39;:
+    num = raw_input()
+    num = int(num) if num else 10
+    l = [1]
+    print l
+    for i in range(num):
+        l = map(lambda x,y:x+y,[0]+l,l+[0])
+        print l
+&lt;/pre&gt;
+
+&lt;p&gt;Rubyでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
+#--*-- coding: utf-8 --*--
+
+num = gets.to_i
+num ||= 10
+a=[1]
+
+num.times{
+    a=[1]+a.zip(a.slice(1..(a.size))).map{|a,b| a.to_i+b.to_i}
+    p a.join(&#39; &#39;)
+}
+&lt;/pre&gt;
+
+&lt;p&gt;Rubyはもっとシンプルな書き方があるのかもしれない。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>コーディングリハビリ06</title>
+      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA06.html</link>
+      <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA06.html</guid>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;
+
+&lt;p&gt;今回は、バブルソート&lt;/p&gt;
+
+&lt;p&gt;PHPでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
+$num = trim(fgets(STDIN));
+
+$num = ($num)?(int)$num:10;
+
+$arr = array(1);
+for($i=0;$i&amp;lt;$num;$i++){
+
+    $len = count($arr);
+    $tmp = array(1);
+    for($j=0;$j&amp;lt;$len-1;$j++){
+        array_push($tmp,$arr[$j]+$arr[$j+1]);
+    }
+    array_push($tmp,1);
+    $arr = $tmp;
+    echo join(&#39;,&#39;,$arr).&#34;\n&#34;;
+}
+?&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;Perlでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my $num = &amp;lt;STDIN&amp;gt;;
+chomp($num);
+
+$num ||= 10;
+
+my @list = (1);
+
+for(my $i=0;$i&amp;lt;$num;$i++){
+    my $len = @list;
+    my @tmp = (1);
+    for(my $j=0;$j&amp;lt;$len-1;$j++){
+        push(@tmp,$list[$j]+$list[$j+1]);
+    }
+    push(@tmp,1);
+    @list = @tmp;
+    print join(&#39;,&#39;,@list).&#34;\n&#34;;
+}
+&lt;/pre&gt;
+
+&lt;p&gt;Pythonでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
+
+if __name__ == &#39;__main__&#39;:
+    num = raw_input()
+    num = int(num) if num else 10
+    l = [1]
+    print l
+    for i in range(num):
+        l = map(lambda x,y:x+y,[0]+l,l+[0])
+        print l
+&lt;/pre&gt;
+
+&lt;p&gt;Rubyでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
+#--*-- coding: utf-8 --*--
+
+num = gets.to_i
+num ||= 10
+a=[1]
+num.times{
+    a=[1]+a.zip(a.slice(1..(a.size))).map{|a,b| a.to_i+b.to_i}
+    p a.join(&#39; &#39;)
+}
+&lt;/pre&gt;
+
+&lt;p&gt;習熟度が低いのでPerlとPHPが同じ内容になる。&lt;/p&gt;
+
+&lt;p&gt;pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。&lt;/p&gt;
+
+&lt;p&gt;すんなり1つのリストだけでできないものか&amp;#8230;&amp;#8230;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>コーディングリハビリ04</title>
+      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA04.html</link>
+      <pubDate>Fri, 06 Dec 2013 16:06:49 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA04.html</guid>
+      <description>&lt;p&gt;今回は与えられた文字列が全てユニークな文字の構成かどうか調べる。&lt;/p&gt;
+
+&lt;p&gt;そういう問題を出されてスマートに答えられなかったので、調べた。&lt;/p&gt;
+
+&lt;p&gt;1,回答した内容を修正したもの&lt;/p&gt;
+
+&lt;p&gt;2,PHPのリファレンス見てて思いついた方法&lt;/p&gt;
+
+&lt;p&gt;3,文字列のままチェック&lt;/p&gt;
+
+&lt;p&gt;4,PHPの関数とか出てこなくて回答できなかった、頭の中にあったロジックを具現化したもの&lt;/p&gt;
+
+&lt;p&gt;　配列に変換してshiftしながらチェックする方法&lt;/p&gt;
+
+&lt;p&gt;どうも実行してみると2や3が早いようだ。1文字でもユニークでなければFalseにする3が内容によっては最速&lt;/p&gt;
+
+&lt;p&gt;やはり何回も配列を操作するとコストが高くなりますね。模範解答が欲しい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>コーディングリハビリ03</title>
+      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA03.html</link>
+      <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA03.html</guid>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;
+
+&lt;p&gt;今回は、バブルソート&lt;/p&gt;
+
+&lt;p&gt;PHPでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
+
+function bubble_sort(array $arr,$r){
+    if(1 == $r){
+        return $arr;
+    }
+
+    $len = count($arr)-1;
+    for($i=0;$i&amp;lt;$len;$i++){
+        if($arr[$i] &amp;gt; $arr[$i+1]){
+            $tmp = $arr[$i+1];
+            $arr[$i+1] = $arr[$i];
+            $arr[$i] = $tmp;
+        }
+    }
+    
+    return bubble_sort($arr,$r-1);
+
+}
+
+$input = trim(fgets(STDIN));
+$arr = explode(&#34;,&#34;,$input);
+
+echo implode(&#34;,&#34;,bubble_sort($arr,count($arr))).&#34;\n&#34;;
+?&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;Perlでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+sub bubble_sort{
+    my($arr,$r) = @_;
+    my @arr = @{$arr};
+
+    if(1 == $r){
+        return @arr;
+    }else{
+        my $len = @arr;
+        for(my $i=0;$i&amp;lt;$len-1;$i++){
+            if($arr[$i] &amp;gt; $arr[$i+1]){
+                my $tmp = $arr[$i+1];
+                $arr[$i+1] = $arr[$i];
+                $arr[$i] = $tmp;
+            }
+        }
+        bubble_sort(\@arr,$r-1)
+    }
+}
+
+my $input = &amp;lt;STDIN&amp;gt;;
+chomp($input);
+my @arr = split(&#39;,&#39;,$input);
+
+print join(&#34;,&#34;,bubble_sort(\@arr,$#arr+1)).&#34;\n&#34;;
+&lt;/pre&gt;
+
+&lt;p&gt;Pythonでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
+
+def bubble_sort(arr,size=None):
+    if size == None:
+        size = len(arr)
+
+    if 1 == size:
+        return arr
+    else:
+    
+        for i in range(0,len(arr)-1):
+            if arr[i] &amp;gt; arr[i+1]:
+                arr[i],arr[i+1] = arr[i+1],arr[i]
+    
+        return bubble_sort(arr,size-1)
+        #return arr
+
+if __name__ == &#39;__main__&#39;:
+
+    input_list = map(lambda x:int(x),raw_input().split(&#34;,&#34;))
+    print bubble_sort(input_list)
+&lt;/pre&gt;
+
+&lt;p&gt;Rubyでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
+# -*- coding: utf-8 -*-
+
+def bubble_sort arr,k = arr.size
+    return arr if 1 == k
+    (arr.size-1).times do |i|
+        arr[i],arr[i+1] = arr[i+1],arr[i] if arr[i] &amp;gt; arr[i+1]
+    end
+    bubble_sort(arr,k-1)
+end
+
+arr = gets.chomp.to_s.split(&#34;,&#34;)
+arr.map!{|i| i.to_i }
+
+bubble_sort arr
+
+p arr
+&lt;/pre&gt;
+
+&lt;p&gt;Rubyが一番スマートかな&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>コーディングリハビリ02</title>
+      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA02.html</link>
+      <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA02.html</guid>
+      <description>&lt;p&gt;リハビリその２&lt;/p&gt;
+
+&lt;p&gt;今回は、ファイル読み込みとその時の簡単な例外処理&lt;/p&gt;
+
+&lt;p&gt;読み込むテキストファイルの内容は以下の通り、&lt;/p&gt;
+
+&lt;pre&gt;7
+1000
+
+1992
+あ
+A
+2000
+2001
+1900
+16
+12
+400
+&lt;/pre&gt;
+
+&lt;p&gt;PHPでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
+
+function isLeap($year=null){
+    if($year == null) return false;
+    $intYear = (int)$year;
+    if(0 != $intYear%4){
+        return false;
+    }elseif(0 == $intYear%400){
+        return true;
+    }elseif(0 == $intYear%100){
+        return false;
+    }else{
+        return true;
+    }
+}
+try{
+    if(!file_exists(&#34;leap.txt&#34;)){
+        throw new Exception(&#34;ファイルが見つかりません。&#34;);
+    }
+
+    $fp = fopen(&#34;leap.txt&#34;,&#34;r&#34;);
+
+    $lines = fgets($fp);
+    for($i=0;$i&amp;lt;$lines;$i++){
+        $year = trim(fgets($fp));
+        printf(&#34;%s is%s a leap year\n&#34;, $year,((isLeap($year))?&#34;&#34;:&#34; not&#34;));
+    }
+
+    fclose($fp);
+
+}catch(Exception $e){
+    echo $e-&amp;gt;getMessage().&#34;\n&#34;;
+}
+
+?&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;Perlでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+sub isLeap{
+    my $year = shift;
+    unless($year =~ /^[0-9]+$/ ){
+        return 0;
+    }
+    if(0 != $year%4){
+        return 0;
+    }elsif(0 == $year%400){
+        return 1;
+    }elsif(0 == $year%100){
+        return 0;
+    }else{
+        return 1;
+    }
+}
+
+my $filename = &#34;leap.txt&#34;;
+open(my $fp, &#39;&amp;lt;&#39;,$filename) or die $!;
+my $lines = &amp;lt;$fp&amp;gt;;
+chomp($lines);
+#print $lines;
+for(my $i=0;$i&amp;lt;$lines;$i++){
+    my $year = &amp;lt;$fp&amp;gt;;
+    chomp($year);
+    if(isLeap($year)){
+        print $year,&#34; is a leap year\n&#34;;
+    }else{
+        print $year,&#34; is not a leap year\n&#34;;
+    }
+}
+
+close($fp);&lt;/pre&gt;
+
+&lt;p&gt;Pythonでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
+
+def is_leap(year=None):
+    if not isinstance(year,int):
+        return False
+    elif 0 != year % 4:
+        return False
+    elif 0 == year % 400:
+        return True
+    elif 0 == year % 100:
+        return False
+    else:
+        return True
+
+if __name__ == &#39;__main__&#39;:
+    file_name = &#39;leap.txt&#39;
+    try:
+        f = open(file_name,&#39;r&#39;)
+        lines = int(f.readline().rstrip())
+        #print lines
+        for i in range(0,lines):
+            y = f.readline().rstrip()
+            #print y
+            if is_leap(y):
+                print &#34;%s is a leap year&#34; % y
+            else:
+                print &#34;%s is not a leap year&#34; % y
+        f.close()
+    except IOError as e:
+        print e.strerror&lt;/pre&gt;
+
+&lt;p&gt;Rubyでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
+# -*- coding: utf-8 -*-
+
+def is_leap(year)
+    unless /^[0-9]+$/ =~ year then
+        return false
+    end
+
+    if 0 != year%4 then
+        return false
+    elsif 0 == year%400 then
+        return true
+    elsif 0 == year%100 then
+        return false
+    else
+        return true
+    end
+end
+
+begin
+    f = open(&#34;leap.txt&#34;)
+
+    lines = f.gets.to_i
+    lines.times do |i|
+        y = f.gets.chomp
+        if is_leap(y) then
+            puts y+&#34; is a leap year&#34;
+        else
+            puts y+&#34; is not a leap year&#34;
+        end
+    end
+    f.close
+rescue =&amp;gt; e
+    p e
+end&lt;/pre&gt;
+
+&lt;p&gt;うるう年の判定処理は適当。pythonが一番しっくりくるかな。&lt;/p&gt;
+
+&lt;p&gt;rubyはreturnを省略した場合に最後に評価された値がreturnされるんだけど、pythonもだと勘違いしててハマった。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>コーディングリハビリ01</title>
+      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA01.html</link>
+      <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA01.html</guid>
+      <description>&lt;p&gt;一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。&lt;/p&gt;
+
+&lt;p&gt;&lt;a title=&#34;paiza&#34; href=&#34;https://paiza.jp/mypage&#34; target=&#34;_blank&#34;&gt;paiza&lt;/a&gt;なんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。&lt;/p&gt;
+
+&lt;p&gt;という事でリハビリ。&lt;/p&gt;
+
+&lt;p&gt;今回は標準入力。&lt;/p&gt;
+
+&lt;p&gt;PHPでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
+//標準入力をfgets関数で取得して前後の空白や改行文字を削り取る 
+$input = trim(fgets(STDIN)); 
+?&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;Perlでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;use strict;
+use warnings;
+
+my $input = &amp;lt;STDIN&amp;gt;;
+#行末の改行文字を削る
+chomp($input);&lt;/pre&gt;
+
+&lt;p&gt;Pythonでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;input = raw_input()
+#行末の改行文字とるのは厳密にはいろいろあるらしいので今回は無視&lt;/pre&gt;
+
+&lt;p&gt;Rubyでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;input = gets.chomp&lt;/pre&gt;
+
+&lt;p&gt;標準入力が「gets」だけで取れるRubyはダンディ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Laravel4触り始めました</title>
+      <link>http://tech.k-zak.com/laravel4%E8%A7%A6%E3%82%8A%E5%A7%8B%E3%82%81%E3%81%BE%E3%81%97%E3%81%9F.html</link>
+      <pubDate>Fri, 06 Dec 2013 14:07:20 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/laravel4%E8%A7%A6%E3%82%8A%E5%A7%8B%E3%82%81%E3%81%BE%E3%81%97%E3%81%9F.html</guid>
+      <description>&lt;p&gt;&lt;a title=&#34;Laravel4&#34; href=&#34;http://laravel4.kore1server.com/docs&#34; target=&#34;_blank&#34;&gt;Laravel4&lt;/a&gt;がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。&lt;/p&gt;
+
+&lt;p&gt;テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。&lt;/p&gt;
+
+&lt;p&gt;{{&amp;#8211; コメントアウトしたいコード &amp;#8211;}}って書かないといけない。ていうか、そもそも&lt;!--?php?--&gt;の外で変な書き方してたのが悪い。&lt;/p&gt;
+
+&lt;p&gt;あと、migrationの使い方全然理解していないのでそこで詰まった。&lt;/p&gt;
+
+&lt;p&gt;検索フォームの値を受け取ってモデルに検索処理投げてレコードオブジェクト(モデルイングタンス？)受け取る処理はコントローラーに書くの？それともViewファイル？&lt;/p&gt;
+
+&lt;p&gt;わかりません。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</title>
+      <link>http://tech.k-zak.com/fuelphp%E3%81%A7%E6%96%87%E5%AD%97%E5%8C%96%E3%81%91%E3%83%BC%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D%E3%81%A8%E3%83%A1%E3%83%BC%E3%83%AB.html</link>
+      <pubDate>Wed, 13 Nov 2013 15:27:30 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/fuelphp%E3%81%A7%E6%96%87%E5%AD%97%E5%8C%96%E3%81%91%E3%83%BC%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D%E3%81%A8%E3%83%A1%E3%83%BC%E3%83%AB.html</guid>
+      <description>
+
+&lt;p&gt;FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、&lt;/p&gt;
+
+&lt;h2 id=&#34;windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている&#34;&gt;Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！&lt;/h2&gt;
+
+&lt;p&gt;(PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)&lt;/p&gt;
+
+&lt;p&gt;→アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。&lt;/p&gt;
+
+&lt;p&gt;FuelPHPのUpload::save()を行う前に&lt;/p&gt;
+
+&lt;p&gt;ってやってアップロードファイル名をエンコードする。&lt;/p&gt;
+
+&lt;p&gt;弊害としては本来は内部エンコードのまま処理が進むはずだったので、同名ファイルが有る場合に枝番を付加する処理なんかが正常に動作しなくなる。&lt;/p&gt;
+
+&lt;p&gt;これでWindowsサーバーのフォルダに読める文字のファイル名でアップロードされる。&lt;/p&gt;
+
+&lt;p&gt;最初エンコードをSJISにしてたけど、CP932にしたら、①みたいなMS拡張の機種依存文字も大丈夫になった。&lt;/p&gt;
+
+&lt;p&gt;本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも 　　&lt;/p&gt;
+
+&lt;pre&gt;Upload::register(&#39;after&#39;,function($file){
+ 　　　　文字化け状態のファイルをエンコードしなおしたファイル名でリネーム 　　
+})
+&lt;/pre&gt;
+
+&lt;p&gt;とかやったら良かったのかな？&lt;/p&gt;
+
+&lt;h2 id=&#34;文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け&#34;&gt;文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け！&lt;/h2&gt;
+
+&lt;p&gt;(ま、そりゃそうですね)&lt;/p&gt;
+
+&lt;p&gt;→上記１の結果を受けてメール送信のメソッドに引数として添付ファイル名を渡す。その処理は何も加工しない。&lt;/p&gt;
+
+&lt;p&gt;メール送信用のメソッドの中で、引数で受け取った添付ファイル名をFuelPHPのmailに渡す処理を加工&lt;/p&gt;
+
+&lt;p&gt;それでも、メールヘッダがISO-2022-JPなので、機種依存文字の類はメールを受信した時に「?」とかになってるけど、それはしょうがないよね。&lt;/p&gt;
+
+&lt;h2 id=&#34;メールの件名が文字化けすることがある&#34;&gt;メールの件名が文字化けすることがある！&lt;/h2&gt;
+
+&lt;p&gt;→犯人は半角カナ。使わないで！件名はFuelPHP側で送信時にISO-2022-JPに変換してるっぽいので、mb_convert_kana関数使って件名に含まれている半角カナを全角に変換して誤魔化す。&lt;/p&gt;
+
+&lt;p&gt;以上、うんこメモでした。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>fuelphp使って分からなかったこと</title>
+      <link>http://tech.k-zak.com/fuelphp%E4%BD%BF%E3%81%A3%E3%81%A6%E5%88%86%E3%81%8B%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8.html</link>
+      <pubDate>Sun, 25 Aug 2013 12:51:13 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/fuelphp%E4%BD%BF%E3%81%A3%E3%81%A6%E5%88%86%E3%81%8B%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8.html</guid>
+      <description>&lt;p&gt;fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな&lt;/p&gt;
+
+&lt;p&gt;感じなんですけど。&lt;/p&gt;
+
+&lt;p&gt;以下に分からなかったことなど&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;１，modelの検索メソッドがクラスメソッド&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;検索条件を検索メソッドに渡してレコードオブジェクトを受け取るんだから別に&lt;/p&gt;
+
+&lt;p&gt;インスタンスメソッドである必要はないんだけど、じゃぁ返ってきたモノは&lt;/p&gt;
+
+&lt;p&gt;ただの連想配列なのかモデルオブジェクトの塊なのか&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;昔、Javaを少し自習した時にレコードオブジェクトのクラスとオブジェクトの塊を保持する&lt;/p&gt;
+
+&lt;p&gt;クラスが別になる書き方があって、自分にはその方がしっくり来るんだけど、多分塊を保持&lt;/p&gt;
+
+&lt;p&gt;するクラスが余計っていう考えなのだろうか。&lt;/p&gt;
+
+&lt;p&gt;何にしっくりこないかというと、モデルクラスの1インスタンスが1レコードオブジェクトなのか&lt;/p&gt;
+
+&lt;p&gt;その塊(1個以上)が1インスタンスなのかという事。&lt;/p&gt;
+
+&lt;p&gt;Model_Crudのメソッド見てるとhas_next()とかあるから、1個以上のレコードオブジェクトを&lt;/p&gt;
+
+&lt;p&gt;保持するイテレータオブジェクトが1インスタンスなのかなーって思う。でもそうすると、fuelphp&lt;/p&gt;
+
+&lt;p&gt;においては1レコードオブジェクトってのは1モデルインスタンスが保持するただの連想配列なのか&lt;/p&gt;
+
+&lt;p&gt;な？&lt;/p&gt;
+
+&lt;p&gt;このあたりは、PHPの他のフレームワーク勉強したり他の言語のフレームワーク勉強していくしか&lt;/p&gt;
+
+&lt;p&gt;ないかな。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;２，FieldSetクラスという便利なものの中のcheckboxの名前の付け方&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;これは多分自分の学習が足りないだけなんだと思うけど、PHPでinputフォームのチェックボックス&lt;/p&gt;
+
+&lt;p&gt;を複数用意する時、name属性をname=&amp;#8221;◯◯[]&amp;#8221;とかにして受け取ったPHPで値を配列で扱うんだけ&lt;/p&gt;
+
+&lt;p&gt;ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=&amp;#8221;◯◯[i]&amp;#8221;って[]の中&lt;/p&gt;
+
+&lt;p&gt;に数字を入れてくるんです。受け取るPHP側では配列として受け取れるぽいんだけど、fuelphpの&lt;/p&gt;
+
+&lt;p&gt;Validationでこのチェックボックスグループらのどれか1つにはチェックしていること！みたいな&lt;/p&gt;
+
+&lt;p&gt;事が出来ない。あと、jQueryのvalidationプラグインが動かない。別のものとして扱ってしまう。&lt;/p&gt;
+
+&lt;p&gt;core/classes/foeldset/の中にあるファイルのcheckboxのフォームの名前属性を作る部分を直接&lt;/p&gt;
+
+&lt;p&gt;書き換えて(本当はappフォルダにコピーするべき)使っている。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;３，FieldSetオブジェクトのフォームオブジェクトのラベル出力の時に出力されるラベル要素に&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;クラス(htmlのclass)を追加する手段が分からない。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;こいつ、checkboxやradioのグループ出力する場合は&lt;label&gt;タグ出力しないんだぜ。意味不明。&lt;br /&gt; 親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。&lt;/label&gt;&lt;/p&gt;
+
+&lt;p&gt;やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用&lt;/p&gt;
+
+&lt;p&gt;されなくて、仕方なく、requiredの場合出力されるデフォルト「*」のやつを「(必須)」てかえて&lt;/p&gt;
+
+&lt;p&gt;それを赤字にした(requiredの時に出力される奴はlabel要素外)。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;４，単にどこに何を書くかがまだ理解できていない。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;controllerのactionメソッド内にloginチェックの詳細処理を書いてるんだけど、そこは外に&lt;/p&gt;
+
+&lt;p&gt;切り出すべきなんじゃないの？とかactionメソッド内でのみ使う提携処理＆ちょっと複雑みたいな&lt;/p&gt;
+
+&lt;p&gt;のは外に切り出すべきなんだろうけど、それは別のcomponentクラスとかにクラスメソッドとして&lt;/p&gt;
+
+&lt;p&gt;出すべきなのか、同じcontrollクラスのprivateメソッドとして切り出すべきなのか。今は別の&lt;/p&gt;
+
+&lt;p&gt;クラスでも使う汎用的なものはcomponentクラスに、特定のactionメソッドからのみ呼び出すよう&lt;/p&gt;
+
+&lt;p&gt;なものは同じクラス内のprivateメソッドにしてる。actionメソッド内の記述がシンプルになれば&lt;/p&gt;
+
+&lt;p&gt;privateメソッド増産してcontrollerクラス内の行数は多くても良いのか、別クラスにどんどん&lt;/p&gt;
+
+&lt;p&gt;出していくべきなのか。でも、publicにしたくないメソッドとかあるんですよ。&lt;/p&gt;
+
+&lt;p&gt;あとはやっぱりmodelとViewModelとView。検索して取り出したレコードオブジェクトを展開する&lt;/p&gt;
+
+&lt;p&gt;のはViewModelなのかViewでやるのか、Pagenationは？formオブジェクトにデータぶっこむのは？&lt;/p&gt;
+
+&lt;p&gt;とか分からんですし、ViewModelとViewの連携のさせ方とかまだ理解できていない。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;５，やっぱりPHPのクロージャの使い所が分からない&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptは分かるんですよ。callbackとかその時だけの処理をそこに直接書くとか、function&lt;/p&gt;
+
+&lt;p&gt;定義しちゃうとグローバル領域にはいっちゃうから変数の中にいれといて、特定の処理の時に呼び出す&lt;/p&gt;
+
+&lt;p&gt;とかね。&lt;/p&gt;
+
+&lt;p&gt;でもPHPてクラスメソッドとかインスタンスメソッドとか定義してるわけじゃないですか、だから&lt;/p&gt;
+
+&lt;p&gt;JavaScriptと同じ用途ってない気がして&amp;#8230;ちょっとだけViewファイルの中で書いたりもしたけれど、&lt;/p&gt;
+
+&lt;p&gt;Helper作る程でもない処理専用って事？後は再帰定義のcallbaclくらい？よく分からんです。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

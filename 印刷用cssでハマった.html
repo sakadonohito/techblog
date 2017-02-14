@@ -1,0 +1,207 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>印刷用CSSでハマった</title>
+  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://tech.k-zak.com"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">開発メモてきな</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+<div class="content">
+
+  <div class="article">
+    <div class="title">印刷用CSSでハマった</div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description"><p>この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。</p>
+
+<p>問題のCSS: page-break-before</p>
+
+<p>いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと</p>
+
+<p>していたんだけど、ChromeではなるのにIE(対応対象はVer 9)だと改ページしてくれない。</p>
+
+<p>IEでも解釈されるはずなのになんで？ってなって諦めてたんだけど、調べてたら出てきた。</p>
+
+<p>IEの場合はpage-break-beforeが適用される要素がページをまたぐような位置にいる場合は</p>
+
+<p>無視されるそうです。で、ちゃんとは調べてないのですがpage-break-beforeの場合はその</p>
+
+<p>要素がpage-break-afterの場合は次の要素が判定基準になるっぽぽぽぽいです。</p>
+
+<p>対処方法としては改ページしたい場所にからのdivを入れてその要素に対して改ページ指定の</p>
+
+<p>cssを適用させるって方法。Web素人には分からんよ。Web上でCSSリファレンスをさっと見ても</p>
+
+<p>そのことについての記述なかったし。んもう！</p>
+</div>
+    <div class="tags">
+      2 Oct 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/css/">#css</a>
+        
+       
+    </div>
+    
+  </div>
+
+</div>
+
+<paper-item>
+  
+    <a href="http://tech.k-zak.com/ssh%E3%81%B7%E3%81%94%E3%81%B5%E3%81%81.html"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+  
+    <div class="flex"></div>
+  
+    <a href="http://tech.k-zak.com/fuelphp%E4%BD%BF%E3%81%A3%E3%81%A6%E5%88%86%E3%81%8B%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8.html"><paper-fab icon="chevron-right"></paper-fab></a>
+  
+</paper-item>
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>

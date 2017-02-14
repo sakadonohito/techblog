@@ -1,0 +1,524 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta name="generator" content="Hugo 0.18.1" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>開発メモてきな</title>
+  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://tech.k-zak.com"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">開発メモてきな</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+<div class="content">
+
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/php%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html">PHPのファイルアップロードについて</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">PHPで大きなファイルアップロードを作成する
+・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。
+・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file
+・phpの設定でmax_file_size,post_max_size,タイムアウト、memory_limitなどの設定が必要
+・Apacheのバージョンが古いと2だか4GBが上限。という噂。
+・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。</div>
+    <div class="tags">
+      7 Sep 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B2.html">Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%9C%AA%E5%88%86%E9%A1%9E/">未分類</a>
+        
+      </div>
+     
+    <div class="description">・botoが使えないってエラーになる。
+　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
+つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
+　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか
+・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを
+　使ったら成功した。なんで？
+・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。
+・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。
+　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。
+　なので「NameVirtuakHost *:80」の記述があれば、その後VirtualHostディレクティブが
+　ないといけない。
+もしもみたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
+整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。
+・Ubuntuに入ってるApache2のVirtualHostの有効化無効化
+　sites-availableディレクトリにVirtualHost設定書く
+　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化
+・Hostの指定が足りない！？
+Could not reliably determine the server&#8217;s fully qualified domain name, using for ServerName
+こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った
+　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、
+　そこに{{hostname}}.localを追記する処理追加
+・Ansible用MySQLの設定追加
+Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)
+host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)
+リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要
+・netstat -ant で現在使ってるポートとか観れる
+　(適当な解釈、後で意味をちゃんと調べる&#8230;かも)
+・MySQLが外部からつながらぬ
+webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。
+my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。
+これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。
+・ApacheのRewriteの設定漏れ
+UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。
+　AllowOverride をAllにしなかった。。。
+ということで？今のところ、Vagrantで作成したVMにMySQLやApacheの設定、それからWordPressの設置は出来るように</div>
+    <div class="tags">
+      7 Sep 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
+        
+          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
+        
+          <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
+        
+          <a href="http://tech.k-zak.com/tags/vagrant/">#Vagrant</a>
+        
+          <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B.html">Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
+の、前にAWSのS3試したので。
+・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
+・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折
+・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。
+・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。
+Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。
+・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる
+・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。
+・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う
+・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ
+以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事
+・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう
+・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する</div>
+    <div class="tags">
+      2 Aug 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
+        
+          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
+        
+          <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
+        
+          <a href="http://tech.k-zak.com/tags/s3/">#S3</a>
+        
+          <a href="http://tech.k-zak.com/tags/vagrant/">#Vagrant</a>
+        
+          <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/linux%E9%96%A2%E4%BF%82%E3%81%AE%E3%83%A1%E3%83%A2201407.html">Linux関係のメモ201407</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">Ubuntu系でのchkconfigに変わるコマンドってなんだっけ？
+-&gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要&#8230;&#8230;
+checkconfigてLinux全般共通じゃなかったんだ&#8230;&#8230;
+・Ubuntu系でインストール済みのパッケージを見るのはdpkg -l(える) この後にgrep付けるヨロシ
+・Ubuntuでパッケージの検索はapt-cache search 
+　apt-get searchじゃなかった&#8230;&#8230;</div>
+    <div class="tags">
+      2 Aug 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/linux/">#Linux</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/php%E3%81%82%E3%81%B9%E3%81%97.html">PHPあべし！</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">最近PHP触ってて「あべし！」ってなった事。
+PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。
+愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。</div>
+    <div class="tags">
+      2 Aug 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/fuelphp/">#FuelPHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/%E4%BD%8E%E3%83%AC%E3%83%99%E3%83%AB%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%81%A0%E3%81%8B%E3%82%89javascript%E3%81%A7%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E4%BA%8B.html">低レベルプログラマだからJavaScriptで知らなかった事</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">JavaScriptで知らないせいでハマったところなどなど
+Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。
+そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。
+JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
+100+10.1とかやろうとすると物凄い小さい数字が誤差として丸められず残る。</div>
+    <div class="tags">
+      2 Aug 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/%E6%9C%80%E8%BF%91%E3%82%84%E3%81%A3%E3%81%9F%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D.html">最近やったいろいろ</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
+◆PostgreSQLのSQLダンプ
+　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
+◆残念VBSバッチスクリプト
+　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない
+　・windowsのコマンドでディレクトリ削除するコマンド
+◆謎！IISの設定
+　・IISのRewrite設定
+　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定
+　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、
+　DefaultWebSiteにリダイレクトするやり方がある。
+　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない
+◆Win8.1
+　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。
+　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。
+　・win8でSQLServer2012のodbc設定がうまくいかない
+　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも
+◆PHP
+　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。
+　・PHPで頼りになるのはやはりPHP.net
+　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。
+　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。
+　※セッション制御が楽かも
+　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。
+　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ
+　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない
+　・php5.4以降はセーフモード使えない
+　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。
+　・ファイルのオーナーとかに気をつけましょう
+◆Apacheの設定
+　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く
+　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて
+　vhost.confの方に書いた
+◆SSH
+　・SSHで認証鍵ファイルを使う場合の設定方法
+　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む
+　・~/.ssh/に設定ファイルを置いておくと楽
+◆ポートフォワーディング
+　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、
+　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。</div>
+    <div class="tags">
+      16 Mar 2014
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/win%E4%B8%8A%E3%81%AEpython%E3%81%A7%E3%83%90%E3%83%83%E3%83%81%E5%87%A6%E7%90%863.html">Win上のpythonでバッチ処理3</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを
+取得し、コマンドを叩く。
+#!/usr/bin/env python # -*- coding: utf-8 -*- import os,csv,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() return data except Exception as e: #print "FileNotFound or Access Error." return None def read_file(path): try: os.path.isfile(path) f = open(path,'r') data = csv.reader(f) users = [line[0] for line in data] f.close() return users except Exception as e: #print "FileNotFound or Access Error." return None def bu_cmd(users,bu_path): if isinstance(users,list) and len(users)  0: cmds = map(lambda x:"</div>
+    <div class="tags">
+      16 Mar 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/win%E4%B8%8A%E3%81%AEpython%E3%81%A7%E3%83%90%E3%83%83%E3%83%81%E5%87%A6%E7%90%862.html">Win上のPythonでバッチ処理2</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、前回使用した作業用の
+csvファイルが存在していたら消す処理。
+#!/usr/bin/env python # -*- coding: utf-8 -*- import os.path,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() print data return data except Exception as e: #ファイルは存在しない print "FileNotFound or Access Error." return None def is_file(path): try: os.path.isfile(path) os.remove(path) #print "消してやったぜ、ヒャッハー！" return 0 except Exception as e: #print "ファイルなど存在しない" return 0 if __name__ == '__main__': #jsonファイルに作業対象ファイルパスなんかを書いておく conf_data = get_conf("conf.json") is_file(conf_data["test"]["csvPath"])  </div>
+    <div class="tags">
+      16 Mar 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/windows%E4%B8%8A%E3%81%A7python%E3%81%A7%E3%83%90%E3%83%83%E3%83%81%E5%87%A6%E7%90%861.html">Windows上でpythonでバッチ処理1</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">windows server2008上のFileMakerServerのWeb公開エンジンのプロセスを監視して
+異常終了していたらプロセスを再起動するバッチプログラムをpythonで書いてみた。
+#-*- coding:utf-8 -*- import os import urllib2 def send_mail_batch: try: import smtplib host,port = 'www.example.jp',587 username,password = 'email@example.jp','passwd' to_address = 'email@example.jp' msg = """From: %s To: %s Subject: Web公開エンジン再起動 異常終了したWeb公開エンジンプロセスを再起動しました。 . """ % (username,to_address) smtp = smtplib.SMTP(host,port) smtp.set_debuglevel(True) smtp.ehlo(host) smtp.login(username,password) smtp.sendmail(username,to_address,msg) smtp.quit() return True except: return False if __name__ == '__main__': testurl = "http://10.0.0.124/fmi/iwp" try: res = urllib2.urlopen(testurl) res.read() os.system('echo ok  ok.txt') send_mail_batch() except: os.system("fmsadmin -u account -p password start wpe"</div>
+    <div class="tags">
+      16 Mar 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+
+</div>
+
+
+<paper-item>
+  
+    <a href="/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+  
+    <div class="flex"></div>
+  
+    <a href="/page/3/"><paper-fab icon="chevron-right"></paper-fab></a>
+  
+</paper-item>
+
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>

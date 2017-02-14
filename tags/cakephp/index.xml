@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cakephp on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/cakephp/index.xml</link>
+    <description>Recent content in Cakephp on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/cakephp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CakePHPでぐはぁ</title>
+      <link>http://tech.k-zak.com/cakephp.html</link>
+      <pubDate>Tue, 14 Jun 2011 13:00:58 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/cakephp.html</guid>
+      <description>&lt;p&gt;CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ&lt;/p&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  どうもPHP5.3で動かすと非推奨なコードが沢山あるらしく、そのエラーが
+&lt;/div&gt;
+
+&lt;div&gt;
+  ドバドバでるの。で、その対処法のメモ。絶対また忘れるので。。。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ぐぐったら沢山でてきまする。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;cake/libs/configure.phpの自分がDLしたCakePHPだと110行目から少し下あたりにある&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;$reportingという変数にエラーの定数を格納する箇所で、従来の&amp;#8217;E_ALL&amp;#8217;に非推奨エラーの&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;定数は除外するよう編集する。こんな感じ&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;前：$reporting = E_ALL&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;後：$reporting = E_ALL &amp; ~E_DEPRECATED&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;場所がよく分からなかったらエラー定数(E_ALL)で検索すればいいよ。&lt;/span&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PHPのフレームワーク試す</title>
+      <link>http://tech.k-zak.com/php.html</link>
+      <pubDate>Sun, 24 Apr 2011 14:04:24 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/php.html</guid>
+      <description>&lt;p&gt;PHPのフレームワークをいくつか試してみた。&lt;/p&gt;
+
+&lt;div&gt;
+  以下、試したフレームワーク名と参考にしたチュートリアルサイト及び記事
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・CakePHP
+&lt;/div&gt;
+
+&lt;div&gt;
+  　本家？の日本語版サイトのチュートリアルを試す。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　&lt;a href=&#34;http://book.cakephp.org/ja/view/1528/CakePHPブログチュートリアル&#34;&gt;http://book.cakephp.org/ja/view/1528/CakePHPブログチュートリアル&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・Zend Framework
+&lt;/div&gt;
+
+&lt;div&gt;
+    これも本家？の翻訳サイトにあるチュートリアルを試す。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　&lt;a href=&#34;http://web-rhodia.com/zf-tutorial/&#34;&gt;http://web-rhodia.com/zf-tutorial/&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・Symfony
+&lt;/div&gt;
+
+&lt;div&gt;
+     これは日本symfonyユーザー会サイトのチュートリアルを試す。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　&lt;a href=&#34;http://www.symfony.gr.jp/docs/for-beginners/blog-tutorial/01-introduction&#34;&gt;http://www.symfony.gr.jp/docs/for-beginners/blog-tutorial/01-introduction&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・CodeIgniter
+&lt;/div&gt;
+
+&lt;div&gt;
+     ここは、調度良いのチュートリアルが見つからなかった。。。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　&lt;a href=&#34;http://codeigniter.jp/user_guide_ja/toc.html&#34;&gt;http://codeigniter.jp/user_guide_ja/toc.html&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  　&lt;a href=&#34;http://d.hatena.ne.jp/it-tech-dm/20091025/1256465675&#34;&gt;http://d.hatena.ne.jp/it-tech-dm/20091025/1256465675&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  感想としては、
+&lt;/div&gt;
+
+&lt;div&gt;
+  CakePHP:1.1や1.2で何回か触ったことあり、特に詰まることもなく、あっさり
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　　お試し終了。他のフレームワークとの比較用(基準)として今回チュート
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　　リアルを試しました。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　　感触としては、ちょろっとだけ触ったことあるRailsに似ていて(マネしたんだ
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　　から当たり前)これを覚えとくとRuby on Rails も憶えやすくなるなんてお得。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　　構造的にも自分にとっては、理解しやすい。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  Zend Framework:これは、自分にはあいそうもありません。。大文字から始まる単語を
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　　アンダースコアでつなぐ名前のつけ方は慣れていなくて、非常に違和感があ
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　　りました。あと、チュートリアルひと通りコーディングしたけど、画面真っ白
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　　エンコードか、URLの問題かな。。。生理的に受け付けない感じ。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  Symfony:チュートリアルがCakePHPのチュートリアルを参考に作ってあるだけあって
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　 とっつきやすかった。比較としてこっちは何だかJavaのStrutsを簡単にしたような
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　 印象を受けました。あとyaml設定ファイル多い。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  CodeIgniter:これは、チュートリアルがちゃんと見つからなかったこともあり、まともに
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　試せていない。手本にしたブログ記事の内容はコーディングしてみたけど、
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　BaseURLの記述がおかしいのか、どこかのディレクトリのパーミッションの
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　問題か動きませんでした。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　印象としては、あんまりフレームワークっぽくない(至れり尽くせりではない)。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　でも、軽いとか必要最小限とかの評価を良く耳にするので、ちゃんと動くところ
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　　　まで持って行ってから評価したいと思っています。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  今回のお試しの結果、自分の中での評価順位は
+&lt;/div&gt;
+
+&lt;div&gt;
+  １，CakePHP
+&lt;/div&gt;
+
+&lt;div&gt;
+  ２，Symfony
+&lt;/div&gt;
+
+&lt;div&gt;
+  ３，CodeIgniter (暫定)
+&lt;/div&gt;
+
+&lt;div&gt;
+  ４，Zend Framework
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  以上、PHP低レベル者が勝手にフレームワークを評価してみました。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

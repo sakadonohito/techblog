@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Css on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/css/index.xml</link>
+    <description>Recent content in Css on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>印刷用CSSでハマった</title>
+      <link>http://tech.k-zak.com/%E5%8D%B0%E5%88%B7%E7%94%A8css%E3%81%A7%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F.html</link>
+      <pubDate>Wed, 02 Oct 2013 16:53:01 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E5%8D%B0%E5%88%B7%E7%94%A8css%E3%81%A7%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F.html</guid>
+      <description>&lt;p&gt;この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。&lt;/p&gt;
+
+&lt;p&gt;問題のCSS: page-break-before&lt;/p&gt;
+
+&lt;p&gt;いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと&lt;/p&gt;
+
+&lt;p&gt;していたんだけど、ChromeではなるのにIE(対応対象はVer 9)だと改ページしてくれない。&lt;/p&gt;
+
+&lt;p&gt;IEでも解釈されるはずなのになんで？ってなって諦めてたんだけど、調べてたら出てきた。&lt;/p&gt;
+
+&lt;p&gt;IEの場合はpage-break-beforeが適用される要素がページをまたぐような位置にいる場合は&lt;/p&gt;
+
+&lt;p&gt;無視されるそうです。で、ちゃんとは調べてないのですがpage-break-beforeの場合はその&lt;/p&gt;
+
+&lt;p&gt;要素がpage-break-afterの場合は次の要素が判定基準になるっぽぽぽぽいです。&lt;/p&gt;
+
+&lt;p&gt;対処方法としては改ページしたい場所にからのdivを入れてその要素に対して改ページ指定の&lt;/p&gt;
+
+&lt;p&gt;cssを適用させるって方法。Web素人には分からんよ。Web上でCSSリファレンスをさっと見ても&lt;/p&gt;
+
+&lt;p&gt;そのことについての記述なかったし。んもう！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>css 印刷のために</title>
+      <link>http://tech.k-zak.com/css-%E5%8D%B0%E5%88%B7%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB.html</link>
+      <pubDate>Sun, 25 Aug 2013 04:39:26 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/css-%E5%8D%B0%E5%88%B7%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB.html</guid>
+      <description>&lt;p&gt;なんとかPHP側でPDF作成とかじゃなくてhtml＆cssで楽したい。&lt;/p&gt;
+
+&lt;p&gt;そんな時のcss設定とか。&lt;/p&gt;
+
+&lt;p&gt;まず、対象レイアウトに印刷用css作っていきます。&lt;/p&gt;
+
+&lt;p&gt;cssの中で@media print とかやっておくと、印刷の時だけ適用されるので、css作ってる間は&lt;/p&gt;
+
+&lt;p&gt;その指定外しておいたほうが楽ね。&lt;/p&gt;
+
+&lt;p&gt;出来上がったら、htmlのheadでそのcssをmedia=&amp;#8221;print&amp;#8221;の指定付きで読み込む。&lt;/p&gt;
+
+&lt;p&gt;後はhtml内に印刷ボタン配置して印刷ボタン押したらbody要素のクラスに&amp;#8221;print&amp;#8221;を付与&lt;/p&gt;
+
+&lt;p&gt;javascriptで印刷→setTimeoutなんかで１秒後にbodyに付与したprintクラスを今度は&lt;/p&gt;
+
+&lt;p&gt;消してやれば、元通り！って寸法です。&lt;/p&gt;
+
+&lt;p&gt;ページ番号とかリンク？とか印刷日付とかはブラウザの仕様らしいので我慢。&lt;/p&gt;
+
+&lt;p&gt;それが嫌ならPDFで一から作ってください。難易度の落差が凄いな。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cssメモ ちょっとしたもの</title>
+      <link>http://tech.k-zak.com/css%E3%83%A1%E3%83%A2-%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E3%81%97%E3%81%9F%E3%82%82%E3%81%AE.html</link>
+      <pubDate>Sun, 25 Aug 2013 04:21:32 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/css%E3%83%A1%E3%83%A2-%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E3%81%97%E3%81%9F%E3%82%82%E3%81%AE.html</guid>
+      <description>&lt;p&gt;cssでwindowサイズに応じてbodyのcss定義を変える。&lt;/p&gt;
+
+&lt;p&gt;まぁ、bootstrapで使っている上に固定のメニューリストみたいなのある時に&lt;/p&gt;
+
+&lt;p&gt;windowの横幅めっちゃ狭めるとアレですやん。その辺の細工。&lt;/p&gt;
+
+&lt;p&gt;共通の見た目にしたい用クラス作っとくと便利。というかそれが本来の使い方。&lt;/p&gt;
+
+&lt;p&gt;例えば初期状態は非表示にしたい要素用クラスとそのcss定義とかね。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cssメモ 配下の指定</title>
+      <link>http://tech.k-zak.com/css%E3%83%A1%E3%83%A2-%E9%85%8D%E4%B8%8B%E3%81%AE%E6%8C%87%E5%AE%9A.html</link>
+      <pubDate>Sun, 25 Aug 2013 04:11:02 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/css%E3%83%A1%E3%83%A2-%E9%85%8D%E4%B8%8B%E3%81%AE%E6%8C%87%E5%AE%9A.html</guid>
+      <description>&lt;p&gt;cssで配下の指定勘違いしておかしな事やってたのでメモ&lt;/p&gt;
+
+&lt;p&gt;結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。&lt;/p&gt;
+
+&lt;p&gt;最初&lt;/p&gt;
+
+&lt;p&gt;１，scrollさせたいdivの定義&lt;/p&gt;
+
+&lt;p&gt;２，position:absoluteを使ってtableのheaderを上に固定させつつbodyだけスクールするよう&lt;/p&gt;
+
+&lt;p&gt;定義&lt;/p&gt;
+
+&lt;p&gt;この時、１で基準となるdivとその配下のdiv(scrollの指定したdev)の定義をしていて&lt;/p&gt;
+
+&lt;p&gt;tableヘッダはscrollの定義をしたdivの子要素だからってそういう書き方してたら、&lt;/p&gt;
+
+&lt;p&gt;tableヘッダ要素が意図する位置に固定されたような感じになるんだけど目には見えない&lt;/p&gt;
+
+&lt;p&gt;状態になった。レイヤーの上下関係とかかな？とか思っていじくり回してたけど、違った。&lt;/p&gt;
+
+&lt;p&gt;tableヘッダ要素は基準になるdiv配下のtheadみたいな描き方しないと駄目でした。&lt;/p&gt;
+
+&lt;p&gt;div#base{&lt;/p&gt;
+
+&lt;p&gt;posision: relative;&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;div#scroll{&lt;/p&gt;
+
+&lt;p&gt;スクロールの設定(html上ではdiv#baseの子要素)&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;てやっている状態の時に&lt;/p&gt;
+
+&lt;p&gt;ｘ div#scroll table thead ・・・これだとscroll定義されたdivの影響下(間違って無くね？)&lt;/p&gt;
+
+&lt;p&gt;◯ div#base table thead ・・・これだと基準divの位置を基準にして正しく表示される。&lt;/p&gt;
+
+&lt;p&gt;div#scrollは#baseの子要素なんだから問題無いだろうと思ってて、開発者ツールとかで確認すると&lt;/p&gt;
+
+&lt;p&gt;意図する位置にいるのに表示されない状態。cssからすると、htmlどう書かれているか知ったこっちゃない&lt;/p&gt;
+
+&lt;p&gt;ってことなんだろうね。css上でキチンとどこの配下の何の要素か書いてあげないといけんというこってす。&lt;/p&gt;
+
+&lt;p&gt;そうそう、tableのheaderとbodyを分けるとheaderとbodyでtdの幅が合わなくなる事がある(内容次第)ので&lt;/p&gt;
+
+&lt;p&gt;javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせるって事も必要です。固定幅じゃない場合。&lt;/p&gt;
+
+&lt;p&gt;最終的な見本を下に(htmlはめんどうなので載せてません)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

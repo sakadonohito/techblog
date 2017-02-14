@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Perl on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/perl/index.xml</link>
+    <description>Recent content in Perl on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/perl/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
+      <link>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</link>
+      <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</guid>
+      <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;概要としては、FileMaker Server の XML公開を使う。&lt;/p&gt;
+
+&lt;p&gt;Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。&lt;/p&gt;
+
+&lt;p&gt;◆ハマった事：サンプルPHPの内容&lt;/p&gt;
+
+&lt;p&gt;サンプルのPHPをよく読んでなかった。。。&lt;/p&gt;
+
+&lt;p&gt;JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。&lt;/p&gt;
+
+&lt;p&gt;-db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに&lt;/p&gt;
+
+&lt;p&gt;u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数&lt;/p&gt;
+
+&lt;p&gt;ていうのがくっついてPHPにpostされてくる。&lt;/p&gt;
+
+&lt;p&gt;それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。&lt;/p&gt;
+
+&lt;p&gt;そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。&lt;/p&gt;
+
+&lt;p&gt;なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。&lt;/p&gt;
+
+&lt;p&gt;サンプルって事でいろいろハードコーディングされてるけど、気にしない。&lt;/p&gt;
+
+&lt;p&gt;◆ハマった：Nginxの設定&lt;/p&gt;
+
+&lt;p&gt;欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら&lt;/p&gt;
+
+&lt;p&gt;WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。&lt;/p&gt;
+
+&lt;p&gt;これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。&lt;/p&gt;
+
+&lt;p&gt;しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。&lt;/p&gt;
+
+&lt;p&gt;※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても&lt;/p&gt;
+
+&lt;p&gt;　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。&lt;/p&gt;
+
+&lt;p&gt;その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。&lt;/p&gt;
+
+&lt;p&gt;最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。&lt;/p&gt;
+
+&lt;p&gt;自分はUbuntuの環境なので、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo apt-get install nginx-extras&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)&lt;/p&gt;
+
+&lt;p&gt;more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;&lt;/p&gt;
+
+&lt;p&gt;を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！&lt;/p&gt;
+
+&lt;p&gt;これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。&lt;/p&gt;
+
+&lt;p&gt;いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
+      <link>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</link>
+      <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</guid>
+      <description>&lt;p&gt;古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ&lt;/p&gt;
+
+&lt;p&gt;最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。&lt;/p&gt;
+
+&lt;p&gt;502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。&lt;/p&gt;
+
+&lt;p&gt;結局、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install fcgiwrap
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも&lt;br /&gt;
+/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo sysv-rc-conf on fcgiwrap
+sudo service fcgiwrap start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でFastCGIが動くようになる。&lt;br /&gt;
+最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、&lt;br /&gt;
+参考：&lt;a href=&#34;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&#34;&gt;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&lt;/a&gt;&lt;br /&gt;
+これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。&lt;/p&gt;
+
+&lt;p&gt;Nginxの設定はlocationディレクティブだけ抜粋すると&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#拡張子が.plで終わるリクエストの場合
+location ~ \.pl$ {
+    try_files $uri = 404;
+    gzip off;
+    #インストールしたfcgiwrapのソケットファイルのパス
+    fastcgi_pass unix:/var/run/fcgiwrap.socket;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    #/etc/nginx/fastcgi_paramsの内容を読み込む。
+    include fastcgi_params;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service nginx restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで適用にperl書いて(シェバンはもちろん#!/usr/bin/env perl ですよ)試したら動きました。&lt;/p&gt;
+
+&lt;p&gt;自分はplenvを使っているのですが、システムのperl読み込まれてライブラリねーぞゴルァなった事があった。謎。&lt;br /&gt;
+plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
+
+&lt;p&gt;この記事書いてる時に見つけた他の方のWeb。先にここを見つけたかった。。。&lt;br /&gt;
+参考：&lt;a href=&#34;http://ekzemplaro.org/data_base/doc/web_server/nginx/&#34;&gt;http://ekzemplaro.org/data_base/doc/web_server/nginx/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;やれやれですよ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2014年を振り返る サーバーサイドプログラミング</title>
+      <link>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html</link>
+      <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html</guid>
+      <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る&lt;/p&gt;
+
+&lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;
+
+&lt;p&gt;Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。&lt;/p&gt;
+
+&lt;p&gt;Perl,Python,Rubyについては全然触れなくてフラストレーション。&lt;/p&gt;
+
+&lt;p&gt;PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。&lt;/p&gt;
+
+&lt;p&gt;本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。&lt;/p&gt;
+
+&lt;p&gt;家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。&lt;/p&gt;
+
+&lt;p&gt;PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は&lt;/p&gt;
+
+&lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;
+
+&lt;p&gt;Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>パスカルのなんとか</title>
+      <link>http://tech.k-zak.com/%E3%83%91%E3%82%B9%E3%82%AB%E3%83%AB%E3%81%AE%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B.html</link>
+      <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%83%91%E3%82%B9%E3%82%AB%E3%83%AB%E3%81%AE%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B.html</guid>
+      <description>&lt;p&gt;今回は、パスカルの三角定理？みたいなやつ&lt;/p&gt;
+
+&lt;p&gt;PHPでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
+$num = trim(fgets(STDIN));
+
+$num = ($num)?(int)$num:10;
+
+$arr = array(1);
+for($i=0;$i&amp;lt;$num;$i++){
+
+    $len = count($arr);
+    $tmp = array(1);
+    for($j=0;$j&amp;lt;$len-1;$j++){
+        array_push($tmp,$arr[$j]+$arr[$j+1]);
+    }
+    array_push($tmp,1);
+    $arr = $tmp;
+    echo join(&#39;,&#39;,$arr).&#34;\n&#34;;
+}
+?&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;Perlでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $num = &amp;lt;stdin&gt;;
+chomp($num);
+
+$num ||= 10;
+
+my @list = (1);
+
+for(my $i=0;$i&amp;lt;$num;$i++){
+    my $len = @list;
+    my @tmp = (1);
+    for(my $j=0;$j&amp;lt;$len-1;$j++){
+        push(@tmp,$list[$j]+$list[$j+1]);
+    }
+    push(@tmp,1);
+    @list = @tmp;
+    print join(&#39;,&#39;,@list).&#34;\n&#34;;
+}
+&amp;lt;/stdin&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pythonでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
+if __name__ == &#39;__main__&#39;:
+    num = raw_input()
+    num = int(num) if num else 10
+    l = [1]
+    print l
+    for i in range(num):
+        l = map(lambda x,y:x+y,[0]+l,l+[0])
+        print l
+&lt;/pre&gt;
+
+&lt;p&gt;Rubyでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
+#--*-- coding: utf-8 --*--
+
+num = gets.to_i
+num ||= 10
+a=[1]
+
+num.times{
+    a=[1]+a.zip(a.slice(1..(a.size))).map{|a,b| a.to_i+b.to_i}
+    p a.join(&#39; &#39;)
+}
+&lt;/pre&gt;
+
+&lt;p&gt;Rubyはもっとシンプルな書き方があるのかもしれない。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>コーディングリハビリ06</title>
+      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA06.html</link>
+      <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA06.html</guid>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;
+
+&lt;p&gt;今回は、バブルソート&lt;/p&gt;
+
+&lt;p&gt;PHPでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
+$num = trim(fgets(STDIN));
+
+$num = ($num)?(int)$num:10;
+
+$arr = array(1);
+for($i=0;$i&amp;lt;$num;$i++){
+
+    $len = count($arr);
+    $tmp = array(1);
+    for($j=0;$j&amp;lt;$len-1;$j++){
+        array_push($tmp,$arr[$j]+$arr[$j+1]);
+    }
+    array_push($tmp,1);
+    $arr = $tmp;
+    echo join(&#39;,&#39;,$arr).&#34;\n&#34;;
+}
+?&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;Perlでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my $num = &amp;lt;STDIN&amp;gt;;
+chomp($num);
+
+$num ||= 10;
+
+my @list = (1);
+
+for(my $i=0;$i&amp;lt;$num;$i++){
+    my $len = @list;
+    my @tmp = (1);
+    for(my $j=0;$j&amp;lt;$len-1;$j++){
+        push(@tmp,$list[$j]+$list[$j+1]);
+    }
+    push(@tmp,1);
+    @list = @tmp;
+    print join(&#39;,&#39;,@list).&#34;\n&#34;;
+}
+&lt;/pre&gt;
+
+&lt;p&gt;Pythonでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
+
+if __name__ == &#39;__main__&#39;:
+    num = raw_input()
+    num = int(num) if num else 10
+    l = [1]
+    print l
+    for i in range(num):
+        l = map(lambda x,y:x+y,[0]+l,l+[0])
+        print l
+&lt;/pre&gt;
+
+&lt;p&gt;Rubyでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
+#--*-- coding: utf-8 --*--
+
+num = gets.to_i
+num ||= 10
+a=[1]
+num.times{
+    a=[1]+a.zip(a.slice(1..(a.size))).map{|a,b| a.to_i+b.to_i}
+    p a.join(&#39; &#39;)
+}
+&lt;/pre&gt;
+
+&lt;p&gt;習熟度が低いのでPerlとPHPが同じ内容になる。&lt;/p&gt;
+
+&lt;p&gt;pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。&lt;/p&gt;
+
+&lt;p&gt;すんなり1つのリストだけでできないものか&amp;#8230;&amp;#8230;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>コーディングリハビリ05</title>
+      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA05.html</link>
+      <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA05.html</guid>
+      <description>&lt;p&gt;昨日の文字チェックをPHP以外で試す。&lt;/p&gt;
+
+&lt;p&gt;与えられた文字列が全てユニークな文字で構成されているかのチェック。&lt;/p&gt;
+
+&lt;p&gt;PHPは前回やっているので、今回は掲載無し。&lt;/p&gt;
+
+&lt;p&gt;Perlでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+sub check_unique{
+     my $str = shift;
+     my $len = length($str);
+     for(my $i=0;$i&amp;lt;$len;$i++){
+         my $char = substr($str,$i);
+         if(index($str,$char) != rindex($str,$char)){
+             return &#34;False&#34;;
+         }
+     }
+     return &#34;True&#34;;
+}
+
+my $input = &#39;1234567890-=\`!@#$%^&amp;*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:&#34;asdfghjkl;\&#39;zxcvbnm,./ZXCVBNM&amp;lt;&amp;gt;?&#39;;
+#my $input = &amp;lt;STDIN&amp;gt;;
+#chomp($input);
+
+print check_unique($input).&#34;\n&#34;;&lt;/pre&gt;
+
+&lt;p&gt;Pythonでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
+#--*-- coding: utf-8 --*--
+
+import datetime
+
+def check_unique(str):
+
+    set_str = set(list(str))
+    if len(str) == len(set_str):
+        return True
+    else:
+        return False
+
+if __name__ == &#34;__main__&#34;:
+
+    input_str = &#39;1234567890-=\`!@#$%^&amp;*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:&#34;asdfghjkl;\&#39;zxcvbnm,./ZXCVBNM&amp;lt;&amp;gt;?&#39;
+    #input_str = raw_input()
+    start_time = datetime.datetime.now().microsecond
+    print check_unique(input_str)
+    end_time = datetime.datetime.now().microsecond
+    print &#34;%f&#34; % (end_time - start_time)
+&lt;/pre&gt;
+
+&lt;p&gt;Rubyでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
+#--*-- coding: utf-8 --*--
+
+def check_unique(str)
+
+    #インデックス最大値=文字の長さ-1
+    for i in 0..str.length-1
+        unless str.index(str[i].to_s) == str.rindex(str[i].to_s) then
+            return false
+        end
+    end
+    return true
+end
+
+_input = &#39;1234567890-=\`!@#$%^&amp;*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:&#34;asdfghjkl;\&#39;zxcvbnm,./ZXCVBNM&amp;lt;&amp;gt;?&#39;
+
+puts check_unique(_input)
+&lt;/pre&gt;
+
+&lt;p&gt;文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。&lt;/p&gt;
+
+&lt;p&gt;配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。&lt;/p&gt;
+
+&lt;p&gt;pythonが一番スッキリしているようだけど、やっぱりRubyかな&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>コーディングリハビリ03</title>
+      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA03.html</link>
+      <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA03.html</guid>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;
+
+&lt;p&gt;今回は、バブルソート&lt;/p&gt;
+
+&lt;p&gt;PHPでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
+
+function bubble_sort(array $arr,$r){
+    if(1 == $r){
+        return $arr;
+    }
+
+    $len = count($arr)-1;
+    for($i=0;$i&amp;lt;$len;$i++){
+        if($arr[$i] &amp;gt; $arr[$i+1]){
+            $tmp = $arr[$i+1];
+            $arr[$i+1] = $arr[$i];
+            $arr[$i] = $tmp;
+        }
+    }
+    
+    return bubble_sort($arr,$r-1);
+
+}
+
+$input = trim(fgets(STDIN));
+$arr = explode(&#34;,&#34;,$input);
+
+echo implode(&#34;,&#34;,bubble_sort($arr,count($arr))).&#34;\n&#34;;
+?&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;Perlでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+sub bubble_sort{
+    my($arr,$r) = @_;
+    my @arr = @{$arr};
+
+    if(1 == $r){
+        return @arr;
+    }else{
+        my $len = @arr;
+        for(my $i=0;$i&amp;lt;$len-1;$i++){
+            if($arr[$i] &amp;gt; $arr[$i+1]){
+                my $tmp = $arr[$i+1];
+                $arr[$i+1] = $arr[$i];
+                $arr[$i] = $tmp;
+            }
+        }
+        bubble_sort(\@arr,$r-1)
+    }
+}
+
+my $input = &amp;lt;STDIN&amp;gt;;
+chomp($input);
+my @arr = split(&#39;,&#39;,$input);
+
+print join(&#34;,&#34;,bubble_sort(\@arr,$#arr+1)).&#34;\n&#34;;
+&lt;/pre&gt;
+
+&lt;p&gt;Pythonでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
+
+def bubble_sort(arr,size=None):
+    if size == None:
+        size = len(arr)
+
+    if 1 == size:
+        return arr
+    else:
+    
+        for i in range(0,len(arr)-1):
+            if arr[i] &amp;gt; arr[i+1]:
+                arr[i],arr[i+1] = arr[i+1],arr[i]
+    
+        return bubble_sort(arr,size-1)
+        #return arr
+
+if __name__ == &#39;__main__&#39;:
+
+    input_list = map(lambda x:int(x),raw_input().split(&#34;,&#34;))
+    print bubble_sort(input_list)
+&lt;/pre&gt;
+
+&lt;p&gt;Rubyでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
+# -*- coding: utf-8 -*-
+
+def bubble_sort arr,k = arr.size
+    return arr if 1 == k
+    (arr.size-1).times do |i|
+        arr[i],arr[i+1] = arr[i+1],arr[i] if arr[i] &amp;gt; arr[i+1]
+    end
+    bubble_sort(arr,k-1)
+end
+
+arr = gets.chomp.to_s.split(&#34;,&#34;)
+arr.map!{|i| i.to_i }
+
+bubble_sort arr
+
+p arr
+&lt;/pre&gt;
+
+&lt;p&gt;Rubyが一番スマートかな&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>コーディングリハビリ02</title>
+      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA02.html</link>
+      <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA02.html</guid>
+      <description>&lt;p&gt;リハビリその２&lt;/p&gt;
+
+&lt;p&gt;今回は、ファイル読み込みとその時の簡単な例外処理&lt;/p&gt;
+
+&lt;p&gt;読み込むテキストファイルの内容は以下の通り、&lt;/p&gt;
+
+&lt;pre&gt;7
+1000
+
+1992
+あ
+A
+2000
+2001
+1900
+16
+12
+400
+&lt;/pre&gt;
+
+&lt;p&gt;PHPでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
+
+function isLeap($year=null){
+    if($year == null) return false;
+    $intYear = (int)$year;
+    if(0 != $intYear%4){
+        return false;
+    }elseif(0 == $intYear%400){
+        return true;
+    }elseif(0 == $intYear%100){
+        return false;
+    }else{
+        return true;
+    }
+}
+try{
+    if(!file_exists(&#34;leap.txt&#34;)){
+        throw new Exception(&#34;ファイルが見つかりません。&#34;);
+    }
+
+    $fp = fopen(&#34;leap.txt&#34;,&#34;r&#34;);
+
+    $lines = fgets($fp);
+    for($i=0;$i&amp;lt;$lines;$i++){
+        $year = trim(fgets($fp));
+        printf(&#34;%s is%s a leap year\n&#34;, $year,((isLeap($year))?&#34;&#34;:&#34; not&#34;));
+    }
+
+    fclose($fp);
+
+}catch(Exception $e){
+    echo $e-&amp;gt;getMessage().&#34;\n&#34;;
+}
+
+?&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;Perlでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+sub isLeap{
+    my $year = shift;
+    unless($year =~ /^[0-9]+$/ ){
+        return 0;
+    }
+    if(0 != $year%4){
+        return 0;
+    }elsif(0 == $year%400){
+        return 1;
+    }elsif(0 == $year%100){
+        return 0;
+    }else{
+        return 1;
+    }
+}
+
+my $filename = &#34;leap.txt&#34;;
+open(my $fp, &#39;&amp;lt;&#39;,$filename) or die $!;
+my $lines = &amp;lt;$fp&amp;gt;;
+chomp($lines);
+#print $lines;
+for(my $i=0;$i&amp;lt;$lines;$i++){
+    my $year = &amp;lt;$fp&amp;gt;;
+    chomp($year);
+    if(isLeap($year)){
+        print $year,&#34; is a leap year\n&#34;;
+    }else{
+        print $year,&#34; is not a leap year\n&#34;;
+    }
+}
+
+close($fp);&lt;/pre&gt;
+
+&lt;p&gt;Pythonでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
+
+def is_leap(year=None):
+    if not isinstance(year,int):
+        return False
+    elif 0 != year % 4:
+        return False
+    elif 0 == year % 400:
+        return True
+    elif 0 == year % 100:
+        return False
+    else:
+        return True
+
+if __name__ == &#39;__main__&#39;:
+    file_name = &#39;leap.txt&#39;
+    try:
+        f = open(file_name,&#39;r&#39;)
+        lines = int(f.readline().rstrip())
+        #print lines
+        for i in range(0,lines):
+            y = f.readline().rstrip()
+            #print y
+            if is_leap(y):
+                print &#34;%s is a leap year&#34; % y
+            else:
+                print &#34;%s is not a leap year&#34; % y
+        f.close()
+    except IOError as e:
+        print e.strerror&lt;/pre&gt;
+
+&lt;p&gt;Rubyでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
+# -*- coding: utf-8 -*-
+
+def is_leap(year)
+    unless /^[0-9]+$/ =~ year then
+        return false
+    end
+
+    if 0 != year%4 then
+        return false
+    elsif 0 == year%400 then
+        return true
+    elsif 0 == year%100 then
+        return false
+    else
+        return true
+    end
+end
+
+begin
+    f = open(&#34;leap.txt&#34;)
+
+    lines = f.gets.to_i
+    lines.times do |i|
+        y = f.gets.chomp
+        if is_leap(y) then
+            puts y+&#34; is a leap year&#34;
+        else
+            puts y+&#34; is not a leap year&#34;
+        end
+    end
+    f.close
+rescue =&amp;gt; e
+    p e
+end&lt;/pre&gt;
+
+&lt;p&gt;うるう年の判定処理は適当。pythonが一番しっくりくるかな。&lt;/p&gt;
+
+&lt;p&gt;rubyはreturnを省略した場合に最後に評価された値がreturnされるんだけど、pythonもだと勘違いしててハマった。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>コーディングリハビリ01</title>
+      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA01.html</link>
+      <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA01.html</guid>
+      <description>&lt;p&gt;一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。&lt;/p&gt;
+
+&lt;p&gt;&lt;a title=&#34;paiza&#34; href=&#34;https://paiza.jp/mypage&#34; target=&#34;_blank&#34;&gt;paiza&lt;/a&gt;なんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。&lt;/p&gt;
+
+&lt;p&gt;という事でリハビリ。&lt;/p&gt;
+
+&lt;p&gt;今回は標準入力。&lt;/p&gt;
+
+&lt;p&gt;PHPでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
+//標準入力をfgets関数で取得して前後の空白や改行文字を削り取る 
+$input = trim(fgets(STDIN)); 
+?&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;Perlでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;use strict;
+use warnings;
+
+my $input = &amp;lt;STDIN&amp;gt;;
+#行末の改行文字を削る
+chomp($input);&lt;/pre&gt;
+
+&lt;p&gt;Pythonでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;input = raw_input()
+#行末の改行文字とるのは厳密にはいろいろあるらしいので今回は無視&lt;/pre&gt;
+
+&lt;p&gt;Rubyでは、&lt;/p&gt;
+
+&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;input = gets.chomp&lt;/pre&gt;
+
+&lt;p&gt;標準入力が「gets」だけで取れるRubyはダンディ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Perlの動作環境？について</title>
+      <link>http://tech.k-zak.com/perl%E3%81%AE%E5%8B%95%E4%BD%9C%E7%92%B0%E5%A2%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</link>
+      <pubDate>Sun, 20 Jan 2013 15:25:11 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/perl%E3%81%AE%E5%8B%95%E4%BD%9C%E7%92%B0%E5%A2%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</guid>
+      <description>&lt;p&gt;長らく更新してませんでしたが、その間にFlask試したり、最近なんかは&lt;/p&gt;
+
+&lt;p&gt;ちょっとだけVisual C++を初心者本見ながら動かしてました。&lt;/p&gt;
+
+&lt;p&gt;C++分かんない。&lt;/p&gt;
+
+&lt;p&gt;さて、PerlをVPS上で動かす＆Mojolicious::Liteで作成中の簡単なFAQアプリの為、Perlを&lt;/p&gt;
+
+&lt;p&gt;どうやって動かすのか、簡単に試したのでまとめてみた。(まとまってないし解説にもなってない)&lt;/p&gt;
+
+&lt;p&gt;perlを使えるように設定する&lt;/p&gt;
+
+&lt;p&gt;１，Perlを入れましょう。既に入っている場合はバージョンを確認してできるだけ偶数ナンバーの最新版を入れましょう&lt;/p&gt;
+
+&lt;p&gt;※奇数番号のバージョンは実験要素が強いと聞いたことがありますのでperl-14.xが良いかと&lt;/p&gt;
+
+&lt;p&gt;※perl -v でバージョンの確認ができます。&lt;/p&gt;
+
+&lt;p&gt;２，Perlbrewを入れましょうバージョンを切り替えたりライブラリを追加したりが楽になるそうです。&lt;/p&gt;
+
+&lt;p&gt;３，ターミナルベースで動かす&lt;/p&gt;
+
+&lt;p&gt;ファイルの拡張子を「.pl」とかにして内容はprint &amp;#8220;Hello,World\n&amp;#8221;;とか書いて&lt;/p&gt;
+
+&lt;p&gt;ターミナルで「perl aaa.pl」とかやると起動して処理実行しますね。&lt;/p&gt;
+
+&lt;p&gt;厳密にはファイルエンコードはUTF-8にしましょうとか、ソースの行頭にお決まりの書き方をするとかありますけど&lt;/p&gt;
+
+&lt;p&gt;その内容については省略するので他で調べてください。&lt;/p&gt;
+
+&lt;p&gt;４，ApacheにCGIの設定して動かす&lt;/p&gt;
+
+&lt;p&gt;特になんの設定もせずPerlファイルをWeb公開領域に置いてもソースをそのまま画面に出力したり、&lt;/p&gt;
+
+&lt;p&gt;エラーになったりします。&lt;/p&gt;
+
+&lt;p&gt;・ApacheにCGIの設定を書いていない&lt;/p&gt;
+
+&lt;p&gt;・作成したPerlファイルに実行権限がついていない&lt;/p&gt;
+
+&lt;p&gt;などが主な理由です。権限についてはchmodコマンドで実行権限を付与してください。&lt;/p&gt;
+
+&lt;p&gt;Apacheの設定ファイル「httpd.conf」もしくはVirtual-Hostの設定をしているなら「httpd-vhost.conf」を&lt;/p&gt;
+
+&lt;p&gt;開いて設定を記述します。&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
+
+&lt;p&gt;&lt;Directory &amp;#8220;/virtualhostdirectory/hoge&amp;#8221;&gt;&lt;/p&gt;
+
+&lt;p&gt;AddHandler cgi-script .cgi .pl .py .rb&lt;/p&gt;
+
+&lt;p&gt;Options All&lt;/p&gt;
+
+&lt;p&gt;AllowOverride All&lt;/p&gt;
+
+&lt;p&gt;Order allow,deny&lt;/p&gt;
+
+&lt;p&gt;Allow from all&lt;/p&gt;
+
+&lt;p&gt;&lt;/Directory&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
+
+&lt;p&gt;こんな感じで。「AddHandler cgi-script」に対象拡張子を連ねる感じで記述すると動くようになります。&lt;/p&gt;
+
+&lt;p&gt;※当然LoadModuleのところでmod_cgiを読み込んでいるのが前提です。&lt;/p&gt;
+
+&lt;p&gt;※上の例では、Perl以外にもRubyやPythonもCGiで動く設定にしてますのん。&lt;/p&gt;
+
+&lt;p&gt;５，Apacheにmod_perlの設定をして動かす&lt;/p&gt;
+
+&lt;p&gt;まず自分の使っているApacheの拡張モジュール置き場にmod_perl.soがいる確認。自分の場合はMBP 10.8の&lt;/p&gt;
+
+&lt;p&gt;組込み?のApacheを使っているので/usr/libexec/apache2/mod_perl.soを確認。いた!&lt;/p&gt;
+
+&lt;p&gt;所定の場所にファイルがない人は別途調べてファイルを入手なりコンパイルなりしてください。&lt;/p&gt;
+
+&lt;p&gt;※ URL:&lt;a href=&#34;http://perl.apache.org/download/index.html&#34;&gt;http://perl.apache.org/download/index.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;・httpd.confのLoadModuleが沢山記述されているあたりの最後尾に「LoadModule perl_module /usr/libexec/apache2/mod_perl.so」&lt;/p&gt;
+
+&lt;p&gt;を追記&lt;/p&gt;
+
+&lt;p&gt;・適当なとこに下記の記述※自分の場合は上記のvirtualhostディレクトリ内に追記&lt;/p&gt;
+
+&lt;p&gt;・上記の設定で既に普通のCGIでPerlが動くようになってしまっているのでPerl関係拡張子を除外しておくこと!&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
+
+&lt;p&gt;&lt;IfModule perl_module&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;FilesMatch &amp;#8220;\.(pl|cgi)$&amp;#8221;&gt;&lt;/p&gt;
+
+&lt;p&gt;SetHandler perl-script&lt;/p&gt;
+
+&lt;p&gt;PerlHandler ModPerl::Registry&lt;/p&gt;
+
+&lt;p&gt;# Options +ExecCGII&lt;/p&gt;
+
+&lt;p&gt;Options All&lt;/p&gt;
+
+&lt;p&gt;PerlSendHeader On&lt;/p&gt;
+
+&lt;p&gt;&lt;/FilesMatch&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/IfModule&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
+
+&lt;p&gt;※自分の場合はOptions +ExecCGIでは動かなかったので、Allにしちゃった。&lt;/p&gt;
+
+&lt;p&gt;apache2を再起動してうごけばmod_perlが動作していることでしょう。&lt;/p&gt;
+
+&lt;p&gt;６，Plackで動かす&lt;/p&gt;
+
+&lt;p&gt;・cpanmでPlackを入れる&lt;/p&gt;
+
+&lt;p&gt;・こんな感じのソースを書く(ファイル名はsample.psgi)&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
+
+&lt;p&gt;#!/usr/bin/env perl&lt;/p&gt;
+
+&lt;p&gt;#-*- coding:utf-8 -*-&lt;/p&gt;
+
+&lt;p&gt;use strict;&lt;/p&gt;
+
+&lt;p&gt;use warnings;&lt;/p&gt;
+
+&lt;p&gt;my $app = sub{&lt;/p&gt;
+
+&lt;p&gt;my $env = shift;&lt;/p&gt;
+
+&lt;p&gt;return [&lt;/p&gt;
+
+&lt;p&gt;200,&lt;/p&gt;
+
+&lt;p&gt;[&amp;#8216;Content-Type&amp;#8217;=&amp;gt;&amp;#8217;text/plain&amp;#8217;],&lt;/p&gt;
+
+&lt;p&gt;[&amp;#8220;Hello World&amp;#8221;],&lt;/p&gt;
+
+&lt;p&gt;];&lt;/p&gt;
+
+&lt;p&gt;};&lt;/p&gt;
+
+&lt;p&gt;return $app;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
+
+&lt;p&gt;・書いたソースファイルの有る場所で以下のコマンド実行&lt;/p&gt;
+
+&lt;p&gt;$ plack sample.psgi&lt;/p&gt;
+
+&lt;p&gt;・&lt;a href=&#34;http://localhost:5000&#34;&gt;http://localhost:5000&lt;/a&gt; にアクセスHello Worldが表示されれば成功!&lt;/p&gt;
+
+&lt;p&gt;７，StarmanてやつならMojoliciousで作ったアプリも動くらしいぜ!?&lt;/p&gt;
+
+&lt;p&gt;・cpanmでStarmanを入れる&lt;/p&gt;
+
+&lt;p&gt;・Mojolicious(※自分のはLite)のルートディレクトリに移動して以下のコマンド実行&lt;/p&gt;
+
+&lt;p&gt;$ starman myapp.pl ※自分のMojoアプリのメイン?ファイルの名前がmyapp.pl&lt;/p&gt;
+
+&lt;p&gt;うまくいくと、&lt;a href=&#34;http://localhost:5000/でMojoのルートにアクセスできーる。&#34;&gt;http://localhost:5000/でMojoのルートにアクセスできーる。&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;８，ApacheにProxyの設定してApache経由でStarmanのMojoアプリにアクセス&lt;/p&gt;
+
+&lt;p&gt;・ApacheにProxy_moduleとProxy_http_moduleが入っているか確認&lt;/p&gt;
+
+&lt;p&gt;・Apacheの設定ファイル編集(※自分の場合はvirtualhostの部分に追記)&lt;/p&gt;
+
+&lt;p&gt;※以下の内容をVirtualhostディレクティブ内に追記、自分の場合はDirectoryディレクティブの前に記述&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
+
+&lt;p&gt;ProxyPass /studies/studyPerl/psgi/ &lt;a href=&#34;http://localhost:5000/&#34;&gt;http://localhost:5000/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ProxyPassReverse /studies/studyPerl/psgi &lt;a href=&#34;http://localhost:5000/&#34;&gt;http://localhost:5000/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
+
+&lt;p&gt;※pathはもちろん適宜読み替えましょうね&lt;/p&gt;
+
+&lt;p&gt;これで上記プロキシに設定したURLにアクセスして無事Mojoアプリが動いてたらOK!&lt;/p&gt;
+
+&lt;p&gt;※Apacheの設定変えたらApache再起動とかアクセスする前にStarman起動済みなのはモチロンですよ&lt;/p&gt;
+
+&lt;p&gt;これでVPSにperl入れてMojoアプリ動かす準備が出来たかな?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>フレームワークちょいちょい</title>
+      <link>http://tech.k-zak.com/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A1%E3%82%87%E3%81%84%E3%81%A1%E3%82%87%E3%81%84.html</link>
+      <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A1%E3%82%87%E3%81%84%E3%81%A1%E3%82%87%E3%81%84.html</guid>
+      <description>&lt;p&gt;ここ最近はフレームワークを少し触ってる。&lt;/p&gt;
+
+&lt;p&gt;Perl：Mojolicious::Lite&lt;/p&gt;
+
+&lt;p&gt;→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に&lt;/p&gt;
+
+&lt;p&gt;各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/&lt;/p&gt;
+
+&lt;p&gt;layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。&lt;/p&gt;
+
+&lt;p&gt;このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Ruby：Sinatra&lt;/p&gt;
+
+&lt;p&gt;→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか&lt;/p&gt;
+
+&lt;p&gt;ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。&lt;/p&gt;
+
+&lt;p&gt;これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;PHP：FuelPHP&lt;/p&gt;
+
+&lt;p&gt;→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。&lt;/p&gt;
+
+&lt;p&gt;これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや&lt;/p&gt;
+
+&lt;p&gt;コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは&lt;/p&gt;
+
+&lt;p&gt;public/assetsて階層に配置するんですね。&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。&lt;/p&gt;
+
+&lt;p&gt;OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート&lt;/p&gt;
+
+&lt;p&gt;出来ないとかで&amp;#8230;&amp;#8230;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Perl勉強してるメモ１</title>
+      <link>http://tech.k-zak.com/perl%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%A6%E3%82%8B%E3%83%A1%E3%83%A2%EF%BC%91.html</link>
+      <pubDate>Tue, 09 Oct 2012 05:02:19 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/perl%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%A6%E3%82%8B%E3%83%A1%E3%83%A2%EF%BC%91.html</guid>
+      <description>&lt;p&gt;何故か最近Perlの勉強を始めた。&lt;/p&gt;
+
+&lt;p&gt;気になった箇所のまとめ、&lt;/p&gt;
+
+&lt;p&gt;■変数と型&lt;/p&gt;
+
+&lt;p&gt;・普通(単一)のデータはスカラー変数で扱う：$val = &amp;#8216;Hello&amp;#8217;;&lt;/p&gt;
+
+&lt;p&gt;・配列は「$」の代わりに「＠」でも中の要素を扱う時は「$」でインデックスの指定は[]&lt;/p&gt;
+
+&lt;p&gt;：@array = (1,2,3,4,5); print $array[0] # 1&lt;/p&gt;
+
+&lt;p&gt;・ハッシュは「$」の代わりに「%」でも中の要素を扱う時は「$」で指定は{}&lt;/p&gt;
+
+&lt;p&gt;：%hash = (&amp;#8216;a&amp;#8217;=&amp;gt;&amp;#8217;1&amp;#8242;,&amp;#8217;b&amp;#8217;=&amp;gt;&amp;#8217;2&amp;#8217;); print $hash{a} # 1&lt;/p&gt;
+
+&lt;p&gt;■変数スコープ&lt;/p&gt;
+
+&lt;p&gt;・{}ブロックでスコープは仕切られている。そのため変数はmyを使ってスコープを意識した変数宣言を&lt;/p&gt;
+
+&lt;p&gt;すると良いとされている。&lt;/p&gt;
+
+&lt;p&gt;・ファイルスコープは実は１ファイル１パッケージ的な扱いでパッケージスコープ。&lt;/p&gt;
+
+&lt;p&gt;・例えばファイル直下の位置で$cgi = CGI-&amp;gt;new; とかやっておけば、subを呼ぶ時に毎回$cgiを&lt;/p&gt;
+
+&lt;p&gt;引数として渡す必要はない。&lt;/p&gt;
+
+&lt;p&gt;参考 Gist：&lt;a href=&#34;https://gist.github.com/3855891&#34; title=&#34;https://gist.github.com/3855891&#34;&gt;https://gist.github.com/3855891&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;■リファレンス&lt;/p&gt;
+
+&lt;p&gt;・C言語で言うところのポインタ？配列やハッシュをサブルーチンに渡す際に変数のリファレンスを&lt;/p&gt;
+
+&lt;p&gt;渡す。そうしないと呼び出し先では１つの引数データに連結されてしまっているのでうまく復元できない。&lt;/p&gt;
+
+&lt;p&gt;・リファレンスで渡された値をsubスコープ内の新たな変数に入れてデリファレンスして編集すると、&lt;/p&gt;
+
+&lt;p&gt;元の変数の値が変わっている。デリファレンスした値を新たな変数に入れて編集した場合は影響しない。&lt;/p&gt;
+
+&lt;p&gt;参考Gist：&lt;a href=&#34;https://gist.github.com/3850245&#34; title=&#34;https://gist.github.com/3850245&#34;&gt;https://gist.github.com/3850245&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/3856617&#34; title=&#34;https://gist.github.com/3856617&#34;&gt;https://gist.github.com/3856617&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;■ファイルの扱いなど&lt;/p&gt;
+
+&lt;p&gt;・use IO=&amp;gt;&amp;#8217;utf8&amp;#8242;; としておくとUTF-8でファイルIOで扱う。&lt;/p&gt;
+
+&lt;p&gt;・ファイルハンドルはレキシカルスコープ変数を使うようにしましょう。&lt;/p&gt;
+
+&lt;p&gt;・またopen関数は3引数の形で使いましょう。&lt;/p&gt;
+
+&lt;p&gt;open(my $fh,&amp;rsquo;&amp;lt;&amp;#8216;,$file_path);&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;■モジュールについて&lt;/p&gt;
+
+&lt;p&gt;・use strict;と use warnings; はワンライナー(or実験)以外では必ずつけましょう。&lt;/p&gt;
+
+&lt;p&gt;・use feature &amp;#8216;say&amp;#8217;;とするとsay関数が使える。これはprint関数+改行らしい。便利。&lt;/p&gt;
+
+&lt;p&gt;・自作外部ファイル、PHPでいうところのrequire用ファイルのようなファイルは拡張子を&lt;/p&gt;
+
+&lt;p&gt;「.pm」にする。&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;■他&lt;/p&gt;
+
+&lt;p&gt;・qq や qw は便利なので積極的に使って行きましょう。&lt;/p&gt;
+
+&lt;p&gt;例：qq(&lt;input type=&amp;#8221;text&amp;#8221; name=&amp;#8221;name&amp;#8221; id=&amp;#8221;name_id&amp;#8221; class=&amp;#8221;input&amp;#8221; value=&amp;#8221;$cgi-&gt;{name}&amp;#8221;/&amp;gt;);&lt;/p&gt;
+
+&lt;p&gt;て感じで使える。&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;まぁ、こんな感じで。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/java/index.xml</link>
+    <description>Recent content in Java on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>JavaのDWRって何さ　設定メモ</title>
+      <link>http://tech.k-zak.com/java_dwr.html</link>
+      <pubDate>Wed, 13 Apr 2011 19:26:26 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/java_dwr.html</guid>
+      <description>&lt;div&gt;
+  JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。
+&lt;/div&gt;
+
+&lt;div&gt;
+  原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを
+&lt;/div&gt;
+
+&lt;div&gt;
+  作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで
+&lt;/div&gt;
+
+&lt;div&gt;
+  構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。
+&lt;/div&gt;
+
+&lt;div&gt;
+  とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを
+&lt;/div&gt;
+
+&lt;div&gt;
+  簡単にJavaScript上で扱う仕組み？な感じ。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  参考URL：
+&lt;/div&gt;
+
+&lt;div&gt;
+  DWRのサイト　&lt;a href=&#34;http://directwebremoting.org/dwr/index.html&#34;&gt;http://directwebremoting.org/dwr/index.html&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  2007の@ITの記事　&lt;a href=&#34;http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html&#34;&gt;http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  具体的な手順の説明
+&lt;/div&gt;
+
+&lt;div&gt;
+  １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　落とす。
+&lt;/div&gt;
+
+&lt;div&gt;
+  ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　２つを入れる。
+&lt;/div&gt;
+
+&lt;div&gt;
+  ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　あと、このクラスの定義のパッケージは何でも良い。
+&lt;/div&gt;
+
+&lt;div&gt;
+  ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも
+&lt;/div&gt;
+
+&lt;div&gt;
+        良い。この時、実在しない(dwr.jarが自動生成する)JSを&lt;script&gt;タグに書いておく
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　※説明たるいので、サイトとか参照して下さい。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　　どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。
+&lt;/div&gt;
+
+&lt;div&gt;
+  ５，dwr用のxmlとweb.xmlに必要情報を定義。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  これでもう終わりのはずだったんだけど、動かない。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  原因は冒頭で書いた、DWRを動かすための必要なパッケージを間違った作り方してた。
+&lt;/div&gt;
+
+&lt;div&gt;
+  パッケージを作ることは必要だけど、中身はいらない。
+&lt;/div&gt;
+
+&lt;div&gt;
+  おそらく、パッケージ内が空なのはどこにも書いてなかったけど必要なようだ。
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>動かないじゃないか</title>
+      <link>http://tech.k-zak.com/post.html</link>
+      <pubDate>Sun, 27 Jun 2010 04:08:43 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/post.html</guid>
+      <description>&lt;p&gt;はじめての サーブレット＆JSP という本を見ながら&lt;/p&gt;
+
+&lt;div&gt;
+  写経してますが、サーブレットからJNDIを使ってMySQLに接続する
+&lt;/div&gt;
+
+&lt;div&gt;
+  章がうまくいきません。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  MySQLは入れる事自体は非常に簡単、ターミナルで操作する時は
+&lt;/div&gt;
+
+&lt;div&gt;
+  いつもキャラセットをいれてやらにゃいかんので、
+&lt;/div&gt;
+
+&lt;div&gt;
+  phpMyAdminを導入しました。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  参考URL
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://planet.mysql.com/entry/?id=23997&#34;&gt;http://planet.mysql.com/entry/?id=23997&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  直接接続処理を書くと、うまくいくのですが、JNDIを使う、
+&lt;/div&gt;
+
+&lt;div&gt;
+  Server.xml や context.xml にリソースの設定を書いておく方法だと
+&lt;/div&gt;
+
+&lt;div&gt;
+  サーブレットエラー、中を見てるとどうも、名前がみつからないだか
+&lt;/div&gt;
+
+&lt;div&gt;
+  ドライバが使えないだかのエラーががが。。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  Webで調べて出てきたような事は一通りやってみたけど
+&lt;/div&gt;
+
+&lt;div&gt;
+  状況が進展しないので、JNDI使わないやり方で先に進む。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  以下が参考にしたURL
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://d.hatena.ne.jp/uen1130/touch/20090621/1245563877&#34;&gt;http://d.hatena.ne.jp/uen1130/touch/20090621/1245563877&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://www.javaroad.jp/opensource/js_tomcat8.htm&#34;&gt;http://www.javaroad.jp/opensource/js_tomcat8.htm&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://d.hatena.ne.jp/m-namiki/touch/20090403/1238745886&#34;&gt;http://d.hatena.ne.jp/m-namiki/touch/20090403/1238745886&lt;/a&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

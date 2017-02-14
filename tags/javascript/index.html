@@ -1,0 +1,460 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>Javascript</title>
+  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://tech.k-zak.com"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">開発メモてきな</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+<div class="content">
+
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html">fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
+https://github.com/seedcode/fmxj
+概要としては、FileMaker Server の XML公開を使う。
+Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。
+◆ハマった事：サンプルPHPの内容
+サンプルのPHPをよく読んでなかった。。。
+JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。
+-db=dbname&amp;-lay=layname&amp;-query=(q1)&amp;-q1=Status&amp;-q1.value=Vendor&amp;-findquery みたいな通常のクエリデータに
+u=undefined&amp;p=undefined&amp;l=コンテンツの文字数
+ていうのがくっついてPHPにpostされてくる。
+それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。
+そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。
+なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。
+サンプルって事でいろいろハードコーディングされてるけど、気にしない。
+◆ハマった：Nginxの設定
+欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら
+WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
+これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
+しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
+※Nginxで add_header Content-Type &#8216;application/xml&#8217;してもmime-typeの設定ファイルに追記しても
+　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
+その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
+最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
+自分はUbuntuの環境なので、
+ sudo apt-get install nginx-extras
+ 後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
+more_set_headers &#8216;Content-Type: application/xml; charset=UTF8&#8217;;
+を追記、more&#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
+これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
+いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</div>
+    <div class="tags">
+      16 Feb 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
+        
+          <a href="http://tech.k-zak.com/tags/fmxj/">#fmxj</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+          <a href="http://tech.k-zak.com/tags/mojolicious/">#Mojolicious</a>
+        
+          <a href="http://tech.k-zak.com/tags/nginx/">#nginx</a>
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-javascript%E7%B7%A8.html">2014年を振り返る JavaScript編</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
+JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
+結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
+document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。
+jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。
+ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。
+ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。
+もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。
+CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。</div>
+    <div class="tags">
+      30 Dec 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/%E4%BD%8E%E3%83%AC%E3%83%99%E3%83%AB%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%81%A0%E3%81%8B%E3%82%89javascript%E3%81%A7%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E4%BA%8B.html">低レベルプログラマだからJavaScriptで知らなかった事</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">JavaScriptで知らないせいでハマったところなどなど
+Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。
+そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。
+JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
+100+10.1とかやろうとすると物凄い小さい数字が誤差として丸められず残る。</div>
+    <div class="tags">
+      2 Aug 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/javascript%E3%81%A77%E3%81%AE%E5%80%8D%E6%95%B0%E3%81%A87%E3%81%AE%E3%81%A4%E3%81%8F%E6%95%B0%E5%AD%97%E3%81%AE%E6%99%82%E3%81%A0%E3%81%91true.html">JavaScriptで7の倍数と7のつく数字の時だけtrue</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">Javascriptてこんな書き方できるのか
+◆7の倍数か7の付く数字の場合のみtrueを返す。
+var nana = function(num){ var arr = [0]; for(var i=1;i&lt; =num;i++){ arr.push( (!(i%7)||/7/.test(i))||i ); } return arr; };  7の剰余が0ではない、もしくは７が含まれる数字が真なら論理値(true)、そうでなければ数値(i)
+最初はおぉ？って思ったけれど、こうしてみるとさして不思議でもないか。</div>
+    <div class="tags">
+      22 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/fizzbuzz.html">fizzbuzz</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">Javascriptでfizzbuzz
+◆シンプルなやつ
+var fizzbuzz = function(num){ //3の倍数の時はFizz //5の倍数の時はBuzz //3かつ5の倍数の時はFizzBuzz var arr = [0]; for(var i=1;i&lt;=num;i++){ arr.push([i,"Fizz","Buzz","FizzBuzz"] [(0==i%3)+(0==i%5)*2] ); } return arr; }; =を使わないなら論理値を整数に戻すみたいな面倒なことやる。剰余を用いないならいろいろごちゃごちゃやる。
+とりあえず可読性とシンプルさから考えるとこんな書き方になるのかな。</div>
+    <div class="tags">
+      22 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/jquery%E3%81%A7%E3%81%BE%E3%81%9F%E4%BD%BF%E3%81%84%E6%96%B9%E5%BF%98%E3%82%8C%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9D%E3%81%86%E3%81%AA%E3%82%84%E3%81%A4%E3%82%89%E3%83%A1%E3%83%A2.html">jQueryでまた使い方忘れて調べそうなやつらメモ</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">gistベタ貼りじゃ！</div>
+    <div class="tags">
+      25 Aug 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+          <a href="http://tech.k-zak.com/tags/jquery/">#jQuery</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/jquery%E3%81%A7%E8%A6%81%E7%B4%A0%E3%81%AE%E9%AB%98%E3%81%95%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B.html">jQueryで要素の高さを変える</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">まぁ、アレですよ。よかれと思って表示非表示をトグルする要素作ったら、
+非表示にした分、開いたスペースだけ下にあるリスト(table)要素の高さ広げてよ
+っていうオマケに品質求めちゃう的な要望があったわけですよ。
+jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、今要素をたたんでいるのか
+広げてるのか分からないのでis(&#8220;:hidden&#8221;)なんてのを使って調べるわけですね。
+だったらshow()とhide()使っても良くね？的な。</div>
+    <div class="tags">
+      25 Aug 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+          <a href="http://tech.k-zak.com/tags/jquery/">#jQuery</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/css%E3%83%A1%E3%83%A2-%E9%85%8D%E4%B8%8B%E3%81%AE%E6%8C%87%E5%AE%9A.html">cssメモ 配下の指定</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">cssで配下の指定勘違いしておかしな事やってたのでメモ
+結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。
+最初
+１，scrollさせたいdivの定義
+２，position:absoluteを使ってtableのheaderを上に固定させつつbodyだけスクールするよう
+定義
+この時、１で基準となるdivとその配下のdiv(scrollの指定したdev)の定義をしていて
+tableヘッダはscrollの定義をしたdivの子要素だからってそういう書き方してたら、
+tableヘッダ要素が意図する位置に固定されたような感じになるんだけど目には見えない
+状態になった。レイヤーの上下関係とかかな？とか思っていじくり回してたけど、違った。
+tableヘッダ要素は基準になるdiv配下のtheadみたいな描き方しないと駄目でした。
+div#base{
+posision: relative;
+}
+div#scroll{
+スクロールの設定(html上ではdiv#baseの子要素)
+}
+てやっている状態の時に
+ｘ div#scroll table thead ・・・これだとscroll定義されたdivの影響下(間違って無くね？)
+◯ div#base table thead ・・・これだと基準divの位置を基準にして正しく表示される。
+div#scrollは#baseの子要素なんだから問題無いだろうと思ってて、開発者ツールとかで確認すると
+意図する位置にいるのに表示されない状態。cssからすると、htmlどう書かれているか知ったこっちゃない
+ってことなんだろうね。css上でキチンとどこの配下の何の要素か書いてあげないといけんというこってす。
+そうそう、tableのheaderとbodyを分けるとheaderとbodyでtdの幅が合わなくなる事がある(内容次第)ので
+javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせるって事も必要です。固定幅じゃない場合。
+最終的な見本を下に(htmlはめんどうなので載せてません)</div>
+    <div class="tags">
+      25 Aug 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/css/">#css</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/java_dwr.html">JavaのDWRって何さ　設定メモ</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。   原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを   作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。     アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？     DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで   構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。   とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを   簡単にJavaScript上で扱う仕組み？な感じ。     参考URL：   DWRのサイト　http://directwebremoting.org/dwr/index.html   2007の@ITの記事　http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html     具体的な手順の説明   １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を   落とす。   ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル   ２つを入れる。   ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな   あと、このクラスの定義のパッケージは何でも良い。   ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも   良い。この時、実在しない(dwr.jarが自動生成する)JSをタグに書いておく   ※説明たるいので、サイトとか参照して下さい。   どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。   ５，dwr用のxmlとweb.</div>
+    <div class="tags">
+      13 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/java/">#Java</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+
+</div>
+
+
+<paper-item>
+  
+    <paper-fab disabled icon="chevron-left"></paper-fab>
+  
+    <div class="flex"></div>
+  
+    <paper-fab disabled icon="chevron-right"></paper-fab>
+  
+</paper-item>
+
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>

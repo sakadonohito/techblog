@@ -1,0 +1,367 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>Django お勉強 Part2</title>
+  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://tech.k-zak.com"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">開発メモてきな</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+<div class="content">
+
+  <div class="article">
+    <div class="title">Django お勉強 Part2</div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description"><div>
+  古いDBMagazineに載ってたDjangoのチュートリアル的なものを
+</div>
+
+<div>
+  試してみたら、また詰まった。
+</div>
+
+<div>
+</div>
+
+<div>
+  正しいかどうかは別にして解決したメモ
+</div>
+
+<div>
+</div>
+
+<div>
+  症状：見本通りにコード書いたらエラー出た。(reverse関数)
+</div>
+
+<div>
+  views.pyファイルの◯◯メソッドのreturnにDjango組込みのreverse関数
+</div>
+
+<div>
+  を使って、画面遷移させようとした。
+</div>
+
+<div>
+</div>
+
+<div>
+  雑誌の通りにコーディングしたら、エラーが出た。
+</div>
+
+<div>
+  意訳：<strong>その関数の引数argsはシーケンスじゃないと駄目だぜ、おまいの</strong>
+</div>
+
+<div>
+  <strong>            は</strong><strong>longだぜ。</strong>
+</div>
+
+<div>
+  最初、どう書いたかというと、
+</div>
+
+<div>
+  <span style="font-size: 0.8em;">return HttpResponseRedirect(reverse(&#8216;enkai.enkai_app.views.detail&#8217;,args=<strong><span style="font-size: 1.25em;">(e.id)</span></strong>))</span>
+</div>
+
+<div>
+</div>
+
+<div>
+  はて？と思い、引数の値を固定値にしてみた
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-size: medium;"><span style="font-size: 0.8em;">return HttpResponseRedirect(reverse(&#8216;enkai.enkai_app.views.detail&#8217;,args=<strong><span style="font-size: 1.25em;">(1)</span></strong>))</span></span>
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-family: Arial; font-size: medium;">そしたら今度は「<strong>おまいのはintだぜ</strong>」ってエラーになった。</span>
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-family: Arial; font-size: medium;"><br /> </span>
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-family: Arial; font-size: medium;">これは引数に与えるデータ型が問題なのだと考え至ったがpython初心者</span>
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-family: Arial; font-size: medium;">の</span>自分はエラーメッセージ中の「<strong>シーケンス</strong>」の意味を理解していなか
+</div>
+
+<div>
+  った。
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-family: Arial; font-size: medium;"><br /> </span>
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-family: Arial; font-size: medium;">次に固定値で与えてる引数を文字列として与えてみた。</span>
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-size: medium;"><span style="font-size: 0.8em;">return HttpResponseRedirect(reverse(&#8216;enkai.enkai_app.views.detail&#8217;,args=<strong>(&#8216;1&#8217;)</strong>))</span></span>
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-family: Arial; font-size: medium;">これは成功しました。でも、ここで、「じゃあ、e.idを渡したい時はど</span>
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-family: Arial; font-size: medium;">うすんの</span>さ」と沈黙。。。
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-family: Arial; font-size: medium;"><br /> </span>
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-family: Arial; font-size: medium;">んでgoogle先生に「ptython sequence」とかで訪ねて解決、最終的に</span>
+</div>
+
+<div>
+  <span class="Apple-style-span" style="color: #000000; font-size: medium;"><span style="font-size: 0.8em;">return HttpResponseRedirect(reverse(&#8216;enkai.enkai_app.views.detail&#8217;,args=<strong><span style="font-size: 1.25em;">[e.id]</span></strong>))</span></span>
+</div>
+
+<div>
+  と、「<strong>( )タプル？</strong>」だったところを「<strong>[ ]リスト</strong>」に変えたら意図する動
+</div>
+
+<div>
+  きをするようになりました。
+</div>
+
+<div>
+</div>
+
+<div>
+  あとで軽く調べたところ、<strong>シーケンス</strong>型というのがありその下位に<strong>リス</strong>
+</div>
+
+<div>
+  <strong>ト</strong>や<strong>タプル</strong>、<strong>文字列</strong>というデータ型があるそうです。
+</div>
+
+<div>
+</div>
+
+<div>
+  あれ？リストと文字列がOKでタプルが駄目ってどういう事？と思ったら
+</div>
+
+<div>
+  要素が１つしかないタプル型の場合は必ず<strong>(e.id,)</strong>とカンマを最後にいれて
+</div>
+
+<div>
+  おかないと<strong>イケナイ</strong>ようです。最後のカンマがない場合は計算式の普通
+</div>
+
+<div>
+  の括弧と認識されてしまうようです。だからlongだのintだのと怒られた
+</div>
+
+<div>
+  訳ですね。
+</div>
+
+<div>
+</div>
+
+<div>
+  試しにコードを再度編集して
+</div>
+
+<div>
+  <span style="font-size: 0.8em;">return HttpResponseRedirect(reverse(&#8216;enkai.enkai_app.views.detail&#8217;,args=<strong><span style="font-size: 1.25em;">(e.id,)</span></strong>))</span>
+</div>
+
+<div>
+  で、試したところ、ちゃんと動きました。
+</div>
+
+<div>
+</div>
+
+<div>
+  めでたしめでたし。。
+</div>
+</div>
+    <div class="tags">
+      20 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/django/">#Django</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+    
+  </div>
+
+</div>
+
+<paper-item>
+  
+    <a href="http://tech.k-zak.com/memo.html"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+  
+    <div class="flex"></div>
+  
+    <a href="http://tech.k-zak.com/django.html"><paper-fab icon="chevron-right"></paper-fab></a>
+  
+</paper-item>
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>

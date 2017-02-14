@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postfix on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/postfix/index.xml</link>
+    <description>Recent content in Postfix on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/postfix/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ubuntu14.04 でphpでメール受信とか</title>
+      <link>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</link>
+      <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</guid>
+      <description>&lt;p&gt;## install postfix&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install postfix postfix-dev sasl2-bin&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;## Settings&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf&lt;/p&gt;
+
+&lt;p&gt;sudo emacs -nw /etc/postfix/main.cf&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;### 参考&lt;/p&gt;
+
+&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;### gmailに転送する設定に変更&lt;/p&gt;
+
+&lt;p&gt;relayhostにgmailを指定&lt;/p&gt;
+
+&lt;p&gt;パスワードの設定とかね。&lt;/p&gt;
+
+&lt;p&gt;## phpでメールを受信出来るよう設定&lt;/p&gt;
+
+&lt;p&gt;メールサーバ受信DNS設定とか面倒だからやめた。&lt;/p&gt;
+
+&lt;p&gt;phpinfoを見ると案の定imap入ってませんでしたので、php5.5系の落としてきてimapのディレクトリ移動してphpize&lt;/p&gt;
+
+&lt;p&gt;### configureで失敗する&lt;/p&gt;
+
+&lt;p&gt;configureしたらutf8_mime2text()がうんたらと出てきた。&lt;/p&gt;
+
+&lt;p&gt;ググると、どうもphpにimapとかメール関係入れる時にライブラリが足りないと出るエラーのようだ。&lt;/p&gt;
+
+&lt;p&gt;sudo apt-cache search libc-client&lt;/p&gt;
+
+&lt;p&gt;→libc-client2007e libc-client2007e-dev てのが出てくるので両方インストール&lt;/p&gt;
+
+&lt;p&gt;### imapうまく動かない？&lt;/p&gt;
+
+&lt;p&gt;この後無事imapインストールできたけどなぜか受信出来ない。いろいろ調べて片っ端からSSL関連インストールしたけどうまくいかない。&lt;/p&gt;
+
+&lt;p&gt;### 何が原因だったのか不明&lt;/p&gt;
+
+&lt;p&gt;結局、何かのSSL関係のライブラリインストールが最初足りなくてGmail受信失敗してた。&lt;/p&gt;
+
+&lt;p&gt;gmailからさくらのレンサバのメールアカウントで試した場合はアカウント名の指定を間違えてた。&lt;/p&gt;
+
+&lt;p&gt;テストで受信するだけだから、普通のimapアカウントの場合はnotlsをflagにつける。&lt;/p&gt;
+
+&lt;p&gt;gmailの場合は/ssl/novalidation-certみたいのつける&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

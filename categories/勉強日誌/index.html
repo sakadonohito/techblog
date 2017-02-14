@@ -1,0 +1,622 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>勉強日誌</title>
+  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://tech.k-zak.com"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">開発メモてきな</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+<div class="content">
+
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html">fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
+https://github.com/seedcode/fmxj
+概要としては、FileMaker Server の XML公開を使う。
+Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。
+◆ハマった事：サンプルPHPの内容
+サンプルのPHPをよく読んでなかった。。。
+JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。
+-db=dbname&amp;-lay=layname&amp;-query=(q1)&amp;-q1=Status&amp;-q1.value=Vendor&amp;-findquery みたいな通常のクエリデータに
+u=undefined&amp;p=undefined&amp;l=コンテンツの文字数
+ていうのがくっついてPHPにpostされてくる。
+それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。
+そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。
+なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。
+サンプルって事でいろいろハードコーディングされてるけど、気にしない。
+◆ハマった：Nginxの設定
+欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら
+WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
+これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
+しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
+※Nginxで add_header Content-Type &#8216;application/xml&#8217;してもmime-typeの設定ファイルに追記しても
+　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
+その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
+最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
+自分はUbuntuの環境なので、
+ sudo apt-get install nginx-extras
+ 後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
+more_set_headers &#8216;Content-Type: application/xml; charset=UTF8&#8217;;
+を追記、more&#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
+これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
+いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</div>
+    <div class="tags">
+      16 Feb 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
+        
+          <a href="http://tech.k-zak.com/tags/fmxj/">#fmxj</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+          <a href="http://tech.k-zak.com/tags/mojolicious/">#Mojolicious</a>
+        
+          <a href="http://tech.k-zak.com/tags/nginx/">#nginx</a>
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/ansible%E3%81%AEssh%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html">AnsibleのSSH設定について</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+という事で調べた。
+結論としては、varsファイルに
+・ansible_ssh_user
+・ansible_ssh_pass
+・ansible_sudo_pass
+の3つを書いておきましょう。でした。
+最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
+例えばhostsファイルに
+`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+という事で調べた。
+結論としては、varsファイルに
+・ansible_ssh_user
+・ansible_ssh_pass
+・ansible_sudo_pass
+の3つを書いておきましょう。でした。
+最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
+例えばhostsファイルに
+`
+とか書いてグループ名が「dev」の場合に
+-playbook
+|
+|&#8211;dev.yml
+|
+|&#8211;group_vars
+| |
+| |&#8211;dev.yml
+|
+|&#8211;roles\※内容略
+|
+|&#8211;site.yml
+みたいな感じで書く。
+group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより&#8211;ask-passの指定が必要なくなった。
+問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。
+なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。
+ansible-playbookを実行する時に復号のために&#8211;vault-passの引数とそのファイルパスを渡さないといけないってのも&#8211;ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。
+hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー
+って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。</div>
+    <div class="tags">
+      8 Feb 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html">Ubuntu14.04 でphpでメール受信とか</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%9C%AA%E5%88%86%E9%A1%9E/">未分類</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">## install postfix
+&#8220;`
+sudo apt-get install postfix postfix-dev sasl2-bin
+sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt
+&#8220;`
+## Settings
+&#8220;`
+sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf
+sudo emacs -nw /etc/postfix/main.cf
+&#8220;`
+### 参考
+&#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;p=mail
+&#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;p=mail&amp;f=2
+### gmailに転送する設定に変更
+relayhostにgmailを指定
+パスワードの設定とかね。
+## phpでメールを受信出来るよう設定
+メールサーバ受信DNS設定とか面倒だからやめた。
+phpinfoを見ると案の定imap入ってませんでしたので、php5.5系の落としてきてimapのディレクトリ移動してphpize
+### configureで失敗する
+configureしたらutf8_mime2text()がうんたらと出てきた。
+ググると、どうもphpにimapとかメール関係入れる時にライブラリが足りないと出るエラーのようだ。
+sudo apt-cache search libc-client
+→libc-client2007e libc-client2007e-dev てのが出てくるので両方インストール
+### imapうまく動かない？
+この後無事imapインストールできたけどなぜか受信出来ない。いろいろ調べて片っ端からSSL関連インストールしたけどうまくいかない。
+### 何が原因だったのか不明
+結局、何かのSSL関係のライブラリインストールが最初足りなくてGmail受信失敗してた。
+gmailからさくらのレンサバのメールアカウントで試した場合はアカウント名の指定を間違えてた。
+テストで受信するだけだから、普通のimapアカウントの場合はnotlsをflagにつける。
+gmailの場合は/ssl/novalidation-certみたいのつける</div>
+    <div class="tags">
+      1 Feb 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/imap/">#imap</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/postfix/">#postfix</a>
+        
+          <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html">Ubuntu14.04 LTS でNginx FasCGI Perl</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
+最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
+502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
+結局、
+sudo apt-get install fcgiwrap  ※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも
+/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで
+sudo sysv-rc-conf on fcgiwrap sudo service fcgiwrap start  でFastCGIが動くようになる。
+最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、
+参考：http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/
+これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。
+Nginxの設定はlocationディレクティブだけ抜粋すると
+#拡張子が.plで終わるリクエストの場合 location ~ \.pl$ { try_files $uri = 404; gzip off; #インストールしたfcgiwrapのソケットファイルのパス fastcgi_pass unix:/var/run/fcgiwrap.socket; fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; #/etc/nginx/fastcgi_paramsの内容を読み込む。 include fastcgi_params; }  で
+sudo service nginx restart  これで適用にperl書いて(シェバンはもちろん#!/usr/bin/env perl ですよ)試したら動きました。
+自分はplenvを使っているのですが、システムのperl読み込まれてライブラリねーぞゴルァなった事があった。謎。
+plenvの場合、require syscall.ph とかあると駄目っぽい？
+この記事書いてる時に見つけた他の方のWeb。先にここを見つけたかった。。。
+参考：http://ekzemplaro.org/data_base/doc/web_server/nginx/</div>
+    <div class="tags">
+      5 Jan 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/fastcgi/">#FastCGI</a>
+        
+          <a href="http://tech.k-zak.com/tags/nginx/">#nginx</a>
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E7%B3%BB.html">2014年を振り返る インフラ系</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">2014年を振り返る。インフラ関係について
+今年もっとも多く成長したのはインフラ関係についてだと思う。
+来年はもう少しスタートアップ用のシェルスクリプト理解して作れるようになりたい。
+PowerShellももう少し覚えてWindowsServer環境の制御も出来るようになりたい。
+構成管理は今年手を付けたVagrantとAnsibleをもっと掘り下げていきたい。
+VagrantはPackerを使ってVirtualBox以外のボックス作成やEC2へのアクセス。
+Ansibleは様々な構成管理、できればWindows環境も。
+来年取り組みたいのは、今年やりそこねたメールサーバーやログ設定、それからプロキシ設定かな</div>
+    <div class="tags">
+      30 Dec 2014
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html">2014年を振り返る サーバーサイドプログラミング</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&#8230;)について振り返る
+まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
+Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
+Perl,Python,Rubyについては全然触れなくてフラストレーション。
+PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。
+本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。
+家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
+PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
+枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
+Rubyは&#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</div>
+    <div class="tags">
+      30 Dec 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/groovy/">#Groovy</a>
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-javascript%E7%B7%A8.html">2014年を振り返る JavaScript編</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
+JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
+結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
+document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。
+jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。
+ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。
+ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。
+もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。
+CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。</div>
+    <div class="tags">
+      30 Dec 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/%E6%80%9D%E3%81%84%E5%87%BA%E3%81%9B%E3%81%AA%E3%81%84.html">思い出せない</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
+サーバー関係 ログローテーションの設定を行った。
+yum install logrotate
+/etc/logrotate.d/配下に追加の設定を行う
+/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる
+Ansible 1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中
+ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。
+yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。
+後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。
+Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。
+JavaScript AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。
+マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。
+AWSのS3のCORSで許可ヘッダーの設定が必要でした。
+PHP namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く
+毎日ちゃんとメモとらないと駄目ですね。。</div>
+    <div class="tags">
+      25 Oct 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/log/">#Log</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/php%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html">PHPのファイルアップロードについて</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+      </div>
+     
+    <div class="description">PHPで大きなファイルアップロードを作成する
+・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。
+・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file
+・phpの設定でmax_file_size,post_max_size,タイムアウト、memory_limitなどの設定が必要
+・Apacheのバージョンが古いと2だか4GBが上限。という噂。
+・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。</div>
+    <div class="tags">
+      7 Sep 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B2.html">Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E6%9C%AA%E5%88%86%E9%A1%9E/">未分類</a>
+        
+      </div>
+     
+    <div class="description">・botoが使えないってエラーになる。
+　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
+つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
+　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか
+・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを
+　使ったら成功した。なんで？
+・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。
+・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。
+　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。
+　なので「NameVirtuakHost *:80」の記述があれば、その後VirtualHostディレクティブが
+　ないといけない。
+もしもみたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
+整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。
+・Ubuntuに入ってるApache2のVirtualHostの有効化無効化
+　sites-availableディレクトリにVirtualHost設定書く
+　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化
+・Hostの指定が足りない！？
+Could not reliably determine the server&#8217;s fully qualified domain name, using for ServerName
+こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った
+　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、
+　そこに{{hostname}}.localを追記する処理追加
+・Ansible用MySQLの設定追加
+Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)
+host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)
+リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要
+・netstat -ant で現在使ってるポートとか観れる
+　(適当な解釈、後で意味をちゃんと調べる&#8230;かも)
+・MySQLが外部からつながらぬ
+webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。
+my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。
+これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。
+・ApacheのRewriteの設定漏れ
+UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。
+　AllowOverride をAllにしなかった。。。
+ということで？今のところ、Vagrantで作成したVMにMySQLやApacheの設定、それからWordPressの設置は出来るように</div>
+    <div class="tags">
+      7 Sep 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
+        
+          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
+        
+          <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
+        
+          <a href="http://tech.k-zak.com/tags/vagrant/">#Vagrant</a>
+        
+          <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
+        
+       
+    </div>
+  </div>
+
+
+</div>
+
+
+<paper-item>
+  
+    <paper-fab disabled icon="chevron-left"></paper-fab>
+  
+    <div class="flex"></div>
+  
+    <a href="/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/page/2/"><paper-fab icon="chevron-right"></paper-fab></a>
+  
+</paper-item>
+
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>

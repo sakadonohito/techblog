@@ -1,0 +1,247 @@
+
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>Tags</title>
+  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://tech.k-zak.com"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">開発メモてきな</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+
+<paper-menu>
+  
+    <a href="http://tech.k-zak.com/tags/ansible"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">ansible</div> 3</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/apache"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">apache</div> 4</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/aws"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">aws</div> 2</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/bundler"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">bundler</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/cakephp"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">cakephp</div> 2</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/codeigniter"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">codeigniter</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/css"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">css</div> 4</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/django"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">django</div> 3</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/ec2"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">ec2</div> 2</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/emacs"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">emacs</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/env"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">env</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/fastcgi"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">fastcgi</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/filemaker"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">filemaker</div> 4</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/fmxj"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">fmxj</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/fuelphp"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">fuelphp</div> 4</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/groovy"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">groovy</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/imap"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">imap</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/java"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">java</div> 2</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/javascript"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">javascript</div> 9</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/jquery"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">jquery</div> 2</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/laravel4"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">laravel4</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/linux"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">linux</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/log"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">log</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/mojolicious"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">mojolicious</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/mojoliciouslite"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">mojoliciouslite</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/mysql"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">mysql</div> 3</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/network"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">network</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/nginx"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">nginx</div> 4</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/perl"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">perl</div> 12</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/php"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">php</div> 20</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/postfix"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">postfix</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/python"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">python</div> 15</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/rails"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">rails</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/rbenv"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">rbenv</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/redmine"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">redmine</div> 3</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/ruby"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">ruby</div> 11</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/s3"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">s3</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/sinatra"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">sinatra</div> 2</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/ssh"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">ssh</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/symfony"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">symfony</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/ubuntu"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">ubuntu</div> 4</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/unicorn"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">unicorn</div> 2</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/vagrant"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">vagrant</div> 2</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/wordpress"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">wordpress</div> 2</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/zend-framework"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">zend-framework</div> 1</paper-item></a>
+  
+    <a href="http://tech.k-zak.com/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC"><paper-item><iron-icon icon="loyalty"></iron-icon>　<div class="flex">ファイルメーカー</div> 1</paper-item></a>
+  
+</paper-menu>
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/emacs/index.xml</link>
+    <description>Recent content in Emacs on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>emacs初めてみようか</title>
+      <link>http://tech.k-zak.com/emacs.html</link>
+      <pubDate>Fri, 29 Apr 2011 17:47:06 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/emacs.html</guid>
+      <description>&lt;p&gt;現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている&lt;/p&gt;
+
+&lt;div&gt;
+  軽いけどまだまだ完成度の低いKodに代わりテキストエディタを探そうと思い
+&lt;/div&gt;
+
+&lt;div&gt;
+  emacsを試すことにした。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  まずはインストール。自分のPCはMacBookPro10.6なのでemacs23.xを入れる事に
+&lt;/div&gt;
+
+&lt;div&gt;
+  最初に入れたのは22.2のアプリタイプのもの、
+&lt;/div&gt;
+
+&lt;div&gt;
+  CarbonEmacs
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://www.apple.com/jp/downloads/macosx/tools/carbonemacs.html&#34;&gt;http://www.apple.com/jp/downloads/macosx/tools/carbonemacs.html&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://homepage.mac.com/zenitani/emacs-j.html&#34;&gt;http://homepage.mac.com/zenitani/emacs-j.html&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  いや、折角なのでちゃんと最新のでやりましょう。と探して次に見つけたのが
+&lt;/div&gt;
+
+&lt;div&gt;
+  Aquamacs2.0 &lt;a href=&#34;http://sourceforge.jp/magazine/10/05/12/090234&#34;&gt;http://sourceforge.jp/magazine/10/05/12/090234&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  これでもよかったんでしょうけど、普通のemacs23.xを入れようとさらに探し、
+&lt;/div&gt;
+
+&lt;div&gt;
+  MacPortsからインストールの方法を見つける。
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://d.hatena.ne.jp/tomoya/20090210/1234297520&#34;&gt;http://d.hatena.ne.jp/tomoya/20090210/1234297520&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  入れるものを間違えたのか、自分のやつだとGUIの設定画面がでない。。。
+&lt;/div&gt;
+
+&lt;div&gt;
+  ざっと、通し見したブログ
+&lt;/div&gt;
+
+&lt;div&gt;
+  「CarbonからCocoaへ&amp;#8211;Snow LeopardでEmacs 23を使う」
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20409879/&#34;&gt;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20409879/&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410292/&#34;&gt;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410292/&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410578/&#34;&gt;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410578/&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410802/&#34;&gt;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410802/&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  最初はマウスでメニューとか開いてコマンド実行、ヘルプのところに
+&lt;/div&gt;
+
+&lt;div&gt;
+  「Emacs Tutorial (choose language)」てのがあるのでそれを実行。言語はお好みで。
+&lt;/div&gt;
+
+&lt;div&gt;
+  中身を見ながら試す。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  初めはどうしたら「filename.xxx~」という編集前ファイルのバック
+&lt;/div&gt;
+
+&lt;div&gt;
+  アップ的なものが出来るので、うわぁ&amp;#8230;てなってたけど、設定で変えられるようだ。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  emacs自体を操作出来るようになったので、次は設定をいじる。
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・キーバインド→変なクセつけたくないので設定変えず。
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・文字色と背景色→変えたいけど方法がわからない&amp;#8230;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・PHPのコード色つけ機能→後述
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・PHPのコード補完機能→後述
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・バックアップファイルの設定変更→後述
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  という事で設定作業。emacsでは設定をELispというLispで記述されたファイルを
+&lt;/div&gt;
+
+&lt;div&gt;
+  特定の場所に置いておくようです。Lispなんて憶える気力も知力もないので
+&lt;/div&gt;
+
+&lt;div&gt;
+  ググってこぴぺです。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  設定ファイルは、ホームディレクトリ直下に「.emacs.d」というディレクトリが
+&lt;/div&gt;
+
+&lt;div&gt;
+  作られているので、「~/.emacs.d」内に「init.el」というファイルを作成します。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  init.elの中に基本的な設定と外部ファイル(他の人が作った設定ファイル)のロード
+&lt;/div&gt;
+
+&lt;div&gt;
+  PATHの設定を書き込みます。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  以下参考にしたブログなど
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://www.clear-code.com/blog/2011/2/16.html&#34;&gt;http://www.clear-code.com/blog/2011/2/16.html&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://webcache.googleusercontent.com/search?oe=UTF-8&amp;hl=ja&amp;q=cache:g1RXzEMRD0MJ:blog.iss.ms/2010/02/20/091647&#34;&gt;http://webcache.googleusercontent.com/search?oe=UTF-8&amp;hl=ja&amp;q=cache:g1RXzEMRD0MJ:blog.iss.ms/2010/02/20/091647&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://www.cozmixng.org/~kou/emacs/dot_emacs&#34;&gt;http://www.cozmixng.org/~kou/emacs/dot_emacs&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  で、次がelispファイルを落としてきての拡張設定。
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・JavaScript用？
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://d.hatena.ne.jp/speg03/20091011/1255244329&#34;&gt;http://d.hatena.ne.jp/speg03/20091011/1255244329&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・PHP用
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://bluestar.s32.xrea.com/text/php-mode.php&#34;&gt;http://bluestar.s32.xrea.com/text/php-mode.php&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  この時点でPHPファイルを開くとコードに色がつくようになりました。
+&lt;/div&gt;
+
+&lt;div&gt;
+  どうせならコード補完の機能もおるといいなぁって。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・インストール拡張？これでEmacsWikiにあるものなら簡単にインストールできる！
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://d.hatena.ne.jp/tomoya/20090121/1232536106&#34;&gt;http://d.hatena.ne.jp/tomoya/20090121/1232536106&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・PHPコード補完
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;a href=&#34;http://tech.kayac.com/archive/php-completion.html&#34;&gt;http://tech.kayac.com/archive/php-completion.html&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ふぅ。1日かけてこの程度。。これでPHP触りやすくなりました。
+&lt;/div&gt;
+
+&lt;div&gt;
+  次はPython。。。
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

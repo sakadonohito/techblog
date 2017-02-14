@@ -1,0 +1,389 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>FileMakerとRubyのSinatra</title>
+  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://tech.k-zak.com"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">開発メモてきな</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+<div class="content">
+
+  <div class="article">
+    <div class="title">FileMakerとRubyのSinatra</div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description"><p>Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？</p>
+
+<p>と思ったのでやってみました。</p>
+
+<p>gihyo.jp:第９回 SinatraとSequel・Hamlで掲示板アプリを作る</p>
+
+<p><a href="http://gihyo.jp/dev/serial/01/ruby/0009">http://gihyo.jp/dev/serial/01/ruby/0009</a></p>
+
+<p>が自分がチュートリアル(以下、見本)としてやってみみたもので、これのmodel部分をFileMakerに</p>
+
+<p>置換えました。</p>
+
+<p>※FileMakerやRuby、Sinatraそのものの細かい説明は省きます。</p>
+
+<p>最終的な階層は以下(見本のファイルも混在してます)</p>
+
+<p>&#8212;</p>
+
+<pre>app/
+    start.rb
+    model/
+           comment.rb
+    view /
+           layout.haml
+           index.haml
+           fmbbs.haml
+           style.sass</pre>
+
+<p>&#8212;</p>
+
+<p>FileMaker部分</p>
+
+<p>・bbsテーブルの作成、カラムは見本のapp/model/comment.rb内で定義しているクラス</p>
+
+<p>Commentsを真似て定義。但し、posted_dateはFileMaker側ではtimestamp型で作成時に自動で</p>
+
+<p>現在のタイムスタンプが入るよう設定。</p>
+
+<p>Ruby部分</p>
+
+<p>・app/model/comment.rbにFileMakerとの接続クラス追加</p>
+
+<p>&#8212;以下をcomment.rbに追加&#8212;</p>
+
+<pre lang="ruby">require 'rfm'
+class FMServer
+  def initialize()
+    @FM_CONFIG = {
+      :host =&gt; "FileMakerServerの接続先IP",
+      :account_name =&gt; "FileMakerFileのログインアカウント",
+      :password =&gt; "FileMakerFileのログインパスワード",
+      :database =&gt; "FileMakerFileの名前",
+      :ssl =&gt; false,
+      :root_cert =&gt; false,
+    }
+    @fm = Rfm::Server.new(@FM_CONFIG)
+  end
+
+  def listAll(lay,sortCond)
+    return @fm[@FM_CONFIG[:database]][lay].all(sortCond)
+  end
+
+  def create(lay,obj)
+    @fm[@FM_CONFIG[:database]][lay].create(obj)
+  end
+end</pre>
+
+<p>・hamlを編集(追加)</p>
+
+<p>&#8212;app/view/fmbbs.haml</p>
+
+<pre>%form{:method=&gt;"POST",:action =&gt; '/fmcomment'}
+  %input{:type=&gt;"hidden",:name=&gt;"_method",:value=&gt;"PUT"}
+  %table
+    %tr
+      %td 名前
+      %td
+        %input{:type=&gt;"text",:name=&gt;"name"}
+    %tr
+      %td タイトル
+      %td
+        %input{:type=&gt;"text",:name=&gt;"title"}
+    %tr
+      %td 内容
+      %td
+        %textarea{:name=&gt;"message",:cols=&gt;60,:rows=&gt;8}
+    %tr
+      %td
+      %td
+        %input{:type=&gt;"submit"}
+
+- @comments.each do |comment|
+  .comment
+    %h2= h comment.title
+    .info
+      %span.name== by #{h comment.name}
+      %span.date== (#{timestamp_text(comment.posted_date)})
+
+    .message
+      == #{formatted_text(comment.message)}</pre>
+
+<p>※HamlはPythonのようにインデントが文法になってるので注意！</p>
+
+<p>・app/start.rbを編集</p>
+
+<p>&#8212;app/start.rbを以下のように変更&#8212;</p>
+
+<pre lang="ruby">#/usr/bin/ruby
+
+require 'rubygems'
+require 'sinatra'
+require 'model/comment.rb'
+require 'sass'
+
+helpers do
+  include Rack::Utils;alias_method :h, :escape_html
+  #追加
+  def timestamp_text(date)
+    date.strftime("%Y/%m/%d %H:%M:%S")
+  end
+  #追加
+  def formatted_text(text)
+    Rack::Utils.escape_html(text).gsub(/n/,"")
+  end
+end
+
+get '/style.css' do
+  content_type 'text/css',:charset =&gt; 'utf-8'
+  sass :style
+end
+
+get '/' do
+  @comments = Comments.order_by(:posted_date.desc)
+  haml :index
+end
+
+put '/comment' do
+  Comments.create({
+    :name =&gt; request[:name],
+    :title =&gt; request[:title],
+    :message =&gt; request[:message],
+    :posted_date =&gt; Time.now,
+  })
+  redirect '/'
+end
+
+#追加
+get '/fmbbs' do
+  fm = FMServer.new
+  @comments = fm.listAll("bbs",{:sort_field =&gt; "posted_date",:sort_order =&gt; 'descend'})
+  haml :fmbbs
+end
+
+#追加
+put '/fmcomment' do
+  fm = FMServer.new
+  obj = {
+    :name =&gt; request[:name],
+    :title =&gt; request[:title],
+    :message =&gt; request[:message],
+    #posted_dateは含めない
+  }
+  fm.create("bbs",obj)
+  redirect '/fmbbs'
+end</pre>
+
+<p>・rfm(lardawge-rfm)をインストールするの忘れずに！</p>
+
+<p>$ sudo gem install lardawge-rfm</p>
+
+<p>GitHub：<a href="https://github.com/lardawge/rfm">https://github.com/lardawge/rfm</a></p>
+
+<p>これでstart.rbのある位置をカレントにして</p>
+
+<p>$ ruby -rubygems start.rb</p>
+
+<p>これで</p>
+
+<p><a href="http://localhost:4567/fmbbs">http://localhost:4567/fmbbs</a></p>
+
+<p>で試せます。簡単ですね！</p>
+
+<p>今回、自分がつまずいた所は、</p>
+
+<p>１，rfm経由でFileMakerにレコード作成(多分編集も同じ)でtimestamp型のカラムに値を</p>
+
+<p>設定するための方法が分からなかった。※DateTime型だとエラーになる、整形してもエラー</p>
+
+<p>になる。なんでや！</p>
+
+<p>→読み込みは出来るので、FileMaker側で作成時自動で値設定にした。</p>
+
+<p>２，投稿済みデータの降順ソートがうまくいかない！</p>
+
+<p>→lardawge-rfmでは降順の指定が&#8221;desc&#8221;ではなく、&#8221;descend&#8221;だった。</p>
+
+<p>Railsでやるほどじゃないけどちょっと簡単にFileMakerとWebアプリつなぎたいとか、これで</p>
+
+<p>どうでしょうか？</p>
+</div>
+    <div class="tags">
+      7 Jan 2012
+      
+        
+          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+          <a href="http://tech.k-zak.com/tags/sinatra/">#Sinatra</a>
+        
+          <a href="http://tech.k-zak.com/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC/">#ファイルメーカー</a>
+        
+       
+    </div>
+    
+  </div>
+
+</div>
+
+<paper-item>
+  
+    <a href="http://tech.k-zak.com/%E8%B6%A3%E6%97%A8%E5%A4%89%E3%81%88.html"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+  
+    <div class="flex"></div>
+  
+    <a href="http://tech.k-zak.com/post_3.html"><paper-fab icon="chevron-right"></paper-fab></a>
+  
+</paper-item>
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>
