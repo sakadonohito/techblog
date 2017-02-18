@@ -140,10 +140,67 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-hugo">2017 02 19 hugo</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">開発メモブログをWordPressからHugoへの移行  WordPressから記事をエクスポート Hugoをインストール エクスポートした記事を放り込む  WordPressから記事をエクスポート  WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す  参考   Hugoをインストール brew install hugo hugo new site techblog cd techblog  書き出した記事を放り込む プラグインを使ってエクスポートした記事データはHugoのcontent/postのpostディレクトリ相当のものが吐き出されているので、中身をcontent/post/にぶちまける。
+細かい設定 テーマを入れる 適当なテーマをインストール。今回はPolymer。 themeディレクトリがなかったら作ってその中でgit cloneしたらいいよ。
+config.tomlを編集 title,baseurl,languageCode,theme,paginateを修正する。
+後で独自ドメインでGitHubPagesで運用するため、canonifyurls = trueを設定する。
+GoogleAnalyticsのコードを入れるため、config.tomlに以下を追記
+[params] googleAnalyticsUserID = &quot;&lt;&lt;code&gt;&gt;&quot;  またURLの構造を検討する。 今回からパーマリンクを以下のようにした。permelink設定を追加
+[permalinks] post = &quot;/:year/:month/:day/:slug&quot;  これでyyyy/mm/dd/slugというようなURLになる。
+URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。
+GitHubPagesで公開する  GitHubにリポジトリを追加 hugoコマンドで出力されるpublicディレクトリの静的ファイルをコミット settingsのGitHub Pagesの項にあるCustom domainにドメインを入れて保存。 hugoのpublicにCNAMEというファイルを追加。内容は公開ドメイン名 再度publicディレクトリの内容をコミット DNS(今回はRoute53)でCNAMEの設定をする。  今回はひとまずこんな感じ。 今後は記事の追加だけじゃなく、テーマを自作していきたい。</div>
+    <div class="tags">
+      19 Feb 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/hugo/">#Hugo</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/02/18/restart">再始動</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">ブログ引越して再始動 &hellip;の予定
+再始動 契約していたレンタルサーバーを解約して、長らく契約するも放置状態が続いていたVPSにいろいろ引っ越そうと検討。
+ついでにいろいろ構成などを再検討してやり直そうと考えました。
+構成 レンタルサーバー上のMovableTypeで細々と更新していたアニメやゲームについてのブログをVPS上にWordPressに構築し直しす事に。
+ついでにWordPressのカスタマイズの練習台にも使おうという魂胆。
+技術メモ的なこの忘備録ブログは今回を機にHugoで静的サイト構築してGithubPagesに載せる事にしました。
+他にいくつか静的サイトジェネレーターを運営していろいろ触ってみたいと考えている。
+ただ、今の所、上記２ブログ以外は全てS3での静的サイトホスティングでFTPでファイルをアップロードする方法を考えているけど、将来的には違う場所でホスティングしたりデプロイツールを使ったり、CI的なことをしたり、Dockerを使うなどして別の場所にサイトを構築しようかと考えている。
+MovableTypeからWordPressへの引越し テキストをずらずら記述していただけだったので、特に問題はなかった。 単純にエクスポートしてインポートしただけ。 インポート後にコツコツとカテゴリやタグを整理して付け直したり。
+VPSサーバーの設定やHugoについて 後日、それぞれ別の記事にします。</div>
+    <div class="tags">
+      18 Feb 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/%E5%B0%8F%E8%A8%80/">#小言</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/author/">自己紹介</a></div>
      
     <div class="description"> いろいろな作業メモ、備忘録です。
-2017−02−18時点のスキルセッ(レベルに差はあり)
+2017−02−18時点のスキルセトッ(レベルに差はあり)
  FileMaker Windows Server Powershell shell MySQL Ubuntu Ansible Docker PHP JavaScript Python  カテゴリの区分  構築・設定 -&gt; 何かをインストールしたり設定したりした時の備忘録 勉強日誌 -&gt; 何かの勉強した時の備忘録 トラブル -&gt; トラブルルシュートした時の備忘録  タグの区分  プログラミング言語の名称 -&gt; 言語の勉強とかした時につけます。 フレームワークの名称 -&gt; フレームワーク固有の事についての記事につけます。 OSの名称 -&gt; OSの設定についての記事につけます。 ツールの名称 -&gt; ツールについての記事につけます。 購入・所持している書籍についての記事につけます。  </div>
     <div class="tags">
       18 Feb 2017
@@ -466,75 +523,6 @@ Rubyは&#8230;どうだろう。試しやプロトタイプにはいいのかも
     </div>
   </div>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-js">2014年を振り返る JavaScript編</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
-JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
-結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
-document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。
-jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。
-ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。
-ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。
-もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。
-CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。</div>
-    <div class="tags">
-      30 Dec 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/10/25/milestone">思い出せない</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
-サーバー関係 ログローテーションの設定を行った。
-yum install logrotate
-/etc/logrotate.d/配下に追加の設定を行う
-/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる
-Ansible 1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中
-ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。
-yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。
-後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。
-Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。
-JavaScript AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。
-マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。
-AWSのS3のCORSで許可ヘッダーの設定が必要でした。
-PHP namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く
-毎日ちゃんとメモとらないと駄目ですね。。</div>
-    <div class="tags">
-      25 Oct 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
-        
-          <a href="http://tech.k-zak.com/tags/log/">#Log</a>
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
-        
-          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
-        
-       
-    </div>
-  </div>
-
-
 </div>
 
 
@@ -558,6 +546,15 @@ PHP namespaceやautoloadをまだ理解しきれていない部分があるよ�
   </paper-drawer-panel>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-46285513-1', 'auto');
+    ga('send', 'pageview');
+  </script>
   
 </body>
 </html>

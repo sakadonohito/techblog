@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/hugo/index.xml</link>
+    <description>Recent content in Hugo on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2017 02 19 hugo</title>
+      <link>http://tech.k-zak.com/2017/02/19/first-hugo</link>
+      <pubDate>Sun, 19 Feb 2017 00:09:41 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/02/19/first-hugo</guid>
+      <description>
+
+&lt;h1 id=&#34;開発メモブログをwordpressからhugoへの移行&#34;&gt;開発メモブログをWordPressからHugoへの移行&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;WordPressから記事をエクスポート&lt;/li&gt;
+&lt;li&gt;Hugoをインストール&lt;/li&gt;
+&lt;li&gt;エクスポートした記事を放り込む&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;wordpressから記事をエクスポート&#34;&gt;WordPressから記事をエクスポート&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mano.xyz/post/2015-09-25-migration-to-hugo-from-wordpress/&#34;&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hugoをインストール&#34;&gt;Hugoをインストール&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install hugo
+hugo new site techblog
+cd  techblog
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;書き出した記事を放り込む&#34;&gt;書き出した記事を放り込む&lt;/h2&gt;
+
+&lt;p&gt;プラグインを使ってエクスポートした記事データはHugoの&lt;code&gt;content/post&lt;/code&gt;のpostディレクトリ相当のものが吐き出されているので、中身を&lt;code&gt;content/post/&lt;/code&gt;にぶちまける。&lt;/p&gt;
+
+&lt;h2 id=&#34;細かい設定&#34;&gt;細かい設定&lt;/h2&gt;
+
+&lt;h3 id=&#34;テーマを入れる&#34;&gt;テーマを入れる&lt;/h3&gt;
+
+&lt;p&gt;適当なテーマをインストール。今回はPolymer。
+themeディレクトリがなかったら作ってその中で&lt;code&gt;git clone&lt;/code&gt;したらいいよ。&lt;/p&gt;
+
+&lt;h3 id=&#34;config-tomlを編集&#34;&gt;config.tomlを編集&lt;/h3&gt;
+
+&lt;p&gt;title,baseurl,languageCode,theme,paginateを修正する。&lt;/p&gt;
+
+&lt;p&gt;後で独自ドメインでGitHubPagesで運用するため、canonifyurls = trueを設定する。&lt;/p&gt;
+
+&lt;p&gt;GoogleAnalyticsのコードを入れるため、config.tomlに以下を追記&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[params]
+  googleAnalyticsUserID = &amp;quot;&amp;lt;&amp;lt;code&amp;gt;&amp;gt;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;またURLの構造を検討する。
+今回からパーマリンクを以下のようにした。permelink設定を追加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[permalinks]
+  post = &amp;quot;/:year/:month/:day/:slug&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでyyyy/mm/dd/slugというようなURLになる。&lt;/p&gt;
+
+&lt;p&gt;URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。&lt;/p&gt;
+
+&lt;h2 id=&#34;githubpagesで公開する&#34;&gt;GitHubPagesで公開する&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;GitHubにリポジトリを追加&lt;/li&gt;
+&lt;li&gt;hugoコマンドで出力されるpublicディレクトリの静的ファイルをコミット&lt;/li&gt;
+&lt;li&gt;settingsのGitHub Pagesの項にあるCustom domainにドメインを入れて保存。&lt;/li&gt;
+&lt;li&gt;hugoのpublicにCNAMEというファイルを追加。内容は公開ドメイン名&lt;/li&gt;
+&lt;li&gt;再度publicディレクトリの内容をコミット&lt;/li&gt;
+&lt;li&gt;DNS(今回はRoute53)でCNAMEの設定をする。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;今回はひとまずこんな感じ。
+今後は記事の追加だけじゃなく、テーマを自作していきたい。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -139,6 +139,53 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/04/13/java-dwr">JavaのDWRって何さ　設定メモ</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。   原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを   作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。     アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？     DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで   構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。   とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを   簡単にJavaScript上で扱う仕組み？な感じ。     参考URL：   DWRのサイト　http://directwebremoting.org/dwr/index.html   2007の@ITの記事　http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html     具体的な手順の説明   １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を   落とす。   ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル   ２つを入れる。   ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな   あと、このクラスの定義のパッケージは何でも良い。   ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも   良い。この時、実在しない(dwr.jarが自動生成する)JSをタグに書いておく   ※説明たるいので、サイトとか参照して下さい。   どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。   ５，dwr用のxmlとweb.</div>
+    <div class="tags">
+      13 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/java/">#Java</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/04/10/milestone">ちっともすすまない</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">前に更新したのはいつの頃か・・・
+   中身に進歩がないのが更新がない証拠。。     先日、MovableTypeにもう一つブログ追加しました。   元々Microsoftのスペースっていうブログの場所でゲームとか趣味関連の少し   やってたんですが、閉鎖されたので、心機一転こちらで始めました。     この間、初めてAmazonアソシエイトのIDとったのでのリンクバシバシ貼ろうと思います。     このブログで書くようなジャンルの事では、最近NetBeansをインスコしてみました。   Eclipseでは無視してたんですが、サンプルプロジェクト作成して中のコード読むのって   結構勉強になるんじゃないかって考えてます。     まだまともに触れてないレベルですが、NetBeansはEclipseに比べて軽い気がします。   まぁ、設定とかプラグインとかそういうところは圧倒的にEclipseなんでしょうけど。     今はNetBeansでRuby on Rails　のサンプル作成したら、Railsのバージョンがおかしいとか   エラー出てハマってます(-_- 😉   ここのブログは今後、作業日誌的な、勉強、開発そういったことを何かしたら   それを簡潔に書く。そうやって続けていこうかと。     いつになったら図や画像ありの記事になれるのか・・・     NetBeansの日本語サイト：http://ja.netbeans.org/  </div>
+    <div class="tags">
+      10 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/netbeans/">#NetBeans</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2010/09/03/mcrypt">macにphpMyAdmin</a></div>
     
       <div class="categories">
@@ -312,28 +359,6 @@
     </div>
   </div>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/04/25/first-mt">MT入れてみた</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
-        
-      </div>
-     
-    <div class="description">MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような
- 目的なら、無料のようなので、何事も経験経験。Web屋じゃないのでもしかしたら   一生、仕事で触れる事無いかもしれないけど、ふにゃふにゃやってみる。     １、ダウンロード   MovableTypeのサイト行ってダウンロード：http://www.sixapart.jp/movabletype/     ２、ここの手順にそって設定：http://nsf.jp/movabletype/movabletype.html     終わり。     え？   そうですね、前提条件として１、レンタルサーバー借りてるor自分で持ってる。   ２、MySQL5.x入ってる。３、メール使える。４、FTPアプリ持ってる。   あたりが必要です。     自分はサーバー→さくらのレンタル、MySQL5.xおけ！Perl5.xおけ！メールおけ！   FTPはWinにFFFTPが入ってたので、それを使った。     FTPアプリの代わりとして、Firefoxのアドオンてのもありますじぇ：https://addons.mozilla.org/ja/firefox/addon/684     んで、MTが入って使えるようになったので、特に何の設定もせずとりあえず記事１号を   これにしました。  </div>
-    <div class="tags">
-      25 Apr 2010
-      
-        
-          <a href="http://tech.k-zak.com/tags/movabletype/">#MovableType</a>
-        
-       
-    </div>
-  </div>
-
-
 </div>
 
 
@@ -343,7 +368,7 @@
   
     <div class="flex"></div>
   
-    <paper-fab disabled icon="chevron-right"></paper-fab>
+    <a href="http://tech.k-zak.com/post/page/8/"><paper-fab icon="chevron-right"></paper-fab></a>
   
 </paper-item>
 
@@ -357,6 +382,15 @@
   </paper-drawer-panel>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-46285513-1', 'auto');
+    ga('send', 'pageview');
+  </script>
   
 </body>
 </html>

@@ -139,6 +139,44 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2013/11/13/trouble-charset">FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB/">トラブル</a>
+        
+      </div>
+     
+    <div class="description">FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、
+Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！ (PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)
+→アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。
+FuelPHPのUpload::save()を行う前に
+ってやってアップロードファイル名をエンコードする。
+弊害としては本来は内部エンコードのまま処理が進むはずだったので、同名ファイルが有る場合に枝番を付加する処理なんかが正常に動作しなくなる。
+これでWindowsサーバーのフォルダに読める文字のファイル名でアップロードされる。
+最初エンコードをSJISにしてたけど、CP932にしたら、①みたいなMS拡張の機種依存文字も大丈夫になった。
+本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも Upload::register('after',function($file){ 文字化け状態のファイルをエンコードしなおしたファイル名でリネーム })  とかやったら良かったのかな？
+文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け！ (ま、そりゃそうですね)
+→上記１の結果を受けてメール送信のメソッドに引数として添付ファイル名を渡す。その処理は何も加工しない。
+メール送信用のメソッドの中で、引数で受け取った添付ファイル名をFuelPHPのmailに渡す処理を加工
+それでも、メールヘッダがISO-2022-JPなので、機種依存文字の類はメールを受信した時に「?」とかになってるけど、それはしょうがないよね。
+メールの件名が文字化けすることがある！ →犯人は半角カナ。使わないで！件名はFuelPHP側で送信時にISO-2022-JPに変換してるっぽいので、mb_convert_kana関数使って件名に含まれている半角カナを全角に変換して誤魔化す。
+以上、うんこメモでした。</div>
+    <div class="tags">
+      13 Nov 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/fuelphp/">#FuelPHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2013/10/02/ssh">sshで、ぷごふぁ</a></div>
     
       <div class="categories">
@@ -447,75 +485,6 @@ javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせる�
     </div>
   </div>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/01/20/study-perl">Perlの動作環境？について</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
-        
-      </div>
-     
-    <div class="description">長らく更新してませんでしたが、その間にFlask試したり、最近なんかは
-ちょっとだけVisual C++を初心者本見ながら動かしてました。
-C++分かんない。
-さて、PerlをVPS上で動かす＆Mojolicious::Liteで作成中の簡単なFAQアプリの為、Perlを
-どうやって動かすのか、簡単に試したのでまとめてみた。(まとまってないし解説にもなってない)
-perlを使えるように設定する
-１，Perlを入れましょう。既に入っている場合はバージョンを確認してできるだけ偶数ナンバーの最新版を入れましょう
-※奇数番号のバージョンは実験要素が強いと聞いたことがありますのでperl-14.xが良いかと
-※perl -v でバージョンの確認ができます。
-２，Perlbrewを入れましょうバージョンを切り替えたりライブラリを追加したりが楽になるそうです。
-３，ターミナルベースで動かす
-ファイルの拡張子を「.pl」とかにして内容はprint &#8220;Hello,World\n&#8221;;とか書いて
-ターミナルで「perl aaa.pl」とかやると起動して処理実行しますね。
-厳密にはファイルエンコードはUTF-8にしましょうとか、ソースの行頭にお決まりの書き方をするとかありますけど
-その内容については省略するので他で調べてください。
-４，ApacheにCGIの設定して動かす
-特になんの設定もせずPerlファイルをWeb公開領域に置いてもソースをそのまま画面に出力したり、
-エラーになったりします。
-・ApacheにCGIの設定を書いていない
-・作成したPerlファイルに実行権限がついていない
-などが主な理由です。権限についてはchmodコマンドで実行権限を付与してください。
-Apacheの設定ファイル「httpd.conf」もしくはVirtual-Hostの設定をしているなら「httpd-vhost.conf」を
-開いて設定を記述します。
-&#8212;&#8212;&#8212;-
-AddHandler cgi-script .cgi .pl .py .rb
-Options All
-AllowOverride All
-Order allow,deny
-Allow from all
-
-&#8212;&#8212;&#8212;-
-こんな感じで。「AddHandler cgi-script」に対象拡張子を連ねる感じで記述すると動くようになります。
-※当然LoadModuleのところでmod_cgiを読み込んでいるのが前提です。
-※上の例では、Perl以外にもRubyやPythonもCGiで動く設定にしてますのん。
-５，Apacheにmod_perlの設定をして動かす
-まず自分の使っているApacheの拡張モジュール置き場にmod_perl.soがいる確認。自分の場合はMBP 10.8の
-組込み?のApacheを使っているので/usr/libexec/apache2/mod_perl.soを確認。いた!
-所定の場所にファイルがない人は別途調べてファイルを入手なりコンパイルなりしてください。
-※ URL:http://perl.apache.org/download/index.html
-・httpd.confのLoadModuleが沢山記述されているあたりの最後尾に「LoadModule perl_module /usr/libexec/apache2/mod_perl.so」
-を追記
-・適当なとこに下記の記述※自分の場合は上記のvirtualhostディレクトリ内に追記
-・上記の設定で既に普通のCGIでPerlが動くようになってしまっているのでPerl関係拡張子を除外しておくこと!
-&#8212;&#8212;&#8212;-
-SetHandler perl-script
-PerlHandler ModPerl::Registry
-# Options +ExecCGII</div>
-    <div class="tags">
-      20 Jan 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-       
-    </div>
-  </div>
-
-
 </div>
 
 
@@ -539,6 +508,15 @@ PerlHandler ModPerl::Registry
   </paper-drawer-panel>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-46285513-1', 'auto');
+    ga('send', 'pageview');
+  </script>
   
 </body>
 </html>

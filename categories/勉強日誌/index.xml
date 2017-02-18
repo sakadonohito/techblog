@@ -9,6 +9,48 @@
     <atom:link href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>再始動</title>
+      <link>http://tech.k-zak.com/2017/02/18/restart</link>
+      <pubDate>Sat, 18 Feb 2017 23:26:18 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/02/18/restart</guid>
+      <description>
+
+&lt;h1 id=&#34;ブログ引越して再始動&#34;&gt;ブログ引越して再始動&lt;/h1&gt;
+
+&lt;p&gt;&amp;hellip;の予定&lt;/p&gt;
+
+&lt;h2 id=&#34;再始動&#34;&gt;再始動&lt;/h2&gt;
+
+&lt;p&gt;契約していたレンタルサーバーを解約して、長らく契約するも放置状態が続いていたVPSにいろいろ引っ越そうと検討。&lt;/p&gt;
+
+&lt;p&gt;ついでにいろいろ構成などを再検討してやり直そうと考えました。&lt;/p&gt;
+
+&lt;h2 id=&#34;構成&#34;&gt;構成&lt;/h2&gt;
+
+&lt;p&gt;レンタルサーバー上のMovableTypeで細々と更新していたアニメやゲームについてのブログをVPS上にWordPressに構築し直しす事に。&lt;/p&gt;
+
+&lt;p&gt;ついでにWordPressのカスタマイズの練習台にも使おうという魂胆。&lt;/p&gt;
+
+&lt;p&gt;技術メモ的なこの忘備録ブログは今回を機にHugoで静的サイト構築してGithubPagesに載せる事にしました。&lt;/p&gt;
+
+&lt;p&gt;他にいくつか静的サイトジェネレーターを運営していろいろ触ってみたいと考えている。&lt;/p&gt;
+
+&lt;p&gt;ただ、今の所、上記２ブログ以外は全てS3での静的サイトホスティングでFTPでファイルをアップロードする方法を考えているけど、将来的には違う場所でホスティングしたりデプロイツールを使ったり、CI的なことをしたり、Dockerを使うなどして別の場所にサイトを構築しようかと考えている。&lt;/p&gt;
+
+&lt;h2 id=&#34;movabletypeからwordpressへの引越し&#34;&gt;MovableTypeからWordPressへの引越し&lt;/h2&gt;
+
+&lt;p&gt;テキストをずらずら記述していただけだったので、特に問題はなかった。
+単純にエクスポートしてインポートしただけ。
+インポート後にコツコツとカテゴリやタグを整理して付け直したり。&lt;/p&gt;
+
+&lt;h2 id=&#34;vpsサーバーの設定やhugoについて&#34;&gt;VPSサーバーの設定やHugoについて&lt;/h2&gt;
+
+&lt;p&gt;後日、それぞれ別の記事にします。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
       <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
@@ -771,64 +813,6 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
 &lt;p&gt;　・mt-config.cgi でStaticWebPathには静的ファイルを配置するディレクトリのためのパスを記述、相対パスを推奨らしい※web上のURLパスの相対パス&lt;/p&gt;
 
 &lt;p&gt;　・mt-config.cgi でCGIPathにはmt.cgi以外のCGIスクリプトリンクを生成するためのパスを記述、AdminCGIPathがない場合はmt.cgiもこの値を使う。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Win上のpythonでバッチ処理3</title>
-      <link>http://tech.k-zak.com/2014/03/16/batch-python-03</link>
-      <pubDate>Sun, 16 Mar 2014 14:36:07 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/03/16/batch-python-03</guid>
-      <description>&lt;p&gt;windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを&lt;/p&gt;
-
-&lt;p&gt;取得し、コマンドを叩く。&lt;/p&gt;
-
-&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-import os,csv,json
-
-def get_conf(path):
-    try:
-        os.path.isfile(path)
-        f = open(path,&#39;r&#39;)
-        data = json.load(f)
-        f.close()
-        return data
-
-    except Exception as e:
-        #print &#34;FileNotFound or Access Error.&#34;
-        return None
-
-def read_file(path):
-    try:
-        os.path.isfile(path)
-        f = open(path,&#39;r&#39;)
-        data = csv.reader(f)
-        users = [line[0] for line in data]
-        f.close()
-        return users
-    except Exception as e:
-        #print &#34;FileNotFound or Access Error.&#34;
-        return None
-
-def bu_cmd(users,bu_path):
-    if isinstance(users,list) and len(users) &gt; 0:
-        cmds = map(lambda x:&#34;fmsadmin -u account -p password backup %s -d %s -k 7&#34; % (x,bu_path)  ,users)
-        for c in cmds:
-            os.system(c)
-        return 0
-    else:
-        #データが正常に取得出来なかった
-        return None
-
-if __name__ == &#39;__main__&#39;:
-    conf_data = get_conf(&#34;conf.json&#34;)
-    users = read_file(conf_data[&#34;test&#34;][&#34;csvPath&#34;])
-    bu_cmd(users,conf_data[&#34;test&#34;][&#34;backupPath&#34;])
-
-&lt;/pre&gt;
 </description>
     </item>
     
