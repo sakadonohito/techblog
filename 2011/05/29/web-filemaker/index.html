@@ -1,0 +1,428 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>WebフレームワークとFileMaker</title>
+  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://tech.k-zak.com/images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://tech.k-zak.com"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://tech.k-zak.com/tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">開発メモてきな</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+<div class="content">
+
+  <div class="article">
+    <div class="title">WebフレームワークとFileMaker</div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description"><p>FileMaker用のブログに書こうかと思ったけどこちらに書く</p>
+
+<div>
+  FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの
+</div>
+
+<div>
+  データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて
+</div>
+
+<div>
+  ２つの方法があります。
+</div>
+
+<div>
+  １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する
+</div>
+
+<div>
+  ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。
+</div>
+
+<div>
+</div>
+
+<div>
+  で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。
+</div>
+
+<div>
+</div>
+
+<div>
+  ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。
+</div>
+
+<div>
+  ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では
+</div>
+
+<div>
+  載っていない文法のXMLが返ってくる。
+</div>
+
+<div>
+  具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に
+</div>
+
+<div>
+  rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが
+</div>
+
+<div>
+  rowタグの中にあるのではなく、本当に&#8221;col&#8221;という名のタグが入っているからメタタグの
+</div>
+
+<div>
+  カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー
+</div>
+
+<div>
+</div>
+
+<div>
+  で、世間ではどうしているのかというと、
+</div>
+
+<div>
+  a,FileMaker文法を解釈するxsltで開発
+</div>
+
+<div>
+  b,PHPでライブラリが出ているのでそれを使う(FX.php)
+</div>
+
+<div>
+  c,Rubyでライブラリが出ているのでそれを使う(rfm)
+</div>
+
+<div>
+  d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)
+</div>
+
+<div>
+</div>
+
+<div>
+  ってところ。
+</div>
+
+<div>
+  実際にはFX.phpを利用するのがメジャーでしょう。。
+</div>
+
+<div>
+  これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、
+</div>
+
+<div>
+  案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は
+</div>
+
+<div>
+  ある程度覚えておいたほうが良いと思う。
+</div>
+
+<div>
+</div>
+
+<div>
+  ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを
+</div>
+
+<div>
+  作れさえすれば、言語は何でも良いという事。
+</div>
+
+<div>
+  なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。
+</div>
+
+<div>
+  Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど
+</div>
+
+<div>
+  Perlは自分には無理。そもそもPerlがほぼ分からない。
+</div>
+
+<div>
+</div>
+
+<div>
+  Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては
+</div>
+
+<div>
+  Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている
+</div>
+
+<div>
+  ようなので、将来性は微妙。
+</div>
+
+<div>
+</div>
+
+<div>
+  Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの
+</div>
+
+<div>
+  両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを
+</div>
+
+<div>
+  継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。
+</div>
+
+<div>
+</div>
+
+<div>
+  PHPのFX.phpはCodeIgniterやCakePHPでモデルとして使えるような方法が出来ている。
+</div>
+
+<div>
+</div>
+
+<div>
+  一方、Rubyのはちょっと分かりづらい。いや正確にはRailsを理解しないまま試し他自分が
+</div>
+
+<div>
+  悪いのですけど。。。
+</div>
+
+<div>
+  現状では、Railsの設定でActiveRecordを使わない設定にしてControllerに全て処理を書く
+</div>
+
+<div>
+  みたいなやり方になってしまうようです。
+</div>
+
+<div>
+  Railsの仕組みやRubyのmix-inの仕組みとか理解できると別の方法が見つかりそうですけど。
+</div>
+
+<div>
+</div>
+
+<div>
+</div>
+
+<div>
+  ◆PHPでFileMaker
+</div>
+
+<div>
+  ・FX.php <a href="http://msyk.net/fmp/fx_ja/">http://msyk.net/fmp/fx_ja/</a>
+</div>
+
+<div>
+  ・CodeIgniter でFX.php
+</div>
+
+<div>
+  <a href="http://codeigniter.com/wiki/FilemakerPro_Database_Integration/">http://codeigniter.com/wiki/FilemakerPro_Database_Integration/</a>
+</div>
+
+<div>
+  ・CakePHPでFX.php <a href="http://www.beezwax.net/solutions/FMCakeMix">http://www.beezwax.net/solutions/FMCakeMix</a>
+</div>
+
+<div>
+</div>
+
+<div>
+  ◆RubyでFileMaker
+</div>
+
+<div>
+  ・rfm <a href="http://www.famlog.jp/rfm/">http://www.famlog.jp/rfm/</a>
+</div>
+
+<div>
+</div>
+
+<div>
+  ◆PythonでFileMaker
+</div>
+
+<div>
+  ・PyFileMaker <a href="http://code.google.com/p/pyfilemaker/">http://code.google.com/p/pyfilemaker/</a>
+</div>
+</div>
+    <div class="tags">
+      29 May 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+       
+    </div>
+    
+  </div>
+
+</div>
+
+<paper-item>
+  
+    <a href="http://tech.k-zak.com/2011/06/14/study-cakephp"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+  
+    <div class="flex"></div>
+  
+    <a href="http://tech.k-zak.com/2011/04/29/emacs-setting"><paper-fab icon="chevron-right"></paper-fab></a>
+  
+</paper-item>
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>

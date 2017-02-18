@@ -10,10 +10,10 @@
     
     <item>
       <title>印刷用CSSでハマった</title>
-      <link>http://tech.k-zak.com/%E5%8D%B0%E5%88%B7%E7%94%A8css%E3%81%A7%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F.html</link>
+      <link>http://tech.k-zak.com/2013/10/02/trouble-css</link>
       <pubDate>Wed, 02 Oct 2013 16:53:01 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E5%8D%B0%E5%88%B7%E7%94%A8css%E3%81%A7%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F.html</guid>
+      <guid>http://tech.k-zak.com/2013/10/02/trouble-css</guid>
       <description>&lt;p&gt;この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。&lt;/p&gt;
 
 &lt;p&gt;問題のCSS: page-break-before&lt;/p&gt;
@@ -40,10 +40,10 @@
     
     <item>
       <title>css 印刷のために</title>
-      <link>http://tech.k-zak.com/css-%E5%8D%B0%E5%88%B7%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB.html</link>
+      <link>http://tech.k-zak.com/2013/08/25/print-css</link>
       <pubDate>Sun, 25 Aug 2013 04:39:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/css-%E5%8D%B0%E5%88%B7%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB.html</guid>
+      <guid>http://tech.k-zak.com/2013/08/25/print-css</guid>
       <description>&lt;p&gt;なんとかPHP側でPDF作成とかじゃなくてhtml＆cssで楽したい。&lt;/p&gt;
 
 &lt;p&gt;そんな時のcss設定とか。&lt;/p&gt;
@@ -70,10 +70,10 @@
     
     <item>
       <title>cssメモ ちょっとしたもの</title>
-      <link>http://tech.k-zak.com/css%E3%83%A1%E3%83%A2-%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E3%81%97%E3%81%9F%E3%82%82%E3%81%AE.html</link>
+      <link>http://tech.k-zak.com/2013/08/25/css</link>
       <pubDate>Sun, 25 Aug 2013 04:21:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/css%E3%83%A1%E3%83%A2-%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E3%81%97%E3%81%9F%E3%82%82%E3%81%AE.html</guid>
+      <guid>http://tech.k-zak.com/2013/08/25/css</guid>
       <description>&lt;p&gt;cssでwindowサイズに応じてbodyのcss定義を変える。&lt;/p&gt;
 
 &lt;p&gt;まぁ、bootstrapで使っている上に固定のメニューリストみたいなのある時に&lt;/p&gt;
@@ -88,10 +88,10 @@
     
     <item>
       <title>cssメモ 配下の指定</title>
-      <link>http://tech.k-zak.com/css%E3%83%A1%E3%83%A2-%E9%85%8D%E4%B8%8B%E3%81%AE%E6%8C%87%E5%AE%9A.html</link>
+      <link>http://tech.k-zak.com/2013/08/25/css-tech</link>
       <pubDate>Sun, 25 Aug 2013 04:11:02 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/css%E3%83%A1%E3%83%A2-%E9%85%8D%E4%B8%8B%E3%81%AE%E6%8C%87%E5%AE%9A.html</guid>
+      <guid>http://tech.k-zak.com/2013/08/25/css-tech</guid>
       <description>&lt;p&gt;cssで配下の指定勘違いしておかしな事やってたのでメモ&lt;/p&gt;
 
 &lt;p&gt;結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。&lt;/p&gt;

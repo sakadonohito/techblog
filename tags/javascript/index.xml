@@ -10,10 +10,10 @@
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</link>
+      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</guid>
+      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj</guid>
       <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;
@@ -80,10 +80,10 @@
     
     <item>
       <title>2014年を振り返る JavaScript編</title>
-      <link>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-javascript%E7%B7%A8.html</link>
+      <link>http://tech.k-zak.com/2014/12/30/milestone-js</link>
       <pubDate>Tue, 30 Dec 2014 09:34:05 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-javascript%E7%B7%A8.html</guid>
+      <guid>http://tech.k-zak.com/2014/12/30/milestone-js</guid>
       <description>&lt;p&gt;今年を振り返ってみる。クライアントサイド、特にJavaScriptについて&lt;/p&gt;
 
 &lt;p&gt;JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。&lt;/p&gt;
@@ -105,11 +105,59 @@
     </item>
     
     <item>
+      <title>思い出せない</title>
+      <link>http://tech.k-zak.com/2014/10/25/milestone</link>
+      <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/10/25/milestone</guid>
+      <description>
+
+&lt;p&gt;前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。&lt;/p&gt;
+
+&lt;h3 id=&#34;サーバー関係&#34;&gt;サーバー関係&lt;/h3&gt;
+
+&lt;p&gt;ログローテーションの設定を行った。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;yum install logrotate&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;/etc/logrotate.d/配下に追加の設定を行う&lt;/p&gt;
+
+&lt;p&gt;/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる&lt;/p&gt;
+
+&lt;h3 id=&#34;ansible&#34;&gt;Ansible&lt;/h3&gt;
+
+&lt;p&gt;1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中&lt;/p&gt;
+
+&lt;p&gt;ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。&lt;/p&gt;
+
+&lt;p&gt;yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。&lt;/p&gt;
+
+&lt;p&gt;後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。&lt;/p&gt;
+
+&lt;p&gt;Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。&lt;/p&gt;
+
+&lt;h3 id=&#34;javascript&#34;&gt;JavaScript&lt;/h3&gt;
+
+&lt;p&gt;AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。&lt;/p&gt;
+
+&lt;p&gt;マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。&lt;/p&gt;
+
+&lt;p&gt;AWSのS3のCORSで許可ヘッダーの設定が必要でした。&lt;/p&gt;
+
+&lt;h3 id=&#34;php&#34;&gt;PHP&lt;/h3&gt;
+
+&lt;p&gt;namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く&lt;/p&gt;
+
+&lt;p&gt;毎日ちゃんとメモとらないと駄目ですね。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>低レベルプログラマだからJavaScriptで知らなかった事</title>
-      <link>http://tech.k-zak.com/%E4%BD%8E%E3%83%AC%E3%83%99%E3%83%AB%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%81%A0%E3%81%8B%E3%82%89javascript%E3%81%A7%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E4%BA%8B.html</link>
+      <link>http://tech.k-zak.com/2014/08/02/spec-js</link>
       <pubDate>Sat, 02 Aug 2014 15:29:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E4%BD%8E%E3%83%AC%E3%83%99%E3%83%AB%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%81%A0%E3%81%8B%E3%82%89javascript%E3%81%A7%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E4%BA%8B.html</guid>
+      <guid>http://tech.k-zak.com/2014/08/02/spec-js</guid>
       <description>&lt;p&gt;JavaScriptで知らないせいでハマったところなどなど&lt;/p&gt;
 
 &lt;p&gt;Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。&lt;/p&gt;
@@ -124,10 +172,10 @@
     
     <item>
       <title>JavaScriptで7の倍数と7のつく数字の時だけtrue</title>
-      <link>http://tech.k-zak.com/javascript%E3%81%A77%E3%81%AE%E5%80%8D%E6%95%B0%E3%81%A87%E3%81%AE%E3%81%A4%E3%81%8F%E6%95%B0%E5%AD%97%E3%81%AE%E6%99%82%E3%81%A0%E3%81%91true.html</link>
+      <link>http://tech.k-zak.com/2013/12/22/x7-true-js</link>
       <pubDate>Sun, 22 Dec 2013 19:18:49 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/javascript%E3%81%A77%E3%81%AE%E5%80%8D%E6%95%B0%E3%81%A87%E3%81%AE%E3%81%A4%E3%81%8F%E6%95%B0%E5%AD%97%E3%81%AE%E6%99%82%E3%81%A0%E3%81%91true.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/22/x7-true-js</guid>
       <description>&lt;p&gt;Javascriptてこんな書き方できるのか&lt;/p&gt;
 
 &lt;p&gt;◆7の倍数か7の付く数字の場合のみtrueを返す。&lt;/p&gt;
@@ -151,10 +199,10 @@
     
     <item>
       <title>fizzbuzz</title>
-      <link>http://tech.k-zak.com/fizzbuzz.html</link>
+      <link>http://tech.k-zak.com/2013/12/22/fizzbuzz-js</link>
       <pubDate>Sun, 22 Dec 2013 18:44:51 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/fizzbuzz.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/22/fizzbuzz-js</guid>
       <description>&lt;p&gt;Javascriptでfizzbuzz&lt;/p&gt;
 
 &lt;p&gt;◆シンプルなやつ&lt;/p&gt;
@@ -180,20 +228,20 @@
     
     <item>
       <title>jQueryでまた使い方忘れて調べそうなやつらメモ</title>
-      <link>http://tech.k-zak.com/jquery%E3%81%A7%E3%81%BE%E3%81%9F%E4%BD%BF%E3%81%84%E6%96%B9%E5%BF%98%E3%82%8C%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9D%E3%81%86%E3%81%AA%E3%82%84%E3%81%A4%E3%82%89%E3%83%A1%E3%83%A2.html</link>
+      <link>http://tech.k-zak.com/2013/08/25/jquery-memo</link>
       <pubDate>Sun, 25 Aug 2013 04:50:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/jquery%E3%81%A7%E3%81%BE%E3%81%9F%E4%BD%BF%E3%81%84%E6%96%B9%E5%BF%98%E3%82%8C%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9D%E3%81%86%E3%81%AA%E3%82%84%E3%81%A4%E3%82%89%E3%83%A1%E3%83%A2.html</guid>
+      <guid>http://tech.k-zak.com/2013/08/25/jquery-memo</guid>
       <description>&lt;p&gt;gistベタ貼りじゃ！&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>jQueryで要素の高さを変える</title>
-      <link>http://tech.k-zak.com/jquery%E3%81%A7%E8%A6%81%E7%B4%A0%E3%81%AE%E9%AB%98%E3%81%95%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B.html</link>
+      <link>http://tech.k-zak.com/2013/08/25/jquery-toggle</link>
       <pubDate>Sun, 25 Aug 2013 04:47:47 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/jquery%E3%81%A7%E8%A6%81%E7%B4%A0%E3%81%AE%E9%AB%98%E3%81%95%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B.html</guid>
+      <guid>http://tech.k-zak.com/2013/08/25/jquery-toggle</guid>
       <description>&lt;p&gt;まぁ、アレですよ。よかれと思って表示非表示をトグルする要素作ったら、&lt;/p&gt;
 
 &lt;p&gt;非表示にした分、開いたスペースだけ下にあるリスト(table)要素の高さ広げてよ&lt;/p&gt;
@@ -210,10 +258,10 @@
     
     <item>
       <title>cssメモ 配下の指定</title>
-      <link>http://tech.k-zak.com/css%E3%83%A1%E3%83%A2-%E9%85%8D%E4%B8%8B%E3%81%AE%E6%8C%87%E5%AE%9A.html</link>
+      <link>http://tech.k-zak.com/2013/08/25/css-tech</link>
       <pubDate>Sun, 25 Aug 2013 04:11:02 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/css%E3%83%A1%E3%83%A2-%E9%85%8D%E4%B8%8B%E3%81%AE%E6%8C%87%E5%AE%9A.html</guid>
+      <guid>http://tech.k-zak.com/2013/08/25/css-tech</guid>
       <description>&lt;p&gt;cssで配下の指定勘違いしておかしな事やってたのでメモ&lt;/p&gt;
 
 &lt;p&gt;結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。&lt;/p&gt;
@@ -270,10 +318,10 @@
     
     <item>
       <title>JavaのDWRって何さ　設定メモ</title>
-      <link>http://tech.k-zak.com/java_dwr.html</link>
+      <link>http://tech.k-zak.com/2011/04/13/java-dwr</link>
       <pubDate>Wed, 13 Apr 2011 19:26:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/java_dwr.html</guid>
+      <guid>http://tech.k-zak.com/2011/04/13/java-dwr</guid>
       <description>&lt;div&gt;
   JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。
 &lt;/div&gt;

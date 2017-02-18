@@ -10,10 +10,10 @@
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</link>
+      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</guid>
+      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj</guid>
       <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;
@@ -80,10 +80,10 @@
     
     <item>
       <title>AnsibleのSSH設定について</title>
-      <link>http://tech.k-zak.com/ansible%E3%81%AEssh%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</link>
+      <link>http://tech.k-zak.com/2015/02/08/ansible-ssh</link>
       <pubDate>Sun, 08 Feb 2015 14:43:15 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ansible%E3%81%AEssh%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</guid>
+      <guid>http://tech.k-zak.com/2015/02/08/ansible-ssh</guid>
       <description>&lt;p&gt;Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。&lt;/p&gt;
 
 &lt;p&gt;という事で調べた。&lt;/p&gt;
@@ -164,10 +164,10 @@
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</link>
+      <link>http://tech.k-zak.com/2015/02/01/php-mail</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</guid>
+      <guid>http://tech.k-zak.com/2015/02/01/php-mail</guid>
       <description>&lt;p&gt;## install postfix&lt;/p&gt;
 
 &lt;p&gt;&amp;#8220;`&lt;/p&gt;
@@ -234,10 +234,10 @@
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</link>
+      <link>http://tech.k-zak.com/2015/01/05/perl-cgi</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</guid>
+      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi</guid>
       <description>&lt;p&gt;古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ&lt;/p&gt;
 
 &lt;p&gt;最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。&lt;/p&gt;
@@ -294,10 +294,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>2014年を振り返る インフラ系</title>
-      <link>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E7%B3%BB.html</link>
+      <link>http://tech.k-zak.com/2014/12/30/milestone-infra</link>
       <pubDate>Tue, 30 Dec 2014 09:50:19 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E7%B3%BB.html</guid>
+      <guid>http://tech.k-zak.com/2014/12/30/milestone-infra</guid>
       <description>&lt;p&gt;2014年を振り返る。インフラ関係について&lt;/p&gt;
 
 &lt;p&gt;今年もっとも多く成長したのはインフラ関係についてだと思う。&lt;/p&gt;
@@ -318,10 +318,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html</link>
+      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html</guid>
+      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside</guid>
       <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る&lt;/p&gt;
 
 &lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;
@@ -346,10 +346,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>2014年を振り返る JavaScript編</title>
-      <link>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-javascript%E7%B7%A8.html</link>
+      <link>http://tech.k-zak.com/2014/12/30/milestone-js</link>
       <pubDate>Tue, 30 Dec 2014 09:34:05 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-javascript%E7%B7%A8.html</guid>
+      <guid>http://tech.k-zak.com/2014/12/30/milestone-js</guid>
       <description>&lt;p&gt;今年を振り返ってみる。クライアントサイド、特にJavaScriptについて&lt;/p&gt;
 
 &lt;p&gt;JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。&lt;/p&gt;
@@ -372,10 +372,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>思い出せない</title>
-      <link>http://tech.k-zak.com/%E6%80%9D%E3%81%84%E5%87%BA%E3%81%9B%E3%81%AA%E3%81%84.html</link>
+      <link>http://tech.k-zak.com/2014/10/25/milestone</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E6%80%9D%E3%81%84%E5%87%BA%E3%81%9B%E3%81%AA%E3%81%84.html</guid>
+      <guid>http://tech.k-zak.com/2014/10/25/milestone</guid>
       <description>
 
 &lt;p&gt;前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。&lt;/p&gt;
@@ -420,10 +420,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>PHPのファイルアップロードについて</title>
-      <link>http://tech.k-zak.com/php%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</link>
+      <link>http://tech.k-zak.com/2014/09/07/setting-php</link>
       <pubDate>Sun, 07 Sep 2014 17:34:12 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/php%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</guid>
+      <guid>http://tech.k-zak.com/2014/09/07/setting-php</guid>
       <description>&lt;p&gt;PHPで大きなファイルアップロードを作成する&lt;/p&gt;
 
 &lt;p&gt;・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。&lt;/p&gt;
@@ -440,10 +440,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
-      <link>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B2.html</link>
+      <link>http://tech.k-zak.com/2014/09/07/challenge-ansible</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B2.html</guid>
+      <guid>http://tech.k-zak.com/2014/09/07/challenge-ansible</guid>
       <description>&lt;p&gt;・botoが使えないってエラーになる。&lt;/p&gt;
 
 &lt;p&gt;　→次のURLで解決 &lt;a href=&#34;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&#34;&gt;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&lt;/a&gt;&lt;/p&gt;
@@ -524,10 +524,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B.html</link>
+      <link>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B.html</guid>
+      <guid>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible</guid>
       <description>
 
 &lt;p&gt;Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。&lt;/p&gt;
@@ -564,10 +564,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>PHPあべし！</title>
-      <link>http://tech.k-zak.com/php%E3%81%82%E3%81%B9%E3%81%97.html</link>
+      <link>http://tech.k-zak.com/2014/08/02/spec-php5.5</link>
       <pubDate>Sat, 02 Aug 2014 15:34:29 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/php%E3%81%82%E3%81%B9%E3%81%97.html</guid>
+      <guid>http://tech.k-zak.com/2014/08/02/spec-php5.5</guid>
       <description>&lt;p&gt;最近PHP触ってて「あべし！」ってなった事。&lt;/p&gt;
 
 &lt;p&gt;PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。&lt;/p&gt;
@@ -578,10 +578,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>低レベルプログラマだからJavaScriptで知らなかった事</title>
-      <link>http://tech.k-zak.com/%E4%BD%8E%E3%83%AC%E3%83%99%E3%83%AB%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%81%A0%E3%81%8B%E3%82%89javascript%E3%81%A7%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E4%BA%8B.html</link>
+      <link>http://tech.k-zak.com/2014/08/02/spec-js</link>
       <pubDate>Sat, 02 Aug 2014 15:29:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E4%BD%8E%E3%83%AC%E3%83%99%E3%83%AB%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%81%A0%E3%81%8B%E3%82%89javascript%E3%81%A7%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E4%BA%8B.html</guid>
+      <guid>http://tech.k-zak.com/2014/08/02/spec-js</guid>
       <description>&lt;p&gt;JavaScriptで知らないせいでハマったところなどなど&lt;/p&gt;
 
 &lt;p&gt;Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。&lt;/p&gt;
@@ -596,10 +596,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>最近やったいろいろ</title>
-      <link>http://tech.k-zak.com/%E6%9C%80%E8%BF%91%E3%82%84%E3%81%A3%E3%81%9F%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D.html</link>
+      <link>http://tech.k-zak.com/2014/03/16/milestone</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E6%9C%80%E8%BF%91%E3%82%84%E3%81%A3%E3%81%9F%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D.html</guid>
+      <guid>http://tech.k-zak.com/2014/03/16/milestone</guid>
       <description>&lt;p&gt;最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。&lt;/p&gt;
 
 &lt;p&gt;◆PostgreSQLのSQLダンプ&lt;/p&gt;
@@ -776,10 +776,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>Win上のpythonでバッチ処理3</title>
-      <link>http://tech.k-zak.com/win%E4%B8%8A%E3%81%AEpython%E3%81%A7%E3%83%90%E3%83%83%E3%83%81%E5%87%A6%E7%90%863.html</link>
+      <link>http://tech.k-zak.com/2014/03/16/batch-python-03</link>
       <pubDate>Sun, 16 Mar 2014 14:36:07 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/win%E4%B8%8A%E3%81%AEpython%E3%81%A7%E3%83%90%E3%83%83%E3%83%81%E5%87%A6%E7%90%863.html</guid>
+      <guid>http://tech.k-zak.com/2014/03/16/batch-python-03</guid>
       <description>&lt;p&gt;windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを&lt;/p&gt;
 
 &lt;p&gt;取得し、コマンドを叩く。&lt;/p&gt;

@@ -10,10 +10,10 @@
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</link>
+      <link>http://tech.k-zak.com/2015/01/05/perl-cgi</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</guid>
+      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi</guid>
       <description>&lt;p&gt;古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ&lt;/p&gt;
 
 &lt;p&gt;最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。&lt;/p&gt;

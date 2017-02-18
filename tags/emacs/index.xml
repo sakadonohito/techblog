@@ -9,11 +9,474 @@
     <atom:link href="http://tech.k-zak.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>新しく開発環境作成中</title>
+      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm</link>
+      <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm</guid>
+      <description>
+
+&lt;h3 id=&#34;ubuntu14-64bit-のvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;イメージからVMWareFusionに作成&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ターミナルから LANG=C xdg-user-dirs-gtk-update を実行
+LANG=C xdg-user-dirs-gtk-update&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;設定画面が出てくるので、そのままOK&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;VMWare toolsをインストール&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開&lt;/li&gt;
+&lt;li&gt;展開したディレクトリの中に入ってインストール実行&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;aptのアップデートとアップグレード
+    sudo apt-get update&lt;br /&gt;
+    sudo apt-get upgrade&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Dropboxクライアントのインストール&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール&lt;/li&gt;
+&lt;li&gt;Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Emacsのインストール
+    sudo apt-get install emacs24&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成&lt;/li&gt;
+&lt;li&gt;作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった
+ln -s ~/Dropbox/emacs.d ~/emacs.d&lt;br /&gt;
+mv ~/emacs.d ~/.emacs.d
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;バージョン管理のインストール
+    sudo apt-get install git&lt;br /&gt;
+    sudo apt-get install mercurial&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;nginxのインストール
+    sudo apt-get install nginx&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;xEnvや各バージョンのインストールに必要になる諸々のインストール
+    sudo add-apt-repository ppa:webupd8team/java&lt;br /&gt;
+    sudo apt-get update&lt;br /&gt;
+    sudo apt-get install oracle-java7-installer ※for jruby&lt;br /&gt;
+    sudo apt-get install oracle-java8-installer ※必要であれば。&lt;br /&gt;
+    sudo update-alternatives &amp;ndash;config java&lt;br /&gt;
+    ※java7を選択する&lt;br /&gt;
+    sudo apt-get install g++ ※これをインストールしないとインストール失敗する&lt;br /&gt;
+    sudo apt-get install libssl-dev ※これをインストールしないとインストール失敗する&lt;br /&gt;
+    sudo apt-get install build-essential ※pyenvで必要になるようだ&lt;br /&gt;
+    sudo apt-get install curl ※ndenv install &amp;ndash;list で必要になる&lt;br /&gt;
+    sudo apt-get install libjpeg-dev ※phpのインストールで必要になる&lt;br /&gt;
+    sudo apt-get install re2c ※phpのインストールで必要になる&lt;br /&gt;
+    sudo apt-get install bison ※phpのインストールで必要になる&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;rbenvのインストール
+    git clone &lt;a href=&#34;https://github.com/sstephenson/rbenv.git&#34;&gt;https://github.com/sstephenson/rbenv.git&lt;/a&gt; ~/.rbenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/sstephenson/ruby-build.git&#34;&gt;https://github.com/sstephenson/ruby-build.git&lt;/a&gt; ~/.rbenv/plugins/ruby-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.rbenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${rbenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;plenvのインストール
+    git clone &lt;a href=&#34;https://github.com/tokuhirom/plenv.git&#34;&gt;https://github.com/tokuhirom/plenv.git&lt;/a&gt; ~/.plenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/tokuhirom/Perl-Build.git&#34;&gt;https://github.com/tokuhirom/Perl-Build.git&lt;/a&gt; ~/.plenv/plugins/perl-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.plenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${plenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pyenvのインストール
+    git clone &lt;a href=&#34;https://github.com/yyuu/pyenv.git&#34;&gt;https://github.com/yyuu/pyenv.git&lt;/a&gt; ~/.pyenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/yyuu/python-virtualenv.git&#34;&gt;https://github.com/yyuu/python-virtualenv.git&lt;/a&gt; ~/.pyenv/plugins/python-virtualenv&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.pyenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${pyenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ndenvのインストール
+    git clone &lt;a href=&#34;https://github.com/riywo/ndenv.git&#34;&gt;https://github.com/riywo/ndenv.git&lt;/a&gt; ~/.ndenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/riywo/node-build.git&#34;&gt;https://github.com/riywo/node-build.git&lt;/a&gt; ~/.ndenv/plugins/node-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.ndenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${ndenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;phpenvのインストール
+    git clone &lt;a href=&#34;https://github.com/CHH/phpenv.git&#34;&gt;https://github.com/CHH/phpenv.git&lt;/a&gt; ~/.phpenv&lt;br /&gt;
+    git clone &lt;a href=&#34;https://github.com/CHH/php-build.git&#34;&gt;https://github.com/CHH/php-build.git&lt;/a&gt; ~/.phpenv/plugins/php-build&lt;br /&gt;
+    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.phpenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+    echo &amp;lsquo;eval &amp;ldquo;${phpenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;rubyのインストールとjrubyのインストール
+    rbenv install 1.9.3-p547&lt;br /&gt;
+    rbenv install 2.1.2&lt;br /&gt;
+    rbenv install jruby-1.7.15&lt;br /&gt;
+    rbenv global 2.1.2&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;perlのインストール
+    plenv install 5.20.0&lt;br /&gt;
+    plenv global 5.20.0&lt;br /&gt;
+    plenv rehash&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pyenvのインストール
+    pyenv install jython-2.5.3&lt;br /&gt;
+    pyenv install 3.4.1&lt;br /&gt;
+    pyenv install 2.7.8&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ndenvのインストール
+    ndenv install v0.11.13&lt;br /&gt;
+    ndenv global v0.11.13&lt;br /&gt;
+    ndenv rehash&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;phpenvのインストール
+    phpenv install 5.5.16&lt;br /&gt;
+    phpenv install 5.6.0&lt;br /&gt;
+    phpenv global 5.5.16&lt;br /&gt;
+    phpenv rehash&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;php-fpmの設定
+    -: listen = 127.0.0.1:9000&lt;br /&gt;
+    +: /home/{{myhome}}/.phpenv/versions/5.5.16/var/run/php-fpm.sock&lt;br /&gt;
+    -: ;request_terminate_timeout = 0&lt;br /&gt;
+    +: request_terminate_timeout = 0&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;php.iniの設定&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;適宜timeoutやmax_sizeの調整&lt;/li&gt;
+&lt;li&gt;timezoneの設定&lt;/li&gt;
+&lt;li&gt;mbstringの設定&lt;/li&gt;
+&lt;li&gt;拡張ライブラリ分の追記&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mysqlのインストール
+    sudo apt-get install mysq&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;nginxの設定&lt;/p&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;conf.dに作成した場合はそのままで良いが、site-availableに作成した場合はsite-enableにシンボリックリンクを作成する&lt;/p&gt;
+
+&lt;p&gt;unicornで動かすredmineの分も記述する。※内容詳細は次のリンク(過去記事参照)&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;unicornでredmineの設定
+    sudo apt-get install zlib1g-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libsqlite3-dev libpcre3-dev libncurses-dev libgdbm-dev tk-dev libmagickwand-dev&lt;br /&gt;
+    sudo apt-get install python-software-properties sysv-rc-conf&lt;br /&gt;
+    gem update&lt;br /&gt;
+    gem install bundler&lt;br /&gt;
+    gem install mysql2
+    gem install rails
+    gem install rake
+    echo &amp;ldquo;gem &amp;lsquo;unicorn&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
+    echo &amp;ldquo;gem &amp;lsquo;psych&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
+    bundle install &amp;ndash;without rmagick development test sqlite postgresql
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以降の作業については過去の記事を参照する。&lt;a href=&#34;http://kazunoko.sakura.ne.jp/wordpress/?p=240&#34;&gt;2014年の目標達成進捗管理的な&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;20140916&#34;&gt;20140916&lt;/h2&gt;
+
+&lt;h3 id=&#34;memo&#34;&gt;memo&lt;/h3&gt;
+
+&lt;p&gt;Ubuntu(64bit)のphpenvにldap入れるのに詰まった事。&lt;/p&gt;
+
+&lt;p&gt;ldapのライブラリの場所に問題があったらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ln -s /usr/lib/x86_64-linux-gnu/libldap_r.so /usr/lib/libldap_r.so  
+sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ubuntu(64bit)のphpenvにpdo-oci入れるのに詰まった事。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ln -s /home/{{myhome}}/work/oracle/libclntsh.so.11.1 /home/{{myhome}}/work/oracle/libclntsh.so  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;phpenvでphpizeで忘れていたこと。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./configure --with-php-config=/home/.phpenv/versions/5.5.16/bin/php-config ※phpizeの対象を指定する必要がある
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdownのプラグインいれたけど、散々な結果。ウケる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>最近やったいろいろ</title>
+      <link>http://tech.k-zak.com/2014/03/16/milestone</link>
+      <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/03/16/milestone</guid>
+      <description>&lt;p&gt;最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。&lt;/p&gt;
+
+&lt;p&gt;◆PostgreSQLのSQLダンプ&lt;/p&gt;
+
+&lt;p&gt;　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！&lt;/p&gt;
+
+&lt;p&gt;◆残念VBSバッチスクリプト&lt;/p&gt;
+
+&lt;p&gt;　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない&lt;/p&gt;
+
+&lt;p&gt;　・windowsのコマンドでディレクトリ削除するコマンド&lt;/p&gt;
+
+&lt;p&gt;◆謎！IISの設定&lt;/p&gt;
+
+&lt;p&gt;　・IISのRewrite設定&lt;/p&gt;
+
+&lt;p&gt;　　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定&lt;/p&gt;
+
+&lt;p&gt;　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、&lt;/p&gt;
+
+&lt;p&gt;　　DefaultWebSiteにリダイレクトするやり方がある。&lt;/p&gt;
+
+&lt;p&gt;　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない&lt;/p&gt;
+
+&lt;p&gt;◆Win8.1&lt;/p&gt;
+
+&lt;p&gt;　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。&lt;/p&gt;
+
+&lt;p&gt;　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。&lt;/p&gt;
+
+&lt;p&gt;　・win8でSQLServer2012のodbc設定がうまくいかない&lt;/p&gt;
+
+&lt;p&gt;　　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも&lt;/p&gt;
+
+&lt;p&gt;◆PHP&lt;/p&gt;
+
+&lt;p&gt;　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。&lt;/p&gt;
+
+&lt;p&gt;　・PHPで頼りになるのはやはりPHP.net&lt;/p&gt;
+
+&lt;p&gt;　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。&lt;/p&gt;
+
+&lt;p&gt;　　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。&lt;/p&gt;
+
+&lt;p&gt;　　※セッション制御が楽かも&lt;/p&gt;
+
+&lt;p&gt;　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。&lt;/p&gt;
+
+&lt;p&gt;　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ&lt;/p&gt;
+
+&lt;p&gt;　　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない&lt;/p&gt;
+
+&lt;p&gt;　・php5.4以降はセーフモード使えない&lt;/p&gt;
+
+&lt;p&gt;　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。&lt;/p&gt;
+
+&lt;p&gt;　・ファイルのオーナーとかに気をつけましょう&lt;/p&gt;
+
+&lt;p&gt;◆Apacheの設定&lt;/p&gt;
+
+&lt;p&gt;　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く&lt;/p&gt;
+
+&lt;p&gt;　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて&lt;/p&gt;
+
+&lt;p&gt;　　vhost.confの方に書いた&lt;/p&gt;
+
+&lt;p&gt;◆SSH&lt;/p&gt;
+
+&lt;p&gt;　・SSHで認証鍵ファイルを使う場合の設定方法&lt;/p&gt;
+
+&lt;p&gt;　　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む&lt;/p&gt;
+
+&lt;p&gt;　・~/.ssh/に設定ファイルを置いておくと楽&lt;/p&gt;
+
+&lt;p&gt;◆ポートフォワーディング&lt;/p&gt;
+
+&lt;p&gt;　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、&lt;/p&gt;
+
+&lt;p&gt;　　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。&lt;/p&gt;
+
+&lt;p&gt;◆忘れちゃうからメモ(Linuxコマンド)&lt;/p&gt;
+
+&lt;p&gt;　・scp&lt;/p&gt;
+
+&lt;p&gt;　　scp sourcefile remotehost target&lt;/p&gt;
+
+&lt;p&gt;◆emacs&lt;/p&gt;
+
+&lt;p&gt;　・ssh→sudo or su root する方法&lt;/p&gt;
+
+&lt;p&gt;　　/ssh:SSHRemoteConfName|su(do):SSHRemoteConfName:/path/to/&lt;/p&gt;
+
+&lt;p&gt;◆AWSについて&lt;/p&gt;
+
+&lt;p&gt;　・EC2インスタンス楽、でもメモリが2,4,8GBの-0.5GBなのでいつもアプリ要求仕様の1ランク上を使わないといけないのが残念。&lt;/p&gt;
+
+&lt;p&gt;　・EC2そのもにセキュリティグループの設定があるのでその設定を忘れると、Server側でFireWall無効にしても意味ない(無防備接続確認テストによる切り分けができない)。&lt;/p&gt;
+
+&lt;p&gt;　・EC2インスタンス作成時に選択するネットワークセグメント間違うと後で大変。&lt;/p&gt;
+
+&lt;p&gt;　・作成したインスタンスのストレージを付け替えることが出来る。&lt;/p&gt;
+
+&lt;p&gt;　・仮想プライベートネットワーク領域を作成することが出来る。&lt;/p&gt;
+
+&lt;p&gt;◆jQueryについて&lt;/p&gt;
+
+&lt;p&gt;　・jQuery-Validation-Engine&lt;/p&gt;
+
+&lt;p&gt;　　簡単だけど、複雑な制御が必要になった途端に難易度が急上昇&lt;/p&gt;
+
+&lt;p&gt;◆新規でVPSの設定したよ&lt;/p&gt;
+
+&lt;p&gt;　・sshの設定、rootでログインさせないとかパスワード認証許可しないとか&lt;/p&gt;
+
+&lt;p&gt;　・iptablesの設定&lt;/p&gt;
+
+&lt;p&gt;　・apacheのお決まりのvhost設定とか&lt;/p&gt;
+
+&lt;p&gt;　・PHPインストール&lt;/p&gt;
+
+&lt;p&gt;　・MySQLインストール&lt;/p&gt;
+
+&lt;p&gt;　・PostgreSQLインストール&lt;/p&gt;
+
+&lt;p&gt;　・Emacsインストール※設定ファイルのカスタマイズまでちゃんと面倒を見よう！あとインストールまでが長い&lt;/p&gt;
+
+&lt;p&gt;　・Vimのインストール&lt;/p&gt;
+
+&lt;p&gt;　・useadd,usermod,userdel,idgpasswd -a,passwd,/etc/group,checkconfig &amp;#8211;list,chown u:g,chown -h,※シンボリックリンクのグループ変更&lt;/p&gt;
+
+&lt;p&gt;chgrp dir grp,scp file account@remotehost:/path/to/file,ln -s&lt;/p&gt;
+
+&lt;p&gt;　・グループとアクセス権について&lt;/p&gt;
+
+&lt;p&gt;　・apacheで使うからとユーザーのホームディレクトリ以下全てグループをapacheにしていたが、そうするとFTPで書き込みができなかった&lt;/p&gt;
+
+&lt;p&gt;　　グループをユーザー本来のに戻して解決。apacheの場合はユーザーのグループでもユーザーがapacheグループにも入っていれば大丈夫な模様&lt;/p&gt;
+
+&lt;p&gt;　・iptablesの設定　FWみたいなもん/etc/sysconfig/iptables ※CentOS6.4&lt;/p&gt;
+
+&lt;p&gt;　・FTPの設定&lt;/p&gt;
+
+&lt;p&gt;　　vsftpdがCentOS6.4にデフォルトで入っていなかったのでyum install vsftpd&lt;/p&gt;
+
+&lt;p&gt;　　設定では、アノニマス不許可、ユーザーのホームをディレクトリにする、ユーザーリストをホワイトリストとして使うの設定&lt;/p&gt;
+
+&lt;p&gt;　・Linux、apacheでbasic認証をする場合&lt;/p&gt;
+
+&lt;p&gt;　・.htaccessで使うよと書く&lt;/p&gt;
+
+&lt;p&gt;　・.htpasswdファイルにidとパスワードを書く&lt;/p&gt;
+
+&lt;p&gt;◆MySQLからデータダンプ&lt;/p&gt;
+
+&lt;p&gt;　・sqlで書き出して新しいDBに書きだしたsqlを取り込む。楽ちん！&lt;/p&gt;
+
+&lt;p&gt;　・よく使うMySQLコマンド&lt;/p&gt;
+
+&lt;p&gt;　　create database ,show databases ,show variables,create user xxx@x identified by xxx,grant all on db.table to user@localhost,drop show processlist,&lt;/p&gt;
+
+&lt;p&gt;　・MySQLにデータダンプしたsqlファイルをインポート&lt;/p&gt;
+
+&lt;p&gt;　　sqlファイルのある場所に移動してmysqlコマンド→. xxx.sql&lt;/p&gt;
+
+&lt;p&gt;　　※ファイルパスの指定が楽になるのでインポートファイルの有る場所でmysqlする。&lt;/p&gt;
+
+&lt;p&gt;◆MovableTypeの設定&lt;/p&gt;
+
+&lt;p&gt;　・mt-config.cgi でStaticWebPathには静的ファイルを配置するディレクトリのためのパスを記述、相対パスを推奨らしい※web上のURLパスの相対パス&lt;/p&gt;
+
+&lt;p&gt;　・mt-config.cgi でCGIPathにはmt.cgi以外のCGIスクリプトリンクを生成するためのパスを記述、AdminCGIPathがない場合はmt.cgiもこの値を使う。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>シンポナシウム</title>
+      <link>http://tech.k-zak.com/2011/11/05/milestone</link>
+      <pubDate>Sat, 05 Nov 2011 03:34:57 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2011/11/05/milestone</guid>
+      <description>&lt;p&gt;前回の更新からはや4ヶ月超。どのような進歩があったと言うと&amp;#8230;&lt;/p&gt;
+
+&lt;div&gt;
+  内に等しい！？
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  ホント自己嫌悪してくるわー。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  一応、
+&lt;/div&gt;
+
+&lt;div&gt;
+  DB関係：
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・MySQL、ターミナルで入る時に「mysql -u name -p」って「-p」入れるの忘れないの覚えた。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  環境関係：
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・gitとMercurial少しづつ試した。コマンドも少し覚えた
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・レンタルサーバーVPS、Macの様々な操作のお陰でターミナルでのコマンド操作馴れた。
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・emacsの設定ファイルいろいろコピペで入れて、開発はeclipse→emacsになった。
+&lt;/div&gt;
+
+&lt;div&gt;
+  　必然的にemacsの基本的な操作を覚えた。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  プログラム言語：
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・pythonをちょろちょろ自習しているがちっとも上達しない、ちょっと入り組んだ処理の
+&lt;/div&gt;
+
+&lt;div&gt;
+  　ソースになると途端にちんぷんかんぷん。
+&lt;/div&gt;
+
+&lt;div&gt;
+  ・PythonでapacheにDjangoを置く、WSGIの設定とかおぼ&amp;#8230;えた&amp;#8230;？
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  あーだめだこりゃ、話しにならん。。。
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>emacs初めてみようか</title>
-      <link>http://tech.k-zak.com/emacs.html</link>
+      <link>http://tech.k-zak.com/2011/04/29/emacs-setting</link>
       <pubDate>Fri, 29 Apr 2011 17:47:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/emacs.html</guid>
+      <guid>http://tech.k-zak.com/2011/04/29/emacs-setting</guid>
       <description>&lt;p&gt;現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている&lt;/p&gt;
 
 &lt;div&gt;

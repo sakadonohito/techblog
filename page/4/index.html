@@ -140,13 +140,41 @@
 
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA02.html">コーディングリハビリ02</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2013/12/06/coding-memo03">コーディングリハビリ03</a></div>
     
       <div class="categories">
         
           <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
         
-          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+      </div>
+     
+    <div class="description">リハビリその3
+今回は、バブルソート
+PHPでは、
+&lt;?php function bubble_sort(array $arr,$r){ if(1 == $r){ return $arr; } $len = count($arr)-1; for($i=0;$i&lt;$len;$i++){ if($arr[$i] &gt; $arr[$i+1]){ $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } return bubble_sort($arr,$r-1); } $input = trim(fgets(STDIN)); $arr = explode(",",$input); echo implode(",",bubble_sort($arr,count($arr)))."\n"; ?&gt; Perlでは、
+#!/usr/bin/perl use strict; use warnings; sub bubble_sort{ my($arr,$r) = @_; my @arr = @{$arr}; if(1 == $r){ return @arr; }else{ my $len = @arr; for(my $i=0;$i&lt;$len-1;$i++){ if($arr[$i] &gt; $arr[$i+1]){ my $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } bubble_sort(\@arr,$r-1) } } my $input = &lt;STDIN&gt;; chomp($input); my @arr = split(',',$input); print join("</div>
+    <div class="tags">
+      6 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2013/12/06/coding-memo02">コーディングリハビリ02</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
         
       </div>
      
@@ -172,13 +200,11 @@
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA01.html">コーディングリハビリ01</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2013/12/06/coding-memo01">コーディングリハビリ01</a></div>
     
       <div class="categories">
         
           <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
         
       </div>
      
@@ -208,7 +234,7 @@ input = gets.chomp 標準入力が「gets」だけで取れるRubyはダンデ�
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/laravel4%E8%A7%A6%E3%82%8A%E5%A7%8B%E3%82%81%E3%81%BE%E3%81%97%E3%81%9F.html">Laravel4触り始めました</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2013/12/06/study-larabel4">Laravel4触り始めました</a></div>
     
       <div class="categories">
         
@@ -235,13 +261,13 @@ input = gets.chomp 標準入力が「gets」だけで取れるRubyはダンデ�
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/fuelphp%E3%81%A7%E6%96%87%E5%AD%97%E5%8C%96%E3%81%91%E3%83%BC%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D%E3%81%A8%E3%83%A1%E3%83%BC%E3%83%AB.html">FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2013/11/13/trouble-charset">FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</a></div>
     
       <div class="categories">
         
           <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
         
-          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+          <a href="http://tech.k-zak.com/categories/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB/">トラブル</a>
         
       </div>
      
@@ -273,13 +299,11 @@ FuelPHPのUpload::save()を行う前に
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/ssh%E3%81%B7%E3%81%94%E3%81%B5%E3%81%81.html">sshで、ぷごふぁ</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2013/10/02/ssh">sshで、ぷごふぁ</a></div>
     
       <div class="categories">
         
           <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
         
           <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
         
@@ -306,13 +330,13 @@ Qiitaは素人同然の自分には本当に助かる。</div>
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/%E5%8D%B0%E5%88%B7%E7%94%A8css%E3%81%A7%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F.html">印刷用CSSでハマった</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2013/10/02/trouble-css">印刷用CSSでハマった</a></div>
     
       <div class="categories">
         
           <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
         
-          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+          <a href="http://tech.k-zak.com/categories/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB/">トラブル</a>
         
       </div>
      
@@ -331,14 +355,14 @@ cssを適用させるって方法。Web素人には分からんよ。Web上でCS
       2 Oct 2013
       
         
-          <a href="http://tech.k-zak.com/tags/css/">#css</a>
+          <a href="http://tech.k-zak.com/tags/css/">#CSS</a>
         
        
     </div>
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/fuelphp%E4%BD%BF%E3%81%A3%E3%81%A6%E5%88%86%E3%81%8B%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8.html">fuelphp使って分からなかったこと</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2013/08/25/challenge-fuelphp">fuelphp使って分からなかったこと</a></div>
     
       <div class="categories">
         
@@ -412,13 +436,11 @@ Helper作る程でもない処理専用って事？後は再帰定義のcallbacl
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/jquery%E3%81%A7%E3%81%BE%E3%81%9F%E4%BD%BF%E3%81%84%E6%96%B9%E5%BF%98%E3%82%8C%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9D%E3%81%86%E3%81%AA%E3%82%84%E3%81%A4%E3%82%89%E3%83%A1%E3%83%A2.html">jQueryでまた使い方忘れて調べそうなやつらメモ</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2013/08/25/jquery-memo">jQueryでまた使い方忘れて調べそうなやつらメモ</a></div>
     
       <div class="categories">
         
           <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
         
       </div>
      
@@ -436,13 +458,11 @@ Helper作る程でもない処理専用って事？後は再帰定義のcallbacl
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/jquery%E3%81%A7%E8%A6%81%E7%B4%A0%E3%81%AE%E9%AB%98%E3%81%95%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B.html">jQueryで要素の高さを変える</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2013/08/25/jquery-toggle">jQueryで要素の高さを変える</a></div>
     
       <div class="categories">
         
           <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
         
       </div>
      
@@ -464,49 +484,17 @@ jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、
     </div>
   </div>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/css-%E5%8D%B0%E5%88%B7%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB.html">css 印刷のために</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
-        
-      </div>
-     
-    <div class="description">なんとかPHP側でPDF作成とかじゃなくてhtml＆cssで楽したい。
-そんな時のcss設定とか。
-まず、対象レイアウトに印刷用css作っていきます。
-cssの中で@media print とかやっておくと、印刷の時だけ適用されるので、css作ってる間は
-その指定外しておいたほうが楽ね。
-出来上がったら、htmlのheadでそのcssをmedia=&#8221;print&#8221;の指定付きで読み込む。
-後はhtml内に印刷ボタン配置して印刷ボタン押したらbody要素のクラスに&#8221;print&#8221;を付与
-javascriptで印刷→setTimeoutなんかで１秒後にbodyに付与したprintクラスを今度は
-消してやれば、元通り！って寸法です。
-ページ番号とかリンク？とか印刷日付とかはブラウザの仕様らしいので我慢。
-それが嫌ならPDFで一から作ってください。難易度の落差が凄いな。</div>
-    <div class="tags">
-      25 Aug 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/css/">#css</a>
-        
-       
-    </div>
-  </div>
-
 
 </div>
 
 
 <paper-item>
   
-    <a href="/page/3/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <a href="http://tech.k-zak.com/page/3/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
   
     <div class="flex"></div>
   
-    <a href="/page/5/"><paper-fab icon="chevron-right"></paper-fab></a>
+    <a href="http://tech.k-zak.com/page/5/"><paper-fab icon="chevron-right"></paper-fab></a>
   
 </paper-item>
 

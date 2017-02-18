@@ -10,10 +10,10 @@
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html</link>
+      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html</guid>
+      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside</guid>
       <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る&lt;/p&gt;
 
 &lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;
@@ -38,10 +38,10 @@
     
     <item>
       <title>2014年の目標達成進捗管理的な</title>
-      <link>http://tech.k-zak.com/2014%E5%B9%B4%E3%81%AE%E7%9B%AE%E6%A8%99%E9%81%94%E6%88%90%E9%80%B2%E6%8D%97%E7%AE%A1%E7%90%86%E7%9A%84%E3%81%AA.html</link>
+      <link>http://tech.k-zak.com/2014/01/04/milestone</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014%E5%B9%B4%E3%81%AE%E7%9B%AE%E6%A8%99%E9%81%94%E6%88%90%E9%80%B2%E6%8D%97%E7%AE%A1%E7%90%86%E7%9A%84%E3%81%AA.html</guid>
+      <guid>http://tech.k-zak.com/2014/01/04/milestone</guid>
       <description>
 
 &lt;h2 id=&#34;新年-明けましておめでとうございました-良いお年を&#34;&gt;新年、明けましておめでとうございました。良いお年を。&lt;/h2&gt;
@@ -213,10 +213,10 @@
     
     <item>
       <title>パスカルのなんとか</title>
-      <link>http://tech.k-zak.com/%E3%83%91%E3%82%B9%E3%82%AB%E3%83%AB%E3%81%AE%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B.html</link>
+      <link>http://tech.k-zak.com/2013/12/22/pascal-logic</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%83%91%E3%82%B9%E3%82%AB%E3%83%AB%E3%81%AE%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/22/pascal-logic</guid>
       <description>&lt;p&gt;今回は、パスカルの三角定理？みたいなやつ&lt;/p&gt;
 
 &lt;p&gt;PHPでは、&lt;/p&gt;
@@ -299,10 +299,10 @@ num.times{
     
     <item>
       <title>コーディングリハビリ06</title>
-      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA06.html</link>
+      <link>http://tech.k-zak.com/2013/12/08/coding-memo05</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA06.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05</guid>
       <description>&lt;p&gt;リハビリその3&lt;/p&gt;
 
 &lt;p&gt;今回は、バブルソート&lt;/p&gt;
@@ -392,10 +392,10 @@ num.times{
     
     <item>
       <title>コーディングリハビリ05</title>
-      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA05.html</link>
+      <link>http://tech.k-zak.com/2013/12/08/coding-memo05</link>
       <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA05.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05</guid>
       <description>&lt;p&gt;昨日の文字チェックをPHP以外で試す。&lt;/p&gt;
 
 &lt;p&gt;与えられた文字列が全てユニークな文字で構成されているかのチェック。&lt;/p&gt;
@@ -483,10 +483,10 @@ puts check_unique(_input)
     
     <item>
       <title>コーディングリハビリ03</title>
-      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA03.html</link>
+      <link>http://tech.k-zak.com/2013/12/06/coding-memo03</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA03.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/06/coding-memo03</guid>
       <description>&lt;p&gt;リハビリその3&lt;/p&gt;
 
 &lt;p&gt;今回は、バブルソート&lt;/p&gt;
@@ -604,10 +604,10 @@ p arr
     
     <item>
       <title>コーディングリハビリ02</title>
-      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA02.html</link>
+      <link>http://tech.k-zak.com/2013/12/06/coding-memo02</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA02.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/06/coding-memo02</guid>
       <description>&lt;p&gt;リハビリその２&lt;/p&gt;
 
 &lt;p&gt;今回は、ファイル読み込みとその時の簡単な例外処理&lt;/p&gt;
@@ -785,10 +785,10 @@ end&lt;/pre&gt;
     
     <item>
       <title>コーディングリハビリ01</title>
-      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA01.html</link>
+      <link>http://tech.k-zak.com/2013/12/06/coding-memo01</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA01.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/06/coding-memo01</guid>
       <description>&lt;p&gt;一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。&lt;/p&gt;
 
 &lt;p&gt;&lt;a title=&#34;paiza&#34; href=&#34;https://paiza.jp/mypage&#34; target=&#34;_blank&#34;&gt;paiza&lt;/a&gt;なんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。&lt;/p&gt;
@@ -828,10 +828,10 @@ chomp($input);&lt;/pre&gt;
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>http://tech.k-zak.com/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A1%E3%82%87%E3%81%84%E3%81%A1%E3%82%87%E3%81%84.html</link>
+      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A1%E3%82%87%E3%81%84%E3%81%A1%E3%82%87%E3%81%84.html</guid>
+      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</guid>
       <description>&lt;p&gt;ここ最近はフレームワークを少し触ってる。&lt;/p&gt;
 
 &lt;p&gt;Perl：Mojolicious::Lite&lt;/p&gt;
@@ -878,10 +878,10 @@ chomp($input);&lt;/pre&gt;
     
     <item>
       <title>FileMakerとRubyのSinatra</title>
-      <link>http://tech.k-zak.com/filemaker%E3%81%A8ruby%E3%81%AEsinatra.html</link>
+      <link>http://tech.k-zak.com/2012/01/07/study-sinatra</link>
       <pubDate>Sat, 07 Jan 2012 10:50:19 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/filemaker%E3%81%A8ruby%E3%81%AEsinatra.html</guid>
+      <guid>http://tech.k-zak.com/2012/01/07/study-sinatra</guid>
       <description>&lt;p&gt;Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？&lt;/p&gt;
 
 &lt;p&gt;と思ったのでやってみました。&lt;/p&gt;
@@ -1086,10 +1086,10 @@ end&lt;/pre&gt;
     
     <item>
       <title>WebフレームワークとFileMaker</title>
-      <link>http://tech.k-zak.com/webfilemaker.html</link>
+      <link>http://tech.k-zak.com/2011/05/29/web-filemaker</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/webfilemaker.html</guid>
+      <guid>http://tech.k-zak.com/2011/05/29/web-filemaker</guid>
       <description>&lt;p&gt;FileMaker用のブログに書こうかと思ったけどこちらに書く&lt;/p&gt;
 
 &lt;div&gt;

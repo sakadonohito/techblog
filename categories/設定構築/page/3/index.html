@@ -139,13 +139,83 @@
 
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/macphpmyadmin.html">macにphpMyAdmin</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2011/04/19/django-tutorial">Django お勉強</a></div>
     
       <div class="categories">
         
           <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
         
-          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">PythonのDjangoのお勉強記録
+   いろいろとつまったのでメモ。     まず試したのはCodoZineのチュートリアル記事   Djangoチュートリアル前篇：　http://codezine.jp/article/detail/4065   Djangoチュートリアル後編：　http://codezine.jp/article/detail/4264   ※記事内のインストールや参考記事のURLは割愛     ０，環境はMacOSX10.6 Pythonはインストール済み   １，チュートリアルにしたがってDjangoインストール→プロジェクト作成、MySQLにDB作成   →アプリケーション作成   チュートリアルではDBはSQLiteだったけど、なんとなくMySQLを使った   ２，チュートリアルにしたがって写経   以上。     時折詰まったので、後はそのポイント     ・Pythonの文法にうっかりハマる。   自動でインデントしてくれるエディタを使っていると、改行時に自動でインデントしてくれますよね   それを忘れて、別のメソッドを続けて書く時にはインデント位置を戻さないといけないのに、   うっかりインデントされたままコード書き続けて、自爆するので気をつけましょう   views.pyで定義したはずのものが(ビューメソッド？)見つからないエラーが出たら真っ先に   インデントや誤字を疑いましょう。     ・動作するのに必要な記述の説明が抜けている。追加ファイルの事。   当たり前の事といえばそれまでなのですが、views.</div>
+    <div class="tags">
+      19 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/django/">#Django</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/04/13/java-dwr">JavaのDWRって何さ　設定メモ</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。   原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを   作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。     アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？     DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで   構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。   とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを   簡単にJavaScript上で扱う仕組み？な感じ。     参考URL：   DWRのサイト　http://directwebremoting.org/dwr/index.html   2007の@ITの記事　http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html     具体的な手順の説明   １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を   落とす。   ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル   ２つを入れる。   ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな   あと、このクラスの定義のパッケージは何でも良い。   ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも   良い。この時、実在しない(dwr.jarが自動生成する)JSをタグに書いておく   ※説明たるいので、サイトとか参照して下さい。   どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。   ５，dwr用のxmlとweb.</div>
+    <div class="tags">
+      13 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/java/">#Java</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/04/10/milestone">ちっともすすまない</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">前に更新したのはいつの頃か・・・
+   中身に進歩がないのが更新がない証拠。。     先日、MovableTypeにもう一つブログ追加しました。   元々Microsoftのスペースっていうブログの場所でゲームとか趣味関連の少し   やってたんですが、閉鎖されたので、心機一転こちらで始めました。     この間、初めてAmazonアソシエイトのIDとったのでのリンクバシバシ貼ろうと思います。     このブログで書くようなジャンルの事では、最近NetBeansをインスコしてみました。   Eclipseでは無視してたんですが、サンプルプロジェクト作成して中のコード読むのって   結構勉強になるんじゃないかって考えてます。     まだまともに触れてないレベルですが、NetBeansはEclipseに比べて軽い気がします。   まぁ、設定とかプラグインとかそういうところは圧倒的にEclipseなんでしょうけど。     今はNetBeansでRuby on Rails　のサンプル作成したら、Railsのバージョンがおかしいとか   エラー出てハマってます(-_- 😉   ここのブログは今後、作業日誌的な、勉強、開発そういったことを何かしたら   それを簡潔に書く。そうやって続けていこうかと。     いつになったら図や画像ありの記事になれるのか・・・     NetBeansの日本語サイト：http://ja.netbeans.org/  </div>
+    <div class="tags">
+      10 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/netbeans/">#NetBeans</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2010/09/03/mcrypt">macにphpMyAdmin</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
         
           <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
         
@@ -166,7 +236,7 @@
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/30.html">もう30回位連休来ないかな？</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2010/05/09/reinstall-mac">もう30回位連休来ないかな？</a></div>
     
       <div class="categories">
         
@@ -180,16 +250,20 @@
  連休中初日にOSの再インストール。やっぱ駄目。→次の日にHDD購入。   換装してOS入れ直し。でようやく正常に動くようになりました。     えぇ、今のところちゃんと動いていますとも。     OS入れ直した後、折角なのでApacheもPHPも雪豹に初めから入ってるものを   使おうとしたのですが、設定ファイルの場所が分からなかったり、編集には   root権限が必要だったり、ユーザ別の設定ファイルを作るのとか、うにゃーんて   なって。。結局XAMPP入れちゃいました ^q^     新標準 PostgreSQL という本でPostgreSQLを勉強してます。   途中のアプリサンプルはPHPのはそのままやったのですが、Javaは敷居が   高かったため、そこから脱線して、eclipse本(Tomcatの使い方を学ぶ)、   JavaでPostgreSQLのコードサンプルが入っている「はじめてのJavaフレームワーク」   というものを試してます。Javaとかめちゃメンド臭いですね。。  </div>
     <div class="tags">
       9 May 2010
+      
+        
+          <a href="http://tech.k-zak.com/tags/postgresql/">#PostgreSQL</a>
+        
+          <a href="http://tech.k-zak.com/tags/%E6%9B%B8%E7%B1%8D/">#書籍</a>
+        
        
     </div>
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/postgresql.html">PostgreSQL せきゅりてぃ？</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2010/04/29/trouble-postgresql">PostgreSQL せきゅりてぃ？</a></div>
     
       <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
         
           <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
         
@@ -199,16 +273,18 @@
    さっさとあきらめて、爆睡して今再度確認した所、/Library/PostgreSQL/8.4/dataディレクトリの   アクセス権がログインユーザー？作成者？意外もアクセス可能になってるから駄目！っていうエラー   でした。     MacのFinderから覗いてEveryoneをアクセス不可に変更したらPostgreSQLのサービスが   開始出来るようになりました。     これは普段Macを使う時のユーザーアカウント(スーパーユーザー含む？)、Postgresという   ユーザー(インストール時にデフォで作成されるユーザー)の関係ですかね。  </div>
     <div class="tags">
       29 Apr 2010
+      
+        
+          <a href="http://tech.k-zak.com/tags/postgresql/">#PostgreSQL</a>
+        
        
     </div>
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/_postgresql.html">あばばば- PostgreSQL編</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2010/04/27/reset-postgresql">あばばば- PostgreSQL編</a></div>
     
       <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%A2/">情報・メモ</a>
         
           <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
         
@@ -218,12 +294,16 @@
  急に接続出来なくなった(泣     仕方ないので一旦削除していれ直しを図った訳ですが、これがなかなか上手く行かない。     で、ちゃんと削除するためのメモとなった訳です。     １、/ライブラリの中にいるから削除しましょう   ライブラリの中にPostgreSQLさんがいますので削除します。   アンインストーラを使って削除した時に、アクセス権が無いと残ってしまうフォルダが   あるかもしれません。     そんな時は、手動で消しましょう。とにかくライブラリの中からPostgreSQLを抹殺します。     ２、アプリケーションフォルダの中もきれいにしましょう。   手動で削除     ３、入れ直し   ちょっと不安なので、当分の間はDLしたPostgreSQLのインストーラは消さずに   もっていようと思います。おーコワ     ※蛇足、前回、ApacheとPHPとphpPgAdminを入れていましたが、今回は入れませんでした。     ※今回の原因はユーザー作成した後のパスワード設定した時にヘマしたようです。   別ユーザー作った後に、デフォルトのpostgresのパスワード変えてしまったというorz  </div>
     <div class="tags">
       27 Apr 2010
+      
+        
+          <a href="http://tech.k-zak.com/tags/postgresql/">#PostgreSQL</a>
+        
        
     </div>
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/macpostgresql.html">MacにPostgreSQLを入れてみた</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2010/04/26/mac-install-postgresql">MacにPostgreSQLを入れてみた</a></div>
     
       <div class="categories">
         
@@ -235,12 +315,18 @@
    参考：Mac OS XでPostgreSQLを使ってみよう     基本これの通りに進めます。リンクにある通り、Mac用のインストーラーを使って簡単に   入れる事が出来ます。     インストール後、スタックビルダなるものでphppgadminを入れるに際し、既にXAMPPの中に   PHPもApacheも入っているのに改めてApacheとPHPを入れさせられたのにはとっと不安。   JDBCドライバだけにしておけば良かったかしら？     とりあえず、上記のリンクからインストール、shellで簡単に操作、phpPgAdminで簡単に操作   までをざっくり出来ます。     インストール後の中身を見てみると、pgAdmin?なんてのがありますね。もしかしてphpPgAdmin   いらなかった？     いずれにしろ現在自分のMac内でApacheとPHPが２つ存在してしまっているので、   今度掃除しよう。  </div>
     <div class="tags">
       26 Apr 2010
+      
+        
+          <a href="http://tech.k-zak.com/tags/mac/">#mac</a>
+        
+          <a href="http://tech.k-zak.com/tags/postgresql/">#PostgreSQL</a>
+        
        
     </div>
   </div>
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/mt.html">MT入れてみた</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2010/04/25/first-mt">MT入れてみた</a></div>
     
       <div class="categories">
         
@@ -252,6 +338,10 @@
  目的なら、無料のようなので、何事も経験経験。Web屋じゃないのでもしかしたら   一生、仕事で触れる事無いかもしれないけど、ふにゃふにゃやってみる。     １、ダウンロード   MovableTypeのサイト行ってダウンロード：http://www.sixapart.jp/movabletype/     ２、ここの手順にそって設定：http://nsf.jp/movabletype/movabletype.html     終わり。     え？   そうですね、前提条件として１、レンタルサーバー借りてるor自分で持ってる。   ２、MySQL5.x入ってる。３、メール使える。４、FTPアプリ持ってる。   あたりが必要です。     自分はサーバー→さくらのレンタル、MySQL5.xおけ！Perl5.xおけ！メールおけ！   FTPはWinにFFFTPが入ってたので、それを使った。     FTPアプリの代わりとして、Firefoxのアドオンてのもありますじぇ：https://addons.mozilla.org/ja/firefox/addon/684     んで、MTが入って使えるようになったので、特に何の設定もせずとりあえず記事１号を   これにしました。  </div>
     <div class="tags">
       25 Apr 2010
+      
+        
+          <a href="http://tech.k-zak.com/tags/movabletype/">#MovableType</a>
+        
        
     </div>
   </div>
@@ -262,7 +352,7 @@
 
 <paper-item>
   
-    <a href="/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/page/2/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/page/2/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
   
     <div class="flex"></div>
   

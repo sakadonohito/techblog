@@ -10,10 +10,10 @@
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</link>
+      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</guid>
+      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj</guid>
       <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;
@@ -80,10 +80,10 @@
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</link>
+      <link>http://tech.k-zak.com/2015/02/01/php-mail</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</guid>
+      <guid>http://tech.k-zak.com/2015/02/01/php-mail</guid>
       <description>&lt;p&gt;## install postfix&lt;/p&gt;
 
 &lt;p&gt;&amp;#8220;`&lt;/p&gt;
@@ -150,10 +150,10 @@
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html</link>
+      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html</guid>
+      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside</guid>
       <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る&lt;/p&gt;
 
 &lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;
@@ -178,10 +178,10 @@
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>http://tech.k-zak.com/%E6%96%B0%E3%81%97%E3%81%8F%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E4%BD%9C%E6%88%90%E4%B8%AD.html</link>
+      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E6%96%B0%E3%81%97%E3%81%8F%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E4%BD%9C%E6%88%90%E4%B8%AD.html</guid>
+      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm</guid>
       <description>
 
 &lt;h3 id=&#34;ubuntu14-64bit-のvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;
@@ -376,10 +376,10 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
     
     <item>
       <title>PHPのファイルアップロードについて</title>
-      <link>http://tech.k-zak.com/php%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</link>
+      <link>http://tech.k-zak.com/2014/09/07/setting-php</link>
       <pubDate>Sun, 07 Sep 2014 17:34:12 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/php%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</guid>
+      <guid>http://tech.k-zak.com/2014/09/07/setting-php</guid>
       <description>&lt;p&gt;PHPで大きなファイルアップロードを作成する&lt;/p&gt;
 
 &lt;p&gt;・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。&lt;/p&gt;
@@ -396,10 +396,10 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
     
     <item>
       <title>PHPあべし！</title>
-      <link>http://tech.k-zak.com/php%E3%81%82%E3%81%B9%E3%81%97.html</link>
+      <link>http://tech.k-zak.com/2014/08/02/spec-php5.5</link>
       <pubDate>Sat, 02 Aug 2014 15:34:29 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/php%E3%81%82%E3%81%B9%E3%81%97.html</guid>
+      <guid>http://tech.k-zak.com/2014/08/02/spec-php5.5</guid>
       <description>&lt;p&gt;最近PHP触ってて「あべし！」ってなった事。&lt;/p&gt;
 
 &lt;p&gt;PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。&lt;/p&gt;
@@ -409,11 +409,191 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
     </item>
     
     <item>
+      <title>最近やったいろいろ</title>
+      <link>http://tech.k-zak.com/2014/03/16/milestone</link>
+      <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/03/16/milestone</guid>
+      <description>&lt;p&gt;最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。&lt;/p&gt;
+
+&lt;p&gt;◆PostgreSQLのSQLダンプ&lt;/p&gt;
+
+&lt;p&gt;　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！&lt;/p&gt;
+
+&lt;p&gt;◆残念VBSバッチスクリプト&lt;/p&gt;
+
+&lt;p&gt;　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない&lt;/p&gt;
+
+&lt;p&gt;　・windowsのコマンドでディレクトリ削除するコマンド&lt;/p&gt;
+
+&lt;p&gt;◆謎！IISの設定&lt;/p&gt;
+
+&lt;p&gt;　・IISのRewrite設定&lt;/p&gt;
+
+&lt;p&gt;　　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定&lt;/p&gt;
+
+&lt;p&gt;　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、&lt;/p&gt;
+
+&lt;p&gt;　　DefaultWebSiteにリダイレクトするやり方がある。&lt;/p&gt;
+
+&lt;p&gt;　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない&lt;/p&gt;
+
+&lt;p&gt;◆Win8.1&lt;/p&gt;
+
+&lt;p&gt;　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。&lt;/p&gt;
+
+&lt;p&gt;　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。&lt;/p&gt;
+
+&lt;p&gt;　・win8でSQLServer2012のodbc設定がうまくいかない&lt;/p&gt;
+
+&lt;p&gt;　　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも&lt;/p&gt;
+
+&lt;p&gt;◆PHP&lt;/p&gt;
+
+&lt;p&gt;　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。&lt;/p&gt;
+
+&lt;p&gt;　・PHPで頼りになるのはやはりPHP.net&lt;/p&gt;
+
+&lt;p&gt;　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。&lt;/p&gt;
+
+&lt;p&gt;　　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。&lt;/p&gt;
+
+&lt;p&gt;　　※セッション制御が楽かも&lt;/p&gt;
+
+&lt;p&gt;　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。&lt;/p&gt;
+
+&lt;p&gt;　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ&lt;/p&gt;
+
+&lt;p&gt;　　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない&lt;/p&gt;
+
+&lt;p&gt;　・php5.4以降はセーフモード使えない&lt;/p&gt;
+
+&lt;p&gt;　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。&lt;/p&gt;
+
+&lt;p&gt;　・ファイルのオーナーとかに気をつけましょう&lt;/p&gt;
+
+&lt;p&gt;◆Apacheの設定&lt;/p&gt;
+
+&lt;p&gt;　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く&lt;/p&gt;
+
+&lt;p&gt;　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて&lt;/p&gt;
+
+&lt;p&gt;　　vhost.confの方に書いた&lt;/p&gt;
+
+&lt;p&gt;◆SSH&lt;/p&gt;
+
+&lt;p&gt;　・SSHで認証鍵ファイルを使う場合の設定方法&lt;/p&gt;
+
+&lt;p&gt;　　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む&lt;/p&gt;
+
+&lt;p&gt;　・~/.ssh/に設定ファイルを置いておくと楽&lt;/p&gt;
+
+&lt;p&gt;◆ポートフォワーディング&lt;/p&gt;
+
+&lt;p&gt;　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、&lt;/p&gt;
+
+&lt;p&gt;　　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。&lt;/p&gt;
+
+&lt;p&gt;◆忘れちゃうからメモ(Linuxコマンド)&lt;/p&gt;
+
+&lt;p&gt;　・scp&lt;/p&gt;
+
+&lt;p&gt;　　scp sourcefile remotehost target&lt;/p&gt;
+
+&lt;p&gt;◆emacs&lt;/p&gt;
+
+&lt;p&gt;　・ssh→sudo or su root する方法&lt;/p&gt;
+
+&lt;p&gt;　　/ssh:SSHRemoteConfName|su(do):SSHRemoteConfName:/path/to/&lt;/p&gt;
+
+&lt;p&gt;◆AWSについて&lt;/p&gt;
+
+&lt;p&gt;　・EC2インスタンス楽、でもメモリが2,4,8GBの-0.5GBなのでいつもアプリ要求仕様の1ランク上を使わないといけないのが残念。&lt;/p&gt;
+
+&lt;p&gt;　・EC2そのもにセキュリティグループの設定があるのでその設定を忘れると、Server側でFireWall無効にしても意味ない(無防備接続確認テストによる切り分けができない)。&lt;/p&gt;
+
+&lt;p&gt;　・EC2インスタンス作成時に選択するネットワークセグメント間違うと後で大変。&lt;/p&gt;
+
+&lt;p&gt;　・作成したインスタンスのストレージを付け替えることが出来る。&lt;/p&gt;
+
+&lt;p&gt;　・仮想プライベートネットワーク領域を作成することが出来る。&lt;/p&gt;
+
+&lt;p&gt;◆jQueryについて&lt;/p&gt;
+
+&lt;p&gt;　・jQuery-Validation-Engine&lt;/p&gt;
+
+&lt;p&gt;　　簡単だけど、複雑な制御が必要になった途端に難易度が急上昇&lt;/p&gt;
+
+&lt;p&gt;◆新規でVPSの設定したよ&lt;/p&gt;
+
+&lt;p&gt;　・sshの設定、rootでログインさせないとかパスワード認証許可しないとか&lt;/p&gt;
+
+&lt;p&gt;　・iptablesの設定&lt;/p&gt;
+
+&lt;p&gt;　・apacheのお決まりのvhost設定とか&lt;/p&gt;
+
+&lt;p&gt;　・PHPインストール&lt;/p&gt;
+
+&lt;p&gt;　・MySQLインストール&lt;/p&gt;
+
+&lt;p&gt;　・PostgreSQLインストール&lt;/p&gt;
+
+&lt;p&gt;　・Emacsインストール※設定ファイルのカスタマイズまでちゃんと面倒を見よう！あとインストールまでが長い&lt;/p&gt;
+
+&lt;p&gt;　・Vimのインストール&lt;/p&gt;
+
+&lt;p&gt;　・useadd,usermod,userdel,idgpasswd -a,passwd,/etc/group,checkconfig &amp;#8211;list,chown u:g,chown -h,※シンボリックリンクのグループ変更&lt;/p&gt;
+
+&lt;p&gt;chgrp dir grp,scp file account@remotehost:/path/to/file,ln -s&lt;/p&gt;
+
+&lt;p&gt;　・グループとアクセス権について&lt;/p&gt;
+
+&lt;p&gt;　・apacheで使うからとユーザーのホームディレクトリ以下全てグループをapacheにしていたが、そうするとFTPで書き込みができなかった&lt;/p&gt;
+
+&lt;p&gt;　　グループをユーザー本来のに戻して解決。apacheの場合はユーザーのグループでもユーザーがapacheグループにも入っていれば大丈夫な模様&lt;/p&gt;
+
+&lt;p&gt;　・iptablesの設定　FWみたいなもん/etc/sysconfig/iptables ※CentOS6.4&lt;/p&gt;
+
+&lt;p&gt;　・FTPの設定&lt;/p&gt;
+
+&lt;p&gt;　　vsftpdがCentOS6.4にデフォルトで入っていなかったのでyum install vsftpd&lt;/p&gt;
+
+&lt;p&gt;　　設定では、アノニマス不許可、ユーザーのホームをディレクトリにする、ユーザーリストをホワイトリストとして使うの設定&lt;/p&gt;
+
+&lt;p&gt;　・Linux、apacheでbasic認証をする場合&lt;/p&gt;
+
+&lt;p&gt;　・.htaccessで使うよと書く&lt;/p&gt;
+
+&lt;p&gt;　・.htpasswdファイルにidとパスワードを書く&lt;/p&gt;
+
+&lt;p&gt;◆MySQLからデータダンプ&lt;/p&gt;
+
+&lt;p&gt;　・sqlで書き出して新しいDBに書きだしたsqlを取り込む。楽ちん！&lt;/p&gt;
+
+&lt;p&gt;　・よく使うMySQLコマンド&lt;/p&gt;
+
+&lt;p&gt;　　create database ,show databases ,show variables,create user xxx@x identified by xxx,grant all on db.table to user@localhost,drop show processlist,&lt;/p&gt;
+
+&lt;p&gt;　・MySQLにデータダンプしたsqlファイルをインポート&lt;/p&gt;
+
+&lt;p&gt;　　sqlファイルのある場所に移動してmysqlコマンド→. xxx.sql&lt;/p&gt;
+
+&lt;p&gt;　　※ファイルパスの指定が楽になるのでインポートファイルの有る場所でmysqlする。&lt;/p&gt;
+
+&lt;p&gt;◆MovableTypeの設定&lt;/p&gt;
+
+&lt;p&gt;　・mt-config.cgi でStaticWebPathには静的ファイルを配置するディレクトリのためのパスを記述、相対パスを推奨らしい※web上のURLパスの相対パス&lt;/p&gt;
+
+&lt;p&gt;　・mt-config.cgi でCGIPathにはmt.cgi以外のCGIスクリプトリンクを生成するためのパスを記述、AdminCGIPathがない場合はmt.cgiもこの値を使う。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>パスカルのなんとか</title>
-      <link>http://tech.k-zak.com/%E3%83%91%E3%82%B9%E3%82%AB%E3%83%AB%E3%81%AE%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B.html</link>
+      <link>http://tech.k-zak.com/2013/12/22/pascal-logic</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%83%91%E3%82%B9%E3%82%AB%E3%83%AB%E3%81%AE%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/22/pascal-logic</guid>
       <description>&lt;p&gt;今回は、パスカルの三角定理？みたいなやつ&lt;/p&gt;
 
 &lt;p&gt;PHPでは、&lt;/p&gt;
@@ -496,10 +676,10 @@ num.times{
     
     <item>
       <title>コーディングリハビリ06</title>
-      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA06.html</link>
+      <link>http://tech.k-zak.com/2013/12/08/coding-memo05</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA06.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05</guid>
       <description>&lt;p&gt;リハビリその3&lt;/p&gt;
 
 &lt;p&gt;今回は、バブルソート&lt;/p&gt;
@@ -589,10 +769,10 @@ num.times{
     
     <item>
       <title>コーディングリハビリ04</title>
-      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA04.html</link>
+      <link>http://tech.k-zak.com/2013/12/06/coding-memo04</link>
       <pubDate>Fri, 06 Dec 2013 16:06:49 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA04.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/06/coding-memo04</guid>
       <description>&lt;p&gt;今回は与えられた文字列が全てユニークな文字の構成かどうか調べる。&lt;/p&gt;
 
 &lt;p&gt;そういう問題を出されてスマートに答えられなかったので、調べた。&lt;/p&gt;
@@ -615,10 +795,10 @@ num.times{
     
     <item>
       <title>コーディングリハビリ03</title>
-      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA03.html</link>
+      <link>http://tech.k-zak.com/2013/12/06/coding-memo03</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA03.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/06/coding-memo03</guid>
       <description>&lt;p&gt;リハビリその3&lt;/p&gt;
 
 &lt;p&gt;今回は、バブルソート&lt;/p&gt;
@@ -736,10 +916,10 @@ p arr
     
     <item>
       <title>コーディングリハビリ02</title>
-      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA02.html</link>
+      <link>http://tech.k-zak.com/2013/12/06/coding-memo02</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA02.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/06/coding-memo02</guid>
       <description>&lt;p&gt;リハビリその２&lt;/p&gt;
 
 &lt;p&gt;今回は、ファイル読み込みとその時の簡単な例外処理&lt;/p&gt;
@@ -917,10 +1097,10 @@ end&lt;/pre&gt;
     
     <item>
       <title>コーディングリハビリ01</title>
-      <link>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA01.html</link>
+      <link>http://tech.k-zak.com/2013/12/06/coding-memo01</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA01.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/06/coding-memo01</guid>
       <description>&lt;p&gt;一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。&lt;/p&gt;
 
 &lt;p&gt;&lt;a title=&#34;paiza&#34; href=&#34;https://paiza.jp/mypage&#34; target=&#34;_blank&#34;&gt;paiza&lt;/a&gt;なんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。&lt;/p&gt;
@@ -960,10 +1140,10 @@ chomp($input);&lt;/pre&gt;
     
     <item>
       <title>Laravel4触り始めました</title>
-      <link>http://tech.k-zak.com/laravel4%E8%A7%A6%E3%82%8A%E5%A7%8B%E3%82%81%E3%81%BE%E3%81%97%E3%81%9F.html</link>
+      <link>http://tech.k-zak.com/2013/12/06/study-larabel4</link>
       <pubDate>Fri, 06 Dec 2013 14:07:20 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/laravel4%E8%A7%A6%E3%82%8A%E5%A7%8B%E3%82%81%E3%81%BE%E3%81%97%E3%81%9F.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/06/study-larabel4</guid>
       <description>&lt;p&gt;&lt;a title=&#34;Laravel4&#34; href=&#34;http://laravel4.kore1server.com/docs&#34; target=&#34;_blank&#34;&gt;Laravel4&lt;/a&gt;がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。&lt;/p&gt;
 
 &lt;p&gt;テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。&lt;/p&gt;
@@ -980,10 +1160,10 @@ chomp($input);&lt;/pre&gt;
     
     <item>
       <title>FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</title>
-      <link>http://tech.k-zak.com/fuelphp%E3%81%A7%E6%96%87%E5%AD%97%E5%8C%96%E3%81%91%E3%83%BC%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D%E3%81%A8%E3%83%A1%E3%83%BC%E3%83%AB.html</link>
+      <link>http://tech.k-zak.com/2013/11/13/trouble-charset</link>
       <pubDate>Wed, 13 Nov 2013 15:27:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/fuelphp%E3%81%A7%E6%96%87%E5%AD%97%E5%8C%96%E3%81%91%E3%83%BC%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D%E3%81%A8%E3%83%A1%E3%83%BC%E3%83%AB.html</guid>
+      <guid>http://tech.k-zak.com/2013/11/13/trouble-charset</guid>
       <description>
 
 &lt;p&gt;FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、&lt;/p&gt;
@@ -1028,118 +1208,6 @@ chomp($input);&lt;/pre&gt;
 &lt;p&gt;→犯人は半角カナ。使わないで！件名はFuelPHP側で送信時にISO-2022-JPに変換してるっぽいので、mb_convert_kana関数使って件名に含まれている半角カナを全角に変換して誤魔化す。&lt;/p&gt;
 
 &lt;p&gt;以上、うんこメモでした。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>fuelphp使って分からなかったこと</title>
-      <link>http://tech.k-zak.com/fuelphp%E4%BD%BF%E3%81%A3%E3%81%A6%E5%88%86%E3%81%8B%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8.html</link>
-      <pubDate>Sun, 25 Aug 2013 12:51:13 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/fuelphp%E4%BD%BF%E3%81%A3%E3%81%A6%E5%88%86%E3%81%8B%E3%82%89%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8.html</guid>
-      <description>&lt;p&gt;fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな&lt;/p&gt;
-
-&lt;p&gt;感じなんですけど。&lt;/p&gt;
-
-&lt;p&gt;以下に分からなかったことなど&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;１，modelの検索メソッドがクラスメソッド&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;検索条件を検索メソッドに渡してレコードオブジェクトを受け取るんだから別に&lt;/p&gt;
-
-&lt;p&gt;インスタンスメソッドである必要はないんだけど、じゃぁ返ってきたモノは&lt;/p&gt;
-
-&lt;p&gt;ただの連想配列なのかモデルオブジェクトの塊なのか&amp;#8230;&lt;/p&gt;
-
-&lt;p&gt;昔、Javaを少し自習した時にレコードオブジェクトのクラスとオブジェクトの塊を保持する&lt;/p&gt;
-
-&lt;p&gt;クラスが別になる書き方があって、自分にはその方がしっくり来るんだけど、多分塊を保持&lt;/p&gt;
-
-&lt;p&gt;するクラスが余計っていう考えなのだろうか。&lt;/p&gt;
-
-&lt;p&gt;何にしっくりこないかというと、モデルクラスの1インスタンスが1レコードオブジェクトなのか&lt;/p&gt;
-
-&lt;p&gt;その塊(1個以上)が1インスタンスなのかという事。&lt;/p&gt;
-
-&lt;p&gt;Model_Crudのメソッド見てるとhas_next()とかあるから、1個以上のレコードオブジェクトを&lt;/p&gt;
-
-&lt;p&gt;保持するイテレータオブジェクトが1インスタンスなのかなーって思う。でもそうすると、fuelphp&lt;/p&gt;
-
-&lt;p&gt;においては1レコードオブジェクトってのは1モデルインスタンスが保持するただの連想配列なのか&lt;/p&gt;
-
-&lt;p&gt;な？&lt;/p&gt;
-
-&lt;p&gt;このあたりは、PHPの他のフレームワーク勉強したり他の言語のフレームワーク勉強していくしか&lt;/p&gt;
-
-&lt;p&gt;ないかな。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;２，FieldSetクラスという便利なものの中のcheckboxの名前の付け方&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;これは多分自分の学習が足りないだけなんだと思うけど、PHPでinputフォームのチェックボックス&lt;/p&gt;
-
-&lt;p&gt;を複数用意する時、name属性をname=&amp;#8221;◯◯[]&amp;#8221;とかにして受け取ったPHPで値を配列で扱うんだけ&lt;/p&gt;
-
-&lt;p&gt;ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=&amp;#8221;◯◯[i]&amp;#8221;って[]の中&lt;/p&gt;
-
-&lt;p&gt;に数字を入れてくるんです。受け取るPHP側では配列として受け取れるぽいんだけど、fuelphpの&lt;/p&gt;
-
-&lt;p&gt;Validationでこのチェックボックスグループらのどれか1つにはチェックしていること！みたいな&lt;/p&gt;
-
-&lt;p&gt;事が出来ない。あと、jQueryのvalidationプラグインが動かない。別のものとして扱ってしまう。&lt;/p&gt;
-
-&lt;p&gt;core/classes/foeldset/の中にあるファイルのcheckboxのフォームの名前属性を作る部分を直接&lt;/p&gt;
-
-&lt;p&gt;書き換えて(本当はappフォルダにコピーするべき)使っている。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;３，FieldSetオブジェクトのフォームオブジェクトのラベル出力の時に出力されるラベル要素に&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;クラス(htmlのclass)を追加する手段が分からない。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;こいつ、checkboxやradioのグループ出力する場合は&lt;label&gt;タグ出力しないんだぜ。意味不明。&lt;br /&gt; 親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。&lt;/label&gt;&lt;/p&gt;
-
-&lt;p&gt;やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用&lt;/p&gt;
-
-&lt;p&gt;されなくて、仕方なく、requiredの場合出力されるデフォルト「*」のやつを「(必須)」てかえて&lt;/p&gt;
-
-&lt;p&gt;それを赤字にした(requiredの時に出力される奴はlabel要素外)。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;４，単にどこに何を書くかがまだ理解できていない。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;controllerのactionメソッド内にloginチェックの詳細処理を書いてるんだけど、そこは外に&lt;/p&gt;
-
-&lt;p&gt;切り出すべきなんじゃないの？とかactionメソッド内でのみ使う提携処理＆ちょっと複雑みたいな&lt;/p&gt;
-
-&lt;p&gt;のは外に切り出すべきなんだろうけど、それは別のcomponentクラスとかにクラスメソッドとして&lt;/p&gt;
-
-&lt;p&gt;出すべきなのか、同じcontrollクラスのprivateメソッドとして切り出すべきなのか。今は別の&lt;/p&gt;
-
-&lt;p&gt;クラスでも使う汎用的なものはcomponentクラスに、特定のactionメソッドからのみ呼び出すよう&lt;/p&gt;
-
-&lt;p&gt;なものは同じクラス内のprivateメソッドにしてる。actionメソッド内の記述がシンプルになれば&lt;/p&gt;
-
-&lt;p&gt;privateメソッド増産してcontrollerクラス内の行数は多くても良いのか、別クラスにどんどん&lt;/p&gt;
-
-&lt;p&gt;出していくべきなのか。でも、publicにしたくないメソッドとかあるんですよ。&lt;/p&gt;
-
-&lt;p&gt;あとはやっぱりmodelとViewModelとView。検索して取り出したレコードオブジェクトを展開する&lt;/p&gt;
-
-&lt;p&gt;のはViewModelなのかViewでやるのか、Pagenationは？formオブジェクトにデータぶっこむのは？&lt;/p&gt;
-
-&lt;p&gt;とか分からんですし、ViewModelとViewの連携のさせ方とかまだ理解できていない。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;５，やっぱりPHPのクロージャの使い所が分からない&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptは分かるんですよ。callbackとかその時だけの処理をそこに直接書くとか、function&lt;/p&gt;
-
-&lt;p&gt;定義しちゃうとグローバル領域にはいっちゃうから変数の中にいれといて、特定の処理の時に呼び出す&lt;/p&gt;
-
-&lt;p&gt;とかね。&lt;/p&gt;
-
-&lt;p&gt;でもPHPてクラスメソッドとかインスタンスメソッドとか定義してるわけじゃないですか、だから&lt;/p&gt;
-
-&lt;p&gt;JavaScriptと同じ用途ってない気がして&amp;#8230;ちょっとだけViewファイルの中で書いたりもしたけれど、&lt;/p&gt;
-
-&lt;p&gt;Helper作る程でもない処理専用って事？後は再帰定義のcallbaclくらい？よく分からんです。&lt;/p&gt;
 </description>
     </item>
     

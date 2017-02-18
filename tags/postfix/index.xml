@@ -10,10 +10,10 @@
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</link>
+      <link>http://tech.k-zak.com/2015/02/01/php-mail</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</guid>
+      <guid>http://tech.k-zak.com/2015/02/01/php-mail</guid>
       <description>&lt;p&gt;## install postfix&lt;/p&gt;
 
 &lt;p&gt;&amp;#8220;`&lt;/p&gt;

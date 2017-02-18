@@ -10,10 +10,10 @@
     
     <item>
       <title>JavaのDWRって何さ　設定メモ</title>
-      <link>http://tech.k-zak.com/java_dwr.html</link>
+      <link>http://tech.k-zak.com/2011/04/13/java-dwr</link>
       <pubDate>Wed, 13 Apr 2011 19:26:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/java_dwr.html</guid>
+      <guid>http://tech.k-zak.com/2011/04/13/java-dwr</guid>
       <description>&lt;div&gt;
   JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。
 &lt;/div&gt;
@@ -144,10 +144,10 @@
     
     <item>
       <title>動かないじゃないか</title>
-      <link>http://tech.k-zak.com/post.html</link>
+      <link>http://tech.k-zak.com/2010/06/27/study-java</link>
       <pubDate>Sun, 27 Jun 2010 04:08:43 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/post.html</guid>
+      <guid>http://tech.k-zak.com/2010/06/27/study-java</guid>
       <description>&lt;p&gt;はじめての サーブレット＆JSP という本を見ながら&lt;/p&gt;
 
 &lt;div&gt;
@@ -240,6 +240,100 @@
 
 &lt;div&gt;
   &lt;a href=&#34;http://d.hatena.ne.jp/m-namiki/touch/20090403/1238745886&#34;&gt;http://d.hatena.ne.jp/m-namiki/touch/20090403/1238745886&lt;/a&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Java分からぬぇ</title>
+      <link>http://tech.k-zak.com/2010/06/06/study-java</link>
+      <pubDate>Sun, 06 Jun 2010 06:10:29 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2010/06/06/study-java</guid>
+      <description>&lt;p&gt;最近はおろそかになってきていてピンチなのですが、&lt;/p&gt;
+
+&lt;div&gt;
+  連休終了後も&lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;「はじめてのJavaフレームワーク」と&lt;/span&gt;&lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;「はじめてのJSPあんどサーブレット」&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;なる本を見ながら写経のごときコーディングしてみてます。&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;JSPやサーブレット単体であればTomcatに乗せて動かすとかだいたい分かったのですが、&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;StrutsやHibernate、SpringFrameworkを使うとなるともう分かりません。&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;&lt;br /&gt; &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;読めば分かるけど、理解までしていない感じですかね。&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;なんであんなにXMLを沢山書かないといけないんですか？&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;&lt;br /&gt; &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;とりあえず、DBと直接やり取りするクラスがDAO(Impl)で、そいつに対して&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;どんなレコードセット(DAOオブジェクト？)を取得するか、書き込みに行くかとか&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;ロジックを実装するのがBeanクラスって事で合ってるのかしら？&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;&lt;br /&gt; &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;Hibernateだけならなんとかイケそうだったんだけど、そこにStrutsによるディスパッチャと&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;SpringFrameworkによるDIコンテナがなんちゃらってのが混ざり込んできて、&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;よっくわっからん！　＞＜&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;&lt;br /&gt; &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;ジュンク堂にSpringFrameworkが理解出来るようになりそうな本を探しに行ったけど&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;ありませんでした。初心者は手を出すなって分野なのでしょうか？そんな気がします。&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;&lt;br /&gt; &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;Javaについての当面の目標は簡単なWebアプリの作成です。&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span style=&#34;font-family: &#39;trebuchet ms&#39;;&#34;&gt;少なくとも画面遷移をコントロールするStrutsは理解出来るようになりたいです。。&lt;/span&gt;
 &lt;/div&gt;
 </description>
     </item>

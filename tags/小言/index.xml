@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>小言 on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/%E5%B0%8F%E8%A8%80/index.xml</link>
+    <description>Recent content in 小言 on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/%E5%B0%8F%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>なんとか再開したい</title>
+      <link>http://tech.k-zak.com/2013/08/24/milestone</link>
+      <pubDate>Sat, 24 Aug 2013 16:16:57 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2013/08/24/milestone</guid>
+      <description>&lt;p&gt;memo的な感じで再開したい。&lt;/p&gt;
+
+&lt;p&gt;でもその前にWordPressの勉強をしなおして、改良してから再開したい。&lt;/p&gt;
+
+&lt;p&gt;当面はメモはEvernoteにとどめておくしか無いかな。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>現状整理</title>
+      <link>http://tech.k-zak.com/2012/09/30/milestone</link>
+      <pubDate>Sun, 30 Sep 2012 12:19:52 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2012/09/30/milestone</guid>
+      <description>&lt;p&gt;現状の整理。ちっとも進まない。。&lt;/p&gt;
+
+&lt;p&gt;開発環境：&lt;/p&gt;
+
+&lt;p&gt;・開発環境のOSはOSX 10.8にアップグレード&lt;/p&gt;
+
+&lt;p&gt;・WebサーバーはローカルのApache、エディタは主にEmacs&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;各言語の勉強進捗：&lt;/p&gt;
+
+&lt;p&gt;・Java・・・お休み中。来年にはAndroidさわさわする一環で復帰したい。&lt;/p&gt;
+
+&lt;p&gt;・Grovy・・・お休み中。たまにメンテナンスで仕事で既存のもののデバッグ用途に使用する程度。&lt;/p&gt;
+
+&lt;p&gt;・Scala・・・未着手。&lt;/p&gt;
+
+&lt;p&gt;・Clojure・・・未着手。&lt;/p&gt;
+
+&lt;p&gt;・Haskell・・・未着手。有名な本は買ったけれど、まともに読んでいない。&lt;/p&gt;
+
+&lt;p&gt;・PHP・・・唯一仕事で使えるレベル。最近は全くふれず、CakePHPやFuelPHPにそろそろ触れねば&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;・Ruby・・・Railsの進化が早すぎるので、もう少し他の言語の習得が進んで余裕が出るまでは手を出さない。&lt;/p&gt;
+
+&lt;p&gt;・Python・・・去年そこそこ触ったきり。まだ仕事で使えるレベルに達していないのに中断中&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;・Perl・・・なぜか最近はPerlを勉強中。基本文法は理解したが&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;・ActionScript・・・簡単なものは分かるとして、使用用途が特殊なのでなかなか&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;・JavaScript・・・一番習得が進んでいると思うが、スマフォ向けや派生言語の習得まで考えると&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;・VB・・・簡単なデスクトップアプリなら&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;・C#・・・来年には着手したい&lt;/p&gt;
+
+&lt;p&gt;・C++・・・いいかげん、そろそろ勉強しないとな〜&lt;/p&gt;
+
+&lt;p&gt;・Objective-C・・・本はいろいろ買い揃えたけれど&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;あぁ、自分の心の弱さに嫌になりますね。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>趣旨変え</title>
+      <link>http://tech.k-zak.com/2012/05/20/milestone</link>
+      <pubDate>Sun, 20 May 2012 09:38:56 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2012/05/20/milestone</guid>
+      <description>&lt;p&gt;ここのブログの内容の趣旨を変えました。&lt;/p&gt;
+
+&lt;p&gt;元々のネタはBlogger？Googleのところに移動。&lt;/p&gt;
+
+&lt;p&gt;ここは元々MTで少しやってた勉強メモに変更。それに伴いMTでからデータも適当に移行。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

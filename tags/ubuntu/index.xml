@@ -10,10 +10,10 @@
     
     <item>
       <title>嘘でしょう。。。</title>
-      <link>http://tech.k-zak.com/%E5%98%98%E3%81%A7%E3%81%97%E3%82%87%E3%81%86.html</link>
+      <link>http://tech.k-zak.com/2015/03/08/ubuntu-wifi</link>
       <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E5%98%98%E3%81%A7%E3%81%97%E3%82%87%E3%81%86.html</guid>
+      <guid>http://tech.k-zak.com/2015/03/08/ubuntu-wifi</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://kazunoko.sakura.ne.jp/wordpress/wp-content/uploads/2009/10/chanmio.jpg&#34; rel=&#34;attachment wp-att-193&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-193&#34; src=&#34;http://kazunoko.sakura.ne.jp/wordpress/wp-content/uploads/2009/10/chanmio.jpg&#34; alt=&#34;chanmio&#34; width=&#34;128&#34; height=&#34;128&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -46,10 +46,10 @@
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</link>
+      <link>http://tech.k-zak.com/2015/02/01/php-mail</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</guid>
+      <guid>http://tech.k-zak.com/2015/02/01/php-mail</guid>
       <description>&lt;p&gt;## install postfix&lt;/p&gt;
 
 &lt;p&gt;&amp;#8220;`&lt;/p&gt;
@@ -116,10 +116,10 @@
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</link>
+      <link>http://tech.k-zak.com/2015/01/05/perl-cgi</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</guid>
+      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi</guid>
       <description>&lt;p&gt;古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ&lt;/p&gt;
 
 &lt;p&gt;最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。&lt;/p&gt;
@@ -176,10 +176,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>http://tech.k-zak.com/%E6%96%B0%E3%81%97%E3%81%8F%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E4%BD%9C%E6%88%90%E4%B8%AD.html</link>
+      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E6%96%B0%E3%81%97%E3%81%8F%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E4%BD%9C%E6%88%90%E4%B8%AD.html</guid>
+      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm</guid>
       <description>
 
 &lt;h3 id=&#34;ubuntu14-64bit-のvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;
@@ -369,6 +369,28 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Markdownのプラグインいれたけど、散々な結果。ウケる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux関係のメモ201407</title>
+      <link>http://tech.k-zak.com/2014/08/02/setting-ubuntu</link>
+      <pubDate>Sat, 02 Aug 2014 15:47:24 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/08/02/setting-ubuntu</guid>
+      <description>&lt;p&gt;Ubuntu系でのchkconfigに変わるコマンドってなんだっけ？&lt;/p&gt;
+
+&lt;p&gt;-&amp;gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要&amp;#8230;&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;checkconfigてLinux全般共通じゃなかったんだ&amp;#8230;&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;・Ubuntu系でインストール済みのパッケージを見るのはdpkg -l(える) この後にgrep付けるヨロシ&lt;/p&gt;
+
+&lt;p&gt;・Ubuntuでパッケージの検索はapt-cache search &lt;keyword&gt;&lt;/p&gt;
+
+&lt;p&gt;　apt-get searchじゃなかった&amp;#8230;&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;&lt;/keyword&gt;&lt;/p&gt;
 </description>
     </item>
     

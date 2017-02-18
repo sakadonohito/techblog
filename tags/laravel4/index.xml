@@ -10,10 +10,10 @@
     
     <item>
       <title>Laravel4触り始めました</title>
-      <link>http://tech.k-zak.com/laravel4%E8%A7%A6%E3%82%8A%E5%A7%8B%E3%82%81%E3%81%BE%E3%81%97%E3%81%9F.html</link>
+      <link>http://tech.k-zak.com/2013/12/06/study-larabel4</link>
       <pubDate>Fri, 06 Dec 2013 14:07:20 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/laravel4%E8%A7%A6%E3%82%8A%E5%A7%8B%E3%82%81%E3%81%BE%E3%81%97%E3%81%9F.html</guid>
+      <guid>http://tech.k-zak.com/2013/12/06/study-larabel4</guid>
       <description>&lt;p&gt;&lt;a title=&#34;Laravel4&#34; href=&#34;http://laravel4.kore1server.com/docs&#34; target=&#34;_blank&#34;&gt;Laravel4&lt;/a&gt;がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。&lt;/p&gt;
 
 &lt;p&gt;テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。&lt;/p&gt;

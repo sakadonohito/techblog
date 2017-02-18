@@ -10,10 +10,10 @@
     
     <item>
       <title>思い出せない</title>
-      <link>http://tech.k-zak.com/%E6%80%9D%E3%81%84%E5%87%BA%E3%81%9B%E3%81%AA%E3%81%84.html</link>
+      <link>http://tech.k-zak.com/2014/10/25/milestone</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E6%80%9D%E3%81%84%E5%87%BA%E3%81%9B%E3%81%AA%E3%81%84.html</guid>
+      <guid>http://tech.k-zak.com/2014/10/25/milestone</guid>
       <description>
 
 &lt;p&gt;前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。&lt;/p&gt;
@@ -58,10 +58,10 @@
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
-      <link>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B2.html</link>
+      <link>http://tech.k-zak.com/2014/09/07/challenge-ansible</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B2.html</guid>
+      <guid>http://tech.k-zak.com/2014/09/07/challenge-ansible</guid>
       <description>&lt;p&gt;・botoが使えないってエラーになる。&lt;/p&gt;
 
 &lt;p&gt;　→次のURLで解決 &lt;a href=&#34;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&#34;&gt;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&lt;/a&gt;&lt;/p&gt;
@@ -142,10 +142,10 @@
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B.html</link>
+      <link>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B.html</guid>
+      <guid>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible</guid>
       <description>
 
 &lt;p&gt;Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。&lt;/p&gt;
@@ -182,10 +182,10 @@
     
     <item>
       <title>apacheでredmine virtualhost設定</title>
-      <link>http://tech.k-zak.com/apacheredmine_virtualhost.html</link>
+      <link>http://tech.k-zak.com/2011/06/25/apache-virtualhost</link>
       <pubDate>Sat, 25 Jun 2011 16:03:16 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/apacheredmine_virtualhost.html</guid>
+      <guid>http://tech.k-zak.com/2011/06/25/apache-virtualhost</guid>
       <description>&lt;p&gt;この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。&lt;/p&gt;
 
 &lt;div&gt;

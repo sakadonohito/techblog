@@ -10,10 +10,10 @@
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>http://tech.k-zak.com/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A1%E3%82%87%E3%81%84%E3%81%A1%E3%82%87%E3%81%84.html</link>
+      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A1%E3%82%87%E3%81%84%E3%81%A1%E3%82%87%E3%81%84.html</guid>
+      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</guid>
       <description>&lt;p&gt;ここ最近はフレームワークを少し触ってる。&lt;/p&gt;
 
 &lt;p&gt;Perl：Mojolicious::Lite&lt;/p&gt;
@@ -60,10 +60,10 @@
     
     <item>
       <title>FileMakerとRubyのSinatra</title>
-      <link>http://tech.k-zak.com/filemaker%E3%81%A8ruby%E3%81%AEsinatra.html</link>
+      <link>http://tech.k-zak.com/2012/01/07/study-sinatra</link>
       <pubDate>Sat, 07 Jan 2012 10:50:19 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/filemaker%E3%81%A8ruby%E3%81%AEsinatra.html</guid>
+      <guid>http://tech.k-zak.com/2012/01/07/study-sinatra</guid>
       <description>&lt;p&gt;Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？&lt;/p&gt;
 
 &lt;p&gt;と思ったのでやってみました。&lt;/p&gt;

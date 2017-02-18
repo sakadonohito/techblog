@@ -10,10 +10,10 @@
     
     <item>
       <title>嘘でしょう。。。</title>
-      <link>http://tech.k-zak.com/%E5%98%98%E3%81%A7%E3%81%97%E3%82%87%E3%81%86.html</link>
+      <link>http://tech.k-zak.com/2015/03/08/ubuntu-wifi</link>
       <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E5%98%98%E3%81%A7%E3%81%97%E3%82%87%E3%81%86.html</guid>
+      <guid>http://tech.k-zak.com/2015/03/08/ubuntu-wifi</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://kazunoko.sakura.ne.jp/wordpress/wp-content/uploads/2009/10/chanmio.jpg&#34; rel=&#34;attachment wp-att-193&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-193&#34; src=&#34;http://kazunoko.sakura.ne.jp/wordpress/wp-content/uploads/2009/10/chanmio.jpg&#34; alt=&#34;chanmio&#34; width=&#34;128&#34; height=&#34;128&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -46,10 +46,10 @@
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</link>
+      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/fmxj-js-%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%92php%E3%81%98%E3%82%83%E3%81%AA%E3%81%8F%E3%81%A6perlmojolicious%E3%81%A7%E8%A9%A6%E3%81%99.html</guid>
+      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj</guid>
       <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;
@@ -116,10 +116,10 @@
     
     <item>
       <title>AnsibleのSSH設定について</title>
-      <link>http://tech.k-zak.com/ansible%E3%81%AEssh%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</link>
+      <link>http://tech.k-zak.com/2015/02/08/ansible-ssh</link>
       <pubDate>Sun, 08 Feb 2015 14:43:15 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ansible%E3%81%AEssh%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</guid>
+      <guid>http://tech.k-zak.com/2015/02/08/ansible-ssh</guid>
       <description>&lt;p&gt;Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。&lt;/p&gt;
 
 &lt;p&gt;という事で調べた。&lt;/p&gt;
@@ -200,10 +200,10 @@
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</link>
+      <link>http://tech.k-zak.com/2015/02/01/php-mail</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ubuntu14-04-%E3%81%A7php%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E5%8F%97%E4%BF%A1%E3%81%A8%E3%81%8B.html</guid>
+      <guid>http://tech.k-zak.com/2015/02/01/php-mail</guid>
       <description>&lt;p&gt;## install postfix&lt;/p&gt;
 
 &lt;p&gt;&amp;#8220;`&lt;/p&gt;
@@ -270,10 +270,10 @@
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</link>
+      <link>http://tech.k-zak.com/2015/01/05/perl-cgi</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ubuntu14-04-lts-%E3%81%A7nginx-fascgi-perl.html</guid>
+      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi</guid>
       <description>&lt;p&gt;古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ&lt;/p&gt;
 
 &lt;p&gt;最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。&lt;/p&gt;
@@ -330,10 +330,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>http://tech.k-zak.com/%E6%96%B0%E3%81%97%E3%81%8F%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E4%BD%9C%E6%88%90%E4%B8%AD.html</link>
+      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E6%96%B0%E3%81%97%E3%81%8F%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E4%BD%9C%E6%88%90%E4%B8%AD.html</guid>
+      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm</guid>
       <description>
 
 &lt;h3 id=&#34;ubuntu14-64bit-のvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;
@@ -528,10 +528,10 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B.html</link>
+      <link>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/vagrant%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AB%E3%81%AFec2%E3%81%ABansible%E3%81%A7wordpress%E3%82%92%E6%A7%8B%E7%AF%89%E3%82%92%E8%A9%A6%E3%81%BF%E3%82%8B.html</guid>
+      <guid>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible</guid>
       <description>
 
 &lt;p&gt;Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。&lt;/p&gt;
@@ -567,11 +567,33 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
     </item>
     
     <item>
+      <title>Linux関係のメモ201407</title>
+      <link>http://tech.k-zak.com/2014/08/02/setting-ubuntu</link>
+      <pubDate>Sat, 02 Aug 2014 15:47:24 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/08/02/setting-ubuntu</guid>
+      <description>&lt;p&gt;Ubuntu系でのchkconfigに変わるコマンドってなんだっけ？&lt;/p&gt;
+
+&lt;p&gt;-&amp;gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要&amp;#8230;&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;checkconfigてLinux全般共通じゃなかったんだ&amp;#8230;&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;・Ubuntu系でインストール済みのパッケージを見るのはdpkg -l(える) この後にgrep付けるヨロシ&lt;/p&gt;
+
+&lt;p&gt;・Ubuntuでパッケージの検索はapt-cache search &lt;keyword&gt;&lt;/p&gt;
+
+&lt;p&gt;　apt-get searchじゃなかった&amp;#8230;&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;&lt;/keyword&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>最近やったいろいろ</title>
-      <link>http://tech.k-zak.com/%E6%9C%80%E8%BF%91%E3%82%84%E3%81%A3%E3%81%9F%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D.html</link>
+      <link>http://tech.k-zak.com/2014/03/16/milestone</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E6%9C%80%E8%BF%91%E3%82%84%E3%81%A3%E3%81%9F%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D.html</guid>
+      <guid>http://tech.k-zak.com/2014/03/16/milestone</guid>
       <description>&lt;p&gt;最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。&lt;/p&gt;
 
 &lt;p&gt;◆PostgreSQLのSQLダンプ&lt;/p&gt;
@@ -747,11 +769,39 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
     </item>
     
     <item>
+      <title>NginxでPermission denied</title>
+      <link>http://tech.k-zak.com/2014/01/16/trouble-nginx</link>
+      <pubDate>Thu, 16 Jan 2014 01:44:58 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/01/16/trouble-nginx</guid>
+      <description>&lt;p&gt;開発環境&lt;/p&gt;
+
+&lt;p&gt;OS:Ubuntu12?&lt;/p&gt;
+
+&lt;p&gt;Webサーバー：Nginx&lt;/p&gt;
+
+&lt;p&gt;という環境下でWindowsでホストしていたお客さんのサイトを持ってきて改修しようとしたら、&lt;/p&gt;
+
+&lt;p&gt;jsやらcssやら画像やらが軒のみPermission denied でエラーでて表示されない。&lt;/p&gt;
+
+&lt;p&gt;ググってみたけれども該当するものがない。&lt;/p&gt;
+
+&lt;p&gt;※自身のテスト用のものなどはちゃんと画像等問題なく読み込める。オーナーや権限も問題ない&lt;/p&gt;
+
+&lt;p&gt;んで、ざっとファイル見ててなんとなく気になって「Thumbs.db」を削除したら表示されるようになった。&lt;/p&gt;
+
+&lt;p&gt;Nginxのセキュリティ機能？なのでしょうか。仕組みは調べていない。ちゃんと勉強が必要ですね。&lt;/p&gt;
+
+&lt;p&gt;追記：どうも原因は別にあったかも。再現できない。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>2014年の目標達成進捗管理的な</title>
-      <link>http://tech.k-zak.com/2014%E5%B9%B4%E3%81%AE%E7%9B%AE%E6%A8%99%E9%81%94%E6%88%90%E9%80%B2%E6%8D%97%E7%AE%A1%E7%90%86%E7%9A%84%E3%81%AA.html</link>
+      <link>http://tech.k-zak.com/2014/01/04/milestone</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014%E5%B9%B4%E3%81%AE%E7%9B%AE%E6%A8%99%E9%81%94%E6%88%90%E9%80%B2%E6%8D%97%E7%AE%A1%E7%90%86%E7%9A%84%E3%81%AA.html</guid>
+      <guid>http://tech.k-zak.com/2014/01/04/milestone</guid>
       <description>
 
 &lt;h2 id=&#34;新年-明けましておめでとうございました-良いお年を&#34;&gt;新年、明けましておめでとうございました。良いお年を。&lt;/h2&gt;
@@ -923,10 +973,10 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
     
     <item>
       <title>sshで、ぷごふぁ</title>
-      <link>http://tech.k-zak.com/ssh%E3%81%B7%E3%81%94%E3%81%B5%E3%81%81.html</link>
+      <link>http://tech.k-zak.com/2013/10/02/ssh</link>
       <pubDate>Wed, 02 Oct 2013 17:10:04 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/ssh%E3%81%B7%E3%81%94%E3%81%B5%E3%81%81.html</guid>
+      <guid>http://tech.k-zak.com/2013/10/02/ssh</guid>
       <description>&lt;p&gt;WordPress勉強してます。テーマについてはだいたい分かったので、自作テーマとか作っていきたい。&lt;/p&gt;
 
 &lt;p&gt;ゆくゆくは案件事例的なぽーとふぉりおサイトを作ろうと、とりあえずさくらVPSを立てて、SSHの&lt;/p&gt;
@@ -951,10 +1001,10 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
     
     <item>
       <title>Perlの動作環境？について</title>
-      <link>http://tech.k-zak.com/perl%E3%81%AE%E5%8B%95%E4%BD%9C%E7%92%B0%E5%A2%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</link>
+      <link>http://tech.k-zak.com/2013/01/20/study-perl</link>
       <pubDate>Sun, 20 Jan 2013 15:25:11 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/perl%E3%81%AE%E5%8B%95%E4%BD%9C%E7%92%B0%E5%A2%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</guid>
+      <guid>http://tech.k-zak.com/2013/01/20/study-perl</guid>
       <description>&lt;p&gt;長らく更新してませんでしたが、その間にFlask試したり、最近なんかは&lt;/p&gt;
 
 &lt;p&gt;ちょっとだけVisual C++を初心者本見ながら動かしてました。&lt;/p&gt;
@@ -1149,10 +1199,10 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>http://tech.k-zak.com/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A1%E3%82%87%E3%81%84%E3%81%A1%E3%82%87%E3%81%84.html</link>
+      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A1%E3%82%87%E3%81%84%E3%81%A1%E3%82%87%E3%81%84.html</guid>
+      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</guid>
       <description>&lt;p&gt;ここ最近はフレームワークを少し触ってる。&lt;/p&gt;
 
 &lt;p&gt;Perl：Mojolicious::Lite&lt;/p&gt;
@@ -1198,467 +1248,16 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
     </item>
     
     <item>
-      <title>apacheでredmine virtualhost設定</title>
-      <link>http://tech.k-zak.com/apacheredmine_virtualhost.html</link>
-      <pubDate>Sat, 25 Jun 2011 16:03:16 +0000</pubDate>
+      <title>趣旨変え</title>
+      <link>http://tech.k-zak.com/2012/05/20/milestone</link>
+      <pubDate>Sun, 20 May 2012 09:38:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/apacheredmine_virtualhost.html</guid>
-      <description>&lt;p&gt;この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。&lt;/p&gt;
+      <guid>http://tech.k-zak.com/2012/05/20/milestone</guid>
+      <description>&lt;p&gt;ここのブログの内容の趣旨を変えました。&lt;/p&gt;
 
-&lt;div&gt;
-&lt;/div&gt;
+&lt;p&gt;元々のネタはBlogger？Googleのところに移動。&lt;/p&gt;
 
-&lt;div&gt;
-  で、急遽同タイプのを買いなおしてHDD移植してOS再インストールとかして
-&lt;/div&gt;
-
-&lt;div&gt;
-  つまったapacheでredmine再設定をここにメモす。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  なぜこんなことが起きたのか。。それはOS再インストールした際に、apacheの
-&lt;/div&gt;
-
-&lt;div&gt;
-  virtualhost.confが初期化され、redmine用の設定が消えたからです。
-&lt;/div&gt;
-
-&lt;div&gt;
-  再設定のため、webや本を見ながら書いたつもりの設定ではCSS等が読み込まれなんだ
-&lt;/div&gt;
-
-&lt;div&gt;
-  ( °д°)ﾅﾝﾃﾞ？
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  結局関係ないと思ってたところが関係してた(apacheの設定とか理解してなかった)
-&lt;/div&gt;
-
-&lt;div&gt;
-  という話。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  以下が正常に動いた設定(virtualhost)
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;div&gt;
-    #Redmine用
-  &lt;/div&gt;
-  
-
-&lt;p&gt;&lt;div&gt;
-    &lt;VirtualHost *:80&gt;
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-        ServerAdmin oira@virtualhostDomain
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-        DocumentRoot &amp;#8220;redmineのある場所/redmine/public&amp;#8221;
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-        ServerName virtualhostDomain
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-        ErrorLog &amp;#8220;/private/var/log/apache2/virtualhostDomain-error_log&amp;#8221;
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-        CustomLog &amp;#8220;/private/var/log/apache2/virtualhostDomain-access_log&amp;#8221; common
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-    RailsBaseURI /  ※redmine専用のバーチャルホストのため、ルートを指定
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-    RailsEnv production
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-    　&lt;Directory &amp;#8220;redmineのある場所/redmine/public&amp;#8221;&gt;
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-       　 Options FollowSymLinks  -MultiViews  ※ここ重要
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-        　AllowOverride None  ※ここも重要
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-        　Order allow,deny
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-        　Allow from all
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-    　&lt;/Directory&gt;
-  &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div&gt;
-    &lt;/VirtualHost&gt;
-  &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  passengerをインストールした時なんかにOptionsの設定例はでるんだけど、
-&lt;/div&gt;
-
-&lt;div&gt;
-  AllowOverride 項目は最初「All」にしてて、そのせいかCSSとか読み込まれなかった
-&lt;/div&gt;
-
-&lt;div&gt;
-  どうも自分の環境ではCGIで動かそうとしたけど、「dispatch.cgi」がねぇ。ていう
-&lt;/div&gt;
-
-&lt;div&gt;
-  エラーが出てたのです。cgi使わない設定に元々していたのでCSSやJSのパスが
-&lt;/div&gt;
-
-&lt;div&gt;
-  dispatch.cgi経由でPATH解決できなくて&amp;#8230;ということでした。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  逆に言うと、自分のapacheの設定ではなからcgi使わない使えない設定になっていれば
-&lt;/div&gt;
-
-&lt;div&gt;
-  うまく動いたのかも？？
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>CakePHPでぐはぁ</title>
-      <link>http://tech.k-zak.com/cakephp.html</link>
-      <pubDate>Tue, 14 Jun 2011 13:00:58 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/cakephp.html</guid>
-      <description>&lt;p&gt;CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ&lt;/p&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  どうもPHP5.3で動かすと非推奨なコードが沢山あるらしく、そのエラーが
-&lt;/div&gt;
-
-&lt;div&gt;
-  ドバドバでるの。で、その対処法のメモ。絶対また忘れるので。。。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ぐぐったら沢山でてきまする。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;cake/libs/configure.phpの自分がDLしたCakePHPだと110行目から少し下あたりにある&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;$reportingという変数にエラーの定数を格納する箇所で、従来の&amp;#8217;E_ALL&amp;#8217;に非推奨エラーの&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;定数は除外するよう編集する。こんな感じ&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;前：$reporting = E_ALL&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;後：$reporting = E_ALL &amp; ~E_DEPRECATED&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;font-family: &#39;trebuchet ms&#39;; font-size: 14px; line-height: 25px;&#34;&gt;場所がよく分からなかったらエラー定数(E_ALL)で検索すればいいよ。&lt;/span&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>WebフレームワークとFileMaker</title>
-      <link>http://tech.k-zak.com/webfilemaker.html</link>
-      <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/webfilemaker.html</guid>
-      <description>&lt;p&gt;FileMaker用のブログに書こうかと思ったけどこちらに書く&lt;/p&gt;
-
-&lt;div&gt;
-  FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの
-&lt;/div&gt;
-
-&lt;div&gt;
-  データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて
-&lt;/div&gt;
-
-&lt;div&gt;
-  ２つの方法があります。
-&lt;/div&gt;
-
-&lt;div&gt;
-  １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する
-&lt;/div&gt;
-
-&lt;div&gt;
-  ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では
-&lt;/div&gt;
-
-&lt;div&gt;
-  載っていない文法のXMLが返ってくる。
-&lt;/div&gt;
-
-&lt;div&gt;
-  具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に
-&lt;/div&gt;
-
-&lt;div&gt;
-  rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが
-&lt;/div&gt;
-
-&lt;div&gt;
-  rowタグの中にあるのではなく、本当に&amp;#8221;col&amp;#8221;という名のタグが入っているからメタタグの
-&lt;/div&gt;
-
-&lt;div&gt;
-  カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  で、世間ではどうしているのかというと、
-&lt;/div&gt;
-
-&lt;div&gt;
-  a,FileMaker文法を解釈するxsltで開発
-&lt;/div&gt;
-
-&lt;div&gt;
-  b,PHPでライブラリが出ているのでそれを使う(FX.php)
-&lt;/div&gt;
-
-&lt;div&gt;
-  c,Rubyでライブラリが出ているのでそれを使う(rfm)
-&lt;/div&gt;
-
-&lt;div&gt;
-  d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ってところ。
-&lt;/div&gt;
-
-&lt;div&gt;
-  実際にはFX.phpを利用するのがメジャーでしょう。。
-&lt;/div&gt;
-
-&lt;div&gt;
-  これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、
-&lt;/div&gt;
-
-&lt;div&gt;
-  案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は
-&lt;/div&gt;
-
-&lt;div&gt;
-  ある程度覚えておいたほうが良いと思う。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを
-&lt;/div&gt;
-
-&lt;div&gt;
-  作れさえすれば、言語は何でも良いという事。
-&lt;/div&gt;
-
-&lt;div&gt;
-  なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。
-&lt;/div&gt;
-
-&lt;div&gt;
-  Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど
-&lt;/div&gt;
-
-&lt;div&gt;
-  Perlは自分には無理。そもそもPerlがほぼ分からない。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては
-&lt;/div&gt;
-
-&lt;div&gt;
-  Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている
-&lt;/div&gt;
-
-&lt;div&gt;
-  ようなので、将来性は微妙。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの
-&lt;/div&gt;
-
-&lt;div&gt;
-  両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを
-&lt;/div&gt;
-
-&lt;div&gt;
-  継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  PHPのFX.phpはCodeIgniterやCakePHPでモデルとして使えるような方法が出来ている。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  一方、Rubyのはちょっと分かりづらい。いや正確にはRailsを理解しないまま試し他自分が
-&lt;/div&gt;
-
-&lt;div&gt;
-  悪いのですけど。。。
-&lt;/div&gt;
-
-&lt;div&gt;
-  現状では、Railsの設定でActiveRecordを使わない設定にしてControllerに全て処理を書く
-&lt;/div&gt;
-
-&lt;div&gt;
-  みたいなやり方になってしまうようです。
-&lt;/div&gt;
-
-&lt;div&gt;
-  Railsの仕組みやRubyのmix-inの仕組みとか理解できると別の方法が見つかりそうですけど。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ◆PHPでFileMaker
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・FX.php &lt;a href=&#34;http://msyk.net/fmp/fx_ja/&#34;&gt;http://msyk.net/fmp/fx_ja/&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・CodeIgniter でFX.php
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://codeigniter.com/wiki/FilemakerPro_Database_Integration/&#34;&gt;http://codeigniter.com/wiki/FilemakerPro_Database_Integration/&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・CakePHPでFX.php &lt;a href=&#34;http://www.beezwax.net/solutions/FMCakeMix&#34;&gt;http://www.beezwax.net/solutions/FMCakeMix&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ◆RubyでFileMaker
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・rfm &lt;a href=&#34;http://www.famlog.jp/rfm/&#34;&gt;http://www.famlog.jp/rfm/&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ◆PythonでFileMaker
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・PyFileMaker &lt;a href=&#34;http://code.google.com/p/pyfilemaker/&#34;&gt;http://code.google.com/p/pyfilemaker/&lt;/a&gt;
-&lt;/div&gt;
+&lt;p&gt;ここは元々MTで少しやってた勉強メモに変更。それに伴いMTでからデータも適当に移行。&lt;/p&gt;
 </description>
     </item>
     

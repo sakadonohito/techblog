@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/mac/index.xml</link>
+    <description>Recent content in Mac on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MacにPostgreSQLを入れてみた</title>
+      <link>http://tech.k-zak.com/2010/04/26/mac-install-postgresql</link>
+      <pubDate>Mon, 26 Apr 2010 12:39:03 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2010/04/26/mac-install-postgresql</guid>
+      <description>&lt;p&gt;XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。&lt;/p&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  参考：&lt;a href=&#34;http://lets.postgresql.jp/documents/tutorial/macosx/1&#34;&gt;Mac OS XでPostgreSQLを使ってみよう&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  基本これの通りに進めます。リンクにある通り、Mac用のインストーラーを使って簡単に
+&lt;/div&gt;
+
+&lt;div&gt;
+  入れる事が出来ます。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  インストール後、スタックビルダなるものでphppgadminを入れるに際し、既にXAMPPの中に
+&lt;/div&gt;
+
+&lt;div&gt;
+  PHPもApacheも入っているのに改めてApacheとPHPを入れさせられたのにはとっと不安。
+&lt;/div&gt;
+
+&lt;div&gt;
+  JDBCドライバだけにしておけば良かったかしら？
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  とりあえず、上記のリンクからインストール、shellで簡単に操作、phpPgAdminで簡単に操作
+&lt;/div&gt;
+
+&lt;div&gt;
+  までをざっくり出来ます。
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  インストール後の中身を見てみると、pgAdmin?なんてのがありますね。もしかしてphpPgAdmin
+&lt;/div&gt;
+
+&lt;div&gt;
+  いらなかった？
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  いずれにしろ現在自分のMac内でApacheとPHPが２つ存在してしまっているので、
+&lt;/div&gt;
+
+&lt;div&gt;
+  今度掃除しよう。
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
