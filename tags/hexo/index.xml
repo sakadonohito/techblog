@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/hexo/index.xml</link>
+    <description>Recent content in Hexo on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hexoを試す</title>
+      <link>http://tech.k-zak.com/2017/02/19/first-hexo</link>
+      <pubDate>Sun, 19 Feb 2017 22:21:50 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/02/19/first-hexo</guid>
+      <description>
+
+&lt;h1 id=&#34;javascriptの静的サイトジェネレーターhexoを試す&#34;&gt;JavaScriptの静的サイトジェネレーターHexoを試す&lt;/h1&gt;
+
+&lt;p&gt;JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。&lt;/p&gt;
+
+&lt;h2 id=&#34;インストールと初期設定&#34;&gt;インストールと初期設定&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install -g hexo-cli
+hexo init &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt;
+cd &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt;
+npm install
+hexo server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでHexoがインストールされサイトを開始できる
+&lt;code&gt;hexe server&lt;/code&gt;で開発用のサーバー起動状態になり&lt;code&gt;http://localhost:4000&lt;/code&gt;にアクセスできる。&lt;/p&gt;
+
+&lt;p&gt;_config.ymlを編集する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;title: &amp;quot;サイトタイトル&amp;quot;
+subtitle: &amp;quot;サブタイトル&amp;quot;
+description: &amp;quot;サイトの説明&amp;quot;
+author: &amp;lt;&amp;lt;author&amp;gt;&amp;gt;
+language: ja
+timezone: Asia/Tokyo
+
+url: http://&amp;lt;&amp;lt;site-domain&amp;gt;&amp;gt;
+root: /
+permalink: :year/:month/:day/:title/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;languageは&lt;code&gt;ja&lt;/code&gt;にしてtimezoneは&lt;code&gt;Asia/Tokyo&lt;/code&gt;にした。
+urlは公開したいドメイン、rootはトップレベルにした。&lt;/p&gt;
+
+&lt;p&gt;permalinkの設定は&lt;code&gt;:year/:month/:day/:title/&lt;/code&gt;のデフォルト設定のままにした。&lt;/p&gt;
+
+&lt;h2 id=&#34;記事の追加&#34;&gt;記事の追加&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hexo new &amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでHugoみたいに初期状態のができる。
+このあたり、Hugoと同じ感じで出来るので入りやすい。&lt;/p&gt;
+
+&lt;p&gt;当初、React製の「gatsby」にしようかと思ったけど、なんか違うと思ったので、止めた。&lt;/p&gt;
+
+&lt;h2 id=&#34;publicファイルの生成&#34;&gt;Publicファイルの生成&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hexo generate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。&lt;/p&gt;
+
+&lt;p&gt;今回はここまで。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

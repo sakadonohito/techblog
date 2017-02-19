@@ -155,6 +155,8 @@ GoogleAnalyticsのコードを入れるため、config.tomlに以下を追記
 [params] googleAnalyticsUserID = &quot;&lt;&lt;code&gt;&gt;&quot;  またURLの構造を検討する。 今回からパーマリンクを以下のようにした。permelink設定を追加
 [permalinks] post = &quot;/:year/:month/:day/:slug&quot;  これでyyyy/mm/dd/slugというようなURLになる。
 URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。
+新しい記事を追加する時には
+hugo new post/&lt;&lt;post-name&gt;&gt;.md  で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。
 GitHubPagesで公開する  GitHubにリポジトリを追加 hugoコマンドで出力されるpublicディレクトリの静的ファイルをコミット settingsのGitHub Pagesの項にあるCustom domainにドメインを入れて保存。 hugoのpublicにCNAMEというファイルを追加。内容は公開ドメイン名 再度publicディレクトリの内容をコミット DNS(今回はRoute53)でCNAMEの設定をする。  今回はひとまずこんな感じ。 今後は記事の追加だけじゃなく、テーマを自作していきたい。</div>
     <div class="tags">
       19 Feb 2017

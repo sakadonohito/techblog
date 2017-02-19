@@ -6,8 +6,72 @@
     <description>Recent content in Posts on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 19 Feb 2017 00:09:41 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 19 Feb 2017 22:21:50 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hexoを試す</title>
+      <link>http://tech.k-zak.com/2017/02/19/first-hexo</link>
+      <pubDate>Sun, 19 Feb 2017 22:21:50 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/02/19/first-hexo</guid>
+      <description>
+
+&lt;h1 id=&#34;javascriptの静的サイトジェネレーターhexoを試す&#34;&gt;JavaScriptの静的サイトジェネレーターHexoを試す&lt;/h1&gt;
+
+&lt;p&gt;JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。&lt;/p&gt;
+
+&lt;h2 id=&#34;インストールと初期設定&#34;&gt;インストールと初期設定&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install -g hexo-cli
+hexo init &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt;
+cd &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt;
+npm install
+hexo server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでHexoがインストールされサイトを開始できる
+&lt;code&gt;hexe server&lt;/code&gt;で開発用のサーバー起動状態になり&lt;code&gt;http://localhost:4000&lt;/code&gt;にアクセスできる。&lt;/p&gt;
+
+&lt;p&gt;_config.ymlを編集する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;title: &amp;quot;サイトタイトル&amp;quot;
+subtitle: &amp;quot;サブタイトル&amp;quot;
+description: &amp;quot;サイトの説明&amp;quot;
+author: &amp;lt;&amp;lt;author&amp;gt;&amp;gt;
+language: ja
+timezone: Asia/Tokyo
+
+url: http://&amp;lt;&amp;lt;site-domain&amp;gt;&amp;gt;
+root: /
+permalink: :year/:month/:day/:title/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;languageは&lt;code&gt;ja&lt;/code&gt;にしてtimezoneは&lt;code&gt;Asia/Tokyo&lt;/code&gt;にした。
+urlは公開したいドメイン、rootはトップレベルにした。&lt;/p&gt;
+
+&lt;p&gt;permalinkの設定は&lt;code&gt;:year/:month/:day/:title/&lt;/code&gt;のデフォルト設定のままにした。&lt;/p&gt;
+
+&lt;h2 id=&#34;記事の追加&#34;&gt;記事の追加&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hexo new &amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでHugoみたいに初期状態のができる。
+このあたり、Hugoと同じ感じで出来るので入りやすい。&lt;/p&gt;
+
+&lt;p&gt;当初、React製の「gatsby」にしようかと思ったけど、なんか違うと思ったので、止めた。&lt;/p&gt;
+
+&lt;h2 id=&#34;publicファイルの生成&#34;&gt;Publicファイルの生成&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hexo generate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。&lt;/p&gt;
+
+&lt;p&gt;今回はここまで。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>WordPressからHugoへ移行</title>
@@ -75,6 +139,13 @@ themeディレクトリがなかったら作ってその中で&lt;code&gt;git cl
 &lt;p&gt;これでyyyy/mm/dd/slugというようなURLになる。&lt;/p&gt;
 
 &lt;p&gt;URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。&lt;/p&gt;
+
+&lt;p&gt;新しい記事を追加する時には&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new post/&amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。&lt;/p&gt;
 
 &lt;h2 id=&#34;githubpagesで公開する&#34;&gt;GitHubPagesで公開する&lt;/h2&gt;
 
@@ -879,46 +950,6 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
 &lt;p&gt;それとEC2インスタンスを作成することもできた。合わせ技は&amp;#8230;別々に動かせばよくね？という事で今回のテーマはここまで。&lt;/p&gt;
 
 &lt;p&gt;&lt;/virtualhost&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible</link>
-      <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible</guid>
-      <description>
-
-&lt;p&gt;Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。&lt;/p&gt;
-
-&lt;p&gt;の、前にAWSのS3試したので。&lt;/p&gt;
-
-&lt;p&gt;・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る&lt;/p&gt;
-
-&lt;p&gt;・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折&lt;/p&gt;
-
-&lt;p&gt;・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。&lt;/p&gt;
-
-&lt;p&gt;・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。&lt;/p&gt;
-
-&lt;h4 id=&#34;ansible試す&#34;&gt;Ansible試す&lt;/h4&gt;
-
-&lt;p&gt;・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。&lt;/p&gt;
-
-&lt;p&gt;・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる&lt;/p&gt;
-
-&lt;p&gt;・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。&lt;/p&gt;
-
-&lt;p&gt;・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う&lt;/p&gt;
-
-&lt;p&gt;・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ&lt;/p&gt;
-
-&lt;p&gt;以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事&lt;/p&gt;
-
-&lt;p&gt;・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう&lt;/p&gt;
-
-&lt;p&gt;・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する&lt;/p&gt;
 </description>
     </item>
     

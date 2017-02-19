@@ -75,6 +75,13 @@ themeディレクトリがなかったら作ってその中で&lt;code&gt;git cl
 
 &lt;p&gt;URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。&lt;/p&gt;
 
+&lt;p&gt;新しい記事を追加する時には&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new post/&amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。&lt;/p&gt;
+
 &lt;h2 id=&#34;githubpagesで公開する&#34;&gt;GitHubPagesで公開する&lt;/h2&gt;
 
 &lt;ol&gt;

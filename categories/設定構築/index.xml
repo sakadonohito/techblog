@@ -9,6 +9,70 @@
     <atom:link href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Hexoを試す</title>
+      <link>http://tech.k-zak.com/2017/02/19/first-hexo</link>
+      <pubDate>Sun, 19 Feb 2017 22:21:50 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/02/19/first-hexo</guid>
+      <description>
+
+&lt;h1 id=&#34;javascriptの静的サイトジェネレーターhexoを試す&#34;&gt;JavaScriptの静的サイトジェネレーターHexoを試す&lt;/h1&gt;
+
+&lt;p&gt;JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。&lt;/p&gt;
+
+&lt;h2 id=&#34;インストールと初期設定&#34;&gt;インストールと初期設定&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install -g hexo-cli
+hexo init &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt;
+cd &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt;
+npm install
+hexo server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでHexoがインストールされサイトを開始できる
+&lt;code&gt;hexe server&lt;/code&gt;で開発用のサーバー起動状態になり&lt;code&gt;http://localhost:4000&lt;/code&gt;にアクセスできる。&lt;/p&gt;
+
+&lt;p&gt;_config.ymlを編集する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;title: &amp;quot;サイトタイトル&amp;quot;
+subtitle: &amp;quot;サブタイトル&amp;quot;
+description: &amp;quot;サイトの説明&amp;quot;
+author: &amp;lt;&amp;lt;author&amp;gt;&amp;gt;
+language: ja
+timezone: Asia/Tokyo
+
+url: http://&amp;lt;&amp;lt;site-domain&amp;gt;&amp;gt;
+root: /
+permalink: :year/:month/:day/:title/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;languageは&lt;code&gt;ja&lt;/code&gt;にしてtimezoneは&lt;code&gt;Asia/Tokyo&lt;/code&gt;にした。
+urlは公開したいドメイン、rootはトップレベルにした。&lt;/p&gt;
+
+&lt;p&gt;permalinkの設定は&lt;code&gt;:year/:month/:day/:title/&lt;/code&gt;のデフォルト設定のままにした。&lt;/p&gt;
+
+&lt;h2 id=&#34;記事の追加&#34;&gt;記事の追加&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hexo new &amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでHugoみたいに初期状態のができる。
+このあたり、Hugoと同じ感じで出来るので入りやすい。&lt;/p&gt;
+
+&lt;p&gt;当初、React製の「gatsby」にしようかと思ったけど、なんか違うと思ったので、止めた。&lt;/p&gt;
+
+&lt;h2 id=&#34;publicファイルの生成&#34;&gt;Publicファイルの生成&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hexo generate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。&lt;/p&gt;
+
+&lt;p&gt;今回はここまで。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>WordPressからHugoへ移行</title>
       <link>http://tech.k-zak.com/2017/02/19/first-hugo</link>
       <pubDate>Sun, 19 Feb 2017 00:09:41 +0900</pubDate>
@@ -74,6 +138,13 @@ themeディレクトリがなかったら作ってその中で&lt;code&gt;git cl
 &lt;p&gt;これでyyyy/mm/dd/slugというようなURLになる。&lt;/p&gt;
 
 &lt;p&gt;URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。&lt;/p&gt;
+
+&lt;p&gt;新しい記事を追加する時には&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new post/&amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。&lt;/p&gt;
 
 &lt;h2 id=&#34;githubpagesで公開する&#34;&gt;GitHubPagesで公開する&lt;/h2&gt;
 
@@ -1277,56 +1348,6 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
 &lt;p&gt;※Apacheの設定変えたらApache再起動とかアクセスする前にStarman起動済みなのはモチロンですよ&lt;/p&gt;
 
 &lt;p&gt;これでVPSにperl入れてMojoアプリ動かす準備が出来たかな?&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>フレームワークちょいちょい</title>
-      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</link>
-      <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</guid>
-      <description>&lt;p&gt;ここ最近はフレームワークを少し触ってる。&lt;/p&gt;
-
-&lt;p&gt;Perl：Mojolicious::Lite&lt;/p&gt;
-
-&lt;p&gt;→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に&lt;/p&gt;
-
-&lt;p&gt;各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/&lt;/p&gt;
-
-&lt;p&gt;layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。&lt;/p&gt;
-
-&lt;p&gt;このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;Ruby：Sinatra&lt;/p&gt;
-
-&lt;p&gt;→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか&lt;/p&gt;
-
-&lt;p&gt;ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。&lt;/p&gt;
-
-&lt;p&gt;これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;PHP：FuelPHP&lt;/p&gt;
-
-&lt;p&gt;→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。&lt;/p&gt;
-
-&lt;p&gt;これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや&lt;/p&gt;
-
-&lt;p&gt;コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは&lt;/p&gt;
-
-&lt;p&gt;public/assetsて階層に配置するんですね。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。&lt;/p&gt;
-
-&lt;p&gt;OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート&lt;/p&gt;
-
-&lt;p&gt;出来ないとかで&amp;#8230;&amp;#8230;&lt;/p&gt;
 </description>
     </item>
     

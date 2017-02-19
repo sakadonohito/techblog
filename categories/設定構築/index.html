@@ -139,6 +139,34 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-hexo">Hexoを試す</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">JavaScriptの静的サイトジェネレーターHexoを試す JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。
+インストールと初期設定 npm install -g hexo-cli hexo init &lt;&lt;blog-name&gt;&gt; cd &lt;&lt;blog-name&gt;&gt; npm install hexo server  これでHexoがインストールされサイトを開始できる hexe serverで開発用のサーバー起動状態になりhttp://localhost:4000にアクセスできる。
+_config.ymlを編集する。
+title: &quot;サイトタイトル&quot; subtitle: &quot;サブタイトル&quot; description: &quot;サイトの説明&quot; author: &lt;&lt;author&gt;&gt; language: ja timezone: Asia/Tokyo url: http://&lt;&lt;site-domain&gt;&gt; root: / permalink: :year/:month/:day/:title/  languageはjaにしてtimezoneはAsia/Tokyoにした。 urlは公開したいドメイン、rootはトップレベルにした。
+permalinkの設定は:year/:month/:day/:title/のデフォルト設定のままにした。
+記事の追加 hexo new &lt;&lt;post-name&gt;&gt;  これでHugoみたいに初期状態のができる。 このあたり、Hugoと同じ感じで出来るので入りやすい。
+当初、React製の「gatsby」にしようかと思ったけど、なんか違うと思ったので、止めた。
+Publicファイルの生成 hexo generate  これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。
+今回はここまで。</div>
+    <div class="tags">
+      19 Feb 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/hexo/">#Hexo</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-hugo">WordPressからHugoへ移行</a></div>
     
       <div class="categories">
@@ -155,6 +183,8 @@ GoogleAnalyticsのコードを入れるため、config.tomlに以下を追記
 [params] googleAnalyticsUserID = &quot;&lt;&lt;code&gt;&gt;&quot;  またURLの構造を検討する。 今回からパーマリンクを以下のようにした。permelink設定を追加
 [permalinks] post = &quot;/:year/:month/:day/:slug&quot;  これでyyyy/mm/dd/slugというようなURLになる。
 URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。
+新しい記事を追加する時には
+hugo new post/&lt;&lt;post-name&gt;&gt;.md  で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。
 GitHubPagesで公開する  GitHubにリポジトリを追加 hugoコマンドで出力されるpublicディレクトリの静的ファイルをコミット settingsのGitHub Pagesの項にあるCustom domainにドメインを入れて保存。 hugoのpublicにCNAMEというファイルを追加。内容は公開ドメイン名 再度publicディレクトリの内容をコミット DNS(今回はRoute53)でCNAMEの設定をする。  今回はひとまずこんな感じ。 今後は記事の追加だけじゃなく、テーマを自作していきたい。</div>
     <div class="tags">
       19 Feb 2017
@@ -533,73 +563,6 @@ checkconfigてLinux全般共通じゃなかったんだ&#8230;&#8230;
       
         
           <a href="http://tech.k-zak.com/tags/ubuntu/">#Ubuntu</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/milestone">最近やったいろいろ</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
-        
-      </div>
-     
-    <div class="description">最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
-◆PostgreSQLのSQLダンプ
-　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
-◆残念VBSバッチスクリプト
-　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない
-　・windowsのコマンドでディレクトリ削除するコマンド
-◆謎！IISの設定
-　・IISのRewrite設定
-　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定
-　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、
-　DefaultWebSiteにリダイレクトするやり方がある。
-　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない
-◆Win8.1
-　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。
-　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。
-　・win8でSQLServer2012のodbc設定がうまくいかない
-　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも
-◆PHP
-　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。
-　・PHPで頼りになるのはやはりPHP.net
-　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。
-　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。
-　※セッション制御が楽かも
-　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。
-　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ
-　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない
-　・php5.4以降はセーフモード使えない
-　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。
-　・ファイルのオーナーとかに気をつけましょう
-◆Apacheの設定
-　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く
-　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて
-　vhost.confの方に書いた
-◆SSH
-　・SSHで認証鍵ファイルを使う場合の設定方法
-　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む
-　・~/.ssh/に設定ファイルを置いておくと楽
-◆ポートフォワーディング
-　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、
-　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。</div>
-    <div class="tags">
-      16 Mar 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/iis/">#IIS</a>
-        
-          <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/ssh/">#SSH</a>
         
        
     </div>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>コーディングリハビリ05</title>
+  <title>Hexoを試す</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -138,106 +138,75 @@
 <div class="content">
 
   <div class="article">
-    <div class="title">コーディングリハビリ05</div>
+    <div class="title">Hexoを試す</div>
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
         
       </div>
      
-    <div class="description"><p>昨日の文字チェックをPHP以外で試す。</p>
+    <div class="description">
 
-<p>与えられた文字列が全てユニークな文字で構成されているかのチェック。</p>
+<h1 id="javascriptの静的サイトジェネレーターhexoを試す">JavaScriptの静的サイトジェネレーターHexoを試す</h1>
 
-<p>PHPは前回やっているので、今回は掲載無し。</p>
+<p>JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。</p>
 
-<p>Perlでは、</p>
+<h2 id="インストールと初期設定">インストールと初期設定</h2>
 
-<pre lang="perl" toggle="no">#!/usr/bin/perl
+<pre><code>npm install -g hexo-cli
+hexo init &lt;&lt;blog-name&gt;&gt;
+cd &lt;&lt;blog-name&gt;&gt;
+npm install
+hexo server
+</code></pre>
 
-use strict;
-use warnings;
+<p>これでHexoがインストールされサイトを開始できる
+<code>hexe server</code>で開発用のサーバー起動状態になり<code>http://localhost:4000</code>にアクセスできる。</p>
 
-sub check_unique{
-     my $str = shift;
-     my $len = length($str);
-     for(my $i=0;$i&lt;$len;$i++){
-         my $char = substr($str,$i);
-         if(index($str,$char) != rindex($str,$char)){
-             return "False";
-         }
-     }
-     return "True";
-}
+<p>_config.ymlを編集する。</p>
 
-my $input = '1234567890-=\`!@#$%^&*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:"asdfghjkl;\'zxcvbnm,./ZXCVBNM&lt;&gt;?';
-#my $input = &lt;STDIN&gt;;
-#chomp($input);
+<pre><code>title: &quot;サイトタイトル&quot;
+subtitle: &quot;サブタイトル&quot;
+description: &quot;サイトの説明&quot;
+author: &lt;&lt;author&gt;&gt;
+language: ja
+timezone: Asia/Tokyo
 
-print check_unique($input)."\n";</pre>
+url: http://&lt;&lt;site-domain&gt;&gt;
+root: /
+permalink: :year/:month/:day/:title/
+</code></pre>
 
-<p>Pythonでは、</p>
+<p>languageは<code>ja</code>にしてtimezoneは<code>Asia/Tokyo</code>にした。
+urlは公開したいドメイン、rootはトップレベルにした。</p>
 
-<pre lang="py" toggle="no">#!/usr/bin/python
-#--*-- coding: utf-8 --*--
+<p>permalinkの設定は<code>:year/:month/:day/:title/</code>のデフォルト設定のままにした。</p>
 
-import datetime
+<h2 id="記事の追加">記事の追加</h2>
 
-def check_unique(str):
+<pre><code>hexo new &lt;&lt;post-name&gt;&gt;
+</code></pre>
 
-    set_str = set(list(str))
-    if len(str) == len(set_str):
-        return True
-    else:
-        return False
+<p>これでHugoみたいに初期状態のができる。
+このあたり、Hugoと同じ感じで出来るので入りやすい。</p>
 
-if __name__ == "__main__":
+<p>当初、React製の「gatsby」にしようかと思ったけど、なんか違うと思ったので、止めた。</p>
 
-    input_str = '1234567890-=\`!@#$%^&*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:"asdfghjkl;\'zxcvbnm,./ZXCVBNM&lt;&gt;?'
-    #input_str = raw_input()
-    start_time = datetime.datetime.now().microsecond
-    print check_unique(input_str)
-    end_time = datetime.datetime.now().microsecond
-    print "%f" % (end_time - start_time)
-</pre>
+<h2 id="publicファイルの生成">Publicファイルの生成</h2>
 
-<p>Rubyでは、</p>
+<pre><code>hexo generate
+</code></pre>
 
-<pre lang="ruby" toggle="no">#!/usr/bin/ruby
-#--*-- coding: utf-8 --*--
+<p>これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。</p>
 
-def check_unique(str)
-
-    #インデックス最大値=文字の長さ-1
-    for i in 0..str.length-1
-        unless str.index(str[i].to_s) == str.rindex(str[i].to_s) then
-            return false
-        end
-    end
-    return true
-end
-
-_input = '1234567890-=\`!@#$%^&*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:"asdfghjkl;\'zxcvbnm,./ZXCVBNM&lt;&gt;?'
-
-puts check_unique(_input)
-</pre>
-
-<p>文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。</p>
-
-<p>配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。</p>
-
-<p>pythonが一番スッキリしているようだけど、やっぱりRubyかな</p>
+<p>今回はここまで。</p>
 </div>
     <div class="tags">
-      8 Dec 2013
+      19 Feb 2017
       
         
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+          <a href="http://tech.k-zak.com/tags/hexo/">#Hexo</a>
         
        
     </div>
@@ -248,11 +217,11 @@ puts check_unique(_input)
 
 <paper-item>
   
-    <a href="http://tech.k-zak.com/2013/12/08/coding-memo05"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <paper-fab disabled icon="chevron-left"></paper-fab>
   
     <div class="flex"></div>
   
-    <a href="http://tech.k-zak.com/2013/12/06/coding-memo04"><paper-fab icon="chevron-right"></paper-fab></a>
+    <a href="http://tech.k-zak.com/2017/02/19/first-hugo"><paper-fab icon="chevron-right"></paper-fab></a>
   
 </paper-item>
 

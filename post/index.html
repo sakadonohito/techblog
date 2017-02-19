@@ -139,6 +139,34 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-hexo">Hexoを試す</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">JavaScriptの静的サイトジェネレーターHexoを試す JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。
+インストールと初期設定 npm install -g hexo-cli hexo init &lt;&lt;blog-name&gt;&gt; cd &lt;&lt;blog-name&gt;&gt; npm install hexo server  これでHexoがインストールされサイトを開始できる hexe serverで開発用のサーバー起動状態になりhttp://localhost:4000にアクセスできる。
+_config.ymlを編集する。
+title: &quot;サイトタイトル&quot; subtitle: &quot;サブタイトル&quot; description: &quot;サイトの説明&quot; author: &lt;&lt;author&gt;&gt; language: ja timezone: Asia/Tokyo url: http://&lt;&lt;site-domain&gt;&gt; root: / permalink: :year/:month/:day/:title/  languageはjaにしてtimezoneはAsia/Tokyoにした。 urlは公開したいドメイン、rootはトップレベルにした。
+permalinkの設定は:year/:month/:day/:title/のデフォルト設定のままにした。
+記事の追加 hexo new &lt;&lt;post-name&gt;&gt;  これでHugoみたいに初期状態のができる。 このあたり、Hugoと同じ感じで出来るので入りやすい。
+当初、React製の「gatsby」にしようかと思ったけど、なんか違うと思ったので、止めた。
+Publicファイルの生成 hexo generate  これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。
+今回はここまで。</div>
+    <div class="tags">
+      19 Feb 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/hexo/">#Hexo</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-hugo">WordPressからHugoへ移行</a></div>
     
       <div class="categories">
@@ -155,6 +183,8 @@ GoogleAnalyticsのコードを入れるため、config.tomlに以下を追記
 [params] googleAnalyticsUserID = &quot;&lt;&lt;code&gt;&gt;&quot;  またURLの構造を検討する。 今回からパーマリンクを以下のようにした。permelink設定を追加
 [permalinks] post = &quot;/:year/:month/:day/:slug&quot;  これでyyyy/mm/dd/slugというようなURLになる。
 URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。
+新しい記事を追加する時には
+hugo new post/&lt;&lt;post-name&gt;&gt;.md  で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。
 GitHubPagesで公開する  GitHubにリポジトリを追加 hugoコマンドで出力されるpublicディレクトリの静的ファイルをコミット settingsのGitHub Pagesの項にあるCustom domainにドメインを入れて保存。 hugoのpublicにCNAMEというファイルを追加。内容は公開ドメイン名 再度publicディレクトリの内容をコミット DNS(今回はRoute53)でCNAMEの設定をする。  今回はひとまずこんな感じ。 今後は記事の追加だけじゃなく、テーマを自作していきたい。</div>
     <div class="tags">
       19 Feb 2017
@@ -505,34 +535,6 @@ Rubyは&#8230;どうだろう。試しやプロトタイプにはいいのかも
           <a href="http://tech.k-zak.com/tags/python/">#Python</a>
         
           <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-js">2014年を振り返る JavaScript編</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
-JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
-結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
-document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。
-jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。
-ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。
-ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。
-もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。
-CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。</div>
-    <div class="tags">
-      30 Dec 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
         
        
     </div>

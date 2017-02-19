@@ -6,8 +6,72 @@
     <description>Recent content on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 19 Feb 2017 00:09:41 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 19 Feb 2017 22:21:50 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hexoを試す</title>
+      <link>http://tech.k-zak.com/2017/02/19/first-hexo</link>
+      <pubDate>Sun, 19 Feb 2017 22:21:50 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/02/19/first-hexo</guid>
+      <description>
+
+&lt;h1 id=&#34;javascriptの静的サイトジェネレーターhexoを試す&#34;&gt;JavaScriptの静的サイトジェネレーターHexoを試す&lt;/h1&gt;
+
+&lt;p&gt;JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。&lt;/p&gt;
+
+&lt;h2 id=&#34;インストールと初期設定&#34;&gt;インストールと初期設定&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install -g hexo-cli
+hexo init &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt;
+cd &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt;
+npm install
+hexo server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでHexoがインストールされサイトを開始できる
+&lt;code&gt;hexe server&lt;/code&gt;で開発用のサーバー起動状態になり&lt;code&gt;http://localhost:4000&lt;/code&gt;にアクセスできる。&lt;/p&gt;
+
+&lt;p&gt;_config.ymlを編集する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;title: &amp;quot;サイトタイトル&amp;quot;
+subtitle: &amp;quot;サブタイトル&amp;quot;
+description: &amp;quot;サイトの説明&amp;quot;
+author: &amp;lt;&amp;lt;author&amp;gt;&amp;gt;
+language: ja
+timezone: Asia/Tokyo
+
+url: http://&amp;lt;&amp;lt;site-domain&amp;gt;&amp;gt;
+root: /
+permalink: :year/:month/:day/:title/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;languageは&lt;code&gt;ja&lt;/code&gt;にしてtimezoneは&lt;code&gt;Asia/Tokyo&lt;/code&gt;にした。
+urlは公開したいドメイン、rootはトップレベルにした。&lt;/p&gt;
+
+&lt;p&gt;permalinkの設定は&lt;code&gt;:year/:month/:day/:title/&lt;/code&gt;のデフォルト設定のままにした。&lt;/p&gt;
+
+&lt;h2 id=&#34;記事の追加&#34;&gt;記事の追加&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hexo new &amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでHugoみたいに初期状態のができる。
+このあたり、Hugoと同じ感じで出来るので入りやすい。&lt;/p&gt;
+
+&lt;p&gt;当初、React製の「gatsby」にしようかと思ったけど、なんか違うと思ったので、止めた。&lt;/p&gt;
+
+&lt;h2 id=&#34;publicファイルの生成&#34;&gt;Publicファイルの生成&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hexo generate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。&lt;/p&gt;
+
+&lt;p&gt;今回はここまで。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>WordPressからHugoへ移行</title>
@@ -75,6 +139,13 @@ themeディレクトリがなかったら作ってその中で&lt;code&gt;git cl
 &lt;p&gt;これでyyyy/mm/dd/slugというようなURLになる。&lt;/p&gt;
 
 &lt;p&gt;URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。&lt;/p&gt;
+
+&lt;p&gt;新しい記事を追加する時には&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new post/&amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。&lt;/p&gt;
 
 &lt;h2 id=&#34;githubpagesで公開する&#34;&gt;GitHubPagesで公開する&lt;/h2&gt;
 
@@ -841,90 +912,6 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
 &lt;p&gt;・Apacheのバージョンが古いと2だか4GBが上限。という噂。&lt;/p&gt;
 
 &lt;p&gt;・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
-      <link>http://tech.k-zak.com/2014/09/07/challenge-ansible</link>
-      <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/09/07/challenge-ansible</guid>
-      <description>&lt;p&gt;・botoが使えないってエラーになる。&lt;/p&gt;
-
-&lt;p&gt;　→次のURLで解決 &lt;a href=&#34;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&#34;&gt;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか&lt;/p&gt;
-
-&lt;p&gt;　　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか&lt;/p&gt;
-
-&lt;p&gt;・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを&lt;/p&gt;
-
-&lt;p&gt;　使ったら成功した。なんで？&lt;/p&gt;
-
-&lt;p&gt;・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。&lt;/p&gt;
-
-&lt;p&gt;・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。&lt;/p&gt;
-
-&lt;p&gt;　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。&lt;/p&gt;
-
-&lt;p&gt;　なので「NameVirtuakHost *:80」の記述があれば、その後&lt;virtualhost *:80&gt;VirtualHostディレクティブが&lt;/p&gt;
-
-&lt;p&gt;　ないといけない。&lt;/p&gt;
-
-&lt;p&gt;もしも&lt;/virtualhost&gt;&lt;virtualhost {{hostname}}:80&gt;みたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。&lt;/p&gt;
-
-&lt;p&gt;整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。&lt;/p&gt;
-
-&lt;p&gt;・Ubuntuに入ってるApache2のVirtualHostの有効化無効化&lt;/p&gt;
-
-&lt;p&gt;　sites-availableディレクトリにVirtualHost設定書く&lt;/p&gt;
-
-&lt;p&gt;　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化&lt;/p&gt;
-
-&lt;p&gt;・Hostの指定が足りない！？&lt;/p&gt;
-
-&lt;p&gt;Could not reliably determine the server&amp;#8217;s fully qualified domain name, using for ServerName&lt;/p&gt;
-
-&lt;p&gt;こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った&lt;/p&gt;
-
-&lt;p&gt;　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、&lt;/p&gt;
-
-&lt;p&gt;　そこに{{hostname}}.localを追記する処理追加&lt;/p&gt;
-
-&lt;p&gt;・Ansible用MySQLの設定追加&lt;/p&gt;
-
-&lt;p&gt;Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)&lt;/p&gt;
-
-&lt;p&gt;host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)&lt;/p&gt;
-
-&lt;p&gt;リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要&lt;/p&gt;
-
-&lt;p&gt;・netstat -ant で現在使ってるポートとか観れる&lt;/p&gt;
-
-&lt;p&gt;　(適当な解釈、後で意味をちゃんと調べる&amp;#8230;かも)&lt;/p&gt;
-
-&lt;p&gt;・MySQLが外部からつながらぬ&lt;/p&gt;
-
-&lt;p&gt;webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。&lt;/p&gt;
-
-&lt;p&gt;my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。&lt;/p&gt;
-
-&lt;p&gt;これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。&lt;/p&gt;
-
-&lt;p&gt;・ApacheのRewriteの設定漏れ&lt;/p&gt;
-
-&lt;p&gt;UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。&lt;/p&gt;
-
-&lt;p&gt;　AllowOverride をAllにしなかった。。。&lt;/p&gt;
-
-&lt;p&gt;ということで？今のところ、Vagrantで作成したVMにMySQLやApacheの設定、それからWordPressの設置は出来るように&lt;/p&gt;
-
-&lt;p&gt;なりました。&lt;/p&gt;
-
-&lt;p&gt;それとEC2インスタンスを作成することもできた。合わせ技は&amp;#8230;別々に動かせばよくね？という事で今回のテーマはここまで。&lt;/p&gt;
-
-&lt;p&gt;&lt;/virtualhost&gt;&lt;/p&gt;
 </description>
     </item>
     
