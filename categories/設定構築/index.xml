@@ -9,6 +9,56 @@
     <atom:link href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Jekyllを試す</title>
+      <link>http://tech.k-zak.com/2017/02/19/first-jekyll</link>
+      <pubDate>Sun, 19 Feb 2017 23:22:39 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/02/19/first-jekyll</guid>
+      <description>
+
+&lt;h1 id=&#34;jekyllを試す&#34;&gt;Jekyllを試す&lt;/h1&gt;
+
+&lt;p&gt;Ruby製の静的サイトジェネレーターを試してる。&lt;/p&gt;
+
+&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
+
+&lt;p&gt;以下下記URLを参考にいろいろ試したけど、情報が古くコマンドが変わってた。
+&lt;a href=&#34;http://melborne.github.io/2012/05/13/first-step-of-jekyll/&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem install jekyll
+mkdir _site _posts _site assets
+mkdir -p assets/css
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;構造はこんな感じ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;├── _config.yml
+├── _layouts
+│   ├── layout.html
+│   └── post.html
+├── _posts
+├── _site
+├── assets
+│   └── css
+└── index.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;jekyll serve --watch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で編集内容が即時される。&lt;/p&gt;
+
+&lt;p&gt;こんな感じでやっていこうと思います。&lt;/p&gt;
+
+&lt;p&gt;レイアウトがとてもダサイ感じなので、テーマをちゃんと作っていきたい。&lt;/p&gt;
+
+&lt;p&gt;Ruby製だから？ヘルプが分かりやすい。&lt;/p&gt;
+
+&lt;p&gt;静的ファイルを生成したい場合は&lt;code&gt;jekyll build&lt;/code&gt;で_siteディレクトリに生成される。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hexoを試す</title>
       <link>http://tech.k-zak.com/2017/02/19/first-hexo</link>
       <pubDate>Sun, 19 Feb 2017 22:21:50 +0900</pubDate>
@@ -1150,204 +1200,6 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
 &lt;p&gt;て言うことでした。やっぱりデータを消せばいいだけだったんだ。初期化するコマンドとかないんかな？&lt;/p&gt;
 
 &lt;p&gt;Qiitaは素人同然の自分には本当に助かる。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Perlの動作環境？について</title>
-      <link>http://tech.k-zak.com/2013/01/20/study-perl</link>
-      <pubDate>Sun, 20 Jan 2013 15:25:11 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2013/01/20/study-perl</guid>
-      <description>&lt;p&gt;長らく更新してませんでしたが、その間にFlask試したり、最近なんかは&lt;/p&gt;
-
-&lt;p&gt;ちょっとだけVisual C++を初心者本見ながら動かしてました。&lt;/p&gt;
-
-&lt;p&gt;C++分かんない。&lt;/p&gt;
-
-&lt;p&gt;さて、PerlをVPS上で動かす＆Mojolicious::Liteで作成中の簡単なFAQアプリの為、Perlを&lt;/p&gt;
-
-&lt;p&gt;どうやって動かすのか、簡単に試したのでまとめてみた。(まとまってないし解説にもなってない)&lt;/p&gt;
-
-&lt;p&gt;perlを使えるように設定する&lt;/p&gt;
-
-&lt;p&gt;１，Perlを入れましょう。既に入っている場合はバージョンを確認してできるだけ偶数ナンバーの最新版を入れましょう&lt;/p&gt;
-
-&lt;p&gt;※奇数番号のバージョンは実験要素が強いと聞いたことがありますのでperl-14.xが良いかと&lt;/p&gt;
-
-&lt;p&gt;※perl -v でバージョンの確認ができます。&lt;/p&gt;
-
-&lt;p&gt;２，Perlbrewを入れましょうバージョンを切り替えたりライブラリを追加したりが楽になるそうです。&lt;/p&gt;
-
-&lt;p&gt;３，ターミナルベースで動かす&lt;/p&gt;
-
-&lt;p&gt;ファイルの拡張子を「.pl」とかにして内容はprint &amp;#8220;Hello,World\n&amp;#8221;;とか書いて&lt;/p&gt;
-
-&lt;p&gt;ターミナルで「perl aaa.pl」とかやると起動して処理実行しますね。&lt;/p&gt;
-
-&lt;p&gt;厳密にはファイルエンコードはUTF-8にしましょうとか、ソースの行頭にお決まりの書き方をするとかありますけど&lt;/p&gt;
-
-&lt;p&gt;その内容については省略するので他で調べてください。&lt;/p&gt;
-
-&lt;p&gt;４，ApacheにCGIの設定して動かす&lt;/p&gt;
-
-&lt;p&gt;特になんの設定もせずPerlファイルをWeb公開領域に置いてもソースをそのまま画面に出力したり、&lt;/p&gt;
-
-&lt;p&gt;エラーになったりします。&lt;/p&gt;
-
-&lt;p&gt;・ApacheにCGIの設定を書いていない&lt;/p&gt;
-
-&lt;p&gt;・作成したPerlファイルに実行権限がついていない&lt;/p&gt;
-
-&lt;p&gt;などが主な理由です。権限についてはchmodコマンドで実行権限を付与してください。&lt;/p&gt;
-
-&lt;p&gt;Apacheの設定ファイル「httpd.conf」もしくはVirtual-Hostの設定をしているなら「httpd-vhost.conf」を&lt;/p&gt;
-
-&lt;p&gt;開いて設定を記述します。&lt;/p&gt;
-
-&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
-
-&lt;p&gt;&lt;Directory &amp;#8220;/virtualhostdirectory/hoge&amp;#8221;&gt;&lt;/p&gt;
-
-&lt;p&gt;AddHandler cgi-script .cgi .pl .py .rb&lt;/p&gt;
-
-&lt;p&gt;Options All&lt;/p&gt;
-
-&lt;p&gt;AllowOverride All&lt;/p&gt;
-
-&lt;p&gt;Order allow,deny&lt;/p&gt;
-
-&lt;p&gt;Allow from all&lt;/p&gt;
-
-&lt;p&gt;&lt;/Directory&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
-
-&lt;p&gt;こんな感じで。「AddHandler cgi-script」に対象拡張子を連ねる感じで記述すると動くようになります。&lt;/p&gt;
-
-&lt;p&gt;※当然LoadModuleのところでmod_cgiを読み込んでいるのが前提です。&lt;/p&gt;
-
-&lt;p&gt;※上の例では、Perl以外にもRubyやPythonもCGiで動く設定にしてますのん。&lt;/p&gt;
-
-&lt;p&gt;５，Apacheにmod_perlの設定をして動かす&lt;/p&gt;
-
-&lt;p&gt;まず自分の使っているApacheの拡張モジュール置き場にmod_perl.soがいる確認。自分の場合はMBP 10.8の&lt;/p&gt;
-
-&lt;p&gt;組込み?のApacheを使っているので/usr/libexec/apache2/mod_perl.soを確認。いた!&lt;/p&gt;
-
-&lt;p&gt;所定の場所にファイルがない人は別途調べてファイルを入手なりコンパイルなりしてください。&lt;/p&gt;
-
-&lt;p&gt;※ URL:&lt;a href=&#34;http://perl.apache.org/download/index.html&#34;&gt;http://perl.apache.org/download/index.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;・httpd.confのLoadModuleが沢山記述されているあたりの最後尾に「LoadModule perl_module /usr/libexec/apache2/mod_perl.so」&lt;/p&gt;
-
-&lt;p&gt;を追記&lt;/p&gt;
-
-&lt;p&gt;・適当なとこに下記の記述※自分の場合は上記のvirtualhostディレクトリ内に追記&lt;/p&gt;
-
-&lt;p&gt;・上記の設定で既に普通のCGIでPerlが動くようになってしまっているのでPerl関係拡張子を除外しておくこと!&lt;/p&gt;
-
-&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
-
-&lt;p&gt;&lt;IfModule perl_module&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;FilesMatch &amp;#8220;\.(pl|cgi)$&amp;#8221;&gt;&lt;/p&gt;
-
-&lt;p&gt;SetHandler perl-script&lt;/p&gt;
-
-&lt;p&gt;PerlHandler ModPerl::Registry&lt;/p&gt;
-
-&lt;p&gt;# Options +ExecCGII&lt;/p&gt;
-
-&lt;p&gt;Options All&lt;/p&gt;
-
-&lt;p&gt;PerlSendHeader On&lt;/p&gt;
-
-&lt;p&gt;&lt;/FilesMatch&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/IfModule&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
-
-&lt;p&gt;※自分の場合はOptions +ExecCGIでは動かなかったので、Allにしちゃった。&lt;/p&gt;
-
-&lt;p&gt;apache2を再起動してうごけばmod_perlが動作していることでしょう。&lt;/p&gt;
-
-&lt;p&gt;６，Plackで動かす&lt;/p&gt;
-
-&lt;p&gt;・cpanmでPlackを入れる&lt;/p&gt;
-
-&lt;p&gt;・こんな感じのソースを書く(ファイル名はsample.psgi)&lt;/p&gt;
-
-&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
-
-&lt;p&gt;#!/usr/bin/env perl&lt;/p&gt;
-
-&lt;p&gt;#-*- coding:utf-8 -*-&lt;/p&gt;
-
-&lt;p&gt;use strict;&lt;/p&gt;
-
-&lt;p&gt;use warnings;&lt;/p&gt;
-
-&lt;p&gt;my $app = sub{&lt;/p&gt;
-
-&lt;p&gt;my $env = shift;&lt;/p&gt;
-
-&lt;p&gt;return [&lt;/p&gt;
-
-&lt;p&gt;200,&lt;/p&gt;
-
-&lt;p&gt;[&amp;#8216;Content-Type&amp;#8217;=&amp;gt;&amp;#8217;text/plain&amp;#8217;],&lt;/p&gt;
-
-&lt;p&gt;[&amp;#8220;Hello World&amp;#8221;],&lt;/p&gt;
-
-&lt;p&gt;];&lt;/p&gt;
-
-&lt;p&gt;};&lt;/p&gt;
-
-&lt;p&gt;return $app;&lt;/p&gt;
-
-&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
-
-&lt;p&gt;・書いたソースファイルの有る場所で以下のコマンド実行&lt;/p&gt;
-
-&lt;p&gt;$ plack sample.psgi&lt;/p&gt;
-
-&lt;p&gt;・&lt;a href=&#34;http://localhost:5000&#34;&gt;http://localhost:5000&lt;/a&gt; にアクセスHello Worldが表示されれば成功!&lt;/p&gt;
-
-&lt;p&gt;７，StarmanてやつならMojoliciousで作ったアプリも動くらしいぜ!?&lt;/p&gt;
-
-&lt;p&gt;・cpanmでStarmanを入れる&lt;/p&gt;
-
-&lt;p&gt;・Mojolicious(※自分のはLite)のルートディレクトリに移動して以下のコマンド実行&lt;/p&gt;
-
-&lt;p&gt;$ starman myapp.pl ※自分のMojoアプリのメイン?ファイルの名前がmyapp.pl&lt;/p&gt;
-
-&lt;p&gt;うまくいくと、&lt;a href=&#34;http://localhost:5000/でMojoのルートにアクセスできーる。&#34;&gt;http://localhost:5000/でMojoのルートにアクセスできーる。&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;８，ApacheにProxyの設定してApache経由でStarmanのMojoアプリにアクセス&lt;/p&gt;
-
-&lt;p&gt;・ApacheにProxy_moduleとProxy_http_moduleが入っているか確認&lt;/p&gt;
-
-&lt;p&gt;・Apacheの設定ファイル編集(※自分の場合はvirtualhostの部分に追記)&lt;/p&gt;
-
-&lt;p&gt;※以下の内容をVirtualhostディレクティブ内に追記、自分の場合はDirectoryディレクティブの前に記述&lt;/p&gt;
-
-&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
-
-&lt;p&gt;ProxyPass /studies/studyPerl/psgi/ &lt;a href=&#34;http://localhost:5000/&#34;&gt;http://localhost:5000/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ProxyPassReverse /studies/studyPerl/psgi &lt;a href=&#34;http://localhost:5000/&#34;&gt;http://localhost:5000/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/p&gt;
-
-&lt;p&gt;※pathはもちろん適宜読み替えましょうね&lt;/p&gt;
-
-&lt;p&gt;これで上記プロキシに設定したURLにアクセスして無事Mojoアプリが動いてたらOK!&lt;/p&gt;
-
-&lt;p&gt;※Apacheの設定変えたらApache再起動とかアクセスする前にStarman起動済みなのはモチロンですよ&lt;/p&gt;
-
-&lt;p&gt;これでVPSにperl入れてMojoアプリ動かす準備が出来たかな?&lt;/p&gt;
 </description>
     </item>
     

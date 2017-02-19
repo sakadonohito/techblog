@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>設定構築</title>
+  <title>Jekyllを試す</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -137,9 +137,8 @@
 
 <div class="content">
 
-
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/04/26/mac-install-postgresql">MacにPostgreSQLを入れてみた</a></div>
+    <div class="title">Jekyllを試す</div>
     
       <div class="categories">
         
@@ -147,54 +146,70 @@
         
       </div>
      
-    <div class="description">XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。
-   参考：Mac OS XでPostgreSQLを使ってみよう     基本これの通りに進めます。リンクにある通り、Mac用のインストーラーを使って簡単に   入れる事が出来ます。     インストール後、スタックビルダなるものでphppgadminを入れるに際し、既にXAMPPの中に   PHPもApacheも入っているのに改めてApacheとPHPを入れさせられたのにはとっと不安。   JDBCドライバだけにしておけば良かったかしら？     とりあえず、上記のリンクからインストール、shellで簡単に操作、phpPgAdminで簡単に操作   までをざっくり出来ます。     インストール後の中身を見てみると、pgAdmin?なんてのがありますね。もしかしてphpPgAdmin   いらなかった？     いずれにしろ現在自分のMac内でApacheとPHPが２つ存在してしまっているので、   今度掃除しよう。  </div>
-    <div class="tags">
-      26 Apr 2010
-      
-        
-          <a href="http://tech.k-zak.com/tags/mac/">#mac</a>
-        
-          <a href="http://tech.k-zak.com/tags/postgresql/">#PostgreSQL</a>
-        
-       
-    </div>
-  </div>
+    <div class="description">
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/04/25/first-mt">MT入れてみた</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
-        
-      </div>
-     
-    <div class="description">MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような
- 目的なら、無料のようなので、何事も経験経験。Web屋じゃないのでもしかしたら   一生、仕事で触れる事無いかもしれないけど、ふにゃふにゃやってみる。     １、ダウンロード   MovableTypeのサイト行ってダウンロード：http://www.sixapart.jp/movabletype/     ２、ここの手順にそって設定：http://nsf.jp/movabletype/movabletype.html     終わり。     え？   そうですね、前提条件として１、レンタルサーバー借りてるor自分で持ってる。   ２、MySQL5.x入ってる。３、メール使える。４、FTPアプリ持ってる。   あたりが必要です。     自分はサーバー→さくらのレンタル、MySQL5.xおけ！Perl5.xおけ！メールおけ！   FTPはWinにFFFTPが入ってたので、それを使った。     FTPアプリの代わりとして、Firefoxのアドオンてのもありますじぇ：https://addons.mozilla.org/ja/firefox/addon/684     んで、MTが入って使えるようになったので、特に何の設定もせずとりあえず記事１号を   これにしました。  </div>
+<h1 id="jekyllを試す">Jekyllを試す</h1>
+
+<p>Ruby製の静的サイトジェネレーターを試してる。</p>
+
+<h2 id="インストール">インストール</h2>
+
+<p>以下下記URLを参考にいろいろ試したけど、情報が古くコマンドが変わってた。
+<a href="http://melborne.github.io/2012/05/13/first-step-of-jekyll/">参考</a></p>
+
+<pre><code>gem install jekyll
+mkdir _site _posts _site assets
+mkdir -p assets/css
+</code></pre>
+
+<p>構造はこんな感じ</p>
+
+<pre><code>├── _config.yml
+├── _layouts
+│   ├── layout.html
+│   └── post.html
+├── _posts
+├── _site
+├── assets
+│   └── css
+└── index.md
+</code></pre>
+
+<pre><code>jekyll serve --watch
+</code></pre>
+
+<p>で編集内容が即時される。</p>
+
+<p>こんな感じでやっていこうと思います。</p>
+
+<p>レイアウトがとてもダサイ感じなので、テーマをちゃんと作っていきたい。</p>
+
+<p>Ruby製だから？ヘルプが分かりやすい。</p>
+
+<p>静的ファイルを生成したい場合は<code>jekyll build</code>で_siteディレクトリに生成される。</p>
+</div>
     <div class="tags">
-      25 Apr 2010
+      19 Feb 2017
       
         
-          <a href="http://tech.k-zak.com/tags/movabletype/">#MovableType</a>
+          <a href="http://tech.k-zak.com/tags/jekyll/">#Jekyll</a>
         
        
     </div>
+    
   </div>
 
 </div>
 
-
 <paper-item>
   
-    <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/page/3/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <paper-fab disabled icon="chevron-left"></paper-fab>
   
     <div class="flex"></div>
   
-    <paper-fab disabled icon="chevron-right"></paper-fab>
+    <a href="http://tech.k-zak.com/2017/02/19/first-hexo"><paper-fab icon="chevron-right"></paper-fab></a>
   
 </paper-item>
-
 
       <paper-item>
         <div class="copyright"></div>

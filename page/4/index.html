@@ -140,6 +140,28 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2013/12/08/square-root">平方根ろじく</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">平方根で最も少ない桁数で0から9までの数字が揃うのは何？
+Pythonでチャレンジ
+#!usr/bin/python #--*-- coding: utf-8 --*-- import math from decimal import * def change_list(num): return list(str(num).replace('.','')) def check_num10(num_list): #num_list max length is 28 (default Decimal) s = set() i = 0 for x in num_list: s.add(x) i += 1 if len(s) == 10: return i #set length shorter than 10 return False return False if __name__ == '__main__': #上限100万でLoop max_loop = 1000000 k = False #桁数 i = False #数値 for x in range(0,max_loop): result = check_num10(change_list(Decimal(x).</div>
+    <div class="tags">
+      8 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2013/12/08/coding-memo05">コーディングリハビリ06</a></div>
     
       <div class="categories">
@@ -411,38 +433,6 @@ Qiitaは素人同然の自分には本当に助かる。</div>
       
         
           <a href="http://tech.k-zak.com/tags/ssh/">#ssh</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/10/02/trouble-css">印刷用CSSでハマった</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB/">トラブル</a>
-        
-      </div>
-     
-    <div class="description">この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。
-問題のCSS: page-break-before
-いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと
-していたんだけど、ChromeではなるのにIE(対応対象はVer 9)だと改ページしてくれない。
-IEでも解釈されるはずなのになんで？ってなって諦めてたんだけど、調べてたら出てきた。
-IEの場合はpage-break-beforeが適用される要素がページをまたぐような位置にいる場合は
-無視されるそうです。で、ちゃんとは調べてないのですがpage-break-beforeの場合はその
-要素がpage-break-afterの場合は次の要素が判定基準になるっぽぽぽぽいです。
-対処方法としては改ページしたい場所にからのdivを入れてその要素に対して改ページ指定の
-cssを適用させるって方法。Web素人には分からんよ。Web上でCSSリファレンスをさっと見ても
-そのことについての記述なかったし。んもう！</div>
-    <div class="tags">
-      2 Oct 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/css/">#CSS</a>
         
        
     </div>

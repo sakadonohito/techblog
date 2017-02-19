@@ -140,6 +140,32 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/08/02/spec-js">低レベルプログラマだからJavaScriptで知らなかった事</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB/">トラブル</a>
+        
+      </div>
+     
+    <div class="description">JavaScriptで知らないせいでハマったところなどなど
+Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。
+そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。
+JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
+100+10.1とかやろうとすると物凄い小さい数字が誤差として丸められず残る。</div>
+    <div class="tags">
+      2 Aug 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/03/16/milestone">最近やったいろいろ</a></div>
     
       <div class="categories">
@@ -424,28 +450,6 @@ PHPでは、
           <a href="http://tech.k-zak.com/tags/python/">#Python</a>
         
           <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/08/square-root">平方根ろじく</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">平方根で最も少ない桁数で0から9までの数字が揃うのは何？
-Pythonでチャレンジ
-#!usr/bin/python #--*-- coding: utf-8 --*-- import math from decimal import * def change_list(num): return list(str(num).replace('.','')) def check_num10(num_list): #num_list max length is 28 (default Decimal) s = set() i = 0 for x in num_list: s.add(x) i += 1 if len(s) == 10: return i #set length shorter than 10 return False return False if __name__ == '__main__': #上限100万でLoop max_loop = 1000000 k = False #桁数 i = False #数値 for x in range(0,max_loop): result = check_num10(change_list(Decimal(x).</div>
-    <div class="tags">
-      8 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
         
        
     </div>
