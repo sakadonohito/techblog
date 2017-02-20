@@ -1,12 +1,11 @@
 
-
 <!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>Categories</title>
+  <title>Pelican</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -136,16 +135,46 @@
 
 
 
+<div class="content">
 
-<paper-menu>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/02/20/first-pelican">2017 02 20 pelican</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">Python製の静的サイトジェネレーターPelicanを試す Hugo,Hexo,Jekyllと試してきて、せっかくなのでPython製のものも試そうとPelicanを試した。
+インストール mkdir &lt;&lt;blog&gt;&gt; cd &lt;&lt;blog&gt;&gt; pip install pelican Markdown pelican-quickstart  なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。
+記事を書く 記事はcontent以下にreStructuredTextもしくはMarkdownで書きます。 content以下にディレクトリを配置するとそのディレクトリ名がカテゴリ名扱いされるらしい。当分はいいや。 もちろん、カテゴリはテキストファイルないのヘッダー？に記述できますので、カテゴリが必要だからといってディレクトリでわかなければいけないわけではありません。
+pelican content -s pelicanconf.py  でoutputディレクトリに静的ファイルが生成されます。
+簡単ですな。</div>
+    <div class="tags">
+      20 Feb 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/pelican/">#Pelican</a>
+        
+       
+    </div>
+  </div>
+
+</div>
+
+
+<paper-item>
   
-    <a href="http://tech.k-zak.com/categories/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB"><paper-item><iron-icon icon="drafts"></iron-icon>　<div class="flex">トラブル</div> 5</paper-item></a>
+    <paper-fab disabled icon="chevron-left"></paper-fab>
   
-    <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C"><paper-item><iron-icon icon="drafts"></iron-icon>　<div class="flex">勉強日誌</div> 62</paper-item></a>
+    <div class="flex"></div>
   
-    <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89"><paper-item><iron-icon icon="drafts"></iron-icon>　<div class="flex">設定構築</div> 33</paper-item></a>
+    <paper-fab disabled icon="chevron-right"></paper-fab>
   
-</paper-menu>
+</paper-item>
+
 
       <paper-item>
         <div class="copyright"></div>
@@ -168,3 +197,4 @@
   
 </body>
 </html>
+

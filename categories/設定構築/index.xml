@@ -9,6 +9,43 @@
     <atom:link href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>2017 02 20 pelican</title>
+      <link>http://tech.k-zak.com/2017/02/20/first-pelican</link>
+      <pubDate>Mon, 20 Feb 2017 15:26:44 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/02/20/first-pelican</guid>
+      <description>
+
+&lt;h1 id=&#34;python製の静的サイトジェネレーターpelicanを試す&#34;&gt;Python製の静的サイトジェネレーターPelicanを試す&lt;/h1&gt;
+
+&lt;p&gt;Hugo,Hexo,Jekyllと試してきて、せっかくなのでPython製のものも試そうとPelicanを試した。&lt;/p&gt;
+
+&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir &amp;lt;&amp;lt;blog&amp;gt;&amp;gt;
+cd &amp;lt;&amp;lt;blog&amp;gt;&amp;gt;
+pip install pelican Markdown
+pelican-quickstart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。&lt;/p&gt;
+
+&lt;h2 id=&#34;記事を書く&#34;&gt;記事を書く&lt;/h2&gt;
+
+&lt;p&gt;記事はcontent以下にreStructuredTextもしくはMarkdownで書きます。
+content以下にディレクトリを配置するとそのディレクトリ名がカテゴリ名扱いされるらしい。当分はいいや。
+もちろん、カテゴリはテキストファイルないのヘッダー？に記述できますので、カテゴリが必要だからといってディレクトリでわかなければいけないわけではありません。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pelican content -s pelicanconf.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でoutputディレクトリに静的ファイルが生成されます。&lt;/p&gt;
+
+&lt;p&gt;簡単ですな。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Jekyllを試す</title>
       <link>http://tech.k-zak.com/2017/02/19/first-jekyll</link>
       <pubDate>Sun, 19 Feb 2017 23:22:39 +0900</pubDate>
@@ -1172,34 +1209,6 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
 &lt;p&gt;後で気づいたんだけど、新しい仮想ホスト定義してるのに既存の仮想ホストの設定ファイルに追記してる。アホだ。もしかしたらそのせいなのかな？てか既存仮想ホストの特定のパスの場合unicorn使えばいいのかな？できるかな？&lt;/p&gt;
 
 &lt;p&gt;という事で無事動きました。汚い文章。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>sshで、ぷごふぁ</title>
-      <link>http://tech.k-zak.com/2013/10/02/ssh</link>
-      <pubDate>Wed, 02 Oct 2013 17:10:04 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2013/10/02/ssh</guid>
-      <description>&lt;p&gt;WordPress勉強してます。テーマについてはだいたい分かったので、自作テーマとか作っていきたい。&lt;/p&gt;
-
-&lt;p&gt;ゆくゆくは案件事例的なぽーとふぉりおサイトを作ろうと、とりあえずさくらVPSを立てて、SSHの&lt;/p&gt;
-
-&lt;p&gt;設定をする。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;契約だけしてながらく放置していたので、OS再インストールしてSSHで接続しようとしたらエラー出て&lt;/p&gt;
-
-&lt;p&gt;ぷごふぁ！ってなった。調べたら出てきました。&lt;/p&gt;
-
-&lt;p&gt;参照： &lt;a href=&#34;http://qiita.com/wnoguchi/items/690f3f4651f8f11e4ed3&#34;&gt;http://qiita.com/wnoguchi/items/690f3f4651f8f11e4ed3&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;要は以前に接続した際のゴミが残っていて再インストールしたのでIPとポート同じなのに鍵あわないじゃん！&lt;/p&gt;
-
-&lt;p&gt;て言うことでした。やっぱりデータを消せばいいだけだったんだ。初期化するコマンドとかないんかな？&lt;/p&gt;
-
-&lt;p&gt;Qiitaは素人同然の自分には本当に助かる。&lt;/p&gt;
 </description>
     </item>
     
