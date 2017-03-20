@@ -6,11 +6,123 @@
     <description>Recent content in Posts on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Feb 2017 15:26:44 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Mar 2017 18:26:58 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>2017 02 20 pelican</title>
+      <title>Pelicanのレイアウト作成</title>
+      <link>http://tech.k-zak.com/2017/03/20/create-pelican-theme</link>
+      <pubDate>Mon, 20 Mar 2017 18:26:58 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/20/create-pelican-theme</guid>
+      <description>
+
+&lt;h1 id=&#34;pelicanで使う自分用テーマを作成した&#34;&gt;Pelicanで使う自分用テーマを作成した&lt;/h1&gt;
+
+&lt;p&gt;静的サイトジェネレーター用の基本的なブログレイアウトを一つ作っておくと使い回しができると思い、Python製のPelicanから着手することにしてみた。&lt;/p&gt;
+
+&lt;p&gt;結論から言うと、なかなか時間がとれないのもあって、足掛け2ヶ月かかった。&lt;/p&gt;
+
+&lt;h2 id=&#34;その1-ベースとなるレイアウトを素組する&#34;&gt;その1：ベースとなるレイアウトを素組する&lt;/h2&gt;
+
+&lt;p&gt;htmlとCSSのみでできるだけレスポンシブな簡易ブログ用のレイアウトを考えて作った。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/sakadonohito/site-base-theme&#34;&gt;https://github.com/sakadonohito/site-base-theme&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;flexboxを中途半端に使っているのと、Pelicanテーマ作り終わってからフィードバックしている部分もある。ホント適当。&lt;/p&gt;
+
+&lt;p&gt;CSSはSCSSからWebpackでビルドしているけど、限りなく必要ないレベル。
+EmacsならSCSS保存する時にCSSをビルドしてくれるのでホント不要な構造、しかも作り終わる前にWebpackは2がでちゃってバージョンが古いというオマケつき。
+そうです、Webpack使ってるぜアッピルがしたかっただけなのです。&lt;/p&gt;
+
+&lt;h2 id=&#34;その2-pelicanのテーマを作る&#34;&gt;その2：Pelicanのテーマを作る&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ググって出てきたシンプルなテーマをコピーして&lt;/li&gt;
+&lt;li&gt;作ったベースレイアウトにまるっと取り替えて&lt;/li&gt;
+&lt;li&gt;変数部分がちゃんと展開されるように調整して&lt;/li&gt;
+&lt;li&gt;パーツをバラす&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;みたいな感じで作成。&lt;/p&gt;
+
+&lt;p&gt;結局よくりようしたのは&lt;a href=&#34;http://docs.getpelican.com/en/3.6.3/themes.html&#34;&gt;公式ドキュメント&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ハマったところ&#34;&gt;ハマったところ&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-見本にしたテーマのパーツ毎の役割がよくわからなかった&#34;&gt;1. 見本にしたテーマのパーツ毎の役割がよくわからなかった&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;categories.html&lt;/code&gt;と&lt;code&gt;category.html&lt;/code&gt;ってあって、最初複数形のはカテゴリ別の一覧表示で単数系のは1記事のパーツかと思ったら、複数形はカテゴリ名の一覧で単数系が特定のカテゴリでの記事一覧だった。
+タグの場合はさらに1記事用パーツレイアウトにはめ込む用の記事に関連づいたタグを横一列に並べるtaglist.htmlなんてのもあって、さらに混乱した。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-ビルド失敗した時どこでエラーが発生したのか分からない&#34;&gt;2. ビルド失敗した時どこでエラーが発生したのか分からない&lt;/h3&gt;
+
+&lt;p&gt;ビルドのエラーログの出力設定があるのか調べていないだけなんだけど、テンプレート作成している時にビルドエラー発生したけど、どこの編集のせいか分からない(1行文法エラーで失敗したぜ！的なメッセージがでるだけ)のでこまめにビルドして確認しながらじゃないと迷路に迷い込む。&lt;/p&gt;
+
+&lt;p&gt;ショートカットキーのタイポとかで変な場所に意図せず文字を入力してしまっているのに気づかず、ビルドが失敗した時には、身に覚えがなかったので解決に時間がかかった(2分探索みたいにコードを消したり戻したりしながらビルドしてエラー箇所を探した)。&lt;/p&gt;
+
+&lt;h3 id=&#34;3-記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある&#34;&gt;3. 記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;period_Archives.html&lt;/code&gt;っていう特定の期間の記事リストを表示するためのパーツの上で&lt;strong&gt;articles&lt;/strong&gt;という記事リストオブジェクトは全体じゃなくて、その期間の記事リストオブジェクト。全記事のリストは代わりに&lt;strong&gt;all_articles&lt;/strong&gt;てのある。じゃぁ常に&lt;strong&gt;all_articles&lt;/strong&gt;を使えば？ってなるんだけど、TOPとか他の場所だとこの&lt;strong&gt;all_articles&lt;/strong&gt;は空欄。&lt;/p&gt;
+
+&lt;h3 id=&#34;4-年月毎に記事のカウントを取ったりurl分ける方法の説明がおろそか&#34;&gt;4. 年月毎に記事のカウントを取ったりURL分ける方法の説明がおろそか&lt;/h3&gt;
+
+&lt;p&gt;結論からいうと、URLについては設定ファイルに&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;MONTH_ARCHIVE_SAVE_AS = &#39;{date:%Y}/{date:%m}/index.html&#39;
+他にも
+AUTHOR_SAVE_AS とか
+PAGE_SAVE_AS なんかもあるのよ
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とか書いておくと、/2017/03/みたいなパスで2017年3月の記事の一覧ページが生成される。今にして思うと年のフォルダ&amp;amp;月を意味するファイルの組み合わせでよかったんじゃないか説もある。&lt;/p&gt;
+
+&lt;p&gt;年月の記事カウントについては全記事を年でまとめた記事リストの記事リストを作成して「記事リスト」をさらに月でまとめてカウントを取るみたいなことをやる。
+これはそんなようなことをするサンプルのテーマがたまたま見つかったから作れたけど見つからなかったらアーカイブのページが断念したと思う。&lt;/p&gt;
+
+&lt;p&gt;こんな感じ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;lt;section&amp;gt;
+	&amp;lt;p&amp;gt;Archives&amp;lt;/p&amp;gt;
+	{% if all_articles|count %}
+	&amp;lt;ul&amp;gt;
+		{% for year, date_year in all_articles|groupby(&#39;date.year&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
+		　　{% for month, articles in date_year|groupby(&#39;date.month&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
+		　　　　&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/{{ year }}/{{ &#39;%02d&#39; % month }}/&amp;quot;&amp;gt;{{ year }}年{{ month }}月&amp;lt;/a&amp;gt;({{ articles|count }})&amp;lt;/li&amp;gt;
+		　　{% endfor %}
+		{% endfor %}
+	&amp;lt;/ul&amp;gt;
+	{% elif articles %}
+	&amp;lt;ul&amp;gt;
+	{% for year, date_year in articles|groupby(&#39;date.year&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
+	　　{% for month, articles in date_year|groupby(&#39;date.month&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
+		　　　　&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/{{ year }}/{{ &#39;%02d&#39; % month }}/&amp;quot;&amp;gt;{{ year }}年{{ month }}月&amp;lt;/a&amp;gt;({{ articles|count }})&amp;lt;/li&amp;gt;
+	　　{% endfor %}
+	{% endfor %}
+	&amp;lt;/ul&amp;gt;
+	{% endif %}
+&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;正直リストオブジェクトをパイプで次の処理に渡せるのjinjaのドキュメント見なかったら想像もできなかったので、このパターンのサンプルくらいPelicanのドキュメントにも載せておいてほしい。&lt;/p&gt;
+
+&lt;h3 id=&#34;5-1つのテンプレートファイルに複数のブロックを書ける&#34;&gt;5. 1つのテンプレートファイルに複数のブロックを書ける&lt;/h3&gt;
+
+&lt;p&gt;ハマったことではないんだけど、パーツ側が1ブロックしか書いちゃいけないと最初思ってたので。
+複数のブロックを書けるので、メインコンテンツのブロックとは別の離れた場所に共通化できないテンプレートごとの何かを表示させたい要素がある時なんかに便利だなーと思った。&lt;/p&gt;
+
+&lt;h2 id=&#34;総括&#34;&gt;総括&lt;/h2&gt;
+
+&lt;p&gt;テンプレート作成したけど設計失敗かも。&lt;/p&gt;
+
+&lt;p&gt;今回作成したPelicanのテーマ&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/sakadonohito/pelican-theme-simple&#34;&gt;https://github.com/sakadonohito/pelican-theme-simple&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pelicanを試す</title>
       <link>http://tech.k-zak.com/2017/02/20/first-pelican</link>
       <pubDate>Mon, 20 Feb 2017 15:26:44 +0900</pubDate>
       
@@ -168,7 +280,7 @@ urlは公開したいドメイン、rootはトップレベルにした。&lt;/p&
       <guid>http://tech.k-zak.com/2017/02/19/first-hugo</guid>
       <description>
 
-&lt;h1 id=&#34;開発メモブログをwordpressからhugoへの移行&#34;&gt;開発メモブログをWordPressからHugoへの移行&lt;/h1&gt;
+&lt;h2 id=&#34;開発メモブログをwordpressからhugoへの移行&#34;&gt;開発メモブログをWordPressからHugoへの移行&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;WordPressから記事をエクスポート&lt;/li&gt;
@@ -735,204 +847,6 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
 &lt;p&gt;namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く&lt;/p&gt;
 
 &lt;p&gt;毎日ちゃんとメモとらないと駄目ですね。。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>新しく開発環境作成中</title>
-      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm</link>
-      <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm</guid>
-      <description>
-
-&lt;h3 id=&#34;ubuntu14-64bit-のvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;イメージからVMWareFusionに作成&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ターミナルから LANG=C xdg-user-dirs-gtk-update を実行
-LANG=C xdg-user-dirs-gtk-update&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;設定画面が出てくるので、そのままOK&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;VMWare toolsをインストール&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開&lt;/li&gt;
-&lt;li&gt;展開したディレクトリの中に入ってインストール実行&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;aptのアップデートとアップグレード
-    sudo apt-get update&lt;br /&gt;
-    sudo apt-get upgrade&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Dropboxクライアントのインストール&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール&lt;/li&gt;
-&lt;li&gt;Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Emacsのインストール
-    sudo apt-get install emacs24&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成&lt;/li&gt;
-&lt;li&gt;作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった
-ln -s ~/Dropbox/emacs.d ~/emacs.d&lt;br /&gt;
-mv ~/emacs.d ~/.emacs.d
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;バージョン管理のインストール
-    sudo apt-get install git&lt;br /&gt;
-    sudo apt-get install mercurial&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;nginxのインストール
-    sudo apt-get install nginx&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;xEnvや各バージョンのインストールに必要になる諸々のインストール
-    sudo add-apt-repository ppa:webupd8team/java&lt;br /&gt;
-    sudo apt-get update&lt;br /&gt;
-    sudo apt-get install oracle-java7-installer ※for jruby&lt;br /&gt;
-    sudo apt-get install oracle-java8-installer ※必要であれば。&lt;br /&gt;
-    sudo update-alternatives &amp;ndash;config java&lt;br /&gt;
-    ※java7を選択する&lt;br /&gt;
-    sudo apt-get install g++ ※これをインストールしないとインストール失敗する&lt;br /&gt;
-    sudo apt-get install libssl-dev ※これをインストールしないとインストール失敗する&lt;br /&gt;
-    sudo apt-get install build-essential ※pyenvで必要になるようだ&lt;br /&gt;
-    sudo apt-get install curl ※ndenv install &amp;ndash;list で必要になる&lt;br /&gt;
-    sudo apt-get install libjpeg-dev ※phpのインストールで必要になる&lt;br /&gt;
-    sudo apt-get install re2c ※phpのインストールで必要になる&lt;br /&gt;
-    sudo apt-get install bison ※phpのインストールで必要になる&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;rbenvのインストール
-    git clone &lt;a href=&#34;https://github.com/sstephenson/rbenv.git&#34;&gt;https://github.com/sstephenson/rbenv.git&lt;/a&gt; ~/.rbenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/sstephenson/ruby-build.git&#34;&gt;https://github.com/sstephenson/ruby-build.git&lt;/a&gt; ~/.rbenv/plugins/ruby-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.rbenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${rbenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;plenvのインストール
-    git clone &lt;a href=&#34;https://github.com/tokuhirom/plenv.git&#34;&gt;https://github.com/tokuhirom/plenv.git&lt;/a&gt; ~/.plenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/tokuhirom/Perl-Build.git&#34;&gt;https://github.com/tokuhirom/Perl-Build.git&lt;/a&gt; ~/.plenv/plugins/perl-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.plenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${plenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;pyenvのインストール
-    git clone &lt;a href=&#34;https://github.com/yyuu/pyenv.git&#34;&gt;https://github.com/yyuu/pyenv.git&lt;/a&gt; ~/.pyenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/yyuu/python-virtualenv.git&#34;&gt;https://github.com/yyuu/python-virtualenv.git&lt;/a&gt; ~/.pyenv/plugins/python-virtualenv&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.pyenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${pyenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ndenvのインストール
-    git clone &lt;a href=&#34;https://github.com/riywo/ndenv.git&#34;&gt;https://github.com/riywo/ndenv.git&lt;/a&gt; ~/.ndenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/riywo/node-build.git&#34;&gt;https://github.com/riywo/node-build.git&lt;/a&gt; ~/.ndenv/plugins/node-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.ndenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${ndenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;phpenvのインストール
-    git clone &lt;a href=&#34;https://github.com/CHH/phpenv.git&#34;&gt;https://github.com/CHH/phpenv.git&lt;/a&gt; ~/.phpenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/CHH/php-build.git&#34;&gt;https://github.com/CHH/php-build.git&lt;/a&gt; ~/.phpenv/plugins/php-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.phpenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${phpenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;rubyのインストールとjrubyのインストール
-    rbenv install 1.9.3-p547&lt;br /&gt;
-    rbenv install 2.1.2&lt;br /&gt;
-    rbenv install jruby-1.7.15&lt;br /&gt;
-    rbenv global 2.1.2&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;perlのインストール
-    plenv install 5.20.0&lt;br /&gt;
-    plenv global 5.20.0&lt;br /&gt;
-    plenv rehash&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;pyenvのインストール
-    pyenv install jython-2.5.3&lt;br /&gt;
-    pyenv install 3.4.1&lt;br /&gt;
-    pyenv install 2.7.8&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ndenvのインストール
-    ndenv install v0.11.13&lt;br /&gt;
-    ndenv global v0.11.13&lt;br /&gt;
-    ndenv rehash&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;phpenvのインストール
-    phpenv install 5.5.16&lt;br /&gt;
-    phpenv install 5.6.0&lt;br /&gt;
-    phpenv global 5.5.16&lt;br /&gt;
-    phpenv rehash&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;php-fpmの設定
-    -: listen = 127.0.0.1:9000&lt;br /&gt;
-    +: /home/{{myhome}}/.phpenv/versions/5.5.16/var/run/php-fpm.sock&lt;br /&gt;
-    -: ;request_terminate_timeout = 0&lt;br /&gt;
-    +: request_terminate_timeout = 0&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;php.iniの設定&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;適宜timeoutやmax_sizeの調整&lt;/li&gt;
-&lt;li&gt;timezoneの設定&lt;/li&gt;
-&lt;li&gt;mbstringの設定&lt;/li&gt;
-&lt;li&gt;拡張ライブラリ分の追記&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;mysqlのインストール
-    sudo apt-get install mysq&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;nginxの設定&lt;/p&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;conf.dに作成した場合はそのままで良いが、site-availableに作成した場合はsite-enableにシンボリックリンクを作成する&lt;/p&gt;
-
-&lt;p&gt;unicornで動かすredmineの分も記述する。※内容詳細は次のリンク(過去記事参照)&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;unicornでredmineの設定
-    sudo apt-get install zlib1g-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libsqlite3-dev libpcre3-dev libncurses-dev libgdbm-dev tk-dev libmagickwand-dev&lt;br /&gt;
-    sudo apt-get install python-software-properties sysv-rc-conf&lt;br /&gt;
-    gem update&lt;br /&gt;
-    gem install bundler&lt;br /&gt;
-    gem install mysql2
-    gem install rails
-    gem install rake
-    echo &amp;ldquo;gem &amp;lsquo;unicorn&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
-    echo &amp;ldquo;gem &amp;lsquo;psych&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
-    bundle install &amp;ndash;without rmagick development test sqlite postgresql
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;以降の作業については過去の記事を参照する。&lt;a href=&#34;http://kazunoko.sakura.ne.jp/wordpress/?p=240&#34;&gt;2014年の目標達成進捗管理的な&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;20140916&#34;&gt;20140916&lt;/h2&gt;
-
-&lt;h3 id=&#34;memo&#34;&gt;memo&lt;/h3&gt;
-
-&lt;p&gt;Ubuntu(64bit)のphpenvにldap入れるのに詰まった事。&lt;/p&gt;
-
-&lt;p&gt;ldapのライブラリの場所に問題があったらしい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo ln -s /usr/lib/x86_64-linux-gnu/libldap_r.so /usr/lib/libldap_r.so  
-sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ubuntu(64bit)のphpenvにpdo-oci入れるのに詰まった事。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo ln -s /home/{{myhome}}/work/oracle/libclntsh.so.11.1 /home/{{myhome}}/work/oracle/libclntsh.so  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;phpenvでphpizeで忘れていたこと。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;./configure --with-php-config=/home/.phpenv/versions/5.5.16/bin/php-config ※phpizeの対象を指定する必要がある
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Markdownのプラグインいれたけど、散々な結果。ウケる。&lt;/p&gt;
 </description>
     </item>
     

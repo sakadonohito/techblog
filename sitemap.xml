@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tech.k-zak.com/2017/03/20/create-pelican-theme</loc>
+    <lastmod>2017-03-20T18:26:58+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tech.k-zak.com/2017/02/20/first-pelican</loc>
     <lastmod>2017-02-20T15:26:44+09:00</lastmod>
   </url>
@@ -587,7 +592,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/tags/pelican/</loc>
-    <lastmod>2017-02-20T15:26:44+09:00</lastmod>
+    <lastmod>2017-03-20T18:26:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -617,7 +622,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/post/</loc>
-    <lastmod>2017-02-20T15:26:44+09:00</lastmod>
+    <lastmod>2017-03-20T18:26:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -736,13 +741,13 @@
   
   <url>
     <loc>http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/</loc>
-    <lastmod>2017-02-20T15:26:44+09:00</lastmod>
+    <lastmod>2017-03-20T18:26:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://tech.k-zak.com/</loc>
-    <lastmod>2017-02-20T15:26:44+09:00</lastmod>
+    <lastmod>2017-03-20T18:26:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   

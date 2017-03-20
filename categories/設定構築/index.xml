@@ -9,7 +9,119 @@
     <atom:link href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>2017 02 20 pelican</title>
+      <title>Pelicanのレイアウト作成</title>
+      <link>http://tech.k-zak.com/2017/03/20/create-pelican-theme</link>
+      <pubDate>Mon, 20 Mar 2017 18:26:58 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/20/create-pelican-theme</guid>
+      <description>
+
+&lt;h1 id=&#34;pelicanで使う自分用テーマを作成した&#34;&gt;Pelicanで使う自分用テーマを作成した&lt;/h1&gt;
+
+&lt;p&gt;静的サイトジェネレーター用の基本的なブログレイアウトを一つ作っておくと使い回しができると思い、Python製のPelicanから着手することにしてみた。&lt;/p&gt;
+
+&lt;p&gt;結論から言うと、なかなか時間がとれないのもあって、足掛け2ヶ月かかった。&lt;/p&gt;
+
+&lt;h2 id=&#34;その1-ベースとなるレイアウトを素組する&#34;&gt;その1：ベースとなるレイアウトを素組する&lt;/h2&gt;
+
+&lt;p&gt;htmlとCSSのみでできるだけレスポンシブな簡易ブログ用のレイアウトを考えて作った。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/sakadonohito/site-base-theme&#34;&gt;https://github.com/sakadonohito/site-base-theme&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;flexboxを中途半端に使っているのと、Pelicanテーマ作り終わってからフィードバックしている部分もある。ホント適当。&lt;/p&gt;
+
+&lt;p&gt;CSSはSCSSからWebpackでビルドしているけど、限りなく必要ないレベル。
+EmacsならSCSS保存する時にCSSをビルドしてくれるのでホント不要な構造、しかも作り終わる前にWebpackは2がでちゃってバージョンが古いというオマケつき。
+そうです、Webpack使ってるぜアッピルがしたかっただけなのです。&lt;/p&gt;
+
+&lt;h2 id=&#34;その2-pelicanのテーマを作る&#34;&gt;その2：Pelicanのテーマを作る&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ググって出てきたシンプルなテーマをコピーして&lt;/li&gt;
+&lt;li&gt;作ったベースレイアウトにまるっと取り替えて&lt;/li&gt;
+&lt;li&gt;変数部分がちゃんと展開されるように調整して&lt;/li&gt;
+&lt;li&gt;パーツをバラす&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;みたいな感じで作成。&lt;/p&gt;
+
+&lt;p&gt;結局よくりようしたのは&lt;a href=&#34;http://docs.getpelican.com/en/3.6.3/themes.html&#34;&gt;公式ドキュメント&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ハマったところ&#34;&gt;ハマったところ&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-見本にしたテーマのパーツ毎の役割がよくわからなかった&#34;&gt;1. 見本にしたテーマのパーツ毎の役割がよくわからなかった&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;categories.html&lt;/code&gt;と&lt;code&gt;category.html&lt;/code&gt;ってあって、最初複数形のはカテゴリ別の一覧表示で単数系のは1記事のパーツかと思ったら、複数形はカテゴリ名の一覧で単数系が特定のカテゴリでの記事一覧だった。
+タグの場合はさらに1記事用パーツレイアウトにはめ込む用の記事に関連づいたタグを横一列に並べるtaglist.htmlなんてのもあって、さらに混乱した。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-ビルド失敗した時どこでエラーが発生したのか分からない&#34;&gt;2. ビルド失敗した時どこでエラーが発生したのか分からない&lt;/h3&gt;
+
+&lt;p&gt;ビルドのエラーログの出力設定があるのか調べていないだけなんだけど、テンプレート作成している時にビルドエラー発生したけど、どこの編集のせいか分からない(1行文法エラーで失敗したぜ！的なメッセージがでるだけ)のでこまめにビルドして確認しながらじゃないと迷路に迷い込む。&lt;/p&gt;
+
+&lt;p&gt;ショートカットキーのタイポとかで変な場所に意図せず文字を入力してしまっているのに気づかず、ビルドが失敗した時には、身に覚えがなかったので解決に時間がかかった(2分探索みたいにコードを消したり戻したりしながらビルドしてエラー箇所を探した)。&lt;/p&gt;
+
+&lt;h3 id=&#34;3-記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある&#34;&gt;3. 記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;period_Archives.html&lt;/code&gt;っていう特定の期間の記事リストを表示するためのパーツの上で&lt;strong&gt;articles&lt;/strong&gt;という記事リストオブジェクトは全体じゃなくて、その期間の記事リストオブジェクト。全記事のリストは代わりに&lt;strong&gt;all_articles&lt;/strong&gt;てのある。じゃぁ常に&lt;strong&gt;all_articles&lt;/strong&gt;を使えば？ってなるんだけど、TOPとか他の場所だとこの&lt;strong&gt;all_articles&lt;/strong&gt;は空欄。&lt;/p&gt;
+
+&lt;h3 id=&#34;4-年月毎に記事のカウントを取ったりurl分ける方法の説明がおろそか&#34;&gt;4. 年月毎に記事のカウントを取ったりURL分ける方法の説明がおろそか&lt;/h3&gt;
+
+&lt;p&gt;結論からいうと、URLについては設定ファイルに&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;MONTH_ARCHIVE_SAVE_AS = &#39;{date:%Y}/{date:%m}/index.html&#39;
+他にも
+AUTHOR_SAVE_AS とか
+PAGE_SAVE_AS なんかもあるのよ
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とか書いておくと、/2017/03/みたいなパスで2017年3月の記事の一覧ページが生成される。今にして思うと年のフォルダ&amp;amp;月を意味するファイルの組み合わせでよかったんじゃないか説もある。&lt;/p&gt;
+
+&lt;p&gt;年月の記事カウントについては全記事を年でまとめた記事リストの記事リストを作成して「記事リスト」をさらに月でまとめてカウントを取るみたいなことをやる。
+これはそんなようなことをするサンプルのテーマがたまたま見つかったから作れたけど見つからなかったらアーカイブのページが断念したと思う。&lt;/p&gt;
+
+&lt;p&gt;こんな感じ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;lt;section&amp;gt;
+	&amp;lt;p&amp;gt;Archives&amp;lt;/p&amp;gt;
+	{% if all_articles|count %}
+	&amp;lt;ul&amp;gt;
+		{% for year, date_year in all_articles|groupby(&#39;date.year&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
+		　　{% for month, articles in date_year|groupby(&#39;date.month&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
+		　　　　&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/{{ year }}/{{ &#39;%02d&#39; % month }}/&amp;quot;&amp;gt;{{ year }}年{{ month }}月&amp;lt;/a&amp;gt;({{ articles|count }})&amp;lt;/li&amp;gt;
+		　　{% endfor %}
+		{% endfor %}
+	&amp;lt;/ul&amp;gt;
+	{% elif articles %}
+	&amp;lt;ul&amp;gt;
+	{% for year, date_year in articles|groupby(&#39;date.year&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
+	　　{% for month, articles in date_year|groupby(&#39;date.month&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
+		　　　　&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/{{ year }}/{{ &#39;%02d&#39; % month }}/&amp;quot;&amp;gt;{{ year }}年{{ month }}月&amp;lt;/a&amp;gt;({{ articles|count }})&amp;lt;/li&amp;gt;
+	　　{% endfor %}
+	{% endfor %}
+	&amp;lt;/ul&amp;gt;
+	{% endif %}
+&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;正直リストオブジェクトをパイプで次の処理に渡せるのjinjaのドキュメント見なかったら想像もできなかったので、このパターンのサンプルくらいPelicanのドキュメントにも載せておいてほしい。&lt;/p&gt;
+
+&lt;h3 id=&#34;5-1つのテンプレートファイルに複数のブロックを書ける&#34;&gt;5. 1つのテンプレートファイルに複数のブロックを書ける&lt;/h3&gt;
+
+&lt;p&gt;ハマったことではないんだけど、パーツ側が1ブロックしか書いちゃいけないと最初思ってたので。
+複数のブロックを書けるので、メインコンテンツのブロックとは別の離れた場所に共通化できないテンプレートごとの何かを表示させたい要素がある時なんかに便利だなーと思った。&lt;/p&gt;
+
+&lt;h2 id=&#34;総括&#34;&gt;総括&lt;/h2&gt;
+
+&lt;p&gt;テンプレート作成したけど設計失敗かも。&lt;/p&gt;
+
+&lt;p&gt;今回作成したPelicanのテーマ&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/sakadonohito/pelican-theme-simple&#34;&gt;https://github.com/sakadonohito/pelican-theme-simple&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pelicanを試す</title>
       <link>http://tech.k-zak.com/2017/02/20/first-pelican</link>
       <pubDate>Mon, 20 Feb 2017 15:26:44 +0900</pubDate>
       
@@ -167,7 +279,7 @@ urlは公開したいドメイン、rootはトップレベルにした。&lt;/p&
       <guid>http://tech.k-zak.com/2017/02/19/first-hugo</guid>
       <description>
 
-&lt;h1 id=&#34;開発メモブログをwordpressからhugoへの移行&#34;&gt;開発メモブログをWordPressからHugoへの移行&lt;/h1&gt;
+&lt;h2 id=&#34;開発メモブログをwordpressからhugoへの移行&#34;&gt;開発メモブログをWordPressからHugoへの移行&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;WordPressから記事をエクスポート&lt;/li&gt;
@@ -1034,181 +1146,6 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
 &lt;p&gt;Nginxのセキュリティ機能？なのでしょうか。仕組みは調べていない。ちゃんと勉強が必要ですね。&lt;/p&gt;
 
 &lt;p&gt;追記：どうも原因は別にあったかも。再現できない。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>2014年の目標達成進捗管理的な</title>
-      <link>http://tech.k-zak.com/2014/01/04/milestone</link>
-      <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/01/04/milestone</guid>
-      <description>
-
-&lt;h2 id=&#34;新年-明けましておめでとうございました-良いお年を&#34;&gt;新年、明けましておめでとうございました。良いお年を。&lt;/h2&gt;
-
-&lt;p&gt;今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。&lt;/p&gt;
-
-&lt;p&gt;事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。&lt;/p&gt;
-
-&lt;p&gt;とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。&lt;/p&gt;
-
-&lt;p&gt;そういう話を聞いたので、ならば達成出来るように達成可能と思えるような目標をredmineでマイルストーンをチケットとして分解して期日を設定して進捗管理するのはどうだろうかと考えた。&lt;/p&gt;
-
-&lt;p&gt;要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。&lt;/p&gt;
-
-&lt;p&gt;という事で設定作業開始&lt;/p&gt;
-
-&lt;h2 id=&#34;環境&#34;&gt;環境:&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ホストOS：OS X10.9&lt;/li&gt;
-&lt;li&gt;ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T))&lt;/li&gt;
-&lt;li&gt;nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します)&lt;/li&gt;
-&lt;li&gt;ruby2.0.0dev(rbenv)&lt;/li&gt;
-&lt;li&gt;unicorn4.7.0&lt;/li&gt;
-&lt;li&gt;rails3.2.16&lt;/li&gt;
-&lt;li&gt;redmine2.4.2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;rbenvにruby2-0を追加してデフォルトにする&#34;&gt;rbenvにruby2.0を追加してデフォルトにする&lt;/h2&gt;
-
-&lt;p&gt;rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。&lt;/p&gt;
-
-&lt;p&gt;参考：&lt;a href=&#34;http://qiita.com/checkpoint/items/f8e65380d9cb0182218d&#34; target=&#34;_blank&#34;&gt;rbenvを利用して複数バージョンのRubyをインストール&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre lang=&#34;sh&#34; toggle=&#34;no&#34;&gt;~$ rbenv install 2.0.0rc-2 
-~$ rbenv global 2.0.0rc-2
-~$ rbenv rehash&lt;/pre&gt;
-
-&lt;p&gt;※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。&lt;/p&gt;
-
-&lt;p&gt;rehashの時だけsh-rehashがうんたらってエラーになる。&lt;/p&gt;
-
-&lt;p&gt;ruby2.0の状態でgem update でアップデートしてbundler入れる。&lt;/p&gt;
-
-&lt;pre lang=&#34;sh&#34; toggle=&#34;no&#34;&gt;~$ gem update
-~$ gem install bundler
-~$ gem install mysql2
-~$ ~/.rbenv/bin/rbenv rehash
-&lt;/pre&gt;
-
-&lt;h2 id=&#34;mysql側の準備&#34;&gt;MySQL側の準備&lt;/h2&gt;
-
-&lt;p&gt;redmienユーザーの作成と&lt;/p&gt;
-
-&lt;p&gt;データベース：redmineの作成&lt;/p&gt;
-
-&lt;h2 id=&#34;redmine入れる&#34;&gt;redmine入れる&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://redmine.jp/&#34; title=&#34;ここ&#34; target=&#34;_blank&#34;&gt;ここ&lt;/a&gt;から最新のredmineをダウンロード(今回は2.4.2)&lt;/p&gt;
-
-&lt;p&gt;うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。&lt;/p&gt;
-
-&lt;p&gt;DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。&lt;/p&gt;
-
-&lt;p&gt;redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。&lt;/p&gt;
-
-&lt;pre lang=&#34;sh&#34; toggle=&#34;no&#34;&gt;~$ cd redmineディレクトリの場所
-~$ echo &#34;gem &#39;unicorn&#39;&#34; &gt;&gt; Gemfile.local
-~$ bundle install --without rmagick
-&lt;/pre&gt;
-
-&lt;p&gt;bundleでのインストールが初めてだったので、なんか引数与えてやってみたかったてのと、&lt;/p&gt;
-
-&lt;p&gt;最初rmagick関連でエラー出たっぽいのでwithoutに指定した。原因は究明しない！&lt;/p&gt;
-
-&lt;p&gt;ここまでで自分が詰まったのは、最初bundler入れた後rehashしてなくてbundle installのとろこで、bundler入ってねぇよ！apt-getで入れろ！ってエラー出てアワアワしてた。どうもbundler入れた後にもrehashが必要らしい。今は何故かは調べない。&lt;/p&gt;
-
-&lt;p&gt;必要最小限にしてなかったせいか、ここでワンサカいろいろインストールされた。気がする。&lt;/p&gt;
-
-&lt;p&gt;インストールされたgemを見た所、railsは上記環境で記載したバージョンになっていたです。&lt;/p&gt;
-
-&lt;p&gt;終わったら、database.ymlのproductionの所を編集して自分の環境でDB接続できるようにする。&lt;/p&gt;
-
-&lt;p&gt;開発用じゃなくてredmine使うだけなので最初からproduction。&lt;/p&gt;
-
-&lt;p&gt;ここで一旦Webrickで動くか確認。&lt;/p&gt;
-
-&lt;pre lang=&#34;sh&#34; toggle=&#34;no&#34;&gt;~$ rails s -e production
-&lt;/pre&gt;
-
-&lt;p&gt;動かねぇ！調べてたらお決まりの必要な処理がある事を知った。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://kujira16.hateblo.jp/entry/2012/09/04/144953&#34; title=&#34;その１&#34; target=&#34;_blank&#34;&gt;その１&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://blog.wnotes.net/blog/article/108&#34; title=&#34;その２&#34; target=&#34;_blank&#34;&gt;その２&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;書いてあることの真似をする。&lt;/p&gt;
-
-&lt;pre lang=&#34;sh&#34; toggle=&#34;no&#34;&gt;~$ bundle exec rake generate_secret_token #セッションストアの秘密鍵を生成
-~$ RAILS_ENV=production bundle exec rake db:migrate # データベースの初期設定を行う
-~$ RAILS_ENV=production bundle exec rake redmine:load_default_data # デフォルトデータを設定
-# 途中言語を聞かれるので、ja と入力
-&lt;/pre&gt;
-
-&lt;p&gt;終わったら再度チャレンジでWebrickが起動しました。やったね。&lt;/p&gt;
-
-&lt;h2 id=&#34;redmineのadminユーザーのデフォルトのパスワードがわからない&#34;&gt;redmineのadminユーザーのデフォルトのパスワードがわからない！&lt;/h2&gt;
-
-&lt;p&gt;解決策は&lt;a href=&#34;http://redmine.jp/tech_note/first-step/admin/login/&#34; title=&#34;ここ&#34; target=&#34;_blank&#34;&gt;ここ&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h2 id=&#34;unicornの設定&#34;&gt;unicornの設定&lt;/h2&gt;
-
-&lt;p&gt;めんどくさくなってきた。上記の２リンクと関連リンクの&lt;a href=&#34;https://gist.github.com/arosh/3616832#file_unicorn&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;と、やや簡潔にかいてある&lt;a href=&#34;http://blog.scimpr.com/2013/12/14/ubuntu-server-12-04-nginx-unicorn%E3%81%A7redmine2-4-1%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99/&#34; target=&#34;_blank&#34;&gt;ブログ&lt;/a&gt;を参考に設定ファイルを書いていきましたので詳細は省きます。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;１，unicorn.rbを作成。&lt;/em&gt;&lt;/p&gt;
-
-&lt;pre&gt;　　設置パスはredmineパス/config/unicorn.rb
-　　unicornのgemの中にあるサンプルからみんな調整して作成しているようです。
-　　ここで一回bundle exec unicorn_rails -c config/unicorn.rb -E productionて実行する
-　　そうするとunicorn.rbに書いた場所に(例えばtmp/)unicorn.pidとunidorn.sockが出来る。
-　　ブラウザからアクセスしてredmine動くか確認。
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;２，unicornのデーモン&lt;/em&gt;&lt;/p&gt;
-
-&lt;pre&gt;　　/etc/init.d/の場所にunicornて名前のファイル作るます。
-　　内容は上記リンクものを参考に
-　　自動起動するように設定※sysv-rc-confてファイルPerlなんですね。
-&lt;/pre&gt;
-
-&lt;p&gt;自分が作業した手順としては一気にnginxの設定編集までしてから確認して動かない！ってなったんだけど、問題切り分けのために、&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;unicornの設定する前段階でWebrickで動かくか(例えば、&lt;a href=&#34;http://0.0.0.0:3000&#34;&gt;http://0.0.0.0:3000&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;unicornの設定した段階でredmine動くか(例えば、&lt;a href=&#34;http://0.0.0.0:8080&#34;&gt;http://0.0.0.0:8080&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;て接続確認しながら進めたほうが良いと思われます。&lt;/p&gt;
-
-&lt;h2 id=&#34;nginxの設定編集&#34;&gt;nginxの設定編集&lt;/h2&gt;
-
-&lt;p&gt;既にnginxが動いている環境のため、redmine専用の設定どうするのか戸惑ったけど、単にserverディレクティブを追加すればいいみたい。upstreamディレクティブも既存の仮想ホスト設定に悪影響は出ていないみたいだ。&lt;/p&gt;
-
-&lt;p&gt;最終的な結論から言うと動いたけど、参考にしたブログなんかと設定がちょい違う。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ローカルで動かしているせいかhostsファイルにredmine用の仮想URLを追記したら動いた。※追記前は参考記事と同じ設定にしても動かなかった。&lt;/li&gt;
-&lt;li&gt;動かすのに使った指定は
-
-&lt;ol&gt;
-&lt;li&gt;upstreamのunixソケットの指定&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのlisten port&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのserver_name&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのroot&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのaccess_log&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのerror_log&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのlocation / にファイルじゃなかったらproxy_passの分岐&lt;/li&gt;
-&lt;li&gt;上記if文が真の時のproxy_passの指定を「http://」+「upstreamに記述した名前」&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;proxy_pass以外のproxyの設定は一つも書いてないけど動きます。なんでだろう。&lt;/p&gt;
-
-&lt;p&gt;後で気づいたんだけど、新しい仮想ホスト定義してるのに既存の仮想ホストの設定ファイルに追記してる。アホだ。もしかしたらそのせいなのかな？てか既存仮想ホストの特定のパスの場合unicorn使えばいいのかな？できるかな？&lt;/p&gt;
-
-&lt;p&gt;という事で無事動きました。汚い文章。&lt;/p&gt;
 </description>
     </item>
     
