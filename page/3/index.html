@@ -140,6 +140,55 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible">Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
+の、前にAWSのS3試したので。
+・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
+・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折
+・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。
+・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。
+Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。
+・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる
+・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。
+・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う
+・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ
+以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事
+・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう
+・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する</div>
+    <div class="tags">
+      2 Aug 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
+        
+          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
+        
+          <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
+        
+          <a href="http://tech.k-zak.com/tags/s3/">#S3</a>
+        
+          <a href="http://tech.k-zak.com/tags/vagrant/">#Vagrant</a>
+        
+          <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/08/02/setting-ubuntu">Linux関係のメモ201407</a></div>
     
       <div class="categories">
@@ -424,29 +473,6 @@ redmineディレクトリ直下にGemfile.localを作成し、中に「gem unico
           <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
         
           <a href="http://tech.k-zak.com/tags/unicorn/">#unicorn</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/22/x7-true-js">JavaScriptで7の倍数と7のつく数字の時だけtrue</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">Javascriptてこんな書き方できるのか
-◆7の倍数か7の付く数字の場合のみtrueを返す。
-var nana = function(num){ var arr = [0]; for(var i=1;i&lt; =num;i++){ arr.push( (!(i%7)||/7/.test(i))||i ); } return arr; };  7の剰余が0ではない、もしくは７が含まれる数字が真なら論理値(true)、そうでなければ数値(i)
-最初はおぉ？って思ったけれど、こうしてみるとさして不思議でもないか。</div>
-    <div class="tags">
-      22 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
         
        
     </div>

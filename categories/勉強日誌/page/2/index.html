@@ -139,6 +139,31 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/09/07/setting-php">PHPのファイルアップロードについて</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">PHPで大きなファイルアップロードを作成する
+・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。
+・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file
+・phpの設定でmax_file_size,post_max_size,タイムアウト、memory_limitなどの設定が必要
+・Apacheのバージョンが古いと2だか4GBが上限。という噂。
+・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。</div>
+    <div class="tags">
+      7 Sep 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/09/07/challenge-ansible">Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</a></div>
     
       <div class="categories">
@@ -484,29 +509,6 @@ redmineディレクトリ直下にGemfile.localを作成し、中に「gem unico
           <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
         
           <a href="http://tech.k-zak.com/tags/unicorn/">#unicorn</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/22/x7-true-js">JavaScriptで7の倍数と7のつく数字の時だけtrue</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">Javascriptてこんな書き方できるのか
-◆7の倍数か7の付く数字の場合のみtrueを返す。
-var nana = function(num){ var arr = [0]; for(var i=1;i&lt; =num;i++){ arr.push( (!(i%7)||/7/.test(i))||i ); } return arr; };  7の剰余が0ではない、もしくは７が含まれる数字が真なら論理値(true)、そうでなければ数値(i)
-最初はおぉ？って思ったけれど、こうしてみるとさして不思議でもないか。</div>
-    <div class="tags">
-      22 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
         
        
     </div>

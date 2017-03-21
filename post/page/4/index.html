@@ -139,6 +139,29 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2013/12/22/fizzbuzz-js">fizzbuzz</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">Javascriptでfizzbuzz
+◆シンプルなやつ
+var fizzbuzz = function(num){ //3の倍数の時はFizz //5の倍数の時はBuzz //3かつ5の倍数の時はFizzBuzz var arr = [0]; for(var i=1;i&lt;=num;i++){ arr.push([i,"Fizz","Buzz","FizzBuzz"] [(0==i%3)+(0==i%5)*2] ); } return arr; }; =を使わないなら論理値を整数に戻すみたいな面倒なことやる。剰余を用いないならいろいろごちゃごちゃやる。
+とりあえず可読性とシンプルさから考えるとこんな書き方になるのかな。</div>
+    <div class="tags">
+      22 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2013/12/22/pascal-logic">パスカルのなんとか</a></div>
     
       <div class="categories">
@@ -390,44 +413,6 @@ input = gets.chomp 標準入力が「gets」だけで取れるRubyはダンデ�
       
         
           <a href="http://tech.k-zak.com/tags/laravel4/">#Laravel4</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/11/13/trouble-charset">FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB/">トラブル</a>
-        
-      </div>
-     
-    <div class="description">FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、
-Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！ (PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)
-→アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。
-FuelPHPのUpload::save()を行う前に
-ってやってアップロードファイル名をエンコードする。
-弊害としては本来は内部エンコードのまま処理が進むはずだったので、同名ファイルが有る場合に枝番を付加する処理なんかが正常に動作しなくなる。
-これでWindowsサーバーのフォルダに読める文字のファイル名でアップロードされる。
-最初エンコードをSJISにしてたけど、CP932にしたら、①みたいなMS拡張の機種依存文字も大丈夫になった。
-本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも Upload::register('after',function($file){ 文字化け状態のファイルをエンコードしなおしたファイル名でリネーム })  とかやったら良かったのかな？
-文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け！ (ま、そりゃそうですね)
-→上記１の結果を受けてメール送信のメソッドに引数として添付ファイル名を渡す。その処理は何も加工しない。
-メール送信用のメソッドの中で、引数で受け取った添付ファイル名をFuelPHPのmailに渡す処理を加工
-それでも、メールヘッダがISO-2022-JPなので、機種依存文字の類はメールを受信した時に「?」とかになってるけど、それはしょうがないよね。
-メールの件名が文字化けすることがある！ →犯人は半角カナ。使わないで！件名はFuelPHP側で送信時にISO-2022-JPに変換してるっぽいので、mb_convert_kana関数使って件名に含まれている半角カナを全角に変換して誤魔化す。
-以上、うんこメモでした。</div>
-    <div class="tags">
-      13 Nov 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/fuelphp/">#FuelPHP</a>
         
           <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
         

@@ -6,8 +6,158 @@
     <description>Recent content on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Mar 2017 18:26:58 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 21 Mar 2017 23:52:11 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>アジャイルでスプリントな感じで</title>
+      <link>http://tech.k-zak.com/2017/03/21/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%81%A7%E3%82%B9%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88%E3%81%AA%E6%84%9F%E3%81%98%E3%81%A7</link>
+      <pubDate>Tue, 21 Mar 2017 23:52:11 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/21/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%81%A7%E3%82%B9%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88%E3%81%AA%E6%84%9F%E3%81%98%E3%81%A7</guid>
+      <description>
+
+&lt;h1 id=&#34;自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい&#34;&gt;自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい&lt;/h1&gt;
+
+&lt;p&gt;と、言うことです。&lt;/p&gt;
+
+&lt;p&gt;覚えたいこと、挑戦したいことを目標とするはいいけど、いつまでたっても着手しなかったり遅々として進まなかったりするので優先順位をつけて期限を設けて手中して取り組んでいけば少しは結果が変わってくると信じたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;現在の目標&#34;&gt;現在の目標&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx)&lt;/li&gt;
+&lt;li&gt;AWSの機能のだいたいを触って感覚を掴んでおきたい&lt;/li&gt;
+&lt;li&gt;Microsoft Azureを触ってAWSとの違いを掴んでおきたい&lt;/li&gt;
+&lt;li&gt;GCC？を以下略&lt;/li&gt;
+&lt;li&gt;Blumixに挑戦したい&lt;/li&gt;
+&lt;li&gt;FreeBSDを構築したい&lt;/li&gt;
+&lt;li&gt;Alpineを構築して慣れたい&lt;/li&gt;
+&lt;li&gt;Ansibleを一通り触っていろいろできるよういなりたい&lt;/li&gt;
+&lt;li&gt;Dockerをある程度使えるようになりたい&lt;/li&gt;
+&lt;li&gt;IPv6の学習と擬似ネットワークの構築してみたい&lt;/li&gt;
+&lt;li&gt;VPNの設定をGUIじゃなくても設定できるようになりたい&lt;/li&gt;
+&lt;li&gt;VyOS？を試してみたい&lt;/li&gt;
+&lt;li&gt;Shell及びAWKを覚えたい&lt;/li&gt;
+&lt;li&gt;Powershellを覚えたい&lt;/li&gt;
+&lt;li&gt;dot net C#を覚えたい&lt;/li&gt;
+&lt;li&gt;Javaを覚えたい&lt;/li&gt;
+&lt;li&gt;Androidを覚えたい&lt;/li&gt;
+&lt;li&gt;Swiftを覚えたい&lt;/li&gt;
+&lt;li&gt;JavaScriptをもっと使いこなせるようになりmたい&lt;/li&gt;
+&lt;li&gt;Perl6/Perl5を使えるようになりたい&lt;/li&gt;
+&lt;li&gt;PHP7を覚えたい&lt;/li&gt;
+&lt;li&gt;PHPのフレームワーク、Laravelを覚えたい&lt;/li&gt;
+&lt;li&gt;Nginxに組み込むLuaを少し試したい&lt;/li&gt;
+&lt;li&gt;Ruby/Railsを覚えたい&lt;/li&gt;
+&lt;li&gt;Python3をもう少し使えるようになりたい&lt;/li&gt;
+&lt;li&gt;Scalaちょっと覚えたい&lt;/li&gt;
+&lt;li&gt;Lispわかるようになりたい&lt;/li&gt;
+&lt;li&gt;Clojure書けるようになりたい&lt;/li&gt;
+&lt;li&gt;Haskell読めるようになりたい&lt;/li&gt;
+&lt;li&gt;F#ちょっとしたものなら書けるようになりたい&lt;/li&gt;
+&lt;li&gt;ActiveDirectory/OpenDirectoryがわかるようになりたい。&lt;/li&gt;
+&lt;li&gt;Golang書けるようになりたい&lt;/li&gt;
+&lt;li&gt;Makerel試したい&lt;/li&gt;
+&lt;li&gt;Erlang読み書きできるようになりたい&lt;/li&gt;
+&lt;li&gt;Elasticsearch扱えるようになりたい&lt;/li&gt;
+&lt;li&gt;Neo4j試したい&lt;/li&gt;
+&lt;li&gt;MongoDB試したい&lt;/li&gt;
+&lt;li&gt;DynamoDB試したい&lt;/li&gt;
+&lt;li&gt;Redis扱えるようになりたい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;とっても曖昧なものが多い。。&lt;/p&gt;
+
+&lt;h2 id=&#34;今もっとも取り組みたいことを多くて3つに絞るなら&#34;&gt;今もっとも取り組みたいことを多くて3つに絞るなら&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx)&lt;/li&gt;
+&lt;li&gt;Makerel試したい&lt;/li&gt;
+&lt;li&gt;Dockerをある程度使えるようになりたい&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以下、打ち消し戦のものは現時点で達成済みのもの&lt;/p&gt;
+
+&lt;h3 id=&#34;1-ブログや静的サイトのテーマをつくり込みたい&#34;&gt;1. ブログや静的サイトのテーマをつくり込みたい&lt;/h3&gt;
+
+&lt;p&gt;Pelican,Hexo,Jykell,WordPress,Hugo,Sphinxで動かし始めた静的サイトのテーマを一から作ってみたり、採用したテーマをカスタマイズしたりして見やすさやアクセスのしやすさを向上させる。&lt;/p&gt;
+
+&lt;h4 id=&#34;目的&#34;&gt;目的&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;各静的サイトジェネレータのテンプレートの書き方を覚える&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;レスポンシブレイアウトを一から作ってみてカラダで覚える&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;GoogleAnalyticsやアフィリエイトコードの埋め込み等を試す&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;達成条件-5月上旬までに&#34;&gt;達成条件:5月上旬までに&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;ベースとなるレスポンシブレイアウトを作成する&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Pelican用のテーマを一から作成する(jinja2)&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;Hexoで採用したテーマを見直し改良する(ejs)&lt;/li&gt;
+&lt;li&gt;WordPressのテーマを一から作成し、よく使いそうな関数のチーとシート的なものを作成する(PHP)&lt;/li&gt;
+&lt;li&gt;Jekyllのテーマを一から作成してjinjaとの違いを体感する。(?)&lt;/li&gt;
+&lt;li&gt;Sphinxのテーマを改良し、Pelicanとの勝手の違いを体験する(多分jinja2)&lt;/li&gt;
+&lt;li&gt;Hugoのテーマを改良してgokanぽさを体験する(?)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;派生目標-別途達成条件や時期を検討する&#34;&gt;派生目標:別途達成条件や時期を検討する&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;GithubPagesを試す&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Bitbucketを試す&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;Fabric/Capistranoを試す&lt;/li&gt;
+&lt;li&gt;Jenkinsを試す。コミットからのS3もしくはWebサイトへのプッシュができないか検討する&lt;/li&gt;
+&lt;li&gt;コードをプッシュではなく、Dockerコンテナをプッシュする方法を試す&lt;/li&gt;
+&lt;li&gt;S3のhttps化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;2-makerel試したい&#34;&gt;2. Makerel試したい&lt;/h3&gt;
+
+&lt;p&gt;MBPにステッカーを貼ってしまったので、なんちゃってでも使って試す。&lt;/p&gt;
+
+&lt;h4 id=&#34;目的-1&#34;&gt;目的&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ツールとしての勝手をつかむ&lt;/li&gt;
+&lt;li&gt;Linuxでの使い方、Windowsでの使い方を覚える&lt;/li&gt;
+&lt;li&gt;プラグインの使い方を覚える&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;達成条件-3月中&#34;&gt;達成条件:3月中&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Linuxにインストール&lt;/li&gt;
+&lt;li&gt;Windowsにインストール&lt;/li&gt;
+&lt;li&gt;かんたんなプラグインを作成してみる(車輪の再発明でよい)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;3-dockerをある程度使えるようになりたい&#34;&gt;3. Dockerをある程度使えるようになりたい&lt;/h3&gt;
+
+&lt;h4 id=&#34;目的-2&#34;&gt;目的&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;DockerSwarmを試して勝手を掴む&lt;/li&gt;
+&lt;li&gt;Kubernatesを試して勝手を掴む&lt;/li&gt;
+&lt;li&gt;Dockerコンテナマネージドサービスを利用して買ってをつかむ&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;達成条件-3月中-1&#34;&gt;達成条件:3月中&lt;/h4&gt;
+
+&lt;p&gt;何種類かのdocker composeを作成する
+VagrantもしくはEC2上でdocker swarmを試す
+VagrantもしくはEC2上でKubernatesを試す
+AWS/GCP/Azure/Blumix上でマネージドなコンテナサービスを試す&lt;/p&gt;
+
+&lt;h2 id=&#34;なぜスプリント&#34;&gt;なぜスプリント？&lt;/h2&gt;
+
+&lt;p&gt;おそらく、目標が雑多で曖昧なのと、こういった勉強や訓練？に真面目に割ける時間がもう少ないと考えているので、限られた時間の中で自分の人生の中で時間対効果が高そうなものから絞って集中して取り組むことで成果を上げやすくしていこうと考えています。&lt;/p&gt;
+
+&lt;p&gt;あれもこれもじゃなくて、これだけ。これだけ。って絞って集中して残り少ない人生を進んでいこうと考えています。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Pelicanのレイアウト作成</title>
@@ -819,32 +969,6 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
 &lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;
 
 &lt;p&gt;Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>2014年を振り返る JavaScript編</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-js</link>
-      <pubDate>Tue, 30 Dec 2014 09:34:05 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-js</guid>
-      <description>&lt;p&gt;今年を振り返ってみる。クライアントサイド、特にJavaScriptについて&lt;/p&gt;
-
-&lt;p&gt;JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。&lt;/p&gt;
-
-&lt;p&gt;結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。&lt;/p&gt;
-
-&lt;p&gt;document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。&lt;/p&gt;
-
-&lt;p&gt;jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。&lt;/p&gt;
-
-&lt;p&gt;ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。&lt;/p&gt;
-
-&lt;p&gt;ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。&lt;/p&gt;
-
-&lt;p&gt;もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。&lt;/p&gt;
-
-&lt;p&gt;CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。&lt;/p&gt;
 </description>
     </item>
     
