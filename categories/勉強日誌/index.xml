@@ -9,6 +9,47 @@
     <atom:link href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>2017 03 23 utf8</title>
+      <link>http://tech.k-zak.com/2017/03/23/2017-03-23-utf8</link>
+      <pubDate>Thu, 23 Mar 2017 21:47:31 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/23/2017-03-23-utf8</guid>
+      <description>
+
+&lt;h1 id=&#34;utf-8-mac-にまたしてもやられた&#34;&gt;UTF-8-MAC にまたしてもやられた&lt;/h1&gt;
+
+&lt;p&gt;全角のチルダだか波ダッシュだかがmacOSの時とそれ以外で違う文字コードなのか別の文字なのか、とにかく想定外の文字コードのものがバリデーションをすり抜けてきた。&lt;/p&gt;
+
+&lt;p&gt;一つのOS上で禁止文字を羅列して出来たつもりになってたけどUTF−8−MACにはこれからも悩まされるんだろうなー。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bitbucketいいかも</title>
+      <link>http://tech.k-zak.com/2017/03/23/bitbucket%E3%81%84%E3%81%84%E3%81%8B%E3%82%82</link>
+      <pubDate>Thu, 23 Mar 2017 21:47:01 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/23/bitbucket%E3%81%84%E3%81%84%E3%81%8B%E3%82%82</guid>
+      <description>
+
+&lt;h1 id=&#34;bitbucketけっこういいかも&#34;&gt;Bitbucketけっこういいかも&lt;/h1&gt;
+
+&lt;p&gt;プライベートリポジトリ欲しくてBitbucket試してみた。&lt;/p&gt;
+
+&lt;h2 id=&#34;乾燥&#34;&gt;乾燥&lt;/h2&gt;
+
+&lt;p&gt;Gitが使えるのでhg clone フォー！(古い)とかやらなくていいし抵抗なくて使えていいですね。&lt;/p&gt;
+
+&lt;p&gt;なんかWikiとか課題(issue)とかも使えるし、どうやらGithubPagesみたいのもできるみたい。
+なんかTrelloともなんか連携できるみたいでいいですね。&lt;/p&gt;
+
+&lt;p&gt;使いこなせる自信ないけどPipelineてのもあるらしい。&lt;/p&gt;
+
+&lt;p&gt;Githubとの使い分けがなやましいけど、とりあえずはプライベートにしたいものは基本Bitbucketにしよう。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>アジャイルでスプリントな感じで</title>
       <link>http://tech.k-zak.com/2017/03/21/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%81%A7%E3%82%B9%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88%E3%81%AA%E6%84%9F%E3%81%98%E3%81%A7</link>
       <pubDate>Tue, 21 Mar 2017 23:52:11 +0900</pubDate>
@@ -751,38 +792,6 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
 &lt;p&gt;・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう&lt;/p&gt;
 
 &lt;p&gt;・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>PHPあべし！</title>
-      <link>http://tech.k-zak.com/2014/08/02/spec-php5.5</link>
-      <pubDate>Sat, 02 Aug 2014 15:34:29 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/08/02/spec-php5.5</guid>
-      <description>&lt;p&gt;最近PHP触ってて「あべし！」ってなった事。&lt;/p&gt;
-
-&lt;p&gt;PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。&lt;/p&gt;
-
-&lt;p&gt;愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>低レベルプログラマだからJavaScriptで知らなかった事</title>
-      <link>http://tech.k-zak.com/2014/08/02/spec-js</link>
-      <pubDate>Sat, 02 Aug 2014 15:29:50 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/08/02/spec-js</guid>
-      <description>&lt;p&gt;JavaScriptで知らないせいでハマったところなどなど&lt;/p&gt;
-
-&lt;p&gt;Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。&lt;/p&gt;
-
-&lt;p&gt;そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。&lt;/p&gt;
-
-&lt;p&gt;JS数字計算で2進数から10進数への変換誤差がでて死ぬる。&lt;/p&gt;
-
-&lt;p&gt;100+10.1とかやろうとすると物凄い小さい数字が誤差として丸められず残る。&lt;/p&gt;
 </description>
     </item>
     

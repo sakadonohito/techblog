@@ -139,6 +139,74 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-js">2014年を振り返る JavaScript編</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
+JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
+結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
+document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。
+jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。
+ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。
+ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。
+もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。
+CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。</div>
+    <div class="tags">
+      30 Dec 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/10/25/milestone">思い出せない</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+      </div>
+     
+    <div class="description">前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
+サーバー関係 ログローテーションの設定を行った。
+yum install logrotate
+/etc/logrotate.d/配下に追加の設定を行う
+/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる
+Ansible 1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中
+ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。
+yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。
+後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。
+Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。
+JavaScript AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。
+マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。
+AWSのS3のCORSで許可ヘッダーの設定が必要でした。
+PHP namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く
+毎日ちゃんとメモとらないと駄目ですね。。</div>
+    <div class="tags">
+      25 Oct 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/log/">#Log</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/09/07/setting-php">PHPのファイルアップロードについて</a></div>
     
       <div class="categories">
@@ -436,79 +504,6 @@ csvファイルが存在していたら消す処理。
       
         
           <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-01">Windows上でpythonでバッチ処理1</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">windows server2008上のFileMakerServerのWeb公開エンジンのプロセスを監視して
-異常終了していたらプロセスを再起動するバッチプログラムをpythonで書いてみた。
-#-*- coding:utf-8 -*- import os import urllib2 def send_mail_batch: try: import smtplib host,port = 'www.example.jp',587 username,password = 'email@example.jp','passwd' to_address = 'email@example.jp' msg = """From: %s To: %s Subject: Web公開エンジン再起動 異常終了したWeb公開エンジンプロセスを再起動しました。 . """ % (username,to_address) smtp = smtplib.SMTP(host,port) smtp.set_debuglevel(True) smtp.ehlo(host) smtp.login(username,password) smtp.sendmail(username,to_address,msg) smtp.quit() return True except: return False if __name__ == '__main__': testurl = "http://10.0.0.124/fmi/iwp" try: res = urllib2.urlopen(testurl) res.read() os.system('echo ok  ok.txt') send_mail_batch() except: os.system("fmsadmin -u account -p password start wpe"</div>
-    <div class="tags">
-      16 Mar 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/01/04/milestone">2014年の目標達成進捗管理的な</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
-        
-      </div>
-     
-    <div class="description">新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
-事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
-とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
-そういう話を聞いたので、ならば達成出来るように達成可能と思えるような目標をredmineでマイルストーンをチケットとして分解して期日を設定して進捗管理するのはどうだろうかと考えた。
-要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。
-という事で設定作業開始
-環境:  ホストOS：OS X10.9 ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T)) nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します) ruby2.0.0dev(rbenv) unicorn4.7.0 rails3.2.16 redmine2.4.2  rbenvにruby2.0を追加してデフォルトにする rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。
-参考：rbenvを利用して複数バージョンのRubyをインストール
-~$ rbenv install 2.0.0rc-2 ~$ rbenv global 2.0.0rc-2 ~$ rbenv rehash ※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
-rehashの時だけsh-rehashがうんたらってエラーになる。
-ruby2.0の状態でgem update でアップデートしてbundler入れる。
-~$ gem update ~$ gem install bundler ~$ gem install mysql2 ~$ ~/.rbenv/bin/rbenv rehash  MySQL側の準備 redmienユーザーの作成と
-データベース：redmineの作成
-redmine入れる ここから最新のredmineをダウンロード(今回は2.4.2)
-うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。
-DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。
-redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。
-~$ cd redmineディレクトリの場所 ~$ echo "gem 'unicorn'"  Gemfile.</div>
-    <div class="tags">
-      4 Jan 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/bundler/">#bundler</a>
-        
-          <a href="http://tech.k-zak.com/tags/nginx/">#nginx</a>
-        
-          <a href="http://tech.k-zak.com/tags/rails/">#rails</a>
-        
-          <a href="http://tech.k-zak.com/tags/rbenv/">#rbenv</a>
-        
-          <a href="http://tech.k-zak.com/tags/redmine/">#Redmine</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-          <a href="http://tech.k-zak.com/tags/unicorn/">#unicorn</a>
         
        
     </div>

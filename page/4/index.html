@@ -140,6 +140,88 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/01/16/trouble-nginx">NginxでPermission denied</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB/">トラブル</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">開発環境
+OS:Ubuntu12?
+Webサーバー：Nginx
+という環境下でWindowsでホストしていたお客さんのサイトを持ってきて改修しようとしたら、
+jsやらcssやら画像やらが軒のみPermission denied でエラーでて表示されない。
+ググってみたけれども該当するものがない。
+※自身のテスト用のものなどはちゃんと画像等問題なく読み込める。オーナーや権限も問題ない
+んで、ざっとファイル見ててなんとなく気になって「Thumbs.db」を削除したら表示されるようになった。
+Nginxのセキュリティ機能？なのでしょうか。仕組みは調べていない。ちゃんと勉強が必要ですね。
+追記：どうも原因は別にあったかも。再現できない。</div>
+    <div class="tags">
+      16 Jan 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/nginx/">#Nginx</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/01/04/milestone">2014年の目標達成進捗管理的な</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
+事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
+とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
+そういう話を聞いたので、ならば達成出来るように達成可能と思えるような目標をredmineでマイルストーンをチケットとして分解して期日を設定して進捗管理するのはどうだろうかと考えた。
+要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。
+という事で設定作業開始
+環境:  ホストOS：OS X10.9 ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T)) nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します) ruby2.0.0dev(rbenv) unicorn4.7.0 rails3.2.16 redmine2.4.2  rbenvにruby2.0を追加してデフォルトにする rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。
+参考：rbenvを利用して複数バージョンのRubyをインストール
+~$ rbenv install 2.0.0rc-2 ~$ rbenv global 2.0.0rc-2 ~$ rbenv rehash ※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
+rehashの時だけsh-rehashがうんたらってエラーになる。
+ruby2.0の状態でgem update でアップデートしてbundler入れる。
+~$ gem update ~$ gem install bundler ~$ gem install mysql2 ~$ ~/.rbenv/bin/rbenv rehash  MySQL側の準備 redmienユーザーの作成と
+データベース：redmineの作成
+redmine入れる ここから最新のredmineをダウンロード(今回は2.4.2)
+うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。
+DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。
+redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。
+~$ cd redmineディレクトリの場所 ~$ echo "gem 'unicorn'"  Gemfile.</div>
+    <div class="tags">
+      4 Jan 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/bundler/">#bundler</a>
+        
+          <a href="http://tech.k-zak.com/tags/nginx/">#nginx</a>
+        
+          <a href="http://tech.k-zak.com/tags/rails/">#rails</a>
+        
+          <a href="http://tech.k-zak.com/tags/rbenv/">#rbenv</a>
+        
+          <a href="http://tech.k-zak.com/tags/redmine/">#Redmine</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+          <a href="http://tech.k-zak.com/tags/unicorn/">#unicorn</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2013/12/22/x7-true-js">JavaScriptで7の倍数と7のつく数字の時だけtrue</a></div>
     
       <div class="categories">
@@ -337,70 +419,6 @@ Perlでは、
 PHPでは、
 &lt;?php function bubble_sort(array $arr,$r){ if(1 == $r){ return $arr; } $len = count($arr)-1; for($i=0;$i&lt;$len;$i++){ if($arr[$i] &gt; $arr[$i+1]){ $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } return bubble_sort($arr,$r-1); } $input = trim(fgets(STDIN)); $arr = explode(",",$input); echo implode(",",bubble_sort($arr,count($arr)))."\n"; ?&gt; Perlでは、
 #!/usr/bin/perl use strict; use warnings; sub bubble_sort{ my($arr,$r) = @_; my @arr = @{$arr}; if(1 == $r){ return @arr; }else{ my $len = @arr; for(my $i=0;$i&lt;$len-1;$i++){ if($arr[$i] &gt; $arr[$i+1]){ my $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } bubble_sort(\@arr,$r-1) } } my $input = &lt;STDIN&gt;; chomp($input); my @arr = split(',',$input); print join("</div>
-    <div class="tags">
-      6 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/06/coding-memo02">コーディングリハビリ02</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">リハビリその２
-今回は、ファイル読み込みとその時の簡単な例外処理
-読み込むテキストファイルの内容は以下の通り、
-7 1000 1992 あ A 2000 2001 1900 16 12 400  PHPでは、
-&lt;?php function isLeap($year=null){ if($year == null) return false; $intYear = (int)$year; if(0 != $intYear%4){ return false; }elseif(0 == $intYear%400){ return true; }elseif(0 == $intYear%100){ return false; }else{ return true; } } try{ if(!file_exists("leap.txt")){ throw new Exception("ファイルが見つかりません。"); } $fp = fopen("leap.txt","r"); $lines = fgets($fp); for($i=0;$i&lt;$lines;$i++){ $year = trim(fgets($fp)); printf("%s is%s a leap year\n", $year,((isLeap($year))?"":" not")); } fclose($fp); }catch(Exception $e){ echo $e-&gt;getMessage().</div>
-    <div class="tags">
-      6 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/06/coding-memo01">コーディングリハビリ01</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
-paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
-という事でリハビリ。
-今回は標準入力。
-PHPでは、
-&lt;?php //標準入力をfgets関数で取得して前後の空白や改行文字を削り取る $input = trim(fgets(STDIN)); ?&gt; Perlでは、
-use strict; use warnings; my $input = &lt;STDIN&gt;; #行末の改行文字を削る chomp($input); Pythonでは、
-input = raw_input() #行末の改行文字とるのは厳密にはいろいろあるらしいので今回は無視 Rubyでは、
-input = gets.chomp 標準入力が「gets」だけで取れるRubyはダンディ。</div>
     <div class="tags">
       6 Dec 2013
       

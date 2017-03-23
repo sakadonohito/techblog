@@ -6,8 +6,49 @@
     <description>Recent content on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 Mar 2017 23:52:11 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 23 Mar 2017 21:47:31 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2017 03 23 utf8</title>
+      <link>http://tech.k-zak.com/2017/03/23/2017-03-23-utf8</link>
+      <pubDate>Thu, 23 Mar 2017 21:47:31 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/23/2017-03-23-utf8</guid>
+      <description>
+
+&lt;h1 id=&#34;utf-8-mac-にまたしてもやられた&#34;&gt;UTF-8-MAC にまたしてもやられた&lt;/h1&gt;
+
+&lt;p&gt;全角のチルダだか波ダッシュだかがmacOSの時とそれ以外で違う文字コードなのか別の文字なのか、とにかく想定外の文字コードのものがバリデーションをすり抜けてきた。&lt;/p&gt;
+
+&lt;p&gt;一つのOS上で禁止文字を羅列して出来たつもりになってたけどUTF−8−MACにはこれからも悩まされるんだろうなー。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bitbucketいいかも</title>
+      <link>http://tech.k-zak.com/2017/03/23/bitbucket%E3%81%84%E3%81%84%E3%81%8B%E3%82%82</link>
+      <pubDate>Thu, 23 Mar 2017 21:47:01 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/23/bitbucket%E3%81%84%E3%81%84%E3%81%8B%E3%82%82</guid>
+      <description>
+
+&lt;h1 id=&#34;bitbucketけっこういいかも&#34;&gt;Bitbucketけっこういいかも&lt;/h1&gt;
+
+&lt;p&gt;プライベートリポジトリ欲しくてBitbucket試してみた。&lt;/p&gt;
+
+&lt;h2 id=&#34;乾燥&#34;&gt;乾燥&lt;/h2&gt;
+
+&lt;p&gt;Gitが使えるのでhg clone フォー！(古い)とかやらなくていいし抵抗なくて使えていいですね。&lt;/p&gt;
+
+&lt;p&gt;なんかWikiとか課題(issue)とかも使えるし、どうやらGithubPagesみたいのもできるみたい。
+なんかTrelloともなんか連携できるみたいでいいですね。&lt;/p&gt;
+
+&lt;p&gt;使いこなせる自信ないけどPipelineてのもあるらしい。&lt;/p&gt;
+
+&lt;p&gt;Githubとの使い分けがなやましいけど、とりあえずはプライベートにしたいものは基本Bitbucketにしよう。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>アジャイルでスプリントな感じで</title>
@@ -917,58 +958,6 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
 参考：&lt;a href=&#34;http://ekzemplaro.org/data_base/doc/web_server/nginx/&#34;&gt;http://ekzemplaro.org/data_base/doc/web_server/nginx/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;やれやれですよ。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>2014年を振り返る インフラ系</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-infra</link>
-      <pubDate>Tue, 30 Dec 2014 09:50:19 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-infra</guid>
-      <description>&lt;p&gt;2014年を振り返る。インフラ関係について&lt;/p&gt;
-
-&lt;p&gt;今年もっとも多く成長したのはインフラ関係についてだと思う。&lt;/p&gt;
-
-&lt;p&gt;来年はもう少しスタートアップ用のシェルスクリプト理解して作れるようになりたい。&lt;/p&gt;
-
-&lt;p&gt;PowerShellももう少し覚えてWindowsServer環境の制御も出来るようになりたい。&lt;/p&gt;
-
-&lt;p&gt;構成管理は今年手を付けたVagrantとAnsibleをもっと掘り下げていきたい。&lt;/p&gt;
-
-&lt;p&gt;VagrantはPackerを使ってVirtualBox以外のボックス作成やEC2へのアクセス。&lt;/p&gt;
-
-&lt;p&gt;Ansibleは様々な構成管理、できればWindows環境も。&lt;/p&gt;
-
-&lt;p&gt;来年取り組みたいのは、今年やりそこねたメールサーバーやログ設定、それからプロキシ設定かな&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside</link>
-      <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside</guid>
-      <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る&lt;/p&gt;
-
-&lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;
-
-&lt;p&gt;Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。&lt;/p&gt;
-
-&lt;p&gt;Perl,Python,Rubyについては全然触れなくてフラストレーション。&lt;/p&gt;
-
-&lt;p&gt;PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。&lt;/p&gt;
-
-&lt;p&gt;本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。&lt;/p&gt;
-
-&lt;p&gt;家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。&lt;/p&gt;
-
-&lt;p&gt;PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は&lt;/p&gt;
-
-&lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;
-
-&lt;p&gt;Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;
 </description>
     </item>
     

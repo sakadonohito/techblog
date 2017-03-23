@@ -139,6 +139,123 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/09/07/challenge-ansible">Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB/">トラブル</a>
+        
+      </div>
+     
+    <div class="description">・botoが使えないってエラーになる。
+　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
+つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
+　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか
+・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを
+　使ったら成功した。なんで？
+・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。
+・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。
+　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。
+　なので「NameVirtuakHost *:80」の記述があれば、その後VirtualHostディレクティブが
+　ないといけない。
+もしもみたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
+整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。
+・Ubuntuに入ってるApache2のVirtualHostの有効化無効化
+　sites-availableディレクトリにVirtualHost設定書く
+　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化
+・Hostの指定が足りない！？
+Could not reliably determine the server&#8217;s fully qualified domain name, using for ServerName
+こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った
+　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、
+　そこに{{hostname}}.localを追記する処理追加
+・Ansible用MySQLの設定追加
+Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)
+host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)
+リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要
+・netstat -ant で現在使ってるポートとか観れる
+　(適当な解釈、後で意味をちゃんと調べる&#8230;かも)
+・MySQLが外部からつながらぬ
+webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。
+my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。
+これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。
+・ApacheのRewriteの設定漏れ
+UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。
+　AllowOverride をAllにしなかった。。。
+ということで？今のところ、Vagrantで作成したVMにMySQLやApacheの設定、それからWordPressの設置は出来るように</div>
+    <div class="tags">
+      7 Sep 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
+        
+          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
+        
+          <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
+        
+          <a href="http://tech.k-zak.com/tags/vagrant/">#Vagrant</a>
+        
+          <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible">Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+        
+          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+        
+      </div>
+     
+    <div class="description">Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
+の、前にAWSのS3試したので。
+・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
+・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折
+・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。
+・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。
+Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。
+・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる
+・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。
+・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う
+・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ
+以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事
+・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう
+・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する</div>
+    <div class="tags">
+      2 Aug 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
+        
+          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
+        
+          <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
+        
+          <a href="http://tech.k-zak.com/tags/s3/">#S3</a>
+        
+          <a href="http://tech.k-zak.com/tags/vagrant/">#Vagrant</a>
+        
+          <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/08/02/setting-ubuntu">Linux関係のメモ201407</a></div>
     
       <div class="categories">
@@ -372,80 +489,6 @@ Nginxのセキュリティ機能？なのでしょうか。仕組みは調べて
       
         
           <a href="http://tech.k-zak.com/tags/nginx/">#Nginx</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/01/04/milestone">2014年の目標達成進捗管理的な</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
-        
-      </div>
-     
-    <div class="description">新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
-事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
-とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
-そういう話を聞いたので、ならば達成出来るように達成可能と思えるような目標をredmineでマイルストーンをチケットとして分解して期日を設定して進捗管理するのはどうだろうかと考えた。
-要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。
-という事で設定作業開始
-環境:  ホストOS：OS X10.9 ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T)) nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します) ruby2.0.0dev(rbenv) unicorn4.7.0 rails3.2.16 redmine2.4.2  rbenvにruby2.0を追加してデフォルトにする rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。
-参考：rbenvを利用して複数バージョンのRubyをインストール
-~$ rbenv install 2.0.0rc-2 ~$ rbenv global 2.0.0rc-2 ~$ rbenv rehash ※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
-rehashの時だけsh-rehashがうんたらってエラーになる。
-ruby2.0の状態でgem update でアップデートしてbundler入れる。
-~$ gem update ~$ gem install bundler ~$ gem install mysql2 ~$ ~/.rbenv/bin/rbenv rehash  MySQL側の準備 redmienユーザーの作成と
-データベース：redmineの作成
-redmine入れる ここから最新のredmineをダウンロード(今回は2.4.2)
-うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。
-DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。
-redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。
-~$ cd redmineディレクトリの場所 ~$ echo "gem 'unicorn'"  Gemfile.</div>
-    <div class="tags">
-      4 Jan 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/bundler/">#bundler</a>
-        
-          <a href="http://tech.k-zak.com/tags/nginx/">#nginx</a>
-        
-          <a href="http://tech.k-zak.com/tags/rails/">#rails</a>
-        
-          <a href="http://tech.k-zak.com/tags/rbenv/">#rbenv</a>
-        
-          <a href="http://tech.k-zak.com/tags/redmine/">#Redmine</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-          <a href="http://tech.k-zak.com/tags/unicorn/">#unicorn</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/22/x7-true-js">JavaScriptで7の倍数と7のつく数字の時だけtrue</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">Javascriptてこんな書き方できるのか
-◆7の倍数か7の付く数字の場合のみtrueを返す。
-var nana = function(num){ var arr = [0]; for(var i=1;i&lt; =num;i++){ arr.push( (!(i%7)||/7/.test(i))||i ); } return arr; };  7の剰余が0ではない、もしくは７が含まれる数字が真なら論理値(true)、そうでなければ数値(i)
-最初はおぉ？って思ったけれど、こうしてみるとさして不思議でもないか。</div>
-    <div class="tags">
-      22 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
         
        
     </div>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>文字コード on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89/index.xml</link>
+    <description>Recent content in 文字コード on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2017 03 23 utf8</title>
+      <link>http://tech.k-zak.com/2017/03/23/2017-03-23-utf8</link>
+      <pubDate>Thu, 23 Mar 2017 21:47:31 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/23/2017-03-23-utf8</guid>
+      <description>
+
+&lt;h1 id=&#34;utf-8-mac-にまたしてもやられた&#34;&gt;UTF-8-MAC にまたしてもやられた&lt;/h1&gt;
+
+&lt;p&gt;全角のチルダだか波ダッシュだかがmacOSの時とそれ以外で違う文字コードなのか別の文字なのか、とにかく想定外の文字コードのものがバリデーションをすり抜けてきた。&lt;/p&gt;
+
+&lt;p&gt;一つのOS上で禁止文字を羅列して出来たつもりになってたけどUTF−8−MACにはこれからも悩まされるんだろうなー。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
