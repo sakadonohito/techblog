@@ -175,6 +175,30 @@ Pelicanの場合、記事リストをgroup by　した結果をそのままfor�
   </div>
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/25/replace-hugo-post-rule">replace hugo post rule</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">Hugoの記事の命名規則を見直して直した 辛かった。
+カテゴリ名、タグ名、ファイル名、記事のタイトル。これらが日本語だとジェネレート後のディレクトリ名、ファイル名、URLパス等で日本語が混ざってしまうので、片っ端から探して変更した。
+今後は記事内容以外では絶対に日本語を使わないようにしないと。
+これはおそらくHugoに限らず静的サイトジェネレーターならだいたいそうだと思う。
+しかしカテゴリ名やタグ名で日本語使えないのは辛いな。。</div>
+    <div class="tags">
+      25 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/hugo/">#Hugo</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/03/24/i-tried-mackerel">I tried Mackerel</a></div>
     
       <div class="categories">
@@ -389,36 +413,6 @@ Publicファイルの生成 hexo generate  これでファイルがpublicフォ�
       
         
           <a href="http://tech.k-zak.com/tags/hexo/">#Hexo</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-hugo">WordPressからHugoへ移行</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">開発メモブログをWordPressからHugoへの移行  WordPressから記事をエクスポート Hugoをインストール エクスポートした記事を放り込む  WordPressから記事をエクスポート  WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す  参考   Hugoをインストール brew install hugo hugo new site techblog cd techblog  書き出した記事を放り込む プラグインを使ってエクスポートした記事データはHugoのcontent/postのpostディレクトリ相当のものが吐き出されているので、中身をcontent/post/にぶちまける。
-細かい設定 テーマを入れる 適当なテーマをインストール。今回はPolymer。 themeディレクトリがなかったら作ってその中でgit cloneしたらいいよ。
-config.tomlを編集 title,baseurl,languageCode,theme,paginateを修正する。
-後で独自ドメインでGitHubPagesで運用するため、canonifyurls = trueを設定する。
-GoogleAnalyticsのコードを入れるため、config.tomlに以下を追記
-[params] googleAnalyticsUserID = &quot;&lt;&lt;code&gt;&gt;&quot;  またURLの構造を検討する。 今回からパーマリンクを以下のようにした。permelink設定を追加
-[permalinks] post = &quot;/:year/:month/:day/:slug&quot;  これでyyyy/mm/dd/slugというようなURLになる。
-URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。
-新しい記事を追加する時には
-hugo new post/&lt;&lt;post-name&gt;&gt;.md  で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。
-GitHubPagesで公開する  GitHubにリポジトリを追加 hugoコマンドで出力されるpublicディレクトリの静的ファイルをコミット settingsのGitHub Pagesの項にあるCustom domainにドメインを入れて保存。 hugoのpublicにCNAMEというファイルを追加。内容は公開ドメイン名 再度publicディレクトリの内容をコミット DNS(今回はRoute53)でCNAMEの設定をする。  今回はひとまずこんな感じ。 今後は記事の追加だけじゃなく、テーマを自作していきたい。</div>
-    <div class="tags">
-      19 Feb 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/hugo/">#Hugo</a>
         
        
     </div>

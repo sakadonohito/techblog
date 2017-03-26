@@ -87,6 +87,28 @@
     </item>
     
     <item>
+      <title>replace hugo post rule</title>
+      <link>http://tech.k-zak.com/2017/03/25/replace-hugo-post-rule</link>
+      <pubDate>Sat, 25 Mar 2017 22:43:59 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/25/replace-hugo-post-rule</guid>
+      <description>
+
+&lt;h1 id=&#34;hugoの記事の命名規則を見直して直した&#34;&gt;Hugoの記事の命名規則を見直して直した&lt;/h1&gt;
+
+&lt;p&gt;辛かった。&lt;/p&gt;
+
+&lt;p&gt;カテゴリ名、タグ名、ファイル名、記事のタイトル。これらが日本語だとジェネレート後のディレクトリ名、ファイル名、URLパス等で日本語が混ざってしまうので、片っ端から探して変更した。&lt;/p&gt;
+
+&lt;p&gt;今後は記事内容以外では絶対に日本語を使わないようにしないと。&lt;/p&gt;
+
+&lt;p&gt;これはおそらくHugoに限らず静的サイトジェネレーターならだいたいそうだと思う。&lt;/p&gt;
+
+&lt;p&gt;しかしカテゴリ名やタグ名で日本語使えないのは辛いな。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>I tried Mackerel</title>
       <link>http://tech.k-zak.com/2017/03/24/i-tried-mackerel</link>
       <pubDate>Fri, 24 Mar 2017 18:32:38 +0900</pubDate>
@@ -791,26 +813,6 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
 &lt;p&gt;namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く&lt;/p&gt;
 
 &lt;p&gt;毎日ちゃんとメモとらないと駄目ですね。。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>PHPのファイルアップロードについて</title>
-      <link>http://tech.k-zak.com/2014/09/07/setting-php</link>
-      <pubDate>Sun, 07 Sep 2014 17:34:12 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/09/07/setting-php</guid>
-      <description>&lt;p&gt;PHPで大きなファイルアップロードを作成する&lt;/p&gt;
-
-&lt;p&gt;・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。&lt;/p&gt;
-
-&lt;p&gt;・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file&lt;/p&gt;
-
-&lt;p&gt;・phpの設定でmax_file_size,post_max_size,タイムアウト、memory_limitなどの設定が必要&lt;/p&gt;
-
-&lt;p&gt;・Apacheのバージョンが古いと2だか4GBが上限。という噂。&lt;/p&gt;
-
-&lt;p&gt;・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。&lt;/p&gt;
 </description>
     </item>
     

@@ -9,6 +9,28 @@
     <atom:link href="http://tech.k-zak.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>replace hugo post rule</title>
+      <link>http://tech.k-zak.com/2017/03/25/replace-hugo-post-rule</link>
+      <pubDate>Sat, 25 Mar 2017 22:43:59 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/25/replace-hugo-post-rule</guid>
+      <description>
+
+&lt;h1 id=&#34;hugoの記事の命名規則を見直して直した&#34;&gt;Hugoの記事の命名規則を見直して直した&lt;/h1&gt;
+
+&lt;p&gt;辛かった。&lt;/p&gt;
+
+&lt;p&gt;カテゴリ名、タグ名、ファイル名、記事のタイトル。これらが日本語だとジェネレート後のディレクトリ名、ファイル名、URLパス等で日本語が混ざってしまうので、片っ端から探して変更した。&lt;/p&gt;
+
+&lt;p&gt;今後は記事内容以外では絶対に日本語を使わないようにしないと。&lt;/p&gt;
+
+&lt;p&gt;これはおそらくHugoに限らず静的サイトジェネレーターならだいたいそうだと思う。&lt;/p&gt;
+
+&lt;p&gt;しかしカテゴリ名やタグ名で日本語使えないのは辛いな。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>WordPressからHugoへ移行</title>
       <link>http://tech.k-zak.com/2017/02/19/first-hugo</link>
       <pubDate>Sun, 19 Feb 2017 00:09:41 +0900</pubDate>

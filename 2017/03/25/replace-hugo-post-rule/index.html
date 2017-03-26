@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>I tried Mackerel</title>
+  <title>replace hugo post rule</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -138,7 +138,7 @@
 <div class="content">
 
   <div class="article">
-    <div class="title">I tried Mackerel</div>
+    <div class="title">replace hugo post rule</div>
     
       <div class="categories">
         
@@ -148,66 +148,23 @@
      
     <div class="description">
 
-<h1 id="勇気を出してmackerelを試してみた">勇気を出してMackerelを試してみた</h1>
+<h1 id="hugoの記事の命名規則を見直して直した">Hugoの記事の命名規則を見直して直した</h1>
 
-<p>前々から気にはなっていたMackerelをお試しで入れてみた。</p>
+<p>辛かった。</p>
 
-<ul>
-<li>VPS契約しているUbuntu16.04</li>
-<li>使い捨てのAWS上WIndows2012</li>
-</ul>
+<p>カテゴリ名、タグ名、ファイル名、記事のタイトル。これらが日本語だとジェネレート後のディレクトリ名、ファイル名、URLパス等で日本語が混ざってしまうので、片っ端から探して変更した。</p>
 
-<h2 id="インストール">インストール</h2>
+<p>今後は記事内容以外では絶対に日本語を使わないようにしないと。</p>
 
-<p>ヘルプに書いてある通りに作業してつまずく事もなくすんなりできた。</p>
+<p>これはおそらくHugoに限らず静的サイトジェネレーターならだいたいそうだと思う。</p>
 
-<h2 id="監視項目">監視項目</h2>
-
-<h3 id="デフォルト監視項目">デフォルト監視項目</h3>
-
-<p>通常の監視項目で既に普段Zabbixで見て使っている項目を監視できているので、Zabbix使いこなす気がないならMackerelでいいかなって思った。</p>
-
-<h3 id="カスタムメトリック">カスタムメトリック</h3>
-
-<p>今回はまだ試していない。</p>
-
-<p>けど、簡単そうだ。</p>
-
-<h3 id="プラグインの作成">プラグインの作成</h3>
-
-<p>今回はまだ試していない。</p>
-
-<p>golangじゃないといけないのかと思っていたけれど、他の言語でもいいらしい。</p>
-
-<h3 id="外形監視">外形監視</h3>
-
-<p>ホストが止まっても監視を続けるので、仕様上間違ってはいないんだけどずっとエラーがで続ける。</p>
-
-<p>ホストをメンテナンスにしたり停止したりした時は外形監視も停止する仕組みがあるといいいかなって思った。</p>
-
-<p>外形監視の定義削除しかなかったように思える。</p>
-
-<h3 id="通知設定">通知設定</h3>
-
-<p>通知設定も簡単だし、いろんなサービス(Slackとか)と簡単に連携できるのも魅力だなと感じた。</p>
-
-<h2 id="まとめ">まとめ</h2>
-
-<p>まだプラグインを試していないのだけれど、とにかくヘルプドキュメントが素晴らしいと感じた。</p>
-
-<p>自分ならそこまではやらないよってくらいに丁寧に書いてあった。</p>
-
-<p>特に感心したのは他サービスと連携するために、他サービス上での設定の説明が画面キャプチャ入りで説明されていたこと。</p>
-
-<p>小規模な場合にフリーでどこまで使えるのかフリープランを調べていきたい。</p>
-
-<p>Zabbixサーバーを一台用意する場合との費用比較とか調べていきたい。</p>
+<p>しかしカテゴリ名やタグ名で日本語使えないのは辛いな。。</p>
 </div>
     <div class="tags">
-      24 Mar 2017
+      25 Mar 2017
       
         
-          <a href="http://tech.k-zak.com/tags/mackerel/">#Mackerel</a>
+          <a href="http://tech.k-zak.com/tags/hugo/">#Hugo</a>
         
        
     </div>
@@ -218,11 +175,11 @@
 
 <paper-item>
   
-    <a href="http://tech.k-zak.com/2017/03/25/replace-hugo-post-rule"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <a href="http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
   
     <div class="flex"></div>
   
-    <a href="http://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8"><paper-fab icon="chevron-right"></paper-fab></a>
+    <a href="http://tech.k-zak.com/2017/03/24/i-tried-mackerel"><paper-fab icon="chevron-right"></paper-fab></a>
   
 </paper-item>
 

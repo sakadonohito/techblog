@@ -140,6 +140,35 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2013/12/08/coding-memo05">コーディングリハビリ05</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">昨日の文字チェックをPHP以外で試す。
+与えられた文字列が全てユニークな文字で構成されているかのチェック。
+PHPは前回やっているので、今回は掲載無し。
+Perlでは、
+#!/usr/bin/perl use strict; use warnings; sub check_unique{ my $str = shift; my $len = length($str); for(my $i=0;$i&lt;$len;$i++){ my $char = substr($str,$i); if(index($str,$char) != rindex($str,$char)){ return "False"; } } return "True"; } my $input = '1234567890-=\`!@#$%^&*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:"asdfghjkl;\'zxcvbnm,./ZXCVBNM&lt;&gt;?'; #my $input = &lt;STDIN&gt;; #chomp($input); print check_unique($input)."\n"; Pythonでは、
+#!/usr/bin/python #--*-- coding: utf-8 --*-- import datetime def check_unique(str): set_str = set(list(str)) if len(str) == len(set_str): return True else: return False if __name__ == "</div>
+    <div class="tags">
+      8 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2013/12/06/coding-memo04">コーディングリハビリ04</a></div>
     
       <div class="categories">
@@ -458,28 +487,6 @@ Helper作る程でもない処理専用って事？後は再帰定義のcallbacl
           <a href="http://tech.k-zak.com/tags/fuelphp/">#FuelPHP</a>
         
           <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/08/25/jquery-memo">jQueryでまた使い方忘れて調べそうなやつらメモ</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">gistベタ貼りじゃ！</div>
-    <div class="tags">
-      25 Aug 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
-        
-          <a href="http://tech.k-zak.com/tags/jquery/">#jQuery</a>
         
        
     </div>

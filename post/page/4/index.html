@@ -139,6 +139,28 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-02">Win上のPythonでバッチ処理2</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、前回使用した作業用の
+csvファイルが存在していたら消す処理。
+#!/usr/bin/env python # -*- coding: utf-8 -*- import os.path,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() print data return data except Exception as e: #ファイルは存在しない print "FileNotFound or Access Error." return None def is_file(path): try: os.path.isfile(path) os.remove(path) #print "消してやったぜ、ヒャッハー！" return 0 except Exception as e: #print "ファイルなど存在しない" return 0 if __name__ == '__main__': #jsonファイルに作業対象ファイルパスなんかを書いておく conf_data = get_conf("conf.json") is_file(conf_data["test"]["csvPath"])  </div>
+    <div class="tags">
+      16 Mar 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-01">Windows上でpythonでバッチ処理1</a></div>
     
       <div class="categories">
@@ -393,34 +415,6 @@ Perlでは、
           <a href="http://tech.k-zak.com/tags/python/">#Python</a>
         
           <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/06/coding-memo04">コーディングリハビリ04</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">今回は与えられた文字列が全てユニークな文字の構成かどうか調べる。
-そういう問題を出されてスマートに答えられなかったので、調べた。
-1,回答した内容を修正したもの
-2,PHPのリファレンス見てて思いついた方法
-3,文字列のままチェック
-4,PHPの関数とか出てこなくて回答できなかった、頭の中にあったロジックを具現化したもの
-　配列に変換してshiftしながらチェックする方法
-どうも実行してみると2や3が早いようだ。1文字でもユニークでなければFalseにする3が内容によっては最速
-やはり何回も配列を操作するとコストが高くなりますね。模範解答が欲しい。</div>
-    <div class="tags">
-      6 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
         
        
     </div>
