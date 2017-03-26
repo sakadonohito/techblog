@@ -140,13 +140,75 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2012/01/07/study-sinatra">FileMakerとRubyのSinatra</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？
+と思ったのでやってみました。
+gihyo.jp:第９回 SinatraとSequel・Hamlで掲示板アプリを作る
+http://gihyo.jp/dev/serial/01/ruby/0009
+が自分がチュートリアル(以下、見本)としてやってみみたもので、これのmodel部分をFileMakerに
+置換えました。
+※FileMakerやRuby、Sinatraそのものの細かい説明は省きます。
+最終的な階層は以下(見本のファイルも混在してます)
+&#8212;
+app/ start.rb model/ comment.rb view / layout.haml index.haml fmbbs.haml style.sass &#8212;
+FileMaker部分
+・bbsテーブルの作成、カラムは見本のapp/model/comment.rb内で定義しているクラス
+Commentsを真似て定義。但し、posted_dateはFileMaker側ではtimestamp型で作成時に自動で
+現在のタイムスタンプが入るよう設定。
+Ruby部分
+・app/model/comment.rbにFileMakerとの接続クラス追加
+&#8212;以下をcomment.rbに追加&#8212;
+require 'rfm' class FMServer def initialize() @FM_CONFIG = { :host =&gt; "FileMakerServerの接続先IP", :account_name =&gt; "FileMakerFileのログインアカウント", :password =&gt; "FileMakerFileのログインパスワード", :database =&gt; "FileMakerFileの名前", :ssl =&gt; false, :root_cert =&gt; false, } @fm = Rfm::Server.new(@FM_CONFIG) end def listAll(lay,sortCond) return @fm[@FM_CONFIG[:database]][lay].all(sortCond) end def create(lay,obj) @fm[@FM_CONFIG[:database]][lay].create(obj) end end ・hamlを編集(追加)</div>
+    <div class="tags">
+      7 Jan 2012
+      
+        
+          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+          <a href="http://tech.k-zak.com/tags/sinatra/">#Sinatra</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/11/05/milestone">シンポナシウム</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">前回の更新からはや4ヶ月超。どのような進歩があったと言うと&#8230;
+ 内に等しい！？     ホント自己嫌悪してくるわー。     一応、   DB関係：   ・MySQL、ターミナルで入る時に「mysql -u name -p」って「-p」入れるの忘れないの覚えた。     環境関係：   ・gitとMercurial少しづつ試した。コマンドも少し覚えた   ・レンタルサーバーVPS、Macの様々な操作のお陰でターミナルでのコマンド操作馴れた。   ・emacsの設定ファイルいろいろコピペで入れて、開発はeclipse→emacsになった。   必然的にemacsの基本的な操作を覚えた。     プログラム言語：   ・pythonをちょろちょろ自習しているがちっとも上達しない、ちょっと入り組んだ処理の   ソースになると途端にちんぷんかんぷん。   ・PythonでapacheにDjangoを置く、WSGIの設定とかおぼ&#8230;えた&#8230;？     あーだめだこりゃ、話しにならん。。。  </div>
+    <div class="tags">
+      5 Nov 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2011/06/25/apache-virtualhost">apacheでredmine virtualhost設定</a></div>
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -176,9 +238,9 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -201,9 +263,9 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      
@@ -230,9 +292,9 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -253,9 +315,9 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -284,7 +346,7 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      
@@ -307,7 +369,7 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      
@@ -329,9 +391,9 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -344,53 +406,6 @@
           <a href="http://tech.k-zak.com/tags/django/">#Django</a>
         
           <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2011/04/13/java-dwr">JavaのDWRって何さ　設定メモ</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
-        
-      </div>
-     
-    <div class="description">JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。   原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを   作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。     アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？     DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで   構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。   とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを   簡単にJavaScript上で扱う仕組み？な感じ。     参考URL：   DWRのサイト　http://directwebremoting.org/dwr/index.html   2007の@ITの記事　http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html     具体的な手順の説明   １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を   落とす。   ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル   ２つを入れる。   ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな   あと、このクラスの定義のパッケージは何でも良い。   ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも   良い。この時、実在しない(dwr.jarが自動生成する)JSをタグに書いておく   ※説明たるいので、サイトとか参照して下さい。   どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。   ５，dwr用のxmlとweb.</div>
-    <div class="tags">
-      13 Apr 2011
-      
-        
-          <a href="http://tech.k-zak.com/tags/java/">#Java</a>
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2011/04/10/milestone">ちっともすすまない</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
-        
-      </div>
-     
-    <div class="description">前に更新したのはいつの頃か・・・
-   中身に進歩がないのが更新がない証拠。。     先日、MovableTypeにもう一つブログ追加しました。   元々Microsoftのスペースっていうブログの場所でゲームとか趣味関連の少し   やってたんですが、閉鎖されたので、心機一転こちらで始めました。     この間、初めてAmazonアソシエイトのIDとったのでのリンクバシバシ貼ろうと思います。     このブログで書くようなジャンルの事では、最近NetBeansをインスコしてみました。   Eclipseでは無視してたんですが、サンプルプロジェクト作成して中のコード読むのって   結構勉強になるんじゃないかって考えてます。     まだまともに触れてないレベルですが、NetBeansはEclipseに比べて軽い気がします。   まぁ、設定とかプラグインとかそういうところは圧倒的にEclipseなんでしょうけど。     今はNetBeansでRuby on Rails　のサンプル作成したら、Railsのバージョンがおかしいとか   エラー出てハマってます(-_- 😉   ここのブログは今後、作業日誌的な、勉強、開発そういったことを何かしたら   それを簡潔に書く。そうやって続けていこうかと。     いつになったら図や画像ありの記事になれるのか・・・     NetBeansの日本語サイト：http://ja.netbeans.org/  </div>
-    <div class="tags">
-      10 Apr 2011
-      
-        
-          <a href="http://tech.k-zak.com/tags/netbeans/">#NetBeans</a>
         
        
     </div>

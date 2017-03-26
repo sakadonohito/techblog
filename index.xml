@@ -6,15 +6,158 @@
     <description>Recent content on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 23 Mar 2017 21:47:31 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 26 Mar 2017 18:32:49 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>2017 03 23 utf8</title>
-      <link>http://tech.k-zak.com/2017/03/23/2017-03-23-utf8</link>
+      <title>Challenged Jekyll template and hate</title>
+      <link>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate</link>
+      <pubDate>Sun, 26 Mar 2017 18:32:49 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate</guid>
+      <description>
+
+&lt;h1 id=&#34;jekyllの画面-テンプレート-作った&#34;&gt;Jekyllの画面(テンプレート)作った&lt;/h1&gt;
+
+&lt;p&gt;結論から言うと、二度と使いたくない。&lt;/p&gt;
+
+&lt;p&gt;Pelicanの方がいいや。&lt;/p&gt;
+
+&lt;h2 id=&#34;やりたかったこと&#34;&gt;やりたかったこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TOPページ：直近5件程の記事タイトルを表示する&lt;/li&gt;
+&lt;li&gt;タグごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;タグの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;カテゴリごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;カテゴリの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;アーカイブ(年月)ごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;アーカイブ(年月)の一覧ページ作る&lt;/li&gt;
+&lt;li&gt;Aboutの固定ページを作る&lt;/li&gt;
+&lt;li&gt;サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;できたこと&#34;&gt;できたこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TOPページ：直近5件程の記事タイトルを表示する&lt;/li&gt;
+&lt;li&gt;タグごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;タグの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;カテゴリごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;カテゴリの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;Aboutの固定ページを作る&lt;/li&gt;
+&lt;li&gt;サイドバーにカテゴリ、タグ、Aboutのリンクを作る&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;乗り越えた事&#34;&gt;乗り越えた事&lt;/h2&gt;
+
+&lt;p&gt;HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。&lt;/p&gt;
+
+&lt;p&gt;標準で機能がついてなくて、pluginディレクトリにページを生成するモジュール？を書いて対応した。&lt;/p&gt;
+
+&lt;p&gt;公式に載っているコードをほぼそのまま使いまわしたんだけど、Rubyの世界というかJekyllではカテゴリやタグごとのページ生成は静的サイトジェネレーターの標準機能のうちには入らないらしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;あきらめた事&#34;&gt;あきらめた事&lt;/h2&gt;
+
+&lt;h3 id=&#34;アーカイブページ&#34;&gt;アーカイブページ&lt;/h3&gt;
+
+&lt;p&gt;上記のカテゴリやタグのページ生成のノリでいけるかと思ったけど無理だった。&lt;/p&gt;
+
+&lt;p&gt;正確には気持ちが切れた。&lt;/p&gt;
+
+&lt;p&gt;Pelicanの場合、記事リストをgroup by　した結果をそのままfor分で使えるのだけれど、Jekyllが使っているテンプレートエンジンではできないらしく、いちいち変数にアサインしないといけない。そのくせ、変数にアサインする時はgroup by も sort もできるらしい。&lt;/p&gt;
+
+&lt;p&gt;あと、気づかなかったんだけど、記事のデータに投稿年月日の年や月のデータがないので結局こねくり回さないと、年や月でgroup byした記事リストの抽出がうまくできない。&lt;/p&gt;
+
+&lt;p&gt;この、年月ごとに記事リストを抽出したオブジェクトが簡単には生成できないので、サイドバーの表示もアーカイブリストの生成もうまくできそうにないので諦めた。&lt;/p&gt;
+
+&lt;p&gt;あと、ググって出てきた書き方が汚いというか美しくないというか、「え？こんな手続き型なめんどくさい記述をテンプレートで書くの？」みたいなのが散見されて嫌になった。&lt;/p&gt;
+
+&lt;p&gt;まったくもう。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://jekyllrb.com/docs/home/&#34;&gt;Jekyll公式&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;Rubyを理解したら見直せるかもしれないけど、それまではもう触りたくない。&lt;/p&gt;
+
+&lt;p&gt;記事の投稿だけはして使い続けてみる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>I tried Mackerel</title>
+      <link>http://tech.k-zak.com/2017/03/24/i-tried-mackerel</link>
+      <pubDate>Fri, 24 Mar 2017 18:32:38 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/24/i-tried-mackerel</guid>
+      <description>
+
+&lt;h1 id=&#34;勇気を出してmackerelを試してみた&#34;&gt;勇気を出してMackerelを試してみた&lt;/h1&gt;
+
+&lt;p&gt;前々から気にはなっていたMackerelをお試しで入れてみた。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VPS契約しているUbuntu16.04&lt;/li&gt;
+&lt;li&gt;使い捨てのAWS上WIndows2012&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
+
+&lt;p&gt;ヘルプに書いてある通りに作業してつまずく事もなくすんなりできた。&lt;/p&gt;
+
+&lt;h2 id=&#34;監視項目&#34;&gt;監視項目&lt;/h2&gt;
+
+&lt;h3 id=&#34;デフォルト監視項目&#34;&gt;デフォルト監視項目&lt;/h3&gt;
+
+&lt;p&gt;通常の監視項目で既に普段Zabbixで見て使っている項目を監視できているので、Zabbix使いこなす気がないならMackerelでいいかなって思った。&lt;/p&gt;
+
+&lt;h3 id=&#34;カスタムメトリック&#34;&gt;カスタムメトリック&lt;/h3&gt;
+
+&lt;p&gt;今回はまだ試していない。&lt;/p&gt;
+
+&lt;p&gt;けど、簡単そうだ。&lt;/p&gt;
+
+&lt;h3 id=&#34;プラグインの作成&#34;&gt;プラグインの作成&lt;/h3&gt;
+
+&lt;p&gt;今回はまだ試していない。&lt;/p&gt;
+
+&lt;p&gt;golangじゃないといけないのかと思っていたけれど、他の言語でもいいらしい。&lt;/p&gt;
+
+&lt;h3 id=&#34;外形監視&#34;&gt;外形監視&lt;/h3&gt;
+
+&lt;p&gt;ホストが止まっても監視を続けるので、仕様上間違ってはいないんだけどずっとエラーがで続ける。&lt;/p&gt;
+
+&lt;p&gt;ホストをメンテナンスにしたり停止したりした時は外形監視も停止する仕組みがあるといいいかなって思った。&lt;/p&gt;
+
+&lt;p&gt;外形監視の定義削除しかなかったように思える。&lt;/p&gt;
+
+&lt;h3 id=&#34;通知設定&#34;&gt;通知設定&lt;/h3&gt;
+
+&lt;p&gt;通知設定も簡単だし、いろんなサービス(Slackとか)と簡単に連携できるのも魅力だなと感じた。&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;まだプラグインを試していないのだけれど、とにかくヘルプドキュメントが素晴らしいと感じた。&lt;/p&gt;
+
+&lt;p&gt;自分ならそこまではやらないよってくらいに丁寧に書いてあった。&lt;/p&gt;
+
+&lt;p&gt;特に感心したのは他サービスと連携するために、他サービス上での設定の説明が画面キャプチャ入りで説明されていたこと。&lt;/p&gt;
+
+&lt;p&gt;小規模な場合にフリーでどこまで使えるのかフリープランを調べていきたい。&lt;/p&gt;
+
+&lt;p&gt;Zabbixサーバーを一台用意する場合との費用比較とか調べていきたい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>i got caught in utf8</title>
+      <link>http://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8</link>
       <pubDate>Thu, 23 Mar 2017 21:47:31 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/23/2017-03-23-utf8</guid>
+      <guid>http://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8</guid>
       <description>
 
 &lt;h1 id=&#34;utf-8-mac-にまたしてもやられた&#34;&gt;UTF-8-MAC にまたしてもやられた&lt;/h1&gt;
@@ -26,11 +169,11 @@
     </item>
     
     <item>
-      <title>Bitbucketいいかも</title>
-      <link>http://tech.k-zak.com/2017/03/23/bitbucket%E3%81%84%E3%81%84%E3%81%8B%E3%82%82</link>
-      <pubDate>Thu, 23 Mar 2017 21:47:01 +0900</pubDate>
+      <title>Bitbucket is cool</title>
+      <link>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool</link>
+      <pubDate>Wed, 22 Mar 2017 21:47:01 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/23/bitbucket%E3%81%84%E3%81%84%E3%81%8B%E3%82%82</guid>
+      <guid>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool</guid>
       <description>
 
 &lt;h1 id=&#34;bitbucketけっこういいかも&#34;&gt;Bitbucketけっこういいかも&lt;/h1&gt;
@@ -51,11 +194,11 @@
     </item>
     
     <item>
-      <title>アジャイルでスプリントな感じで</title>
-      <link>http://tech.k-zak.com/2017/03/21/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%81%A7%E3%82%B9%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88%E3%81%AA%E6%84%9F%E3%81%98%E3%81%A7</link>
+      <title>Agile and Sprint myself</title>
+      <link>http://tech.k-zak.com/2017/03/21/agile-and-sprint-myself</link>
       <pubDate>Tue, 21 Mar 2017 23:52:11 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/21/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%81%A7%E3%82%B9%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88%E3%81%AA%E6%84%9F%E3%81%98%E3%81%A7</guid>
+      <guid>http://tech.k-zak.com/2017/03/21/agile-and-sprint-myself</guid>
       <description>
 
 &lt;h1 id=&#34;自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい&#34;&gt;自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい&lt;/h1&gt;
@@ -141,7 +284,7 @@
 &lt;li&gt;WordPressのテーマを一から作成し、よく使いそうな関数のチーとシート的なものを作成する(PHP)&lt;/li&gt;
 &lt;li&gt;Jekyllのテーマを一から作成してjinjaとの違いを体感する。(?)&lt;/li&gt;
 &lt;li&gt;Sphinxのテーマを改良し、Pelicanとの勝手の違いを体験する(多分jinja2)&lt;/li&gt;
-&lt;li&gt;Hugoのテーマを改良してgokanぽさを体験する(?)&lt;/li&gt;
+&lt;li&gt;Hugoのテーマを改良してgolanぽさを体験する(?)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&#34;派生目標-別途達成条件や時期を検討する&#34;&gt;派生目標:別途達成条件や時期を検討する&lt;/h4&gt;
@@ -828,136 +971,6 @@ themeディレクトリがなかったら作ってその中で&lt;code&gt;git cl
 &lt;p&gt;hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー&lt;/p&gt;
 
 &lt;p&gt;って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/2015/02/01/php-mail</link>
-      <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2015/02/01/php-mail</guid>
-      <description>&lt;p&gt;## install postfix&lt;/p&gt;
-
-&lt;p&gt;&amp;#8220;`&lt;/p&gt;
-
-&lt;p&gt;sudo apt-get install postfix postfix-dev sasl2-bin&lt;/p&gt;
-
-&lt;p&gt;sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt&lt;/p&gt;
-
-&lt;p&gt;&amp;#8220;`&lt;/p&gt;
-
-&lt;p&gt;## Settings&lt;/p&gt;
-
-&lt;p&gt;&amp;#8220;`&lt;/p&gt;
-
-&lt;p&gt;sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf&lt;/p&gt;
-
-&lt;p&gt;sudo emacs -nw /etc/postfix/main.cf&lt;/p&gt;
-
-&lt;p&gt;&amp;#8220;`&lt;/p&gt;
-
-&lt;p&gt;### 参考&lt;/p&gt;
-
-&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;### gmailに転送する設定に変更&lt;/p&gt;
-
-&lt;p&gt;relayhostにgmailを指定&lt;/p&gt;
-
-&lt;p&gt;パスワードの設定とかね。&lt;/p&gt;
-
-&lt;p&gt;## phpでメールを受信出来るよう設定&lt;/p&gt;
-
-&lt;p&gt;メールサーバ受信DNS設定とか面倒だからやめた。&lt;/p&gt;
-
-&lt;p&gt;phpinfoを見ると案の定imap入ってませんでしたので、php5.5系の落としてきてimapのディレクトリ移動してphpize&lt;/p&gt;
-
-&lt;p&gt;### configureで失敗する&lt;/p&gt;
-
-&lt;p&gt;configureしたらutf8_mime2text()がうんたらと出てきた。&lt;/p&gt;
-
-&lt;p&gt;ググると、どうもphpにimapとかメール関係入れる時にライブラリが足りないと出るエラーのようだ。&lt;/p&gt;
-
-&lt;p&gt;sudo apt-cache search libc-client&lt;/p&gt;
-
-&lt;p&gt;→libc-client2007e libc-client2007e-dev てのが出てくるので両方インストール&lt;/p&gt;
-
-&lt;p&gt;### imapうまく動かない？&lt;/p&gt;
-
-&lt;p&gt;この後無事imapインストールできたけどなぜか受信出来ない。いろいろ調べて片っ端からSSL関連インストールしたけどうまくいかない。&lt;/p&gt;
-
-&lt;p&gt;### 何が原因だったのか不明&lt;/p&gt;
-
-&lt;p&gt;結局、何かのSSL関係のライブラリインストールが最初足りなくてGmail受信失敗してた。&lt;/p&gt;
-
-&lt;p&gt;gmailからさくらのレンサバのメールアカウントで試した場合はアカウント名の指定を間違えてた。&lt;/p&gt;
-
-&lt;p&gt;テストで受信するだけだから、普通のimapアカウントの場合はnotlsをflagにつける。&lt;/p&gt;
-
-&lt;p&gt;gmailの場合は/ssl/novalidation-certみたいのつける&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>http://tech.k-zak.com/2015/01/05/perl-cgi</link>
-      <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi</guid>
-      <description>&lt;p&gt;古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ&lt;/p&gt;
-
-&lt;p&gt;最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。&lt;/p&gt;
-
-&lt;p&gt;502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。&lt;/p&gt;
-
-&lt;p&gt;結局、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install fcgiwrap
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも&lt;br /&gt;
-/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo sysv-rc-conf on fcgiwrap
-sudo service fcgiwrap start
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;でFastCGIが動くようになる。&lt;br /&gt;
-最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、&lt;br /&gt;
-参考：&lt;a href=&#34;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&#34;&gt;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&lt;/a&gt;&lt;br /&gt;
-これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。&lt;/p&gt;
-
-&lt;p&gt;Nginxの設定はlocationディレクティブだけ抜粋すると&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#拡張子が.plで終わるリクエストの場合
-location ~ \.pl$ {
-    try_files $uri = 404;
-    gzip off;
-    #インストールしたfcgiwrapのソケットファイルのパス
-    fastcgi_pass unix:/var/run/fcgiwrap.socket;
-    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    #/etc/nginx/fastcgi_paramsの内容を読み込む。
-    include fastcgi_params;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;で&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service nginx restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで適用にperl書いて(シェバンはもちろん#!/usr/bin/env perl ですよ)試したら動きました。&lt;/p&gt;
-
-&lt;p&gt;自分はplenvを使っているのですが、システムのperl読み込まれてライブラリねーぞゴルァなった事があった。謎。&lt;br /&gt;
-plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
-
-&lt;p&gt;この記事書いてる時に見つけた他の方のWeb。先にここを見つけたかった。。。&lt;br /&gt;
-参考：&lt;a href=&#34;http://ekzemplaro.org/data_base/doc/web_server/nginx/&#34;&gt;http://ekzemplaro.org/data_base/doc/web_server/nginx/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;やれやれですよ。&lt;/p&gt;
 </description>
     </item>
     

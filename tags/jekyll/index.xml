@@ -9,6 +9,84 @@
     <atom:link href="http://tech.k-zak.com/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Challenged Jekyll template and hate</title>
+      <link>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate</link>
+      <pubDate>Sun, 26 Mar 2017 18:32:49 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate</guid>
+      <description>
+
+&lt;h1 id=&#34;jekyllの画面-テンプレート-作った&#34;&gt;Jekyllの画面(テンプレート)作った&lt;/h1&gt;
+
+&lt;p&gt;結論から言うと、二度と使いたくない。&lt;/p&gt;
+
+&lt;p&gt;Pelicanの方がいいや。&lt;/p&gt;
+
+&lt;h2 id=&#34;やりたかったこと&#34;&gt;やりたかったこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TOPページ：直近5件程の記事タイトルを表示する&lt;/li&gt;
+&lt;li&gt;タグごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;タグの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;カテゴリごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;カテゴリの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;アーカイブ(年月)ごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;アーカイブ(年月)の一覧ページ作る&lt;/li&gt;
+&lt;li&gt;Aboutの固定ページを作る&lt;/li&gt;
+&lt;li&gt;サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;できたこと&#34;&gt;できたこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TOPページ：直近5件程の記事タイトルを表示する&lt;/li&gt;
+&lt;li&gt;タグごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;タグの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;カテゴリごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;カテゴリの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;Aboutの固定ページを作る&lt;/li&gt;
+&lt;li&gt;サイドバーにカテゴリ、タグ、Aboutのリンクを作る&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;乗り越えた事&#34;&gt;乗り越えた事&lt;/h2&gt;
+
+&lt;p&gt;HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。&lt;/p&gt;
+
+&lt;p&gt;標準で機能がついてなくて、pluginディレクトリにページを生成するモジュール？を書いて対応した。&lt;/p&gt;
+
+&lt;p&gt;公式に載っているコードをほぼそのまま使いまわしたんだけど、Rubyの世界というかJekyllではカテゴリやタグごとのページ生成は静的サイトジェネレーターの標準機能のうちには入らないらしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;あきらめた事&#34;&gt;あきらめた事&lt;/h2&gt;
+
+&lt;h3 id=&#34;アーカイブページ&#34;&gt;アーカイブページ&lt;/h3&gt;
+
+&lt;p&gt;上記のカテゴリやタグのページ生成のノリでいけるかと思ったけど無理だった。&lt;/p&gt;
+
+&lt;p&gt;正確には気持ちが切れた。&lt;/p&gt;
+
+&lt;p&gt;Pelicanの場合、記事リストをgroup by　した結果をそのままfor分で使えるのだけれど、Jekyllが使っているテンプレートエンジンではできないらしく、いちいち変数にアサインしないといけない。そのくせ、変数にアサインする時はgroup by も sort もできるらしい。&lt;/p&gt;
+
+&lt;p&gt;あと、気づかなかったんだけど、記事のデータに投稿年月日の年や月のデータがないので結局こねくり回さないと、年や月でgroup byした記事リストの抽出がうまくできない。&lt;/p&gt;
+
+&lt;p&gt;この、年月ごとに記事リストを抽出したオブジェクトが簡単には生成できないので、サイドバーの表示もアーカイブリストの生成もうまくできそうにないので諦めた。&lt;/p&gt;
+
+&lt;p&gt;あと、ググって出てきた書き方が汚いというか美しくないというか、「え？こんな手続き型なめんどくさい記述をテンプレートで書くの？」みたいなのが散見されて嫌になった。&lt;/p&gt;
+
+&lt;p&gt;まったくもう。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://jekyllrb.com/docs/home/&#34;&gt;Jekyll公式&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;Rubyを理解したら見直せるかもしれないけど、それまではもう触りたくない。&lt;/p&gt;
+
+&lt;p&gt;記事の投稿だけはして使い続けてみる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Jekyllを試す</title>
       <link>http://tech.k-zak.com/2017/02/19/first-jekyll</link>
       <pubDate>Sun, 19 Feb 2017 23:22:39 +0900</pubDate>

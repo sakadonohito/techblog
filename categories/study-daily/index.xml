@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Study Daily on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/categories/study-daily/index.xml</link>
+    <description>Recent content in Study Daily on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/categories/study-daily/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Challenged Jekyll template and hate</title>
+      <link>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate</link>
+      <pubDate>Sun, 26 Mar 2017 18:32:49 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate</guid>
+      <description>
+
+&lt;h1 id=&#34;jekyllの画面-テンプレート-作った&#34;&gt;Jekyllの画面(テンプレート)作った&lt;/h1&gt;
+
+&lt;p&gt;結論から言うと、二度と使いたくない。&lt;/p&gt;
+
+&lt;p&gt;Pelicanの方がいいや。&lt;/p&gt;
+
+&lt;h2 id=&#34;やりたかったこと&#34;&gt;やりたかったこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TOPページ：直近5件程の記事タイトルを表示する&lt;/li&gt;
+&lt;li&gt;タグごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;タグの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;カテゴリごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;カテゴリの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;アーカイブ(年月)ごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;アーカイブ(年月)の一覧ページ作る&lt;/li&gt;
+&lt;li&gt;Aboutの固定ページを作る&lt;/li&gt;
+&lt;li&gt;サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;できたこと&#34;&gt;できたこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TOPページ：直近5件程の記事タイトルを表示する&lt;/li&gt;
+&lt;li&gt;タグごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;タグの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;カテゴリごとの記事一覧ページを作る&lt;/li&gt;
+&lt;li&gt;カテゴリの一覧ページ作る&lt;/li&gt;
+&lt;li&gt;Aboutの固定ページを作る&lt;/li&gt;
+&lt;li&gt;サイドバーにカテゴリ、タグ、Aboutのリンクを作る&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;乗り越えた事&#34;&gt;乗り越えた事&lt;/h2&gt;
+
+&lt;p&gt;HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。&lt;/p&gt;
+
+&lt;p&gt;標準で機能がついてなくて、pluginディレクトリにページを生成するモジュール？を書いて対応した。&lt;/p&gt;
+
+&lt;p&gt;公式に載っているコードをほぼそのまま使いまわしたんだけど、Rubyの世界というかJekyllではカテゴリやタグごとのページ生成は静的サイトジェネレーターの標準機能のうちには入らないらしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;あきらめた事&#34;&gt;あきらめた事&lt;/h2&gt;
+
+&lt;h3 id=&#34;アーカイブページ&#34;&gt;アーカイブページ&lt;/h3&gt;
+
+&lt;p&gt;上記のカテゴリやタグのページ生成のノリでいけるかと思ったけど無理だった。&lt;/p&gt;
+
+&lt;p&gt;正確には気持ちが切れた。&lt;/p&gt;
+
+&lt;p&gt;Pelicanの場合、記事リストをgroup by　した結果をそのままfor分で使えるのだけれど、Jekyllが使っているテンプレートエンジンではできないらしく、いちいち変数にアサインしないといけない。そのくせ、変数にアサインする時はgroup by も sort もできるらしい。&lt;/p&gt;
+
+&lt;p&gt;あと、気づかなかったんだけど、記事のデータに投稿年月日の年や月のデータがないので結局こねくり回さないと、年や月でgroup byした記事リストの抽出がうまくできない。&lt;/p&gt;
+
+&lt;p&gt;この、年月ごとに記事リストを抽出したオブジェクトが簡単には生成できないので、サイドバーの表示もアーカイブリストの生成もうまくできそうにないので諦めた。&lt;/p&gt;
+
+&lt;p&gt;あと、ググって出てきた書き方が汚いというか美しくないというか、「え？こんな手続き型なめんどくさい記述をテンプレートで書くの？」みたいなのが散見されて嫌になった。&lt;/p&gt;
+
+&lt;p&gt;まったくもう。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://jekyllrb.com/docs/home/&#34;&gt;Jekyll公式&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;Rubyを理解したら見直せるかもしれないけど、それまではもう触りたくない。&lt;/p&gt;
+
+&lt;p&gt;記事の投稿だけはして使い続けてみる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>I tried Mackerel</title>
+      <link>http://tech.k-zak.com/2017/03/24/i-tried-mackerel</link>
+      <pubDate>Fri, 24 Mar 2017 18:32:38 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/24/i-tried-mackerel</guid>
+      <description>
+
+&lt;h1 id=&#34;勇気を出してmackerelを試してみた&#34;&gt;勇気を出してMackerelを試してみた&lt;/h1&gt;
+
+&lt;p&gt;前々から気にはなっていたMackerelをお試しで入れてみた。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VPS契約しているUbuntu16.04&lt;/li&gt;
+&lt;li&gt;使い捨てのAWS上WIndows2012&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
+
+&lt;p&gt;ヘルプに書いてある通りに作業してつまずく事もなくすんなりできた。&lt;/p&gt;
+
+&lt;h2 id=&#34;監視項目&#34;&gt;監視項目&lt;/h2&gt;
+
+&lt;h3 id=&#34;デフォルト監視項目&#34;&gt;デフォルト監視項目&lt;/h3&gt;
+
+&lt;p&gt;通常の監視項目で既に普段Zabbixで見て使っている項目を監視できているので、Zabbix使いこなす気がないならMackerelでいいかなって思った。&lt;/p&gt;
+
+&lt;h3 id=&#34;カスタムメトリック&#34;&gt;カスタムメトリック&lt;/h3&gt;
+
+&lt;p&gt;今回はまだ試していない。&lt;/p&gt;
+
+&lt;p&gt;けど、簡単そうだ。&lt;/p&gt;
+
+&lt;h3 id=&#34;プラグインの作成&#34;&gt;プラグインの作成&lt;/h3&gt;
+
+&lt;p&gt;今回はまだ試していない。&lt;/p&gt;
+
+&lt;p&gt;golangじゃないといけないのかと思っていたけれど、他の言語でもいいらしい。&lt;/p&gt;
+
+&lt;h3 id=&#34;外形監視&#34;&gt;外形監視&lt;/h3&gt;
+
+&lt;p&gt;ホストが止まっても監視を続けるので、仕様上間違ってはいないんだけどずっとエラーがで続ける。&lt;/p&gt;
+
+&lt;p&gt;ホストをメンテナンスにしたり停止したりした時は外形監視も停止する仕組みがあるといいいかなって思った。&lt;/p&gt;
+
+&lt;p&gt;外形監視の定義削除しかなかったように思える。&lt;/p&gt;
+
+&lt;h3 id=&#34;通知設定&#34;&gt;通知設定&lt;/h3&gt;
+
+&lt;p&gt;通知設定も簡単だし、いろんなサービス(Slackとか)と簡単に連携できるのも魅力だなと感じた。&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;まだプラグインを試していないのだけれど、とにかくヘルプドキュメントが素晴らしいと感じた。&lt;/p&gt;
+
+&lt;p&gt;自分ならそこまではやらないよってくらいに丁寧に書いてあった。&lt;/p&gt;
+
+&lt;p&gt;特に感心したのは他サービスと連携するために、他サービス上での設定の説明が画面キャプチャ入りで説明されていたこと。&lt;/p&gt;
+
+&lt;p&gt;小規模な場合にフリーでどこまで使えるのかフリープランを調べていきたい。&lt;/p&gt;
+
+&lt;p&gt;Zabbixサーバーを一台用意する場合との費用比較とか調べていきたい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>i got caught in utf8</title>
+      <link>http://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8</link>
+      <pubDate>Thu, 23 Mar 2017 21:47:31 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8</guid>
+      <description>
+
+&lt;h1 id=&#34;utf-8-mac-にまたしてもやられた&#34;&gt;UTF-8-MAC にまたしてもやられた&lt;/h1&gt;
+
+&lt;p&gt;全角のチルダだか波ダッシュだかがmacOSの時とそれ以外で違う文字コードなのか別の文字なのか、とにかく想定外の文字コードのものがバリデーションをすり抜けてきた。&lt;/p&gt;
+
+&lt;p&gt;一つのOS上で禁止文字を羅列して出来たつもりになってたけどUTF−8−MACにはこれからも悩まされるんだろうなー。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bitbucket is cool</title>
+      <link>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool</link>
+      <pubDate>Wed, 22 Mar 2017 21:47:01 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool</guid>
+      <description>
+
+&lt;h1 id=&#34;bitbucketけっこういいかも&#34;&gt;Bitbucketけっこういいかも&lt;/h1&gt;
+
+&lt;p&gt;プライベートリポジトリ欲しくてBitbucket試してみた。&lt;/p&gt;
+
+&lt;h2 id=&#34;乾燥&#34;&gt;乾燥&lt;/h2&gt;
+
+&lt;p&gt;Gitが使えるのでhg clone フォー！(古い)とかやらなくていいし抵抗なくて使えていいですね。&lt;/p&gt;
+
+&lt;p&gt;なんかWikiとか課題(issue)とかも使えるし、どうやらGithubPagesみたいのもできるみたい。
+なんかTrelloともなんか連携できるみたいでいいですね。&lt;/p&gt;
+
+&lt;p&gt;使いこなせる自信ないけどPipelineてのもあるらしい。&lt;/p&gt;
+
+&lt;p&gt;Githubとの使い分けがなやましいけど、とりあえずはプライベートにしたいものは基本Bitbucketにしよう。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Agile and Sprint myself</title>
+      <link>http://tech.k-zak.com/2017/03/21/agile-and-sprint-myself</link>
+      <pubDate>Tue, 21 Mar 2017 23:52:11 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/21/agile-and-sprint-myself</guid>
+      <description>
+
+&lt;h1 id=&#34;自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい&#34;&gt;自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい&lt;/h1&gt;
+
+&lt;p&gt;と、言うことです。&lt;/p&gt;
+
+&lt;p&gt;覚えたいこと、挑戦したいことを目標とするはいいけど、いつまでたっても着手しなかったり遅々として進まなかったりするので優先順位をつけて期限を設けて手中して取り組んでいけば少しは結果が変わってくると信じたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;現在の目標&#34;&gt;現在の目標&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx)&lt;/li&gt;
+&lt;li&gt;AWSの機能のだいたいを触って感覚を掴んでおきたい&lt;/li&gt;
+&lt;li&gt;Microsoft Azureを触ってAWSとの違いを掴んでおきたい&lt;/li&gt;
+&lt;li&gt;GCC？を以下略&lt;/li&gt;
+&lt;li&gt;Blumixに挑戦したい&lt;/li&gt;
+&lt;li&gt;FreeBSDを構築したい&lt;/li&gt;
+&lt;li&gt;Alpineを構築して慣れたい&lt;/li&gt;
+&lt;li&gt;Ansibleを一通り触っていろいろできるよういなりたい&lt;/li&gt;
+&lt;li&gt;Dockerをある程度使えるようになりたい&lt;/li&gt;
+&lt;li&gt;IPv6の学習と擬似ネットワークの構築してみたい&lt;/li&gt;
+&lt;li&gt;VPNの設定をGUIじゃなくても設定できるようになりたい&lt;/li&gt;
+&lt;li&gt;VyOS？を試してみたい&lt;/li&gt;
+&lt;li&gt;Shell及びAWKを覚えたい&lt;/li&gt;
+&lt;li&gt;Powershellを覚えたい&lt;/li&gt;
+&lt;li&gt;dot net C#を覚えたい&lt;/li&gt;
+&lt;li&gt;Javaを覚えたい&lt;/li&gt;
+&lt;li&gt;Androidを覚えたい&lt;/li&gt;
+&lt;li&gt;Swiftを覚えたい&lt;/li&gt;
+&lt;li&gt;JavaScriptをもっと使いこなせるようになりmたい&lt;/li&gt;
+&lt;li&gt;Perl6/Perl5を使えるようになりたい&lt;/li&gt;
+&lt;li&gt;PHP7を覚えたい&lt;/li&gt;
+&lt;li&gt;PHPのフレームワーク、Laravelを覚えたい&lt;/li&gt;
+&lt;li&gt;Nginxに組み込むLuaを少し試したい&lt;/li&gt;
+&lt;li&gt;Ruby/Railsを覚えたい&lt;/li&gt;
+&lt;li&gt;Python3をもう少し使えるようになりたい&lt;/li&gt;
+&lt;li&gt;Scalaちょっと覚えたい&lt;/li&gt;
+&lt;li&gt;Lispわかるようになりたい&lt;/li&gt;
+&lt;li&gt;Clojure書けるようになりたい&lt;/li&gt;
+&lt;li&gt;Haskell読めるようになりたい&lt;/li&gt;
+&lt;li&gt;F#ちょっとしたものなら書けるようになりたい&lt;/li&gt;
+&lt;li&gt;ActiveDirectory/OpenDirectoryがわかるようになりたい。&lt;/li&gt;
+&lt;li&gt;Golang書けるようになりたい&lt;/li&gt;
+&lt;li&gt;Makerel試したい&lt;/li&gt;
+&lt;li&gt;Erlang読み書きできるようになりたい&lt;/li&gt;
+&lt;li&gt;Elasticsearch扱えるようになりたい&lt;/li&gt;
+&lt;li&gt;Neo4j試したい&lt;/li&gt;
+&lt;li&gt;MongoDB試したい&lt;/li&gt;
+&lt;li&gt;DynamoDB試したい&lt;/li&gt;
+&lt;li&gt;Redis扱えるようになりたい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;とっても曖昧なものが多い。。&lt;/p&gt;
+
+&lt;h2 id=&#34;今もっとも取り組みたいことを多くて3つに絞るなら&#34;&gt;今もっとも取り組みたいことを多くて3つに絞るなら&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx)&lt;/li&gt;
+&lt;li&gt;Makerel試したい&lt;/li&gt;
+&lt;li&gt;Dockerをある程度使えるようになりたい&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以下、打ち消し戦のものは現時点で達成済みのもの&lt;/p&gt;
+
+&lt;h3 id=&#34;1-ブログや静的サイトのテーマをつくり込みたい&#34;&gt;1. ブログや静的サイトのテーマをつくり込みたい&lt;/h3&gt;
+
+&lt;p&gt;Pelican,Hexo,Jykell,WordPress,Hugo,Sphinxで動かし始めた静的サイトのテーマを一から作ってみたり、採用したテーマをカスタマイズしたりして見やすさやアクセスのしやすさを向上させる。&lt;/p&gt;
+
+&lt;h4 id=&#34;目的&#34;&gt;目的&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;各静的サイトジェネレータのテンプレートの書き方を覚える&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;レスポンシブレイアウトを一から作ってみてカラダで覚える&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;GoogleAnalyticsやアフィリエイトコードの埋め込み等を試す&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;達成条件-5月上旬までに&#34;&gt;達成条件:5月上旬までに&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;ベースとなるレスポンシブレイアウトを作成する&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Pelican用のテーマを一から作成する(jinja2)&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;Hexoで採用したテーマを見直し改良する(ejs)&lt;/li&gt;
+&lt;li&gt;WordPressのテーマを一から作成し、よく使いそうな関数のチーとシート的なものを作成する(PHP)&lt;/li&gt;
+&lt;li&gt;Jekyllのテーマを一から作成してjinjaとの違いを体感する。(?)&lt;/li&gt;
+&lt;li&gt;Sphinxのテーマを改良し、Pelicanとの勝手の違いを体験する(多分jinja2)&lt;/li&gt;
+&lt;li&gt;Hugoのテーマを改良してgolanぽさを体験する(?)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;派生目標-別途達成条件や時期を検討する&#34;&gt;派生目標:別途達成条件や時期を検討する&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;GithubPagesを試す&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Bitbucketを試す&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;Fabric/Capistranoを試す&lt;/li&gt;
+&lt;li&gt;Jenkinsを試す。コミットからのS3もしくはWebサイトへのプッシュができないか検討する&lt;/li&gt;
+&lt;li&gt;コードをプッシュではなく、Dockerコンテナをプッシュする方法を試す&lt;/li&gt;
+&lt;li&gt;S3のhttps化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;2-makerel試したい&#34;&gt;2. Makerel試したい&lt;/h3&gt;
+
+&lt;p&gt;MBPにステッカーを貼ってしまったので、なんちゃってでも使って試す。&lt;/p&gt;
+
+&lt;h4 id=&#34;目的-1&#34;&gt;目的&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ツールとしての勝手をつかむ&lt;/li&gt;
+&lt;li&gt;Linuxでの使い方、Windowsでの使い方を覚える&lt;/li&gt;
+&lt;li&gt;プラグインの使い方を覚える&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;達成条件-3月中&#34;&gt;達成条件:3月中&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Linuxにインストール&lt;/li&gt;
+&lt;li&gt;Windowsにインストール&lt;/li&gt;
+&lt;li&gt;かんたんなプラグインを作成してみる(車輪の再発明でよい)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;3-dockerをある程度使えるようになりたい&#34;&gt;3. Dockerをある程度使えるようになりたい&lt;/h3&gt;
+
+&lt;h4 id=&#34;目的-2&#34;&gt;目的&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;DockerSwarmを試して勝手を掴む&lt;/li&gt;
+&lt;li&gt;Kubernatesを試して勝手を掴む&lt;/li&gt;
+&lt;li&gt;Dockerコンテナマネージドサービスを利用して買ってをつかむ&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;達成条件-3月中-1&#34;&gt;達成条件:3月中&lt;/h4&gt;
+
+&lt;p&gt;何種類かのdocker composeを作成する
+VagrantもしくはEC2上でdocker swarmを試す
+VagrantもしくはEC2上でKubernatesを試す
+AWS/GCP/Azure/Blumix上でマネージドなコンテナサービスを試す&lt;/p&gt;
+
+&lt;h2 id=&#34;なぜスプリント&#34;&gt;なぜスプリント？&lt;/h2&gt;
+
+&lt;p&gt;おそらく、目標が雑多で曖昧なのと、こういった勉強や訓練？に真面目に割ける時間がもう少ないと考えているので、限られた時間の中で自分の人生の中で時間対効果が高そうなものから絞って集中して取り組むことで成果を上げやすくしていこうと考えています。&lt;/p&gt;
+
+&lt;p&gt;あれもこれもじゃなくて、これだけ。これだけ。って絞って集中して残り少ない人生を進んでいこうと考えています。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>再始動</title>
+      <link>http://tech.k-zak.com/2017/02/18/restart</link>
+      <pubDate>Sat, 18 Feb 2017 23:26:18 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/02/18/restart</guid>
+      <description>
+
+&lt;h1 id=&#34;ブログ引越して再始動&#34;&gt;ブログ引越して再始動&lt;/h1&gt;
+
+&lt;p&gt;&amp;hellip;の予定&lt;/p&gt;
+
+&lt;h2 id=&#34;再始動&#34;&gt;再始動&lt;/h2&gt;
+
+&lt;p&gt;契約していたレンタルサーバーを解約して、長らく契約するも放置状態が続いていたVPSにいろいろ引っ越そうと検討。&lt;/p&gt;
+
+&lt;p&gt;ついでにいろいろ構成などを再検討してやり直そうと考えました。&lt;/p&gt;
+
+&lt;h2 id=&#34;構成&#34;&gt;構成&lt;/h2&gt;
+
+&lt;p&gt;レンタルサーバー上のMovableTypeで細々と更新していたアニメやゲームについてのブログをVPS上にWordPressに構築し直しす事に。&lt;/p&gt;
+
+&lt;p&gt;ついでにWordPressのカスタマイズの練習台にも使おうという魂胆。&lt;/p&gt;
+
+&lt;p&gt;技術メモ的なこの忘備録ブログは今回を機にHugoで静的サイト構築してGithubPagesに載せる事にしました。&lt;/p&gt;
+
+&lt;p&gt;他にいくつか静的サイトジェネレーターを運営していろいろ触ってみたいと考えている。&lt;/p&gt;
+
+&lt;p&gt;ただ、今の所、上記２ブログ以外は全てS3での静的サイトホスティングでFTPでファイルをアップロードする方法を考えているけど、将来的には違う場所でホスティングしたりデプロイツールを使ったり、CI的なことをしたり、Dockerを使うなどして別の場所にサイトを構築しようかと考えている。&lt;/p&gt;
+
+&lt;h2 id=&#34;movabletypeからwordpressへの引越し&#34;&gt;MovableTypeからWordPressへの引越し&lt;/h2&gt;
+
+&lt;p&gt;テキストをずらずら記述していただけだったので、特に問題はなかった。
+単純にエクスポートしてインポートしただけ。
+インポート後にコツコツとカテゴリやタグを整理して付け直したり。&lt;/p&gt;
+
+&lt;h2 id=&#34;vpsサーバーの設定やhugoについて&#34;&gt;VPSサーバーの設定やHugoについて&lt;/h2&gt;
+
+&lt;p&gt;後日、それぞれ別の記事にします。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
+      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj</link>
+      <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj</guid>
+      <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;概要としては、FileMaker Server の XML公開を使う。&lt;/p&gt;
+
+&lt;p&gt;Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。&lt;/p&gt;
+
+&lt;p&gt;◆ハマった事：サンプルPHPの内容&lt;/p&gt;
+
+&lt;p&gt;サンプルのPHPをよく読んでなかった。。。&lt;/p&gt;
+
+&lt;p&gt;JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。&lt;/p&gt;
+
+&lt;p&gt;-db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに&lt;/p&gt;
+
+&lt;p&gt;u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数&lt;/p&gt;
+
+&lt;p&gt;ていうのがくっついてPHPにpostされてくる。&lt;/p&gt;
+
+&lt;p&gt;それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。&lt;/p&gt;
+
+&lt;p&gt;そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。&lt;/p&gt;
+
+&lt;p&gt;なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。&lt;/p&gt;
+
+&lt;p&gt;サンプルって事でいろいろハードコーディングされてるけど、気にしない。&lt;/p&gt;
+
+&lt;p&gt;◆ハマった：Nginxの設定&lt;/p&gt;
+
+&lt;p&gt;欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら&lt;/p&gt;
+
+&lt;p&gt;WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。&lt;/p&gt;
+
+&lt;p&gt;これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。&lt;/p&gt;
+
+&lt;p&gt;しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。&lt;/p&gt;
+
+&lt;p&gt;※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても&lt;/p&gt;
+
+&lt;p&gt;　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。&lt;/p&gt;
+
+&lt;p&gt;その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。&lt;/p&gt;
+
+&lt;p&gt;最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。&lt;/p&gt;
+
+&lt;p&gt;自分はUbuntuの環境なので、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo apt-get install nginx-extras&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)&lt;/p&gt;
+
+&lt;p&gt;more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;&lt;/p&gt;
+
+&lt;p&gt;を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！&lt;/p&gt;
+
+&lt;p&gt;これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。&lt;/p&gt;
+
+&lt;p&gt;いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AnsibleのSSH設定について</title>
+      <link>http://tech.k-zak.com/2015/02/08/ansible-ssh</link>
+      <pubDate>Sun, 08 Feb 2015 14:43:15 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2015/02/08/ansible-ssh</guid>
+      <description>&lt;p&gt;Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。&lt;/p&gt;
+
+&lt;p&gt;という事で調べた。&lt;/p&gt;
+
+&lt;p&gt;結論としては、varsファイルに&lt;/p&gt;
+
+&lt;p&gt;・ansible_ssh_user&lt;/p&gt;
+
+&lt;p&gt;・ansible_ssh_pass&lt;/p&gt;
+
+&lt;p&gt;・ansible_sudo_pass&lt;/p&gt;
+
+&lt;p&gt;の3つを書いておきましょう。でした。&lt;/p&gt;
+
+&lt;p&gt;最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。&lt;/p&gt;
+
+&lt;p&gt;例えばhostsファイルに&lt;/p&gt;
+
+&lt;p&gt;`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。&lt;/p&gt;
+
+&lt;p&gt;という事で調べた。&lt;/p&gt;
+
+&lt;p&gt;結論としては、varsファイルに&lt;/p&gt;
+
+&lt;p&gt;・ansible_ssh_user&lt;/p&gt;
+
+&lt;p&gt;・ansible_ssh_pass&lt;/p&gt;
+
+&lt;p&gt;・ansible_sudo_pass&lt;/p&gt;
+
+&lt;p&gt;の3つを書いておきましょう。でした。&lt;/p&gt;
+
+&lt;p&gt;最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。&lt;/p&gt;
+
+&lt;p&gt;例えばhostsファイルに&lt;/p&gt;
+
+&lt;p&gt;`&lt;/p&gt;
+
+&lt;p&gt;とか書いてグループ名が「dev」の場合に&lt;/p&gt;
+
+&lt;p&gt;-playbook&lt;/p&gt;
+
+&lt;p&gt;|&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211;dev.yml&lt;/p&gt;
+
+&lt;p&gt;|&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211;group_vars&lt;/p&gt;
+
+&lt;p&gt;|   |&lt;/p&gt;
+
+&lt;p&gt;|   |&amp;#8211;dev.yml&lt;/p&gt;
+
+&lt;p&gt;|&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211;roles\※内容略&lt;/p&gt;
+
+&lt;p&gt;|&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211;site.yml&lt;/p&gt;
+
+&lt;p&gt;みたいな感じで書く。&lt;/p&gt;
+
+&lt;p&gt;group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより&amp;#8211;ask-passの指定が必要なくなった。&lt;/p&gt;
+
+&lt;p&gt;問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。&lt;/p&gt;
+
+&lt;p&gt;なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。&lt;/p&gt;
+
+&lt;p&gt;ansible-playbookを実行する時に復号のために&amp;#8211;vault-passの引数とそのファイルパスを渡さないといけないってのも&amp;#8211;ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。&lt;/p&gt;
+
+&lt;p&gt;hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー&lt;/p&gt;
+
+&lt;p&gt;って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu14.04 でphpでメール受信とか</title>
+      <link>http://tech.k-zak.com/2015/02/01/php-mail</link>
+      <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2015/02/01/php-mail</guid>
+      <description>&lt;p&gt;## install postfix&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install postfix postfix-dev sasl2-bin&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;## Settings&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf&lt;/p&gt;
+
+&lt;p&gt;sudo emacs -nw /etc/postfix/main.cf&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;`&lt;/p&gt;
+
+&lt;p&gt;### 参考&lt;/p&gt;
+
+&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;### gmailに転送する設定に変更&lt;/p&gt;
+
+&lt;p&gt;relayhostにgmailを指定&lt;/p&gt;
+
+&lt;p&gt;パスワードの設定とかね。&lt;/p&gt;
+
+&lt;p&gt;## phpでメールを受信出来るよう設定&lt;/p&gt;
+
+&lt;p&gt;メールサーバ受信DNS設定とか面倒だからやめた。&lt;/p&gt;
+
+&lt;p&gt;phpinfoを見ると案の定imap入ってませんでしたので、php5.5系の落としてきてimapのディレクトリ移動してphpize&lt;/p&gt;
+
+&lt;p&gt;### configureで失敗する&lt;/p&gt;
+
+&lt;p&gt;configureしたらutf8_mime2text()がうんたらと出てきた。&lt;/p&gt;
+
+&lt;p&gt;ググると、どうもphpにimapとかメール関係入れる時にライブラリが足りないと出るエラーのようだ。&lt;/p&gt;
+
+&lt;p&gt;sudo apt-cache search libc-client&lt;/p&gt;
+
+&lt;p&gt;→libc-client2007e libc-client2007e-dev てのが出てくるので両方インストール&lt;/p&gt;
+
+&lt;p&gt;### imapうまく動かない？&lt;/p&gt;
+
+&lt;p&gt;この後無事imapインストールできたけどなぜか受信出来ない。いろいろ調べて片っ端からSSL関連インストールしたけどうまくいかない。&lt;/p&gt;
+
+&lt;p&gt;### 何が原因だったのか不明&lt;/p&gt;
+
+&lt;p&gt;結局、何かのSSL関係のライブラリインストールが最初足りなくてGmail受信失敗してた。&lt;/p&gt;
+
+&lt;p&gt;gmailからさくらのレンサバのメールアカウントで試した場合はアカウント名の指定を間違えてた。&lt;/p&gt;
+
+&lt;p&gt;テストで受信するだけだから、普通のimapアカウントの場合はnotlsをflagにつける。&lt;/p&gt;
+
+&lt;p&gt;gmailの場合は/ssl/novalidation-certみたいのつける&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
+      <link>http://tech.k-zak.com/2015/01/05/perl-cgi</link>
+      <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi</guid>
+      <description>&lt;p&gt;古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ&lt;/p&gt;
+
+&lt;p&gt;最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。&lt;/p&gt;
+
+&lt;p&gt;502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。&lt;/p&gt;
+
+&lt;p&gt;結局、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install fcgiwrap
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも&lt;br /&gt;
+/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo sysv-rc-conf on fcgiwrap
+sudo service fcgiwrap start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でFastCGIが動くようになる。&lt;br /&gt;
+最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、&lt;br /&gt;
+参考：&lt;a href=&#34;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&#34;&gt;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&lt;/a&gt;&lt;br /&gt;
+これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。&lt;/p&gt;
+
+&lt;p&gt;Nginxの設定はlocationディレクティブだけ抜粋すると&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#拡張子が.plで終わるリクエストの場合
+location ~ \.pl$ {
+    try_files $uri = 404;
+    gzip off;
+    #インストールしたfcgiwrapのソケットファイルのパス
+    fastcgi_pass unix:/var/run/fcgiwrap.socket;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    #/etc/nginx/fastcgi_paramsの内容を読み込む。
+    include fastcgi_params;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service nginx restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで適用にperl書いて(シェバンはもちろん#!/usr/bin/env perl ですよ)試したら動きました。&lt;/p&gt;
+
+&lt;p&gt;自分はplenvを使っているのですが、システムのperl読み込まれてライブラリねーぞゴルァなった事があった。謎。&lt;br /&gt;
+plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
+
+&lt;p&gt;この記事書いてる時に見つけた他の方のWeb。先にここを見つけたかった。。。&lt;br /&gt;
+参考：&lt;a href=&#34;http://ekzemplaro.org/data_base/doc/web_server/nginx/&#34;&gt;http://ekzemplaro.org/data_base/doc/web_server/nginx/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;やれやれですよ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2014年を振り返る インフラ系</title>
+      <link>http://tech.k-zak.com/2014/12/30/milestone-infra</link>
+      <pubDate>Tue, 30 Dec 2014 09:50:19 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/12/30/milestone-infra</guid>
+      <description>&lt;p&gt;2014年を振り返る。インフラ関係について&lt;/p&gt;
+
+&lt;p&gt;今年もっとも多く成長したのはインフラ関係についてだと思う。&lt;/p&gt;
+
+&lt;p&gt;来年はもう少しスタートアップ用のシェルスクリプト理解して作れるようになりたい。&lt;/p&gt;
+
+&lt;p&gt;PowerShellももう少し覚えてWindowsServer環境の制御も出来るようになりたい。&lt;/p&gt;
+
+&lt;p&gt;構成管理は今年手を付けたVagrantとAnsibleをもっと掘り下げていきたい。&lt;/p&gt;
+
+&lt;p&gt;VagrantはPackerを使ってVirtualBox以外のボックス作成やEC2へのアクセス。&lt;/p&gt;
+
+&lt;p&gt;Ansibleは様々な構成管理、できればWindows環境も。&lt;/p&gt;
+
+&lt;p&gt;来年取り組みたいのは、今年やりそこねたメールサーバーやログ設定、それからプロキシ設定かな&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2014年を振り返る サーバーサイドプログラミング</title>
+      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside</link>
+      <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside</guid>
+      <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る&lt;/p&gt;
+
+&lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;
+
+&lt;p&gt;Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。&lt;/p&gt;
+
+&lt;p&gt;Perl,Python,Rubyについては全然触れなくてフラストレーション。&lt;/p&gt;
+
+&lt;p&gt;PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。&lt;/p&gt;
+
+&lt;p&gt;本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。&lt;/p&gt;
+
+&lt;p&gt;家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。&lt;/p&gt;
+
+&lt;p&gt;PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は&lt;/p&gt;
+
+&lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;
+
+&lt;p&gt;Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2014年を振り返る JavaScript編</title>
+      <link>http://tech.k-zak.com/2014/12/30/milestone-js</link>
+      <pubDate>Tue, 30 Dec 2014 09:34:05 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/12/30/milestone-js</guid>
+      <description>&lt;p&gt;今年を振り返ってみる。クライアントサイド、特にJavaScriptについて&lt;/p&gt;
+
+&lt;p&gt;JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。&lt;/p&gt;
+
+&lt;p&gt;結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。&lt;/p&gt;
+
+&lt;p&gt;document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。&lt;/p&gt;
+
+&lt;p&gt;jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。&lt;/p&gt;
+
+&lt;p&gt;ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。&lt;/p&gt;
+
+&lt;p&gt;ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。&lt;/p&gt;
+
+&lt;p&gt;もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。&lt;/p&gt;
+
+&lt;p&gt;CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>思い出せない</title>
+      <link>http://tech.k-zak.com/2014/10/25/milestone</link>
+      <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/10/25/milestone</guid>
+      <description>
+
+&lt;p&gt;前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。&lt;/p&gt;
+
+&lt;h3 id=&#34;サーバー関係&#34;&gt;サーバー関係&lt;/h3&gt;
+
+&lt;p&gt;ログローテーションの設定を行った。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;yum install logrotate&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;/etc/logrotate.d/配下に追加の設定を行う&lt;/p&gt;
+
+&lt;p&gt;/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる&lt;/p&gt;
+
+&lt;h3 id=&#34;ansible&#34;&gt;Ansible&lt;/h3&gt;
+
+&lt;p&gt;1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中&lt;/p&gt;
+
+&lt;p&gt;ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。&lt;/p&gt;
+
+&lt;p&gt;yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。&lt;/p&gt;
+
+&lt;p&gt;後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。&lt;/p&gt;
+
+&lt;p&gt;Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。&lt;/p&gt;
+
+&lt;h3 id=&#34;javascript&#34;&gt;JavaScript&lt;/h3&gt;
+
+&lt;p&gt;AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。&lt;/p&gt;
+
+&lt;p&gt;マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。&lt;/p&gt;
+
+&lt;p&gt;AWSのS3のCORSで許可ヘッダーの設定が必要でした。&lt;/p&gt;
+
+&lt;h3 id=&#34;php&#34;&gt;PHP&lt;/h3&gt;
+
+&lt;p&gt;namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く&lt;/p&gt;
+
+&lt;p&gt;毎日ちゃんとメモとらないと駄目ですね。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PHPのファイルアップロードについて</title>
+      <link>http://tech.k-zak.com/2014/09/07/setting-php</link>
+      <pubDate>Sun, 07 Sep 2014 17:34:12 +0000</pubDate>
+      
+      <guid>http://tech.k-zak.com/2014/09/07/setting-php</guid>
+      <description>&lt;p&gt;PHPで大きなファイルアップロードを作成する&lt;/p&gt;
+
+&lt;p&gt;・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。&lt;/p&gt;
+
+&lt;p&gt;・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file&lt;/p&gt;
+
+&lt;p&gt;・phpの設定でmax_file_size,post_max_size,タイムアウト、memory_limitなどの設定が必要&lt;/p&gt;
+
+&lt;p&gt;・Apacheのバージョンが古いと2だか4GBが上限。という噂。&lt;/p&gt;
+
+&lt;p&gt;・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

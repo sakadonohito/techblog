@@ -139,13 +139,66 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/11/05/milestone">シンポナシウム</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">前回の更新からはや4ヶ月超。どのような進歩があったと言うと&#8230;
+ 内に等しい！？     ホント自己嫌悪してくるわー。     一応、   DB関係：   ・MySQL、ターミナルで入る時に「mysql -u name -p」って「-p」入れるの忘れないの覚えた。     環境関係：   ・gitとMercurial少しづつ試した。コマンドも少し覚えた   ・レンタルサーバーVPS、Macの様々な操作のお陰でターミナルでのコマンド操作馴れた。   ・emacsの設定ファイルいろいろコピペで入れて、開発はeclipse→emacsになった。   必然的にemacsの基本的な操作を覚えた。     プログラム言語：   ・pythonをちょろちょろ自習しているがちっとも上達しない、ちょっと入り組んだ処理の   ソースになると途端にちんぷんかんぷん。   ・PythonでapacheにDjangoを置く、WSGIの設定とかおぼ&#8230;えた&#8230;？     あーだめだこりゃ、話しにならん。。。  </div>
+    <div class="tags">
+      5 Nov 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/06/25/apache-virtualhost">apacheでredmine virtualhost設定</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。
+   で、急遽同タイプのを買いなおしてHDD移植してOS再インストールとかして   つまったapacheでredmine再設定をここにメモす。     なぜこんなことが起きたのか。。それはOS再インストールした際に、apacheの   virtualhost.confが初期化され、redmine用の設定が消えたからです。   再設定のため、webや本を見ながら書いたつもりの設定ではCSS等が読み込まれなんだ   ( °д°)ﾅﾝﾃﾞ？     結局関係ないと思ってたところが関係してた(apacheの設定とか理解してなかった)   という話。     以下が正常に動いた設定(virtualhost)      #Redmine用   
+ ServerAdmin oira@virtualhostDomain 
+ DocumentRoot &#8220;redmineのある場所/redmine/public&#8221; 
+ ServerName virtualhostDomain 
+ ErrorLog &#8220;/private/var/log/apache2/virtualhostDomain-error_log&#8221; 
+ CustomLog &#8220;/private/var/log/apache2/virtualhostDomain-access_log&#8221; common 
+ 
+ RailsBaseURI / ※redmine専用のバーチャルホストのため、ルートを指定</div>
+    <div class="tags">
+      25 Jun 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/redmine/">#Redmine</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2011/06/14/study-cakephp">CakePHPでぐはぁ</a></div>
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -168,9 +221,9 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      
@@ -197,9 +250,9 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -220,9 +273,9 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -251,7 +304,7 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      
@@ -274,7 +327,7 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      
@@ -296,9 +349,9 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -321,9 +374,9 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -335,54 +388,6 @@
           <a href="http://tech.k-zak.com/tags/java/">#Java</a>
         
           <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2011/04/10/milestone">ちっともすすまない</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
-        
-      </div>
-     
-    <div class="description">前に更新したのはいつの頃か・・・
-   中身に進歩がないのが更新がない証拠。。     先日、MovableTypeにもう一つブログ追加しました。   元々Microsoftのスペースっていうブログの場所でゲームとか趣味関連の少し   やってたんですが、閉鎖されたので、心機一転こちらで始めました。     この間、初めてAmazonアソシエイトのIDとったのでのリンクバシバシ貼ろうと思います。     このブログで書くようなジャンルの事では、最近NetBeansをインスコしてみました。   Eclipseでは無視してたんですが、サンプルプロジェクト作成して中のコード読むのって   結構勉強になるんじゃないかって考えてます。     まだまともに触れてないレベルですが、NetBeansはEclipseに比べて軽い気がします。   まぁ、設定とかプラグインとかそういうところは圧倒的にEclipseなんでしょうけど。     今はNetBeansでRuby on Rails　のサンプル作成したら、Railsのバージョンがおかしいとか   エラー出てハマってます(-_- 😉   ここのブログは今後、作業日誌的な、勉強、開発そういったことを何かしたら   それを簡潔に書く。そうやって続けていこうかと。     いつになったら図や画像ありの記事になれるのか・・・     NetBeansの日本語サイト：http://ja.netbeans.org/  </div>
-    <div class="tags">
-      10 Apr 2011
-      
-        
-          <a href="http://tech.k-zak.com/tags/netbeans/">#NetBeans</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/09/03/mcrypt">macにphpMyAdmin</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
-        
-      </div>
-     
-    <div class="description">忘れないうちにメモ
-   前のMacBokでは成功して、今回新しく購入したMacBookProでなかなかうまくいかなかった事をメモ。     て、実はただの勘違いだったんですけど。。。     環境はMac OS X 10.6 ( 64bitで常時起動 )   ここにApache2.2?とPHP5.3.2が初めから入っているので、MySQL入れて   phpMyAdminを入れる。     １、MySQL入れる   MySQLのサイトからdmgをダウンロード。理由は楽だから。     http://dev.mysql.com/downloads/mysql/5.1.html     ２、MySQLのPATHを通す   例として(自分の場合)emacsで.bash_profileを編集     $ sudo -s emacs   ( emacsが起動しました )   C-x C-f ( Ctrl + x その後 Ctrl + f でファイル開く )   ~/.</div>
-    <div class="tags">
-      3 Sep 2010
-      
-        
-          <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
         
        
     </div>

@@ -139,11 +139,47 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate">Challenged Jekyll template and hate</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">Jekyllの画面(テンプレート)作った 結論から言うと、二度と使いたくない。
+Pelicanの方がいいや。
+やりたかったこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る アーカイブ(年月)ごとの記事一覧ページを作る アーカイブ(年月)の一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る  できたこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、Aboutのリンクを作る  乗り越えた事 HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。
+標準で機能がついてなくて、pluginディレクトリにページを生成するモジュール？を書いて対応した。
+公式に載っているコードをほぼそのまま使いまわしたんだけど、Rubyの世界というかJekyllではカテゴリやタグごとのページ生成は静的サイトジェネレーターの標準機能のうちには入らないらしい。
+あきらめた事 アーカイブページ 上記のカテゴリやタグのページ生成のノリでいけるかと思ったけど無理だった。
+正確には気持ちが切れた。
+Pelicanの場合、記事リストをgroup by　した結果をそのままfor分で使えるのだけれど、Jekyllが使っているテンプレートエンジンではできないらしく、いちいち変数にアサインしないといけない。そのくせ、変数にアサインする時はgroup by も sort もできるらしい。
+あと、気づかなかったんだけど、記事のデータに投稿年月日の年や月のデータがないので結局こねくり回さないと、年や月でgroup byした記事リストの抽出がうまくできない。
+この、年月ごとに記事リストを抽出したオブジェクトが簡単には生成できないので、サイドバーの表示もアーカイブリストの生成もうまくできそうにないので諦めた。
+あと、ググって出てきた書き方が汚いというか美しくないというか、「え？こんな手続き型なめんどくさい記述をテンプレートで書くの？」みたいなのが散見されて嫌になった。
+まったくもう。
+参考 Jekyll公式
+まとめ Rubyを理解したら見直せるかもしれないけど、それまではもう触りたくない。
+記事の投稿だけはして使い続けてみる。</div>
+    <div class="tags">
+      26 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+          <a href="http://tech.k-zak.com/tags/jekyll/">#Jekyll</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-jekyll">Jekyllを試す</a></div>
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      

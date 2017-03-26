@@ -139,13 +139,54 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2012/01/07/study-sinatra">FileMakerとRubyのSinatra</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？
+と思ったのでやってみました。
+gihyo.jp:第９回 SinatraとSequel・Hamlで掲示板アプリを作る
+http://gihyo.jp/dev/serial/01/ruby/0009
+が自分がチュートリアル(以下、見本)としてやってみみたもので、これのmodel部分をFileMakerに
+置換えました。
+※FileMakerやRuby、Sinatraそのものの細かい説明は省きます。
+最終的な階層は以下(見本のファイルも混在してます)
+&#8212;
+app/ start.rb model/ comment.rb view / layout.haml index.haml fmbbs.haml style.sass &#8212;
+FileMaker部分
+・bbsテーブルの作成、カラムは見本のapp/model/comment.rb内で定義しているクラス
+Commentsを真似て定義。但し、posted_dateはFileMaker側ではtimestamp型で作成時に自動で
+現在のタイムスタンプが入るよう設定。
+Ruby部分
+・app/model/comment.rbにFileMakerとの接続クラス追加
+&#8212;以下をcomment.rbに追加&#8212;
+require 'rfm' class FMServer def initialize() @FM_CONFIG = { :host =&gt; "FileMakerServerの接続先IP", :account_name =&gt; "FileMakerFileのログインアカウント", :password =&gt; "FileMakerFileのログインパスワード", :database =&gt; "FileMakerFileの名前", :ssl =&gt; false, :root_cert =&gt; false, } @fm = Rfm::Server.new(@FM_CONFIG) end def listAll(lay,sortCond) return @fm[@FM_CONFIG[:database]][lay].all(sortCond) end def create(lay,obj) @fm[@FM_CONFIG[:database]][lay].create(obj) end end ・hamlを編集(追加)</div>
+    <div class="tags">
+      7 Jan 2012
+      
+        
+          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+          <a href="http://tech.k-zak.com/tags/sinatra/">#Sinatra</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2011/05/29/web-filemaker">WebフレームワークとFileMaker</a></div>
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      

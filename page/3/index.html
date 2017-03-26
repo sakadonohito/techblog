@@ -140,11 +140,94 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/10/25/milestone">思い出せない</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
+サーバー関係 ログローテーションの設定を行った。
+yum install logrotate
+/etc/logrotate.d/配下に追加の設定を行う
+/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる
+Ansible 1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中
+ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。
+yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。
+後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。
+Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。
+JavaScript AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。
+マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。
+AWSのS3のCORSで許可ヘッダーの設定が必要でした。
+PHP namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く
+毎日ちゃんとメモとらないと駄目ですね。。</div>
+    <div class="tags">
+      25 Oct 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/log/">#Log</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/09/15/dev-env-vm">新しく開発環境作成中</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">Ubuntu14(64bit)のVM作成  イメージからVMWareFusionに作成
+ ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
+ ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
+ 設定画面が出てくるので、そのままOK
+  VMWare toolsをインストール
+ VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行  aptのアップデートとアップグレード sudo apt-get update
+sudo apt-get upgrade
+ Dropboxクライアントのインストール
+ FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから  Emacsのインストール sudo apt-get install emacs24
+ Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
+mv ~/emacs.d ~/.emacs.d   バージョン管理のインストール sudo apt-get install git
+sudo apt-get install mercurial
+ nginxのインストール sudo apt-get install nginx
+ xEnvや各バージョンのインストールに必要になる諸々のインストール sudo add-apt-repository ppa:webupd8team/java</div>
+    <div class="tags">
+      15 Sep 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/env/">#env</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/redmine/">#Redmine</a>
+        
+          <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
+        
+          <a href="http://tech.k-zak.com/tags/unicorn/">#unicorn</a>
+        
+          <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/09/07/setting-php">PHPのファイルアップロードについて</a></div>
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      
@@ -169,9 +252,9 @@
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB/">トラブル</a>
+          <a href="http://tech.k-zak.com/categories/trouble-memo/">trouble-memo</a>
         
       </div>
      
@@ -237,9 +320,9 @@ UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -286,7 +369,7 @@ Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合�
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -311,7 +394,7 @@ checkconfigてLinux全般共通じゃなかったんだ&#8230;&#8230;
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      
@@ -335,9 +418,9 @@ PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB/">トラブル</a>
+          <a href="http://tech.k-zak.com/categories/trouble-memo/">trouble-memo</a>
         
       </div>
      
@@ -361,9 +444,9 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
-          <a href="http://tech.k-zak.com/categories/%E8%A8%AD%E5%AE%9A%E6%A7%8B%E7%AF%89/">設定・構築</a>
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
         
       </div>
      
@@ -428,57 +511,13 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      
     <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを
 取得し、コマンドを叩く。
 #!/usr/bin/env python # -*- coding: utf-8 -*- import os,csv,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() return data except Exception as e: #print "FileNotFound or Access Error." return None def read_file(path): try: os.path.isfile(path) f = open(path,'r') data = csv.reader(f) users = [line[0] for line in data] f.close() return users except Exception as e: #print "FileNotFound or Access Error." return None def bu_cmd(users,bu_path): if isinstance(users,list) and len(users)  0: cmds = map(lambda x:"</div>
-    <div class="tags">
-      16 Mar 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-02">Win上のPythonでバッチ処理2</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、前回使用した作業用の
-csvファイルが存在していたら消す処理。
-#!/usr/bin/env python # -*- coding: utf-8 -*- import os.path,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() print data return data except Exception as e: #ファイルは存在しない print "FileNotFound or Access Error." return None def is_file(path): try: os.path.isfile(path) os.remove(path) #print "消してやったぜ、ヒャッハー！" return 0 except Exception as e: #print "ファイルなど存在しない" return 0 if __name__ == '__main__': #jsonファイルに作業対象ファイルパスなんかを書いておく conf_data = get_conf("conf.json") is_file(conf_data["test"]["csvPath"])  </div>
-    <div class="tags">
-      16 Mar 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-01">Windows上でpythonでバッチ処理1</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/%E5%8B%89%E5%BC%B7%E6%97%A5%E8%AA%8C/">勉強日誌</a>
-        
-      </div>
-     
-    <div class="description">windows server2008上のFileMakerServerのWeb公開エンジンのプロセスを監視して
-異常終了していたらプロセスを再起動するバッチプログラムをpythonで書いてみた。
-#-*- coding:utf-8 -*- import os import urllib2 def send_mail_batch: try: import smtplib host,port = 'www.example.jp',587 username,password = 'email@example.jp','passwd' to_address = 'email@example.jp' msg = """From: %s To: %s Subject: Web公開エンジン再起動 異常終了したWeb公開エンジンプロセスを再起動しました。 . """ % (username,to_address) smtp = smtplib.SMTP(host,port) smtp.set_debuglevel(True) smtp.ehlo(host) smtp.login(username,password) smtp.sendmail(username,to_address,msg) smtp.quit() return True except: return False if __name__ == '__main__': testurl = "http://10.0.0.124/fmi/iwp" try: res = urllib2.urlopen(testurl) res.read() os.system('echo ok  ok.txt') send_mail_batch() except: os.system("fmsadmin -u account -p password start wpe"</div>
     <div class="tags">
       16 Mar 2014
       
