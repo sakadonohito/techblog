@@ -139,6 +139,33 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin">challenge mackerel plugin</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">Mackerelのカスタムメトリクスに挑戦 して撃沈。
+何が起きたか 公式のヘルプ を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。
+YYYY/MM/DD 時分秒 INFO &lt;metrics.plugin&gt; command /path/to/sample-metrics.rb outputted to STDERR: &quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&quot;}\&quot; unexpected (expecting \&quot;then\&quot;)\n&quot;  改行が足りない？
+rubyファイルを単独で実行すると動くので謎。
+これだからRubyは。
+とりあえず、Mackerelは初期設定のままのメトリクスだけでいいや。</div>
+    <div class="tags">
+      27 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+          <a href="http://tech.k-zak.com/tags/mackerel/">#Mackerel</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate">Challenged Jekyll template and hate</a></div>
     
       <div class="categories">
@@ -385,34 +412,6 @@ Ruby製だから？ヘルプが分かりやすい。
       
         
           <a href="http://tech.k-zak.com/tags/jekyll/">#Jekyll</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-hexo">Hexoを試す</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">JavaScriptの静的サイトジェネレーターHexoを試す JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。
-インストールと初期設定 npm install -g hexo-cli hexo init &lt;&lt;blog-name&gt;&gt; cd &lt;&lt;blog-name&gt;&gt; npm install hexo server  これでHexoがインストールされサイトを開始できる hexe serverで開発用のサーバー起動状態になりhttp://localhost:4000にアクセスできる。
-_config.ymlを編集する。
-title: &quot;サイトタイトル&quot; subtitle: &quot;サブタイトル&quot; description: &quot;サイトの説明&quot; author: &lt;&lt;author&gt;&gt; language: ja timezone: Asia/Tokyo url: http://&lt;&lt;site-domain&gt;&gt; root: / permalink: :year/:month/:day/:title/  languageはjaにしてtimezoneはAsia/Tokyoにした。 urlは公開したいドメイン、rootはトップレベルにした。
-permalinkの設定は:year/:month/:day/:title/のデフォルト設定のままにした。
-記事の追加 hexo new &lt;&lt;post-name&gt;&gt;  これでHugoみたいに初期状態のができる。 このあたり、Hugoと同じ感じで出来るので入りやすい。
-当初、React製の「gatsby」にしようかと思ったけど、なんか違うと思ったので、止めた。
-Publicファイルの生成 hexo generate  これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。
-今回はここまで。</div>
-    <div class="tags">
-      19 Feb 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/hexo/">#Hexo</a>
         
        
     </div>

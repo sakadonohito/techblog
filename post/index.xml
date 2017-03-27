@@ -6,8 +6,37 @@
     <description>Recent content in Posts on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Mar 2017 18:32:49 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 27 Mar 2017 23:36:40 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>challenge mackerel plugin</title>
+      <link>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin</link>
+      <pubDate>Mon, 27 Mar 2017 23:36:40 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin</guid>
+      <description>
+
+&lt;h1 id=&#34;mackerelのカスタムメトリクスに挑戦&#34;&gt;Mackerelのカスタムメトリクスに挑戦&lt;/h1&gt;
+
+&lt;p&gt;して撃沈。&lt;/p&gt;
+
+&lt;h2 id=&#34;何が起きたか&#34;&gt;何が起きたか&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://mackerel.io/ja/docs/entry/advanced/custom-metrics&#34;&gt;公式のヘルプ&lt;/a&gt; を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;quot;}\&amp;quot; unexpected (expecting \&amp;quot;then\&amp;quot;)\n&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;改行が足りない？&lt;/p&gt;
+
+&lt;p&gt;rubyファイルを単独で実行すると動くので謎。&lt;/p&gt;
+
+&lt;p&gt;これだからRubyは。&lt;/p&gt;
+
+&lt;p&gt;とりあえず、Mackerelは初期設定のままのメトリクスだけでいいや。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Challenged Jekyll template and hate</title>
@@ -863,90 +892,6 @@ themeディレクトリがなかったら作ってその中で&lt;code&gt;git cl
 &lt;p&gt;これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。&lt;/p&gt;
 
 &lt;p&gt;いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>AnsibleのSSH設定について</title>
-      <link>http://tech.k-zak.com/2015/02/08/ansible-ssh</link>
-      <pubDate>Sun, 08 Feb 2015 14:43:15 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2015/02/08/ansible-ssh</guid>
-      <description>&lt;p&gt;Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。&lt;/p&gt;
-
-&lt;p&gt;という事で調べた。&lt;/p&gt;
-
-&lt;p&gt;結論としては、varsファイルに&lt;/p&gt;
-
-&lt;p&gt;・ansible_ssh_user&lt;/p&gt;
-
-&lt;p&gt;・ansible_ssh_pass&lt;/p&gt;
-
-&lt;p&gt;・ansible_sudo_pass&lt;/p&gt;
-
-&lt;p&gt;の3つを書いておきましょう。でした。&lt;/p&gt;
-
-&lt;p&gt;最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。&lt;/p&gt;
-
-&lt;p&gt;例えばhostsファイルに&lt;/p&gt;
-
-&lt;p&gt;`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。&lt;/p&gt;
-
-&lt;p&gt;という事で調べた。&lt;/p&gt;
-
-&lt;p&gt;結論としては、varsファイルに&lt;/p&gt;
-
-&lt;p&gt;・ansible_ssh_user&lt;/p&gt;
-
-&lt;p&gt;・ansible_ssh_pass&lt;/p&gt;
-
-&lt;p&gt;・ansible_sudo_pass&lt;/p&gt;
-
-&lt;p&gt;の3つを書いておきましょう。でした。&lt;/p&gt;
-
-&lt;p&gt;最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。&lt;/p&gt;
-
-&lt;p&gt;例えばhostsファイルに&lt;/p&gt;
-
-&lt;p&gt;`&lt;/p&gt;
-
-&lt;p&gt;とか書いてグループ名が「dev」の場合に&lt;/p&gt;
-
-&lt;p&gt;-playbook&lt;/p&gt;
-
-&lt;p&gt;|&lt;/p&gt;
-
-&lt;p&gt;|&amp;#8211;dev.yml&lt;/p&gt;
-
-&lt;p&gt;|&lt;/p&gt;
-
-&lt;p&gt;|&amp;#8211;group_vars&lt;/p&gt;
-
-&lt;p&gt;|   |&lt;/p&gt;
-
-&lt;p&gt;|   |&amp;#8211;dev.yml&lt;/p&gt;
-
-&lt;p&gt;|&lt;/p&gt;
-
-&lt;p&gt;|&amp;#8211;roles\※内容略&lt;/p&gt;
-
-&lt;p&gt;|&lt;/p&gt;
-
-&lt;p&gt;|&amp;#8211;site.yml&lt;/p&gt;
-
-&lt;p&gt;みたいな感じで書く。&lt;/p&gt;
-
-&lt;p&gt;group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより&amp;#8211;ask-passの指定が必要なくなった。&lt;/p&gt;
-
-&lt;p&gt;問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。&lt;/p&gt;
-
-&lt;p&gt;なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。&lt;/p&gt;
-
-&lt;p&gt;ansible-playbookを実行する時に復号のために&amp;#8211;vault-passの引数とそのファイルパスを渡さないといけないってのも&amp;#8211;ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。&lt;/p&gt;
-
-&lt;p&gt;hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー&lt;/p&gt;
-
-&lt;p&gt;って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。&lt;/p&gt;
 </description>
     </item>
     

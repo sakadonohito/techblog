@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin</loc>
+    <lastmod>2017-03-27T23:36:40+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate</loc>
     <lastmod>2017-03-26T18:32:49+09:00</lastmod>
   </url>
@@ -604,7 +609,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/tags/mackerel/</loc>
-    <lastmod>2017-03-24T18:32:38+09:00</lastmod>
+    <lastmod>2017-03-27T23:36:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -682,7 +687,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/post/</loc>
-    <lastmod>2017-03-26T18:32:49+09:00</lastmod>
+    <lastmod>2017-03-27T23:36:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -712,7 +717,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/tags/ruby/</loc>
-    <lastmod>2017-03-26T18:32:49+09:00</lastmod>
+    <lastmod>2017-03-27T23:36:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -742,7 +747,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/categories/study-daily/</loc>
-    <lastmod>2017-03-26T18:32:49+09:00</lastmod>
+    <lastmod>2017-03-27T23:36:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -795,7 +800,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/</loc>
-    <lastmod>2017-03-26T18:32:49+09:00</lastmod>
+    <lastmod>2017-03-27T23:36:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   

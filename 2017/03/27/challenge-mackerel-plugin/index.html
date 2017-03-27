@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>Mackerel</title>
+  <title>challenge mackerel plugin</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -137,9 +137,8 @@
 
 <div class="content">
 
-
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin">challenge mackerel plugin</a></div>
+    <div class="title">challenge mackerel plugin</div>
     
       <div class="categories">
         
@@ -147,12 +146,27 @@
         
       </div>
      
-    <div class="description">Mackerelのカスタムメトリクスに挑戦 して撃沈。
-何が起きたか 公式のヘルプ を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。
-YYYY/MM/DD 時分秒 INFO &lt;metrics.plugin&gt; command /path/to/sample-metrics.rb outputted to STDERR: &quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&quot;}\&quot; unexpected (expecting \&quot;then\&quot;)\n&quot;  改行が足りない？
-rubyファイルを単独で実行すると動くので謎。
-これだからRubyは。
-とりあえず、Mackerelは初期設定のままのメトリクスだけでいいや。</div>
+    <div class="description">
+
+<h1 id="mackerelのカスタムメトリクスに挑戦">Mackerelのカスタムメトリクスに挑戦</h1>
+
+<p>して撃沈。</p>
+
+<h2 id="何が起きたか">何が起きたか</h2>
+
+<p><a href="https://mackerel.io/ja/docs/entry/advanced/custom-metrics">公式のヘルプ</a> を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。</p>
+
+<pre><code>YYYY/MM/DD 時分秒 INFO &lt;metrics.plugin&gt; command /path/to/sample-metrics.rb outputted to STDERR: &quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&quot;}\&quot; unexpected (expecting \&quot;then\&quot;)\n&quot;
+</code></pre>
+
+<p>改行が足りない？</p>
+
+<p>rubyファイルを単独で実行すると動くので謎。</p>
+
+<p>これだからRubyは。</p>
+
+<p>とりあえず、Mackerelは初期設定のままのメトリクスだけでいいや。</p>
+</div>
     <div class="tags">
       27 Mar 2017
       
@@ -163,45 +177,10 @@ rubyファイルを単独で実行すると動くので謎。
         
        
     </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/03/24/i-tried-mackerel">I tried Mackerel</a></div>
     
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">勇気を出してMackerelを試してみた 前々から気にはなっていたMackerelをお試しで入れてみた。
- VPS契約しているUbuntu16.04 使い捨てのAWS上WIndows2012  インストール ヘルプに書いてある通りに作業してつまずく事もなくすんなりできた。
-監視項目 デフォルト監視項目 通常の監視項目で既に普段Zabbixで見て使っている項目を監視できているので、Zabbix使いこなす気がないならMackerelでいいかなって思った。
-カスタムメトリック 今回はまだ試していない。
-けど、簡単そうだ。
-プラグインの作成 今回はまだ試していない。
-golangじゃないといけないのかと思っていたけれど、他の言語でもいいらしい。
-外形監視 ホストが止まっても監視を続けるので、仕様上間違ってはいないんだけどずっとエラーがで続ける。
-ホストをメンテナンスにしたり停止したりした時は外形監視も停止する仕組みがあるといいいかなって思った。
-外形監視の定義削除しかなかったように思える。
-通知設定 通知設定も簡単だし、いろんなサービス(Slackとか)と簡単に連携できるのも魅力だなと感じた。
-まとめ まだプラグインを試していないのだけれど、とにかくヘルプドキュメントが素晴らしいと感じた。
-自分ならそこまではやらないよってくらいに丁寧に書いてあった。
-特に感心したのは他サービスと連携するために、他サービス上での設定の説明が画面キャプチャ入りで説明されていたこと。
-小規模な場合にフリーでどこまで使えるのかフリープランを調べていきたい。
-Zabbixサーバーを一台用意する場合との費用比較とか調べていきたい。</div>
-    <div class="tags">
-      24 Mar 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/mackerel/">#Mackerel</a>
-        
-       
-    </div>
   </div>
 
 </div>
-
 
 <paper-item>
   
@@ -209,10 +188,9 @@ Zabbixサーバーを一台用意する場合との費用比較とか調べて�
   
     <div class="flex"></div>
   
-    <paper-fab disabled icon="chevron-right"></paper-fab>
+    <a href="http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate"><paper-fab icon="chevron-right"></paper-fab></a>
   
 </paper-item>
-
 
       <paper-item>
         <div class="copyright"></div>

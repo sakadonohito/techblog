@@ -9,6 +9,35 @@
     <atom:link href="http://tech.k-zak.com/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>challenge mackerel plugin</title>
+      <link>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin</link>
+      <pubDate>Mon, 27 Mar 2017 23:36:40 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin</guid>
+      <description>
+
+&lt;h1 id=&#34;mackerelのカスタムメトリクスに挑戦&#34;&gt;Mackerelのカスタムメトリクスに挑戦&lt;/h1&gt;
+
+&lt;p&gt;して撃沈。&lt;/p&gt;
+
+&lt;h2 id=&#34;何が起きたか&#34;&gt;何が起きたか&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://mackerel.io/ja/docs/entry/advanced/custom-metrics&#34;&gt;公式のヘルプ&lt;/a&gt; を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;quot;}\&amp;quot; unexpected (expecting \&amp;quot;then\&amp;quot;)\n&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;改行が足りない？&lt;/p&gt;
+
+&lt;p&gt;rubyファイルを単独で実行すると動くので謎。&lt;/p&gt;
+
+&lt;p&gt;これだからRubyは。&lt;/p&gt;
+
+&lt;p&gt;とりあえず、Mackerelは初期設定のままのメトリクスだけでいいや。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Challenged Jekyll template and hate</title>
       <link>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate</link>
       <pubDate>Sun, 26 Mar 2017 18:32:49 +0900</pubDate>
