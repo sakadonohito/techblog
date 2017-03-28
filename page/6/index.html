@@ -140,6 +140,38 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2013/10/02/trouble-css">印刷用CSSでハマった</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/trouble-memo/">trouble-memo</a>
+        
+      </div>
+     
+    <div class="description">この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。
+問題のCSS: page-break-before
+いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと
+していたんだけど、ChromeではなるのにIE(対応対象はVer 9)だと改ページしてくれない。
+IEでも解釈されるはずなのになんで？ってなって諦めてたんだけど、調べてたら出てきた。
+IEの場合はpage-break-beforeが適用される要素がページをまたぐような位置にいる場合は
+無視されるそうです。で、ちゃんとは調べてないのですがpage-break-beforeの場合はその
+要素がpage-break-afterの場合は次の要素が判定基準になるっぽぽぽぽいです。
+対処方法としては改ページしたい場所にからのdivを入れてその要素に対して改ページ指定の
+cssを適用させるって方法。Web素人には分からんよ。Web上でCSSリファレンスをさっと見ても
+そのことについての記述なかったし。んもう！</div>
+    <div class="tags">
+      2 Oct 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/css/">#CSS</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2013/08/25/challenge-fuelphp">fuelphp使って分からなかったこと</a></div>
     
       <div class="categories">
@@ -502,65 +534,6 @@ OS再インストールしたせいだと思うけど、前に作ったDjangoが
           <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
         
           <a href="http://tech.k-zak.com/tags/sinatra/">#Sinatra</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2012/10/09/study-perl">Perl勉強してるメモ１</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">何故か最近Perlの勉強を始めた。
-気になった箇所のまとめ、
-■変数と型
-・普通(単一)のデータはスカラー変数で扱う：$val = &#8216;Hello&#8217;;
-・配列は「$」の代わりに「＠」でも中の要素を扱う時は「$」でインデックスの指定は[]
-：@array = (1,2,3,4,5); print $array[0] # 1
-・ハッシュは「$」の代わりに「%」でも中の要素を扱う時は「$」で指定は{}
-：%hash = (&#8216;a&#8217;=&gt;&#8217;1&#8242;,&#8217;b&#8217;=&gt;&#8217;2&#8217;); print $hash{a} # 1
-■変数スコープ
-・{}ブロックでスコープは仕切られている。そのため変数はmyを使ってスコープを意識した変数宣言を
-すると良いとされている。
-・ファイルスコープは実は１ファイル１パッケージ的な扱いでパッケージスコープ。
-・例えばファイル直下の位置で$cgi = CGI-&gt;new; とかやっておけば、subを呼ぶ時に毎回$cgiを
-引数として渡す必要はない。
-参考 Gist：https://gist.github.com/3855891
-&nbsp;
-■リファレンス
-・C言語で言うところのポインタ？配列やハッシュをサブルーチンに渡す際に変数のリファレンスを
-渡す。そうしないと呼び出し先では１つの引数データに連結されてしまっているのでうまく復元できない。
-・リファレンスで渡された値をsubスコープ内の新たな変数に入れてデリファレンスして編集すると、
-元の変数の値が変わっている。デリファレンスした値を新たな変数に入れて編集した場合は影響しない。
-参考Gist：https://gist.github.com/3850245
-https://gist.github.com/3856617
-&nbsp;
-■ファイルの扱いなど
-・use IO=&gt;&#8217;utf8&#8242;; としておくとUTF-8でファイルIOで扱う。
-・ファイルハンドルはレキシカルスコープ変数を使うようにしましょう。
-・またopen関数は3引数の形で使いましょう。
-open(my $fh,&rsquo;&lt;&#8216;,$file_path);
-&nbsp;
-■モジュールについて
-・use strict;と use warnings; はワンライナー(or実験)以外では必ずつけましょう。
-・use feature &#8216;say&#8217;;とするとsay関数が使える。これはprint関数+改行らしい。便利。
-・自作外部ファイル、PHPでいうところのrequire用ファイルのようなファイルは拡張子を
-「.pm」にする。
-&nbsp;
-■他
-・qq や qw は便利なので積極的に使って行きましょう。
-例：qq({name}&#8221;/&gt;);
-て感じで使える。</div>
-    <div class="tags">
-      9 Oct 2012
-      
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
         
        
     </div>

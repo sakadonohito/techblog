@@ -140,6 +140,33 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-jekyll">Jekyllを試す</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">Jekyllを試す Ruby製の静的サイトジェネレーターを試してる。
+インストール 以下下記URLを参考にいろいろ試したけど、情報が古くコマンドが変わってた。 参考
+gem install jekyll mkdir _site _posts _site assets mkdir -p assets/css  構造はこんな感じ
+├── _config.yml ├── _layouts │ ├── layout.html │ └── post.html ├── _posts ├── _site ├── assets │ └── css └── index.md  jekyll serve --watch  で編集内容が即時される。
+こんな感じでやっていこうと思います。
+レイアウトがとてもダサイ感じなので、テーマをちゃんと作っていきたい。
+Ruby製だから？ヘルプが分かりやすい。
+静的ファイルを生成したい場合はjekyll buildで_siteディレクトリに生成される。</div>
+    <div class="tags">
+      19 Feb 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/jekyll/">#Jekyll</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-hexo">Hexoを試す</a></div>
     
       <div class="categories">
@@ -489,29 +516,6 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？
         
           <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
         
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-infra">2014年を振り返る インフラ系</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">2014年を振り返る。インフラ関係について
-今年もっとも多く成長したのはインフラ関係についてだと思う。
-来年はもう少しスタートアップ用のシェルスクリプト理解して作れるようになりたい。
-PowerShellももう少し覚えてWindowsServer環境の制御も出来るようになりたい。
-構成管理は今年手を付けたVagrantとAnsibleをもっと掘り下げていきたい。
-VagrantはPackerを使ってVirtualBox以外のボックス作成やEC2へのアクセス。
-Ansibleは様々な構成管理、できればWindows環境も。
-来年取り組みたいのは、今年やりそこねたメールサーバーやログ設定、それからプロキシ設定かな</div>
-    <div class="tags">
-      30 Dec 2014
        
     </div>
   </div>

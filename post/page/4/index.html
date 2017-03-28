@@ -139,6 +139,73 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/milestone">最近やったいろいろ</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
+◆PostgreSQLのSQLダンプ
+　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
+◆残念VBSバッチスクリプト
+　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない
+　・windowsのコマンドでディレクトリ削除するコマンド
+◆謎！IISの設定
+　・IISのRewrite設定
+　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定
+　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、
+　DefaultWebSiteにリダイレクトするやり方がある。
+　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない
+◆Win8.1
+　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。
+　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。
+　・win8でSQLServer2012のodbc設定がうまくいかない
+　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも
+◆PHP
+　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。
+　・PHPで頼りになるのはやはりPHP.net
+　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。
+　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。
+　※セッション制御が楽かも
+　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。
+　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ
+　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない
+　・php5.4以降はセーフモード使えない
+　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。
+　・ファイルのオーナーとかに気をつけましょう
+◆Apacheの設定
+　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く
+　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて
+　vhost.confの方に書いた
+◆SSH
+　・SSHで認証鍵ファイルを使う場合の設定方法
+　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む
+　・~/.ssh/に設定ファイルを置いておくと楽
+◆ポートフォワーディング
+　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、
+　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。</div>
+    <div class="tags">
+      16 Mar 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/iis/">#IIS</a>
+        
+          <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/ssh/">#SSH</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-03">Win上のpythonでバッチ処理3</a></div>
     
       <div class="categories">
@@ -378,36 +445,6 @@ Pythonでチャレンジ
       
         
           <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/08/coding-memo05">コーディングリハビリ06</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">リハビリその3
-今回は、バブルソート
-PHPでは、
-&lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(',',$arr)."\n"; } ?&gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; my $num = &lt;STDIN&gt;; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(',',@list)."\n"; }  Pythonでは、</div>
-    <div class="tags">
-      8 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
         
        
     </div>

@@ -6,8 +6,52 @@
     <description>Recent content in Posts on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 27 Mar 2017 23:36:40 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 28 Mar 2017 23:57:46 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>docker reinstall</title>
+      <link>http://tech.k-zak.com/2017/03/28/docker-reinstall</link>
+      <pubDate>Tue, 28 Mar 2017 23:57:46 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/28/docker-reinstall</guid>
+      <description>
+
+&lt;h1 id=&#34;dockerを再インストールした&#34;&gt;Dockerを再インストールした&lt;/h1&gt;
+
+&lt;p&gt;Dockerが全然触らないうちにどんどん進化していってしまったので、一旦アンインストールして、入れ直した。&lt;/p&gt;
+
+&lt;p&gt;環境はmacOS 10.11 えるかぴたん&lt;/p&gt;
+
+&lt;h2 id=&#34;やったこと&#34;&gt;やったこと&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;docker-machine(boot2docker)の中身を全て削除
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker-machine rm default&lt;/code&gt;とか&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;docker-machineを完全削除するらしいツールを使って削除実行&lt;/li&gt;
+&lt;li&gt;Virtualboxを確認して環境が残っていないか確認&lt;/li&gt;
+&lt;li&gt;.bash_profileに記述していた環境変数設定を削除&lt;/li&gt;
+&lt;li&gt;homeディレクトリ直下の.dockerみたいな隠し領域も削除&lt;/li&gt;
+&lt;li&gt;公式から改めてdocker for mac をダウンロードしてインストール&lt;/li&gt;
+&lt;li&gt;ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;ハマったこと&#34;&gt;ハマったこと&lt;/h3&gt;
+
+&lt;p&gt;単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対して&lt;code&gt;docker -v&lt;/code&gt;とかやってエラーを出してた。&lt;/p&gt;
+
+&lt;p&gt;ターミナルを再起動して解決&lt;/p&gt;
+
+&lt;h2 id=&#34;ここまで&#34;&gt;ここまで&lt;/h2&gt;
+
+&lt;p&gt;今日はここまで。&lt;/p&gt;
+
+&lt;p&gt;今後、先送りしてたswarmモードとやらを試したりしたい。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>challenge mackerel plugin</title>
@@ -822,76 +866,6 @@ themeディレクトリがなかったら作ってその中で&lt;code&gt;git cl
 &lt;p&gt;これだけでネットワークつながるようになった。というかipが正しくふられるようになった。&lt;/p&gt;
 
 &lt;p&gt;まさかのマルチバイト文字ファイル名問題？&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj</link>
-      <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj</guid>
-      <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;概要としては、FileMaker Server の XML公開を使う。&lt;/p&gt;
-
-&lt;p&gt;Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。&lt;/p&gt;
-
-&lt;p&gt;◆ハマった事：サンプルPHPの内容&lt;/p&gt;
-
-&lt;p&gt;サンプルのPHPをよく読んでなかった。。。&lt;/p&gt;
-
-&lt;p&gt;JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。&lt;/p&gt;
-
-&lt;p&gt;-db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに&lt;/p&gt;
-
-&lt;p&gt;u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数&lt;/p&gt;
-
-&lt;p&gt;ていうのがくっついてPHPにpostされてくる。&lt;/p&gt;
-
-&lt;p&gt;それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。&lt;/p&gt;
-
-&lt;p&gt;そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。&lt;/p&gt;
-
-&lt;p&gt;なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。&lt;/p&gt;
-
-&lt;p&gt;サンプルって事でいろいろハードコーディングされてるけど、気にしない。&lt;/p&gt;
-
-&lt;p&gt;◆ハマった：Nginxの設定&lt;/p&gt;
-
-&lt;p&gt;欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら&lt;/p&gt;
-
-&lt;p&gt;WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。&lt;/p&gt;
-
-&lt;p&gt;これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。&lt;/p&gt;
-
-&lt;p&gt;しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。&lt;/p&gt;
-
-&lt;p&gt;※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても&lt;/p&gt;
-
-&lt;p&gt;　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。&lt;/p&gt;
-
-&lt;p&gt;その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。&lt;/p&gt;
-
-&lt;p&gt;最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。&lt;/p&gt;
-
-&lt;p&gt;自分はUbuntuの環境なので、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;sudo apt-get install nginx-extras&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)&lt;/p&gt;
-
-&lt;p&gt;more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;&lt;/p&gt;
-
-&lt;p&gt;を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！&lt;/p&gt;
-
-&lt;p&gt;これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。&lt;/p&gt;
-
-&lt;p&gt;いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。&lt;/p&gt;
 </description>
     </item>
     

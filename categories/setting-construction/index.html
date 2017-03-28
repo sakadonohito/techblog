@@ -139,6 +139,31 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/28/docker-reinstall">docker reinstall</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">Dockerを再インストールした Dockerが全然触らないうちにどんどん進化していってしまったので、一旦アンインストールして、入れ直した。
+環境はmacOS 10.11 えるかぴたん
+やったこと  docker-machine(boot2docker)の中身を全て削除  docker-machine rm defaultとか  docker-machineを完全削除するらしいツールを使って削除実行 Virtualboxを確認して環境が残っていないか確認 .bash_profileに記述していた環境変数設定を削除 homeディレクトリ直下の.dockerみたいな隠し領域も削除 公式から改めてdocker for mac をダウンロードしてインストール ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置  ハマったこと 単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対してdocker -vとかやってエラーを出してた。
+ターミナルを再起動して解決
+ここまで 今日はここまで。
+今後、先送りしてたswarmモードとやらを試したりしたい。</div>
+    <div class="tags">
+      28 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/03/20/create-pelican-theme">Pelicanのレイアウト作成</a></div>
     
       <div class="categories">
@@ -487,50 +512,6 @@ gmailの場合は/ssl/novalidation-certみたいのつける</div>
           <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
         
           <a href="http://tech.k-zak.com/tags/postfix/">#postfix</a>
-        
-          <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2015/01/05/perl-cgi">Ubuntu14.04 LTS でNginx FasCGI Perl</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
-最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
-502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
-結局、
-sudo apt-get install fcgiwrap  ※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも
-/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで
-sudo sysv-rc-conf on fcgiwrap sudo service fcgiwrap start  でFastCGIが動くようになる。
-最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、
-参考：http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/
-これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。
-Nginxの設定はlocationディレクティブだけ抜粋すると
-#拡張子が.plで終わるリクエストの場合 location ~ \.pl$ { try_files $uri = 404; gzip off; #インストールしたfcgiwrapのソケットファイルのパス fastcgi_pass unix:/var/run/fcgiwrap.socket; fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; #/etc/nginx/fastcgi_paramsの内容を読み込む。 include fastcgi_params; }  で
-sudo service nginx restart  これで適用にperl書いて(シェバンはもちろん#!/usr/bin/env perl ですよ)試したら動きました。
-自分はplenvを使っているのですが、システムのperl読み込まれてライブラリねーぞゴルァなった事があった。謎。
-plenvの場合、require syscall.ph とかあると駄目っぽい？
-この記事書いてる時に見つけた他の方のWeb。先にここを見つけたかった。。。
-参考：http://ekzemplaro.org/data_base/doc/web_server/nginx/</div>
-    <div class="tags">
-      5 Jan 2015
-      
-        
-          <a href="http://tech.k-zak.com/tags/fastcgi/">#FastCGI</a>
-        
-          <a href="http://tech.k-zak.com/tags/nginx/">#nginx</a>
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
         
           <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
         

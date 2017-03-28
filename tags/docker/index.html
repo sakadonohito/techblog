@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>Posts</title>
+  <title>Docker</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -139,7 +139,7 @@
 
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/04/27/reset-postgresql">あばばば- PostgreSQL編</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/28/docker-reinstall">docker reinstall</a></div>
     
       <div class="categories">
         
@@ -147,57 +147,17 @@
         
       </div>
      
-    <div class="description">機能PostgreSQLのユーザー作ったり消したりDBやテーブル作成したりしていたら、
- 急に接続出来なくなった(泣     仕方ないので一旦削除していれ直しを図った訳ですが、これがなかなか上手く行かない。     で、ちゃんと削除するためのメモとなった訳です。     １、/ライブラリの中にいるから削除しましょう   ライブラリの中にPostgreSQLさんがいますので削除します。   アンインストーラを使って削除した時に、アクセス権が無いと残ってしまうフォルダが   あるかもしれません。     そんな時は、手動で消しましょう。とにかくライブラリの中からPostgreSQLを抹殺します。     ２、アプリケーションフォルダの中もきれいにしましょう。   手動で削除     ３、入れ直し   ちょっと不安なので、当分の間はDLしたPostgreSQLのインストーラは消さずに   もっていようと思います。おーコワ     ※蛇足、前回、ApacheとPHPとphpPgAdminを入れていましたが、今回は入れませんでした。     ※今回の原因はユーザー作成した後のパスワード設定した時にヘマしたようです。   別ユーザー作った後に、デフォルトのpostgresのパスワード変えてしまったというorz  </div>
+    <div class="description">Dockerを再インストールした Dockerが全然触らないうちにどんどん進化していってしまったので、一旦アンインストールして、入れ直した。
+環境はmacOS 10.11 えるかぴたん
+やったこと  docker-machine(boot2docker)の中身を全て削除  docker-machine rm defaultとか  docker-machineを完全削除するらしいツールを使って削除実行 Virtualboxを確認して環境が残っていないか確認 .bash_profileに記述していた環境変数設定を削除 homeディレクトリ直下の.dockerみたいな隠し領域も削除 公式から改めてdocker for mac をダウンロードしてインストール ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置  ハマったこと 単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対してdocker -vとかやってエラーを出してた。
+ターミナルを再起動して解決
+ここまで 今日はここまで。
+今後、先送りしてたswarmモードとやらを試したりしたい。</div>
     <div class="tags">
-      27 Apr 2010
+      28 Mar 2017
       
         
-          <a href="http://tech.k-zak.com/tags/postgresql/">#PostgreSQL</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/04/26/mac-install-postgresql">MacにPostgreSQLを入れてみた</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。
-   参考：Mac OS XでPostgreSQLを使ってみよう     基本これの通りに進めます。リンクにある通り、Mac用のインストーラーを使って簡単に   入れる事が出来ます。     インストール後、スタックビルダなるものでphppgadminを入れるに際し、既にXAMPPの中に   PHPもApacheも入っているのに改めてApacheとPHPを入れさせられたのにはとっと不安。   JDBCドライバだけにしておけば良かったかしら？     とりあえず、上記のリンクからインストール、shellで簡単に操作、phpPgAdminで簡単に操作   までをざっくり出来ます。     インストール後の中身を見てみると、pgAdmin?なんてのがありますね。もしかしてphpPgAdmin   いらなかった？     いずれにしろ現在自分のMac内でApacheとPHPが２つ存在してしまっているので、   今度掃除しよう。  </div>
-    <div class="tags">
-      26 Apr 2010
-      
-        
-          <a href="http://tech.k-zak.com/tags/mac/">#mac</a>
-        
-          <a href="http://tech.k-zak.com/tags/postgresql/">#PostgreSQL</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/04/25/first-mt">MT入れてみた</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような
- 目的なら、無料のようなので、何事も経験経験。Web屋じゃないのでもしかしたら   一生、仕事で触れる事無いかもしれないけど、ふにゃふにゃやってみる。     １、ダウンロード   MovableTypeのサイト行ってダウンロード：http://www.sixapart.jp/movabletype/     ２、ここの手順にそって設定：http://nsf.jp/movabletype/movabletype.html     終わり。     え？   そうですね、前提条件として１、レンタルサーバー借りてるor自分で持ってる。   ２、MySQL5.x入ってる。３、メール使える。４、FTPアプリ持ってる。   あたりが必要です。     自分はサーバー→さくらのレンタル、MySQL5.xおけ！Perl5.xおけ！メールおけ！   FTPはWinにFFFTPが入ってたので、それを使った。     FTPアプリの代わりとして、Firefoxのアドオンてのもありますじぇ：https://addons.mozilla.org/ja/firefox/addon/684     んで、MTが入って使えるようになったので、特に何の設定もせずとりあえず記事１号を   これにしました。  </div>
-    <div class="tags">
-      25 Apr 2010
-      
-        
-          <a href="http://tech.k-zak.com/tags/movabletype/">#MovableType</a>
+          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
         
        
     </div>
@@ -208,7 +168,7 @@
 
 <paper-item>
   
-    <a href="http://tech.k-zak.com/post/page/8/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <paper-fab disabled icon="chevron-left"></paper-fab>
   
     <div class="flex"></div>
   

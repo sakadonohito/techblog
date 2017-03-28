@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tech.k-zak.com/2017/03/28/docker-reinstall</loc>
+    <lastmod>2017-03-28T23:57:46+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin</loc>
     <lastmod>2017-03-27T23:36:40+09:00</lastmod>
   </url>
@@ -494,6 +499,12 @@
   </url>
   
   <url>
+    <loc>http://tech.k-zak.com/tags/docker/</loc>
+    <lastmod>2017-03-28T23:57:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://tech.k-zak.com/tags/ec2/</loc>
     <lastmod>2014-09-07T17:28:17+00:00</lastmod>
     <priority>0</priority>
@@ -687,7 +698,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/post/</loc>
-    <lastmod>2017-03-27T23:36:40+09:00</lastmod>
+    <lastmod>2017-03-28T23:57:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -729,7 +740,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/categories/setting-construction/</loc>
-    <lastmod>2017-03-20T18:26:58+09:00</lastmod>
+    <lastmod>2017-03-28T23:57:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -800,7 +811,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/</loc>
-    <lastmod>2017-03-27T23:36:40+09:00</lastmod>
+    <lastmod>2017-03-28T23:57:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
