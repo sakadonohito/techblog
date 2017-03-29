@@ -139,6 +139,30 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/08/02/spec-php5.5">PHPあべし！</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">最近PHP触ってて「あべし！」ってなった事。
+PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。
+愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。</div>
+    <div class="tags">
+      2 Aug 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/fuelphp/">#FuelPHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/08/02/spec-js">低レベルプログラマだからJavaScriptで知らなかった事</a></div>
     
       <div class="categories">
@@ -418,28 +442,6 @@ PHPでは、
           <a href="http://tech.k-zak.com/tags/python/">#Python</a>
         
           <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/08/square-root">平方根ろじく</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">平方根で最も少ない桁数で0から9までの数字が揃うのは何？
-Pythonでチャレンジ
-#!usr/bin/python #--*-- coding: utf-8 --*-- import math from decimal import * def change_list(num): return list(str(num).replace('.','')) def check_num10(num_list): #num_list max length is 28 (default Decimal) s = set() i = 0 for x in num_list: s.add(x) i += 1 if len(s) == 10: return i #set length shorter than 10 return False return False if __name__ == '__main__': #上限100万でLoop max_loop = 1000000 k = False #桁数 i = False #数値 for x in range(0,max_loop): result = check_num10(change_list(Decimal(x).</div>
-    <div class="tags">
-      8 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
         
        
     </div>

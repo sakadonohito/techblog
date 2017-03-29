@@ -6,8 +6,52 @@
     <description>Recent content on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 28 Mar 2017 23:57:46 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 29 Mar 2017 22:37:07 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hexo etc</title>
+      <link>http://tech.k-zak.com/2017/03/29/hexo-etc</link>
+      <pubDate>Wed, 29 Mar 2017 22:37:07 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/29/hexo-etc</guid>
+      <description>
+
+&lt;h1 id=&#34;勉強の進捗とhexoの改修&#34;&gt;勉強の進捗とHexoの改修&lt;/h1&gt;
+
+&lt;p&gt;いろいろいっぱいいっぱいで諦めたことと、作業したこと。&lt;/p&gt;
+
+&lt;h2 id=&#34;スプリントの進捗&#34;&gt;スプリントの進捗&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mackerelのプラグイン試すとか諦めて、3月までの課題終了。&lt;/li&gt;
+&lt;li&gt;Docker学習、3月までの課題終了。Swarmとか諦めた。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;時間に余裕ができたらまた集中して取り組む。&lt;/p&gt;
+
+&lt;h2 id=&#34;hexoのレイアウト改修&#34;&gt;Hexoのレイアウト改修&lt;/h2&gt;
+
+&lt;p&gt;TOPの画像がサイトタイトルを隠しちゃう感じだったのでCSSを変えるとかしようと考えてた。&lt;/p&gt;
+
+&lt;h3 id=&#34;行ったこと&#34;&gt;行ったこと&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;画像を変更。ブログテーマに幾分合ってそうなものに変えたつもり。&lt;/li&gt;
+&lt;li&gt;画像をちょっと暗めにしたかったので少しCSS変更。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;いい感じになった。&lt;/p&gt;
+
+&lt;h3 id=&#34;やらなかったこと&#34;&gt;やらなかったこと&lt;/h3&gt;
+
+&lt;p&gt;全体的な直しをしようか迷ったけど、要件を十分果たしていると判断して何もしないことにした。&lt;/p&gt;
+
+&lt;p&gt;ファイル名、URLパス、記事タイトルが同じじゃないといけないのがちょっとキモい。&lt;/p&gt;
+
+&lt;p&gt;そんな感じ。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>docker reinstall</title>
@@ -830,52 +874,6 @@ themeディレクトリがなかったら作ってその中で&lt;code&gt;git cl
 &lt;h2 id=&#34;vpsサーバーの設定やhugoについて&#34;&gt;VPSサーバーの設定やHugoについて&lt;/h2&gt;
 
 &lt;p&gt;後日、それぞれ別の記事にします。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>自己紹介</title>
-      <link>http://tech.k-zak.com/author/</link>
-      <pubDate>Sat, 18 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/author/</guid>
-      <description>
-
-&lt;p&gt;いろいろな作業メモ、備忘録です。&lt;/p&gt;
-
-&lt;p&gt;2017−02−18時点のスキルセトッ(レベルに差はあり)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;FileMaker&lt;/li&gt;
-&lt;li&gt;Windows Server&lt;/li&gt;
-&lt;li&gt;Powershell&lt;/li&gt;
-&lt;li&gt;shell&lt;/li&gt;
-&lt;li&gt;MySQL&lt;/li&gt;
-&lt;li&gt;Ubuntu&lt;/li&gt;
-&lt;li&gt;Ansible&lt;/li&gt;
-&lt;li&gt;Docker&lt;/li&gt;
-&lt;li&gt;PHP&lt;/li&gt;
-&lt;li&gt;JavaScript&lt;/li&gt;
-&lt;li&gt;Python&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;カテゴリの区分&#34;&gt;カテゴリの区分&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;構築・設定 -&amp;gt; 何かをインストールしたり設定したりした時の備忘録&lt;/li&gt;
-&lt;li&gt;勉強日誌 -&amp;gt; 何かの勉強した時の備忘録&lt;/li&gt;
-&lt;li&gt;トラブル -&amp;gt; トラブルルシュートした時の備忘録&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;タグの区分&#34;&gt;タグの区分&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;プログラミング言語の名称 -&amp;gt; 言語の勉強とかした時につけます。&lt;/li&gt;
-&lt;li&gt;フレームワークの名称 -&amp;gt; フレームワーク固有の事についての記事につけます。&lt;/li&gt;
-&lt;li&gt;OSの名称 -&amp;gt; OSの設定についての記事につけます。&lt;/li&gt;
-&lt;li&gt;ツールの名称 -&amp;gt; ツールについての記事につけます。&lt;/li&gt;
-&lt;li&gt;購入・所持している書籍についての記事につけます。&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

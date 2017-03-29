@@ -139,6 +139,65 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2015/02/08/ansible-ssh">AnsibleのSSH設定について</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+という事で調べた。
+結論としては、varsファイルに
+・ansible_ssh_user
+・ansible_ssh_pass
+・ansible_sudo_pass
+の3つを書いておきましょう。でした。
+最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
+例えばhostsファイルに
+`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+という事で調べた。
+結論としては、varsファイルに
+・ansible_ssh_user
+・ansible_ssh_pass
+・ansible_sudo_pass
+の3つを書いておきましょう。でした。
+最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
+例えばhostsファイルに
+`
+とか書いてグループ名が「dev」の場合に
+-playbook
+|
+|&#8211;dev.yml
+|
+|&#8211;group_vars
+| |
+| |&#8211;dev.yml
+|
+|&#8211;roles\※内容略
+|
+|&#8211;site.yml
+みたいな感じで書く。
+group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより&#8211;ask-passの指定が必要なくなった。
+問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。
+なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。
+ansible-playbookを実行する時に復号のために&#8211;vault-passの引数とそのファイルパスを渡さないといけないってのも&#8211;ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。
+hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー
+って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。</div>
+    <div class="tags">
+      8 Feb 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2015/02/01/php-mail">Ubuntu14.04 でphpでメール受信とか</a></div>
     
       <div class="categories">
@@ -505,30 +564,6 @@ Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合�
           <a href="http://tech.k-zak.com/tags/vagrant/">#Vagrant</a>
         
           <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/08/02/spec-php5.5">PHPあべし！</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">最近PHP触ってて「あべし！」ってなった事。
-PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。
-愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。</div>
-    <div class="tags">
-      2 Aug 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/fuelphp/">#FuelPHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
         
        
     </div>

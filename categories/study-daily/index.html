@@ -139,6 +139,34 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/29/hexo-etc">Hexo etc</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">勉強の進捗とHexoの改修 いろいろいっぱいいっぱいで諦めたことと、作業したこと。
+スプリントの進捗  Mackerelのプラグイン試すとか諦めて、3月までの課題終了。 Docker学習、3月までの課題終了。Swarmとか諦めた。  時間に余裕ができたらまた集中して取り組む。
+Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃう感じだったのでCSSを変えるとかしようと考えてた。
+行ったこと  画像を変更。ブログテーマに幾分合ってそうなものに変えたつもり。 画像をちょっと暗めにしたかったので少しCSS変更。  いい感じになった。
+やらなかったこと 全体的な直しをしようか迷ったけど、要件を十分果たしていると判断して何もしないことにした。
+ファイル名、URLパス、記事タイトルが同じじゃないといけないのがちょっとキモい。
+そんな感じ。</div>
+    <div class="tags">
+      29 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/hexo/">#Hexo</a>
+        
+          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin">challenge mackerel plugin</a></div>
     
       <div class="categories">
@@ -417,65 +445,6 @@ more_set_headers &#8216;Content-Type: application/xml; charset=UTF8&#8217;;
           <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
         
           <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2015/02/08/ansible-ssh">AnsibleのSSH設定について</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
-という事で調べた。
-結論としては、varsファイルに
-・ansible_ssh_user
-・ansible_ssh_pass
-・ansible_sudo_pass
-の3つを書いておきましょう。でした。
-最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
-例えばhostsファイルに
-`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
-という事で調べた。
-結論としては、varsファイルに
-・ansible_ssh_user
-・ansible_ssh_pass
-・ansible_sudo_pass
-の3つを書いておきましょう。でした。
-最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
-例えばhostsファイルに
-`
-とか書いてグループ名が「dev」の場合に
--playbook
-|
-|&#8211;dev.yml
-|
-|&#8211;group_vars
-| |
-| |&#8211;dev.yml
-|
-|&#8211;roles\※内容略
-|
-|&#8211;site.yml
-みたいな感じで書く。
-group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより&#8211;ask-passの指定が必要なくなった。
-問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。
-なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。
-ansible-playbookを実行する時に復号のために&#8211;vault-passの引数とそのファイルパスを渡さないといけないってのも&#8211;ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。
-hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー
-って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。</div>
-    <div class="tags">
-      8 Feb 2015
-      
-        
-          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
         
        
     </div>

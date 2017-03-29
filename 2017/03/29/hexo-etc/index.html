@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>docker reinstall</title>
+  <title>Hexo etc</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -138,53 +138,55 @@
 <div class="content">
 
   <div class="article">
-    <div class="title">docker reinstall</div>
+    <div class="title">Hexo etc</div>
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      
     <div class="description">
 
-<h1 id="dockerを再インストールした">Dockerを再インストールした</h1>
+<h1 id="勉強の進捗とhexoの改修">勉強の進捗とHexoの改修</h1>
 
-<p>Dockerが全然触らないうちにどんどん進化していってしまったので、一旦アンインストールして、入れ直した。</p>
+<p>いろいろいっぱいいっぱいで諦めたことと、作業したこと。</p>
 
-<p>環境はmacOS 10.11 えるかぴたん</p>
-
-<h2 id="やったこと">やったこと</h2>
-
-<ol>
-<li>docker-machine(boot2docker)の中身を全て削除
+<h2 id="スプリントの進捗">スプリントの進捗</h2>
 
 <ul>
-<li><code>docker-machine rm default</code>とか</li>
-</ul></li>
-<li>docker-machineを完全削除するらしいツールを使って削除実行</li>
-<li>Virtualboxを確認して環境が残っていないか確認</li>
-<li>.bash_profileに記述していた環境変数設定を削除</li>
-<li>homeディレクトリ直下の.dockerみたいな隠し領域も削除</li>
-<li>公式から改めてdocker for mac をダウンロードしてインストール</li>
-<li>ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置</li>
-</ol>
+<li>Mackerelのプラグイン試すとか諦めて、3月までの課題終了。</li>
+<li>Docker学習、3月までの課題終了。Swarmとか諦めた。</li>
+</ul>
 
-<h3 id="ハマったこと">ハマったこと</h3>
+<p>時間に余裕ができたらまた集中して取り組む。</p>
 
-<p>単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対して<code>docker -v</code>とかやってエラーを出してた。</p>
+<h2 id="hexoのレイアウト改修">Hexoのレイアウト改修</h2>
 
-<p>ターミナルを再起動して解決</p>
+<p>TOPの画像がサイトタイトルを隠しちゃう感じだったのでCSSを変えるとかしようと考えてた。</p>
 
-<h2 id="ここまで">ここまで</h2>
+<h3 id="行ったこと">行ったこと</h3>
 
-<p>今日はここまで。</p>
+<ul>
+<li>画像を変更。ブログテーマに幾分合ってそうなものに変えたつもり。</li>
+<li>画像をちょっと暗めにしたかったので少しCSS変更。</li>
+</ul>
 
-<p>今後、先送りしてたswarmモードとやらを試したりしたい。</p>
+<p>いい感じになった。</p>
+
+<h3 id="やらなかったこと">やらなかったこと</h3>
+
+<p>全体的な直しをしようか迷ったけど、要件を十分果たしていると判断して何もしないことにした。</p>
+
+<p>ファイル名、URLパス、記事タイトルが同じじゃないといけないのがちょっとキモい。</p>
+
+<p>そんな感じ。</p>
 </div>
     <div class="tags">
-      28 Mar 2017
+      29 Mar 2017
       
+        
+          <a href="http://tech.k-zak.com/tags/hexo/">#Hexo</a>
         
           <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
         
@@ -197,11 +199,11 @@
 
 <paper-item>
   
-    <a href="http://tech.k-zak.com/2017/03/29/hexo-etc"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <paper-fab disabled icon="chevron-left"></paper-fab>
   
     <div class="flex"></div>
   
-    <a href="http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin"><paper-fab icon="chevron-right"></paper-fab></a>
+    <a href="http://tech.k-zak.com/2017/03/28/docker-reinstall"><paper-fab icon="chevron-right"></paper-fab></a>
   
 </paper-item>
 

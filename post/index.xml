@@ -6,8 +6,52 @@
     <description>Recent content in Posts on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 28 Mar 2017 23:57:46 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 29 Mar 2017 22:37:07 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hexo etc</title>
+      <link>http://tech.k-zak.com/2017/03/29/hexo-etc</link>
+      <pubDate>Wed, 29 Mar 2017 22:37:07 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/29/hexo-etc</guid>
+      <description>
+
+&lt;h1 id=&#34;勉強の進捗とhexoの改修&#34;&gt;勉強の進捗とHexoの改修&lt;/h1&gt;
+
+&lt;p&gt;いろいろいっぱいいっぱいで諦めたことと、作業したこと。&lt;/p&gt;
+
+&lt;h2 id=&#34;スプリントの進捗&#34;&gt;スプリントの進捗&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mackerelのプラグイン試すとか諦めて、3月までの課題終了。&lt;/li&gt;
+&lt;li&gt;Docker学習、3月までの課題終了。Swarmとか諦めた。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;時間に余裕ができたらまた集中して取り組む。&lt;/p&gt;
+
+&lt;h2 id=&#34;hexoのレイアウト改修&#34;&gt;Hexoのレイアウト改修&lt;/h2&gt;
+
+&lt;p&gt;TOPの画像がサイトタイトルを隠しちゃう感じだったのでCSSを変えるとかしようと考えてた。&lt;/p&gt;
+
+&lt;h3 id=&#34;行ったこと&#34;&gt;行ったこと&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;画像を変更。ブログテーマに幾分合ってそうなものに変えたつもり。&lt;/li&gt;
+&lt;li&gt;画像をちょっと暗めにしたかったので少しCSS変更。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;いい感じになった。&lt;/p&gt;
+
+&lt;h3 id=&#34;やらなかったこと&#34;&gt;やらなかったこと&lt;/h3&gt;
+
+&lt;p&gt;全体的な直しをしようか迷ったけど、要件を十分果たしていると判断して何もしないことにした。&lt;/p&gt;
+
+&lt;p&gt;ファイル名、URLパス、記事タイトルが同じじゃないといけないのがちょっとキモい。&lt;/p&gt;
+
+&lt;p&gt;そんな感じ。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>docker reinstall</title>
@@ -830,42 +874,6 @@ themeディレクトリがなかったら作ってその中で&lt;code&gt;git cl
 &lt;h2 id=&#34;vpsサーバーの設定やhugoについて&#34;&gt;VPSサーバーの設定やHugoについて&lt;/h2&gt;
 
 &lt;p&gt;後日、それぞれ別の記事にします。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>嘘でしょう。。。</title>
-      <link>http://tech.k-zak.com/2015/03/08/ubuntu-wifi</link>
-      <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2015/03/08/ubuntu-wifi</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://kazunoko.sakura.ne.jp/wordpress/wp-content/uploads/2009/10/chanmio.jpg&#34; rel=&#34;attachment wp-att-193&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-193&#34; src=&#34;http://kazunoko.sakura.ne.jp/wordpress/wp-content/uploads/2009/10/chanmio.jpg&#34; alt=&#34;chanmio&#34; width=&#34;128&#34; height=&#34;128&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。&lt;/p&gt;
-
-&lt;p&gt;実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。&lt;/p&gt;
-
-&lt;h3 id=&#34;悩まされていた問題&#34;&gt;悩まされていた問題&lt;/h3&gt;
-
-&lt;p&gt;会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。&lt;/p&gt;
-
-&lt;p&gt;VMのネットワーク設定を「Macと共有」の時は問題なくて「自動検出」にするとVMのUbuntuのIPが正しく設定されない。&lt;/p&gt;
-
-&lt;h3 id=&#34;ひとまず解決&#34;&gt;ひとまず解決？&lt;/h3&gt;
-
-&lt;p&gt;前提として、このUbuntuはDesktop 14.04LTSです。なのでUbuntuServerの場合は違うかも。&lt;/p&gt;
-
-&lt;p&gt;/etc/NetworkManager/system-connections/ 配下のネットワークの設定ファイルのファイル名に日本語(マルチバイト文字)が含まれていたので、ASCII文字のみに変更。&lt;/p&gt;
-
-&lt;p&gt;/etc/NetworkManager/system-connections/ のファイル名を変更したものを開く&lt;/p&gt;
-
-&lt;p&gt;この設定ファイルの中の「connection」にあるidの設定を変更したファイル名に合わせる。&lt;/p&gt;
-
-&lt;p&gt;これだけでネットワークつながるようになった。というかipが正しくふられるようになった。&lt;/p&gt;
-
-&lt;p&gt;まさかのマルチバイト文字ファイル名問題？&lt;/p&gt;
 </description>
     </item>
     

@@ -9,6 +9,50 @@
     <atom:link href="http://tech.k-zak.com/categories/study-daily/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Hexo etc</title>
+      <link>http://tech.k-zak.com/2017/03/29/hexo-etc</link>
+      <pubDate>Wed, 29 Mar 2017 22:37:07 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/29/hexo-etc</guid>
+      <description>
+
+&lt;h1 id=&#34;勉強の進捗とhexoの改修&#34;&gt;勉強の進捗とHexoの改修&lt;/h1&gt;
+
+&lt;p&gt;いろいろいっぱいいっぱいで諦めたことと、作業したこと。&lt;/p&gt;
+
+&lt;h2 id=&#34;スプリントの進捗&#34;&gt;スプリントの進捗&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mackerelのプラグイン試すとか諦めて、3月までの課題終了。&lt;/li&gt;
+&lt;li&gt;Docker学習、3月までの課題終了。Swarmとか諦めた。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;時間に余裕ができたらまた集中して取り組む。&lt;/p&gt;
+
+&lt;h2 id=&#34;hexoのレイアウト改修&#34;&gt;Hexoのレイアウト改修&lt;/h2&gt;
+
+&lt;p&gt;TOPの画像がサイトタイトルを隠しちゃう感じだったのでCSSを変えるとかしようと考えてた。&lt;/p&gt;
+
+&lt;h3 id=&#34;行ったこと&#34;&gt;行ったこと&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;画像を変更。ブログテーマに幾分合ってそうなものに変えたつもり。&lt;/li&gt;
+&lt;li&gt;画像をちょっと暗めにしたかったので少しCSS変更。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;いい感じになった。&lt;/p&gt;
+
+&lt;h3 id=&#34;やらなかったこと&#34;&gt;やらなかったこと&lt;/h3&gt;
+
+&lt;p&gt;全体的な直しをしようか迷ったけど、要件を十分果たしていると判断して何もしないことにした。&lt;/p&gt;
+
+&lt;p&gt;ファイル名、URLパス、記事タイトルが同じじゃないといけないのがちょっとキモい。&lt;/p&gt;
+
+&lt;p&gt;そんな感じ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>challenge mackerel plugin</title>
       <link>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin</link>
       <pubDate>Mon, 27 Mar 2017 23:36:40 +0900</pubDate>
@@ -768,32 +812,6 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
 &lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;
 
 &lt;p&gt;Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>2014年を振り返る JavaScript編</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-js</link>
-      <pubDate>Tue, 30 Dec 2014 09:34:05 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-js</guid>
-      <description>&lt;p&gt;今年を振り返ってみる。クライアントサイド、特にJavaScriptについて&lt;/p&gt;
-
-&lt;p&gt;JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。&lt;/p&gt;
-
-&lt;p&gt;結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。&lt;/p&gt;
-
-&lt;p&gt;document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。&lt;/p&gt;
-
-&lt;p&gt;jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。&lt;/p&gt;
-
-&lt;p&gt;ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。&lt;/p&gt;
-
-&lt;p&gt;ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。&lt;/p&gt;
-
-&lt;p&gt;もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。&lt;/p&gt;
-
-&lt;p&gt;CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。&lt;/p&gt;
 </description>
     </item>
     

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tech.k-zak.com/2017/03/29/hexo-etc</loc>
+    <lastmod>2017-03-29T22:37:07+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tech.k-zak.com/2017/03/28/docker-reinstall</loc>
     <lastmod>2017-03-28T23:57:46+09:00</lastmod>
   </url>
@@ -500,7 +505,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/tags/docker/</loc>
-    <lastmod>2017-03-28T23:57:46+09:00</lastmod>
+    <lastmod>2017-03-29T22:37:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -554,7 +559,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/tags/hexo/</loc>
-    <lastmod>2017-02-19T22:21:50+09:00</lastmod>
+    <lastmod>2017-03-29T22:37:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -698,7 +703,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/post/</loc>
-    <lastmod>2017-03-28T23:57:46+09:00</lastmod>
+    <lastmod>2017-03-29T22:37:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -758,7 +763,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/categories/study-daily/</loc>
-    <lastmod>2017-03-27T23:36:40+09:00</lastmod>
+    <lastmod>2017-03-29T22:37:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -811,7 +816,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/</loc>
-    <lastmod>2017-03-28T23:57:46+09:00</lastmod>
+    <lastmod>2017-03-29T22:37:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   

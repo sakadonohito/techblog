@@ -140,6 +140,30 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/02/20/first-pelican">Pelicanを試す</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">Python製の静的サイトジェネレーターPelicanを試す Hugo,Hexo,Jekyllと試してきて、せっかくなのでPython製のものも試そうとPelicanを試した。
+インストール mkdir &lt;&lt;blog&gt;&gt; cd &lt;&lt;blog&gt;&gt; pip install pelican Markdown pelican-quickstart  なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。
+記事を書く 記事はcontent以下にreStructuredTextもしくはMarkdownで書きます。 content以下にディレクトリを配置するとそのディレクトリ名がカテゴリ名扱いされるらしい。当分はいいや。 もちろん、カテゴリはテキストファイルないのヘッダー？に記述できますので、カテゴリが必要だからといってディレクトリでわかなければいけないわけではありません。
+pelican content -s pelicanconf.py  でoutputディレクトリに静的ファイルが生成されます。
+簡単ですな。</div>
+    <div class="tags">
+      20 Feb 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/pelican/">#Pelican</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-jekyll">Jekyllを試す</a></div>
     
       <div class="categories">
@@ -469,50 +493,6 @@ gmailの場合は/ssl/novalidation-certみたいのつける</div>
           <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
         
           <a href="http://tech.k-zak.com/tags/postfix/">#postfix</a>
-        
-          <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2015/01/05/perl-cgi">Ubuntu14.04 LTS でNginx FasCGI Perl</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
-最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
-502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
-結局、
-sudo apt-get install fcgiwrap  ※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも
-/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで
-sudo sysv-rc-conf on fcgiwrap sudo service fcgiwrap start  でFastCGIが動くようになる。
-最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、
-参考：http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/
-これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。
-Nginxの設定はlocationディレクティブだけ抜粋すると
-#拡張子が.plで終わるリクエストの場合 location ~ \.pl$ { try_files $uri = 404; gzip off; #インストールしたfcgiwrapのソケットファイルのパス fastcgi_pass unix:/var/run/fcgiwrap.socket; fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; #/etc/nginx/fastcgi_paramsの内容を読み込む。 include fastcgi_params; }  で
-sudo service nginx restart  これで適用にperl書いて(シェバンはもちろん#!/usr/bin/env perl ですよ)試したら動きました。
-自分はplenvを使っているのですが、システムのperl読み込まれてライブラリねーぞゴルァなった事があった。謎。
-plenvの場合、require syscall.ph とかあると駄目っぽい？
-この記事書いてる時に見つけた他の方のWeb。先にここを見つけたかった。。。
-参考：http://ekzemplaro.org/data_base/doc/web_server/nginx/</div>
-    <div class="tags">
-      5 Jan 2015
-      
-        
-          <a href="http://tech.k-zak.com/tags/fastcgi/">#FastCGI</a>
-        
-          <a href="http://tech.k-zak.com/tags/nginx/">#nginx</a>
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
         
           <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
         
