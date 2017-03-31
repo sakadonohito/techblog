@@ -139,6 +139,51 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/31/jaws-ug-container">jaws-ug container</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">JAWS-UG コンテナ支部 の勉強会に行ってきた 行ってきた。。
+前佛さんのお話 Dockerは仕様でコンテナが技術っていう話。
+開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。
+Dockerのイメージ・レイヤの概念のおかげで？ベースイメージを共有したり、イメージをコピーするのにも差分レイヤだけコピーするので早いとか。
+他のコンテナ技術との大きな違い 今までに同様の技術はあったが、Dockerが大きく違うのは、DockerHubの存在。
+自分が作ったイメージはもちろん、他人が作ったものも共有(流用)できる。
+docker イメージの Github版。
+注意点 ストレージドライバについては要件を考慮して決めましょう的な話。
+このあたりを読むと理解が深まるのでしょう。
+イメージ、コンテナ、ストレージ・ドライバの理解
+ストレージ・ドライバの選択
+ECS関連のアップデート Windows コンテナ も試せる Windows Server 2016 の AMIもでてるよ。とか。
+ECRについて  フルマネージドDockerレジストリサービス イメージの容量に対して課金 コンテナイメージは自動的に暗号化できる設定がある もちろんIAM使える ECRをCloudTrailで追跡可能 CredentialHelper使ってね  業務上プライベートなDockerイメージを置く場所を作りたい場合なんかいいですね。
+社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた 既存の触りたくないバッチ環境をそのままに、API Gateway、ECS、SQSなんかを活用してバッチ処理環境を改善した話。
+既存のサーバーには何も追加したくない、が、curlは基本的に入っているので処理スタートをcurlから始める。
+API Gateway を通じてリクエストを受け取り、ECS環境でバッチ処理、処理結果をSQSで通知みたいな。
+ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。
+すごい。
+NTTとDocker ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。
+ECSを活用する上での勘所 データについて  なるべくDocker Volumeを使わないで済む設計にする  いつでもインスタンスを捨てられるようにする設計 永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する awslogs ログドライバ便利です。積極的に使っていきましょう。  URLパスの設計  ALBを活用しましょう 関連サービスのエントリポイントとかは環境変数で渡しましょう。  セッションの管理  インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い ElastiCache,Redis,Memcachedを活用しましょう。    環境構築について 書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</div>
+    <div class="tags">
+      31 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
+        
+          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
+        
+          <a href="http://tech.k-zak.com/tags/ecs/">#ECS</a>
+        
+          <a href="http://tech.k-zak.com/tags/jaws-ug/">#JAWS-UG</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/03/29/hexo-etc">Hexo etc</a></div>
     
       <div class="categories">

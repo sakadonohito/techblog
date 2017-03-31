@@ -139,6 +139,51 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/31/jaws-ug-container">jaws-ug container</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">JAWS-UG コンテナ支部 の勉強会に行ってきた 行ってきた。。
+前佛さんのお話 Dockerは仕様でコンテナが技術っていう話。
+開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。
+Dockerのイメージ・レイヤの概念のおかげで？ベースイメージを共有したり、イメージをコピーするのにも差分レイヤだけコピーするので早いとか。
+他のコンテナ技術との大きな違い 今までに同様の技術はあったが、Dockerが大きく違うのは、DockerHubの存在。
+自分が作ったイメージはもちろん、他人が作ったものも共有(流用)できる。
+docker イメージの Github版。
+注意点 ストレージドライバについては要件を考慮して決めましょう的な話。
+このあたりを読むと理解が深まるのでしょう。
+イメージ、コンテナ、ストレージ・ドライバの理解
+ストレージ・ドライバの選択
+ECS関連のアップデート Windows コンテナ も試せる Windows Server 2016 の AMIもでてるよ。とか。
+ECRについて  フルマネージドDockerレジストリサービス イメージの容量に対して課金 コンテナイメージは自動的に暗号化できる設定がある もちろんIAM使える ECRをCloudTrailで追跡可能 CredentialHelper使ってね  業務上プライベートなDockerイメージを置く場所を作りたい場合なんかいいですね。
+社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた 既存の触りたくないバッチ環境をそのままに、API Gateway、ECS、SQSなんかを活用してバッチ処理環境を改善した話。
+既存のサーバーには何も追加したくない、が、curlは基本的に入っているので処理スタートをcurlから始める。
+API Gateway を通じてリクエストを受け取り、ECS環境でバッチ処理、処理結果をSQSで通知みたいな。
+ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。
+すごい。
+NTTとDocker ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。
+ECSを活用する上での勘所 データについて  なるべくDocker Volumeを使わないで済む設計にする  いつでもインスタンスを捨てられるようにする設計 永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する awslogs ログドライバ便利です。積極的に使っていきましょう。  URLパスの設計  ALBを活用しましょう 関連サービスのエントリポイントとかは環境変数で渡しましょう。  セッションの管理  インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い ElastiCache,Redis,Memcachedを活用しましょう。    環境構築について 書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</div>
+    <div class="tags">
+      31 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
+        
+          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
+        
+          <a href="http://tech.k-zak.com/tags/ecs/">#ECS</a>
+        
+          <a href="http://tech.k-zak.com/tags/jaws-ug/">#JAWS-UG</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/03/29/hexo-etc">Hexo etc</a></div>
     
       <div class="categories">
@@ -378,42 +423,6 @@ Githubとの使い分けがなやましいけど、とりあえずはプライ�
       
         
           <a href="http://tech.k-zak.com/tags/complain/">#complain</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/03/20/create-pelican-theme">Pelicanのレイアウト作成</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">Pelicanで使う自分用テーマを作成した 静的サイトジェネレーター用の基本的なブログレイアウトを一つ作っておくと使い回しができると思い、Python製のPelicanから着手することにしてみた。
-結論から言うと、なかなか時間がとれないのもあって、足掛け2ヶ月かかった。
-その1：ベースとなるレイアウトを素組する htmlとCSSのみでできるだけレスポンシブな簡易ブログ用のレイアウトを考えて作った。
-https://github.com/sakadonohito/site-base-theme
-flexboxを中途半端に使っているのと、Pelicanテーマ作り終わってからフィードバックしている部分もある。ホント適当。
-CSSはSCSSからWebpackでビルドしているけど、限りなく必要ないレベル。 EmacsならSCSS保存する時にCSSをビルドしてくれるのでホント不要な構造、しかも作り終わる前にWebpackは2がでちゃってバージョンが古いというオマケつき。 そうです、Webpack使ってるぜアッピルがしたかっただけなのです。
-その2：Pelicanのテーマを作る  ググって出てきたシンプルなテーマをコピーして 作ったベースレイアウトにまるっと取り替えて 変数部分がちゃんと展開されるように調整して パーツをバラす  みたいな感じで作成。
-結局よくりようしたのは公式ドキュメント
-ハマったところ 1. 見本にしたテーマのパーツ毎の役割がよくわからなかった categories.htmlとcategory.htmlってあって、最初複数形のはカテゴリ別の一覧表示で単数系のは1記事のパーツかと思ったら、複数形はカテゴリ名の一覧で単数系が特定のカテゴリでの記事一覧だった。 タグの場合はさらに1記事用パーツレイアウトにはめ込む用の記事に関連づいたタグを横一列に並べるtaglist.htmlなんてのもあって、さらに混乱した。
-2. ビルド失敗した時どこでエラーが発生したのか分からない ビルドのエラーログの出力設定があるのか調べていないだけなんだけど、テンプレート作成している時にビルドエラー発生したけど、どこの編集のせいか分からない(1行文法エラーで失敗したぜ！的なメッセージがでるだけ)のでこまめにビルドして確認しながらじゃないと迷路に迷い込む。
-ショートカットキーのタイポとかで変な場所に意図せず文字を入力してしまっているのに気づかず、ビルドが失敗した時には、身に覚えがなかったので解決に時間がかかった(2分探索みたいにコードを消したり戻したりしながらビルドしてエラー箇所を探した)。
-3. 記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある period_Archives.htmlっていう特定の期間の記事リストを表示するためのパーツの上でarticlesという記事リストオブジェクトは全体じゃなくて、その期間の記事リストオブジェクト。全記事のリストは代わりにall_articlesてのある。じゃぁ常にall_articlesを使えば？ってなるんだけど、TOPとか他の場所だとこのall_articlesは空欄。
-4. 年月毎に記事のカウントを取ったりURL分ける方法の説明がおろそか 結論からいうと、URLについては設定ファイルに
-MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html' 他にも AUTHOR_SAVE_AS とか PAGE_SAVE_AS なんかもあるのよ  とか書いておくと、/2017/03/みたいなパスで2017年3月の記事の一覧ページが生成される。今にして思うと年のフォルダ&amp;月を意味するファイルの組み合わせでよかったんじゃないか説もある。
-年月の記事カウントについては全記事を年でまとめた記事リストの記事リストを作成して「記事リスト」をさらに月でまとめてカウントを取るみたいなことをやる。 これはそんなようなことをするサンプルのテーマがたまたま見つかったから作れたけど見つからなかったらアーカイブのページが断念したと思う。
-こんな感じ
-&lt;section&gt; &lt;p&gt;Archives&lt;/p&gt; {% if all_articles|count %} &lt;ul&gt; {% for year, date_year in all_articles|groupby('date.year')|sort(reverse=NEWEST_FIRST_ARCHIVES) %} {% for month, articles in date_year|groupby('date.month')|sort(reverse=NEWEST_FIRST_ARCHIVES) %} &lt;li&gt;&lt;a href=&quot;/{{ year }}/{{ '%02d' % month }}/&quot;&gt;{{ year }}年{{ month }}月&lt;/a&gt;({{ articles|count }})&lt;/li&gt; {% endfor %} {% endfor %} &lt;/ul&gt; {% elif articles %} &lt;ul&gt; {% for year, date_year in articles|groupby('date.</div>
-    <div class="tags">
-      20 Mar 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/pelican/">#Pelican</a>
         
        
     </div>

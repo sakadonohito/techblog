@@ -139,6 +139,55 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible">Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
+の、前にAWSのS3試したので。
+・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
+・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折
+・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。
+・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。
+Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。
+・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる
+・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。
+・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う
+・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ
+以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事
+・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう
+・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する</div>
+    <div class="tags">
+      2 Aug 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
+        
+          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
+        
+          <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
+        
+          <a href="http://tech.k-zak.com/tags/s3/">#S3</a>
+        
+          <a href="http://tech.k-zak.com/tags/vagrant/">#Vagrant</a>
+        
+          <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/08/02/spec-php5.5">PHPあべし！</a></div>
     
       <div class="categories">
@@ -413,35 +462,6 @@ var fizzbuzz = function(num){ //3の倍数の時はFizz //5の倍数の時はBuz
       
         
           <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/22/pascal-logic">パスカルのなんとか</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">今回は、パスカルの三角定理？みたいなやつ
-PHPでは、
-&lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(',',$arr)."\n"; } ?&gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; my $num = &lt;stdin; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(',',@list)."\n"; } &lt;/stdin Pythonでは、</div>
-    <div class="tags">
-      22 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
         
        
     </div>

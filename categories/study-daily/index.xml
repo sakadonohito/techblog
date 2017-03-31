@@ -9,6 +9,120 @@
     <atom:link href="http://tech.k-zak.com/categories/study-daily/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>jaws-ug container</title>
+      <link>http://tech.k-zak.com/2017/03/31/jaws-ug-container</link>
+      <pubDate>Fri, 31 Mar 2017 18:01:34 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/03/31/jaws-ug-container</guid>
+      <description>
+
+&lt;h1 id=&#34;jaws-ug-コンテナ支部-の勉強会に行ってきた&#34;&gt;JAWS-UG コンテナ支部 の勉強会に行ってきた&lt;/h1&gt;
+
+&lt;p&gt;行ってきた。。&lt;/p&gt;
+
+&lt;h2 id=&#34;前佛さんのお話&#34;&gt;前佛さんのお話&lt;/h2&gt;
+
+&lt;p&gt;Dockerは仕様でコンテナが技術っていう話。&lt;/p&gt;
+
+&lt;p&gt;開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。&lt;/p&gt;
+
+&lt;p&gt;Dockerのイメージ・レイヤの概念のおかげで？ベースイメージを共有したり、イメージをコピーするのにも差分レイヤだけコピーするので早いとか。&lt;/p&gt;
+
+&lt;h3 id=&#34;他のコンテナ技術との大きな違い&#34;&gt;他のコンテナ技術との大きな違い&lt;/h3&gt;
+
+&lt;p&gt;今までに同様の技術はあったが、Dockerが大きく違うのは、DockerHubの存在。&lt;/p&gt;
+
+&lt;p&gt;自分が作ったイメージはもちろん、他人が作ったものも共有(流用)できる。&lt;/p&gt;
+
+&lt;p&gt;docker イメージの Github版。&lt;/p&gt;
+
+&lt;h3 id=&#34;注意点&#34;&gt;注意点&lt;/h3&gt;
+
+&lt;p&gt;ストレージドライバについては要件を考慮して決めましょう的な話。&lt;/p&gt;
+
+&lt;p&gt;このあたりを読むと理解が深まるのでしょう。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://docs.docker.jp/engine/userguide/storagedriver/imagesandcontainers.html&#34;&gt;イメージ、コンテナ、ストレージ・ドライバの理解&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://docs.docker.jp/engine/userguide/storagedriver/selectadriver.html&#34;&gt;ストレージ・ドライバの選択&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ecs関連のアップデート&#34;&gt;ECS関連のアップデート&lt;/h2&gt;
+
+&lt;p&gt;Windows コンテナ も試せる Windows Server 2016 の AMIもでてるよ。とか。&lt;/p&gt;
+
+&lt;h3 id=&#34;ecrについて&#34;&gt;ECRについて&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;フルマネージドDockerレジストリサービス&lt;/li&gt;
+&lt;li&gt;イメージの容量に対して課金&lt;/li&gt;
+&lt;li&gt;コンテナイメージは自動的に暗号化できる設定がある&lt;/li&gt;
+&lt;li&gt;もちろんIAM使える&lt;/li&gt;
+&lt;li&gt;ECRをCloudTrailで追跡可能&lt;/li&gt;
+&lt;li&gt;CredentialHelper使ってね&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;業務上プライベートなDockerイメージを置く場所を作りたい場合なんかいいですね。&lt;/p&gt;
+
+&lt;h2 id=&#34;社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた&#34;&gt;社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた&lt;/h2&gt;
+
+&lt;p&gt;既存の触りたくないバッチ環境をそのままに、API Gateway、ECS、SQSなんかを活用してバッチ処理環境を改善した話。&lt;/p&gt;
+
+&lt;p&gt;既存のサーバーには何も追加したくない、が、curlは基本的に入っているので処理スタートをcurlから始める。&lt;/p&gt;
+
+&lt;p&gt;API Gateway を通じてリクエストを受け取り、ECS環境でバッチ処理、処理結果をSQSで通知みたいな。&lt;/p&gt;
+
+&lt;p&gt;ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。&lt;/p&gt;
+
+&lt;p&gt;すごい。&lt;/p&gt;
+
+&lt;h2 id=&#34;nttとdocker&#34;&gt;NTTとDocker&lt;/h2&gt;
+
+&lt;p&gt;ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。&lt;/p&gt;
+
+&lt;h3 id=&#34;ecsを活用する上での勘所&#34;&gt;ECSを活用する上での勘所&lt;/h3&gt;
+
+&lt;h4 id=&#34;データについて&#34;&gt;データについて&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;なるべくDocker Volumeを使わないで済む設計にする
+
+&lt;ul&gt;
+&lt;li&gt;いつでもインスタンスを捨てられるようにする設計&lt;/li&gt;
+&lt;li&gt;永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する&lt;/li&gt;
+&lt;li&gt;awslogs ログドライバ便利です。積極的に使っていきましょう。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;URLパスの設計
+
+&lt;ul&gt;
+&lt;li&gt;ALBを活用しましょう&lt;/li&gt;
+&lt;li&gt;関連サービスのエントリポイントとかは環境変数で渡しましょう。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;セッションの管理
+
+&lt;ul&gt;
+&lt;li&gt;インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い&lt;/li&gt;
+&lt;li&gt;ElastiCache,Redis,Memcachedを活用しましょう。
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;環境構築について&#34;&gt;環境構築について&lt;/h3&gt;
+
+&lt;p&gt;書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな&lt;/p&gt;
+
+&lt;h2 id=&#34;datadogの人からlt&#34;&gt;Datadogの人からLT&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Dockerはトレンドどしてきてる。&lt;/li&gt;
+&lt;li&gt;コンテナを50−100個以上使うようになるとECS使うところがとても増える&lt;/li&gt;
+&lt;li&gt;一度ECSなどマネージドなオーケストレーション使うようになると、使う前に比べてコンテナが増えるペースが増加？増大？する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;一度キャッシングの味を覚えた人がどんどんキャッシングするようになるのと似てるのかな？&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hexo etc</title>
       <link>http://tech.k-zak.com/2017/03/29/hexo-etc</link>
       <pubDate>Wed, 29 Mar 2017 22:37:07 +0900</pubDate>
@@ -784,34 +898,6 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
 &lt;p&gt;Ansibleは様々な構成管理、できればWindows環境も。&lt;/p&gt;
 
 &lt;p&gt;来年取り組みたいのは、今年やりそこねたメールサーバーやログ設定、それからプロキシ設定かな&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside</link>
-      <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside</guid>
-      <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る&lt;/p&gt;
-
-&lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;
-
-&lt;p&gt;Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。&lt;/p&gt;
-
-&lt;p&gt;Perl,Python,Rubyについては全然触れなくてフラストレーション。&lt;/p&gt;
-
-&lt;p&gt;PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。&lt;/p&gt;
-
-&lt;p&gt;本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。&lt;/p&gt;
-
-&lt;p&gt;家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。&lt;/p&gt;
-
-&lt;p&gt;PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は&lt;/p&gt;
-
-&lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;
-
-&lt;p&gt;Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;
 </description>
     </item>
     

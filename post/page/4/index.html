@@ -139,6 +139,30 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/08/02/spec-php5.5">PHPあべし！</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">最近PHP触ってて「あべし！」ってなった事。
+PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。
+愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。</div>
+    <div class="tags">
+      2 Aug 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/fuelphp/">#FuelPHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/08/02/spec-js">低レベルプログラマだからJavaScriptで知らなかった事</a></div>
     
       <div class="categories">
@@ -420,35 +444,6 @@ var fizzbuzz = function(num){ //3の倍数の時はFizz //5の倍数の時はBuz
       
         
           <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/22/pascal-logic">パスカルのなんとか</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">今回は、パスカルの三角定理？みたいなやつ
-PHPでは、
-&lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(',',$arr)."\n"; } ?&gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; my $num = &lt;stdin; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(',',@list)."\n"; } &lt;/stdin Pythonでは、</div>
-    <div class="tags">
-      22 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
         
        
     </div>
