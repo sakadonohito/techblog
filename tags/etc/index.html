@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>jaws-ug container</title>
+  <title>Etc</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -137,8 +137,9 @@
 
 <div class="content">
 
+
   <div class="article">
-    <div class="title">jaws-ug container</div>
+    <div class="title"><a href="http://tech.k-zak.com/2017/04/02/agile-progress">agile progress</a></div>
     
       <div class="categories">
         
@@ -146,140 +147,44 @@
         
       </div>
      
-    <div class="description">
-
-<h1 id="jaws-ug-コンテナ支部-の勉強会に行ってきた">JAWS-UG コンテナ支部 の勉強会に行ってきた</h1>
-
-<p>行ってきた。。</p>
-
-<h2 id="前佛さんのお話">前佛さんのお話</h2>
-
-<p>Dockerは仕様でコンテナが技術っていう話。</p>
-
-<p>開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。</p>
-
-<p>Dockerのイメージ・レイヤの概念のおかげで？ベースイメージを共有したり、イメージをコピーするのにも差分レイヤだけコピーするので早いとか。</p>
-
-<h3 id="他のコンテナ技術との大きな違い">他のコンテナ技術との大きな違い</h3>
-
-<p>今までに同様の技術はあったが、Dockerが大きく違うのは、DockerHubの存在。</p>
-
-<p>自分が作ったイメージはもちろん、他人が作ったものも共有(流用)できる。</p>
-
-<p>docker イメージの Github版。</p>
-
-<h3 id="注意点">注意点</h3>
-
-<p>ストレージドライバについては要件を考慮して決めましょう的な話。</p>
-
-<p>このあたりを読むと理解が深まるのでしょう。</p>
-
-<p><a href="http://docs.docker.jp/engine/userguide/storagedriver/imagesandcontainers.html">イメージ、コンテナ、ストレージ・ドライバの理解</a></p>
-
-<p><a href="http://docs.docker.jp/engine/userguide/storagedriver/selectadriver.html">ストレージ・ドライバの選択</a></p>
-
-<h2 id="ecs関連のアップデート">ECS関連のアップデート</h2>
-
-<p>Windows コンテナ も試せる Windows Server 2016 の AMIもでてるよ。とか。</p>
-
-<h3 id="ecrについて">ECRについて</h3>
-
-<ul>
-<li>フルマネージドDockerレジストリサービス</li>
-<li>イメージの容量に対して課金</li>
-<li>コンテナイメージは自動的に暗号化できる設定がある</li>
-<li>もちろんIAM使える</li>
-<li>ECRをCloudTrailで追跡可能</li>
-<li>CredentialHelper使ってね</li>
-</ul>
-
-<p>業務上プライベートなDockerイメージを置く場所を作りたい場合なんかいいですね。</p>
-
-<h2 id="社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた">社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた</h2>
-
-<p>既存の触りたくないバッチ環境をそのままに、API Gateway、ECS、SQSなんかを活用してバッチ処理環境を改善した話。</p>
-
-<p>既存のサーバーには何も追加したくない、が、curlは基本的に入っているので処理スタートをcurlから始める。</p>
-
-<p>API Gateway を通じてリクエストを受け取り、ECS環境でバッチ処理、処理結果をSQSで通知みたいな。</p>
-
-<p>ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。</p>
-
-<p>すごい。</p>
-
-<h2 id="nttとdocker">NTTとDocker</h2>
-
-<p>ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。</p>
-
-<h3 id="ecsを活用する上での勘所">ECSを活用する上での勘所</h3>
-
-<h4 id="データについて">データについて</h4>
-
-<ul>
-<li>なるべくDocker Volumeを使わないで済む設計にする
-
-<ul>
-<li>いつでもインスタンスを捨てられるようにする設計</li>
-<li>永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する</li>
-<li>awslogs ログドライバ便利です。積極的に使っていきましょう。</li>
-</ul></li>
-<li>URLパスの設計
-
-<ul>
-<li>ALBを活用しましょう</li>
-<li>関連サービスのエントリポイントとかは環境変数で渡しましょう。</li>
-</ul></li>
-<li>セッションの管理
-
-<ul>
-<li>インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い</li>
-<li>ElastiCache,Redis,Memcachedを活用しましょう。
-<br /></li>
-</ul></li>
-</ul>
-
-<h3 id="環境構築について">環境構築について</h3>
-
-<p>書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</p>
-
-<h2 id="datadogの人からlt">Datadogの人からLT</h2>
-
-<ol>
-<li>Dockerはトレンドどしてきてる。</li>
-<li>コンテナを50−100個以上使うようになるとECS使うところがとても増える</li>
-<li>一度ECSなどマネージドなオーケストレーション使うようになると、使う前に比べてコンテナが増えるペースが増加？増大？する</li>
-</ol>
-
-<p>一度キャッシングの味を覚えた人がどんどんキャッシングするようになるのと似てるのかな？</p>
-</div>
+    <div class="description">進捗 直近の目標に対する結果と進捗
+ ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) Makerel試したい Dockerをある程度使えるようになりたい  ブログや静的サイトのテーマをつくり込みたい Plican,Hexo,Jekyllについては完了。 Jekyllは二度と触りたく無い。
+4月にWordPressのテーマ作成他のテンプレートを作りたい。
+進捗としてはまぁまぁ。
+期限：5月で変わらず
+Makerel試したい 試した。
+カスタムメトリクスは真面目にきちんと時間を取らないとだめっぽいので諦めた。
+とにかく試したので完了とみなす。
+ちなみにトライアル期間終わったのでお金払わないとフル機能試せなくなった。
+Dockerをある程度使えるようになりたい 久しぶりに触った。
+SwarmやKubernetesはハードル高いので今は諦めた。
+ひとまず現状のバージョンのDockerに入れ替えた。
+完了としたい。
+4月の目標 ブログテーマの作成は引き続き行う。
+仕事上の別件が忙しくなるので他の課題を設定せず欲張らず地道にやっていきたい。</div>
     <div class="tags">
-      31 Mar 2017
+      2 Apr 2017
       
         
-          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
-        
-          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
-        
-          <a href="http://tech.k-zak.com/tags/ecs/">#ECS</a>
-        
-          <a href="http://tech.k-zak.com/tags/jaws-ug/">#JAWS-UG</a>
+          <a href="http://tech.k-zak.com/tags/etc/">#etc</a>
         
        
     </div>
-    
   </div>
 
 </div>
 
+
 <paper-item>
   
-    <a href="http://tech.k-zak.com/2017/04/02/think-about-redux"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <paper-fab disabled icon="chevron-left"></paper-fab>
   
     <div class="flex"></div>
   
-    <a href="http://tech.k-zak.com/2017/03/29/hexo-etc"><paper-fab icon="chevron-right"></paper-fab></a>
+    <paper-fab disabled icon="chevron-right"></paper-fab>
   
 </paper-item>
+
 
       <paper-item>
         <div class="copyright"></div>

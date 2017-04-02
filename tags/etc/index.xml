@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Etc on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/etc/index.xml</link>
+    <description>Recent content in Etc on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/etc/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>agile progress</title>
+      <link>http://tech.k-zak.com/2017/04/02/agile-progress</link>
+      <pubDate>Sun, 02 Apr 2017 22:50:25 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/02/agile-progress</guid>
+      <description>
+
+&lt;h1 id=&#34;進捗&#34;&gt;進捗&lt;/h1&gt;
+
+&lt;p&gt;直近の目標に対する結果と進捗&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx)&lt;/li&gt;
+&lt;li&gt;Makerel試したい&lt;/li&gt;
+&lt;li&gt;Dockerをある程度使えるようになりたい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ブログや静的サイトのテーマをつくり込みたい&#34;&gt;ブログや静的サイトのテーマをつくり込みたい&lt;/h2&gt;
+
+&lt;p&gt;Plican,Hexo,Jekyllについては完了。
+Jekyllは二度と触りたく無い。&lt;/p&gt;
+
+&lt;p&gt;4月にWordPressのテーマ作成他のテンプレートを作りたい。&lt;/p&gt;
+
+&lt;p&gt;進捗としてはまぁまぁ。&lt;/p&gt;
+
+&lt;p&gt;期限：5月で変わらず&lt;/p&gt;
+
+&lt;h2 id=&#34;makerel試したい&#34;&gt;Makerel試したい&lt;/h2&gt;
+
+&lt;p&gt;試した。&lt;/p&gt;
+
+&lt;p&gt;カスタムメトリクスは真面目にきちんと時間を取らないとだめっぽいので諦めた。&lt;/p&gt;
+
+&lt;p&gt;とにかく試したので完了とみなす。&lt;/p&gt;
+
+&lt;p&gt;ちなみにトライアル期間終わったのでお金払わないとフル機能試せなくなった。&lt;/p&gt;
+
+&lt;h2 id=&#34;dockerをある程度使えるようになりたい&#34;&gt;Dockerをある程度使えるようになりたい&lt;/h2&gt;
+
+&lt;p&gt;久しぶりに触った。&lt;/p&gt;
+
+&lt;p&gt;SwarmやKubernetesはハードル高いので今は諦めた。&lt;/p&gt;
+
+&lt;p&gt;ひとまず現状のバージョンのDockerに入れ替えた。&lt;/p&gt;
+
+&lt;p&gt;完了としたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;4月の目標&#34;&gt;4月の目標&lt;/h2&gt;
+
+&lt;p&gt;ブログテーマの作成は引き続き行う。&lt;/p&gt;
+
+&lt;p&gt;仕事上の別件が忙しくなるので他の課題を設定せず欲張らず地道にやっていきたい。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -139,6 +139,83 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/06/14/study-cakephp">CakePHPでぐはぁ</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ
+   どうもPHP5.3で動かすと非推奨なコードが沢山あるらしく、そのエラーが   ドバドバでるの。で、その対処法のメモ。絶対また忘れるので。。。     ぐぐったら沢山でてきまする。     cake/libs/configure.phpの自分がDLしたCakePHPだと110行目から少し下あたりにある   $reportingという変数にエラーの定数を格納する箇所で、従来の&#8217;E_ALL&#8217;に非推奨エラーの   定数は除外するよう編集する。こんな感じ   前：$reporting = E_ALL   後：$reporting = E_ALL & ~E_DEPRECATED   場所がよく分からなかったらエラー定数(E_ALL)で検索すればいいよ。  </div>
+    <div class="tags">
+      14 Jun 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/cakephp/">#CakePHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/05/29/web-filemaker">WebフレームワークとFileMaker</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">FileMaker用のブログに書こうかと思ったけどこちらに書く
+ FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの   データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて   ２つの方法があります。   １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する   ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。     で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。     ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。   ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では   載っていない文法のXMLが返ってくる。   具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に   rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが   rowタグの中にあるのではなく、本当に&#8221;col&#8221;という名のタグが入っているからメタタグの   カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー     で、世間ではどうしているのかというと、   a,FileMaker文法を解釈するxsltで開発   b,PHPでライブラリが出ているのでそれを使う(FX.php)   c,Rubyでライブラリが出ているのでそれを使う(rfm)   d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)     ってところ。   実際にはFX.phpを利用するのがメジャーでしょう。。   これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、   案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は   ある程度覚えておいたほうが良いと思う。     ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを   作れさえすれば、言語は何でも良いという事。   なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。   Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど   Perlは自分には無理。そもそもPerlがほぼ分からない。     Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては   Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている   ようなので、将来性は微妙。     Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの   両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを   継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。     PHPのFX.</div>
+    <div class="tags">
+      29 May 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/04/29/emacs-setting">emacs初めてみようか</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている
+ 軽いけどまだまだ完成度の低いKodに代わりテキストエディタを探そうと思い   emacsを試すことにした。     まずはインストール。自分のPCはMacBookPro10.6なのでemacs23.xを入れる事に   最初に入れたのは22.2のアプリタイプのもの、   CarbonEmacs   http://www.apple.com/jp/downloads/macosx/tools/carbonemacs.html   http://homepage.mac.com/zenitani/emacs-j.html     いや、折角なのでちゃんと最新のでやりましょう。と探して次に見つけたのが   Aquamacs2.0 http://sourceforge.jp/magazine/10/05/12/090234   これでもよかったんでしょうけど、普通のemacs23.xを入れようとさらに探し、   MacPortsからインストールの方法を見つける。   http://d.hatena.ne.jp/tomoya/20090210/1234297520     入れるものを間違えたのか、自分のやつだとGUIの設定画面がでない。。。   ざっと、通し見したブログ   「CarbonからCocoaへ&#8211;Snow LeopardでEmacs 23を使う」   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20409879/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410292/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410578/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410802/     最初はマウスでメニューとか開いてコマンド実行、ヘルプのところに   「Emacs Tutorial (choose language)」てのがあるのでそれを実行。言語はお好みで。   中身を見ながら試す。     初めはどうしたら「filename.</div>
+    <div class="tags">
+      29 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2011/04/24/php-frameworks">PHPのフレームワーク試す</a></div>
     
       <div class="categories">
@@ -306,65 +383,6 @@
           <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
         
           <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/07/24/milestone">挫折のまとめ</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">マイルストーンというからには定期的にまとめておかないとね。
-   現在、投げ出している状態のものをピックアップ     １、Macでの各種設定     MySQLとPostgreSQLのPATH登録して、いちいちターミナルでフルPATHいれないでも起動終了できるように   登録したい。     PHPの設定がデフォルトのままなので、phpMyAdminを起動すると、エラー表示が出る、何かのモジュール？   が足りないみたいなのでいつか調べて解決したい。     あんまり興味はないけれど、phpPgAdminも入れてみたいとは考えています。     まぁ、とどのつまり、XAMPPに頼らず、Apache、PHP等の設定が出来るようになりたい。     ２、FMCakeMixについて     これはマイナーなFileMakerでWeb公開するための技術の一つ、XMLWeb公開でCakePHPとFX.phpという   PHPファイル群を使う技術の習得をしたい。   現在、FX.phpのみを使ったWeb公開は仕事でも少しだけ使っているので、時間を見つけて取り組みたい。     ３、CとC++をMacで出来ればEclipseのCDT使って作業できるように設定をキチンと行ないたい。     現在はCをgcc使って単純に「$ gcc filename.c filename.out」程度しか出来ていないので、   拡張子が.outじゃないCやC++で作られた実行ファイルを作れるようになりたいのと、その作業がEclipseで   出来るように設定を行ないたいという事です。     ４、MovableTypeとWordPressをカスタマイズ     現在は単にブログとして使っているだけなので、中身を触ってカスタマイズ出来るようになりたいれす。。   今の所は、何をどうしたいってのが無いので触る動機が無いですが、ひとまずレイアウトを変えるとかでしょうか     ５、テキトーにWebサイト作ってみたい     これは、ドロップシッピングのサイトを一つ作ってみたいってのと、XOOPSやOpenPNEを使ったサイト、   それからこれはローカルで試す程度で十分ですが、EC-CUBEも触ってみたい。。   あと、GAEを使って何か実験してみたいし     ６、CSSのお勉強     上記のいくつかに関わってくるのでCSSをある程度すらすらと書けるようにならないとねー   と、常日頃思っている次第であります。     ７、各種言語の勉強     特にJavaですかね。本を見ながらJSPとServletで簡単なものは作成しました。でも、HibernateやStruts、さらに   SpringFrameWorkを使うとなると、本を読んでも全くもってチンプンカンプン。これを何とかしたい。   特にStruts、まぁバージョンは最新のでいいともいますけど。     Javaはようはフレームワークがある程度使える、仕組みを理解できる。になればいいと思います。   と、同時に欲張りですが、Grails開発、RoR開発、PythonでDjango開発、ScalaをかじるPerlでサイト構築、   各種言語でFileMakerに接続、各種DBの設定と簡単な開発、AIRやJavaFXで簡単なアプリ開発、   Android用の何かとかとか・・・     いやぁ欲張りですねー。頑張ります。。  </div>
-    <div class="tags">
-      24 Jul 2010
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/06/27/study-java">動かないじゃないか</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">はじめての サーブレット＆JSP という本を見ながら
- 写経してますが、サーブレットからJNDIを使ってMySQLに接続する   章がうまくいきません。     MySQLは入れる事自体は非常に簡単、ターミナルで操作する時は   いつもキャラセットをいれてやらにゃいかんので、   phpMyAdminを導入しました。     参考URL   http://planet.mysql.com/entry/?id=23997     直接接続処理を書くと、うまくいくのですが、JNDIを使う、   Server.xml や context.xml にリソースの設定を書いておく方法だと   サーブレットエラー、中を見てるとどうも、名前がみつからないだか   ドライバが使えないだかのエラーががが。。     Webで調べて出てきたような事は一通りやってみたけど   状況が進展しないので、JNDI使わないやり方で先に進む。     以下が参考にしたURL     http://d.hatena.ne.jp/uen1130/touch/20090621/1245563877     http://www.javaroad.jp/opensource/js_tomcat8.htm     http://d.</div>
-    <div class="tags">
-      27 Jun 2010
-      
-        
-          <a href="http://tech.k-zak.com/tags/java/">#Java</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/06/06/study-java">Java分からぬぇ</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">最近はおろそかになってきていてピンチなのですが、
- 連休終了後も「はじめてのJavaフレームワーク」と「はじめてのJSPあんどサーブレット」   なる本を見ながら写経のごときコーディングしてみてます。   JSPやサーブレット単体であればTomcatに乗せて動かすとかだいたい分かったのですが、   StrutsやHibernate、SpringFrameworkを使うとなるともう分かりません。      読めば分かるけど、理解までしていない感じですかね。   なんであんなにXMLを沢山書かないといけないんですか？      とりあえず、DBと直接やり取りするクラスがDAO(Impl)で、そいつに対して   どんなレコードセット(DAOオブジェクト？)を取得するか、書き込みに行くかとか   ロジックを実装するのがBeanクラスって事で合ってるのかしら？      Hibernateだけならなんとかイケそうだったんだけど、そこにStrutsによるディスパッチャと   SpringFrameworkによるDIコンテナがなんちゃらってのが混ざり込んできて、   よっくわっからん！　＞＜      ジュンク堂にSpringFrameworkが理解出来るようになりそうな本を探しに行ったけど   ありませんでした。初心者は手を出すなって分野なのでしょうか？そんな気がします。      Javaについての当面の目標は簡単なWebアプリの作成です。   少なくとも画面遷移をコントロールするStrutsは理解出来るようになりたいです。。  </div>
-    <div class="tags">
-      6 Jun 2010
-      
-        
-          <a href="http://tech.k-zak.com/tags/java/">#Java</a>
         
        
     </div>

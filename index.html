@@ -140,6 +140,119 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/04/02/agile-progress">agile progress</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">進捗 直近の目標に対する結果と進捗
+ ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) Makerel試したい Dockerをある程度使えるようになりたい  ブログや静的サイトのテーマをつくり込みたい Plican,Hexo,Jekyllについては完了。 Jekyllは二度と触りたく無い。
+4月にWordPressのテーマ作成他のテンプレートを作りたい。
+進捗としてはまぁまぁ。
+期限：5月で変わらず
+Makerel試したい 試した。
+カスタムメトリクスは真面目にきちんと時間を取らないとだめっぽいので諦めた。
+とにかく試したので完了とみなす。
+ちなみにトライアル期間終わったのでお金払わないとフル機能試せなくなった。
+Dockerをある程度使えるようになりたい 久しぶりに触った。
+SwarmやKubernetesはハードル高いので今は諦めた。
+ひとまず現状のバージョンのDockerに入れ替えた。
+完了としたい。
+4月の目標 ブログテーマの作成は引き続き行う。
+仕事上の別件が忙しくなるので他の課題を設定せず欲張らず地道にやっていきたい。</div>
+    <div class="tags">
+      2 Apr 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/etc/">#etc</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance">recent frontend circumstance</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">最近のフロントエンド事情はまるで発展途上国の交通事情ですか ES6で書いてES5に変換したいだけなのに、なんなんですか？
+ES6からES5に変換したいだけなんだ Babel Babelを使えば変換できる。。。
+Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。
+考えはいい。それで十分だし、何も難しいことはなさそうだ。
+でもいざ環境を揃えようとすると&hellip;&hellip;
+以下をインストールする。
+ webpack webpack-dev-server babel-core babel-loader babel-preset-es2015  webpack.config.jsと.babelrcにも設定を書く。
+これですむのならいい。
+実行したら文法エラーが出た。
+ babel-preset-stage-0  を追加したら解決した。
+なんだよそれ！最初からbabel-coreだけで対応しろよ！
+他にもbrowserify,babelifyとかいろいろプラグイン的なものがある。
+自分の書いたES6のコードを動くようにするのにいったいどれを入れたら動くのか分からない！
+BabelとWebpack webpackの設定及び.babelrcにも何を変換処理に使うのか書かないとちゃんと変換されない。
+webpackに書いただけじゃダメで.babelrcにも書かないといけない。という認識だけど、多分理解が足りなくて本当は綺麗な書き方があると信じてる。
+まとめ ES6で書いてES5に変換するの辛い。
+早くブラウザが標準でES6対応してほしい。</div>
+    <div class="tags">
+      2 Apr 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/frontend/">#frontend</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#javascript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/04/02/think-about-redux">think about redux</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">Reduxについて感化されたこと Reduxについて不満に思っている部分について考察している記事を見かけた。
+自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。
+理解して納得していること Reactの場合は上からもらうプロパティはPropsで読み取り専用。
+要素ごとにstateという読み書き可能なプロパティを持つ。
+ReduxはFluxアーキテクチャの実装。
+1つの状態を管理するStoreのみ。
+Actionを呼びReducerが状態を更新する。それぞれはプレーンなjavacsriptで書く。
+ここまではいい。とても素敵に感じた。
+受け入れがたいところ javascriptといえば、画面上の何かを触ったらイベントを拾って画面を変えたりとか、非同期で外からデータを持ってくるとかですよね。
+その非同期処理をReduxではどう書くのか、実はActionは処理のオブジェクトを生成するだけだし、Reducerは更新結果の状態を同期処理で作るだけ。
+ビジネスロジック的なものや非同期処理はどこに書くのか？
+基本的には無い。なので後付け？でてきたMiddlewareてのを作る。
+Reduxの思想では、非同期の処理前、処理中、処理結果(成功・失敗)をそれぞれ状態として更新する。
+その処理をMiddlewareに書くのだけれど&hellip;書くのだけれど、これがすごく気持ち悪いと感じていた。
+いろいろ他の書き方が無いのかとか本来自分はどう書きたいのかということを考えると、乖離が大きく、辛い。
+その辺りをReducerの状態を更新する処理のところで非同期処理を呼び出して結果を入れる書き方を考えた方がいらっしゃって、外国のReduxのコミュニティに投稿したら、disられてた。
+Reduxの基本設計に不備があって、それをごまかすためのMiddlewareは許されて、Reducerに非同期処理結果を突っ込むのは違うとかって言うの、どうなの？
+まとめ ReduxのMiddlewareがいまいち気に入らないので、非同期処理も考慮されたFluxアーキテクチャのオレオレ実装を作るしか無いのか。。。</div>
+    <div class="tags">
+      2 Apr 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/redux/">#Redux</a>
+        
+          <a href="http://tech.k-zak.com/tags/frontend/">#frontend</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#javascript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/03/31/jaws-ug-container">jaws-ug container</a></div>
     
       <div class="categories">
@@ -354,76 +467,6 @@ Zabbixサーバーを一台用意する場合との費用比較とか調べて�
       
         
           <a href="http://tech.k-zak.com/tags/mackerel/">#Mackerel</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8">i got caught in utf8</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">UTF-8-MAC にまたしてもやられた 全角のチルダだか波ダッシュだかがmacOSの時とそれ以外で違う文字コードなのか別の文字なのか、とにかく想定外の文字コードのものがバリデーションをすり抜けてきた。
-一つのOS上で禁止文字を羅列して出来たつもりになってたけどUTF−8−MACにはこれからも悩まされるんだろうなー。</div>
-    <div class="tags">
-      23 Mar 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/character/">#character</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/03/22/bitbucket-is-cool">Bitbucket is cool</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">Bitbucketけっこういいかも プライベートリポジトリ欲しくてBitbucket試してみた。
-乾燥 Gitが使えるのでhg clone フォー！(古い)とかやらなくていいし抵抗なくて使えていいですね。
-なんかWikiとか課題(issue)とかも使えるし、どうやらGithubPagesみたいのもできるみたい。 なんかTrelloともなんか連携できるみたいでいいですね。
-使いこなせる自信ないけどPipelineてのもあるらしい。
-Githubとの使い分けがなやましいけど、とりあえずはプライベートにしたいものは基本Bitbucketにしよう。</div>
-    <div class="tags">
-      22 Mar 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/bitgucket/">#Bitgucket</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/03/21/agile-and-sprint-myself">Agile and Sprint myself</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい と、言うことです。
-覚えたいこと、挑戦したいことを目標とするはいいけど、いつまでたっても着手しなかったり遅々として進まなかったりするので優先順位をつけて期限を設けて手中して取り組んでいけば少しは結果が変わってくると信じたい。
-現在の目標  ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) AWSの機能のだいたいを触って感覚を掴んでおきたい Microsoft Azureを触ってAWSとの違いを掴んでおきたい GCC？を以下略 Blumixに挑戦したい FreeBSDを構築したい Alpineを構築して慣れたい Ansibleを一通り触っていろいろできるよういなりたい Dockerをある程度使えるようになりたい IPv6の学習と擬似ネットワークの構築してみたい VPNの設定をGUIじゃなくても設定できるようになりたい VyOS？を試してみたい Shell及びAWKを覚えたい Powershellを覚えたい dot net C#を覚えたい Javaを覚えたい Androidを覚えたい Swiftを覚えたい JavaScriptをもっと使いこなせるようになりmたい Perl6/Perl5を使えるようになりたい PHP7を覚えたい PHPのフレームワーク、Laravelを覚えたい Nginxに組み込むLuaを少し試したい Ruby/Railsを覚えたい Python3をもう少し使えるようになりたい Scalaちょっと覚えたい Lispわかるようになりたい Clojure書けるようになりたい Haskell読めるようになりたい F#ちょっとしたものなら書けるようになりたい ActiveDirectory/OpenDirectoryがわかるようになりたい。 Golang書けるようになりたい Makerel試したい Erlang読み書きできるようになりたい Elasticsearch扱えるようになりたい Neo4j試したい MongoDB試したい DynamoDB試したい Redis扱えるようになりたい  とっても曖昧なものが多い。。
-今もっとも取り組みたいことを多くて3つに絞るなら  ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) Makerel試したい Dockerをある程度使えるようになりたい  以下、打ち消し戦のものは現時点で達成済みのもの
-1. ブログや静的サイトのテーマをつくり込みたい Pelican,Hexo,Jykell,WordPress,Hugo,Sphinxで動かし始めた静的サイトのテーマを一から作ってみたり、採用したテーマをカスタマイズしたりして見やすさやアクセスのしやすさを向上させる。
-目的  各静的サイトジェネレータのテンプレートの書き方を覚える レスポンシブレイアウトを一から作ってみてカラダで覚える GoogleAnalyticsやアフィリエイトコードの埋め込み等を試す  達成条件:5月上旬までに  ベースとなるレスポンシブレイアウトを作成する Pelican用のテーマを一から作成する(jinja2) Hexoで採用したテーマを見直し改良する(ejs) WordPressのテーマを一から作成し、よく使いそうな関数のチーとシート的なものを作成する(PHP) Jekyllのテーマを一から作成してjinjaとの違いを体感する。(?</div>
-    <div class="tags">
-      21 Mar 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/complain/">#complain</a>
         
        
     </div>

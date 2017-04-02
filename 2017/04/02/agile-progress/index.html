@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>jaws-ug container</title>
+  <title>agile progress</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -138,7 +138,7 @@
 <div class="content">
 
   <div class="article">
-    <div class="title">jaws-ug container</div>
+    <div class="title">agile progress</div>
     
       <div class="categories">
         
@@ -148,121 +148,58 @@
      
     <div class="description">
 
-<h1 id="jaws-ug-コンテナ支部-の勉強会に行ってきた">JAWS-UG コンテナ支部 の勉強会に行ってきた</h1>
+<h1 id="進捗">進捗</h1>
 
-<p>行ってきた。。</p>
-
-<h2 id="前佛さんのお話">前佛さんのお話</h2>
-
-<p>Dockerは仕様でコンテナが技術っていう話。</p>
-
-<p>開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。</p>
-
-<p>Dockerのイメージ・レイヤの概念のおかげで？ベースイメージを共有したり、イメージをコピーするのにも差分レイヤだけコピーするので早いとか。</p>
-
-<h3 id="他のコンテナ技術との大きな違い">他のコンテナ技術との大きな違い</h3>
-
-<p>今までに同様の技術はあったが、Dockerが大きく違うのは、DockerHubの存在。</p>
-
-<p>自分が作ったイメージはもちろん、他人が作ったものも共有(流用)できる。</p>
-
-<p>docker イメージの Github版。</p>
-
-<h3 id="注意点">注意点</h3>
-
-<p>ストレージドライバについては要件を考慮して決めましょう的な話。</p>
-
-<p>このあたりを読むと理解が深まるのでしょう。</p>
-
-<p><a href="http://docs.docker.jp/engine/userguide/storagedriver/imagesandcontainers.html">イメージ、コンテナ、ストレージ・ドライバの理解</a></p>
-
-<p><a href="http://docs.docker.jp/engine/userguide/storagedriver/selectadriver.html">ストレージ・ドライバの選択</a></p>
-
-<h2 id="ecs関連のアップデート">ECS関連のアップデート</h2>
-
-<p>Windows コンテナ も試せる Windows Server 2016 の AMIもでてるよ。とか。</p>
-
-<h3 id="ecrについて">ECRについて</h3>
+<p>直近の目標に対する結果と進捗</p>
 
 <ul>
-<li>フルマネージドDockerレジストリサービス</li>
-<li>イメージの容量に対して課金</li>
-<li>コンテナイメージは自動的に暗号化できる設定がある</li>
-<li>もちろんIAM使える</li>
-<li>ECRをCloudTrailで追跡可能</li>
-<li>CredentialHelper使ってね</li>
+<li>ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx)</li>
+<li>Makerel試したい</li>
+<li>Dockerをある程度使えるようになりたい</li>
 </ul>
 
-<p>業務上プライベートなDockerイメージを置く場所を作りたい場合なんかいいですね。</p>
+<h2 id="ブログや静的サイトのテーマをつくり込みたい">ブログや静的サイトのテーマをつくり込みたい</h2>
 
-<h2 id="社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた">社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた</h2>
+<p>Plican,Hexo,Jekyllについては完了。
+Jekyllは二度と触りたく無い。</p>
 
-<p>既存の触りたくないバッチ環境をそのままに、API Gateway、ECS、SQSなんかを活用してバッチ処理環境を改善した話。</p>
+<p>4月にWordPressのテーマ作成他のテンプレートを作りたい。</p>
 
-<p>既存のサーバーには何も追加したくない、が、curlは基本的に入っているので処理スタートをcurlから始める。</p>
+<p>進捗としてはまぁまぁ。</p>
 
-<p>API Gateway を通じてリクエストを受け取り、ECS環境でバッチ処理、処理結果をSQSで通知みたいな。</p>
+<p>期限：5月で変わらず</p>
 
-<p>ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。</p>
+<h2 id="makerel試したい">Makerel試したい</h2>
 
-<p>すごい。</p>
+<p>試した。</p>
 
-<h2 id="nttとdocker">NTTとDocker</h2>
+<p>カスタムメトリクスは真面目にきちんと時間を取らないとだめっぽいので諦めた。</p>
 
-<p>ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。</p>
+<p>とにかく試したので完了とみなす。</p>
 
-<h3 id="ecsを活用する上での勘所">ECSを活用する上での勘所</h3>
+<p>ちなみにトライアル期間終わったのでお金払わないとフル機能試せなくなった。</p>
 
-<h4 id="データについて">データについて</h4>
+<h2 id="dockerをある程度使えるようになりたい">Dockerをある程度使えるようになりたい</h2>
 
-<ul>
-<li>なるべくDocker Volumeを使わないで済む設計にする
+<p>久しぶりに触った。</p>
 
-<ul>
-<li>いつでもインスタンスを捨てられるようにする設計</li>
-<li>永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する</li>
-<li>awslogs ログドライバ便利です。積極的に使っていきましょう。</li>
-</ul></li>
-<li>URLパスの設計
+<p>SwarmやKubernetesはハードル高いので今は諦めた。</p>
 
-<ul>
-<li>ALBを活用しましょう</li>
-<li>関連サービスのエントリポイントとかは環境変数で渡しましょう。</li>
-</ul></li>
-<li>セッションの管理
+<p>ひとまず現状のバージョンのDockerに入れ替えた。</p>
 
-<ul>
-<li>インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い</li>
-<li>ElastiCache,Redis,Memcachedを活用しましょう。
-<br /></li>
-</ul></li>
-</ul>
+<p>完了としたい。</p>
 
-<h3 id="環境構築について">環境構築について</h3>
+<h2 id="4月の目標">4月の目標</h2>
 
-<p>書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</p>
+<p>ブログテーマの作成は引き続き行う。</p>
 
-<h2 id="datadogの人からlt">Datadogの人からLT</h2>
-
-<ol>
-<li>Dockerはトレンドどしてきてる。</li>
-<li>コンテナを50−100個以上使うようになるとECS使うところがとても増える</li>
-<li>一度ECSなどマネージドなオーケストレーション使うようになると、使う前に比べてコンテナが増えるペースが増加？増大？する</li>
-</ol>
-
-<p>一度キャッシングの味を覚えた人がどんどんキャッシングするようになるのと似てるのかな？</p>
+<p>仕事上の別件が忙しくなるので他の課題を設定せず欲張らず地道にやっていきたい。</p>
 </div>
     <div class="tags">
-      31 Mar 2017
+      2 Apr 2017
       
         
-          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
-        
-          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
-        
-          <a href="http://tech.k-zak.com/tags/ecs/">#ECS</a>
-        
-          <a href="http://tech.k-zak.com/tags/jaws-ug/">#JAWS-UG</a>
+          <a href="http://tech.k-zak.com/tags/etc/">#etc</a>
         
        
     </div>
@@ -273,11 +210,11 @@
 
 <paper-item>
   
-    <a href="http://tech.k-zak.com/2017/04/02/think-about-redux"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <paper-fab disabled icon="chevron-left"></paper-fab>
   
     <div class="flex"></div>
   
-    <a href="http://tech.k-zak.com/2017/03/29/hexo-etc"><paper-fab icon="chevron-right"></paper-fab></a>
+    <a href="http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance"><paper-fab icon="chevron-right"></paper-fab></a>
   
 </paper-item>
 

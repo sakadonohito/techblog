@@ -140,6 +140,159 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2015/03/08/ubuntu-wifi">嘘でしょう。。。</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。
+実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。
+悩まされていた問題 会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。
+VMのネットワーク設定を「Macと共有」の時は問題なくて「自動検出」にするとVMのUbuntuのIPが正しく設定されない。
+ひとまず解決？ 前提として、このUbuntuはDesktop 14.04LTSです。なのでUbuntuServerの場合は違うかも。
+/etc/NetworkManager/system-connections/ 配下のネットワークの設定ファイルのファイル名に日本語(マルチバイト文字)が含まれていたので、ASCII文字のみに変更。
+/etc/NetworkManager/system-connections/ のファイル名を変更したものを開く
+この設定ファイルの中の「connection」にあるidの設定を変更したファイル名に合わせる。
+これだけでネットワークつながるようになった。というかipが正しくふられるようになった。
+まさかのマルチバイト文字ファイル名問題？</div>
+    <div class="tags">
+      8 Mar 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/network/">#Network</a>
+        
+          <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2015/02/16/challenge-fmxj">fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
+https://github.com/seedcode/fmxj
+概要としては、FileMaker Server の XML公開を使う。
+Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。
+◆ハマった事：サンプルPHPの内容
+サンプルのPHPをよく読んでなかった。。。
+JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。
+-db=dbname&amp;-lay=layname&amp;-query=(q1)&amp;-q1=Status&amp;-q1.value=Vendor&amp;-findquery みたいな通常のクエリデータに
+u=undefined&amp;p=undefined&amp;l=コンテンツの文字数
+ていうのがくっついてPHPにpostされてくる。
+それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。
+そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。
+なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。
+サンプルって事でいろいろハードコーディングされてるけど、気にしない。
+◆ハマった：Nginxの設定
+欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら
+WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
+これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
+しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
+※Nginxで add_header Content-Type &#8216;application/xml&#8217;してもmime-typeの設定ファイルに追記しても
+　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
+その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
+最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
+自分はUbuntuの環境なので、
+ sudo apt-get install nginx-extras
+ 後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
+more_set_headers &#8216;Content-Type: application/xml; charset=UTF8&#8217;;
+を追記、more&#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
+これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
+いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</div>
+    <div class="tags">
+      16 Feb 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
+        
+          <a href="http://tech.k-zak.com/tags/fmxj/">#fmxj</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+          <a href="http://tech.k-zak.com/tags/mojolicious/">#Mojolicious</a>
+        
+          <a href="http://tech.k-zak.com/tags/nginx/">#nginx</a>
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2015/02/08/ansible-ssh">AnsibleのSSH設定について</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+という事で調べた。
+結論としては、varsファイルに
+・ansible_ssh_user
+・ansible_ssh_pass
+・ansible_sudo_pass
+の3つを書いておきましょう。でした。
+最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
+例えばhostsファイルに
+`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+という事で調べた。
+結論としては、varsファイルに
+・ansible_ssh_user
+・ansible_ssh_pass
+・ansible_sudo_pass
+の3つを書いておきましょう。でした。
+最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
+例えばhostsファイルに
+`
+とか書いてグループ名が「dev」の場合に
+-playbook
+|
+|&#8211;dev.yml
+|
+|&#8211;group_vars
+| |
+| |&#8211;dev.yml
+|
+|&#8211;roles\※内容略
+|
+|&#8211;site.yml
+みたいな感じで書く。
+group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより&#8211;ask-passの指定が必要なくなった。
+問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。
+なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。
+ansible-playbookを実行する時に復号のために&#8211;vault-passの引数とそのファイルパスを渡さないといけないってのも&#8211;ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。
+hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー
+って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。</div>
+    <div class="tags">
+      8 Feb 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2015/02/01/php-mail">Ubuntu14.04 でphpでメール受信とか</a></div>
     
       <div class="categories">
@@ -407,148 +560,6 @@ sudo apt-get install mercurial
           <a href="http://tech.k-zak.com/tags/unicorn/">#unicorn</a>
         
           <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/09/07/setting-php">PHPのファイルアップロードについて</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">PHPで大きなファイルアップロードを作成する
-・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。
-・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file
-・phpの設定でmax_file_size,post_max_size,タイムアウト、memory_limitなどの設定が必要
-・Apacheのバージョンが古いと2だか4GBが上限。という噂。
-・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。</div>
-    <div class="tags">
-      7 Sep 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/09/07/challenge-ansible">Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-          <a href="http://tech.k-zak.com/categories/trouble-memo/">trouble-memo</a>
-        
-      </div>
-     
-    <div class="description">・botoが使えないってエラーになる。
-　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
-つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
-　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか
-・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを
-　使ったら成功した。なんで？
-・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。
-・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。
-　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。
-　なので「NameVirtuakHost *:80」の記述があれば、その後VirtualHostディレクティブが
-　ないといけない。
-もしもみたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
-整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。
-・Ubuntuに入ってるApache2のVirtualHostの有効化無効化
-　sites-availableディレクトリにVirtualHost設定書く
-　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化
-・Hostの指定が足りない！？
-Could not reliably determine the server&#8217;s fully qualified domain name, using for ServerName
-こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った
-　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、
-　そこに{{hostname}}.localを追記する処理追加
-・Ansible用MySQLの設定追加
-Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)
-host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)
-リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要
-・netstat -ant で現在使ってるポートとか観れる
-　(適当な解釈、後で意味をちゃんと調べる&#8230;かも)
-・MySQLが外部からつながらぬ
-webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。
-my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。
-これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。
-・ApacheのRewriteの設定漏れ
-UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。
-　AllowOverride をAllにしなかった。。。
-ということで？今のところ、Vagrantで作成したVMにMySQLやApacheの設定、それからWordPressの設置は出来るように</div>
-    <div class="tags">
-      7 Sep 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
-        
-          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
-        
-          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
-        
-          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
-        
-          <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
-        
-          <a href="http://tech.k-zak.com/tags/vagrant/">#Vagrant</a>
-        
-          <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible">Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
-の、前にAWSのS3試したので。
-・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
-・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折
-・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。
-・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。
-Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。
-・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる
-・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。
-・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う
-・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ
-以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事
-・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう
-・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する</div>
-    <div class="tags">
-      2 Aug 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
-        
-          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
-        
-          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
-        
-          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
-        
-          <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
-        
-          <a href="http://tech.k-zak.com/tags/s3/">#S3</a>
-        
-          <a href="http://tech.k-zak.com/tags/vagrant/">#Vagrant</a>
-        
-          <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
         
        
     </div>

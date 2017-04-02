@@ -9,6 +9,126 @@
     <atom:link href="http://tech.k-zak.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>recent frontend circumstance</title>
+      <link>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance</link>
+      <pubDate>Sun, 02 Apr 2017 22:50:14 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance</guid>
+      <description>
+
+&lt;h1 id=&#34;最近のフロントエンド事情はまるで発展途上国の交通事情ですか&#34;&gt;最近のフロントエンド事情はまるで発展途上国の交通事情ですか&lt;/h1&gt;
+
+&lt;p&gt;ES6で書いてES5に変換したいだけなのに、なんなんですか？&lt;/p&gt;
+
+&lt;h2 id=&#34;es6からes5に変換したいだけなんだ&#34;&gt;ES6からES5に変換したいだけなんだ&lt;/h2&gt;
+
+&lt;h3 id=&#34;babel&#34;&gt;Babel&lt;/h3&gt;
+
+&lt;p&gt;Babelを使えば変換できる。。。&lt;/p&gt;
+
+&lt;p&gt;Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。&lt;/p&gt;
+
+&lt;p&gt;考えはいい。それで十分だし、何も難しいことはなさそうだ。&lt;/p&gt;
+
+&lt;p&gt;でもいざ環境を揃えようとすると&amp;hellip;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;以下をインストールする。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;webpack&lt;/li&gt;
+&lt;li&gt;webpack-dev-server&lt;/li&gt;
+&lt;li&gt;babel-core&lt;/li&gt;
+&lt;li&gt;babel-loader&lt;/li&gt;
+&lt;li&gt;babel-preset-es2015&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;webpack.config.jsと.babelrcにも設定を書く。&lt;/p&gt;
+
+&lt;p&gt;これですむのならいい。&lt;/p&gt;
+
+&lt;p&gt;実行したら文法エラーが出た。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;babel-preset-stage-0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;を追加したら解決した。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;なんだよそれ！最初からbabel-coreだけで対応しろよ！&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;他にもbrowserify,babelifyとかいろいろプラグイン的なものがある。&lt;/p&gt;
+
+&lt;p&gt;自分の書いたES6のコードを動くようにするのにいったいどれを入れたら動くのか分からない！&lt;/p&gt;
+
+&lt;h3 id=&#34;babelとwebpack&#34;&gt;BabelとWebpack&lt;/h3&gt;
+
+&lt;p&gt;webpackの設定及び.babelrcにも何を変換処理に使うのか書かないとちゃんと変換されない。&lt;/p&gt;
+
+&lt;p&gt;webpackに書いただけじゃダメで.babelrcにも書かないといけない。という認識だけど、多分理解が足りなくて本当は綺麗な書き方があると信じてる。&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;ES6で書いてES5に変換するの辛い。&lt;/p&gt;
+
+&lt;p&gt;早くブラウザが標準でES6対応してほしい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>think about redux</title>
+      <link>http://tech.k-zak.com/2017/04/02/think-about-redux</link>
+      <pubDate>Sun, 02 Apr 2017 22:49:50 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/02/think-about-redux</guid>
+      <description>
+
+&lt;h1 id=&#34;reduxについて感化されたこと&#34;&gt;Reduxについて感化されたこと&lt;/h1&gt;
+
+&lt;p&gt;Reduxについて不満に思っている部分について考察している記事を見かけた。&lt;/p&gt;
+
+&lt;p&gt;自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。&lt;/p&gt;
+
+&lt;h2 id=&#34;理解して納得していること&#34;&gt;理解して納得していること&lt;/h2&gt;
+
+&lt;p&gt;Reactの場合は上からもらうプロパティはPropsで読み取り専用。&lt;/p&gt;
+
+&lt;p&gt;要素ごとにstateという読み書き可能なプロパティを持つ。&lt;/p&gt;
+
+&lt;p&gt;ReduxはFluxアーキテクチャの実装。&lt;/p&gt;
+
+&lt;p&gt;1つの状態を管理するStoreのみ。&lt;/p&gt;
+
+&lt;p&gt;Actionを呼びReducerが状態を更新する。それぞれはプレーンなjavacsriptで書く。&lt;/p&gt;
+
+&lt;p&gt;ここまではいい。とても素敵に感じた。&lt;/p&gt;
+
+&lt;h2 id=&#34;受け入れがたいところ&#34;&gt;受け入れがたいところ&lt;/h2&gt;
+
+&lt;p&gt;javascriptといえば、画面上の何かを触ったらイベントを拾って画面を変えたりとか、非同期で外からデータを持ってくるとかですよね。&lt;/p&gt;
+
+&lt;p&gt;その非同期処理をReduxではどう書くのか、実はActionは処理のオブジェクトを生成するだけだし、Reducerは更新結果の状態を同期処理で作るだけ。&lt;/p&gt;
+
+&lt;p&gt;ビジネスロジック的なものや非同期処理はどこに書くのか？&lt;/p&gt;
+
+&lt;p&gt;基本的には無い。なので後付け？でてきたMiddlewareてのを作る。&lt;/p&gt;
+
+&lt;p&gt;Reduxの思想では、非同期の処理前、処理中、処理結果(成功・失敗)をそれぞれ状態として更新する。&lt;/p&gt;
+
+&lt;p&gt;その処理をMiddlewareに書くのだけれど&amp;hellip;書くのだけれど、これがすごく気持ち悪いと感じていた。&lt;/p&gt;
+
+&lt;p&gt;いろいろ他の書き方が無いのかとか本来自分はどう書きたいのかということを考えると、乖離が大きく、辛い。&lt;/p&gt;
+
+&lt;p&gt;その辺りをReducerの状態を更新する処理のところで非同期処理を呼び出して結果を入れる書き方を考えた方がいらっしゃって、外国のReduxのコミュニティに投稿したら、disられてた。&lt;/p&gt;
+
+&lt;p&gt;Reduxの基本設計に不備があって、それをごまかすためのMiddlewareは許されて、Reducerに非同期処理結果を突っ込むのは違うとかって言うの、どうなの？&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;ReduxのMiddlewareがいまいち気に入らないので、非同期処理も考慮されたFluxアーキテクチャのオレオレ実装を作るしか無いのか。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
       <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>

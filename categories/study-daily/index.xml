@@ -9,6 +9,183 @@
     <atom:link href="http://tech.k-zak.com/categories/study-daily/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>agile progress</title>
+      <link>http://tech.k-zak.com/2017/04/02/agile-progress</link>
+      <pubDate>Sun, 02 Apr 2017 22:50:25 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/02/agile-progress</guid>
+      <description>
+
+&lt;h1 id=&#34;進捗&#34;&gt;進捗&lt;/h1&gt;
+
+&lt;p&gt;直近の目標に対する結果と進捗&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx)&lt;/li&gt;
+&lt;li&gt;Makerel試したい&lt;/li&gt;
+&lt;li&gt;Dockerをある程度使えるようになりたい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ブログや静的サイトのテーマをつくり込みたい&#34;&gt;ブログや静的サイトのテーマをつくり込みたい&lt;/h2&gt;
+
+&lt;p&gt;Plican,Hexo,Jekyllについては完了。
+Jekyllは二度と触りたく無い。&lt;/p&gt;
+
+&lt;p&gt;4月にWordPressのテーマ作成他のテンプレートを作りたい。&lt;/p&gt;
+
+&lt;p&gt;進捗としてはまぁまぁ。&lt;/p&gt;
+
+&lt;p&gt;期限：5月で変わらず&lt;/p&gt;
+
+&lt;h2 id=&#34;makerel試したい&#34;&gt;Makerel試したい&lt;/h2&gt;
+
+&lt;p&gt;試した。&lt;/p&gt;
+
+&lt;p&gt;カスタムメトリクスは真面目にきちんと時間を取らないとだめっぽいので諦めた。&lt;/p&gt;
+
+&lt;p&gt;とにかく試したので完了とみなす。&lt;/p&gt;
+
+&lt;p&gt;ちなみにトライアル期間終わったのでお金払わないとフル機能試せなくなった。&lt;/p&gt;
+
+&lt;h2 id=&#34;dockerをある程度使えるようになりたい&#34;&gt;Dockerをある程度使えるようになりたい&lt;/h2&gt;
+
+&lt;p&gt;久しぶりに触った。&lt;/p&gt;
+
+&lt;p&gt;SwarmやKubernetesはハードル高いので今は諦めた。&lt;/p&gt;
+
+&lt;p&gt;ひとまず現状のバージョンのDockerに入れ替えた。&lt;/p&gt;
+
+&lt;p&gt;完了としたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;4月の目標&#34;&gt;4月の目標&lt;/h2&gt;
+
+&lt;p&gt;ブログテーマの作成は引き続き行う。&lt;/p&gt;
+
+&lt;p&gt;仕事上の別件が忙しくなるので他の課題を設定せず欲張らず地道にやっていきたい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>recent frontend circumstance</title>
+      <link>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance</link>
+      <pubDate>Sun, 02 Apr 2017 22:50:14 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance</guid>
+      <description>
+
+&lt;h1 id=&#34;最近のフロントエンド事情はまるで発展途上国の交通事情ですか&#34;&gt;最近のフロントエンド事情はまるで発展途上国の交通事情ですか&lt;/h1&gt;
+
+&lt;p&gt;ES6で書いてES5に変換したいだけなのに、なんなんですか？&lt;/p&gt;
+
+&lt;h2 id=&#34;es6からes5に変換したいだけなんだ&#34;&gt;ES6からES5に変換したいだけなんだ&lt;/h2&gt;
+
+&lt;h3 id=&#34;babel&#34;&gt;Babel&lt;/h3&gt;
+
+&lt;p&gt;Babelを使えば変換できる。。。&lt;/p&gt;
+
+&lt;p&gt;Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。&lt;/p&gt;
+
+&lt;p&gt;考えはいい。それで十分だし、何も難しいことはなさそうだ。&lt;/p&gt;
+
+&lt;p&gt;でもいざ環境を揃えようとすると&amp;hellip;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;以下をインストールする。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;webpack&lt;/li&gt;
+&lt;li&gt;webpack-dev-server&lt;/li&gt;
+&lt;li&gt;babel-core&lt;/li&gt;
+&lt;li&gt;babel-loader&lt;/li&gt;
+&lt;li&gt;babel-preset-es2015&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;webpack.config.jsと.babelrcにも設定を書く。&lt;/p&gt;
+
+&lt;p&gt;これですむのならいい。&lt;/p&gt;
+
+&lt;p&gt;実行したら文法エラーが出た。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;babel-preset-stage-0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;を追加したら解決した。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;なんだよそれ！最初からbabel-coreだけで対応しろよ！&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;他にもbrowserify,babelifyとかいろいろプラグイン的なものがある。&lt;/p&gt;
+
+&lt;p&gt;自分の書いたES6のコードを動くようにするのにいったいどれを入れたら動くのか分からない！&lt;/p&gt;
+
+&lt;h3 id=&#34;babelとwebpack&#34;&gt;BabelとWebpack&lt;/h3&gt;
+
+&lt;p&gt;webpackの設定及び.babelrcにも何を変換処理に使うのか書かないとちゃんと変換されない。&lt;/p&gt;
+
+&lt;p&gt;webpackに書いただけじゃダメで.babelrcにも書かないといけない。という認識だけど、多分理解が足りなくて本当は綺麗な書き方があると信じてる。&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;ES6で書いてES5に変換するの辛い。&lt;/p&gt;
+
+&lt;p&gt;早くブラウザが標準でES6対応してほしい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>think about redux</title>
+      <link>http://tech.k-zak.com/2017/04/02/think-about-redux</link>
+      <pubDate>Sun, 02 Apr 2017 22:49:50 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/02/think-about-redux</guid>
+      <description>
+
+&lt;h1 id=&#34;reduxについて感化されたこと&#34;&gt;Reduxについて感化されたこと&lt;/h1&gt;
+
+&lt;p&gt;Reduxについて不満に思っている部分について考察している記事を見かけた。&lt;/p&gt;
+
+&lt;p&gt;自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。&lt;/p&gt;
+
+&lt;h2 id=&#34;理解して納得していること&#34;&gt;理解して納得していること&lt;/h2&gt;
+
+&lt;p&gt;Reactの場合は上からもらうプロパティはPropsで読み取り専用。&lt;/p&gt;
+
+&lt;p&gt;要素ごとにstateという読み書き可能なプロパティを持つ。&lt;/p&gt;
+
+&lt;p&gt;ReduxはFluxアーキテクチャの実装。&lt;/p&gt;
+
+&lt;p&gt;1つの状態を管理するStoreのみ。&lt;/p&gt;
+
+&lt;p&gt;Actionを呼びReducerが状態を更新する。それぞれはプレーンなjavacsriptで書く。&lt;/p&gt;
+
+&lt;p&gt;ここまではいい。とても素敵に感じた。&lt;/p&gt;
+
+&lt;h2 id=&#34;受け入れがたいところ&#34;&gt;受け入れがたいところ&lt;/h2&gt;
+
+&lt;p&gt;javascriptといえば、画面上の何かを触ったらイベントを拾って画面を変えたりとか、非同期で外からデータを持ってくるとかですよね。&lt;/p&gt;
+
+&lt;p&gt;その非同期処理をReduxではどう書くのか、実はActionは処理のオブジェクトを生成するだけだし、Reducerは更新結果の状態を同期処理で作るだけ。&lt;/p&gt;
+
+&lt;p&gt;ビジネスロジック的なものや非同期処理はどこに書くのか？&lt;/p&gt;
+
+&lt;p&gt;基本的には無い。なので後付け？でてきたMiddlewareてのを作る。&lt;/p&gt;
+
+&lt;p&gt;Reduxの思想では、非同期の処理前、処理中、処理結果(成功・失敗)をそれぞれ状態として更新する。&lt;/p&gt;
+
+&lt;p&gt;その処理をMiddlewareに書くのだけれど&amp;hellip;書くのだけれど、これがすごく気持ち悪いと感じていた。&lt;/p&gt;
+
+&lt;p&gt;いろいろ他の書き方が無いのかとか本来自分はどう書きたいのかということを考えると、乖離が大きく、辛い。&lt;/p&gt;
+
+&lt;p&gt;その辺りをReducerの状態を更新する処理のところで非同期処理を呼び出して結果を入れる書き方を考えた方がいらっしゃって、外国のReduxのコミュニティに投稿したら、disられてた。&lt;/p&gt;
+
+&lt;p&gt;Reduxの基本設計に不備があって、それをごまかすためのMiddlewareは許されて、Reducerに非同期処理結果を突っ込むのは違うとかって言うの、どうなの？&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;ReduxのMiddlewareがいまいち気に入らないので、非同期処理も考慮されたFluxアーキテクチャのオレオレ実装を作るしか無いのか。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>jaws-ug container</title>
       <link>http://tech.k-zak.com/2017/03/31/jaws-ug-container</link>
       <pubDate>Fri, 31 Mar 2017 18:01:34 +0900</pubDate>
@@ -744,160 +921,6 @@ AWS/GCP/Azure/Blumix上でマネージドなコンテナサービスを試す&lt
 &lt;p&gt;hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー&lt;/p&gt;
 
 &lt;p&gt;って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/2015/02/01/php-mail</link>
-      <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2015/02/01/php-mail</guid>
-      <description>&lt;p&gt;## install postfix&lt;/p&gt;
-
-&lt;p&gt;&amp;#8220;`&lt;/p&gt;
-
-&lt;p&gt;sudo apt-get install postfix postfix-dev sasl2-bin&lt;/p&gt;
-
-&lt;p&gt;sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt&lt;/p&gt;
-
-&lt;p&gt;&amp;#8220;`&lt;/p&gt;
-
-&lt;p&gt;## Settings&lt;/p&gt;
-
-&lt;p&gt;&amp;#8220;`&lt;/p&gt;
-
-&lt;p&gt;sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf&lt;/p&gt;
-
-&lt;p&gt;sudo emacs -nw /etc/postfix/main.cf&lt;/p&gt;
-
-&lt;p&gt;&amp;#8220;`&lt;/p&gt;
-
-&lt;p&gt;### 参考&lt;/p&gt;
-
-&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;#8211; &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;### gmailに転送する設定に変更&lt;/p&gt;
-
-&lt;p&gt;relayhostにgmailを指定&lt;/p&gt;
-
-&lt;p&gt;パスワードの設定とかね。&lt;/p&gt;
-
-&lt;p&gt;## phpでメールを受信出来るよう設定&lt;/p&gt;
-
-&lt;p&gt;メールサーバ受信DNS設定とか面倒だからやめた。&lt;/p&gt;
-
-&lt;p&gt;phpinfoを見ると案の定imap入ってませんでしたので、php5.5系の落としてきてimapのディレクトリ移動してphpize&lt;/p&gt;
-
-&lt;p&gt;### configureで失敗する&lt;/p&gt;
-
-&lt;p&gt;configureしたらutf8_mime2text()がうんたらと出てきた。&lt;/p&gt;
-
-&lt;p&gt;ググると、どうもphpにimapとかメール関係入れる時にライブラリが足りないと出るエラーのようだ。&lt;/p&gt;
-
-&lt;p&gt;sudo apt-cache search libc-client&lt;/p&gt;
-
-&lt;p&gt;→libc-client2007e libc-client2007e-dev てのが出てくるので両方インストール&lt;/p&gt;
-
-&lt;p&gt;### imapうまく動かない？&lt;/p&gt;
-
-&lt;p&gt;この後無事imapインストールできたけどなぜか受信出来ない。いろいろ調べて片っ端からSSL関連インストールしたけどうまくいかない。&lt;/p&gt;
-
-&lt;p&gt;### 何が原因だったのか不明&lt;/p&gt;
-
-&lt;p&gt;結局、何かのSSL関係のライブラリインストールが最初足りなくてGmail受信失敗してた。&lt;/p&gt;
-
-&lt;p&gt;gmailからさくらのレンサバのメールアカウントで試した場合はアカウント名の指定を間違えてた。&lt;/p&gt;
-
-&lt;p&gt;テストで受信するだけだから、普通のimapアカウントの場合はnotlsをflagにつける。&lt;/p&gt;
-
-&lt;p&gt;gmailの場合は/ssl/novalidation-certみたいのつける&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>http://tech.k-zak.com/2015/01/05/perl-cgi</link>
-      <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi</guid>
-      <description>&lt;p&gt;古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ&lt;/p&gt;
-
-&lt;p&gt;最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。&lt;/p&gt;
-
-&lt;p&gt;502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。&lt;/p&gt;
-
-&lt;p&gt;結局、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install fcgiwrap
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも&lt;br /&gt;
-/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo sysv-rc-conf on fcgiwrap
-sudo service fcgiwrap start
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;でFastCGIが動くようになる。&lt;br /&gt;
-最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、&lt;br /&gt;
-参考：&lt;a href=&#34;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&#34;&gt;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&lt;/a&gt;&lt;br /&gt;
-これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。&lt;/p&gt;
-
-&lt;p&gt;Nginxの設定はlocationディレクティブだけ抜粋すると&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#拡張子が.plで終わるリクエストの場合
-location ~ \.pl$ {
-    try_files $uri = 404;
-    gzip off;
-    #インストールしたfcgiwrapのソケットファイルのパス
-    fastcgi_pass unix:/var/run/fcgiwrap.socket;
-    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    #/etc/nginx/fastcgi_paramsの内容を読み込む。
-    include fastcgi_params;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;で&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service nginx restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで適用にperl書いて(シェバンはもちろん#!/usr/bin/env perl ですよ)試したら動きました。&lt;/p&gt;
-
-&lt;p&gt;自分はplenvを使っているのですが、システムのperl読み込まれてライブラリねーぞゴルァなった事があった。謎。&lt;br /&gt;
-plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
-
-&lt;p&gt;この記事書いてる時に見つけた他の方のWeb。先にここを見つけたかった。。。&lt;br /&gt;
-参考：&lt;a href=&#34;http://ekzemplaro.org/data_base/doc/web_server/nginx/&#34;&gt;http://ekzemplaro.org/data_base/doc/web_server/nginx/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;やれやれですよ。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>2014年を振り返る インフラ系</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-infra</link>
-      <pubDate>Tue, 30 Dec 2014 09:50:19 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-infra</guid>
-      <description>&lt;p&gt;2014年を振り返る。インフラ関係について&lt;/p&gt;
-
-&lt;p&gt;今年もっとも多く成長したのはインフラ関係についてだと思う。&lt;/p&gt;
-
-&lt;p&gt;来年はもう少しスタートアップ用のシェルスクリプト理解して作れるようになりたい。&lt;/p&gt;
-
-&lt;p&gt;PowerShellももう少し覚えてWindowsServer環境の制御も出来るようになりたい。&lt;/p&gt;
-
-&lt;p&gt;構成管理は今年手を付けたVagrantとAnsibleをもっと掘り下げていきたい。&lt;/p&gt;
-
-&lt;p&gt;VagrantはPackerを使ってVirtualBox以外のボックス作成やEC2へのアクセス。&lt;/p&gt;
-
-&lt;p&gt;Ansibleは様々な構成管理、できればWindows環境も。&lt;/p&gt;
-
-&lt;p&gt;来年取り組みたいのは、今年やりそこねたメールサーバーやログ設定、それからプロキシ設定かな&lt;/p&gt;
 </description>
     </item>
     

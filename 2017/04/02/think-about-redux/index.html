@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>jaws-ug container</title>
+  <title>think about redux</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -138,7 +138,7 @@
 <div class="content">
 
   <div class="article">
-    <div class="title">jaws-ug container</div>
+    <div class="title">think about redux</div>
     
       <div class="categories">
         
@@ -148,121 +148,59 @@
      
     <div class="description">
 
-<h1 id="jaws-ug-コンテナ支部-の勉強会に行ってきた">JAWS-UG コンテナ支部 の勉強会に行ってきた</h1>
+<h1 id="reduxについて感化されたこと">Reduxについて感化されたこと</h1>
 
-<p>行ってきた。。</p>
+<p>Reduxについて不満に思っている部分について考察している記事を見かけた。</p>
 
-<h2 id="前佛さんのお話">前佛さんのお話</h2>
+<p>自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。</p>
 
-<p>Dockerは仕様でコンテナが技術っていう話。</p>
+<h2 id="理解して納得していること">理解して納得していること</h2>
 
-<p>開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。</p>
+<p>Reactの場合は上からもらうプロパティはPropsで読み取り専用。</p>
 
-<p>Dockerのイメージ・レイヤの概念のおかげで？ベースイメージを共有したり、イメージをコピーするのにも差分レイヤだけコピーするので早いとか。</p>
+<p>要素ごとにstateという読み書き可能なプロパティを持つ。</p>
 
-<h3 id="他のコンテナ技術との大きな違い">他のコンテナ技術との大きな違い</h3>
+<p>ReduxはFluxアーキテクチャの実装。</p>
 
-<p>今までに同様の技術はあったが、Dockerが大きく違うのは、DockerHubの存在。</p>
+<p>1つの状態を管理するStoreのみ。</p>
 
-<p>自分が作ったイメージはもちろん、他人が作ったものも共有(流用)できる。</p>
+<p>Actionを呼びReducerが状態を更新する。それぞれはプレーンなjavacsriptで書く。</p>
 
-<p>docker イメージの Github版。</p>
+<p>ここまではいい。とても素敵に感じた。</p>
 
-<h3 id="注意点">注意点</h3>
+<h2 id="受け入れがたいところ">受け入れがたいところ</h2>
 
-<p>ストレージドライバについては要件を考慮して決めましょう的な話。</p>
+<p>javascriptといえば、画面上の何かを触ったらイベントを拾って画面を変えたりとか、非同期で外からデータを持ってくるとかですよね。</p>
 
-<p>このあたりを読むと理解が深まるのでしょう。</p>
+<p>その非同期処理をReduxではどう書くのか、実はActionは処理のオブジェクトを生成するだけだし、Reducerは更新結果の状態を同期処理で作るだけ。</p>
 
-<p><a href="http://docs.docker.jp/engine/userguide/storagedriver/imagesandcontainers.html">イメージ、コンテナ、ストレージ・ドライバの理解</a></p>
+<p>ビジネスロジック的なものや非同期処理はどこに書くのか？</p>
 
-<p><a href="http://docs.docker.jp/engine/userguide/storagedriver/selectadriver.html">ストレージ・ドライバの選択</a></p>
+<p>基本的には無い。なので後付け？でてきたMiddlewareてのを作る。</p>
 
-<h2 id="ecs関連のアップデート">ECS関連のアップデート</h2>
+<p>Reduxの思想では、非同期の処理前、処理中、処理結果(成功・失敗)をそれぞれ状態として更新する。</p>
 
-<p>Windows コンテナ も試せる Windows Server 2016 の AMIもでてるよ。とか。</p>
+<p>その処理をMiddlewareに書くのだけれど&hellip;書くのだけれど、これがすごく気持ち悪いと感じていた。</p>
 
-<h3 id="ecrについて">ECRについて</h3>
+<p>いろいろ他の書き方が無いのかとか本来自分はどう書きたいのかということを考えると、乖離が大きく、辛い。</p>
 
-<ul>
-<li>フルマネージドDockerレジストリサービス</li>
-<li>イメージの容量に対して課金</li>
-<li>コンテナイメージは自動的に暗号化できる設定がある</li>
-<li>もちろんIAM使える</li>
-<li>ECRをCloudTrailで追跡可能</li>
-<li>CredentialHelper使ってね</li>
-</ul>
+<p>その辺りをReducerの状態を更新する処理のところで非同期処理を呼び出して結果を入れる書き方を考えた方がいらっしゃって、外国のReduxのコミュニティに投稿したら、disられてた。</p>
 
-<p>業務上プライベートなDockerイメージを置く場所を作りたい場合なんかいいですね。</p>
+<p>Reduxの基本設計に不備があって、それをごまかすためのMiddlewareは許されて、Reducerに非同期処理結果を突っ込むのは違うとかって言うの、どうなの？</p>
 
-<h2 id="社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた">社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた</h2>
+<h2 id="まとめ">まとめ</h2>
 
-<p>既存の触りたくないバッチ環境をそのままに、API Gateway、ECS、SQSなんかを活用してバッチ処理環境を改善した話。</p>
-
-<p>既存のサーバーには何も追加したくない、が、curlは基本的に入っているので処理スタートをcurlから始める。</p>
-
-<p>API Gateway を通じてリクエストを受け取り、ECS環境でバッチ処理、処理結果をSQSで通知みたいな。</p>
-
-<p>ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。</p>
-
-<p>すごい。</p>
-
-<h2 id="nttとdocker">NTTとDocker</h2>
-
-<p>ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。</p>
-
-<h3 id="ecsを活用する上での勘所">ECSを活用する上での勘所</h3>
-
-<h4 id="データについて">データについて</h4>
-
-<ul>
-<li>なるべくDocker Volumeを使わないで済む設計にする
-
-<ul>
-<li>いつでもインスタンスを捨てられるようにする設計</li>
-<li>永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する</li>
-<li>awslogs ログドライバ便利です。積極的に使っていきましょう。</li>
-</ul></li>
-<li>URLパスの設計
-
-<ul>
-<li>ALBを活用しましょう</li>
-<li>関連サービスのエントリポイントとかは環境変数で渡しましょう。</li>
-</ul></li>
-<li>セッションの管理
-
-<ul>
-<li>インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い</li>
-<li>ElastiCache,Redis,Memcachedを活用しましょう。
-<br /></li>
-</ul></li>
-</ul>
-
-<h3 id="環境構築について">環境構築について</h3>
-
-<p>書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</p>
-
-<h2 id="datadogの人からlt">Datadogの人からLT</h2>
-
-<ol>
-<li>Dockerはトレンドどしてきてる。</li>
-<li>コンテナを50−100個以上使うようになるとECS使うところがとても増える</li>
-<li>一度ECSなどマネージドなオーケストレーション使うようになると、使う前に比べてコンテナが増えるペースが増加？増大？する</li>
-</ol>
-
-<p>一度キャッシングの味を覚えた人がどんどんキャッシングするようになるのと似てるのかな？</p>
+<p>ReduxのMiddlewareがいまいち気に入らないので、非同期処理も考慮されたFluxアーキテクチャのオレオレ実装を作るしか無いのか。。。</p>
 </div>
     <div class="tags">
-      31 Mar 2017
+      2 Apr 2017
       
         
-          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
+          <a href="http://tech.k-zak.com/tags/redux/">#Redux</a>
         
-          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
+          <a href="http://tech.k-zak.com/tags/frontend/">#frontend</a>
         
-          <a href="http://tech.k-zak.com/tags/ecs/">#ECS</a>
-        
-          <a href="http://tech.k-zak.com/tags/jaws-ug/">#JAWS-UG</a>
+          <a href="http://tech.k-zak.com/tags/javascript/">#javascript</a>
         
        
     </div>
@@ -273,11 +211,11 @@
 
 <paper-item>
   
-    <a href="http://tech.k-zak.com/2017/04/02/think-about-redux"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <a href="http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
   
     <div class="flex"></div>
   
-    <a href="http://tech.k-zak.com/2017/03/29/hexo-etc"><paper-fab icon="chevron-right"></paper-fab></a>
+    <a href="http://tech.k-zak.com/2017/03/31/jaws-ug-container"><paper-fab icon="chevron-right"></paper-fab></a>
   
 </paper-item>
 

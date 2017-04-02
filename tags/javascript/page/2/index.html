@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>jaws-ug container</title>
+  <title>Javascript</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -137,8 +137,9 @@
 
 <div class="content">
 
+
   <div class="article">
-    <div class="title">jaws-ug container</div>
+    <div class="title"><a href="http://tech.k-zak.com/2013/08/25/css-tech">cssメモ 配下の指定</a></div>
     
       <div class="categories">
         
@@ -146,140 +147,81 @@
         
       </div>
      
-    <div class="description">
-
-<h1 id="jaws-ug-コンテナ支部-の勉強会に行ってきた">JAWS-UG コンテナ支部 の勉強会に行ってきた</h1>
-
-<p>行ってきた。。</p>
-
-<h2 id="前佛さんのお話">前佛さんのお話</h2>
-
-<p>Dockerは仕様でコンテナが技術っていう話。</p>
-
-<p>開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。</p>
-
-<p>Dockerのイメージ・レイヤの概念のおかげで？ベースイメージを共有したり、イメージをコピーするのにも差分レイヤだけコピーするので早いとか。</p>
-
-<h3 id="他のコンテナ技術との大きな違い">他のコンテナ技術との大きな違い</h3>
-
-<p>今までに同様の技術はあったが、Dockerが大きく違うのは、DockerHubの存在。</p>
-
-<p>自分が作ったイメージはもちろん、他人が作ったものも共有(流用)できる。</p>
-
-<p>docker イメージの Github版。</p>
-
-<h3 id="注意点">注意点</h3>
-
-<p>ストレージドライバについては要件を考慮して決めましょう的な話。</p>
-
-<p>このあたりを読むと理解が深まるのでしょう。</p>
-
-<p><a href="http://docs.docker.jp/engine/userguide/storagedriver/imagesandcontainers.html">イメージ、コンテナ、ストレージ・ドライバの理解</a></p>
-
-<p><a href="http://docs.docker.jp/engine/userguide/storagedriver/selectadriver.html">ストレージ・ドライバの選択</a></p>
-
-<h2 id="ecs関連のアップデート">ECS関連のアップデート</h2>
-
-<p>Windows コンテナ も試せる Windows Server 2016 の AMIもでてるよ。とか。</p>
-
-<h3 id="ecrについて">ECRについて</h3>
-
-<ul>
-<li>フルマネージドDockerレジストリサービス</li>
-<li>イメージの容量に対して課金</li>
-<li>コンテナイメージは自動的に暗号化できる設定がある</li>
-<li>もちろんIAM使える</li>
-<li>ECRをCloudTrailで追跡可能</li>
-<li>CredentialHelper使ってね</li>
-</ul>
-
-<p>業務上プライベートなDockerイメージを置く場所を作りたい場合なんかいいですね。</p>
-
-<h2 id="社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた">社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた</h2>
-
-<p>既存の触りたくないバッチ環境をそのままに、API Gateway、ECS、SQSなんかを活用してバッチ処理環境を改善した話。</p>
-
-<p>既存のサーバーには何も追加したくない、が、curlは基本的に入っているので処理スタートをcurlから始める。</p>
-
-<p>API Gateway を通じてリクエストを受け取り、ECS環境でバッチ処理、処理結果をSQSで通知みたいな。</p>
-
-<p>ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。</p>
-
-<p>すごい。</p>
-
-<h2 id="nttとdocker">NTTとDocker</h2>
-
-<p>ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。</p>
-
-<h3 id="ecsを活用する上での勘所">ECSを活用する上での勘所</h3>
-
-<h4 id="データについて">データについて</h4>
-
-<ul>
-<li>なるべくDocker Volumeを使わないで済む設計にする
-
-<ul>
-<li>いつでもインスタンスを捨てられるようにする設計</li>
-<li>永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する</li>
-<li>awslogs ログドライバ便利です。積極的に使っていきましょう。</li>
-</ul></li>
-<li>URLパスの設計
-
-<ul>
-<li>ALBを活用しましょう</li>
-<li>関連サービスのエントリポイントとかは環境変数で渡しましょう。</li>
-</ul></li>
-<li>セッションの管理
-
-<ul>
-<li>インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い</li>
-<li>ElastiCache,Redis,Memcachedを活用しましょう。
-<br /></li>
-</ul></li>
-</ul>
-
-<h3 id="環境構築について">環境構築について</h3>
-
-<p>書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</p>
-
-<h2 id="datadogの人からlt">Datadogの人からLT</h2>
-
-<ol>
-<li>Dockerはトレンドどしてきてる。</li>
-<li>コンテナを50−100個以上使うようになるとECS使うところがとても増える</li>
-<li>一度ECSなどマネージドなオーケストレーション使うようになると、使う前に比べてコンテナが増えるペースが増加？増大？する</li>
-</ol>
-
-<p>一度キャッシングの味を覚えた人がどんどんキャッシングするようになるのと似てるのかな？</p>
-</div>
+    <div class="description">cssで配下の指定勘違いしておかしな事やってたのでメモ
+結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。
+最初
+１，scrollさせたいdivの定義
+２，position:absoluteを使ってtableのheaderを上に固定させつつbodyだけスクールするよう
+定義
+この時、１で基準となるdivとその配下のdiv(scrollの指定したdev)の定義をしていて
+tableヘッダはscrollの定義をしたdivの子要素だからってそういう書き方してたら、
+tableヘッダ要素が意図する位置に固定されたような感じになるんだけど目には見えない
+状態になった。レイヤーの上下関係とかかな？とか思っていじくり回してたけど、違った。
+tableヘッダ要素は基準になるdiv配下のtheadみたいな描き方しないと駄目でした。
+div#base{
+posision: relative;
+}
+div#scroll{
+スクロールの設定(html上ではdiv#baseの子要素)
+}
+てやっている状態の時に
+ｘ div#scroll table thead ・・・これだとscroll定義されたdivの影響下(間違って無くね？)
+◯ div#base table thead ・・・これだと基準divの位置を基準にして正しく表示される。
+div#scrollは#baseの子要素なんだから問題無いだろうと思ってて、開発者ツールとかで確認すると
+意図する位置にいるのに表示されない状態。cssからすると、htmlどう書かれているか知ったこっちゃない
+ってことなんだろうね。css上でキチンとどこの配下の何の要素か書いてあげないといけんというこってす。
+そうそう、tableのheaderとbodyを分けるとheaderとbodyでtdの幅が合わなくなる事がある(内容次第)ので
+javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせるって事も必要です。固定幅じゃない場合。
+最終的な見本を下に(htmlはめんどうなので載せてません)</div>
     <div class="tags">
-      31 Mar 2017
+      25 Aug 2013
       
         
-          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
+          <a href="http://tech.k-zak.com/tags/css/">#CSS</a>
         
-          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
-        
-          <a href="http://tech.k-zak.com/tags/ecs/">#ECS</a>
-        
-          <a href="http://tech.k-zak.com/tags/jaws-ug/">#JAWS-UG</a>
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
         
        
     </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/04/13/java-dwr">JavaのDWRって何さ　設定メモ</a></div>
     
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。   原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを   作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。     アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？     DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで   構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。   とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを   簡単にJavaScript上で扱う仕組み？な感じ。     参考URL：   DWRのサイト　http://directwebremoting.org/dwr/index.html   2007の@ITの記事　http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html     具体的な手順の説明   １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を   落とす。   ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル   ２つを入れる。   ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな   あと、このクラスの定義のパッケージは何でも良い。   ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも   良い。この時、実在しない(dwr.jarが自動生成する)JSをタグに書いておく   ※説明たるいので、サイトとか参照して下さい。   どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。   ５，dwr用のxmlとweb.</div>
+    <div class="tags">
+      13 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/java/">#Java</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
   </div>
 
 </div>
 
+
 <paper-item>
   
-    <a href="http://tech.k-zak.com/2017/04/02/think-about-redux"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <a href="http://tech.k-zak.com/tags/javascript/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
   
     <div class="flex"></div>
   
-    <a href="http://tech.k-zak.com/2017/03/29/hexo-etc"><paper-fab icon="chevron-right"></paper-fab></a>
+    <paper-fab disabled icon="chevron-right"></paper-fab>
   
 </paper-item>
+
 
       <paper-item>
         <div class="copyright"></div>

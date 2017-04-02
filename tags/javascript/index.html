@@ -139,6 +139,85 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance">recent frontend circumstance</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">最近のフロントエンド事情はまるで発展途上国の交通事情ですか ES6で書いてES5に変換したいだけなのに、なんなんですか？
+ES6からES5に変換したいだけなんだ Babel Babelを使えば変換できる。。。
+Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。
+考えはいい。それで十分だし、何も難しいことはなさそうだ。
+でもいざ環境を揃えようとすると&hellip;&hellip;
+以下をインストールする。
+ webpack webpack-dev-server babel-core babel-loader babel-preset-es2015  webpack.config.jsと.babelrcにも設定を書く。
+これですむのならいい。
+実行したら文法エラーが出た。
+ babel-preset-stage-0  を追加したら解決した。
+なんだよそれ！最初からbabel-coreだけで対応しろよ！
+他にもbrowserify,babelifyとかいろいろプラグイン的なものがある。
+自分の書いたES6のコードを動くようにするのにいったいどれを入れたら動くのか分からない！
+BabelとWebpack webpackの設定及び.babelrcにも何を変換処理に使うのか書かないとちゃんと変換されない。
+webpackに書いただけじゃダメで.babelrcにも書かないといけない。という認識だけど、多分理解が足りなくて本当は綺麗な書き方があると信じてる。
+まとめ ES6で書いてES5に変換するの辛い。
+早くブラウザが標準でES6対応してほしい。</div>
+    <div class="tags">
+      2 Apr 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/frontend/">#frontend</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#javascript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/04/02/think-about-redux">think about redux</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">Reduxについて感化されたこと Reduxについて不満に思っている部分について考察している記事を見かけた。
+自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。
+理解して納得していること Reactの場合は上からもらうプロパティはPropsで読み取り専用。
+要素ごとにstateという読み書き可能なプロパティを持つ。
+ReduxはFluxアーキテクチャの実装。
+1つの状態を管理するStoreのみ。
+Actionを呼びReducerが状態を更新する。それぞれはプレーンなjavacsriptで書く。
+ここまではいい。とても素敵に感じた。
+受け入れがたいところ javascriptといえば、画面上の何かを触ったらイベントを拾って画面を変えたりとか、非同期で外からデータを持ってくるとかですよね。
+その非同期処理をReduxではどう書くのか、実はActionは処理のオブジェクトを生成するだけだし、Reducerは更新結果の状態を同期処理で作るだけ。
+ビジネスロジック的なものや非同期処理はどこに書くのか？
+基本的には無い。なので後付け？でてきたMiddlewareてのを作る。
+Reduxの思想では、非同期の処理前、処理中、処理結果(成功・失敗)をそれぞれ状態として更新する。
+その処理をMiddlewareに書くのだけれど&hellip;書くのだけれど、これがすごく気持ち悪いと感じていた。
+いろいろ他の書き方が無いのかとか本来自分はどう書きたいのかということを考えると、乖離が大きく、辛い。
+その辺りをReducerの状態を更新する処理のところで非同期処理を呼び出して結果を入れる書き方を考えた方がいらっしゃって、外国のReduxのコミュニティに投稿したら、disられてた。
+Reduxの基本設計に不備があって、それをごまかすためのMiddlewareは許されて、Reducerに非同期処理結果を突っ込むのは違うとかって言うの、どうなの？
+まとめ ReduxのMiddlewareがいまいち気に入らないので、非同期処理も考慮されたFluxアーキテクチャのオレオレ実装を作るしか無いのか。。。</div>
+    <div class="tags">
+      2 Apr 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/redux/">#Redux</a>
+        
+          <a href="http://tech.k-zak.com/tags/frontend/">#frontend</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#javascript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2015/02/16/challenge-fmxj">fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</a></div>
     
       <div class="categories">
@@ -390,77 +469,6 @@ jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、
     </div>
   </div>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/08/25/css-tech">cssメモ 配下の指定</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">cssで配下の指定勘違いしておかしな事やってたのでメモ
-結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。
-最初
-１，scrollさせたいdivの定義
-２，position:absoluteを使ってtableのheaderを上に固定させつつbodyだけスクールするよう
-定義
-この時、１で基準となるdivとその配下のdiv(scrollの指定したdev)の定義をしていて
-tableヘッダはscrollの定義をしたdivの子要素だからってそういう書き方してたら、
-tableヘッダ要素が意図する位置に固定されたような感じになるんだけど目には見えない
-状態になった。レイヤーの上下関係とかかな？とか思っていじくり回してたけど、違った。
-tableヘッダ要素は基準になるdiv配下のtheadみたいな描き方しないと駄目でした。
-div#base{
-posision: relative;
-}
-div#scroll{
-スクロールの設定(html上ではdiv#baseの子要素)
-}
-てやっている状態の時に
-ｘ div#scroll table thead ・・・これだとscroll定義されたdivの影響下(間違って無くね？)
-◯ div#base table thead ・・・これだと基準divの位置を基準にして正しく表示される。
-div#scrollは#baseの子要素なんだから問題無いだろうと思ってて、開発者ツールとかで確認すると
-意図する位置にいるのに表示されない状態。cssからすると、htmlどう書かれているか知ったこっちゃない
-ってことなんだろうね。css上でキチンとどこの配下の何の要素か書いてあげないといけんというこってす。
-そうそう、tableのheaderとbodyを分けるとheaderとbodyでtdの幅が合わなくなる事がある(内容次第)ので
-javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせるって事も必要です。固定幅じゃない場合。
-最終的な見本を下に(htmlはめんどうなので載せてません)</div>
-    <div class="tags">
-      25 Aug 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/css/">#CSS</a>
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2011/04/13/java-dwr">JavaのDWRって何さ　設定メモ</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。   原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを   作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。     アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？     DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで   構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。   とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを   簡単にJavaScript上で扱う仕組み？な感じ。     参考URL：   DWRのサイト　http://directwebremoting.org/dwr/index.html   2007の@ITの記事　http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html     具体的な手順の説明   １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を   落とす。   ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル   ２つを入れる。   ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな   あと、このクラスの定義のパッケージは何でも良い。   ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも   良い。この時、実在しない(dwr.jarが自動生成する)JSをタグに書いておく   ※説明たるいので、サイトとか参照して下さい。   どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。   ５，dwr用のxmlとweb.</div>
-    <div class="tags">
-      13 Apr 2011
-      
-        
-          <a href="http://tech.k-zak.com/tags/java/">#Java</a>
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
-        
-       
-    </div>
-  </div>
-
 </div>
 
 
@@ -470,7 +478,7 @@ javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせる�
   
     <div class="flex"></div>
   
-    <paper-fab disabled icon="chevron-right"></paper-fab>
+    <a href="http://tech.k-zak.com/tags/javascript/page/2/"><paper-fab icon="chevron-right"></paper-fab></a>
   
 </paper-item>
 
