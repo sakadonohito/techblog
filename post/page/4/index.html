@@ -139,6 +139,31 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/09/07/setting-php">PHPのファイルアップロードについて</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">PHPで大きなファイルアップロードを作成する
+・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。
+・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file
+・phpの設定でmax_file_size,post_max_size,タイムアウト、memory_limitなどの設定が必要
+・Apacheのバージョンが古いと2だか4GBが上限。という噂。
+・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。</div>
+    <div class="tags">
+      7 Sep 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/09/07/challenge-ansible">Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</a></div>
     
       <div class="categories">
@@ -458,37 +483,6 @@ csvファイルが存在していたら消す処理。
       
         
           <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/01/16/trouble-nginx">NginxでPermission denied</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/trouble-memo/">trouble-memo</a>
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">開発環境
-OS:Ubuntu12?
-Webサーバー：Nginx
-という環境下でWindowsでホストしていたお客さんのサイトを持ってきて改修しようとしたら、
-jsやらcssやら画像やらが軒のみPermission denied でエラーでて表示されない。
-ググってみたけれども該当するものがない。
-※自身のテスト用のものなどはちゃんと画像等問題なく読み込める。オーナーや権限も問題ない
-んで、ざっとファイル見ててなんとなく気になって「Thumbs.db」を削除したら表示されるようになった。
-Nginxのセキュリティ機能？なのでしょうか。仕組みは調べていない。ちゃんと勉強が必要ですね。
-追記：どうも原因は別にあったかも。再現できない。</div>
-    <div class="tags">
-      16 Jan 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/nginx/">#Nginx</a>
         
        
     </div>

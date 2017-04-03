@@ -6,8 +6,36 @@
     <description>Recent content on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 02 Apr 2017 22:50:25 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 03 Apr 2017 22:43:54 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>I use Markdown</title>
+      <link>http://tech.k-zak.com/2017/04/03/i-use-markdown</link>
+      <pubDate>Mon, 03 Apr 2017 22:43:54 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/03/i-use-markdown</guid>
+      <description>
+
+&lt;h1 id=&#34;気がつけばmarkdown&#34;&gt;気がつけばMarkdown&lt;/h1&gt;
+
+&lt;p&gt;いつの頃からかドキュメントはMarkdownで書くようになった。&lt;/p&gt;
+
+&lt;p&gt;最初はなんじゃこりゃ書きにくい、意味わからんと思っていた。&lt;/p&gt;
+
+&lt;p&gt;でも一度慣れてしまうととても書きやすい。&lt;/p&gt;
+
+&lt;p&gt;文章を章立てで考えられるし、VisualStudioCodeにプレビュー機能があってわかりやすい。&lt;/p&gt;
+
+&lt;p&gt;そしてBearのようなメモアプリや、何よりHugoのようなMarkdownで書いて静的サイトを生成できるツールに世の中溢れているので、一度慣れてしまうともう戻れない。&lt;/p&gt;
+
+&lt;p&gt;WordPressを普通のテキストを書くなんて苦行でしかない。&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Markdown最高！&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>agile progress</title>
@@ -882,43 +910,6 @@ PAGE_SAVE_AS なんかもあるのよ
 &lt;p&gt;今回作成したPelicanのテーマ&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/sakadonohito/pelican-theme-simple&#34;&gt;https://github.com/sakadonohito/pelican-theme-simple&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Pelicanを試す</title>
-      <link>http://tech.k-zak.com/2017/02/20/first-pelican</link>
-      <pubDate>Mon, 20 Feb 2017 15:26:44 +0900</pubDate>
-      
-      <guid>http://tech.k-zak.com/2017/02/20/first-pelican</guid>
-      <description>
-
-&lt;h1 id=&#34;python製の静的サイトジェネレーターpelicanを試す&#34;&gt;Python製の静的サイトジェネレーターPelicanを試す&lt;/h1&gt;
-
-&lt;p&gt;Hugo,Hexo,Jekyllと試してきて、せっかくなのでPython製のものも試そうとPelicanを試した。&lt;/p&gt;
-
-&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;mkdir &amp;lt;&amp;lt;blog&amp;gt;&amp;gt;
-cd &amp;lt;&amp;lt;blog&amp;gt;&amp;gt;
-pip install pelican Markdown
-pelican-quickstart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。&lt;/p&gt;
-
-&lt;h2 id=&#34;記事を書く&#34;&gt;記事を書く&lt;/h2&gt;
-
-&lt;p&gt;記事はcontent以下にreStructuredTextもしくはMarkdownで書きます。
-content以下にディレクトリを配置するとそのディレクトリ名がカテゴリ名扱いされるらしい。当分はいいや。
-もちろん、カテゴリはテキストファイルないのヘッダー？に記述できますので、カテゴリが必要だからといってディレクトリでわかなければいけないわけではありません。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pelican content -s pelicanconf.py
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;でoutputディレクトリに静的ファイルが生成されます。&lt;/p&gt;
-
-&lt;p&gt;簡単ですな。&lt;/p&gt;
 </description>
     </item>
     

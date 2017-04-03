@@ -139,6 +139,37 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2015/03/08/ubuntu-wifi">嘘でしょう。。。</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。
+実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。
+悩まされていた問題 会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。
+VMのネットワーク設定を「Macと共有」の時は問題なくて「自動検出」にするとVMのUbuntuのIPが正しく設定されない。
+ひとまず解決？ 前提として、このUbuntuはDesktop 14.04LTSです。なのでUbuntuServerの場合は違うかも。
+/etc/NetworkManager/system-connections/ 配下のネットワークの設定ファイルのファイル名に日本語(マルチバイト文字)が含まれていたので、ASCII文字のみに変更。
+/etc/NetworkManager/system-connections/ のファイル名を変更したものを開く
+この設定ファイルの中の「connection」にあるidの設定を変更したファイル名に合わせる。
+これだけでネットワークつながるようになった。というかipが正しくふられるようになった。
+まさかのマルチバイト文字ファイル名問題？</div>
+    <div class="tags">
+      8 Mar 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/network/">#Network</a>
+        
+          <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2015/02/16/challenge-fmxj">fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</a></div>
     
       <div class="categories">
@@ -528,31 +559,6 @@ sudo apt-get install mercurial
           <a href="http://tech.k-zak.com/tags/unicorn/">#unicorn</a>
         
           <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/09/07/setting-php">PHPのファイルアップロードについて</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">PHPで大きなファイルアップロードを作成する
-・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。
-・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file
-・phpの設定でmax_file_size,post_max_size,タイムアウト、memory_limitなどの設定が必要
-・Apacheのバージョンが古いと2だか4GBが上限。という噂。
-・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。</div>
-    <div class="tags">
-      7 Sep 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
         
        
     </div>

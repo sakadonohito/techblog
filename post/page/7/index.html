@@ -139,6 +139,30 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2013/08/25/css">cssメモ ちょっとしたもの</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">cssでwindowサイズに応じてbodyのcss定義を変える。
+まぁ、bootstrapで使っている上に固定のメニューリストみたいなのある時に
+windowの横幅めっちゃ狭めるとアレですやん。その辺の細工。
+共通の見た目にしたい用クラス作っとくと便利。というかそれが本来の使い方。
+例えば初期状態は非表示にしたい要素用クラスとそのcss定義とかね。</div>
+    <div class="tags">
+      25 Aug 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/css/">#CSS</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2013/08/25/css-tech">cssメモ 配下の指定</a></div>
     
       <div class="categories">
@@ -510,38 +534,6 @@ require 'rfm' class FMServer def initialize() @FM_CONFIG = { :host =&gt; "FileMa
       
         
           <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2011/06/25/apache-virtualhost">apacheでredmine virtualhost設定</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。
-   で、急遽同タイプのを買いなおしてHDD移植してOS再インストールとかして   つまったapacheでredmine再設定をここにメモす。     なぜこんなことが起きたのか。。それはOS再インストールした際に、apacheの   virtualhost.confが初期化され、redmine用の設定が消えたからです。   再設定のため、webや本を見ながら書いたつもりの設定ではCSS等が読み込まれなんだ   ( °д°)ﾅﾝﾃﾞ？     結局関係ないと思ってたところが関係してた(apacheの設定とか理解してなかった)   という話。     以下が正常に動いた設定(virtualhost)      #Redmine用   
- ServerAdmin oira@virtualhostDomain 
- DocumentRoot &#8220;redmineのある場所/redmine/public&#8221; 
- ServerName virtualhostDomain 
- ErrorLog &#8220;/private/var/log/apache2/virtualhostDomain-error_log&#8221; 
- CustomLog &#8220;/private/var/log/apache2/virtualhostDomain-access_log&#8221; common 
- 
- RailsBaseURI / ※redmine専用のバーチャルホストのため、ルートを指定</div>
-    <div class="tags">
-      25 Jun 2011
-      
-        
-          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
-        
-          <a href="http://tech.k-zak.com/tags/redmine/">#Redmine</a>
         
        
     </div>
