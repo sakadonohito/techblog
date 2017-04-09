@@ -140,6 +140,34 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2013/12/06/coding-memo04">コーディングリハビリ04</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">今回は与えられた文字列が全てユニークな文字の構成かどうか調べる。
+そういう問題を出されてスマートに答えられなかったので、調べた。
+1,回答した内容を修正したもの
+2,PHPのリファレンス見てて思いついた方法
+3,文字列のままチェック
+4,PHPの関数とか出てこなくて回答できなかった、頭の中にあったロジックを具現化したもの
+　配列に変換してshiftしながらチェックする方法
+どうも実行してみると2や3が早いようだ。1文字でもユニークでなければFalseにする3が内容によっては最速
+やはり何回も配列を操作するとコストが高くなりますね。模範解答が欲しい。</div>
+    <div class="tags">
+      6 Dec 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2013/12/06/coding-memo03">コーディングリハビリ03</a></div>
     
       <div class="categories">
@@ -445,33 +473,6 @@ Helper作る程でもない処理専用って事？後は再帰定義のcallbacl
       </div>
      
     <div class="description">gistベタ貼りじゃ！</div>
-    <div class="tags">
-      25 Aug 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
-        
-          <a href="http://tech.k-zak.com/tags/jquery/">#jQuery</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/08/25/jquery-toggle">jQueryで要素の高さを変える</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">まぁ、アレですよ。よかれと思って表示非表示をトグルする要素作ったら、
-非表示にした分、開いたスペースだけ下にあるリスト(table)要素の高さ広げてよ
-っていうオマケに品質求めちゃう的な要望があったわけですよ。
-jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、今要素をたたんでいるのか
-広げてるのか分からないのでis(&#8220;:hidden&#8221;)なんてのを使って調べるわけですね。
-だったらshow()とhide()使っても良くね？的な。</div>
     <div class="tags">
       25 Aug 2013
       

@@ -6,8 +6,36 @@
     <description>Recent content in Posts on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 03 Apr 2017 22:43:54 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 09 Apr 2017 23:11:59 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2017 04 09 daily</title>
+      <link>http://tech.k-zak.com/2017/04/09/2017-04-09-daily</link>
+      <pubDate>Sun, 09 Apr 2017 23:11:59 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/09/2017-04-09-daily</guid>
+      <description>
+
+&lt;h1 id=&#34;進捗ありません&#34;&gt;進捗ありません&lt;/h1&gt;
+
+&lt;p&gt;この1週間、調子が悪かったり仕事に追われたりしていて何も勉強できていない。
+少しだけReduxのサンプルを写経して動かない箇所を動くように修正した程度。&lt;/p&gt;
+
+&lt;h2 id=&#34;es2015で理解が足りていない事&#34;&gt;ES2015で理解が足りていない事&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import Hoge from &#39;./hoge&#39;; //hogeファイルの中でexport defaultされたものをHogeとなづけてimport
+import * as Hoge from &#39;./hoge&#39;; //hogeファイルの中でexportされたもの全てをHogeオブジェクトとしてimport
+import { Hoge } from &#39;./hoge&#39;; //hogeファイルの中でHogeという名でexportされたものをimport
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;という理解だったのだけれど、Reduxのサンプルで意図する挙動をしなくて困った。
+最終的に記述ミスだったのか、勘違いだったのか、動くようになったけど。&lt;/p&gt;
+
+&lt;p&gt;いっぺん基礎を網羅的に勉強しないとダメですね。
+しかし、ECMAScript2015のドキュメント原文を読むのはなー。。。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>I use Markdown</title>
@@ -798,118 +826,6 @@ AWS/GCP/Azure/Blumix上でマネージドなコンテナサービスを試す&lt
 &lt;p&gt;おそらく、目標が雑多で曖昧なのと、こういった勉強や訓練？に真面目に割ける時間がもう少ないと考えているので、限られた時間の中で自分の人生の中で時間対効果が高そうなものから絞って集中して取り組むことで成果を上げやすくしていこうと考えています。&lt;/p&gt;
 
 &lt;p&gt;あれもこれもじゃなくて、これだけ。これだけ。って絞って集中して残り少ない人生を進んでいこうと考えています。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Pelicanのレイアウト作成</title>
-      <link>http://tech.k-zak.com/2017/03/20/create-pelican-theme</link>
-      <pubDate>Mon, 20 Mar 2017 18:26:58 +0900</pubDate>
-      
-      <guid>http://tech.k-zak.com/2017/03/20/create-pelican-theme</guid>
-      <description>
-
-&lt;h1 id=&#34;pelicanで使う自分用テーマを作成した&#34;&gt;Pelicanで使う自分用テーマを作成した&lt;/h1&gt;
-
-&lt;p&gt;静的サイトジェネレーター用の基本的なブログレイアウトを一つ作っておくと使い回しができると思い、Python製のPelicanから着手することにしてみた。&lt;/p&gt;
-
-&lt;p&gt;結論から言うと、なかなか時間がとれないのもあって、足掛け2ヶ月かかった。&lt;/p&gt;
-
-&lt;h2 id=&#34;その1-ベースとなるレイアウトを素組する&#34;&gt;その1：ベースとなるレイアウトを素組する&lt;/h2&gt;
-
-&lt;p&gt;htmlとCSSのみでできるだけレスポンシブな簡易ブログ用のレイアウトを考えて作った。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/sakadonohito/site-base-theme&#34;&gt;https://github.com/sakadonohito/site-base-theme&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;flexboxを中途半端に使っているのと、Pelicanテーマ作り終わってからフィードバックしている部分もある。ホント適当。&lt;/p&gt;
-
-&lt;p&gt;CSSはSCSSからWebpackでビルドしているけど、限りなく必要ないレベル。
-EmacsならSCSS保存する時にCSSをビルドしてくれるのでホント不要な構造、しかも作り終わる前にWebpackは2がでちゃってバージョンが古いというオマケつき。
-そうです、Webpack使ってるぜアッピルがしたかっただけなのです。&lt;/p&gt;
-
-&lt;h2 id=&#34;その2-pelicanのテーマを作る&#34;&gt;その2：Pelicanのテーマを作る&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;ググって出てきたシンプルなテーマをコピーして&lt;/li&gt;
-&lt;li&gt;作ったベースレイアウトにまるっと取り替えて&lt;/li&gt;
-&lt;li&gt;変数部分がちゃんと展開されるように調整して&lt;/li&gt;
-&lt;li&gt;パーツをバラす&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;みたいな感じで作成。&lt;/p&gt;
-
-&lt;p&gt;結局よくりようしたのは&lt;a href=&#34;http://docs.getpelican.com/en/3.6.3/themes.html&#34;&gt;公式ドキュメント&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;ハマったところ&#34;&gt;ハマったところ&lt;/h2&gt;
-
-&lt;h3 id=&#34;1-見本にしたテーマのパーツ毎の役割がよくわからなかった&#34;&gt;1. 見本にしたテーマのパーツ毎の役割がよくわからなかった&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;categories.html&lt;/code&gt;と&lt;code&gt;category.html&lt;/code&gt;ってあって、最初複数形のはカテゴリ別の一覧表示で単数系のは1記事のパーツかと思ったら、複数形はカテゴリ名の一覧で単数系が特定のカテゴリでの記事一覧だった。
-タグの場合はさらに1記事用パーツレイアウトにはめ込む用の記事に関連づいたタグを横一列に並べるtaglist.htmlなんてのもあって、さらに混乱した。&lt;/p&gt;
-
-&lt;h3 id=&#34;2-ビルド失敗した時どこでエラーが発生したのか分からない&#34;&gt;2. ビルド失敗した時どこでエラーが発生したのか分からない&lt;/h3&gt;
-
-&lt;p&gt;ビルドのエラーログの出力設定があるのか調べていないだけなんだけど、テンプレート作成している時にビルドエラー発生したけど、どこの編集のせいか分からない(1行文法エラーで失敗したぜ！的なメッセージがでるだけ)のでこまめにビルドして確認しながらじゃないと迷路に迷い込む。&lt;/p&gt;
-
-&lt;p&gt;ショートカットキーのタイポとかで変な場所に意図せず文字を入力してしまっているのに気づかず、ビルドが失敗した時には、身に覚えがなかったので解決に時間がかかった(2分探索みたいにコードを消したり戻したりしながらビルドしてエラー箇所を探した)。&lt;/p&gt;
-
-&lt;h3 id=&#34;3-記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある&#34;&gt;3. 記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;period_Archives.html&lt;/code&gt;っていう特定の期間の記事リストを表示するためのパーツの上で&lt;strong&gt;articles&lt;/strong&gt;という記事リストオブジェクトは全体じゃなくて、その期間の記事リストオブジェクト。全記事のリストは代わりに&lt;strong&gt;all_articles&lt;/strong&gt;てのある。じゃぁ常に&lt;strong&gt;all_articles&lt;/strong&gt;を使えば？ってなるんだけど、TOPとか他の場所だとこの&lt;strong&gt;all_articles&lt;/strong&gt;は空欄。&lt;/p&gt;
-
-&lt;h3 id=&#34;4-年月毎に記事のカウントを取ったりurl分ける方法の説明がおろそか&#34;&gt;4. 年月毎に記事のカウントを取ったりURL分ける方法の説明がおろそか&lt;/h3&gt;
-
-&lt;p&gt;結論からいうと、URLについては設定ファイルに&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;MONTH_ARCHIVE_SAVE_AS = &#39;{date:%Y}/{date:%m}/index.html&#39;
-他にも
-AUTHOR_SAVE_AS とか
-PAGE_SAVE_AS なんかもあるのよ
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;とか書いておくと、/2017/03/みたいなパスで2017年3月の記事の一覧ページが生成される。今にして思うと年のフォルダ&amp;amp;月を意味するファイルの組み合わせでよかったんじゃないか説もある。&lt;/p&gt;
-
-&lt;p&gt;年月の記事カウントについては全記事を年でまとめた記事リストの記事リストを作成して「記事リスト」をさらに月でまとめてカウントを取るみたいなことをやる。
-これはそんなようなことをするサンプルのテーマがたまたま見つかったから作れたけど見つからなかったらアーカイブのページが断念したと思う。&lt;/p&gt;
-
-&lt;p&gt;こんな感じ&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;lt;section&amp;gt;
-	&amp;lt;p&amp;gt;Archives&amp;lt;/p&amp;gt;
-	{% if all_articles|count %}
-	&amp;lt;ul&amp;gt;
-		{% for year, date_year in all_articles|groupby(&#39;date.year&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
-		　　{% for month, articles in date_year|groupby(&#39;date.month&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
-		　　　　&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/{{ year }}/{{ &#39;%02d&#39; % month }}/&amp;quot;&amp;gt;{{ year }}年{{ month }}月&amp;lt;/a&amp;gt;({{ articles|count }})&amp;lt;/li&amp;gt;
-		　　{% endfor %}
-		{% endfor %}
-	&amp;lt;/ul&amp;gt;
-	{% elif articles %}
-	&amp;lt;ul&amp;gt;
-	{% for year, date_year in articles|groupby(&#39;date.year&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
-	　　{% for month, articles in date_year|groupby(&#39;date.month&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
-		　　　　&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/{{ year }}/{{ &#39;%02d&#39; % month }}/&amp;quot;&amp;gt;{{ year }}年{{ month }}月&amp;lt;/a&amp;gt;({{ articles|count }})&amp;lt;/li&amp;gt;
-	　　{% endfor %}
-	{% endfor %}
-	&amp;lt;/ul&amp;gt;
-	{% endif %}
-&amp;lt;/section&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;正直リストオブジェクトをパイプで次の処理に渡せるのjinjaのドキュメント見なかったら想像もできなかったので、このパターンのサンプルくらいPelicanのドキュメントにも載せておいてほしい。&lt;/p&gt;
-
-&lt;h3 id=&#34;5-1つのテンプレートファイルに複数のブロックを書ける&#34;&gt;5. 1つのテンプレートファイルに複数のブロックを書ける&lt;/h3&gt;
-
-&lt;p&gt;ハマったことではないんだけど、パーツ側が1ブロックしか書いちゃいけないと最初思ってたので。
-複数のブロックを書けるので、メインコンテンツのブロックとは別の離れた場所に共通化できないテンプレートごとの何かを表示させたい要素がある時なんかに便利だなーと思った。&lt;/p&gt;
-
-&lt;h2 id=&#34;総括&#34;&gt;総括&lt;/h2&gt;
-
-&lt;p&gt;テンプレート作成したけど設計失敗かも。&lt;/p&gt;
-
-&lt;p&gt;今回作成したPelicanのテーマ&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/sakadonohito/pelican-theme-simple&#34;&gt;https://github.com/sakadonohito/pelican-theme-simple&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

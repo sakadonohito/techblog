@@ -139,6 +139,62 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/24/i-tried-mackerel">I tried Mackerel</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">勇気を出してMackerelを試してみた 前々から気にはなっていたMackerelをお試しで入れてみた。
+ VPS契約しているUbuntu16.04 使い捨てのAWS上WIndows2012  インストール ヘルプに書いてある通りに作業してつまずく事もなくすんなりできた。
+監視項目 デフォルト監視項目 通常の監視項目で既に普段Zabbixで見て使っている項目を監視できているので、Zabbix使いこなす気がないならMackerelでいいかなって思った。
+カスタムメトリック 今回はまだ試していない。
+けど、簡単そうだ。
+プラグインの作成 今回はまだ試していない。
+golangじゃないといけないのかと思っていたけれど、他の言語でもいいらしい。
+外形監視 ホストが止まっても監視を続けるので、仕様上間違ってはいないんだけどずっとエラーがで続ける。
+ホストをメンテナンスにしたり停止したりした時は外形監視も停止する仕組みがあるといいいかなって思った。
+外形監視の定義削除しかなかったように思える。
+通知設定 通知設定も簡単だし、いろんなサービス(Slackとか)と簡単に連携できるのも魅力だなと感じた。
+まとめ まだプラグインを試していないのだけれど、とにかくヘルプドキュメントが素晴らしいと感じた。
+自分ならそこまではやらないよってくらいに丁寧に書いてあった。
+特に感心したのは他サービスと連携するために、他サービス上での設定の説明が画面キャプチャ入りで説明されていたこと。
+小規模な場合にフリーでどこまで使えるのかフリープランを調べていきたい。
+Zabbixサーバーを一台用意する場合との費用比較とか調べていきたい。</div>
+    <div class="tags">
+      24 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/mackerel/">#Mackerel</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8">i got caught in utf8</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">UTF-8-MAC にまたしてもやられた 全角のチルダだか波ダッシュだかがmacOSの時とそれ以外で違う文字コードなのか別の文字なのか、とにかく想定外の文字コードのものがバリデーションをすり抜けてきた。
+一つのOS上で禁止文字を羅列して出来たつもりになってたけどUTF−8−MACにはこれからも悩まされるんだろうなー。</div>
+    <div class="tags">
+      23 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/character/">#character</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/03/22/bitbucket-is-cool">Bitbucket is cool</a></div>
     
       <div class="categories">
@@ -459,71 +515,6 @@ Ansibleは様々な構成管理、できればWindows環境も。
 来年取り組みたいのは、今年やりそこねたメールサーバーやログ設定、それからプロキシ設定かな</div>
     <div class="tags">
       30 Dec 2014
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-serverside">2014年を振り返る サーバーサイドプログラミング</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&#8230;)について振り返る
-まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
-Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
-Perl,Python,Rubyについては全然触れなくてフラストレーション。
-PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。
-本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。
-家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
-PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
-枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは&#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</div>
-    <div class="tags">
-      30 Dec 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/groovy/">#Groovy</a>
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-js">2014年を振り返る JavaScript編</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
-JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
-結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
-document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。
-jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。
-ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。
-ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。
-もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。
-CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。</div>
-    <div class="tags">
-      30 Dec 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
-        
        
     </div>
   </div>

@@ -139,6 +139,71 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-serverside">2014年を振り返る サーバーサイドプログラミング</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&#8230;)について振り返る
+まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
+Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
+Perl,Python,Rubyについては全然触れなくてフラストレーション。
+PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。
+本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。
+家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
+PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
+枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
+Rubyは&#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</div>
+    <div class="tags">
+      30 Dec 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/groovy/">#Groovy</a>
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-js">2014年を振り返る JavaScript編</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
+JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
+結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
+document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。
+jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。
+ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。
+ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。
+もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。
+CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。</div>
+    <div class="tags">
+      30 Dec 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/10/25/milestone">思い出せない</a></div>
     
       <div class="categories">
@@ -449,50 +514,6 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを
 取得し、コマンドを叩く。
 #!/usr/bin/env python # -*- coding: utf-8 -*- import os,csv,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() return data except Exception as e: #print "FileNotFound or Access Error." return None def read_file(path): try: os.path.isfile(path) f = open(path,'r') data = csv.reader(f) users = [line[0] for line in data] f.close() return users except Exception as e: #print "FileNotFound or Access Error." return None def bu_cmd(users,bu_path): if isinstance(users,list) and len(users)  0: cmds = map(lambda x:"</div>
-    <div class="tags">
-      16 Mar 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-02">Win上のPythonでバッチ処理2</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、前回使用した作業用の
-csvファイルが存在していたら消す処理。
-#!/usr/bin/env python # -*- coding: utf-8 -*- import os.path,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() print data return data except Exception as e: #ファイルは存在しない print "FileNotFound or Access Error." return None def is_file(path): try: os.path.isfile(path) os.remove(path) #print "消してやったぜ、ヒャッハー！" return 0 except Exception as e: #print "ファイルなど存在しない" return 0 if __name__ == '__main__': #jsonファイルに作業対象ファイルパスなんかを書いておく conf_data = get_conf("conf.json") is_file(conf_data["test"]["csvPath"])  </div>
-    <div class="tags">
-      16 Mar 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-01">Windows上でpythonでバッチ処理1</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">windows server2008上のFileMakerServerのWeb公開エンジンのプロセスを監視して
-異常終了していたらプロセスを再起動するバッチプログラムをpythonで書いてみた。
-#-*- coding:utf-8 -*- import os import urllib2 def send_mail_batch: try: import smtplib host,port = 'www.example.jp',587 username,password = 'email@example.jp','passwd' to_address = 'email@example.jp' msg = """From: %s To: %s Subject: Web公開エンジン再起動 異常終了したWeb公開エンジンプロセスを再起動しました。 . """ % (username,to_address) smtp = smtplib.SMTP(host,port) smtp.set_debuglevel(True) smtp.ehlo(host) smtp.login(username,password) smtp.sendmail(username,to_address,msg) smtp.quit() return True except: return False if __name__ == '__main__': testurl = "http://10.0.0.124/fmi/iwp" try: res = urllib2.urlopen(testurl) res.read() os.system('echo ok  ok.txt') send_mail_batch() except: os.system("fmsadmin -u account -p password start wpe"</div>
     <div class="tags">
       16 Mar 2014
       

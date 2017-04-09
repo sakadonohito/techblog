@@ -139,6 +139,35 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/02/18/restart">再始動</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">ブログ引越して再始動 &hellip;の予定
+再始動 契約していたレンタルサーバーを解約して、長らく契約するも放置状態が続いていたVPSにいろいろ引っ越そうと検討。
+ついでにいろいろ構成などを再検討してやり直そうと考えました。
+構成 レンタルサーバー上のMovableTypeで細々と更新していたアニメやゲームについてのブログをVPS上にWordPressに構築し直しす事に。
+ついでにWordPressのカスタマイズの練習台にも使おうという魂胆。
+技術メモ的なこの忘備録ブログは今回を機にHugoで静的サイト構築してGithubPagesに載せる事にしました。
+他にいくつか静的サイトジェネレーターを運営していろいろ触ってみたいと考えている。
+ただ、今の所、上記２ブログ以外は全てS3での静的サイトホスティングでFTPでファイルをアップロードする方法を考えているけど、将来的には違う場所でホスティングしたりデプロイツールを使ったり、CI的なことをしたり、Dockerを使うなどして別の場所にサイトを構築しようかと考えている。
+MovableTypeからWordPressへの引越し テキストをずらずら記述していただけだったので、特に問題はなかった。 単純にエクスポートしてインポートしただけ。 インポート後にコツコツとカテゴリやタグを整理して付け直したり。
+VPSサーバーの設定やHugoについて 後日、それぞれ別の記事にします。</div>
+    <div class="tags">
+      18 Feb 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/complain/">#complain</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2015/03/08/ubuntu-wifi">嘘でしょう。。。</a></div>
     
       <div class="categories">
@@ -516,49 +545,6 @@ PHP namespaceやautoloadをまだ理解しきれていない部分があるよ�
           <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
         
           <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/09/15/dev-env-vm">新しく開発環境作成中</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">Ubuntu14(64bit)のVM作成  イメージからVMWareFusionに作成
- ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
- ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
- 設定画面が出てくるので、そのままOK
-  VMWare toolsをインストール
- VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行  aptのアップデートとアップグレード sudo apt-get update
-sudo apt-get upgrade
- Dropboxクライアントのインストール
- FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから  Emacsのインストール sudo apt-get install emacs24
- Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
-mv ~/emacs.d ~/.emacs.d   バージョン管理のインストール sudo apt-get install git
-sudo apt-get install mercurial
- nginxのインストール sudo apt-get install nginx
- xEnvや各バージョンのインストールに必要になる諸々のインストール sudo add-apt-repository ppa:webupd8team/java</div>
-    <div class="tags">
-      15 Sep 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/env/">#env</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/redmine/">#Redmine</a>
-        
-          <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
-        
-          <a href="http://tech.k-zak.com/tags/unicorn/">#unicorn</a>
-        
-          <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
         
        
     </div>

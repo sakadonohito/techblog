@@ -139,6 +139,36 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2013/08/25/print-css">css 印刷のために</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">なんとかPHP側でPDF作成とかじゃなくてhtml＆cssで楽したい。
+そんな時のcss設定とか。
+まず、対象レイアウトに印刷用css作っていきます。
+cssの中で@media print とかやっておくと、印刷の時だけ適用されるので、css作ってる間は
+その指定外しておいたほうが楽ね。
+出来上がったら、htmlのheadでそのcssをmedia=&#8221;print&#8221;の指定付きで読み込む。
+後はhtml内に印刷ボタン配置して印刷ボタン押したらbody要素のクラスに&#8221;print&#8221;を付与
+javascriptで印刷→setTimeoutなんかで１秒後にbodyに付与したprintクラスを今度は
+消してやれば、元通り！って寸法です。
+ページ番号とかリンク？とか印刷日付とかはブラウザの仕様らしいので我慢。
+それが嫌ならPDFで一から作ってください。難易度の落差が凄いな。</div>
+    <div class="tags">
+      25 Aug 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/css/">#CSS</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2013/08/25/css">cssメモ ちょっとしたもの</a></div>
     
       <div class="categories">
@@ -513,27 +543,6 @@ require 'rfm' class FMServer def initialize() @FM_CONFIG = { :host =&gt; "FileMa
           <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
         
           <a href="http://tech.k-zak.com/tags/sinatra/">#Sinatra</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2011/11/05/milestone">シンポナシウム</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">前回の更新からはや4ヶ月超。どのような進歩があったと言うと&#8230;
- 内に等しい！？     ホント自己嫌悪してくるわー。     一応、   DB関係：   ・MySQL、ターミナルで入る時に「mysql -u name -p」って「-p」入れるの忘れないの覚えた。     環境関係：   ・gitとMercurial少しづつ試した。コマンドも少し覚えた   ・レンタルサーバーVPS、Macの様々な操作のお陰でターミナルでのコマンド操作馴れた。   ・emacsの設定ファイルいろいろコピペで入れて、開発はeclipse→emacsになった。   必然的にemacsの基本的な操作を覚えた。     プログラム言語：   ・pythonをちょろちょろ自習しているがちっとも上達しない、ちょっと入り組んだ処理の   ソースになると途端にちんぷんかんぷん。   ・PythonでapacheにDjangoを置く、WSGIの設定とかおぼ&#8230;えた&#8230;？     あーだめだこりゃ、話しにならん。。。  </div>
-    <div class="tags">
-      5 Nov 2011
-      
-        
-          <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>
         
        
     </div>

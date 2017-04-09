@@ -9,6 +9,62 @@
     <atom:link href="http://tech.k-zak.com/categories/study-daily/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>2017 04 09 daily</title>
+      <link>http://tech.k-zak.com/2017/04/09/2017-04-09-daily</link>
+      <pubDate>Sun, 09 Apr 2017 23:11:59 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/09/2017-04-09-daily</guid>
+      <description>
+
+&lt;h1 id=&#34;進捗ありません&#34;&gt;進捗ありません&lt;/h1&gt;
+
+&lt;p&gt;この1週間、調子が悪かったり仕事に追われたりしていて何も勉強できていない。
+少しだけReduxのサンプルを写経して動かない箇所を動くように修正した程度。&lt;/p&gt;
+
+&lt;h2 id=&#34;es2015で理解が足りていない事&#34;&gt;ES2015で理解が足りていない事&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import Hoge from &#39;./hoge&#39;; //hogeファイルの中でexport defaultされたものをHogeとなづけてimport
+import * as Hoge from &#39;./hoge&#39;; //hogeファイルの中でexportされたもの全てをHogeオブジェクトとしてimport
+import { Hoge } from &#39;./hoge&#39;; //hogeファイルの中でHogeという名でexportされたものをimport
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;という理解だったのだけれど、Reduxのサンプルで意図する挙動をしなくて困った。
+最終的に記述ミスだったのか、勘違いだったのか、動くようになったけど。&lt;/p&gt;
+
+&lt;p&gt;いっぺん基礎を網羅的に勉強しないとダメですね。
+しかし、ECMAScript2015のドキュメント原文を読むのはなー。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>I use Markdown</title>
+      <link>http://tech.k-zak.com/2017/04/03/i-use-markdown</link>
+      <pubDate>Mon, 03 Apr 2017 22:43:54 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/03/i-use-markdown</guid>
+      <description>
+
+&lt;h1 id=&#34;気がつけばmarkdown&#34;&gt;気がつけばMarkdown&lt;/h1&gt;
+
+&lt;p&gt;いつの頃からかドキュメントはMarkdownで書くようになった。&lt;/p&gt;
+
+&lt;p&gt;最初はなんじゃこりゃ書きにくい、意味わからんと思っていた。&lt;/p&gt;
+
+&lt;p&gt;でも一度慣れてしまうととても書きやすい。&lt;/p&gt;
+
+&lt;p&gt;文章を章立てで考えられるし、VisualStudioCodeにプレビュー機能があってわかりやすい。&lt;/p&gt;
+
+&lt;p&gt;そしてBearのようなメモアプリや、何よりHugoのようなMarkdownで書いて静的サイトを生成できるツールに世の中溢れているので、一度慣れてしまうともう戻れない。&lt;/p&gt;
+
+&lt;p&gt;WordPressを普通のテキストを書くなんて苦行でしかない。&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Markdown最高！&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>agile progress</title>
       <link>http://tech.k-zak.com/2017/04/02/agile-progress</link>
       <pubDate>Sun, 02 Apr 2017 22:50:25 +0900</pubDate>
@@ -767,160 +823,6 @@ AWS/GCP/Azure/Blumix上でマネージドなコンテナサービスを試す&lt
 &lt;h2 id=&#34;vpsサーバーの設定やhugoについて&#34;&gt;VPSサーバーの設定やHugoについて&lt;/h2&gt;
 
 &lt;p&gt;後日、それぞれ別の記事にします。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj</link>
-      <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj</guid>
-      <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;概要としては、FileMaker Server の XML公開を使う。&lt;/p&gt;
-
-&lt;p&gt;Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。&lt;/p&gt;
-
-&lt;p&gt;◆ハマった事：サンプルPHPの内容&lt;/p&gt;
-
-&lt;p&gt;サンプルのPHPをよく読んでなかった。。。&lt;/p&gt;
-
-&lt;p&gt;JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。&lt;/p&gt;
-
-&lt;p&gt;-db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに&lt;/p&gt;
-
-&lt;p&gt;u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数&lt;/p&gt;
-
-&lt;p&gt;ていうのがくっついてPHPにpostされてくる。&lt;/p&gt;
-
-&lt;p&gt;それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。&lt;/p&gt;
-
-&lt;p&gt;そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。&lt;/p&gt;
-
-&lt;p&gt;なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。&lt;/p&gt;
-
-&lt;p&gt;サンプルって事でいろいろハードコーディングされてるけど、気にしない。&lt;/p&gt;
-
-&lt;p&gt;◆ハマった：Nginxの設定&lt;/p&gt;
-
-&lt;p&gt;欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら&lt;/p&gt;
-
-&lt;p&gt;WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。&lt;/p&gt;
-
-&lt;p&gt;これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。&lt;/p&gt;
-
-&lt;p&gt;しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。&lt;/p&gt;
-
-&lt;p&gt;※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても&lt;/p&gt;
-
-&lt;p&gt;　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。&lt;/p&gt;
-
-&lt;p&gt;その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。&lt;/p&gt;
-
-&lt;p&gt;最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。&lt;/p&gt;
-
-&lt;p&gt;自分はUbuntuの環境なので、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;sudo apt-get install nginx-extras&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)&lt;/p&gt;
-
-&lt;p&gt;more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;&lt;/p&gt;
-
-&lt;p&gt;を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！&lt;/p&gt;
-
-&lt;p&gt;これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。&lt;/p&gt;
-
-&lt;p&gt;いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>AnsibleのSSH設定について</title>
-      <link>http://tech.k-zak.com/2015/02/08/ansible-ssh</link>
-      <pubDate>Sun, 08 Feb 2015 14:43:15 +0000</pubDate>
-      
-      <guid>http://tech.k-zak.com/2015/02/08/ansible-ssh</guid>
-      <description>&lt;p&gt;Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。&lt;/p&gt;
-
-&lt;p&gt;という事で調べた。&lt;/p&gt;
-
-&lt;p&gt;結論としては、varsファイルに&lt;/p&gt;
-
-&lt;p&gt;・ansible_ssh_user&lt;/p&gt;
-
-&lt;p&gt;・ansible_ssh_pass&lt;/p&gt;
-
-&lt;p&gt;・ansible_sudo_pass&lt;/p&gt;
-
-&lt;p&gt;の3つを書いておきましょう。でした。&lt;/p&gt;
-
-&lt;p&gt;最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。&lt;/p&gt;
-
-&lt;p&gt;例えばhostsファイルに&lt;/p&gt;
-
-&lt;p&gt;`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。&lt;/p&gt;
-
-&lt;p&gt;という事で調べた。&lt;/p&gt;
-
-&lt;p&gt;結論としては、varsファイルに&lt;/p&gt;
-
-&lt;p&gt;・ansible_ssh_user&lt;/p&gt;
-
-&lt;p&gt;・ansible_ssh_pass&lt;/p&gt;
-
-&lt;p&gt;・ansible_sudo_pass&lt;/p&gt;
-
-&lt;p&gt;の3つを書いておきましょう。でした。&lt;/p&gt;
-
-&lt;p&gt;最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。&lt;/p&gt;
-
-&lt;p&gt;例えばhostsファイルに&lt;/p&gt;
-
-&lt;p&gt;`&lt;/p&gt;
-
-&lt;p&gt;とか書いてグループ名が「dev」の場合に&lt;/p&gt;
-
-&lt;p&gt;-playbook&lt;/p&gt;
-
-&lt;p&gt;|&lt;/p&gt;
-
-&lt;p&gt;|&amp;#8211;dev.yml&lt;/p&gt;
-
-&lt;p&gt;|&lt;/p&gt;
-
-&lt;p&gt;|&amp;#8211;group_vars&lt;/p&gt;
-
-&lt;p&gt;|   |&lt;/p&gt;
-
-&lt;p&gt;|   |&amp;#8211;dev.yml&lt;/p&gt;
-
-&lt;p&gt;|&lt;/p&gt;
-
-&lt;p&gt;|&amp;#8211;roles\※内容略&lt;/p&gt;
-
-&lt;p&gt;|&lt;/p&gt;
-
-&lt;p&gt;|&amp;#8211;site.yml&lt;/p&gt;
-
-&lt;p&gt;みたいな感じで書く。&lt;/p&gt;
-
-&lt;p&gt;group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより&amp;#8211;ask-passの指定が必要なくなった。&lt;/p&gt;
-
-&lt;p&gt;問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。&lt;/p&gt;
-
-&lt;p&gt;なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。&lt;/p&gt;
-
-&lt;p&gt;ansible-playbookを実行する時に復号のために&amp;#8211;vault-passの引数とそのファイルパスを渡さないといけないってのも&amp;#8211;ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。&lt;/p&gt;
-
-&lt;p&gt;hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー&lt;/p&gt;
-
-&lt;p&gt;って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。&lt;/p&gt;
 </description>
     </item>
     

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tech.k-zak.com/2017/04/09/2017-04-09-daily</loc>
+    <lastmod>2017-04-09T23:11:59+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tech.k-zak.com/2017/04/03/i-use-markdown</loc>
     <lastmod>2017-04-03T22:43:54+09:00</lastmod>
   </url>
@@ -523,12 +528,6 @@
   </url>
   
   <url>
-    <loc>http://tech.k-zak.com/categories/daily-study/</loc>
-    <lastmod>2017-04-03T22:43:54+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://tech.k-zak.com/tags/django/</loc>
     <lastmod>2011-04-21T08:43:01+00:00</lastmod>
     <priority>0</priority>
@@ -638,7 +637,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/tags/javascript/</loc>
-    <lastmod>2017-04-02T22:50:14+09:00</lastmod>
+    <lastmod>2017-04-09T23:11:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -764,7 +763,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/post/</loc>
-    <lastmod>2017-04-03T22:43:54+09:00</lastmod>
+    <lastmod>2017-04-09T23:11:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -830,7 +829,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/categories/study-daily/</loc>
-    <lastmod>2017-04-02T22:50:25+09:00</lastmod>
+    <lastmod>2017-04-09T23:11:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -883,7 +882,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/</loc>
-    <lastmod>2017-04-03T22:43:54+09:00</lastmod>
+    <lastmod>2017-04-09T23:11:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   

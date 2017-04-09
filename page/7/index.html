@@ -140,6 +140,33 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2013/08/25/jquery-toggle">jQueryで要素の高さを変える</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">まぁ、アレですよ。よかれと思って表示非表示をトグルする要素作ったら、
+非表示にした分、開いたスペースだけ下にあるリスト(table)要素の高さ広げてよ
+っていうオマケに品質求めちゃう的な要望があったわけですよ。
+jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、今要素をたたんでいるのか
+広げてるのか分からないのでis(&#8220;:hidden&#8221;)なんてのを使って調べるわけですね。
+だったらshow()とhide()使っても良くね？的な。</div>
+    <div class="tags">
+      25 Aug 2013
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+          <a href="http://tech.k-zak.com/tags/jquery/">#jQuery</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2013/08/25/print-css">css 印刷のために</a></div>
     
       <div class="categories">
@@ -503,47 +530,6 @@ open(my $fh,&rsquo;&lt;&#8216;,$file_path);
       
         
           <a href="http://tech.k-zak.com/tags/complain/">#complain</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2012/01/07/study-sinatra">FileMakerとRubyのSinatra</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？
-と思ったのでやってみました。
-gihyo.jp:第９回 SinatraとSequel・Hamlで掲示板アプリを作る
-http://gihyo.jp/dev/serial/01/ruby/0009
-が自分がチュートリアル(以下、見本)としてやってみみたもので、これのmodel部分をFileMakerに
-置換えました。
-※FileMakerやRuby、Sinatraそのものの細かい説明は省きます。
-最終的な階層は以下(見本のファイルも混在してます)
-&#8212;
-app/ start.rb model/ comment.rb view / layout.haml index.haml fmbbs.haml style.sass &#8212;
-FileMaker部分
-・bbsテーブルの作成、カラムは見本のapp/model/comment.rb内で定義しているクラス
-Commentsを真似て定義。但し、posted_dateはFileMaker側ではtimestamp型で作成時に自動で
-現在のタイムスタンプが入るよう設定。
-Ruby部分
-・app/model/comment.rbにFileMakerとの接続クラス追加
-&#8212;以下をcomment.rbに追加&#8212;
-require 'rfm' class FMServer def initialize() @FM_CONFIG = { :host =&gt; "FileMakerServerの接続先IP", :account_name =&gt; "FileMakerFileのログインアカウント", :password =&gt; "FileMakerFileのログインパスワード", :database =&gt; "FileMakerFileの名前", :ssl =&gt; false, :root_cert =&gt; false, } @fm = Rfm::Server.new(@FM_CONFIG) end def listAll(lay,sortCond) return @fm[@FM_CONFIG[:database]][lay].all(sortCond) end def create(lay,obj) @fm[@FM_CONFIG[:database]][lay].create(obj) end end ・hamlを編集(追加)</div>
-    <div class="tags">
-      7 Jan 2012
-      
-        
-          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-          <a href="http://tech.k-zak.com/tags/sinatra/">#Sinatra</a>
         
        
     </div>
