@@ -139,6 +139,29 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-infra">2014年を振り返る インフラ系</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">2014年を振り返る。インフラ関係について
+今年もっとも多く成長したのはインフラ関係についてだと思う。
+来年はもう少しスタートアップ用のシェルスクリプト理解して作れるようになりたい。
+PowerShellももう少し覚えてWindowsServer環境の制御も出来るようになりたい。
+構成管理は今年手を付けたVagrantとAnsibleをもっと掘り下げていきたい。
+VagrantはPackerを使ってVirtualBox以外のボックス作成やEC2へのアクセス。
+Ansibleは様々な構成管理、できればWindows環境も。
+来年取り組みたいのは、今年やりそこねたメールサーバーやログ設定、それからプロキシ設定かな</div>
+    <div class="tags">
+      30 Dec 2014
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-serverside">2014年を振り返る サーバーサイドプログラミング</a></div>
     
       <div class="categories">
@@ -497,28 +520,6 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
           <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
         
           <a href="http://tech.k-zak.com/tags/ssh/">#SSH</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-03">Win上のpythonでバッチ処理3</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを
-取得し、コマンドを叩く。
-#!/usr/bin/env python # -*- coding: utf-8 -*- import os,csv,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() return data except Exception as e: #print "FileNotFound or Access Error." return None def read_file(path): try: os.path.isfile(path) f = open(path,'r') data = csv.reader(f) users = [line[0] for line in data] f.close() return users except Exception as e: #print "FileNotFound or Access Error." return None def bu_cmd(users,bu_path): if isinstance(users,list) and len(users)  0: cmds = map(lambda x:"</div>
-    <div class="tags">
-      16 Mar 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
         
        
     </div>

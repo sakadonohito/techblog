@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mastodon on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/mastodon/index.xml</link>
+    <description>Recent content in Mastodon on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="http://tech.k-zak.com/tags/mastodon/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mastodon git clone</title>
+      <link>http://tech.k-zak.com/2017/04/18/mastodon-git-clone</link>
+      <pubDate>Tue, 18 Apr 2017 21:34:18 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/18/mastodon-git-clone</guid>
+      <description>
+
+&lt;h1 id=&#34;mastodonをgit-cloneして中を見てみる&#34;&gt;Mastodonをgit cloneして中を見てみる&lt;/h1&gt;
+
+&lt;p&gt;今流行りのMastodonをgit cloneしてみた。&lt;/p&gt;
+
+&lt;p&gt;中は設定ファイルが沢山とrails関係、フロント用のnode_modules、テスト関係、それからVagrantfileやDocker関係のファイル。&lt;/p&gt;
+
+&lt;h2 id=&#34;ファイル群について&#34;&gt;ファイル群について&lt;/h2&gt;
+
+&lt;p&gt;今日は内容をざっと見るところまで。&lt;/p&gt;
+
+&lt;p&gt;内訳は、以下です。ディレクトリを意味するものは最期に「/」をつけています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ライセンスとかReadmeとかDocumentとか
+
+&lt;ul&gt;
+&lt;li&gt;CONTRIBUTING.md&lt;/li&gt;
+&lt;li&gt;ISSUE_TEMPLATE.md&lt;/li&gt;
+&lt;li&gt;LICENSE&lt;/li&gt;
+&lt;li&gt;README.md&lt;/li&gt;
+&lt;li&gt;docs/&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;buildpack
+
+&lt;ul&gt;
+&lt;li&gt;.buildpacks&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Heroku用設定ファイル
+
+&lt;ul&gt;
+&lt;li&gt;.slugignore&lt;/li&gt;
+&lt;li&gt;Procfile&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;デプロイツール(サービス)用
+
+&lt;ul&gt;
+&lt;li&gt;scalingo.json&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;コードレビュー用？設定ファイル
+
+&lt;ul&gt;
+&lt;li&gt;.codeclimate.yml&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;エディターの設定統一用設定ファイル
+
+&lt;ul&gt;
+&lt;li&gt;.editorconfig&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;git
+
+&lt;ul&gt;
+&lt;li&gt;.git/&lt;/li&gt;
+&lt;li&gt;.gitignore&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;環境変数設定ファイル(もしかしたらRails専用かも？)
+
+&lt;ul&gt;
+&lt;li&gt;.env.production.sample&lt;/li&gt;
+&lt;li&gt;.env.test&lt;/li&gt;
+&lt;li&gt;.env.vagrant&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Ruby on Rails関係
+
+&lt;ul&gt;
+&lt;li&gt;.rspec&lt;/li&gt;
+&lt;li&gt;.rubocop.yml&lt;/li&gt;
+&lt;li&gt;.ruby-version&lt;/li&gt;
+&lt;li&gt;Capfile&lt;/li&gt;
+&lt;li&gt;Gemfile&lt;/li&gt;
+&lt;li&gt;Gemfile.lock&lt;/li&gt;
+&lt;li&gt;Rakefile&lt;/li&gt;
+&lt;li&gt;app/&lt;/li&gt;
+&lt;li&gt;app.json&lt;/li&gt;
+&lt;li&gt;bin/&lt;/li&gt;
+&lt;li&gt;config/&lt;/li&gt;
+&lt;li&gt;config.ru&lt;/li&gt;
+&lt;li&gt;db/&lt;/li&gt;
+&lt;li&gt;lib/&lt;/li&gt;
+&lt;li&gt;log/&lt;/li&gt;
+&lt;li&gt;public/&lt;/li&gt;
+&lt;li&gt;spec/&lt;/li&gt;
+&lt;li&gt;tmp/&lt;/li&gt;
+&lt;li&gt;vendor/&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;JavaScriptのトランスパイルとかビルドとかフロントエンド開発用とか
+
+&lt;ul&gt;
+&lt;li&gt;.nvmrc&lt;/li&gt;
+&lt;li&gt;.babelrc&lt;/li&gt;
+&lt;li&gt;.eslintignore&lt;/li&gt;
+&lt;li&gt;.eslintrc&lt;/li&gt;
+&lt;li&gt;node_modules&lt;/li&gt;
+&lt;li&gt;package.json&lt;/li&gt;
+&lt;li&gt;storybook/&lt;/li&gt;
+&lt;li&gt;streaming/&lt;/li&gt;
+&lt;li&gt;yarn.lock&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;CI テスト用
+
+&lt;ul&gt;
+&lt;li&gt;.travis.yml&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Vagrant
+
+&lt;ul&gt;
+&lt;li&gt;.vagrant/&lt;/li&gt;
+&lt;li&gt;Vagrantfile&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Docker
+
+&lt;ul&gt;
+&lt;li&gt;.dockerignore&lt;/li&gt;
+&lt;li&gt;Dockerfile&lt;/li&gt;
+&lt;li&gt;docker-compose.yml&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;きになったところ&#34;&gt;きになったところ&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BabelでES7？やデコレータをトランスパイルするためにPlugin入れてる&lt;/li&gt;
+&lt;li&gt;ドイツの人が作ったからかScalingoなんていうヨーロッパ圏で流行ってるのかもしれないデプロイツール入ってた&lt;/li&gt;
+&lt;li&gt;プルリクされるの前提だからか今時当たり前なのか知りませんがコードレビューサービス用やコーディングルール統一用の設定ファイルが入っていた&lt;/li&gt;
+&lt;li&gt;Storybook面白そう&lt;/li&gt;
+&lt;li&gt;yarn使ってる？&lt;/li&gt;
+&lt;li&gt;Vagrantでのプロビジョニングがshell(Docker出てきて以降シェルゴリが一般的になった気がする。。。)&lt;/li&gt;
+&lt;li&gt;Vagrantで、rubyはrbenvで入れるのに、nodeはパッケージで入れてる(バージョンにこだわりはない？)&lt;/li&gt;
+&lt;li&gt;VagrantではOSにUbuntu14.04(trusty)を使用している(DebianでもOpenSUSEじゃないんだ)&lt;/li&gt;
+&lt;li&gt;Dockerの場合はAlpineなのね。&lt;/li&gt;
+&lt;li&gt;Railsのことさっぱりだけど、どうやらsidekiqというgemを使って非同期なキューの処理を実現しているらしい、redisをバックエンドに使うようだ&lt;/li&gt;
+&lt;li&gt;Webサーバー用意してリバースプロキシって構造ではないんですね。&lt;/li&gt;
+&lt;li&gt;Rails = Unicornというイメージでしたが、Rails5からはPumaが標準搭載とのことでPumaを使っているらしい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;多分なんですけど、envファイルを読み解けば、自分用の公開インスタンスを立てることはできそう。
+VPSか、Herokuか、単体のDockerコンテナにするかは分かりませんが。&lt;/p&gt;
+
+&lt;p&gt;ひとまず、開発用として？1人で動かす分にはVagrantfileの設定にある通り、メモリ1GBで足りる模様。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

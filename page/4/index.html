@@ -140,6 +140,34 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-js">2014年を振り返る JavaScript編</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
+JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
+結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
+document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。
+jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。
+ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。
+ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。
+もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。
+CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。</div>
+    <div class="tags">
+      30 Dec 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/10/25/milestone">思い出せない</a></div>
     
       <div class="categories">
@@ -501,28 +529,6 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
           <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
         
           <a href="http://tech.k-zak.com/tags/ssh/">#SSH</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-03">Win上のpythonでバッチ処理3</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを
-取得し、コマンドを叩く。
-#!/usr/bin/env python # -*- coding: utf-8 -*- import os,csv,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() return data except Exception as e: #print "FileNotFound or Access Error." return None def read_file(path): try: os.path.isfile(path) f = open(path,'r') data = csv.reader(f) users = [line[0] for line in data] f.close() return users except Exception as e: #print "FileNotFound or Access Error." return None def bu_cmd(users,bu_path): if isinstance(users,list) and len(users)  0: cmds = map(lambda x:"</div>
-    <div class="tags">
-      16 Mar 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
         
        
     </div>

@@ -1,12 +1,11 @@
 
-
 <!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>Categories</title>
+  <title>Mastodon git clone</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -136,16 +135,180 @@
 
 
 
+<div class="content">
 
-<paper-menu>
+  <div class="article">
+    <div class="title">Mastodon git clone</div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">
+
+<h1 id="mastodonをgit-cloneして中を見てみる">Mastodonをgit cloneして中を見てみる</h1>
+
+<p>今流行りのMastodonをgit cloneしてみた。</p>
+
+<p>中は設定ファイルが沢山とrails関係、フロント用のnode_modules、テスト関係、それからVagrantfileやDocker関係のファイル。</p>
+
+<h2 id="ファイル群について">ファイル群について</h2>
+
+<p>今日は内容をざっと見るところまで。</p>
+
+<p>内訳は、以下です。ディレクトリを意味するものは最期に「/」をつけています。</p>
+
+<ul>
+<li>ライセンスとかReadmeとかDocumentとか
+
+<ul>
+<li>CONTRIBUTING.md</li>
+<li>ISSUE_TEMPLATE.md</li>
+<li>LICENSE</li>
+<li>README.md</li>
+<li>docs/</li>
+</ul></li>
+<li>buildpack
+
+<ul>
+<li>.buildpacks</li>
+</ul></li>
+<li>Heroku用設定ファイル
+
+<ul>
+<li>.slugignore</li>
+<li>Procfile</li>
+</ul></li>
+<li>デプロイツール(サービス)用
+
+<ul>
+<li>scalingo.json</li>
+</ul></li>
+<li>コードレビュー用？設定ファイル
+
+<ul>
+<li>.codeclimate.yml</li>
+</ul></li>
+<li>エディターの設定統一用設定ファイル
+
+<ul>
+<li>.editorconfig</li>
+</ul></li>
+<li>git
+
+<ul>
+<li>.git/</li>
+<li>.gitignore</li>
+</ul></li>
+<li>環境変数設定ファイル(もしかしたらRails専用かも？)
+
+<ul>
+<li>.env.production.sample</li>
+<li>.env.test</li>
+<li>.env.vagrant</li>
+</ul></li>
+<li>Ruby on Rails関係
+
+<ul>
+<li>.rspec</li>
+<li>.rubocop.yml</li>
+<li>.ruby-version</li>
+<li>Capfile</li>
+<li>Gemfile</li>
+<li>Gemfile.lock</li>
+<li>Rakefile</li>
+<li>app/</li>
+<li>app.json</li>
+<li>bin/</li>
+<li>config/</li>
+<li>config.ru</li>
+<li>db/</li>
+<li>lib/</li>
+<li>log/</li>
+<li>public/</li>
+<li>spec/</li>
+<li>tmp/</li>
+<li>vendor/</li>
+</ul></li>
+<li>JavaScriptのトランスパイルとかビルドとかフロントエンド開発用とか
+
+<ul>
+<li>.nvmrc</li>
+<li>.babelrc</li>
+<li>.eslintignore</li>
+<li>.eslintrc</li>
+<li>node_modules</li>
+<li>package.json</li>
+<li>storybook/</li>
+<li>streaming/</li>
+<li>yarn.lock</li>
+</ul></li>
+<li>CI テスト用
+
+<ul>
+<li>.travis.yml</li>
+</ul></li>
+<li>Vagrant
+
+<ul>
+<li>.vagrant/</li>
+<li>Vagrantfile</li>
+</ul></li>
+<li>Docker
+
+<ul>
+<li>.dockerignore</li>
+<li>Dockerfile</li>
+<li>docker-compose.yml</li>
+</ul></li>
+</ul>
+
+<h2 id="きになったところ">きになったところ</h2>
+
+<ul>
+<li>BabelでES7？やデコレータをトランスパイルするためにPlugin入れてる</li>
+<li>ドイツの人が作ったからかScalingoなんていうヨーロッパ圏で流行ってるのかもしれないデプロイツール入ってた</li>
+<li>プルリクされるの前提だからか今時当たり前なのか知りませんがコードレビューサービス用やコーディングルール統一用の設定ファイルが入っていた</li>
+<li>Storybook面白そう</li>
+<li>yarn使ってる？</li>
+<li>Vagrantでのプロビジョニングがshell(Docker出てきて以降シェルゴリが一般的になった気がする。。。)</li>
+<li>Vagrantで、rubyはrbenvで入れるのに、nodeはパッケージで入れてる(バージョンにこだわりはない？)</li>
+<li>VagrantではOSにUbuntu14.04(trusty)を使用している(DebianでもOpenSUSEじゃないんだ)</li>
+<li>Dockerの場合はAlpineなのね。</li>
+<li>Railsのことさっぱりだけど、どうやらsidekiqというgemを使って非同期なキューの処理を実現しているらしい、redisをバックエンドに使うようだ</li>
+<li>Webサーバー用意してリバースプロキシって構造ではないんですね。</li>
+<li>Rails = Unicornというイメージでしたが、Rails5からはPumaが標準搭載とのことでPumaを使っているらしい</li>
+</ul>
+
+<p>多分なんですけど、envファイルを読み解けば、自分用の公開インスタンスを立てることはできそう。
+VPSか、Herokuか、単体のDockerコンテナにするかは分かりませんが。</p>
+
+<p>ひとまず、開発用として？1人で動かす分にはVagrantfileの設定にある通り、メモリ1GBで足りる模様。</p>
+</div>
+    <div class="tags">
+      18 Apr 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/mastodon/">#Mastodon</a>
+        
+       
+    </div>
+    
+  </div>
+
+</div>
+
+<paper-item>
   
-    <a href="http://tech.k-zak.com/categories/setting-construction"><paper-item><iron-icon icon="drafts"></iron-icon>　<div class="flex">setting-construction</div> 35</paper-item></a>
+    <paper-fab disabled icon="chevron-left"></paper-fab>
   
-    <a href="http://tech.k-zak.com/categories/study-daily"><paper-item><iron-icon icon="drafts"></iron-icon>　<div class="flex">study-daily</div> 77</paper-item></a>
+    <div class="flex"></div>
   
-    <a href="http://tech.k-zak.com/categories/trouble-memo"><paper-item><iron-icon icon="drafts"></iron-icon>　<div class="flex">trouble-memo</div> 5</paper-item></a>
+    <a href="http://tech.k-zak.com/2017/04/09/2017-04-09-daily"><paper-fab icon="chevron-right"></paper-fab></a>
   
-</paper-menu>
+</paper-item>
 
       <paper-item>
         <div class="copyright"></div>
@@ -168,3 +331,4 @@
   
 </body>
 </html>
+

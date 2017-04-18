@@ -9,6 +9,155 @@
     <atom:link href="http://tech.k-zak.com/categories/study-daily/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Mastodon git clone</title>
+      <link>http://tech.k-zak.com/2017/04/18/mastodon-git-clone</link>
+      <pubDate>Tue, 18 Apr 2017 21:34:18 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/18/mastodon-git-clone</guid>
+      <description>
+
+&lt;h1 id=&#34;mastodonをgit-cloneして中を見てみる&#34;&gt;Mastodonをgit cloneして中を見てみる&lt;/h1&gt;
+
+&lt;p&gt;今流行りのMastodonをgit cloneしてみた。&lt;/p&gt;
+
+&lt;p&gt;中は設定ファイルが沢山とrails関係、フロント用のnode_modules、テスト関係、それからVagrantfileやDocker関係のファイル。&lt;/p&gt;
+
+&lt;h2 id=&#34;ファイル群について&#34;&gt;ファイル群について&lt;/h2&gt;
+
+&lt;p&gt;今日は内容をざっと見るところまで。&lt;/p&gt;
+
+&lt;p&gt;内訳は、以下です。ディレクトリを意味するものは最期に「/」をつけています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ライセンスとかReadmeとかDocumentとか
+
+&lt;ul&gt;
+&lt;li&gt;CONTRIBUTING.md&lt;/li&gt;
+&lt;li&gt;ISSUE_TEMPLATE.md&lt;/li&gt;
+&lt;li&gt;LICENSE&lt;/li&gt;
+&lt;li&gt;README.md&lt;/li&gt;
+&lt;li&gt;docs/&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;buildpack
+
+&lt;ul&gt;
+&lt;li&gt;.buildpacks&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Heroku用設定ファイル
+
+&lt;ul&gt;
+&lt;li&gt;.slugignore&lt;/li&gt;
+&lt;li&gt;Procfile&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;デプロイツール(サービス)用
+
+&lt;ul&gt;
+&lt;li&gt;scalingo.json&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;コードレビュー用？設定ファイル
+
+&lt;ul&gt;
+&lt;li&gt;.codeclimate.yml&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;エディターの設定統一用設定ファイル
+
+&lt;ul&gt;
+&lt;li&gt;.editorconfig&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;git
+
+&lt;ul&gt;
+&lt;li&gt;.git/&lt;/li&gt;
+&lt;li&gt;.gitignore&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;環境変数設定ファイル(もしかしたらRails専用かも？)
+
+&lt;ul&gt;
+&lt;li&gt;.env.production.sample&lt;/li&gt;
+&lt;li&gt;.env.test&lt;/li&gt;
+&lt;li&gt;.env.vagrant&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Ruby on Rails関係
+
+&lt;ul&gt;
+&lt;li&gt;.rspec&lt;/li&gt;
+&lt;li&gt;.rubocop.yml&lt;/li&gt;
+&lt;li&gt;.ruby-version&lt;/li&gt;
+&lt;li&gt;Capfile&lt;/li&gt;
+&lt;li&gt;Gemfile&lt;/li&gt;
+&lt;li&gt;Gemfile.lock&lt;/li&gt;
+&lt;li&gt;Rakefile&lt;/li&gt;
+&lt;li&gt;app/&lt;/li&gt;
+&lt;li&gt;app.json&lt;/li&gt;
+&lt;li&gt;bin/&lt;/li&gt;
+&lt;li&gt;config/&lt;/li&gt;
+&lt;li&gt;config.ru&lt;/li&gt;
+&lt;li&gt;db/&lt;/li&gt;
+&lt;li&gt;lib/&lt;/li&gt;
+&lt;li&gt;log/&lt;/li&gt;
+&lt;li&gt;public/&lt;/li&gt;
+&lt;li&gt;spec/&lt;/li&gt;
+&lt;li&gt;tmp/&lt;/li&gt;
+&lt;li&gt;vendor/&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;JavaScriptのトランスパイルとかビルドとかフロントエンド開発用とか
+
+&lt;ul&gt;
+&lt;li&gt;.nvmrc&lt;/li&gt;
+&lt;li&gt;.babelrc&lt;/li&gt;
+&lt;li&gt;.eslintignore&lt;/li&gt;
+&lt;li&gt;.eslintrc&lt;/li&gt;
+&lt;li&gt;node_modules&lt;/li&gt;
+&lt;li&gt;package.json&lt;/li&gt;
+&lt;li&gt;storybook/&lt;/li&gt;
+&lt;li&gt;streaming/&lt;/li&gt;
+&lt;li&gt;yarn.lock&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;CI テスト用
+
+&lt;ul&gt;
+&lt;li&gt;.travis.yml&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Vagrant
+
+&lt;ul&gt;
+&lt;li&gt;.vagrant/&lt;/li&gt;
+&lt;li&gt;Vagrantfile&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Docker
+
+&lt;ul&gt;
+&lt;li&gt;.dockerignore&lt;/li&gt;
+&lt;li&gt;Dockerfile&lt;/li&gt;
+&lt;li&gt;docker-compose.yml&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;きになったところ&#34;&gt;きになったところ&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BabelでES7？やデコレータをトランスパイルするためにPlugin入れてる&lt;/li&gt;
+&lt;li&gt;ドイツの人が作ったからかScalingoなんていうヨーロッパ圏で流行ってるのかもしれないデプロイツール入ってた&lt;/li&gt;
+&lt;li&gt;プルリクされるの前提だからか今時当たり前なのか知りませんがコードレビューサービス用やコーディングルール統一用の設定ファイルが入っていた&lt;/li&gt;
+&lt;li&gt;Storybook面白そう&lt;/li&gt;
+&lt;li&gt;yarn使ってる？&lt;/li&gt;
+&lt;li&gt;Vagrantでのプロビジョニングがshell(Docker出てきて以降シェルゴリが一般的になった気がする。。。)&lt;/li&gt;
+&lt;li&gt;Vagrantで、rubyはrbenvで入れるのに、nodeはパッケージで入れてる(バージョンにこだわりはない？)&lt;/li&gt;
+&lt;li&gt;VagrantではOSにUbuntu14.04(trusty)を使用している(DebianでもOpenSUSEじゃないんだ)&lt;/li&gt;
+&lt;li&gt;Dockerの場合はAlpineなのね。&lt;/li&gt;
+&lt;li&gt;Railsのことさっぱりだけど、どうやらsidekiqというgemを使って非同期なキューの処理を実現しているらしい、redisをバックエンドに使うようだ&lt;/li&gt;
+&lt;li&gt;Webサーバー用意してリバースプロキシって構造ではないんですね。&lt;/li&gt;
+&lt;li&gt;Rails = Unicornというイメージでしたが、Rails5からはPumaが標準搭載とのことでPumaを使っているらしい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;多分なんですけど、envファイルを読み解けば、自分用の公開インスタンスを立てることはできそう。
+VPSか、Herokuか、単体のDockerコンテナにするかは分かりませんが。&lt;/p&gt;
+
+&lt;p&gt;ひとまず、開発用として？1人で動かす分にはVagrantfileの設定にある通り、メモリ1GBで足りる模様。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>2017 04 09 daily</title>
       <link>http://tech.k-zak.com/2017/04/09/2017-04-09-daily</link>
       <pubDate>Sun, 09 Apr 2017 23:11:59 +0900</pubDate>
@@ -781,48 +930,6 @@ AWS/GCP/Azure/Blumix上でマネージドなコンテナサービスを試す&lt
 &lt;p&gt;おそらく、目標が雑多で曖昧なのと、こういった勉強や訓練？に真面目に割ける時間がもう少ないと考えているので、限られた時間の中で自分の人生の中で時間対効果が高そうなものから絞って集中して取り組むことで成果を上げやすくしていこうと考えています。&lt;/p&gt;
 
 &lt;p&gt;あれもこれもじゃなくて、これだけ。これだけ。って絞って集中して残り少ない人生を進んでいこうと考えています。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>再始動</title>
-      <link>http://tech.k-zak.com/2017/02/18/restart</link>
-      <pubDate>Sat, 18 Feb 2017 23:26:18 +0900</pubDate>
-      
-      <guid>http://tech.k-zak.com/2017/02/18/restart</guid>
-      <description>
-
-&lt;h1 id=&#34;ブログ引越して再始動&#34;&gt;ブログ引越して再始動&lt;/h1&gt;
-
-&lt;p&gt;&amp;hellip;の予定&lt;/p&gt;
-
-&lt;h2 id=&#34;再始動&#34;&gt;再始動&lt;/h2&gt;
-
-&lt;p&gt;契約していたレンタルサーバーを解約して、長らく契約するも放置状態が続いていたVPSにいろいろ引っ越そうと検討。&lt;/p&gt;
-
-&lt;p&gt;ついでにいろいろ構成などを再検討してやり直そうと考えました。&lt;/p&gt;
-
-&lt;h2 id=&#34;構成&#34;&gt;構成&lt;/h2&gt;
-
-&lt;p&gt;レンタルサーバー上のMovableTypeで細々と更新していたアニメやゲームについてのブログをVPS上にWordPressに構築し直しす事に。&lt;/p&gt;
-
-&lt;p&gt;ついでにWordPressのカスタマイズの練習台にも使おうという魂胆。&lt;/p&gt;
-
-&lt;p&gt;技術メモ的なこの忘備録ブログは今回を機にHugoで静的サイト構築してGithubPagesに載せる事にしました。&lt;/p&gt;
-
-&lt;p&gt;他にいくつか静的サイトジェネレーターを運営していろいろ触ってみたいと考えている。&lt;/p&gt;
-
-&lt;p&gt;ただ、今の所、上記２ブログ以外は全てS3での静的サイトホスティングでFTPでファイルをアップロードする方法を考えているけど、将来的には違う場所でホスティングしたりデプロイツールを使ったり、CI的なことをしたり、Dockerを使うなどして別の場所にサイトを構築しようかと考えている。&lt;/p&gt;
-
-&lt;h2 id=&#34;movabletypeからwordpressへの引越し&#34;&gt;MovableTypeからWordPressへの引越し&lt;/h2&gt;
-
-&lt;p&gt;テキストをずらずら記述していただけだったので、特に問題はなかった。
-単純にエクスポートしてインポートしただけ。
-インポート後にコツコツとカテゴリやタグを整理して付け直したり。&lt;/p&gt;
-
-&lt;h2 id=&#34;vpsサーバーの設定やhugoについて&#34;&gt;VPSサーバーの設定やHugoについて&lt;/h2&gt;
-
-&lt;p&gt;後日、それぞれ別の記事にします。&lt;/p&gt;
 </description>
     </item>
     

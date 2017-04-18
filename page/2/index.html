@@ -140,6 +140,42 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate">Challenged Jekyll template and hate</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">Jekyllの画面(テンプレート)作った 結論から言うと、二度と使いたくない。
+Pelicanの方がいいや。
+やりたかったこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る アーカイブ(年月)ごとの記事一覧ページを作る アーカイブ(年月)の一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る  できたこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、Aboutのリンクを作る  乗り越えた事 HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。
+標準で機能がついてなくて、pluginディレクトリにページを生成するモジュール？を書いて対応した。
+公式に載っているコードをほぼそのまま使いまわしたんだけど、Rubyの世界というかJekyllではカテゴリやタグごとのページ生成は静的サイトジェネレーターの標準機能のうちには入らないらしい。
+あきらめた事 アーカイブページ 上記のカテゴリやタグのページ生成のノリでいけるかと思ったけど無理だった。
+正確には気持ちが切れた。
+Pelicanの場合、記事リストをgroup by　した結果をそのままfor分で使えるのだけれど、Jekyllが使っているテンプレートエンジンではできないらしく、いちいち変数にアサインしないといけない。そのくせ、変数にアサインする時はgroup by も sort もできるらしい。
+あと、気づかなかったんだけど、記事のデータに投稿年月日の年や月のデータがないので結局こねくり回さないと、年や月でgroup byした記事リストの抽出がうまくできない。
+この、年月ごとに記事リストを抽出したオブジェクトが簡単には生成できないので、サイドバーの表示もアーカイブリストの生成もうまくできそうにないので諦めた。
+あと、ググって出てきた書き方が汚いというか美しくないというか、「え？こんな手続き型なめんどくさい記述をテンプレートで書くの？」みたいなのが散見されて嫌になった。
+まったくもう。
+参考 Jekyll公式
+まとめ Rubyを理解したら見直せるかもしれないけど、それまではもう触りたくない。
+記事の投稿だけはして使い続けてみる。</div>
+    <div class="tags">
+      26 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+          <a href="http://tech.k-zak.com/tags/jekyll/">#Jekyll</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/03/25/replace-hugo-post-rule">replace hugo post rule</a></div>
     
       <div class="categories">
@@ -378,36 +414,6 @@ Publicファイルの生成 hexo generate  これでファイルがpublicフォ�
       
         
           <a href="http://tech.k-zak.com/tags/hexo/">#Hexo</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-hugo">WordPressからHugoへ移行</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">開発メモブログをWordPressからHugoへの移行  WordPressから記事をエクスポート Hugoをインストール エクスポートした記事を放り込む  WordPressから記事をエクスポート  WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す  参考   Hugoをインストール brew install hugo hugo new site techblog cd techblog  書き出した記事を放り込む プラグインを使ってエクスポートした記事データはHugoのcontent/postのpostディレクトリ相当のものが吐き出されているので、中身をcontent/post/にぶちまける。
-細かい設定 テーマを入れる 適当なテーマをインストール。今回はPolymer。 themeディレクトリがなかったら作ってその中でgit cloneしたらいいよ。
-config.tomlを編集 title,baseurl,languageCode,theme,paginateを修正する。
-後で独自ドメインでGitHubPagesで運用するため、canonifyurls = trueを設定する。
-GoogleAnalyticsのコードを入れるため、config.tomlに以下を追記
-[params] googleAnalyticsUserID = &quot;&lt;&lt;code&gt;&gt;&quot;  またURLの構造を検討する。 今回からパーマリンクを以下のようにした。permelink設定を追加
-[permalinks] post = &quot;/:year/:month/:day/:slug&quot;  これでyyyy/mm/dd/slugというようなURLになる。
-URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。
-新しい記事を追加する時には
-hugo new post/&lt;&lt;post-name&gt;&gt;.md  で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。
-GitHubPagesで公開する  GitHubにリポジトリを追加 hugoコマンドで出力されるpublicディレクトリの静的ファイルをコミット settingsのGitHub Pagesの項にあるCustom domainにドメインを入れて保存。 hugoのpublicにCNAMEというファイルを追加。内容は公開ドメイン名 再度publicディレクトリの内容をコミット DNS(今回はRoute53)でCNAMEの設定をする。  今回はひとまずこんな感じ。 今後は記事の追加だけじゃなく、テーマを自作していきたい。</div>
-    <div class="tags">
-      19 Feb 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/hugo/">#Hugo</a>
         
        
     </div>

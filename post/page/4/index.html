@@ -139,6 +139,46 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/10/25/milestone">思い出せない</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
+サーバー関係 ログローテーションの設定を行った。
+yum install logrotate
+/etc/logrotate.d/配下に追加の設定を行う
+/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる
+Ansible 1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中
+ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。
+yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。
+後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。
+Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。
+JavaScript AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。
+マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。
+AWSのS3のCORSで許可ヘッダーの設定が必要でした。
+PHP namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く
+毎日ちゃんとメモとらないと駄目ですね。。</div>
+    <div class="tags">
+      25 Oct 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/apache/">#Apache</a>
+        
+          <a href="http://tech.k-zak.com/tags/log/">#Log</a>
+        
+          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
+        
+          <a href="http://tech.k-zak.com/tags/ansible/">#Ansible</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/09/15/dev-env-vm">新しく開発環境作成中</a></div>
     
       <div class="categories">
@@ -477,28 +517,6 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを
 取得し、コマンドを叩く。
 #!/usr/bin/env python # -*- coding: utf-8 -*- import os,csv,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() return data except Exception as e: #print "FileNotFound or Access Error." return None def read_file(path): try: os.path.isfile(path) f = open(path,'r') data = csv.reader(f) users = [line[0] for line in data] f.close() return users except Exception as e: #print "FileNotFound or Access Error." return None def bu_cmd(users,bu_path): if isinstance(users,list) and len(users)  0: cmds = map(lambda x:"</div>
-    <div class="tags">
-      16 Mar 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-02">Win上のPythonでバッチ処理2</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、前回使用した作業用の
-csvファイルが存在していたら消す処理。
-#!/usr/bin/env python # -*- coding: utf-8 -*- import os.path,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() print data return data except Exception as e: #ファイルは存在しない print "FileNotFound or Access Error." return None def is_file(path): try: os.path.isfile(path) os.remove(path) #print "消してやったぜ、ヒャッハー！" return 0 except Exception as e: #print "ファイルなど存在しない" return 0 if __name__ == '__main__': #jsonファイルに作業対象ファイルパスなんかを書いておく conf_data = get_conf("conf.json") is_file(conf_data["test"]["csvPath"])  </div>
     <div class="tags">
       16 Mar 2014
       
