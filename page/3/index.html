@@ -140,6 +140,34 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-hexo">Hexoを試す</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">JavaScriptの静的サイトジェネレーターHexoを試す JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。
+インストールと初期設定 npm install -g hexo-cli hexo init &lt;&lt;blog-name&gt;&gt; cd &lt;&lt;blog-name&gt;&gt; npm install hexo server  これでHexoがインストールされサイトを開始できる hexe serverで開発用のサーバー起動状態になりhttp://localhost:4000にアクセスできる。
+_config.ymlを編集する。
+title: &quot;サイトタイトル&quot; subtitle: &quot;サブタイトル&quot; description: &quot;サイトの説明&quot; author: &lt;&lt;author&gt;&gt; language: ja timezone: Asia/Tokyo url: http://&lt;&lt;site-domain&gt;&gt; root: / permalink: :year/:month/:day/:title/  languageはjaにしてtimezoneはAsia/Tokyoにした。 urlは公開したいドメイン、rootはトップレベルにした。
+permalinkの設定は:year/:month/:day/:title/のデフォルト設定のままにした。
+記事の追加 hexo new &lt;&lt;post-name&gt;&gt;  これでHugoみたいに初期状態のができる。 このあたり、Hugoと同じ感じで出来るので入りやすい。
+当初、React製の「gatsby」にしようかと思ったけど、なんか違うと思ったので、止めた。
+Publicファイルの生成 hexo generate  これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。
+今回はここまで。</div>
+    <div class="tags">
+      19 Feb 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/hexo/">#Hexo</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-hugo">WordPressからHugoへ移行</a></div>
     
       <div class="categories">
@@ -484,43 +512,6 @@ Ansibleは様々な構成管理、できればWindows環境も。
 来年取り組みたいのは、今年やりそこねたメールサーバーやログ設定、それからプロキシ設定かな</div>
     <div class="tags">
       30 Dec 2014
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/12/30/milestone-serverside">2014年を振り返る サーバーサイドプログラミング</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&#8230;)について振り返る
-まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
-Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
-Perl,Python,Rubyについては全然触れなくてフラストレーション。
-PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。
-本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。
-家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
-PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
-枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは&#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</div>
-    <div class="tags">
-      30 Dec 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/groovy/">#Groovy</a>
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
        
     </div>
   </div>

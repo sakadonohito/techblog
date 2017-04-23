@@ -6,8 +6,43 @@
     <description>Recent content in Posts on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 18 Apr 2017 21:34:18 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 23 Apr 2017 22:19:58 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Zabbix remote command</title>
+      <link>http://tech.k-zak.com/2017/04/23/zabbix-remote-command</link>
+      <pubDate>Sun, 23 Apr 2017 22:19:58 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/23/zabbix-remote-command</guid>
+      <description>
+
+&lt;h1 id=&#34;zabbixのアクション定義でリモートコマンドを実行する&#34;&gt;Zabbixのアクション定義でリモートコマンドを実行する&lt;/h1&gt;
+
+&lt;p&gt;サーバーを監視するソフトウェア？Zabbixで、トリガーを元にアクションを起こす場合、メール通知やSlackにPostする以外に対象のホストもしくは任意のサーバーにコマンドを投げて実行することが出来る。&lt;/p&gt;
+
+&lt;h2 id=&#34;agent側の設定&#34;&gt;Agent側の設定&lt;/h2&gt;
+
+&lt;p&gt;Zabbixエージェント側(コマンドを投げつけられる側)の設定ファイルの&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#EnableRemoteCommands = 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;となっている箇所をコメントアウトを解除して値を1に変更する。&lt;/p&gt;
+
+&lt;p&gt;Zabbix-Agentサービスを再起動してエージェント側は最低限の準備完了&lt;/p&gt;
+
+&lt;h2 id=&#34;zabbix-アクションの設定&#34;&gt;Zabbix: アクションの設定&lt;/h2&gt;
+
+&lt;p&gt;アクションの設定で実行内容を「リモートコマンド」にして、タイプを「カスタムスクリプト」にする。&lt;/p&gt;
+
+&lt;p&gt;コマンドはエージェント側にスクリプトを用意している場合は、それを、用意していない場合は直接コマンドを書く。&lt;/p&gt;
+
+&lt;p&gt;パイプが使えるので、何か実行して結果をテキストファイルに追記するとかが可能。&lt;/p&gt;
+
+&lt;p&gt;Zabbixは敷居が高いけど便利ですね。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mastodon git clone</title>
@@ -800,31 +835,6 @@ Jekyllは二度と触りたく無い。&lt;/p&gt;
 &lt;p&gt;全角のチルダだか波ダッシュだかがmacOSの時とそれ以外で違う文字コードなのか別の文字なのか、とにかく想定外の文字コードのものがバリデーションをすり抜けてきた。&lt;/p&gt;
 
 &lt;p&gt;一つのOS上で禁止文字を羅列して出来たつもりになってたけどUTF−8−MACにはこれからも悩まされるんだろうなー。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Bitbucket is cool</title>
-      <link>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool</link>
-      <pubDate>Wed, 22 Mar 2017 21:47:01 +0900</pubDate>
-      
-      <guid>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool</guid>
-      <description>
-
-&lt;h1 id=&#34;bitbucketけっこういいかも&#34;&gt;Bitbucketけっこういいかも&lt;/h1&gt;
-
-&lt;p&gt;プライベートリポジトリ欲しくてBitbucket試してみた。&lt;/p&gt;
-
-&lt;h2 id=&#34;乾燥&#34;&gt;乾燥&lt;/h2&gt;
-
-&lt;p&gt;Gitが使えるのでhg clone フォー！(古い)とかやらなくていいし抵抗なくて使えていいですね。&lt;/p&gt;
-
-&lt;p&gt;なんかWikiとか課題(issue)とかも使えるし、どうやらGithubPagesみたいのもできるみたい。
-なんかTrelloともなんか連携できるみたいでいいですね。&lt;/p&gt;
-
-&lt;p&gt;使いこなせる自信ないけどPipelineてのもあるらしい。&lt;/p&gt;
-
-&lt;p&gt;Githubとの使い分けがなやましいけど、とりあえずはプライベートにしたいものは基本Bitbucketにしよう。&lt;/p&gt;
 </description>
     </item>
     

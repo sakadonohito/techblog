@@ -2,11 +2,10 @@
 <!doctype html>
 <html lang="ja">
 <head>
-	<meta name="generator" content="Hugo 0.18.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>開発メモてきな</title>
+  <title>Zabbix</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -140,65 +139,27 @@
 
 
   <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/04/27/reset-postgresql">あばばば- PostgreSQL編</a></div>
+    <div class="title"><a href="http://tech.k-zak.com/2017/04/23/zabbix-remote-command">Zabbix remote command</a></div>
     
       <div class="categories">
         
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
         
       </div>
      
-    <div class="description">機能PostgreSQLのユーザー作ったり消したりDBやテーブル作成したりしていたら、
- 急に接続出来なくなった(泣     仕方ないので一旦削除していれ直しを図った訳ですが、これがなかなか上手く行かない。     で、ちゃんと削除するためのメモとなった訳です。     １、/ライブラリの中にいるから削除しましょう   ライブラリの中にPostgreSQLさんがいますので削除します。   アンインストーラを使って削除した時に、アクセス権が無いと残ってしまうフォルダが   あるかもしれません。     そんな時は、手動で消しましょう。とにかくライブラリの中からPostgreSQLを抹殺します。     ２、アプリケーションフォルダの中もきれいにしましょう。   手動で削除     ３、入れ直し   ちょっと不安なので、当分の間はDLしたPostgreSQLのインストーラは消さずに   もっていようと思います。おーコワ     ※蛇足、前回、ApacheとPHPとphpPgAdminを入れていましたが、今回は入れませんでした。     ※今回の原因はユーザー作成した後のパスワード設定した時にヘマしたようです。   別ユーザー作った後に、デフォルトのpostgresのパスワード変えてしまったというorz  </div>
+    <div class="description">Zabbixのアクション定義でリモートコマンドを実行する サーバーを監視するソフトウェア？Zabbixで、トリガーを元にアクションを起こす場合、メール通知やSlackにPostする以外に対象のホストもしくは任意のサーバーにコマンドを投げて実行することが出来る。
+Agent側の設定 Zabbixエージェント側(コマンドを投げつけられる側)の設定ファイルの
+#EnableRemoteCommands = 0  となっている箇所をコメントアウトを解除して値を1に変更する。
+Zabbix-Agentサービスを再起動してエージェント側は最低限の準備完了
+Zabbix: アクションの設定 アクションの設定で実行内容を「リモートコマンド」にして、タイプを「カスタムスクリプト」にする。
+コマンドはエージェント側にスクリプトを用意している場合は、それを、用意していない場合は直接コマンドを書く。
+パイプが使えるので、何か実行して結果をテキストファイルに追記するとかが可能。
+Zabbixは敷居が高いけど便利ですね。</div>
     <div class="tags">
-      27 Apr 2010
+      23 Apr 2017
       
         
-          <a href="http://tech.k-zak.com/tags/postgresql/">#PostgreSQL</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/04/26/mac-install-postgresql">MacにPostgreSQLを入れてみた</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。
-   参考：Mac OS XでPostgreSQLを使ってみよう     基本これの通りに進めます。リンクにある通り、Mac用のインストーラーを使って簡単に   入れる事が出来ます。     インストール後、スタックビルダなるものでphppgadminを入れるに際し、既にXAMPPの中に   PHPもApacheも入っているのに改めてApacheとPHPを入れさせられたのにはとっと不安。   JDBCドライバだけにしておけば良かったかしら？     とりあえず、上記のリンクからインストール、shellで簡単に操作、phpPgAdminで簡単に操作   までをざっくり出来ます。     インストール後の中身を見てみると、pgAdmin?なんてのがありますね。もしかしてphpPgAdmin   いらなかった？     いずれにしろ現在自分のMac内でApacheとPHPが２つ存在してしまっているので、   今度掃除しよう。  </div>
-    <div class="tags">
-      26 Apr 2010
-      
-        
-          <a href="http://tech.k-zak.com/tags/mac/">#mac</a>
-        
-          <a href="http://tech.k-zak.com/tags/postgresql/">#PostgreSQL</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/04/25/first-mt">MT入れてみた</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような
- 目的なら、無料のようなので、何事も経験経験。Web屋じゃないのでもしかしたら   一生、仕事で触れる事無いかもしれないけど、ふにゃふにゃやってみる。     １、ダウンロード   MovableTypeのサイト行ってダウンロード：http://www.sixapart.jp/movabletype/     ２、ここの手順にそって設定：http://nsf.jp/movabletype/movabletype.html     終わり。     え？   そうですね、前提条件として１、レンタルサーバー借りてるor自分で持ってる。   ２、MySQL5.x入ってる。３、メール使える。４、FTPアプリ持ってる。   あたりが必要です。     自分はサーバー→さくらのレンタル、MySQL5.xおけ！Perl5.xおけ！メールおけ！   FTPはWinにFFFTPが入ってたので、それを使った。     FTPアプリの代わりとして、Firefoxのアドオンてのもありますじぇ：https://addons.mozilla.org/ja/firefox/addon/684     んで、MTが入って使えるようになったので、特に何の設定もせずとりあえず記事１号を   これにしました。  </div>
-    <div class="tags">
-      25 Apr 2010
-      
-        
-          <a href="http://tech.k-zak.com/tags/movabletype/">#MovableType</a>
+          <a href="http://tech.k-zak.com/tags/zabbix/">#Zabbix</a>
         
        
     </div>
@@ -209,7 +170,7 @@
 
 <paper-item>
   
-    <a href="http://tech.k-zak.com/page/9/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <paper-fab disabled icon="chevron-left"></paper-fab>
   
     <div class="flex"></div>
   

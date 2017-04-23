@@ -139,6 +139,28 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-03">Win上のpythonでバッチ処理3</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを
+取得し、コマンドを叩く。
+#!/usr/bin/env python # -*- coding: utf-8 -*- import os,csv,json def get_conf(path): try: os.path.isfile(path) f = open(path,'r') data = json.load(f) f.close() return data except Exception as e: #print "FileNotFound or Access Error." return None def read_file(path): try: os.path.isfile(path) f = open(path,'r') data = csv.reader(f) users = [line[0] for line in data] f.close() return users except Exception as e: #print "FileNotFound or Access Error." return None def bu_cmd(users,bu_path): if isinstance(users,list) and len(users)  0: cmds = map(lambda x:"</div>
+    <div class="tags">
+      16 Mar 2014
+      
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2014/03/16/batch-python-02">Win上のPythonでバッチ処理2</a></div>
     
       <div class="categories">
@@ -382,35 +404,6 @@ PHPでは、
           <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
         
           <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2013/12/08/coding-memo05">コーディングリハビリ05</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">昨日の文字チェックをPHP以外で試す。
-与えられた文字列が全てユニークな文字で構成されているかのチェック。
-PHPは前回やっているので、今回は掲載無し。
-Perlでは、
-#!/usr/bin/perl use strict; use warnings; sub check_unique{ my $str = shift; my $len = length($str); for(my $i=0;$i&lt;$len;$i++){ my $char = substr($str,$i); if(index($str,$char) != rindex($str,$char)){ return "False"; } } return "True"; } my $input = '1234567890-=\`!@#$%^&*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:"asdfghjkl;\'zxcvbnm,./ZXCVBNM&lt;&gt;?'; #my $input = &lt;STDIN&gt;; #chomp($input); print check_unique($input)."\n"; Pythonでは、
-#!/usr/bin/python #--*-- coding: utf-8 --*-- import datetime def check_unique(str): set_str = set(list(str)) if len(str) == len(set_str): return True else: return False if __name__ == "</div>
-    <div class="tags">
-      8 Dec 2013
-      
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
         
           <a href="http://tech.k-zak.com/tags/python/">#Python</a>
         

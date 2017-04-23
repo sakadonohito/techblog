@@ -140,6 +140,33 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/04/23/zabbix-remote-command">Zabbix remote command</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">Zabbixのアクション定義でリモートコマンドを実行する サーバーを監視するソフトウェア？Zabbixで、トリガーを元にアクションを起こす場合、メール通知やSlackにPostする以外に対象のホストもしくは任意のサーバーにコマンドを投げて実行することが出来る。
+Agent側の設定 Zabbixエージェント側(コマンドを投げつけられる側)の設定ファイルの
+#EnableRemoteCommands = 0  となっている箇所をコメントアウトを解除して値を1に変更する。
+Zabbix-Agentサービスを再起動してエージェント側は最低限の準備完了
+Zabbix: アクションの設定 アクションの設定で実行内容を「リモートコマンド」にして、タイプを「カスタムスクリプト」にする。
+コマンドはエージェント側にスクリプトを用意している場合は、それを、用意していない場合は直接コマンドを書く。
+パイプが使えるので、何か実行して結果をテキストファイルに追記するとかが可能。
+Zabbixは敷居が高いけど便利ですね。</div>
+    <div class="tags">
+      23 Apr 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/zabbix/">#Zabbix</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/04/18/mastodon-git-clone">Mastodon git clone</a></div>
     
       <div class="categories">
@@ -417,33 +444,6 @@ Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃ
       
         
           <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin">challenge mackerel plugin</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">Mackerelのカスタムメトリクスに挑戦 して撃沈。
-何が起きたか 公式のヘルプ を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。
-YYYY/MM/DD 時分秒 INFO &lt;metrics.plugin&gt; command /path/to/sample-metrics.rb outputted to STDERR: &quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&quot;}\&quot; unexpected (expecting \&quot;then\&quot;)\n&quot;  改行が足りない？
-rubyファイルを単独で実行すると動くので謎。
-これだからRubyは。
-とりあえず、Mackerelは初期設定のままのメトリクスだけでいいや。</div>
-    <div class="tags">
-      27 Mar 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-          <a href="http://tech.k-zak.com/tags/mackerel/">#Mackerel</a>
         
        
     </div>
