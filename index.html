@@ -140,6 +140,42 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu">setting ntp on Ubuntu</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">EC2のUbuntu14.04にntpを設定 事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。
+エラー内容はInvalidSigunatureException なんかタイムスタンプが早すぎるみたいなエラー内容。
+Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。 タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。
+要はCognitoでトークンを生成するためのタイムスタンプがずれるのでどうしたってエラーになっちゃう問題。
+時刻がずれていることが原因と分かったので、暫定措置として時刻をあわせる(日本標準時)。 ※サーバーはUbuntu14.04
+sudo ntpdate ntp.nict.jp  ※前提としてntpdateがインストールされていること
+いろいろ調べていたら、EC2でUbuntuを使うならNTPサーバーを利用して下さい的な感じだった。
+ EC2インスタンスでの時刻同期について  NTPを入れる 根本解決のため、NTPサーバー機能をいれる。
+sudo apt-get install -y ntp  そんで設定ファイルを編集する。 /etc/ntp.conf
+ デフォルトの時刻サーバーをコメントアウト 代わりにserver ntp.nict.jpを3行書く  上記の設定と内容の説明については他人の記事をご参照ください。
+ NTPサーバーの構築 NTPで時刻合わせ  編集したらNTPサーバービスを再起動する
+ぐお、タイムゾーンが 作業したサーバー(どちらもUbuntu14.04)のうち、1つがUTC、1つがJSTのタイムゾーンになってて、キモティ悪かったので、揃える。
+sudo timedatectl set-timezone Asia/Tokyo  これでOK</div>
+    <div class="tags">
+      24 Apr 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
+        
+          <a href="http://tech.k-zak.com/tags/ubuntu/">#Ubuntu</a>
+        
+          <a href="http://tech.k-zak.com/tags/ntp/">#ntp</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/04/23/zabbix-remote-command">Zabbix remote command</a></div>
     
       <div class="categories">
@@ -417,31 +453,6 @@ Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃ
       
         
           <a href="http://tech.k-zak.com/tags/hexo/">#Hexo</a>
-        
-          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/03/28/docker-reinstall">docker reinstall</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">Dockerを再インストールした Dockerが全然触らないうちにどんどん進化していってしまったので、一旦アンインストールして、入れ直した。
-環境はmacOS 10.11 えるかぴたん
-やったこと  docker-machine(boot2docker)の中身を全て削除  docker-machine rm defaultとか  docker-machineを完全削除するらしいツールを使って削除実行 Virtualboxを確認して環境が残っていないか確認 .bash_profileに記述していた環境変数設定を削除 homeディレクトリ直下の.dockerみたいな隠し領域も削除 公式から改めてdocker for mac をダウンロードしてインストール ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置  ハマったこと 単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対してdocker -vとかやってエラーを出してた。
-ターミナルを再起動して解決
-ここまで 今日はここまで。
-今後、先送りしてたswarmモードとやらを試したりしたい。</div>
-    <div class="tags">
-      28 Mar 2017
-      
         
           <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
         

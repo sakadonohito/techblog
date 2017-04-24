@@ -140,6 +140,31 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/28/docker-reinstall">docker reinstall</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">Dockerを再インストールした Dockerが全然触らないうちにどんどん進化していってしまったので、一旦アンインストールして、入れ直した。
+環境はmacOS 10.11 えるかぴたん
+やったこと  docker-machine(boot2docker)の中身を全て削除  docker-machine rm defaultとか  docker-machineを完全削除するらしいツールを使って削除実行 Virtualboxを確認して環境が残っていないか確認 .bash_profileに記述していた環境変数設定を削除 homeディレクトリ直下の.dockerみたいな隠し領域も削除 公式から改めてdocker for mac をダウンロードしてインストール ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置  ハマったこと 単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対してdocker -vとかやってエラーを出してた。
+ターミナルを再起動して解決
+ここまで 今日はここまで。
+今後、先送りしてたswarmモードとやらを試したりしたい。</div>
+    <div class="tags">
+      28 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin">challenge mackerel plugin</a></div>
     
       <div class="categories">
@@ -386,33 +411,6 @@ pelican content -s pelicanconf.py  でoutputディレクトリに静的ファイ
       
         
           <a href="http://tech.k-zak.com/tags/pelican/">#Pelican</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/02/19/first-jekyll">Jekyllを試す</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">Jekyllを試す Ruby製の静的サイトジェネレーターを試してる。
-インストール 以下下記URLを参考にいろいろ試したけど、情報が古くコマンドが変わってた。 参考
-gem install jekyll mkdir _site _posts _site assets mkdir -p assets/css  構造はこんな感じ
-├── _config.yml ├── _layouts │ ├── layout.html │ └── post.html ├── _posts ├── _site ├── assets │ └── css └── index.md  jekyll serve --watch  で編集内容が即時される。
-こんな感じでやっていこうと思います。
-レイアウトがとてもダサイ感じなので、テーマをちゃんと作っていきたい。
-Ruby製だから？ヘルプが分かりやすい。
-静的ファイルを生成したい場合はjekyll buildで_siteディレクトリに生成される。</div>
-    <div class="tags">
-      19 Feb 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/jekyll/">#Jekyll</a>
         
        
     </div>

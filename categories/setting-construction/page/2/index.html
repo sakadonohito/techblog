@@ -139,6 +139,64 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2015/02/01/php-mail">Ubuntu14.04 でphpでメール受信とか</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">## install postfix
+&#8220;`
+sudo apt-get install postfix postfix-dev sasl2-bin
+sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt
+&#8220;`
+## Settings
+&#8220;`
+sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf
+sudo emacs -nw /etc/postfix/main.cf
+&#8220;`
+### 参考
+&#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;p=mail
+&#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;p=mail&amp;f=2
+### gmailに転送する設定に変更
+relayhostにgmailを指定
+パスワードの設定とかね。
+## phpでメールを受信出来るよう設定
+メールサーバ受信DNS設定とか面倒だからやめた。
+phpinfoを見ると案の定imap入ってませんでしたので、php5.5系の落としてきてimapのディレクトリ移動してphpize
+### configureで失敗する
+configureしたらutf8_mime2text()がうんたらと出てきた。
+ググると、どうもphpにimapとかメール関係入れる時にライブラリが足りないと出るエラーのようだ。
+sudo apt-cache search libc-client
+→libc-client2007e libc-client2007e-dev てのが出てくるので両方インストール
+### imapうまく動かない？
+この後無事imapインストールできたけどなぜか受信出来ない。いろいろ調べて片っ端からSSL関連インストールしたけどうまくいかない。
+### 何が原因だったのか不明
+結局、何かのSSL関係のライブラリインストールが最初足りなくてGmail受信失敗してた。
+gmailからさくらのレンサバのメールアカウントで試した場合はアカウント名の指定を間違えてた。
+テストで受信するだけだから、普通のimapアカウントの場合はnotlsをflagにつける。
+gmailの場合は/ssl/novalidation-certみたいのつける</div>
+    <div class="tags">
+      1 Feb 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/imap/">#imap</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/postfix/">#postfix</a>
+        
+          <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2015/01/05/perl-cgi">Ubuntu14.04 LTS でNginx FasCGI Perl</a></div>
     
       <div class="categories">
@@ -542,60 +600,6 @@ PerlHandler ModPerl::Registry
       
         
           <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks">フレームワークちょいちょい</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">ここ最近はフレームワークを少し触ってる。
-Perl：Mojolicious::Lite
-→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
-各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
-layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
-このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
-&nbsp;
-Ruby：Sinatra
-→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
-ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
-これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
-&nbsp;
-PHP：FuelPHP
-→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
-これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
-コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
-public/assetsて階層に配置するんですね。
-&nbsp;
-PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
-OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
-出来ないとかで&#8230;&#8230;</div>
-    <div class="tags">
-      21 Oct 2012
-      
-        
-          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
-        
-          <a href="http://tech.k-zak.com/tags/fuelphp/">#FuelPHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/mojoliciouslite/">#Mojolicious::Lite</a>
-        
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
-        
-          <a href="http://tech.k-zak.com/tags/sinatra/">#Sinatra</a>
         
        
     </div>

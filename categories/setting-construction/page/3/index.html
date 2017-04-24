@@ -139,6 +139,60 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks">フレームワークちょいちょい</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">ここ最近はフレームワークを少し触ってる。
+Perl：Mojolicious::Lite
+→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
+各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
+layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
+このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
+&nbsp;
+Ruby：Sinatra
+→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
+ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
+これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
+&nbsp;
+PHP：FuelPHP
+→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
+これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
+コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
+public/assetsて階層に配置するんですね。
+&nbsp;
+PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
+OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
+出来ないとかで&#8230;&#8230;</div>
+    <div class="tags">
+      21 Oct 2012
+      
+        
+          <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>
+        
+          <a href="http://tech.k-zak.com/tags/fuelphp/">#FuelPHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/mojoliciouslite/">#Mojolicious::Lite</a>
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+        
+          <a href="http://tech.k-zak.com/tags/sinatra/">#Sinatra</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2012/05/20/milestone">趣旨変え</a></div>
     
       <div class="categories">
@@ -369,31 +423,6 @@
       
         
           <a href="http://tech.k-zak.com/tags/netbeans/">#NetBeans</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2010/09/03/mcrypt">macにphpMyAdmin</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">忘れないうちにメモ
-   前のMacBokでは成功して、今回新しく購入したMacBookProでなかなかうまくいかなかった事をメモ。     て、実はただの勘違いだったんですけど。。。     環境はMac OS X 10.6 ( 64bitで常時起動 )   ここにApache2.2?とPHP5.3.2が初めから入っているので、MySQL入れて   phpMyAdminを入れる。     １、MySQL入れる   MySQLのサイトからdmgをダウンロード。理由は楽だから。     http://dev.mysql.com/downloads/mysql/5.1.html     ２、MySQLのPATHを通す   例として(自分の場合)emacsで.bash_profileを編集     $ sudo -s emacs   ( emacsが起動しました )   C-x C-f ( Ctrl + x その後 Ctrl + f でファイル開く )   ~/.</div>
-    <div class="tags">
-      3 Sep 2010
-      
-        
-          <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
         
        
     </div>

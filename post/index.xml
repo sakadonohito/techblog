@@ -6,8 +6,76 @@
     <description>Recent content in Posts on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 23 Apr 2017 22:19:58 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 24 Apr 2017 13:48:14 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>setting ntp on Ubuntu</title>
+      <link>http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu</link>
+      <pubDate>Mon, 24 Apr 2017 13:48:14 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu</guid>
+      <description>
+
+&lt;h1 id=&#34;ec2のubuntu14-04にntpを設定&#34;&gt;EC2のUbuntu14.04にntpを設定&lt;/h1&gt;
+
+&lt;p&gt;事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。&lt;/p&gt;
+
+&lt;p&gt;エラー内容は&lt;strong&gt;InvalidSigunatureException&lt;/strong&gt; なんかタイムスタンプが早すぎるみたいなエラー内容。&lt;/p&gt;
+
+&lt;p&gt;Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。
+タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。&lt;/p&gt;
+
+&lt;p&gt;要はCognitoでトークンを生成するためのタイムスタンプがずれるのでどうしたってエラーになっちゃう問題。&lt;/p&gt;
+
+&lt;p&gt;時刻がずれていることが原因と分かったので、暫定措置として時刻をあわせる(日本標準時)。
+※サーバーはUbuntu14.04&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ntpdate ntp.nict.jp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;※前提としてntpdateがインストールされていること&lt;/p&gt;
+
+&lt;p&gt;いろいろ調べていたら、EC2でUbuntuを使うならNTPサーバーを利用して下さい的な感じだった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://forums.aws.amazon.com/thread.jspa?messageID=249603&#34;&gt;EC2インスタンスでの時刻同期について&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ntpを入れる&#34;&gt;NTPを入れる&lt;/h2&gt;
+
+&lt;p&gt;根本解決のため、NTPサーバー機能をいれる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install -y ntp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そんで設定ファイルを編集する。
+&lt;strong&gt;/etc/ntp.conf&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;デフォルトの時刻サーバーをコメントアウト&lt;/li&gt;
+&lt;li&gt;代わりに&lt;code&gt;server ntp.nict.jp&lt;/code&gt;を3行書く&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;上記の設定と内容の説明については他人の記事をご参照ください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=ntp&#34;&gt;NTPサーバーの構築&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://debianj.com/ubuntu/install/ntp&#34;&gt;NTPで時刻合わせ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;編集したらNTPサーバービスを再起動する&lt;/p&gt;
+
+&lt;h2 id=&#34;ぐお-タイムゾーンが&#34;&gt;ぐお、タイムゾーンが&lt;/h2&gt;
+
+&lt;p&gt;作業したサーバー(どちらもUbuntu14.04)のうち、1つがUTC、1つがJSTのタイムゾーンになってて、キモティ悪かったので、揃える。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo timedatectl set-timezone Asia/Tokyo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでOK&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Zabbix remote command</title>
@@ -819,22 +887,6 @@ Jekyllは二度と触りたく無い。&lt;/p&gt;
 &lt;p&gt;小規模な場合にフリーでどこまで使えるのかフリープランを調べていきたい。&lt;/p&gt;
 
 &lt;p&gt;Zabbixサーバーを一台用意する場合との費用比較とか調べていきたい。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>i got caught in utf8</title>
-      <link>http://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8</link>
-      <pubDate>Thu, 23 Mar 2017 21:47:31 +0900</pubDate>
-      
-      <guid>http://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8</guid>
-      <description>
-
-&lt;h1 id=&#34;utf-8-mac-にまたしてもやられた&#34;&gt;UTF-8-MAC にまたしてもやられた&lt;/h1&gt;
-
-&lt;p&gt;全角のチルダだか波ダッシュだかがmacOSの時とそれ以外で違う文字コードなのか別の文字なのか、とにかく想定外の文字コードのものがバリデーションをすり抜けてきた。&lt;/p&gt;
-
-&lt;p&gt;一つのOS上で禁止文字を羅列して出来たつもりになってたけどUTF−8−MACにはこれからも悩まされるんだろうなー。&lt;/p&gt;
 </description>
     </item>
     

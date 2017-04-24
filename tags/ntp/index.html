@@ -1,12 +1,11 @@
 
-
 <!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>Categories</title>
+  <title>Ntp</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -136,16 +135,58 @@
 
 
 
+<div class="content">
 
-<paper-menu>
+
+  <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu">setting ntp on Ubuntu</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">EC2のUbuntu14.04にntpを設定 事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。
+エラー内容はInvalidSigunatureException なんかタイムスタンプが早すぎるみたいなエラー内容。
+Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。 タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。
+要はCognitoでトークンを生成するためのタイムスタンプがずれるのでどうしたってエラーになっちゃう問題。
+時刻がずれていることが原因と分かったので、暫定措置として時刻をあわせる(日本標準時)。 ※サーバーはUbuntu14.04
+sudo ntpdate ntp.nict.jp  ※前提としてntpdateがインストールされていること
+いろいろ調べていたら、EC2でUbuntuを使うならNTPサーバーを利用して下さい的な感じだった。
+ EC2インスタンスでの時刻同期について  NTPを入れる 根本解決のため、NTPサーバー機能をいれる。
+sudo apt-get install -y ntp  そんで設定ファイルを編集する。 /etc/ntp.conf
+ デフォルトの時刻サーバーをコメントアウト 代わりにserver ntp.nict.jpを3行書く  上記の設定と内容の説明については他人の記事をご参照ください。
+ NTPサーバーの構築 NTPで時刻合わせ  編集したらNTPサーバービスを再起動する
+ぐお、タイムゾーンが 作業したサーバー(どちらもUbuntu14.04)のうち、1つがUTC、1つがJSTのタイムゾーンになってて、キモティ悪かったので、揃える。
+sudo timedatectl set-timezone Asia/Tokyo  これでOK</div>
+    <div class="tags">
+      24 Apr 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
+        
+          <a href="http://tech.k-zak.com/tags/ubuntu/">#Ubuntu</a>
+        
+          <a href="http://tech.k-zak.com/tags/ntp/">#ntp</a>
+        
+       
+    </div>
+  </div>
+
+</div>
+
+
+<paper-item>
   
-    <a href="http://tech.k-zak.com/categories/setting-construction"><paper-item><iron-icon icon="drafts"></iron-icon>　<div class="flex">setting-construction</div> 36</paper-item></a>
+    <paper-fab disabled icon="chevron-left"></paper-fab>
   
-    <a href="http://tech.k-zak.com/categories/study-daily"><paper-item><iron-icon icon="drafts"></iron-icon>　<div class="flex">study-daily</div> 78</paper-item></a>
+    <div class="flex"></div>
   
-    <a href="http://tech.k-zak.com/categories/trouble-memo"><paper-item><iron-icon icon="drafts"></iron-icon>　<div class="flex">trouble-memo</div> 5</paper-item></a>
+    <paper-fab disabled icon="chevron-right"></paper-fab>
   
-</paper-menu>
+</paper-item>
+
 
       <paper-item>
         <div class="copyright"></div>
@@ -168,3 +209,4 @@
   
 </body>
 </html>
+

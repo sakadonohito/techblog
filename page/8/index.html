@@ -140,6 +140,65 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2012/10/09/study-perl">Perl勉強してるメモ１</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">何故か最近Perlの勉強を始めた。
+気になった箇所のまとめ、
+■変数と型
+・普通(単一)のデータはスカラー変数で扱う：$val = &#8216;Hello&#8217;;
+・配列は「$」の代わりに「＠」でも中の要素を扱う時は「$」でインデックスの指定は[]
+：@array = (1,2,3,4,5); print $array[0] # 1
+・ハッシュは「$」の代わりに「%」でも中の要素を扱う時は「$」で指定は{}
+：%hash = (&#8216;a&#8217;=&gt;&#8217;1&#8242;,&#8217;b&#8217;=&gt;&#8217;2&#8217;); print $hash{a} # 1
+■変数スコープ
+・{}ブロックでスコープは仕切られている。そのため変数はmyを使ってスコープを意識した変数宣言を
+すると良いとされている。
+・ファイルスコープは実は１ファイル１パッケージ的な扱いでパッケージスコープ。
+・例えばファイル直下の位置で$cgi = CGI-&gt;new; とかやっておけば、subを呼ぶ時に毎回$cgiを
+引数として渡す必要はない。
+参考 Gist：https://gist.github.com/3855891
+&nbsp;
+■リファレンス
+・C言語で言うところのポインタ？配列やハッシュをサブルーチンに渡す際に変数のリファレンスを
+渡す。そうしないと呼び出し先では１つの引数データに連結されてしまっているのでうまく復元できない。
+・リファレンスで渡された値をsubスコープ内の新たな変数に入れてデリファレンスして編集すると、
+元の変数の値が変わっている。デリファレンスした値を新たな変数に入れて編集した場合は影響しない。
+参考Gist：https://gist.github.com/3850245
+https://gist.github.com/3856617
+&nbsp;
+■ファイルの扱いなど
+・use IO=&gt;&#8217;utf8&#8242;; としておくとUTF-8でファイルIOで扱う。
+・ファイルハンドルはレキシカルスコープ変数を使うようにしましょう。
+・またopen関数は3引数の形で使いましょう。
+open(my $fh,&rsquo;&lt;&#8216;,$file_path);
+&nbsp;
+■モジュールについて
+・use strict;と use warnings; はワンライナー(or実験)以外では必ずつけましょう。
+・use feature &#8216;say&#8217;;とするとsay関数が使える。これはprint関数+改行らしい。便利。
+・自作外部ファイル、PHPでいうところのrequire用ファイルのようなファイルは拡張子を
+「.pm」にする。
+&nbsp;
+■他
+・qq や qw は便利なので積極的に使って行きましょう。
+例：qq({name}&#8221;/&gt;);
+て感じで使える。</div>
+    <div class="tags">
+      9 Oct 2012
+      
+        
+          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2012/09/30/milestone">現状整理</a></div>
     
       <div class="categories">
@@ -401,29 +460,6 @@ require 'rfm' class FMServer def initialize() @FM_CONFIG = { :host =&gt; "FileMa
           <a href="http://tech.k-zak.com/tags/symfony/">#Symfony</a>
         
           <a href="http://tech.k-zak.com/tags/zend-framework/">#Zend Framework</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2011/04/21/django-tutorial">Django お勉強 Part3</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description"> 引き続きDjangoのお勉強。今回はDjango Projectのチュートリアルであばば。     参考：http://djangoproject.jp/doc/ja/1.0/intro/tutorial01.html#intro-tutorial01     最後の方まで順調だったのですが、最後の汎用ビューでつまりました。   同じようなところで詰まって、解決された方のブログを見つけたので、   それを参考に解決しました。    参考：http://ntm.ex-blog.net/archives/91
-   よくあることですが、チュートリアルそのままやってても、説明不足の箇所が   あって、それが原因でうまく動作しなくあるっていうやつです。     １，汎用ビューを使う設定したら、該当テンプレートファイルの名称を   規則に沿った名前にしないといけない。     ２，チュートリアルの通りにコードを編集すると、今まで「poll」という名の   オブジェクトだった箇所を「object」という名前に編集しないといけない。     解決した後から再度チュートリアルを読むと、説明不足というよりは、   翻訳の関係で分かり難い文章になってしまっている。という感じ。     確かにどこを変えないといけないか書いてあるといえば書いてあるのですが、   自分みたいなアホウは良く解らんでした(つまりどこをどう編集すべきなのか   理解できなかった)。     日本語って難しいですね。。。    </div>
-    <div class="tags">
-      21 Apr 2011
-      
-        
-          <a href="http://tech.k-zak.com/tags/django/">#Django</a>
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
         
        
     </div>
