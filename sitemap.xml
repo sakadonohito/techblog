@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tech.k-zak.com/2017/05/08/create-wordpress-theme</loc>
+    <lastmod>2017-05-08T22:28:13+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu</loc>
     <lastmod>2017-04-24T13:48:14+09:00</lastmod>
   </url>
@@ -790,7 +795,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/post/</loc>
-    <lastmod>2017-04-24T13:48:14+09:00</lastmod>
+    <lastmod>2017-05-08T22:28:13+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -856,7 +861,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/categories/study-daily/</loc>
-    <lastmod>2017-04-23T22:19:58+09:00</lastmod>
+    <lastmod>2017-05-08T22:28:13+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -897,7 +902,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/tags/wordpress/</loc>
-    <lastmod>2014-09-07T17:28:17+00:00</lastmod>
+    <lastmod>2017-05-08T22:28:13+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -915,7 +920,7 @@
   
   <url>
     <loc>http://tech.k-zak.com/</loc>
-    <lastmod>2017-04-24T13:48:14+09:00</lastmod>
+    <lastmod>2017-05-08T22:28:13+09:00</lastmod>
     <priority>0</priority>
   </url>
   

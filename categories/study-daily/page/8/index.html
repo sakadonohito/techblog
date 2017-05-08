@@ -139,6 +139,28 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2011/04/20/django-tutorial">Django お勉強 Part2</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">古いDBMagazineに載ってたDjangoのチュートリアル的なものを   試してみたら、また詰まった。     正しいかどうかは別にして解決したメモ     症状：見本通りにコード書いたらエラー出た。(reverse関数)   views.pyファイルの◯◯メソッドのreturnにDjango組込みのreverse関数   を使って、画面遷移させようとした。     雑誌の通りにコーディングしたら、エラーが出た。   意訳：その関数の引数argsはシーケンスじゃないと駄目だぜ、おまいの    はlongだぜ。   最初、どう書いたかというと、   return HttpResponseRedirect(reverse(&#8216;enkai.enkai_app.views.detail&#8217;,args=(e.id)))     はて？と思い、引数の値を固定値にしてみた   return HttpResponseRedirect(reverse(&#8216;enkai.enkai_app.views.detail&#8217;,args=(1)))   そしたら今度は「おまいのはintだぜ」ってエラーになった。      これは引数に与えるデータ型が問題なのだと考え至ったがpython初心者   の自分はエラーメッセージ中の「シーケンス」の意味を理解していなか   った。      次に固定値で与えてる引数を文字列として与えてみた。   return HttpResponseRedirect(reverse(&#8216;enkai.</div>
+    <div class="tags">
+      20 Apr 2011
+      
+        
+          <a href="http://tech.k-zak.com/tags/django/">#Django</a>
+        
+          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2011/04/19/django-tutorial">Django お勉強</a></div>
     
       <div class="categories">

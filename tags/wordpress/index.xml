@@ -9,6 +9,133 @@
     <atom:link href="http://tech.k-zak.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>create wordpress theme</title>
+      <link>http://tech.k-zak.com/2017/05/08/create-wordpress-theme</link>
+      <pubDate>Mon, 08 May 2017 22:28:13 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/05/08/create-wordpress-theme</guid>
+      <description>
+
+&lt;h1 id=&#34;wordpressのテーマを作成してみた&#34;&gt;WordPressのテーマを作成してみた&lt;/h1&gt;
+
+&lt;p&gt;レスポンシブな自作レイアウトをWordPress用テーマを作成してみた。&lt;br /&gt;
+今確認してみたら、いくつかおかしい箇所が見つかった(´・ω・`)&lt;/p&gt;
+
+&lt;h2 id=&#34;大雑把な構成&#34;&gt;大雑把な構成&lt;/h2&gt;
+
+&lt;p&gt;以下のファイルを作成した。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;404.php&lt;/td&gt;
+&lt;td&gt;404 Page&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;category.php&lt;/td&gt;
+&lt;td&gt;カテゴリー一覧ページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;date.php&lt;/td&gt;
+&lt;td&gt;年月アーカイブページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;footer.php&lt;/td&gt;
+&lt;td&gt;フッター共通パーツ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;front-page.php&lt;/td&gt;
+&lt;td&gt;TOPページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;functions.php&lt;/td&gt;
+&lt;td&gt;機能を記述するファイル&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;header.php&lt;/td&gt;
+&lt;td&gt;ヘッダー共通パーツ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;index.php&lt;/td&gt;
+&lt;td&gt;割り当てるテンプレートが見つからなかった場合に使われるベースページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;page.php&lt;/td&gt;
+&lt;td&gt;固定ページテンプレート&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;sidebar.php&lt;/td&gt;
+&lt;td&gt;共通サイドバーパーツ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;single.php&lt;/td&gt;
+&lt;td&gt;1記事のページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;style.css&lt;/td&gt;
+&lt;td&gt;全体のCSSここにテーマ名とかも記述する&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;tag.php&lt;/td&gt;
+&lt;td&gt;タグ一覧ページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;parts/articles.php&lt;/td&gt;
+&lt;td&gt;特定の記事の一覧を出力するパーツテンプレート&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;parts/top-header.php&lt;/td&gt;
+&lt;td&gt;共通のブログヘッダーパート&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;絶対top表示に使うマン&#34;&gt;絶対TOP表示に使うマン&lt;/h3&gt;
+
+&lt;p&gt;WordPressには特定の名前のテンプレートは決められた使われ方をする。&lt;br /&gt;
+その中でfront-pageはTOPに使われる最上位の名前、他いくつかあって、それらが見つからなかった場合、index.phpが使われる。&lt;/p&gt;
+
+&lt;h3 id=&#34;パーツを呼び出す&#34;&gt;パーツを呼び出す&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;header.php : get_header() で呼ぶ&lt;/li&gt;
+&lt;li&gt;footer.php : get_footer() で呼ぶ&lt;/li&gt;
+&lt;li&gt;sidebar.php : get_sidebar() で呼ぶ&lt;/li&gt;
+&lt;li&gt;path/to/part.php : get_template_part(&amp;lsquo;path/to/part&amp;rsquo;) で呼ぶ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;簡単な画面構成なら簡単に作れる感じ。&lt;/li&gt;
+&lt;li&gt;ページネーション作り忘れた！&lt;/li&gt;
+&lt;li&gt;固定ページへのURLなんか間違えた&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
       <link>http://tech.k-zak.com/2014/09/07/challenge-ansible</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>

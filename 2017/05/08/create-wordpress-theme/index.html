@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>コーディングリハビリ06</title>
+  <title>create wordpress theme</title>
   <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -138,7 +138,7 @@
 <div class="content">
 
   <div class="article">
-    <div class="title">コーディングリハビリ06</div>
+    <div class="title">create wordpress theme</div>
     
       <div class="categories">
         
@@ -146,102 +146,130 @@
         
       </div>
      
-    <div class="description"><p>リハビリその3</p>
+    <div class="description">
 
-<p>今回は、バブルソート</p>
+<h1 id="wordpressのテーマを作成してみた">WordPressのテーマを作成してみた</h1>
 
-<p>PHPでは、</p>
+<p>レスポンシブな自作レイアウトをWordPress用テーマを作成してみた。<br />
+今確認してみたら、いくつかおかしい箇所が見つかった(´・ω・`)</p>
 
-<pre lang="php" toggle="no">&lt;?php 
-$num = trim(fgets(STDIN));
+<h2 id="大雑把な構成">大雑把な構成</h2>
 
-$num = ($num)?(int)$num:10;
+<p>以下のファイルを作成した。</p>
 
-$arr = array(1);
-for($i=0;$i&lt;$num;$i++){
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
 
-    $len = count($arr);
-    $tmp = array(1);
-    for($j=0;$j&lt;$len-1;$j++){
-        array_push($tmp,$arr[$j]+$arr[$j+1]);
-    }
-    array_push($tmp,1);
-    $arr = $tmp;
-    echo join(',',$arr)."\n";
-}
-?&gt;</pre>
+<tbody>
+<tr>
+<td>404.php</td>
+<td>404 Page</td>
+</tr>
 
-<p>Perlでは、</p>
+<tr>
+<td>category.php</td>
+<td>カテゴリー一覧ページ</td>
+</tr>
 
-<pre lang="perl" toggle="no">#!/usr/bin/perl
+<tr>
+<td>date.php</td>
+<td>年月アーカイブページ</td>
+</tr>
 
-use strict;
-use warnings;
+<tr>
+<td>footer.php</td>
+<td>フッター共通パーツ</td>
+</tr>
 
-my $num = &lt;STDIN&gt;;
-chomp($num);
+<tr>
+<td>front-page.php</td>
+<td>TOPページ</td>
+</tr>
 
-$num ||= 10;
+<tr>
+<td>functions.php</td>
+<td>機能を記述するファイル</td>
+</tr>
 
-my @list = (1);
+<tr>
+<td>header.php</td>
+<td>ヘッダー共通パーツ</td>
+</tr>
 
-for(my $i=0;$i&lt;$num;$i++){
-    my $len = @list;
-    my @tmp = (1);
-    for(my $j=0;$j&lt;$len-1;$j++){
-        push(@tmp,$list[$j]+$list[$j+1]);
-    }
-    push(@tmp,1);
-    @list = @tmp;
-    print join(',',@list)."\n";
-}
-</pre>
+<tr>
+<td>index.php</td>
+<td>割り当てるテンプレートが見つからなかった場合に使われるベースページ</td>
+</tr>
 
-<p>Pythonでは、</p>
+<tr>
+<td>page.php</td>
+<td>固定ページテンプレート</td>
+</tr>
 
-<pre lang="py" toggle="no">#!/usr/bin/python
+<tr>
+<td>sidebar.php</td>
+<td>共通サイドバーパーツ</td>
+</tr>
 
-if __name__ == '__main__':
-    num = raw_input()
-    num = int(num) if num else 10
-    l = [1]
-    print l
-    for i in range(num):
-        l = map(lambda x,y:x+y,[0]+l,l+[0])
-        print l
-</pre>
+<tr>
+<td>single.php</td>
+<td>1記事のページ</td>
+</tr>
 
-<p>Rubyでは、</p>
+<tr>
+<td>style.css</td>
+<td>全体のCSSここにテーマ名とかも記述する</td>
+</tr>
 
-<pre lang="ruby" toggle="no">#!/usr/bin/ruby
-#--*-- coding: utf-8 --*--
+<tr>
+<td>tag.php</td>
+<td>タグ一覧ページ</td>
+</tr>
 
-num = gets.to_i
-num ||= 10
-a=[1]
-num.times{
-    a=[1]+a.zip(a.slice(1..(a.size))).map{|a,b| a.to_i+b.to_i}
-    p a.join(' ')
-}
-</pre>
+<tr>
+<td>parts/articles.php</td>
+<td>特定の記事の一覧を出力するパーツテンプレート</td>
+</tr>
 
-<p>習熟度が低いのでPerlとPHPが同じ内容になる。</p>
+<tr>
+<td>parts/top-header.php</td>
+<td>共通のブログヘッダーパート</td>
+</tr>
+</tbody>
+</table>
 
-<p>pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。</p>
+<h3 id="絶対top表示に使うマン">絶対TOP表示に使うマン</h3>
 
-<p>すんなり1つのリストだけでできないものか&#8230;&#8230;</p>
+<p>WordPressには特定の名前のテンプレートは決められた使われ方をする。<br />
+その中でfront-pageはTOPに使われる最上位の名前、他いくつかあって、それらが見つからなかった場合、index.phpが使われる。</p>
+
+<h3 id="パーツを呼び出す">パーツを呼び出す</h3>
+
+<ul>
+<li>header.php : get_header() で呼ぶ</li>
+<li>footer.php : get_footer() で呼ぶ</li>
+<li>sidebar.php : get_sidebar() で呼ぶ</li>
+<li>path/to/part.php : get_template_part(&lsquo;path/to/part&rsquo;) で呼ぶ</li>
+</ul>
+
+<h2 id="まとめ">まとめ</h2>
+
+<ul>
+<li>簡単な画面構成なら簡単に作れる感じ。</li>
+<li>ページネーション作り忘れた！</li>
+<li>固定ページへのURLなんか間違えた&hellip;</li>
+</ul>
 </div>
     <div class="tags">
-      8 Dec 2013
+      8 May 2017
       
         
-          <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>
-        
-          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-          <a href="http://tech.k-zak.com/tags/python/">#Python</a>
-        
-          <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>
+          <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
         
        
     </div>
@@ -252,11 +280,11 @@ num.times{
 
 <paper-item>
   
-    <a href="http://tech.k-zak.com/2013/12/08/square-root"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+    <paper-fab disabled icon="chevron-left"></paper-fab>
   
     <div class="flex"></div>
   
-    <a href="http://tech.k-zak.com/2013/12/08/coding-memo05"><paper-fab icon="chevron-right"></paper-fab></a>
+    <a href="http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu"><paper-fab icon="chevron-right"></paper-fab></a>
   
 </paper-item>
 
@@ -268,21 +296,6 @@ num.times{
     </paper-scroll-header-panel>
   </paper-drawer-panel>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-46285513-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  
-</body>
-</html>
-
- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   
   <script>

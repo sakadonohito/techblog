@@ -139,6 +139,34 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2017/03/29/hexo-etc">Hexo etc</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+      </div>
+     
+    <div class="description">勉強の進捗とHexoの改修 いろいろいっぱいいっぱいで諦めたことと、作業したこと。
+スプリントの進捗  Mackerelのプラグイン試すとか諦めて、3月までの課題終了。 Docker学習、3月までの課題終了。Swarmとか諦めた。  時間に余裕ができたらまた集中して取り組む。
+Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃう感じだったのでCSSを変えるとかしようと考えてた。
+行ったこと  画像を変更。ブログテーマに幾分合ってそうなものに変えたつもり。 画像をちょっと暗めにしたかったので少しCSS変更。  いい感じになった。
+やらなかったこと 全体的な直しをしようか迷ったけど、要件を十分果たしていると判断して何もしないことにした。
+ファイル名、URLパス、記事タイトルが同じじゃないといけないのがちょっとキモい。
+そんな感じ。</div>
+    <div class="tags">
+      29 Mar 2017
+      
+        
+          <a href="http://tech.k-zak.com/tags/hexo/">#Hexo</a>
+        
+          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2017/03/28/docker-reinstall">docker reinstall</a></div>
     
       <div class="categories">
@@ -383,30 +411,6 @@ MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html' 他にも AUTHOR_SAVE_A
 &lt;section&gt; &lt;p&gt;Archives&lt;/p&gt; {% if all_articles|count %} &lt;ul&gt; {% for year, date_year in all_articles|groupby('date.year')|sort(reverse=NEWEST_FIRST_ARCHIVES) %} {% for month, articles in date_year|groupby('date.month')|sort(reverse=NEWEST_FIRST_ARCHIVES) %} &lt;li&gt;&lt;a href=&quot;/{{ year }}/{{ '%02d' % month }}/&quot;&gt;{{ year }}年{{ month }}月&lt;/a&gt;({{ articles|count }})&lt;/li&gt; {% endfor %} {% endfor %} &lt;/ul&gt; {% elif articles %} &lt;ul&gt; {% for year, date_year in articles|groupby('date.</div>
     <div class="tags">
       20 Mar 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/pelican/">#Pelican</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/02/20/first-pelican">Pelicanを試す</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">Python製の静的サイトジェネレーターPelicanを試す Hugo,Hexo,Jekyllと試してきて、せっかくなのでPython製のものも試そうとPelicanを試した。
-インストール mkdir &lt;&lt;blog&gt;&gt; cd &lt;&lt;blog&gt;&gt; pip install pelican Markdown pelican-quickstart  なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。
-記事を書く 記事はcontent以下にreStructuredTextもしくはMarkdownで書きます。 content以下にディレクトリを配置するとそのディレクトリ名がカテゴリ名扱いされるらしい。当分はいいや。 もちろん、カテゴリはテキストファイルないのヘッダー？に記述できますので、カテゴリが必要だからといってディレクトリでわかなければいけないわけではありません。
-pelican content -s pelicanconf.py  でoutputディレクトリに静的ファイルが生成されます。
-簡単ですな。</div>
-    <div class="tags">
-      20 Feb 2017
       
         
           <a href="http://tech.k-zak.com/tags/pelican/">#Pelican</a>

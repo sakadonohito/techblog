@@ -6,8 +6,135 @@
     <description>Recent content in Posts on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 24 Apr 2017 13:48:14 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 08 May 2017 22:28:13 +0900</lastBuildDate>
     <atom:link href="http://tech.k-zak.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>create wordpress theme</title>
+      <link>http://tech.k-zak.com/2017/05/08/create-wordpress-theme</link>
+      <pubDate>Mon, 08 May 2017 22:28:13 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/05/08/create-wordpress-theme</guid>
+      <description>
+
+&lt;h1 id=&#34;wordpressのテーマを作成してみた&#34;&gt;WordPressのテーマを作成してみた&lt;/h1&gt;
+
+&lt;p&gt;レスポンシブな自作レイアウトをWordPress用テーマを作成してみた。&lt;br /&gt;
+今確認してみたら、いくつかおかしい箇所が見つかった(´・ω・`)&lt;/p&gt;
+
+&lt;h2 id=&#34;大雑把な構成&#34;&gt;大雑把な構成&lt;/h2&gt;
+
+&lt;p&gt;以下のファイルを作成した。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;404.php&lt;/td&gt;
+&lt;td&gt;404 Page&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;category.php&lt;/td&gt;
+&lt;td&gt;カテゴリー一覧ページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;date.php&lt;/td&gt;
+&lt;td&gt;年月アーカイブページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;footer.php&lt;/td&gt;
+&lt;td&gt;フッター共通パーツ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;front-page.php&lt;/td&gt;
+&lt;td&gt;TOPページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;functions.php&lt;/td&gt;
+&lt;td&gt;機能を記述するファイル&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;header.php&lt;/td&gt;
+&lt;td&gt;ヘッダー共通パーツ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;index.php&lt;/td&gt;
+&lt;td&gt;割り当てるテンプレートが見つからなかった場合に使われるベースページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;page.php&lt;/td&gt;
+&lt;td&gt;固定ページテンプレート&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;sidebar.php&lt;/td&gt;
+&lt;td&gt;共通サイドバーパーツ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;single.php&lt;/td&gt;
+&lt;td&gt;1記事のページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;style.css&lt;/td&gt;
+&lt;td&gt;全体のCSSここにテーマ名とかも記述する&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;tag.php&lt;/td&gt;
+&lt;td&gt;タグ一覧ページ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;parts/articles.php&lt;/td&gt;
+&lt;td&gt;特定の記事の一覧を出力するパーツテンプレート&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;parts/top-header.php&lt;/td&gt;
+&lt;td&gt;共通のブログヘッダーパート&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;絶対top表示に使うマン&#34;&gt;絶対TOP表示に使うマン&lt;/h3&gt;
+
+&lt;p&gt;WordPressには特定の名前のテンプレートは決められた使われ方をする。&lt;br /&gt;
+その中でfront-pageはTOPに使われる最上位の名前、他いくつかあって、それらが見つからなかった場合、index.phpが使われる。&lt;/p&gt;
+
+&lt;h3 id=&#34;パーツを呼び出す&#34;&gt;パーツを呼び出す&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;header.php : get_header() で呼ぶ&lt;/li&gt;
+&lt;li&gt;footer.php : get_footer() で呼ぶ&lt;/li&gt;
+&lt;li&gt;sidebar.php : get_sidebar() で呼ぶ&lt;/li&gt;
+&lt;li&gt;path/to/part.php : get_template_part(&amp;lsquo;path/to/part&amp;rsquo;) で呼ぶ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;簡単な画面構成なら簡単に作れる感じ。&lt;/li&gt;
+&lt;li&gt;ページネーション作り忘れた！&lt;/li&gt;
+&lt;li&gt;固定ページへのURLなんか間違えた&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>setting ntp on Ubuntu</title>
@@ -822,71 +949,6 @@ Jekyllは二度と触りたく無い。&lt;/p&gt;
 &lt;p&gt;これはおそらくHugoに限らず静的サイトジェネレーターならだいたいそうだと思う。&lt;/p&gt;
 
 &lt;p&gt;しかしカテゴリ名やタグ名で日本語使えないのは辛いな。。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>I tried Mackerel</title>
-      <link>http://tech.k-zak.com/2017/03/24/i-tried-mackerel</link>
-      <pubDate>Fri, 24 Mar 2017 18:32:38 +0900</pubDate>
-      
-      <guid>http://tech.k-zak.com/2017/03/24/i-tried-mackerel</guid>
-      <description>
-
-&lt;h1 id=&#34;勇気を出してmackerelを試してみた&#34;&gt;勇気を出してMackerelを試してみた&lt;/h1&gt;
-
-&lt;p&gt;前々から気にはなっていたMackerelをお試しで入れてみた。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;VPS契約しているUbuntu16.04&lt;/li&gt;
-&lt;li&gt;使い捨てのAWS上WIndows2012&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
-
-&lt;p&gt;ヘルプに書いてある通りに作業してつまずく事もなくすんなりできた。&lt;/p&gt;
-
-&lt;h2 id=&#34;監視項目&#34;&gt;監視項目&lt;/h2&gt;
-
-&lt;h3 id=&#34;デフォルト監視項目&#34;&gt;デフォルト監視項目&lt;/h3&gt;
-
-&lt;p&gt;通常の監視項目で既に普段Zabbixで見て使っている項目を監視できているので、Zabbix使いこなす気がないならMackerelでいいかなって思った。&lt;/p&gt;
-
-&lt;h3 id=&#34;カスタムメトリック&#34;&gt;カスタムメトリック&lt;/h3&gt;
-
-&lt;p&gt;今回はまだ試していない。&lt;/p&gt;
-
-&lt;p&gt;けど、簡単そうだ。&lt;/p&gt;
-
-&lt;h3 id=&#34;プラグインの作成&#34;&gt;プラグインの作成&lt;/h3&gt;
-
-&lt;p&gt;今回はまだ試していない。&lt;/p&gt;
-
-&lt;p&gt;golangじゃないといけないのかと思っていたけれど、他の言語でもいいらしい。&lt;/p&gt;
-
-&lt;h3 id=&#34;外形監視&#34;&gt;外形監視&lt;/h3&gt;
-
-&lt;p&gt;ホストが止まっても監視を続けるので、仕様上間違ってはいないんだけどずっとエラーがで続ける。&lt;/p&gt;
-
-&lt;p&gt;ホストをメンテナンスにしたり停止したりした時は外形監視も停止する仕組みがあるといいいかなって思った。&lt;/p&gt;
-
-&lt;p&gt;外形監視の定義削除しかなかったように思える。&lt;/p&gt;
-
-&lt;h3 id=&#34;通知設定&#34;&gt;通知設定&lt;/h3&gt;
-
-&lt;p&gt;通知設定も簡単だし、いろんなサービス(Slackとか)と簡単に連携できるのも魅力だなと感じた。&lt;/p&gt;
-
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;まだプラグインを試していないのだけれど、とにかくヘルプドキュメントが素晴らしいと感じた。&lt;/p&gt;
-
-&lt;p&gt;自分ならそこまではやらないよってくらいに丁寧に書いてあった。&lt;/p&gt;
-
-&lt;p&gt;特に感心したのは他サービスと連携するために、他サービス上での設定の説明が画面キャプチャ入りで説明されていたこと。&lt;/p&gt;
-
-&lt;p&gt;小規模な場合にフリーでどこまで使えるのかフリープランを調べていきたい。&lt;/p&gt;
-
-&lt;p&gt;Zabbixサーバーを一台用意する場合との費用比較とか調べていきたい。&lt;/p&gt;
 </description>
     </item>
     

@@ -139,6 +139,64 @@
 
 
   <div class="article">
+    <div class="title"><a href="http://tech.k-zak.com/2015/02/01/php-mail">Ubuntu14.04 でphpでメール受信とか</a></div>
+    
+      <div class="categories">
+        
+          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
+        
+          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
+        
+      </div>
+     
+    <div class="description">## install postfix
+&#8220;`
+sudo apt-get install postfix postfix-dev sasl2-bin
+sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt
+&#8220;`
+## Settings
+&#8220;`
+sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf
+sudo emacs -nw /etc/postfix/main.cf
+&#8220;`
+### 参考
+&#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;p=mail
+&#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;p=mail&amp;f=2
+### gmailに転送する設定に変更
+relayhostにgmailを指定
+パスワードの設定とかね。
+## phpでメールを受信出来るよう設定
+メールサーバ受信DNS設定とか面倒だからやめた。
+phpinfoを見ると案の定imap入ってませんでしたので、php5.5系の落としてきてimapのディレクトリ移動してphpize
+### configureで失敗する
+configureしたらutf8_mime2text()がうんたらと出てきた。
+ググると、どうもphpにimapとかメール関係入れる時にライブラリが足りないと出るエラーのようだ。
+sudo apt-cache search libc-client
+→libc-client2007e libc-client2007e-dev てのが出てくるので両方インストール
+### imapうまく動かない？
+この後無事imapインストールできたけどなぜか受信出来ない。いろいろ調べて片っ端からSSL関連インストールしたけどうまくいかない。
+### 何が原因だったのか不明
+結局、何かのSSL関係のライブラリインストールが最初足りなくてGmail受信失敗してた。
+gmailからさくらのレンサバのメールアカウントで試した場合はアカウント名の指定を間違えてた。
+テストで受信するだけだから、普通のimapアカウントの場合はnotlsをflagにつける。
+gmailの場合は/ssl/novalidation-certみたいのつける</div>
+    <div class="tags">
+      1 Feb 2015
+      
+        
+          <a href="http://tech.k-zak.com/tags/imap/">#imap</a>
+        
+          <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
+        
+          <a href="http://tech.k-zak.com/tags/postfix/">#postfix</a>
+        
+          <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>
+        
+       
+    </div>
+  </div>
+
+  <div class="article">
     <div class="title"><a href="http://tech.k-zak.com/2015/01/05/perl-cgi">Ubuntu14.04 LTS でNginx FasCGI Perl</a></div>
     
       <div class="categories">
@@ -471,32 +529,6 @@ PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5
           <a href="http://tech.k-zak.com/tags/fuelphp/">#FuelPHP</a>
         
           <a href="http://tech.k-zak.com/tags/php/">#PHP</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2014/08/02/spec-js">低レベルプログラマだからJavaScriptで知らなかった事</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-          <a href="http://tech.k-zak.com/categories/trouble-memo/">trouble-memo</a>
-        
-      </div>
-     
-    <div class="description">JavaScriptで知らないせいでハマったところなどなど
-Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。
-そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。
-JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
-100+10.1とかやろうとすると物凄い小さい数字が誤差として丸められず残る。</div>
-    <div class="tags">
-      2 Aug 2014
-      
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#JavaScript</a>
         
        
     </div>
