@@ -1,236 +1,232 @@
-
 <!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>Pelican</title>
-  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
-  <style is="custom-style">
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
-    .nav {
-      border-right: 1px solid #ccc;
-    }
-    
-    paper-scroll-header-panel {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: var(--paper-grey-200, #eee);
-       
-      --paper-scroll-header-panel-full-header: {
-        background-image: url(http://tech.k-zak.com/images/cover.png);
-      };
-       
-      --paper-scroll-header-panel-condensed-header: {
-        background-image: url(http://tech.k-zak.com/images/cover.png);
-      };
-    }
-    
-    paper-toolbar {
-       
-      height: 256px;
-      background-color: transparent;
-    }
-    .profile{
-      width: 100%;
-      padding-bottom: 20px;
-    }
-    .photo{
-      margin: 20px;
-      display: inline-block;
-      height: 64px; width: 64px;
-      border-radius: 50%;
-    }
-    .article{
-      border: 1px solid #bebebe;
-      padding: 16px;
-      margin: 16px;
-      border-radius: 5px;
-      background-color: #fff;
-    }
-    .title{
-      font-size: 22px;
-      padding: 8px 0 16px;
-    }
-    .description{
-      font-size: 16px;
-      padding-bottom: 8px;
-    }
-    .author{
-      font-size: 16px;
-      padding-left: 20px;
-      color: white;
-    }
-    .design{
-      font-size: 14px;
-    }
-    .copyright{
-      font-size: 16px;
-    }
-    paper-menu a {
-      text-decoration: none;
-      color: #212121;
-    }
-  </style>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+		<title>開発メモてきな</title>
+		<link rel="stylesheet" href="http://tech.k-zak.comcss/style.css" type="text/css"/>
 
-</head>
-<body>
-  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
-    <div class="nav scroll" drawer>
-    
-      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
-    
-        
-          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
-        
-          <div class="author"></div>
-      </iron-image>
-      <paper-menu>
-        <a href="http://tech.k-zak.com"><paper-item>
-          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
-          <iron-icon icon="chevron-right"></iron-icon>
-        </paper-item></a>
-        <a href="http://tech.k-zak.com/categories/"><paper-item>
-          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
-          <iron-icon icon="chevron-right"></iron-icon>
-        </paper-item></a>
-        <a href="http://tech.k-zak.com/tags/"><paper-item>
-          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
-          <iron-icon icon="chevron-right"></iron-icon>
-        </paper-item></a>
-      </paper-menu>
-    </div>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="site-main">
+	<div class="header-image-main">
+		<img alt="サイトのメインテーマ画像" src="http://tech.k-zak.com/image/top-min.png"/>
+		<a href="http://tech.k-zak.com/" class="site-title">開発メモてきな</a>
+	</div>
+</header>
 
-    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+			<div class="main-part">
+				
+<main role="main">
+	<div class="main-contents">
+		<header>
+			<h1>Pelican Posts</h1>
+		</header>
+		<div class="article-list">
+			
+			<article>
+	<h3><a href="http://tech.k-zak.com/2017/03/20/create-pelican-theme">Pelicanのレイアウト作成</a></h3>
+	<p>Published: 2017-03-20</p>
+</article>
 
-      <paper-toolbar>
+			
+			<article>
+	<h3><a href="http://tech.k-zak.com/2017/02/20/first-pelican">Pelicanを試す</a></h3>
+	<p>Published: 2017-02-20</p>
+</article>
 
-        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-        <div class="bottom title">開発メモてきな</div>
-        <div class="flex"></div>
-        
-        
-        
-        
-        
-          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
-      
-      </paper-toolbar>
+			
+		</div>
+	</div>
+</main>
+
+				<aside>
+	<div class="side-menu">
+		<section>
+			<p>Categories</p>
+			<ul>
+				
+				<li><a href="http://tech.k-zak.com/categories/setting-construction">setting-construction</a>(36)</li>
+				
+				<li><a href="http://tech.k-zak.com/categories/study-daily">study-daily</a>(79)</li>
+				
+				<li><a href="http://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(5)</li>
+				
+			</ul>
+		</section>
+		<section>
+			<p><a href="http://tech.k-zak.com/tags/">Tags</a></p>
+			<ul>
+				
+				<li><a href="http://tech.k-zak.com/tags/ansible">ansible</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/apache">apache</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/aws">aws</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/books">books</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/cakephp">cakephp</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/character">character</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/complain">complain</a>(5)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/css">css</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/django">django</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/docker">docker</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ecs">ecs</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/emacs">emacs</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/env">env</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/etc">etc</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/fastcgi">fastcgi</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/filemaker">filemaker</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/fmxj">fmxj</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/groovy">groovy</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/hugo">hugo</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/iis">iis</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/imap">imap</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/java">java</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/jaws-ug">jaws-ug</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/jekyll">jekyll</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/jquery">jquery</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/laravel4">laravel4</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/log">log</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mac">mac</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/markdown">markdown</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mastodon">mastodon</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mojolicious">mojolicious</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mojoliciouslite">mojoliciouslite</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/movabletype">movabletype</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mysql">mysql</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/netbeans">netbeans</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/network">network</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/perl">perl</a>(12)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/php">php</a>(21)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/postfix">postfix</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/python">python</a>(15)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/rails">rails</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/rbenv">rbenv</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/redux">redux</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/s3">s3</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/vagrant">vagrant</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/wordpress">wordpress</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/zend-framework">zend-framework</a>(1)</li>
+				
+			</ul>
+		</section>
+		<section>
+			<p>Etc</p>
+			<ul>
+				<li>About</li>
+			</ul>
+		</section>
+	</div>
+</aside>
+
+			</div>
+			<footer>
+	<small>Copyright &copy; 2017 sakadonohito All rights reserved.</small>
+	<small>powered by Hugo.</small>
+	<small>開発メモてきな</small>
+</footer>
+
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+						  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ ga('create', 'UA-46285513-1', 'auto');
+ ga('send', 'pageview');
+</script>
 
 
-
-<div class="content">
-
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/03/20/create-pelican-theme">Pelicanのレイアウト作成</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">Pelicanで使う自分用テーマを作成した 静的サイトジェネレーター用の基本的なブログレイアウトを一つ作っておくと使い回しができると思い、Python製のPelicanから着手することにしてみた。
-結論から言うと、なかなか時間がとれないのもあって、足掛け2ヶ月かかった。
-その1：ベースとなるレイアウトを素組する htmlとCSSのみでできるだけレスポンシブな簡易ブログ用のレイアウトを考えて作った。
-https://github.com/sakadonohito/site-base-theme
-flexboxを中途半端に使っているのと、Pelicanテーマ作り終わってからフィードバックしている部分もある。ホント適当。
-CSSはSCSSからWebpackでビルドしているけど、限りなく必要ないレベル。 EmacsならSCSS保存する時にCSSをビルドしてくれるのでホント不要な構造、しかも作り終わる前にWebpackは2がでちゃってバージョンが古いというオマケつき。 そうです、Webpack使ってるぜアッピルがしたかっただけなのです。
-その2：Pelicanのテーマを作る  ググって出てきたシンプルなテーマをコピーして 作ったベースレイアウトにまるっと取り替えて 変数部分がちゃんと展開されるように調整して パーツをバラす  みたいな感じで作成。
-結局よくりようしたのは公式ドキュメント
-ハマったところ 1. 見本にしたテーマのパーツ毎の役割がよくわからなかった categories.htmlとcategory.htmlってあって、最初複数形のはカテゴリ別の一覧表示で単数系のは1記事のパーツかと思ったら、複数形はカテゴリ名の一覧で単数系が特定のカテゴリでの記事一覧だった。 タグの場合はさらに1記事用パーツレイアウトにはめ込む用の記事に関連づいたタグを横一列に並べるtaglist.htmlなんてのもあって、さらに混乱した。
-2. ビルド失敗した時どこでエラーが発生したのか分からない ビルドのエラーログの出力設定があるのか調べていないだけなんだけど、テンプレート作成している時にビルドエラー発生したけど、どこの編集のせいか分からない(1行文法エラーで失敗したぜ！的なメッセージがでるだけ)のでこまめにビルドして確認しながらじゃないと迷路に迷い込む。
-ショートカットキーのタイポとかで変な場所に意図せず文字を入力してしまっているのに気づかず、ビルドが失敗した時には、身に覚えがなかったので解決に時間がかかった(2分探索みたいにコードを消したり戻したりしながらビルドしてエラー箇所を探した)。
-3. 記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある period_Archives.htmlっていう特定の期間の記事リストを表示するためのパーツの上でarticlesという記事リストオブジェクトは全体じゃなくて、その期間の記事リストオブジェクト。全記事のリストは代わりにall_articlesてのある。じゃぁ常にall_articlesを使えば？ってなるんだけど、TOPとか他の場所だとこのall_articlesは空欄。
-4. 年月毎に記事のカウントを取ったりURL分ける方法の説明がおろそか 結論からいうと、URLについては設定ファイルに
-MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html' 他にも AUTHOR_SAVE_AS とか PAGE_SAVE_AS なんかもあるのよ  とか書いておくと、/2017/03/みたいなパスで2017年3月の記事の一覧ページが生成される。今にして思うと年のフォルダ&amp;月を意味するファイルの組み合わせでよかったんじゃないか説もある。
-年月の記事カウントについては全記事を年でまとめた記事リストの記事リストを作成して「記事リスト」をさらに月でまとめてカウントを取るみたいなことをやる。 これはそんなようなことをするサンプルのテーマがたまたま見つかったから作れたけど見つからなかったらアーカイブのページが断念したと思う。
-こんな感じ
-&lt;section&gt; &lt;p&gt;Archives&lt;/p&gt; {% if all_articles|count %} &lt;ul&gt; {% for year, date_year in all_articles|groupby('date.year')|sort(reverse=NEWEST_FIRST_ARCHIVES) %} {% for month, articles in date_year|groupby('date.month')|sort(reverse=NEWEST_FIRST_ARCHIVES) %} &lt;li&gt;&lt;a href=&quot;/{{ year }}/{{ '%02d' % month }}/&quot;&gt;{{ year }}年{{ month }}月&lt;/a&gt;({{ articles|count }})&lt;/li&gt; {% endfor %} {% endfor %} &lt;/ul&gt; {% elif articles %} &lt;ul&gt; {% for year, date_year in articles|groupby('date.</div>
-    <div class="tags">
-      20 Mar 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/pelican/">#Pelican</a>
-        
-       
-    </div>
-  </div>
-
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/02/20/first-pelican">Pelicanを試す</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">Python製の静的サイトジェネレーターPelicanを試す Hugo,Hexo,Jekyllと試してきて、せっかくなのでPython製のものも試そうとPelicanを試した。
-インストール mkdir &lt;&lt;blog&gt;&gt; cd &lt;&lt;blog&gt;&gt; pip install pelican Markdown pelican-quickstart  なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。
-記事を書く 記事はcontent以下にreStructuredTextもしくはMarkdownで書きます。 content以下にディレクトリを配置するとそのディレクトリ名がカテゴリ名扱いされるらしい。当分はいいや。 もちろん、カテゴリはテキストファイルないのヘッダー？に記述できますので、カテゴリが必要だからといってディレクトリでわかなければいけないわけではありません。
-pelican content -s pelicanconf.py  でoutputディレクトリに静的ファイルが生成されます。
-簡単ですな。</div>
-    <div class="tags">
-      20 Feb 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/pelican/">#Pelican</a>
-        
-       
-    </div>
-  </div>
-
-</div>
-
-
-<paper-item>
-  
-    <paper-fab disabled icon="chevron-left"></paper-fab>
-  
-    <div class="flex"></div>
-  
-    <paper-fab disabled icon="chevron-right"></paper-fab>
-  
-</paper-item>
-
-
-      <paper-item>
-        <div class="copyright"></div>
-        <div class="flex"></div>
-        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
-      </paper-item>
-    </paper-scroll-header-panel>
-  </paper-drawer-panel>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-46285513-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  
-</body>
+	</body>
 </html>
-

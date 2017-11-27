@@ -1,493 +1,341 @@
-
 <!doctype html>
 <html lang="ja">
-<head>
+	<head>
 	<meta name="generator" content="Hugo 0.18.1" />
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>開発メモてきな</title>
-  <script src="http://tech.k-zak.com/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-icons/iron-icons.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-drawer-panel/paper-drawer-panel.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-icon-button/paper-icon-button.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-toolbar/paper-toolbar.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-fab/paper-fab.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-item/paper-item.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/paper-menu/paper-menu.html">
-  <link rel="import" href="http://tech.k-zak.com/bower_components/iron-image/iron-image.html">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
-  <style is="custom-style">
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
-    .nav {
-      border-right: 1px solid #ccc;
-    }
-    
-    paper-scroll-header-panel {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: var(--paper-grey-200, #eee);
-       
-      --paper-scroll-header-panel-full-header: {
-        background-image: url(http://tech.k-zak.com/images/cover.png);
-      };
-       
-      --paper-scroll-header-panel-condensed-header: {
-        background-image: url(http://tech.k-zak.com/images/cover.png);
-      };
-    }
-    
-    paper-toolbar {
-       
-      height: 256px;
-      background-color: transparent;
-    }
-    .profile{
-      width: 100%;
-      padding-bottom: 20px;
-    }
-    .photo{
-      margin: 20px;
-      display: inline-block;
-      height: 64px; width: 64px;
-      border-radius: 50%;
-    }
-    .article{
-      border: 1px solid #bebebe;
-      padding: 16px;
-      margin: 16px;
-      border-radius: 5px;
-      background-color: #fff;
-    }
-    .title{
-      font-size: 22px;
-      padding: 8px 0 16px;
-    }
-    .description{
-      font-size: 16px;
-      padding-bottom: 8px;
-    }
-    .author{
-      font-size: 16px;
-      padding-left: 20px;
-      color: white;
-    }
-    .design{
-      font-size: 14px;
-    }
-    .copyright{
-      font-size: 16px;
-    }
-    paper-menu a {
-      text-decoration: none;
-      color: #212121;
-    }
-  </style>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+		<title>開発メモてきな</title>
+		<link rel="stylesheet" href="http://tech.k-zak.comcss/style.css" type="text/css"/>
 
-</head>
-<body>
-  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
-    <div class="nav scroll" drawer>
-    
-      <iron-image class="profile" sizing="cover" src="http://tech.k-zak.com/images/profile.png">
-    
-        
-          <iron-image class="photo" sizing="cover" src="http://tech.k-zak.com/images/photo.png"></iron-image>
-        
-          <div class="author"></div>
-      </iron-image>
-      <paper-menu>
-        <a href="http://tech.k-zak.com"><paper-item>
-          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
-          <iron-icon icon="chevron-right"></iron-icon>
-        </paper-item></a>
-        <a href="http://tech.k-zak.com/categories/"><paper-item>
-          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
-          <iron-icon icon="chevron-right"></iron-icon>
-        </paper-item></a>
-        <a href="http://tech.k-zak.com/tags/"><paper-item>
-          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
-          <iron-icon icon="chevron-right"></iron-icon>
-        </paper-item></a>
-      </paper-menu>
-    </div>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="site-main">
+	<div class="header-image-main">
+		<img alt="サイトのメインテーマ画像" src="http://tech.k-zak.com/image/top-min.png"/>
+		<a href="http://tech.k-zak.com/" class="site-title">開発メモてきな</a>
+	</div>
+</header>
 
-    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+			<div class="main-part">
+				
+<main role="main">
+	<div class="main-contents">
+		<h3>最新の記事</h3>
+		
+		<h2><a href="http://tech.k-zak.com/2017/05/08/create-wordpress-theme">create wordpress theme</a></h2>
+		<article>
+	<p>
 
-      <paper-toolbar>
+<h1 id="wordpressのテーマを作成してみた">WordPressのテーマを作成してみた</h1>
 
-        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-        <div class="bottom title">開発メモてきな</div>
-        <div class="flex"></div>
-        
-        
-        
-        
-        
-          <a href="http://tech.k-zak.com/index.xml"><paper-icon-button src="http://tech.k-zak.com/images/feed-dreamstale27.png"></paper-icon-button></a>
-      
-      </paper-toolbar>
+<p>レスポンシブな自作レイアウトをWordPress用テーマを作成してみた。<br />
+今確認してみたら、いくつかおかしい箇所が見つかった(´・ω・`)</p>
 
+<h2 id="大雑把な構成">大雑把な構成</h2>
 
+<p>以下のファイルを作成した。</p>
 
-<div class="content">
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
 
+<tbody>
+<tr>
+<td>404.php</td>
+<td>404 Page</td>
+</tr>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/05/08/create-wordpress-theme">create wordpress theme</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">WordPressのテーマを作成してみた レスポンシブな自作レイアウトをWordPress用テーマを作成してみた。
-今確認してみたら、いくつかおかしい箇所が見つかった(´・ω・`)
-大雑把な構成 以下のファイルを作成した。
-   name description     404.php 404 Page   category.php カテゴリー一覧ページ   date.php 年月アーカイブページ   footer.php フッター共通パーツ   front-page.php TOPページ   functions.php 機能を記述するファイル   header.php ヘッダー共通パーツ   index.php 割り当てるテンプレートが見つからなかった場合に使われるベースページ   page.php 固定ページテンプレート   sidebar.php 共通サイドバーパーツ   single.php 1記事のページ   style.css 全体のCSSここにテーマ名とかも記述する   tag.php タグ一覧ページ   parts/articles.php 特定の記事の一覧を出力するパーツテンプレート   parts/top-header.</div>
-    <div class="tags">
-      8 May 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/wordpress/">#WordPress</a>
-        
-       
-    </div>
-  </div>
+<tr>
+<td>category.php</td>
+<td>カテゴリー一覧ページ</td>
+</tr>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu">setting ntp on Ubuntu</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>
-        
-      </div>
-     
-    <div class="description">EC2のUbuntu14.04にntpを設定 事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。
-エラー内容はInvalidSigunatureException なんかタイムスタンプが早すぎるみたいなエラー内容。
-Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。 タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。
-要はCognitoでトークンを生成するためのタイムスタンプがずれるのでどうしたってエラーになっちゃう問題。
-時刻がずれていることが原因と分かったので、暫定措置として時刻をあわせる(日本標準時)。 ※サーバーはUbuntu14.04
-sudo ntpdate ntp.nict.jp  ※前提としてntpdateがインストールされていること
-いろいろ調べていたら、EC2でUbuntuを使うならNTPサーバーを利用して下さい的な感じだった。
- EC2インスタンスでの時刻同期について  NTPを入れる 根本解決のため、NTPサーバー機能をいれる。
-sudo apt-get install -y ntp  そんで設定ファイルを編集する。 /etc/ntp.conf
- デフォルトの時刻サーバーをコメントアウト 代わりにserver ntp.nict.jpを3行書く  上記の設定と内容の説明については他人の記事をご参照ください。
- NTPサーバーの構築 NTPで時刻合わせ  編集したらNTPサーバービスを再起動する
-ぐお、タイムゾーンが 作業したサーバー(どちらもUbuntu14.04)のうち、1つがUTC、1つがJSTのタイムゾーンになってて、キモティ悪かったので、揃える。
-sudo timedatectl set-timezone Asia/Tokyo  これでOK</div>
-    <div class="tags">
-      24 Apr 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/ec2/">#EC2</a>
-        
-          <a href="http://tech.k-zak.com/tags/ubuntu/">#Ubuntu</a>
-        
-          <a href="http://tech.k-zak.com/tags/ntp/">#ntp</a>
-        
-       
-    </div>
-  </div>
+<tr>
+<td>date.php</td>
+<td>年月アーカイブページ</td>
+</tr>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/04/23/zabbix-remote-command">Zabbix remote command</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">Zabbixのアクション定義でリモートコマンドを実行する サーバーを監視するソフトウェア？Zabbixで、トリガーを元にアクションを起こす場合、メール通知やSlackにPostする以外に対象のホストもしくは任意のサーバーにコマンドを投げて実行することが出来る。
-Agent側の設定 Zabbixエージェント側(コマンドを投げつけられる側)の設定ファイルの
-#EnableRemoteCommands = 0  となっている箇所をコメントアウトを解除して値を1に変更する。
-Zabbix-Agentサービスを再起動してエージェント側は最低限の準備完了
-Zabbix: アクションの設定 アクションの設定で実行内容を「リモートコマンド」にして、タイプを「カスタムスクリプト」にする。
-コマンドはエージェント側にスクリプトを用意している場合は、それを、用意していない場合は直接コマンドを書く。
-パイプが使えるので、何か実行して結果をテキストファイルに追記するとかが可能。
-Zabbixは敷居が高いけど便利ですね。</div>
-    <div class="tags">
-      23 Apr 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/zabbix/">#Zabbix</a>
-        
-       
-    </div>
-  </div>
+<tr>
+<td>footer.php</td>
+<td>フッター共通パーツ</td>
+</tr>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/04/18/mastodon-git-clone">Mastodon git clone</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">Mastodonをgit cloneして中を見てみる 今流行りのMastodonをgit cloneしてみた。
-中は設定ファイルが沢山とrails関係、フロント用のnode_modules、テスト関係、それからVagrantfileやDocker関係のファイル。
-ファイル群について 今日は内容をざっと見るところまで。
-内訳は、以下です。ディレクトリを意味するものは最期に「/」をつけています。
- ライセンスとかReadmeとかDocumentとか  CONTRIBUTING.md ISSUE_TEMPLATE.md LICENSE README.md docs/  buildpack  .buildpacks  Heroku用設定ファイル  .slugignore Procfile  デプロイツール(サービス)用  scalingo.json  コードレビュー用？設定ファイル  .codeclimate.yml  エディターの設定統一用設定ファイル  .editorconfig  git  .git/ .gitignore  環境変数設定ファイル(もしかしたらRails専用かも？)  .env.production.sample .env.test .env.vagrant  Ruby on Rails関係  .rspec .rubocop.yml .ruby-version Capfile Gemfile Gemfile.lock Rakefile app/ app.json bin/ config/ config.ru db/ lib/ log/ public/ spec/ tmp/ vendor/  JavaScriptのトランスパイルとかビルドとかフロントエンド開発用とか  .</div>
-    <div class="tags">
-      18 Apr 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/mastodon/">#Mastodon</a>
-        
-       
-    </div>
-  </div>
+<tr>
+<td>front-page.php</td>
+<td>TOPページ</td>
+</tr>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/04/09/2017-04-09-daily">2017 04 09 daily</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">進捗ありません この1週間、調子が悪かったり仕事に追われたりしていて何も勉強できていない。 少しだけReduxのサンプルを写経して動かない箇所を動くように修正した程度。
-ES2015で理解が足りていない事 import Hoge from './hoge'; //hogeファイルの中でexport defaultされたものをHogeとなづけてimport import * as Hoge from './hoge'; //hogeファイルの中でexportされたもの全てをHogeオブジェクトとしてimport import { Hoge } from './hoge'; //hogeファイルの中でHogeという名でexportされたものをimport  という理解だったのだけれど、Reduxのサンプルで意図する挙動をしなくて困った。 最終的に記述ミスだったのか、勘違いだったのか、動くようになったけど。
-いっぺん基礎を網羅的に勉強しないとダメですね。 しかし、ECMAScript2015のドキュメント原文を読むのはなー。。。</div>
-    <div class="tags">
-      9 Apr 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#javascript</a>
-        
-       
-    </div>
-  </div>
+<tr>
+<td>functions.php</td>
+<td>機能を記述するファイル</td>
+</tr>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/04/03/i-use-markdown">I use Markdown</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">気がつけばMarkdown いつの頃からかドキュメントはMarkdownで書くようになった。
-最初はなんじゃこりゃ書きにくい、意味わからんと思っていた。
-でも一度慣れてしまうととても書きやすい。
-文章を章立てで考えられるし、VisualStudioCodeにプレビュー機能があってわかりやすい。
-そしてBearのようなメモアプリや、何よりHugoのようなMarkdownで書いて静的サイトを生成できるツールに世の中溢れているので、一度慣れてしまうともう戻れない。
-WordPressを普通のテキストを書くなんて苦行でしかない。
-まとめ Markdown最高！</div>
-    <div class="tags">
-      3 Apr 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/markdown/">#Markdown</a>
-        
-       
-    </div>
-  </div>
+<tr>
+<td>header.php</td>
+<td>ヘッダー共通パーツ</td>
+</tr>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/04/02/agile-progress">agile progress</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">進捗 直近の目標に対する結果と進捗
- ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) Makerel試したい Dockerをある程度使えるようになりたい  ブログや静的サイトのテーマをつくり込みたい Plican,Hexo,Jekyllについては完了。 Jekyllは二度と触りたく無い。
-4月にWordPressのテーマ作成他のテンプレートを作りたい。
-進捗としてはまぁまぁ。
-期限：5月で変わらず
-Makerel試したい 試した。
-カスタムメトリクスは真面目にきちんと時間を取らないとだめっぽいので諦めた。
-とにかく試したので完了とみなす。
-ちなみにトライアル期間終わったのでお金払わないとフル機能試せなくなった。
-Dockerをある程度使えるようになりたい 久しぶりに触った。
-SwarmやKubernetesはハードル高いので今は諦めた。
-ひとまず現状のバージョンのDockerに入れ替えた。
-完了としたい。
-4月の目標 ブログテーマの作成は引き続き行う。
-仕事上の別件が忙しくなるので他の課題を設定せず欲張らず地道にやっていきたい。</div>
-    <div class="tags">
-      2 Apr 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/etc/">#etc</a>
-        
-       
-    </div>
-  </div>
+<tr>
+<td>index.php</td>
+<td>割り当てるテンプレートが見つからなかった場合に使われるベースページ</td>
+</tr>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance">recent frontend circumstance</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">最近のフロントエンド事情はまるで発展途上国の交通事情ですか ES6で書いてES5に変換したいだけなのに、なんなんですか？
-ES6からES5に変換したいだけなんだ Babel Babelを使えば変換できる。。。
-Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。
-考えはいい。それで十分だし、何も難しいことはなさそうだ。
-でもいざ環境を揃えようとすると&hellip;&hellip;
-以下をインストールする。
- webpack webpack-dev-server babel-core babel-loader babel-preset-es2015  webpack.config.jsと.babelrcにも設定を書く。
-これですむのならいい。
-実行したら文法エラーが出た。
- babel-preset-stage-0  を追加したら解決した。
-なんだよそれ！最初からbabel-coreだけで対応しろよ！
-他にもbrowserify,babelifyとかいろいろプラグイン的なものがある。
-自分の書いたES6のコードを動くようにするのにいったいどれを入れたら動くのか分からない！
-BabelとWebpack webpackの設定及び.babelrcにも何を変換処理に使うのか書かないとちゃんと変換されない。
-webpackに書いただけじゃダメで.babelrcにも書かないといけない。という認識だけど、多分理解が足りなくて本当は綺麗な書き方があると信じてる。
-まとめ ES6で書いてES5に変換するの辛い。
-早くブラウザが標準でES6対応してほしい。</div>
-    <div class="tags">
-      2 Apr 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/frontend/">#frontend</a>
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#javascript</a>
-        
-       
-    </div>
-  </div>
+<tr>
+<td>page.php</td>
+<td>固定ページテンプレート</td>
+</tr>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/04/02/think-about-redux">think about redux</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">Reduxについて感化されたこと Reduxについて不満に思っている部分について考察している記事を見かけた。
-自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。
-理解して納得していること Reactの場合は上からもらうプロパティはPropsで読み取り専用。
-要素ごとにstateという読み書き可能なプロパティを持つ。
-ReduxはFluxアーキテクチャの実装。
-1つの状態を管理するStoreのみ。
-Actionを呼びReducerが状態を更新する。それぞれはプレーンなjavacsriptで書く。
-ここまではいい。とても素敵に感じた。
-受け入れがたいところ javascriptといえば、画面上の何かを触ったらイベントを拾って画面を変えたりとか、非同期で外からデータを持ってくるとかですよね。
-その非同期処理をReduxではどう書くのか、実はActionは処理のオブジェクトを生成するだけだし、Reducerは更新結果の状態を同期処理で作るだけ。
-ビジネスロジック的なものや非同期処理はどこに書くのか？
-基本的には無い。なので後付け？でてきたMiddlewareてのを作る。
-Reduxの思想では、非同期の処理前、処理中、処理結果(成功・失敗)をそれぞれ状態として更新する。
-その処理をMiddlewareに書くのだけれど&hellip;書くのだけれど、これがすごく気持ち悪いと感じていた。
-いろいろ他の書き方が無いのかとか本来自分はどう書きたいのかということを考えると、乖離が大きく、辛い。
-その辺りをReducerの状態を更新する処理のところで非同期処理を呼び出して結果を入れる書き方を考えた方がいらっしゃって、外国のReduxのコミュニティに投稿したら、disられてた。
-Reduxの基本設計に不備があって、それをごまかすためのMiddlewareは許されて、Reducerに非同期処理結果を突っ込むのは違うとかって言うの、どうなの？
-まとめ ReduxのMiddlewareがいまいち気に入らないので、非同期処理も考慮されたFluxアーキテクチャのオレオレ実装を作るしか無いのか。。。</div>
-    <div class="tags">
-      2 Apr 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/redux/">#Redux</a>
-        
-          <a href="http://tech.k-zak.com/tags/frontend/">#frontend</a>
-        
-          <a href="http://tech.k-zak.com/tags/javascript/">#javascript</a>
-        
-       
-    </div>
-  </div>
+<tr>
+<td>sidebar.php</td>
+<td>共通サイドバーパーツ</td>
+</tr>
 
-  <div class="article">
-    <div class="title"><a href="http://tech.k-zak.com/2017/03/31/jaws-ug-container">jaws-ug container</a></div>
-    
-      <div class="categories">
-        
-          <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>
-        
-      </div>
-     
-    <div class="description">JAWS-UG コンテナ支部 の勉強会に行ってきた 行ってきた。。
-前佛さんのお話 Dockerは仕様でコンテナが技術っていう話。
-開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。
-Dockerのイメージ・レイヤの概念のおかげで？ベースイメージを共有したり、イメージをコピーするのにも差分レイヤだけコピーするので早いとか。
-他のコンテナ技術との大きな違い 今までに同様の技術はあったが、Dockerが大きく違うのは、DockerHubの存在。
-自分が作ったイメージはもちろん、他人が作ったものも共有(流用)できる。
-docker イメージの Github版。
-注意点 ストレージドライバについては要件を考慮して決めましょう的な話。
-このあたりを読むと理解が深まるのでしょう。
-イメージ、コンテナ、ストレージ・ドライバの理解
-ストレージ・ドライバの選択
-ECS関連のアップデート Windows コンテナ も試せる Windows Server 2016 の AMIもでてるよ。とか。
-ECRについて  フルマネージドDockerレジストリサービス イメージの容量に対して課金 コンテナイメージは自動的に暗号化できる設定がある もちろんIAM使える ECRをCloudTrailで追跡可能 CredentialHelper使ってね  業務上プライベートなDockerイメージを置く場所を作りたい場合なんかいいですね。
-社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた 既存の触りたくないバッチ環境をそのままに、API Gateway、ECS、SQSなんかを活用してバッチ処理環境を改善した話。
-既存のサーバーには何も追加したくない、が、curlは基本的に入っているので処理スタートをcurlから始める。
-API Gateway を通じてリクエストを受け取り、ECS環境でバッチ処理、処理結果をSQSで通知みたいな。
-ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。
-すごい。
-NTTとDocker ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。
-ECSを活用する上での勘所 データについて  なるべくDocker Volumeを使わないで済む設計にする  いつでもインスタンスを捨てられるようにする設計 永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する awslogs ログドライバ便利です。積極的に使っていきましょう。  URLパスの設計  ALBを活用しましょう 関連サービスのエントリポイントとかは環境変数で渡しましょう。  セッションの管理  インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い ElastiCache,Redis,Memcachedを活用しましょう。    環境構築について 書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</div>
-    <div class="tags">
-      31 Mar 2017
-      
-        
-          <a href="http://tech.k-zak.com/tags/docker/">#Docker</a>
-        
-          <a href="http://tech.k-zak.com/tags/aws/">#AWS</a>
-        
-          <a href="http://tech.k-zak.com/tags/ecs/">#ECS</a>
-        
-          <a href="http://tech.k-zak.com/tags/jaws-ug/">#JAWS-UG</a>
-        
-       
-    </div>
-  </div>
+<tr>
+<td>single.php</td>
+<td>1記事のページ</td>
+</tr>
 
-</div>
+<tr>
+<td>style.css</td>
+<td>全体のCSSここにテーマ名とかも記述する</td>
+</tr>
+
+<tr>
+<td>tag.php</td>
+<td>タグ一覧ページ</td>
+</tr>
+
+<tr>
+<td>parts/articles.php</td>
+<td>特定の記事の一覧を出力するパーツテンプレート</td>
+</tr>
+
+<tr>
+<td>parts/top-header.php</td>
+<td>共通のブログヘッダーパート</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="絶対top表示に使うマン">絶対TOP表示に使うマン</h3>
+
+<p>WordPressには特定の名前のテンプレートは決められた使われ方をする。<br />
+その中でfront-pageはTOPに使われる最上位の名前、他いくつかあって、それらが見つからなかった場合、index.phpが使われる。</p>
+
+<h3 id="パーツを呼び出す">パーツを呼び出す</h3>
+
+<ul>
+<li>header.php : get_header() で呼ぶ</li>
+<li>footer.php : get_footer() で呼ぶ</li>
+<li>sidebar.php : get_sidebar() で呼ぶ</li>
+<li>path/to/part.php : get_template_part(&lsquo;path/to/part&rsquo;) で呼ぶ</li>
+</ul>
+
+<h2 id="まとめ">まとめ</h2>
+
+<ul>
+<li>簡単な画面構成なら簡単に作れる感じ。</li>
+<li>ページネーション作り忘れた！</li>
+<li>固定ページへのURLなんか間違えた&hellip;</li>
+</ul>
+</p>
+</article>
+
+		
+	</div>
+</main>
+
+				<aside>
+	<div class="side-menu">
+		<section>
+			<p>Categories</p>
+			<ul>
+				
+				<li><a href="http://tech.k-zak.com/categories/setting-construction">setting-construction</a>(36)</li>
+				
+				<li><a href="http://tech.k-zak.com/categories/study-daily">study-daily</a>(79)</li>
+				
+				<li><a href="http://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(5)</li>
+				
+			</ul>
+		</section>
+		<section>
+			<p><a href="http://tech.k-zak.com/tags/">Tags</a></p>
+			<ul>
+				
+				<li><a href="http://tech.k-zak.com/tags/ansible">ansible</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/apache">apache</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/aws">aws</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/books">books</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/cakephp">cakephp</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/character">character</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/complain">complain</a>(5)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/css">css</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/django">django</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/docker">docker</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ecs">ecs</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/emacs">emacs</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/env">env</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/etc">etc</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/fastcgi">fastcgi</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/filemaker">filemaker</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/fmxj">fmxj</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/groovy">groovy</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/hugo">hugo</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/iis">iis</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/imap">imap</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/java">java</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/jaws-ug">jaws-ug</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/jekyll">jekyll</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/jquery">jquery</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/laravel4">laravel4</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/log">log</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mac">mac</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/markdown">markdown</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mastodon">mastodon</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mojolicious">mojolicious</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mojoliciouslite">mojoliciouslite</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/movabletype">movabletype</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mysql">mysql</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/netbeans">netbeans</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/network">network</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/perl">perl</a>(12)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/php">php</a>(21)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/postfix">postfix</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/python">python</a>(15)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/rails">rails</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/rbenv">rbenv</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/redux">redux</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/s3">s3</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/vagrant">vagrant</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/wordpress">wordpress</a>(3)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/zend-framework">zend-framework</a>(1)</li>
+				
+			</ul>
+		</section>
+		<section>
+			<p>Etc</p>
+			<ul>
+				<li>About</li>
+			</ul>
+		</section>
+	</div>
+</aside>
+
+			</div>
+			<footer>
+	<small>Copyright &copy; 2017 sakadonohito All rights reserved.</small>
+	<small>powered by Hugo.</small>
+	<small>開発メモてきな</small>
+</footer>
+
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+						  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ ga('create', 'UA-46285513-1', 'auto');
+ ga('send', 'pageview');
+</script>
 
 
-<paper-item>
-  
-    <paper-fab disabled icon="chevron-left"></paper-fab>
-  
-    <div class="flex"></div>
-  
-    <a href="http://tech.k-zak.com/page/2/"><paper-fab icon="chevron-right"></paper-fab></a>
-  
-</paper-item>
-
-
-      <paper-item>
-        <div class="copyright"></div>
-        <div class="flex"></div>
-        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
-      </paper-item>
-    </paper-scroll-header-panel>
-  </paper-drawer-panel>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-46285513-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  
-</body>
+	</body>
 </html>
-
