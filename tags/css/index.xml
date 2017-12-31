@@ -2,148 +2,112 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Css on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/css/index.xml</link>
+    <link>http://tech.k-zak.com/tags/css/</link>
     <description>Recent content in Css on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Dec 2017 14:13:02 +0900</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lolipop Cloud</title>
+      <link>http://tech.k-zak.com/2017/12/25/lolipop-cloud/</link>
+      <pubDate>Mon, 25 Dec 2017 14:13:02 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/12/25/lolipop-cloud/</guid>
+      <description>Lolipopマネージドクラウドを試してみた まだベータで無料で少し使えるようだったので試した。
+簡単に作れた。恐らくコンテナで動いている。
+PHPのコンテナを作成すると別の場所にあるMySQLにデータベース領域を与えられる。 PHPからは提供されたDBのホスト名で接続できる。
+LolipopCloudのデータベースについて charset として utf8mb4 は使える。 collate は utf8mb4_unicode_general_ciになる。なんでutf8mb4_binじゃないの？
+オマケ ついでにグリッドレイアウトも試した。
+忘れていたこと metaタグにviewport指定しておかないとメディアクエリーの指定が効かない。 CSSにメディアクエリー書く場合、デフォルトのスタイルは最も小さいサイズで書くとよいっぽい。 グリッドレイアウトは1frで指定しておくとグリッドそのもののflexbox指定はいらないかもね。</description>
+    </item>
     
     <item>
       <title>印刷用CSSでハマった</title>
-      <link>http://tech.k-zak.com/2013/10/02/trouble-css</link>
+      <link>http://tech.k-zak.com/2013/10/02/trouble-css/</link>
       <pubDate>Wed, 02 Oct 2013 16:53:01 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/10/02/trouble-css</guid>
-      <description>&lt;p&gt;この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。&lt;/p&gt;
-
-&lt;p&gt;問題のCSS: page-break-before&lt;/p&gt;
-
-&lt;p&gt;いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと&lt;/p&gt;
-
-&lt;p&gt;していたんだけど、ChromeではなるのにIE(対応対象はVer 9)だと改ページしてくれない。&lt;/p&gt;
-
-&lt;p&gt;IEでも解釈されるはずなのになんで？ってなって諦めてたんだけど、調べてたら出てきた。&lt;/p&gt;
-
-&lt;p&gt;IEの場合はpage-break-beforeが適用される要素がページをまたぐような位置にいる場合は&lt;/p&gt;
-
-&lt;p&gt;無視されるそうです。で、ちゃんとは調べてないのですがpage-break-beforeの場合はその&lt;/p&gt;
-
-&lt;p&gt;要素がpage-break-afterの場合は次の要素が判定基準になるっぽぽぽぽいです。&lt;/p&gt;
-
-&lt;p&gt;対処方法としては改ページしたい場所にからのdivを入れてその要素に対して改ページ指定の&lt;/p&gt;
-
-&lt;p&gt;cssを適用させるって方法。Web素人には分からんよ。Web上でCSSリファレンスをさっと見ても&lt;/p&gt;
-
-&lt;p&gt;そのことについての記述なかったし。んもう！&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/10/02/trouble-css/</guid>
+      <description>この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。
+問題のCSS: page-break-before
+いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと
+していたんだけど、ChromeではなるのにIE(対応対象はVer 9)だと改ページしてくれない。
+IEでも解釈されるはずなのになんで？ってなって諦めてたんだけど、調べてたら出てきた。
+IEの場合はpage-break-beforeが適用される要素がページをまたぐような位置にいる場合は
+無視されるそうです。で、ちゃんとは調べてないのですがpage-break-beforeの場合はその
+要素がpage-break-afterの場合は次の要素が判定基準になるっぽぽぽぽいです。
+対処方法としては改ページしたい場所にからのdivを入れてその要素に対して改ページ指定の
+cssを適用させるって方法。Web素人には分からんよ。Web上でCSSリファレンスをさっと見ても
+そのことについての記述なかったし。んもう！</description>
     </item>
     
     <item>
       <title>css 印刷のために</title>
-      <link>http://tech.k-zak.com/2013/08/25/print-css</link>
+      <link>http://tech.k-zak.com/2013/08/25/print-css/</link>
       <pubDate>Sun, 25 Aug 2013 04:39:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/print-css</guid>
-      <description>&lt;p&gt;なんとかPHP側でPDF作成とかじゃなくてhtml＆cssで楽したい。&lt;/p&gt;
-
-&lt;p&gt;そんな時のcss設定とか。&lt;/p&gt;
-
-&lt;p&gt;まず、対象レイアウトに印刷用css作っていきます。&lt;/p&gt;
-
-&lt;p&gt;cssの中で@media print とかやっておくと、印刷の時だけ適用されるので、css作ってる間は&lt;/p&gt;
-
-&lt;p&gt;その指定外しておいたほうが楽ね。&lt;/p&gt;
-
-&lt;p&gt;出来上がったら、htmlのheadでそのcssをmedia=&amp;#8221;print&amp;#8221;の指定付きで読み込む。&lt;/p&gt;
-
-&lt;p&gt;後はhtml内に印刷ボタン配置して印刷ボタン押したらbody要素のクラスに&amp;#8221;print&amp;#8221;を付与&lt;/p&gt;
-
-&lt;p&gt;javascriptで印刷→setTimeoutなんかで１秒後にbodyに付与したprintクラスを今度は&lt;/p&gt;
-
-&lt;p&gt;消してやれば、元通り！って寸法です。&lt;/p&gt;
-
-&lt;p&gt;ページ番号とかリンク？とか印刷日付とかはブラウザの仕様らしいので我慢。&lt;/p&gt;
-
-&lt;p&gt;それが嫌ならPDFで一から作ってください。難易度の落差が凄いな。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/08/25/print-css/</guid>
+      <description>なんとかPHP側でPDF作成とかじゃなくてhtml＆cssで楽したい。
+そんな時のcss設定とか。
+まず、対象レイアウトに印刷用css作っていきます。
+cssの中で@media print とかやっておくと、印刷の時だけ適用されるので、css作ってる間は
+その指定外しておいたほうが楽ね。
+出来上がったら、htmlのheadでそのcssをmedia=&amp;#8221;print&amp;#8221;の指定付きで読み込む。
+後はhtml内に印刷ボタン配置して印刷ボタン押したらbody要素のクラスに&amp;#8221;print&amp;#8221;を付与
+javascriptで印刷→setTimeoutなんかで１秒後にbodyに付与したprintクラスを今度は
+消してやれば、元通り！って寸法です。
+ページ番号とかリンク？とか印刷日付とかはブラウザの仕様らしいので我慢。
+それが嫌ならPDFで一から作ってください。難易度の落差が凄いな。</description>
     </item>
     
     <item>
       <title>cssメモ ちょっとしたもの</title>
-      <link>http://tech.k-zak.com/2013/08/25/css</link>
+      <link>http://tech.k-zak.com/2013/08/25/css/</link>
       <pubDate>Sun, 25 Aug 2013 04:21:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/css</guid>
-      <description>&lt;p&gt;cssでwindowサイズに応じてbodyのcss定義を変える。&lt;/p&gt;
-
-&lt;p&gt;まぁ、bootstrapで使っている上に固定のメニューリストみたいなのある時に&lt;/p&gt;
-
-&lt;p&gt;windowの横幅めっちゃ狭めるとアレですやん。その辺の細工。&lt;/p&gt;
-
-&lt;p&gt;共通の見た目にしたい用クラス作っとくと便利。というかそれが本来の使い方。&lt;/p&gt;
-
-&lt;p&gt;例えば初期状態は非表示にしたい要素用クラスとそのcss定義とかね。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/08/25/css/</guid>
+      <description>cssでwindowサイズに応じてbodyのcss定義を変える。
+まぁ、bootstrapで使っている上に固定のメニューリストみたいなのある時に
+windowの横幅めっちゃ狭めるとアレですやん。その辺の細工。
+共通の見た目にしたい用クラス作っとくと便利。というかそれが本来の使い方。
+例えば初期状態は非表示にしたい要素用クラスとそのcss定義とかね。</description>
     </item>
     
     <item>
       <title>cssメモ 配下の指定</title>
-      <link>http://tech.k-zak.com/2013/08/25/css-tech</link>
+      <link>http://tech.k-zak.com/2013/08/25/css-tech/</link>
       <pubDate>Sun, 25 Aug 2013 04:11:02 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/css-tech</guid>
-      <description>&lt;p&gt;cssで配下の指定勘違いしておかしな事やってたのでメモ&lt;/p&gt;
-
-&lt;p&gt;結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。&lt;/p&gt;
-
-&lt;p&gt;最初&lt;/p&gt;
-
-&lt;p&gt;１，scrollさせたいdivの定義&lt;/p&gt;
-
-&lt;p&gt;２，position:absoluteを使ってtableのheaderを上に固定させつつbodyだけスクールするよう&lt;/p&gt;
-
-&lt;p&gt;定義&lt;/p&gt;
-
-&lt;p&gt;この時、１で基準となるdivとその配下のdiv(scrollの指定したdev)の定義をしていて&lt;/p&gt;
-
-&lt;p&gt;tableヘッダはscrollの定義をしたdivの子要素だからってそういう書き方してたら、&lt;/p&gt;
-
-&lt;p&gt;tableヘッダ要素が意図する位置に固定されたような感じになるんだけど目には見えない&lt;/p&gt;
-
-&lt;p&gt;状態になった。レイヤーの上下関係とかかな？とか思っていじくり回してたけど、違った。&lt;/p&gt;
-
-&lt;p&gt;tableヘッダ要素は基準になるdiv配下のtheadみたいな描き方しないと駄目でした。&lt;/p&gt;
-
-&lt;p&gt;div#base{&lt;/p&gt;
-
-&lt;p&gt;posision: relative;&lt;/p&gt;
-
-&lt;p&gt;}&lt;/p&gt;
-
-&lt;p&gt;div#scroll{&lt;/p&gt;
-
-&lt;p&gt;スクロールの設定(html上ではdiv#baseの子要素)&lt;/p&gt;
-
-&lt;p&gt;}&lt;/p&gt;
-
-&lt;p&gt;てやっている状態の時に&lt;/p&gt;
-
-&lt;p&gt;ｘ div#scroll table thead ・・・これだとscroll定義されたdivの影響下(間違って無くね？)&lt;/p&gt;
-
-&lt;p&gt;◯ div#base table thead ・・・これだと基準divの位置を基準にして正しく表示される。&lt;/p&gt;
-
-&lt;p&gt;div#scrollは#baseの子要素なんだから問題無いだろうと思ってて、開発者ツールとかで確認すると&lt;/p&gt;
-
-&lt;p&gt;意図する位置にいるのに表示されない状態。cssからすると、htmlどう書かれているか知ったこっちゃない&lt;/p&gt;
-
-&lt;p&gt;ってことなんだろうね。css上でキチンとどこの配下の何の要素か書いてあげないといけんというこってす。&lt;/p&gt;
-
-&lt;p&gt;そうそう、tableのheaderとbodyを分けるとheaderとbodyでtdの幅が合わなくなる事がある(内容次第)ので&lt;/p&gt;
-
-&lt;p&gt;javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせるって事も必要です。固定幅じゃない場合。&lt;/p&gt;
-
-&lt;p&gt;最終的な見本を下に(htmlはめんどうなので載せてません)&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/08/25/css-tech/</guid>
+      <description>cssで配下の指定勘違いしておかしな事やってたのでメモ
+結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。
+最初
+１，scrollさせたいdivの定義
+２，position:absoluteを使ってtableのheaderを上に固定させつつbodyだけスクールするよう
+定義
+この時、１で基準となるdivとその配下のdiv(scrollの指定したdev)の定義をしていて
+tableヘッダはscrollの定義をしたdivの子要素だからってそういう書き方してたら、
+tableヘッダ要素が意図する位置に固定されたような感じになるんだけど目には見えない
+状態になった。レイヤーの上下関係とかかな？とか思っていじくり回してたけど、違った。
+tableヘッダ要素は基準になるdiv配下のtheadみたいな描き方しないと駄目でした。
+div#base{
+posision: relative;
+}
+div#scroll{
+スクロールの設定(html上ではdiv#baseの子要素)
+}
+てやっている状態の時に
+ｘ div#scroll table thead ・・・これだとscroll定義されたdivの影響下(間違って無くね？)
+◯ div#base table thead ・・・これだと基準divの位置を基準にして正しく表示される。
+div#scrollは#baseの子要素なんだから問題無いだろうと思ってて、開発者ツールとかで確認すると
+意図する位置にいるのに表示されない状態。cssからすると、htmlどう書かれているか知ったこっちゃない
+ってことなんだろうね。css上でキチンとどこの配下の何の要素か書いてあげないといけんというこってす。
+そうそう、tableのheaderとbodyを分けるとheaderとbodyでtdの幅が合わなくなる事がある(内容次第)ので
+javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせるって事も必要です。固定幅じゃない場合。
+最終的な見本を下に(htmlはめんどうなので載せてません)</description>
     </item>
     
   </channel>

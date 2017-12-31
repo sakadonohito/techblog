@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typescript on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/typescript/</link>
+    <description>Recent content in Typescript on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 27 Dec 2017 14:10:35 +0900</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Typescript</title>
+      <link>http://tech.k-zak.com/2017/12/27/typescript/</link>
+      <pubDate>Wed, 27 Dec 2017 14:10:35 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/12/27/typescript/</guid>
+      <description>初めての？Typescript TypeScript自習 TypeScript 日本語ハンドブック | js STUDIO 他Quitなど
+上記ハンドブックを読みつつ少しコードを書く。 ビルドは上記ハンドブックの方法だとうまく動かなかったので、別途Qiitaで調べた。
+感想 まだ途中。 型をそこまで書きたくない。推論して欲しい。 PHPのタイプヒンティングと戻り値の型指定程度で十分だと思う。 でも引数の型指定なんかは別途定義をかけるので、メソッド本体の記述はスッキリして良いと思った。
+気づき ちゃんと使ってこなかったので、今更constで変更不可になるのは変数そのものが変わる場合のみで、オブジェクトのプロパティは変更可能だと知った。
+つまりイミュータブルなオブジェクトやインスタンスを定義したい場合は型を定義しないと防げない。</description>
+    </item>
+    
+  </channel>
+</rss>

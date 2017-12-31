@@ -2,223 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Codeigniter on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/codeigniter/index.xml</link>
+    <link>http://tech.k-zak.com/tags/codeigniter/</link>
     <description>Recent content in Codeigniter on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/codeigniter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2011 14:04:24 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/codeigniter/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>PHPのフレームワーク試す</title>
-      <link>http://tech.k-zak.com/2011/04/24/php-frameworks</link>
+      <link>http://tech.k-zak.com/2011/04/24/php-frameworks/</link>
       <pubDate>Sun, 24 Apr 2011 14:04:24 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/24/php-frameworks</guid>
-      <description>&lt;p&gt;PHPのフレームワークをいくつか試してみた。&lt;/p&gt;
-
-&lt;div&gt;
-  以下、試したフレームワーク名と参考にしたチュートリアルサイト及び記事
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・CakePHP
-&lt;/div&gt;
-
-&lt;div&gt;
-  　本家？の日本語版サイトのチュートリアルを試す。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　&lt;a href=&#34;http://book.cakephp.org/ja/view/1528/CakePHPブログチュートリアル&#34;&gt;http://book.cakephp.org/ja/view/1528/CakePHPブログチュートリアル&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・Zend Framework
-&lt;/div&gt;
-
-&lt;div&gt;
-    これも本家？の翻訳サイトにあるチュートリアルを試す。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　&lt;a href=&#34;http://web-rhodia.com/zf-tutorial/&#34;&gt;http://web-rhodia.com/zf-tutorial/&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・Symfony
-&lt;/div&gt;
-
-&lt;div&gt;
-     これは日本symfonyユーザー会サイトのチュートリアルを試す。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　&lt;a href=&#34;http://www.symfony.gr.jp/docs/for-beginners/blog-tutorial/01-introduction&#34;&gt;http://www.symfony.gr.jp/docs/for-beginners/blog-tutorial/01-introduction&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・CodeIgniter
-&lt;/div&gt;
-
-&lt;div&gt;
-     ここは、調度良いのチュートリアルが見つからなかった。。。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　&lt;a href=&#34;http://codeigniter.jp/user_guide_ja/toc.html&#34;&gt;http://codeigniter.jp/user_guide_ja/toc.html&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  　&lt;a href=&#34;http://d.hatena.ne.jp/it-tech-dm/20091025/1256465675&#34;&gt;http://d.hatena.ne.jp/it-tech-dm/20091025/1256465675&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  感想としては、
-&lt;/div&gt;
-
-&lt;div&gt;
-  CakePHP:1.1や1.2で何回か触ったことあり、特に詰まることもなく、あっさり
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　　お試し終了。他のフレームワークとの比較用(基準)として今回チュート
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　　リアルを試しました。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　　感触としては、ちょろっとだけ触ったことあるRailsに似ていて(マネしたんだ
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　　から当たり前)これを覚えとくとRuby on Rails も憶えやすくなるなんてお得。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　　構造的にも自分にとっては、理解しやすい。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  Zend Framework:これは、自分にはあいそうもありません。。大文字から始まる単語を
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　　アンダースコアでつなぐ名前のつけ方は慣れていなくて、非常に違和感があ
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　　りました。あと、チュートリアルひと通りコーディングしたけど、画面真っ白
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　　エンコードか、URLの問題かな。。。生理的に受け付けない感じ。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  Symfony:チュートリアルがCakePHPのチュートリアルを参考に作ってあるだけあって
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　 とっつきやすかった。比較としてこっちは何だかJavaのStrutsを簡単にしたような
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　 印象を受けました。あとyaml設定ファイル多い。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  CodeIgniter:これは、チュートリアルがちゃんと見つからなかったこともあり、まともに
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　試せていない。手本にしたブログ記事の内容はコーディングしてみたけど、
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　BaseURLの記述がおかしいのか、どこかのディレクトリのパーミッションの
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　問題か動きませんでした。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　印象としては、あんまりフレームワークっぽくない(至れり尽くせりではない)。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　でも、軽いとか必要最小限とかの評価を良く耳にするので、ちゃんと動くところ
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　　　まで持って行ってから評価したいと思っています。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  今回のお試しの結果、自分の中での評価順位は
-&lt;/div&gt;
-
-&lt;div&gt;
-  １，CakePHP
-&lt;/div&gt;
-
-&lt;div&gt;
-  ２，Symfony
-&lt;/div&gt;
-
-&lt;div&gt;
-  ３，CodeIgniter (暫定)
-&lt;/div&gt;
-
-&lt;div&gt;
-  ４，Zend Framework
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  以上、PHP低レベル者が勝手にフレームワークを評価してみました。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-</description>
+      <guid>http://tech.k-zak.com/2011/04/24/php-frameworks/</guid>
+      <description>PHPのフレームワークをいくつか試してみた。
+ 以下、試したフレームワーク名と参考にしたチュートリアルサイト及び記事     ・CakePHP   本家？の日本語版サイトのチュートリアルを試す。   http://book.cakephp.org/ja/view/1528/CakePHPブログチュートリアル     ・Zend Framework   これも本家？の翻訳サイトにあるチュートリアルを試す。   http://web-rhodia.com/zf-tutorial/     ・Symfony   これは日本symfonyユーザー会サイトのチュートリアルを試す。   http://www.symfony.gr.jp/docs/for-beginners/blog-tutorial/01-introduction     ・CodeIgniter   ここは、調度良いのチュートリアルが見つからなかった。。。   http://codeigniter.jp/user_guide_ja/toc.html   http://d.hatena.ne.jp/it-tech-dm/20091025/1256465675       感想としては、   CakePHP:1.1や1.2で何回か触ったことあり、特に詰まることもなく、あっさり   お試し終了。他のフレームワークとの比較用(基準)として今回チュート   リアルを試しました。   感触としては、ちょろっとだけ触ったことあるRailsに似ていて(マネしたんだ   から当たり前)これを覚えとくとRuby on Rails も憶えやすくなるなんてお得。   構造的にも自分にとっては、理解しやすい。     Zend Framework:これは、自分にはあいそうもありません。。大文字から始まる単語を   アンダースコアでつなぐ名前のつけ方は慣れていなくて、非常に違和感があ   りました。あと、チュートリアルひと通りコーディングしたけど、画面真っ白   エンコードか、URLの問題かな。。。生理的に受け付けない感じ。     Symfony:チュートリアルがCakePHPのチュートリアルを参考に作ってあるだけあって   とっつきやすかった。比較としてこっちは何だかJavaのStrutsを簡単にしたような   印象を受けました。あとyaml設定ファイル多い。     CodeIgniter:これは、チュートリアルがちゃんと見つからなかったこともあり、まともに   試せていない。手本にしたブログ記事の内容はコーディングしてみたけど、   BaseURLの記述がおかしいのか、どこかのディレクトリのパーミッションの   問題か動きませんでした。   印象としては、あんまりフレームワークっぽくない(至れり尽くせりではない)。   でも、軽いとか必要最小限とかの評価を良く耳にするので、ちゃんと動くところ   まで持って行ってから評価したいと思っています。     今回のお試しの結果、自分の中での評価順位は   １，CakePHP   ２，Symfony   ３，CodeIgniter (暫定)   ４，Zend Framework     以上、PHP低レベル者が勝手にフレームワークを評価してみました。      </description>
     </item>
     
   </channel>

@@ -2,1689 +2,196 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/python/index.xml</link>
+    <link>http://tech.k-zak.com/tags/python/</link>
     <description>Recent content in Python on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Dec 2014 09:43:52 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside</link>
+      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside</guid>
-      <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る&lt;/p&gt;
-
-&lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;
-
-&lt;p&gt;Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。&lt;/p&gt;
-
-&lt;p&gt;Perl,Python,Rubyについては全然触れなくてフラストレーション。&lt;/p&gt;
-
-&lt;p&gt;PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。&lt;/p&gt;
-
-&lt;p&gt;本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。&lt;/p&gt;
-
-&lt;p&gt;家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。&lt;/p&gt;
-
-&lt;p&gt;PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は&lt;/p&gt;
-
-&lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;
-
-&lt;p&gt;Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
+      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る
+まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
+Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
+Perl,Python,Rubyについては全然触れなくてフラストレーション。
+PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。
+本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。
+家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
+PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
+枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
+Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
     </item>
     
     <item>
       <title>Win上のpythonでバッチ処理3</title>
-      <link>http://tech.k-zak.com/2014/03/16/batch-python-03</link>
+      <link>http://tech.k-zak.com/2014/03/16/batch-python-03/</link>
       <pubDate>Sun, 16 Mar 2014 14:36:07 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/batch-python-03</guid>
-      <description>&lt;p&gt;windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを&lt;/p&gt;
-
-&lt;p&gt;取得し、コマンドを叩く。&lt;/p&gt;
-
-&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-import os,csv,json
-
-def get_conf(path):
-    try:
-        os.path.isfile(path)
-        f = open(path,&#39;r&#39;)
-        data = json.load(f)
-        f.close()
-        return data
-
-    except Exception as e:
-        #print &#34;FileNotFound or Access Error.&#34;
-        return None
-
-def read_file(path):
-    try:
-        os.path.isfile(path)
-        f = open(path,&#39;r&#39;)
-        data = csv.reader(f)
-        users = [line[0] for line in data]
-        f.close()
-        return users
-    except Exception as e:
-        #print &#34;FileNotFound or Access Error.&#34;
-        return None
-
-def bu_cmd(users,bu_path):
-    if isinstance(users,list) and len(users) &gt; 0:
-        cmds = map(lambda x:&#34;fmsadmin -u account -p password backup %s -d %s -k 7&#34; % (x,bu_path)  ,users)
-        for c in cmds:
-            os.system(c)
-        return 0
-    else:
-        #データが正常に取得出来なかった
-        return None
-
-if __name__ == &#39;__main__&#39;:
-    conf_data = get_conf(&#34;conf.json&#34;)
-    users = read_file(conf_data[&#34;test&#34;][&#34;csvPath&#34;])
-    bu_cmd(users,conf_data[&#34;test&#34;][&#34;backupPath&#34;])
-
-&lt;/pre&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/03/16/batch-python-03/</guid>
+      <description>windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを
+取得し、コマンドを叩く。
+#!/usr/bin/env python # -*- coding: utf-8 -*- import os,csv,json def get_conf(path): try: os.path.isfile(path) f = open(path,&#39;r&#39;) data = json.load(f) f.close() return data except Exception as e: #print &#34;FileNotFound or Access Error.&#34; return None def read_file(path): try: os.path.isfile(path) f = open(path,&#39;r&#39;) data = csv.reader(f) users = [line[0] for line in data] f.close() return users except Exception as e: #print &#34;FileNotFound or Access Error.&#34; return None def bu_cmd(users,bu_path): if isinstance(users,list) and len(users)  0: cmds = map(lambda x:&#34;</description>
     </item>
     
     <item>
       <title>Win上のPythonでバッチ処理2</title>
-      <link>http://tech.k-zak.com/2014/03/16/batch-python-02</link>
+      <link>http://tech.k-zak.com/2014/03/16/batch-python-02/</link>
       <pubDate>Sun, 16 Mar 2014 14:29:40 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/batch-python-02</guid>
-      <description>&lt;p&gt;windows server2008上のFileMakerServerのバッチ処理を行うにあたり、前回使用した作業用の&lt;/p&gt;
-
-&lt;p&gt;csvファイルが存在していたら消す処理。&lt;/p&gt;
-
-&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-import os.path,json
-
-def get_conf(path):
-    try:
-        os.path.isfile(path)
-        f = open(path,&#39;r&#39;)
-        data = json.load(f)
-        f.close()
-        print data
-        return data
-
-    except Exception as e:
-        #ファイルは存在しない
-        print &#34;FileNotFound or Access Error.&#34;
-        return None
-
-def is_file(path):
-    try:
-        os.path.isfile(path)
-        os.remove(path)
-        #print &#34;消してやったぜ、ヒャッハー！&#34;
-        return 0
-    except Exception as e:
-        #print &#34;ファイルなど存在しない&#34;
-        return 0
-
-if __name__ == &#39;__main__&#39;:
-　　　　　#jsonファイルに作業対象ファイルパスなんかを書いておく
-    conf_data = get_conf(&#34;conf.json&#34;)
-    is_file(conf_data[&#34;test&#34;][&#34;csvPath&#34;])
-
-&lt;/pre&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/03/16/batch-python-02/</guid>
+      <description>windows server2008上のFileMakerServerのバッチ処理を行うにあたり、前回使用した作業用の
+csvファイルが存在していたら消す処理。
+#!/usr/bin/env python # -*- coding: utf-8 -*- import os.path,json def get_conf(path): try: os.path.isfile(path) f = open(path,&#39;r&#39;) data = json.load(f) f.close() print data return data except Exception as e: #ファイルは存在しない print &#34;FileNotFound or Access Error.&#34; return None def is_file(path): try: os.path.isfile(path) os.remove(path) #print &#34;消してやったぜ、ヒャッハー！&#34; return 0 except Exception as e: #print &#34;ファイルなど存在しない&#34; return 0 if __name__ == &#39;__main__&#39;: #jsonファイルに作業対象ファイルパスなんかを書いておく conf_data = get_conf(&#34;conf.json&#34;) is_file(conf_data[&#34;test&#34;][&#34;csvPath&#34;])  </description>
     </item>
     
     <item>
       <title>Windows上でpythonでバッチ処理1</title>
-      <link>http://tech.k-zak.com/2014/03/16/batch-python-01</link>
+      <link>http://tech.k-zak.com/2014/03/16/batch-python-01/</link>
       <pubDate>Sun, 16 Mar 2014 14:23:49 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/batch-python-01</guid>
-      <description>&lt;p&gt;windows server2008上のFileMakerServerのWeb公開エンジンのプロセスを監視して&lt;/p&gt;
-
-&lt;p&gt;異常終了していたらプロセスを再起動するバッチプログラムをpythonで書いてみた。&lt;/p&gt;
-
-&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#-*- coding:utf-8 -*-
-
-import os
-import urllib2
-
-def send_mail_batch:
-    try:
-        import smtplib
-
-        host,port = &#39;www.example.jp&#39;,587
-        username,password = &#39;email@example.jp&#39;,&#39;passwd&#39;
-        to_address = &#39;email@example.jp&#39;
-        msg = &#34;&#34;&#34;From: %s
-        To: %s
-        Subject: Web公開エンジン再起動
-
-        異常終了したWeb公開エンジンプロセスを再起動しました。
-        .
-        &#34;&#34;&#34; % (username,to_address)
-
-        smtp = smtplib.SMTP(host,port)
-        smtp.set_debuglevel(True)
-
-        smtp.ehlo(host)
-        smtp.login(username,password)
-        smtp.sendmail(username,to_address,msg)
-        smtp.quit()
-        return True
-    except:
-        return False
-
-if __name__ == &#39;__main__&#39;:
-    testurl = &#34;http://10.0.0.124/fmi/iwp&#34;
-    try:
-        res = urllib2.urlopen(testurl)
-        res.read()
-
-        os.system(&#39;echo ok &gt; ok.txt&#39;)
-        send_mail_batch()
-    except:
-        os.system(&#34;fmsadmin -u account -p password start wpe&#34;)
-        os.system(&#39;echo &#34;WPEのプロセスを再起動しました。&#34; &gt; ng.txt&#39;)
-        send_mail_batch()
-&lt;/pre&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/03/16/batch-python-01/</guid>
+      <description>windows server2008上のFileMakerServerのWeb公開エンジンのプロセスを監視して
+異常終了していたらプロセスを再起動するバッチプログラムをpythonで書いてみた。
+#-*- coding:utf-8 -*- import os import urllib2 def send_mail_batch: try: import smtplib host,port = &#39;www.example.jp&#39;,587 username,password = &#39;email@example.jp&#39;,&#39;passwd&#39; to_address = &#39;email@example.jp&#39; msg = &#34;&#34;&#34;From: %s To: %s Subject: Web公開エンジン再起動 異常終了したWeb公開エンジンプロセスを再起動しました。 . &#34;&#34;&#34; % (username,to_address) smtp = smtplib.SMTP(host,port) smtp.set_debuglevel(True) smtp.ehlo(host) smtp.login(username,password) smtp.sendmail(username,to_address,msg) smtp.quit() return True except: return False if __name__ == &#39;__main__&#39;: testurl = &#34;http://10.0.0.124/fmi/iwp&#34; try: res = urllib2.urlopen(testurl) res.read() os.system(&#39;echo ok  ok.txt&#39;) send_mail_batch() except: os.system(&#34;fmsadmin -u account -p password start wpe&#34;</description>
     </item>
     
     <item>
       <title>パスカルのなんとか</title>
-      <link>http://tech.k-zak.com/2013/12/22/pascal-logic</link>
+      <link>http://tech.k-zak.com/2013/12/22/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/22/pascal-logic</guid>
-      <description>&lt;p&gt;今回は、パスカルの三角定理？みたいなやつ&lt;/p&gt;
-
-&lt;p&gt;PHPでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
-$num = trim(fgets(STDIN));
-
-$num = ($num)?(int)$num:10;
-
-$arr = array(1);
-for($i=0;$i&amp;lt;$num;$i++){
-
-    $len = count($arr);
-    $tmp = array(1);
-    for($j=0;$j&amp;lt;$len-1;$j++){
-        array_push($tmp,$arr[$j]+$arr[$j+1]);
-    }
-    array_push($tmp,1);
-    $arr = $tmp;
-    echo join(&#39;,&#39;,$arr).&#34;\n&#34;;
-}
-?&amp;gt;&lt;/pre&gt;
-
-&lt;p&gt;Perlでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
-use strict;
-use warnings;
-
-my $num = &amp;lt;stdin&gt;;
-chomp($num);
-
-$num ||= 10;
-
-my @list = (1);
-
-for(my $i=0;$i&amp;lt;$num;$i++){
-    my $len = @list;
-    my @tmp = (1);
-    for(my $j=0;$j&amp;lt;$len-1;$j++){
-        push(@tmp,$list[$j]+$list[$j+1]);
-    }
-    push(@tmp,1);
-    @list = @tmp;
-    print join(&#39;,&#39;,@list).&#34;\n&#34;;
-}
-&amp;lt;/stdin&gt;&lt;/pre&gt;
-
-&lt;p&gt;Pythonでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
-if __name__ == &#39;__main__&#39;:
-    num = raw_input()
-    num = int(num) if num else 10
-    l = [1]
-    print l
-    for i in range(num):
-        l = map(lambda x,y:x+y,[0]+l,l+[0])
-        print l
-&lt;/pre&gt;
-
-&lt;p&gt;Rubyでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
-#--*-- coding: utf-8 --*--
-
-num = gets.to_i
-num ||= 10
-a=[1]
-
-num.times{
-    a=[1]+a.zip(a.slice(1..(a.size))).map{|a,b| a.to_i+b.to_i}
-    p a.join(&#39; &#39;)
-}
-&lt;/pre&gt;
-
-&lt;p&gt;Rubyはもっとシンプルな書き方があるのかもしれない。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
+      <description>今回は、パスカルの三角定理？みたいなやつ
+PHPでは、
+&amp;lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&amp;lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&amp;lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(&#39;,&#39;,$arr).&#34;\n&#34;; } ?&amp;gt; Perlでは、
+#!/usr/bin/perl use strict; use warnings; my $num = &amp;lt;stdin; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&amp;lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&amp;lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(&#39;,&#39;,@list).&#34;\n&#34;; } &amp;lt;/stdin Pythonでは、</description>
     </item>
     
     <item>
       <title>平方根ろじく</title>
-      <link>http://tech.k-zak.com/2013/12/08/square-root</link>
+      <link>http://tech.k-zak.com/2013/12/08/square-root/</link>
       <pubDate>Sun, 08 Dec 2013 15:52:17 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/08/square-root</guid>
-      <description>&lt;p&gt;平方根で最も少ない桁数で0から9までの数字が揃うのは何？&lt;/p&gt;
-
-&lt;p&gt;Pythonでチャレンジ&lt;/p&gt;
-
-&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!usr/bin/python
-#--*-- coding: utf-8 --*--
-
-import math
-from decimal import *
-
-def change_list(num):
-    return list(str(num).replace(&#39;.&#39;,&#39;&#39;))
-
-def check_num10(num_list):
-    #num_list max length is 28 (default Decimal)
-    s = set()
-    i = 0
-    for x in num_list:
-        s.add(x)
-        i += 1
-        if len(s) == 10:
-            return i
-    #set length shorter than 10 return False
-    return False
-
-if __name__ == &#39;__main__&#39;:
-
-    #上限100万でLoop
-    max_loop = 1000000
-    k = False #桁数
-    i = False #数値
-    for x in range(0,max_loop):
-        result = check_num10(change_list(Decimal(x).sqrt()))
-        if not result ==  False and (result &amp;lt; k or k == False):
-            i = x
-            k = result
-        if k == 10:
-            #print &#34;%d %s&#34; % (x,Decimal(x).sqrt())
-            break
-
-    print &#34;0から100万までの平方根で数字0..9が最少桁で最初に揃うのは%dの時の%d桁っぽいです。(%s)&#34; % (i,k,Decimal(i).sqrt())
-&lt;/pre&gt;
-
-&lt;p&gt;今回はPython以外で考える気が起きない。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/12/08/square-root/</guid>
+      <description>平方根で最も少ない桁数で0から9までの数字が揃うのは何？
+Pythonでチャレンジ
+#!usr/bin/python #--*-- coding: utf-8 --*-- import math from decimal import * def change_list(num): return list(str(num).replace(&#39;.&#39;,&#39;&#39;)) def check_num10(num_list): #num_list max length is 28 (default Decimal) s = set() i = 0 for x in num_list: s.add(x) i += 1 if len(s) == 10: return i #set length shorter than 10 return False return False if __name__ == &#39;__main__&#39;: #上限100万でLoop max_loop = 1000000 k = False #桁数 i = False #数値 for x in range(0,max_loop): result = check_num10(change_list(Decimal(x).</description>
     </item>
     
     <item>
       <title>コーディングリハビリ06</title>
-      <link>http://tech.k-zak.com/2013/12/08/coding-memo05</link>
+      <link>http://tech.k-zak.com/2013/12/08/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05</guid>
-      <description>&lt;p&gt;リハビリその3&lt;/p&gt;
-
-&lt;p&gt;今回は、バブルソート&lt;/p&gt;
-
-&lt;p&gt;PHPでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
-$num = trim(fgets(STDIN));
-
-$num = ($num)?(int)$num:10;
-
-$arr = array(1);
-for($i=0;$i&amp;lt;$num;$i++){
-
-    $len = count($arr);
-    $tmp = array(1);
-    for($j=0;$j&amp;lt;$len-1;$j++){
-        array_push($tmp,$arr[$j]+$arr[$j+1]);
-    }
-    array_push($tmp,1);
-    $arr = $tmp;
-    echo join(&#39;,&#39;,$arr).&#34;\n&#34;;
-}
-?&amp;gt;&lt;/pre&gt;
-
-&lt;p&gt;Perlでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
-
-use strict;
-use warnings;
-
-my $num = &amp;lt;STDIN&amp;gt;;
-chomp($num);
-
-$num ||= 10;
-
-my @list = (1);
-
-for(my $i=0;$i&amp;lt;$num;$i++){
-    my $len = @list;
-    my @tmp = (1);
-    for(my $j=0;$j&amp;lt;$len-1;$j++){
-        push(@tmp,$list[$j]+$list[$j+1]);
-    }
-    push(@tmp,1);
-    @list = @tmp;
-    print join(&#39;,&#39;,@list).&#34;\n&#34;;
-}
-&lt;/pre&gt;
-
-&lt;p&gt;Pythonでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
-
-if __name__ == &#39;__main__&#39;:
-    num = raw_input()
-    num = int(num) if num else 10
-    l = [1]
-    print l
-    for i in range(num):
-        l = map(lambda x,y:x+y,[0]+l,l+[0])
-        print l
-&lt;/pre&gt;
-
-&lt;p&gt;Rubyでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
-#--*-- coding: utf-8 --*--
-
-num = gets.to_i
-num ||= 10
-a=[1]
-num.times{
-    a=[1]+a.zip(a.slice(1..(a.size))).map{|a,b| a.to_i+b.to_i}
-    p a.join(&#39; &#39;)
-}
-&lt;/pre&gt;
-
-&lt;p&gt;習熟度が低いのでPerlとPHPが同じ内容になる。&lt;/p&gt;
-
-&lt;p&gt;pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。&lt;/p&gt;
-
-&lt;p&gt;すんなり1つのリストだけでできないものか&amp;#8230;&amp;#8230;&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <description>リハビリその3
+今回は、バブルソート
+PHPでは、
+&amp;lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&amp;lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&amp;lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(&#39;,&#39;,$arr).&#34;\n&#34;; } ?&amp;gt; Perlでは、
+#!/usr/bin/perl use strict; use warnings; my $num = &amp;lt;STDIN&amp;gt;; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&amp;lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&amp;lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(&#39;,&#39;,@list).&#34;\n&#34;; }  Pythonでは、</description>
     </item>
     
     <item>
       <title>コーディングリハビリ05</title>
-      <link>http://tech.k-zak.com/2013/12/08/coding-memo05</link>
+      <link>http://tech.k-zak.com/2013/12/08/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05</guid>
-      <description>&lt;p&gt;昨日の文字チェックをPHP以外で試す。&lt;/p&gt;
-
-&lt;p&gt;与えられた文字列が全てユニークな文字で構成されているかのチェック。&lt;/p&gt;
-
-&lt;p&gt;PHPは前回やっているので、今回は掲載無し。&lt;/p&gt;
-
-&lt;p&gt;Perlでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
-
-use strict;
-use warnings;
-
-sub check_unique{
-     my $str = shift;
-     my $len = length($str);
-     for(my $i=0;$i&amp;lt;$len;$i++){
-         my $char = substr($str,$i);
-         if(index($str,$char) != rindex($str,$char)){
-             return &#34;False&#34;;
-         }
-     }
-     return &#34;True&#34;;
-}
-
-my $input = &#39;1234567890-=\`!@#$%^&amp;*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:&#34;asdfghjkl;\&#39;zxcvbnm,./ZXCVBNM&amp;lt;&amp;gt;?&#39;;
-#my $input = &amp;lt;STDIN&amp;gt;;
-#chomp($input);
-
-print check_unique($input).&#34;\n&#34;;&lt;/pre&gt;
-
-&lt;p&gt;Pythonでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
-#--*-- coding: utf-8 --*--
-
-import datetime
-
-def check_unique(str):
-
-    set_str = set(list(str))
-    if len(str) == len(set_str):
-        return True
-    else:
-        return False
-
-if __name__ == &#34;__main__&#34;:
-
-    input_str = &#39;1234567890-=\`!@#$%^&amp;*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:&#34;asdfghjkl;\&#39;zxcvbnm,./ZXCVBNM&amp;lt;&amp;gt;?&#39;
-    #input_str = raw_input()
-    start_time = datetime.datetime.now().microsecond
-    print check_unique(input_str)
-    end_time = datetime.datetime.now().microsecond
-    print &#34;%f&#34; % (end_time - start_time)
-&lt;/pre&gt;
-
-&lt;p&gt;Rubyでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
-#--*-- coding: utf-8 --*--
-
-def check_unique(str)
-
-    #インデックス最大値=文字の長さ-1
-    for i in 0..str.length-1
-        unless str.index(str[i].to_s) == str.rindex(str[i].to_s) then
-            return false
-        end
-    end
-    return true
-end
-
-_input = &#39;1234567890-=\`!@#$%^&amp;*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:&#34;asdfghjkl;\&#39;zxcvbnm,./ZXCVBNM&amp;lt;&amp;gt;?&#39;
-
-puts check_unique(_input)
-&lt;/pre&gt;
-
-&lt;p&gt;文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。&lt;/p&gt;
-
-&lt;p&gt;配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。&lt;/p&gt;
-
-&lt;p&gt;pythonが一番スッキリしているようだけど、やっぱりRubyかな&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <description>昨日の文字チェックをPHP以外で試す。
+与えられた文字列が全てユニークな文字で構成されているかのチェック。
+PHPは前回やっているので、今回は掲載無し。
+Perlでは、
+#!/usr/bin/perl use strict; use warnings; sub check_unique{ my $str = shift; my $len = length($str); for(my $i=0;$i&amp;lt;$len;$i++){ my $char = substr($str,$i); if(index($str,$char) != rindex($str,$char)){ return &#34;False&#34;; } } return &#34;True&#34;; } my $input = &#39;1234567890-=\`!@#$%^&amp;*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:&#34;asdfghjkl;\&#39;zxcvbnm,./ZXCVBNM&amp;lt;&amp;gt;?&#39;; #my $input = &amp;lt;STDIN&amp;gt;; #chomp($input); print check_unique($input).&#34;\n&#34;; Pythonでは、
+#!/usr/bin/python #--*-- coding: utf-8 --*-- import datetime def check_unique(str): set_str = set(list(str)) if len(str) == len(set_str): return True else: return False if __name__ == &#34;</description>
     </item>
     
     <item>
       <title>コーディングリハビリ03</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo03</link>
+      <link>http://tech.k-zak.com/2013/12/06/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo03</guid>
-      <description>&lt;p&gt;リハビリその3&lt;/p&gt;
-
-&lt;p&gt;今回は、バブルソート&lt;/p&gt;
-
-&lt;p&gt;PHPでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
-
-function bubble_sort(array $arr,$r){
-    if(1 == $r){
-        return $arr;
-    }
-
-    $len = count($arr)-1;
-    for($i=0;$i&amp;lt;$len;$i++){
-        if($arr[$i] &amp;gt; $arr[$i+1]){
-            $tmp = $arr[$i+1];
-            $arr[$i+1] = $arr[$i];
-            $arr[$i] = $tmp;
-        }
-    }
-    
-    return bubble_sort($arr,$r-1);
-
-}
-
-$input = trim(fgets(STDIN));
-$arr = explode(&#34;,&#34;,$input);
-
-echo implode(&#34;,&#34;,bubble_sort($arr,count($arr))).&#34;\n&#34;;
-?&amp;gt;&lt;/pre&gt;
-
-&lt;p&gt;Perlでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
-
-use strict;
-use warnings;
-
-sub bubble_sort{
-    my($arr,$r) = @_;
-    my @arr = @{$arr};
-
-    if(1 == $r){
-        return @arr;
-    }else{
-        my $len = @arr;
-        for(my $i=0;$i&amp;lt;$len-1;$i++){
-            if($arr[$i] &amp;gt; $arr[$i+1]){
-                my $tmp = $arr[$i+1];
-                $arr[$i+1] = $arr[$i];
-                $arr[$i] = $tmp;
-            }
-        }
-        bubble_sort(\@arr,$r-1)
-    }
-}
-
-my $input = &amp;lt;STDIN&amp;gt;;
-chomp($input);
-my @arr = split(&#39;,&#39;,$input);
-
-print join(&#34;,&#34;,bubble_sort(\@arr,$#arr+1)).&#34;\n&#34;;
-&lt;/pre&gt;
-
-&lt;p&gt;Pythonでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
-
-def bubble_sort(arr,size=None):
-    if size == None:
-        size = len(arr)
-
-    if 1 == size:
-        return arr
-    else:
-    
-        for i in range(0,len(arr)-1):
-            if arr[i] &amp;gt; arr[i+1]:
-                arr[i],arr[i+1] = arr[i+1],arr[i]
-    
-        return bubble_sort(arr,size-1)
-        #return arr
-
-if __name__ == &#39;__main__&#39;:
-
-    input_list = map(lambda x:int(x),raw_input().split(&#34;,&#34;))
-    print bubble_sort(input_list)
-&lt;/pre&gt;
-
-&lt;p&gt;Rubyでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
-# -*- coding: utf-8 -*-
-
-def bubble_sort arr,k = arr.size
-    return arr if 1 == k
-    (arr.size-1).times do |i|
-        arr[i],arr[i+1] = arr[i+1],arr[i] if arr[i] &amp;gt; arr[i+1]
-    end
-    bubble_sort(arr,k-1)
-end
-
-arr = gets.chomp.to_s.split(&#34;,&#34;)
-arr.map!{|i| i.to_i }
-
-bubble_sort arr
-
-p arr
-&lt;/pre&gt;
-
-&lt;p&gt;Rubyが一番スマートかな&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
+      <description>リハビリその3
+今回は、バブルソート
+PHPでは、
+&amp;lt;?php function bubble_sort(array $arr,$r){ if(1 == $r){ return $arr; } $len = count($arr)-1; for($i=0;$i&amp;lt;$len;$i++){ if($arr[$i] &amp;gt; $arr[$i+1]){ $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } return bubble_sort($arr,$r-1); } $input = trim(fgets(STDIN)); $arr = explode(&#34;,&#34;,$input); echo implode(&#34;,&#34;,bubble_sort($arr,count($arr))).&#34;\n&#34;; ?&amp;gt; Perlでは、
+#!/usr/bin/perl use strict; use warnings; sub bubble_sort{ my($arr,$r) = @_; my @arr = @{$arr}; if(1 == $r){ return @arr; }else{ my $len = @arr; for(my $i=0;$i&amp;lt;$len-1;$i++){ if($arr[$i] &amp;gt; $arr[$i+1]){ my $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } bubble_sort(\@arr,$r-1) } } my $input = &amp;lt;STDIN&amp;gt;; chomp($input); my @arr = split(&#39;,&#39;,$input); print join(&#34;</description>
     </item>
     
     <item>
       <title>コーディングリハビリ02</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo02</link>
+      <link>http://tech.k-zak.com/2013/12/06/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo02</guid>
-      <description>&lt;p&gt;リハビリその２&lt;/p&gt;
-
-&lt;p&gt;今回は、ファイル読み込みとその時の簡単な例外処理&lt;/p&gt;
-
-&lt;p&gt;読み込むテキストファイルの内容は以下の通り、&lt;/p&gt;
-
-&lt;pre&gt;7
-1000
-
-1992
-あ
-A
-2000
-2001
-1900
-16
-12
-400
-&lt;/pre&gt;
-
-&lt;p&gt;PHPでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
-
-function isLeap($year=null){
-    if($year == null) return false;
-    $intYear = (int)$year;
-    if(0 != $intYear%4){
-        return false;
-    }elseif(0 == $intYear%400){
-        return true;
-    }elseif(0 == $intYear%100){
-        return false;
-    }else{
-        return true;
-    }
-}
-try{
-    if(!file_exists(&#34;leap.txt&#34;)){
-        throw new Exception(&#34;ファイルが見つかりません。&#34;);
-    }
-
-    $fp = fopen(&#34;leap.txt&#34;,&#34;r&#34;);
-
-    $lines = fgets($fp);
-    for($i=0;$i&amp;lt;$lines;$i++){
-        $year = trim(fgets($fp));
-        printf(&#34;%s is%s a leap year\n&#34;, $year,((isLeap($year))?&#34;&#34;:&#34; not&#34;));
-    }
-
-    fclose($fp);
-
-}catch(Exception $e){
-    echo $e-&amp;gt;getMessage().&#34;\n&#34;;
-}
-
-?&amp;gt;&lt;/pre&gt;
-
-&lt;p&gt;Perlでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/perl
-
-use strict;
-use warnings;
-
-sub isLeap{
-    my $year = shift;
-    unless($year =~ /^[0-9]+$/ ){
-        return 0;
-    }
-    if(0 != $year%4){
-        return 0;
-    }elsif(0 == $year%400){
-        return 1;
-    }elsif(0 == $year%100){
-        return 0;
-    }else{
-        return 1;
-    }
-}
-
-my $filename = &#34;leap.txt&#34;;
-open(my $fp, &#39;&amp;lt;&#39;,$filename) or die $!;
-my $lines = &amp;lt;$fp&amp;gt;;
-chomp($lines);
-#print $lines;
-for(my $i=0;$i&amp;lt;$lines;$i++){
-    my $year = &amp;lt;$fp&amp;gt;;
-    chomp($year);
-    if(isLeap($year)){
-        print $year,&#34; is a leap year\n&#34;;
-    }else{
-        print $year,&#34; is not a leap year\n&#34;;
-    }
-}
-
-close($fp);&lt;/pre&gt;
-
-&lt;p&gt;Pythonでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/python
-
-def is_leap(year=None):
-    if not isinstance(year,int):
-        return False
-    elif 0 != year % 4:
-        return False
-    elif 0 == year % 400:
-        return True
-    elif 0 == year % 100:
-        return False
-    else:
-        return True
-
-if __name__ == &#39;__main__&#39;:
-    file_name = &#39;leap.txt&#39;
-    try:
-        f = open(file_name,&#39;r&#39;)
-        lines = int(f.readline().rstrip())
-        #print lines
-        for i in range(0,lines):
-            y = f.readline().rstrip()
-            #print y
-            if is_leap(y):
-                print &#34;%s is a leap year&#34; % y
-            else:
-                print &#34;%s is not a leap year&#34; % y
-        f.close()
-    except IOError as e:
-        print e.strerror&lt;/pre&gt;
-
-&lt;p&gt;Rubyでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;#!/usr/bin/ruby
-# -*- coding: utf-8 -*-
-
-def is_leap(year)
-    unless /^[0-9]+$/ =~ year then
-        return false
-    end
-
-    if 0 != year%4 then
-        return false
-    elsif 0 == year%400 then
-        return true
-    elsif 0 == year%100 then
-        return false
-    else
-        return true
-    end
-end
-
-begin
-    f = open(&#34;leap.txt&#34;)
-
-    lines = f.gets.to_i
-    lines.times do |i|
-        y = f.gets.chomp
-        if is_leap(y) then
-            puts y+&#34; is a leap year&#34;
-        else
-            puts y+&#34; is not a leap year&#34;
-        end
-    end
-    f.close
-rescue =&amp;gt; e
-    p e
-end&lt;/pre&gt;
-
-&lt;p&gt;うるう年の判定処理は適当。pythonが一番しっくりくるかな。&lt;/p&gt;
-
-&lt;p&gt;rubyはreturnを省略した場合に最後に評価された値がreturnされるんだけど、pythonもだと勘違いしててハマった。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
+      <description>リハビリその２
+今回は、ファイル読み込みとその時の簡単な例外処理
+読み込むテキストファイルの内容は以下の通り、
+7 1000 1992 あ A 2000 2001 1900 16 12 400  PHPでは、
+&amp;lt;?php function isLeap($year=null){ if($year == null) return false; $intYear = (int)$year; if(0 != $intYear%4){ return false; }elseif(0 == $intYear%400){ return true; }elseif(0 == $intYear%100){ return false; }else{ return true; } } try{ if(!file_exists(&#34;leap.txt&#34;)){ throw new Exception(&#34;ファイルが見つかりません。&#34;); } $fp = fopen(&#34;leap.txt&#34;,&#34;r&#34;); $lines = fgets($fp); for($i=0;$i&amp;lt;$lines;$i++){ $year = trim(fgets($fp)); printf(&#34;%s is%s a leap year\n&#34;, $year,((isLeap($year))?&#34;&#34;:&#34; not&#34;)); } fclose($fp); }catch(Exception $e){ echo $e-&amp;gt;getMessage().</description>
     </item>
     
     <item>
       <title>コーディングリハビリ01</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo01</link>
+      <link>http://tech.k-zak.com/2013/12/06/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo01</guid>
-      <description>&lt;p&gt;一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。&lt;/p&gt;
-
-&lt;p&gt;&lt;a title=&#34;paiza&#34; href=&#34;https://paiza.jp/mypage&#34; target=&#34;_blank&#34;&gt;paiza&lt;/a&gt;なんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。&lt;/p&gt;
-
-&lt;p&gt;という事でリハビリ。&lt;/p&gt;
-
-&lt;p&gt;今回は標準入力。&lt;/p&gt;
-
-&lt;p&gt;PHPでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;php&#34; toggle=&#34;no&#34;&gt;&amp;lt;?php 
-//標準入力をfgets関数で取得して前後の空白や改行文字を削り取る 
-$input = trim(fgets(STDIN)); 
-?&amp;gt;&lt;/pre&gt;
-
-&lt;p&gt;Perlでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;perl&#34; toggle=&#34;no&#34;&gt;use strict;
-use warnings;
-
-my $input = &amp;lt;STDIN&amp;gt;;
-#行末の改行文字を削る
-chomp($input);&lt;/pre&gt;
-
-&lt;p&gt;Pythonでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;py&#34; toggle=&#34;no&#34;&gt;input = raw_input()
-#行末の改行文字とるのは厳密にはいろいろあるらしいので今回は無視&lt;/pre&gt;
-
-&lt;p&gt;Rubyでは、&lt;/p&gt;
-
-&lt;pre lang=&#34;ruby&#34; toggle=&#34;no&#34;&gt;input = gets.chomp&lt;/pre&gt;
-
-&lt;p&gt;標準入力が「gets」だけで取れるRubyはダンディ。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
+      <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
+paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
+という事でリハビリ。
+今回は標準入力。
+PHPでは、
+&amp;lt;?php //標準入力をfgets関数で取得して前後の空白や改行文字を削り取る $input = trim(fgets(STDIN)); ?&amp;gt; Perlでは、
+use strict; use warnings; my $input = &amp;lt;STDIN&amp;gt;; #行末の改行文字を削る chomp($input); Pythonでは、
+input = raw_input() #行末の改行文字とるのは厳密にはいろいろあるらしいので今回は無視 Rubyでは、
+input = gets.chomp 標準入力が「gets」だけで取れるRubyはダンディ。</description>
     </item>
     
     <item>
       <title>WebフレームワークとFileMaker</title>
-      <link>http://tech.k-zak.com/2011/05/29/web-filemaker</link>
+      <link>http://tech.k-zak.com/2011/05/29/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/05/29/web-filemaker</guid>
-      <description>&lt;p&gt;FileMaker用のブログに書こうかと思ったけどこちらに書く&lt;/p&gt;
-
-&lt;div&gt;
-  FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの
-&lt;/div&gt;
-
-&lt;div&gt;
-  データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて
-&lt;/div&gt;
-
-&lt;div&gt;
-  ２つの方法があります。
-&lt;/div&gt;
-
-&lt;div&gt;
-  １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する
-&lt;/div&gt;
-
-&lt;div&gt;
-  ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では
-&lt;/div&gt;
-
-&lt;div&gt;
-  載っていない文法のXMLが返ってくる。
-&lt;/div&gt;
-
-&lt;div&gt;
-  具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に
-&lt;/div&gt;
-
-&lt;div&gt;
-  rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが
-&lt;/div&gt;
-
-&lt;div&gt;
-  rowタグの中にあるのではなく、本当に&amp;#8221;col&amp;#8221;という名のタグが入っているからメタタグの
-&lt;/div&gt;
-
-&lt;div&gt;
-  カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  で、世間ではどうしているのかというと、
-&lt;/div&gt;
-
-&lt;div&gt;
-  a,FileMaker文法を解釈するxsltで開発
-&lt;/div&gt;
-
-&lt;div&gt;
-  b,PHPでライブラリが出ているのでそれを使う(FX.php)
-&lt;/div&gt;
-
-&lt;div&gt;
-  c,Rubyでライブラリが出ているのでそれを使う(rfm)
-&lt;/div&gt;
-
-&lt;div&gt;
-  d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ってところ。
-&lt;/div&gt;
-
-&lt;div&gt;
-  実際にはFX.phpを利用するのがメジャーでしょう。。
-&lt;/div&gt;
-
-&lt;div&gt;
-  これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、
-&lt;/div&gt;
-
-&lt;div&gt;
-  案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は
-&lt;/div&gt;
-
-&lt;div&gt;
-  ある程度覚えておいたほうが良いと思う。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを
-&lt;/div&gt;
-
-&lt;div&gt;
-  作れさえすれば、言語は何でも良いという事。
-&lt;/div&gt;
-
-&lt;div&gt;
-  なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。
-&lt;/div&gt;
-
-&lt;div&gt;
-  Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど
-&lt;/div&gt;
-
-&lt;div&gt;
-  Perlは自分には無理。そもそもPerlがほぼ分からない。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては
-&lt;/div&gt;
-
-&lt;div&gt;
-  Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている
-&lt;/div&gt;
-
-&lt;div&gt;
-  ようなので、将来性は微妙。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの
-&lt;/div&gt;
-
-&lt;div&gt;
-  両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを
-&lt;/div&gt;
-
-&lt;div&gt;
-  継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  PHPのFX.phpはCodeIgniterやCakePHPでモデルとして使えるような方法が出来ている。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  一方、Rubyのはちょっと分かりづらい。いや正確にはRailsを理解しないまま試し他自分が
-&lt;/div&gt;
-
-&lt;div&gt;
-  悪いのですけど。。。
-&lt;/div&gt;
-
-&lt;div&gt;
-  現状では、Railsの設定でActiveRecordを使わない設定にしてControllerに全て処理を書く
-&lt;/div&gt;
-
-&lt;div&gt;
-  みたいなやり方になってしまうようです。
-&lt;/div&gt;
-
-&lt;div&gt;
-  Railsの仕組みやRubyのmix-inの仕組みとか理解できると別の方法が見つかりそうですけど。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ◆PHPでFileMaker
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・FX.php &lt;a href=&#34;http://msyk.net/fmp/fx_ja/&#34;&gt;http://msyk.net/fmp/fx_ja/&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・CodeIgniter でFX.php
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://codeigniter.com/wiki/FilemakerPro_Database_Integration/&#34;&gt;http://codeigniter.com/wiki/FilemakerPro_Database_Integration/&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・CakePHPでFX.php &lt;a href=&#34;http://www.beezwax.net/solutions/FMCakeMix&#34;&gt;http://www.beezwax.net/solutions/FMCakeMix&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ◆RubyでFileMaker
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・rfm &lt;a href=&#34;http://www.famlog.jp/rfm/&#34;&gt;http://www.famlog.jp/rfm/&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ◆PythonでFileMaker
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・PyFileMaker &lt;a href=&#34;http://code.google.com/p/pyfilemaker/&#34;&gt;http://code.google.com/p/pyfilemaker/&lt;/a&gt;
-&lt;/div&gt;
-</description>
+      <guid>http://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
+      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く
+ FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの   データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて   ２つの方法があります。   １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する   ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。     で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。     ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。   ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では   載っていない文法のXMLが返ってくる。   具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に   rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが   rowタグの中にあるのではなく、本当に&amp;#8221;col&amp;#8221;という名のタグが入っているからメタタグの   カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー     で、世間ではどうしているのかというと、   a,FileMaker文法を解釈するxsltで開発   b,PHPでライブラリが出ているのでそれを使う(FX.php)   c,Rubyでライブラリが出ているのでそれを使う(rfm)   d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)     ってところ。   実際にはFX.phpを利用するのがメジャーでしょう。。   これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、   案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は   ある程度覚えておいたほうが良いと思う。     ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを   作れさえすれば、言語は何でも良いという事。   なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。   Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど   Perlは自分には無理。そもそもPerlがほぼ分からない。     Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては   Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている   ようなので、将来性は微妙。     Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの   両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを   継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。     PHPのFX.</description>
     </item>
     
     <item>
       <title>Django お勉強 Part3</title>
-      <link>http://tech.k-zak.com/2011/04/21/django-tutorial</link>
+      <link>http://tech.k-zak.com/2011/04/21/django-tutorial/</link>
       <pubDate>Thu, 21 Apr 2011 08:43:01 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/21/django-tutorial</guid>
-      <description>&lt;div&gt;
-  引き続きDjangoのお勉強。今回はDjango Projectのチュートリアルであばば。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  参考：&lt;a href=&#34;http://djangoproject.jp/doc/ja/1.0/intro/tutorial01.html#intro-tutorial01&#34;&gt;http://djangoproject.jp/doc/ja/1.0/intro/tutorial01.html#intro-tutorial01&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  最後の方まで順調だったのですが、最後の汎用ビューでつまりました。
-&lt;/div&gt;
-
-&lt;div&gt;
-  同じようなところで詰まって、解決された方のブログを見つけたので、
-&lt;/div&gt;
-
-&lt;div&gt;
-  それを参考に解決しました。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;参考：&lt;a href=&#34;http://ntm.ex-blog.net/archives/91&#34;&gt;http://ntm.ex-blog.net/archives/91&lt;/a&gt;&lt;/p&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  よくあることですが、チュートリアルそのままやってても、説明不足の箇所が
-&lt;/div&gt;
-
-&lt;div&gt;
-  あって、それが原因でうまく動作しなくあるっていうやつです。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  １，汎用ビューを使う設定したら、該当テンプレートファイルの名称を
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　規則に沿った名前にしないといけない。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ２，チュートリアルの通りにコードを編集すると、今まで「poll」という名の
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　オブジェクトだった箇所を「object」という名前に編集しないといけない。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  解決した後から再度チュートリアルを読むと、説明不足というよりは、
-&lt;/div&gt;
-
-&lt;div&gt;
-  翻訳の関係で分かり難い文章になってしまっている。という感じ。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  確かにどこを変えないといけないか書いてあるといえば書いてあるのですが、
-&lt;/div&gt;
-
-&lt;div&gt;
-  自分みたいなアホウは良く解らんでした(つまりどこをどう編集すべきなのか
-&lt;/div&gt;
-
-&lt;div&gt;
-  理解できなかった)。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  日本語って難しいですね。。。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-</description>
+      <guid>http://tech.k-zak.com/2011/04/21/django-tutorial/</guid>
+      <description> 引き続きDjangoのお勉強。今回はDjango Projectのチュートリアルであばば。     参考：http://djangoproject.jp/doc/ja/1.0/intro/tutorial01.html#intro-tutorial01     最後の方まで順調だったのですが、最後の汎用ビューでつまりました。   同じようなところで詰まって、解決された方のブログを見つけたので、   それを参考に解決しました。    参考：http://ntm.ex-blog.net/archives/91
+   よくあることですが、チュートリアルそのままやってても、説明不足の箇所が   あって、それが原因でうまく動作しなくあるっていうやつです。     １，汎用ビューを使う設定したら、該当テンプレートファイルの名称を   規則に沿った名前にしないといけない。     ２，チュートリアルの通りにコードを編集すると、今まで「poll」という名の   オブジェクトだった箇所を「object」という名前に編集しないといけない。     解決した後から再度チュートリアルを読むと、説明不足というよりは、   翻訳の関係で分かり難い文章になってしまっている。という感じ。     確かにどこを変えないといけないか書いてあるといえば書いてあるのですが、   自分みたいなアホウは良く解らんでした(つまりどこをどう編集すべきなのか   理解できなかった)。     日本語って難しいですね。。。    </description>
     </item>
     
     <item>
       <title>Django お勉強 Part2</title>
-      <link>http://tech.k-zak.com/2011/04/20/django-tutorial</link>
+      <link>http://tech.k-zak.com/2011/04/20/django-tutorial/</link>
       <pubDate>Wed, 20 Apr 2011 11:20:34 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/20/django-tutorial</guid>
-      <description>&lt;div&gt;
-  古いDBMagazineに載ってたDjangoのチュートリアル的なものを
-&lt;/div&gt;
-
-&lt;div&gt;
-  試してみたら、また詰まった。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  正しいかどうかは別にして解決したメモ
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  症状：見本通りにコード書いたらエラー出た。(reverse関数)
-&lt;/div&gt;
-
-&lt;div&gt;
-  views.pyファイルの◯◯メソッドのreturnにDjango組込みのreverse関数
-&lt;/div&gt;
-
-&lt;div&gt;
-  を使って、画面遷移させようとした。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  雑誌の通りにコーディングしたら、エラーが出た。
-&lt;/div&gt;
-
-&lt;div&gt;
-  意訳：&lt;strong&gt;その関数の引数argsはシーケンスじゃないと駄目だぜ、おまいの&lt;/strong&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;strong&gt;            は&lt;/strong&gt;&lt;strong&gt;longだぜ。&lt;/strong&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  最初、どう書いたかというと、
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span style=&#34;font-size: 0.8em;&#34;&gt;return HttpResponseRedirect(reverse(&amp;#8216;enkai.enkai_app.views.detail&amp;#8217;,args=&lt;strong&gt;&lt;span style=&#34;font-size: 1.25em;&#34;&gt;(e.id)&lt;/span&gt;&lt;/strong&gt;))&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  はて？と思い、引数の値を固定値にしてみた
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-size: medium;&#34;&gt;&lt;span style=&#34;font-size: 0.8em;&#34;&gt;return HttpResponseRedirect(reverse(&amp;#8216;enkai.enkai_app.views.detail&amp;#8217;,args=&lt;strong&gt;&lt;span style=&#34;font-size: 1.25em;&#34;&gt;(1)&lt;/span&gt;&lt;/strong&gt;))&lt;/span&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-family: Arial; font-size: medium;&#34;&gt;そしたら今度は「&lt;strong&gt;おまいのはintだぜ&lt;/strong&gt;」ってエラーになった。&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-family: Arial; font-size: medium;&#34;&gt;&lt;br /&gt; &lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-family: Arial; font-size: medium;&#34;&gt;これは引数に与えるデータ型が問題なのだと考え至ったがpython初心者&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-family: Arial; font-size: medium;&#34;&gt;の&lt;/span&gt;自分はエラーメッセージ中の「&lt;strong&gt;シーケンス&lt;/strong&gt;」の意味を理解していなか
-&lt;/div&gt;
-
-&lt;div&gt;
-  った。
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-family: Arial; font-size: medium;&#34;&gt;&lt;br /&gt; &lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-family: Arial; font-size: medium;&#34;&gt;次に固定値で与えてる引数を文字列として与えてみた。&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-size: medium;&#34;&gt;&lt;span style=&#34;font-size: 0.8em;&#34;&gt;return HttpResponseRedirect(reverse(&amp;#8216;enkai.enkai_app.views.detail&amp;#8217;,args=&lt;strong&gt;(&amp;#8216;1&amp;#8217;)&lt;/strong&gt;))&lt;/span&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-family: Arial; font-size: medium;&#34;&gt;これは成功しました。でも、ここで、「じゃあ、e.idを渡したい時はど&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-family: Arial; font-size: medium;&#34;&gt;うすんの&lt;/span&gt;さ」と沈黙。。。
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-family: Arial; font-size: medium;&#34;&gt;&lt;br /&gt; &lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-family: Arial; font-size: medium;&#34;&gt;んでgoogle先生に「ptython sequence」とかで訪ねて解決、最終的に&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #000000; font-size: medium;&#34;&gt;&lt;span style=&#34;font-size: 0.8em;&#34;&gt;return HttpResponseRedirect(reverse(&amp;#8216;enkai.enkai_app.views.detail&amp;#8217;,args=&lt;strong&gt;&lt;span style=&#34;font-size: 1.25em;&#34;&gt;[e.id]&lt;/span&gt;&lt;/strong&gt;))&lt;/span&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  と、「&lt;strong&gt;( )タプル？&lt;/strong&gt;」だったところを「&lt;strong&gt;[ ]リスト&lt;/strong&gt;」に変えたら意図する動
-&lt;/div&gt;
-
-&lt;div&gt;
-  きをするようになりました。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  あとで軽く調べたところ、&lt;strong&gt;シーケンス&lt;/strong&gt;型というのがありその下位に&lt;strong&gt;リス&lt;/strong&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;strong&gt;ト&lt;/strong&gt;や&lt;strong&gt;タプル&lt;/strong&gt;、&lt;strong&gt;文字列&lt;/strong&gt;というデータ型があるそうです。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  あれ？リストと文字列がOKでタプルが駄目ってどういう事？と思ったら
-&lt;/div&gt;
-
-&lt;div&gt;
-  要素が１つしかないタプル型の場合は必ず&lt;strong&gt;(e.id,)&lt;/strong&gt;とカンマを最後にいれて
-&lt;/div&gt;
-
-&lt;div&gt;
-  おかないと&lt;strong&gt;イケナイ&lt;/strong&gt;ようです。最後のカンマがない場合は計算式の普通
-&lt;/div&gt;
-
-&lt;div&gt;
-  の括弧と認識されてしまうようです。だからlongだのintだのと怒られた
-&lt;/div&gt;
-
-&lt;div&gt;
-  訳ですね。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  試しにコードを再度編集して
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span style=&#34;font-size: 0.8em;&#34;&gt;return HttpResponseRedirect(reverse(&amp;#8216;enkai.enkai_app.views.detail&amp;#8217;,args=&lt;strong&gt;&lt;span style=&#34;font-size: 1.25em;&#34;&gt;(e.id,)&lt;/span&gt;&lt;/strong&gt;))&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  で、試したところ、ちゃんと動きました。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  めでたしめでたし。。
-&lt;/div&gt;
-</description>
+      <guid>http://tech.k-zak.com/2011/04/20/django-tutorial/</guid>
+      <description>古いDBMagazineに載ってたDjangoのチュートリアル的なものを   試してみたら、また詰まった。     正しいかどうかは別にして解決したメモ     症状：見本通りにコード書いたらエラー出た。(reverse関数)   views.pyファイルの◯◯メソッドのreturnにDjango組込みのreverse関数   を使って、画面遷移させようとした。     雑誌の通りにコーディングしたら、エラーが出た。   意訳：その関数の引数argsはシーケンスじゃないと駄目だぜ、おまいの    はlongだぜ。   最初、どう書いたかというと、   return HttpResponseRedirect(reverse(&amp;#8216;enkai.enkai_app.views.detail&amp;#8217;,args=(e.id)))     はて？と思い、引数の値を固定値にしてみた   return HttpResponseRedirect(reverse(&amp;#8216;enkai.enkai_app.views.detail&amp;#8217;,args=(1)))   そしたら今度は「おまいのはintだぜ」ってエラーになった。      これは引数に与えるデータ型が問題なのだと考え至ったがpython初心者   の自分はエラーメッセージ中の「シーケンス」の意味を理解していなか   った。      次に固定値で与えてる引数を文字列として与えてみた。   return HttpResponseRedirect(reverse(&amp;#8216;enkai.</description>
     </item>
     
     <item>
       <title>Django お勉強</title>
-      <link>http://tech.k-zak.com/2011/04/19/django-tutorial</link>
+      <link>http://tech.k-zak.com/2011/04/19/django-tutorial/</link>
       <pubDate>Tue, 19 Apr 2011 05:10:17 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/19/django-tutorial</guid>
-      <description>&lt;p&gt;PythonのDjangoのお勉強記録&lt;/p&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  いろいろとつまったのでメモ。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  まず試したのはCodoZineのチュートリアル記事
-&lt;/div&gt;
-
-&lt;div&gt;
-  Djangoチュートリアル前篇：　&lt;a href=&#34;http://codezine.jp/article/detail/4065&#34;&gt;http://codezine.jp/article/detail/4065&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  Djangoチュートリアル後編：　&lt;a href=&#34;http://codezine.jp/article/detail/4264&#34;&gt;http://codezine.jp/article/detail/4264&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ※記事内のインストールや参考記事のURLは割愛
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ０，環境はMacOSX10.6 Pythonはインストール済み
-&lt;/div&gt;
-
-&lt;div&gt;
-  １，チュートリアルにしたがってDjangoインストール→プロジェクト作成、MySQLにDB作成
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　→アプリケーション作成
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　チュートリアルではDBはSQLiteだったけど、なんとなくMySQLを使った
-&lt;/div&gt;
-
-&lt;div&gt;
-  ２，チュートリアルにしたがって写経
-&lt;/div&gt;
-
-&lt;div&gt;
-  以上。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  時折詰まったので、後はそのポイント
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span style=&#34;font-size: 1.25em;&#34;&gt;&lt;strong&gt;・Pythonの文法にうっかりハマる。&lt;/strong&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  　自動でインデントしてくれるエディタを使っていると、改行時に自動でインデントしてくれますよね
-&lt;/div&gt;
-
-&lt;div&gt;
-  　それを忘れて、別のメソッドを続けて書く時にはインデント位置を戻さないといけないのに、
-&lt;/div&gt;
-
-&lt;div&gt;
-  　うっかりインデントされたままコード書き続けて、自爆するので気をつけましょう
-&lt;/div&gt;
-
-&lt;div&gt;
-  　views.pyで定義したはずのものが(ビューメソッド？)見つからないエラーが出たら真っ先に
-&lt;/div&gt;
-
-&lt;div&gt;
-  　インデントや誤字を疑いましょう。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;strong&gt;&lt;span style=&#34;font-size: 1.25em;&#34;&gt;・動作するのに必要な記述の説明が抜けている。追加ファイルの事。&lt;/span&gt;&lt;/strong&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  　当たり前の事といえばそれまでなのですが、views.pyで扱うクラスやメソッドを別ファイルで
-&lt;/div&gt;
-
-&lt;div&gt;
-  　定義している場合、ちゃんとimport文を追加してあげないとエラーになります。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　models.pyについてはちゃんと記述がありますが、後から追加するforms.pyやcart.pyで追加した
-&lt;/div&gt;
-
-&lt;div&gt;
-  　クラスを扱うので当然それのimport文を記述すべきなのですが、当たり前すぎるからか説明に
-&lt;/div&gt;
-
-&lt;div&gt;
-  　ありませんでした。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  　まぁJavaなんかでも別クラスを扱う時にimport ◯◯ってやるじゃないですか、なんでそんな
-&lt;/div&gt;
-
-&lt;div&gt;
-  　当たり前の事忘れてたんだろ。。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span style=&#34;font-size: 1.25em;&#34;&gt;&lt;strong&gt;・動作するのに必要な記述の説明が抜けている。direct_to_templateの事。&lt;/strong&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  　チュートリアルの途中から(といっても序盤から)viewメソッドがreturnする値を
-&lt;/div&gt;
-
-&lt;div&gt;
-  　「direct_to_template」を使うようになります。使い方の記述はあるのですが、
-&lt;/div&gt;
-
-&lt;div&gt;
-  　それを使えるようにするための必要なimport文の説明が抜けてました。views.pyの上の方に
-&lt;/div&gt;
-
-&lt;div&gt;
-     from django.views.generic.simple import direct_to_template
-&lt;/div&gt;
-
-&lt;div&gt;
-    の記述が必要でした。Django組込みのメソッドなら書かなくても動くように作って欲しいものです。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  　参考ブログ：&lt;a href=&#34;http://d.hatena.ne.jp/atasatamatara/20110303/1299120118&#34;&gt;http://d.hatena.ne.jp/atasatamatara/20110303/1299120118&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;span style=&#34;font-size: 1.25em;&#34;&gt;&lt;strong&gt;・CSRFエラー？警告が出る&lt;/strong&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  　チュートリアルに従って、POST送信するフォームつくって動かしたら、「CSRF対策しろ！」
-&lt;/div&gt;
-
-&lt;div&gt;
-  　っていうエラー画面になった。。。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　これはバージョンのせいかもしれない。setting.pyに以下を追記して解決。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　django.contrib.csrf.middleware.CsrfMiddleware
-&lt;/div&gt;
-
-&lt;div&gt;
-  　記述場所は「MIDDLEWARE_CLASSES」のところで、sessionよりも上に書かないといけない
-&lt;/div&gt;
-
-&lt;div&gt;
-  　らしい。。。元々そっくりなものはファイルに記述されていたが、内容が微妙に違うのと、
-&lt;/div&gt;
-
-&lt;div&gt;
-  　記述されている位置がsessionの下になっていた。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  　参考記事：&lt;a href=&#34;http://djangoproject.jp/doc/ja/1.0/ref/contrib/csrf.html&#34;&gt;http://djangoproject.jp/doc/ja/1.0/ref/contrib/csrf.html&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  てか、最初っからDjangoプロジェクトの方やればよかったんじゃ。。。
-&lt;/div&gt;
-
-&lt;div&gt;
-  次はDjangoプロジェクトにあるチュートリアルをやってみます　^ ^;)
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;strong&gt;素人目から見たDjangoの感想：&lt;/strong&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  CakePHPやRuby on RailsのMVCとちょっと違う。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・urls.pyがRequestからviews.pyのどのメソッドを呼ぶが処理する→roots.rbみたいな。Javaだと
-&lt;/div&gt;
-
-&lt;div&gt;
-  　xmlでうじゃうじゃ書くパート。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・呼び出されたviews.pyの該当メソッドがデータ取得したり加工したりしてResponseの
-&lt;/div&gt;
-
-&lt;div&gt;
-  　画面呼び出す。→名前「view」だけど、やってる事はコントローラーっぽい。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・models.pyはまぁCakePHPやRoRと同じっぽいですね(今回まともに触ってないから分からない)。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・テンプレートってのが他のフレームワークで言うところのViewっぽかった。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・urls.pyに正規表現で呼び出しパターン全てを記述しないといけないのかー。はぁ。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  Djangoについての新し目(2010年1月以降)の書籍が無いので、ちっちゃいチュートリアルしかない。
-&lt;/div&gt;
-
-&lt;div&gt;
-  →本が無いと悲観するのは、一貫した大きい情報の塊が欲しいから。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  まとまらないのは、知識と経験が足りないから。
-&lt;/div&gt;
-</description>
+      <guid>http://tech.k-zak.com/2011/04/19/django-tutorial/</guid>
+      <description>PythonのDjangoのお勉強記録
+   いろいろとつまったのでメモ。     まず試したのはCodoZineのチュートリアル記事   Djangoチュートリアル前篇：　http://codezine.jp/article/detail/4065   Djangoチュートリアル後編：　http://codezine.jp/article/detail/4264   ※記事内のインストールや参考記事のURLは割愛     ０，環境はMacOSX10.6 Pythonはインストール済み   １，チュートリアルにしたがってDjangoインストール→プロジェクト作成、MySQLにDB作成   →アプリケーション作成   チュートリアルではDBはSQLiteだったけど、なんとなくMySQLを使った   ２，チュートリアルにしたがって写経   以上。     時折詰まったので、後はそのポイント     ・Pythonの文法にうっかりハマる。   自動でインデントしてくれるエディタを使っていると、改行時に自動でインデントしてくれますよね   それを忘れて、別のメソッドを続けて書く時にはインデント位置を戻さないといけないのに、   うっかりインデントされたままコード書き続けて、自爆するので気をつけましょう   views.pyで定義したはずのものが(ビューメソッド？)見つからないエラーが出たら真っ先に   インデントや誤字を疑いましょう。     ・動作するのに必要な記述の説明が抜けている。追加ファイルの事。   当たり前の事といえばそれまでなのですが、views.</description>
     </item>
     
   </channel>

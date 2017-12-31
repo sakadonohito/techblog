@@ -2,46 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/network/index.xml</link>
+    <link>http://tech.k-zak.com/tags/network/</link>
     <description>Recent content in Network on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Mar 2015 05:02:32 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>嘘でしょう。。。</title>
-      <link>http://tech.k-zak.com/2015/03/08/ubuntu-wifi</link>
+      <link>http://tech.k-zak.com/2015/03/08/ubuntu-wifi/</link>
       <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/03/08/ubuntu-wifi</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://kazunoko.sakura.ne.jp/wordpress/wp-content/uploads/2009/10/chanmio.jpg&#34; rel=&#34;attachment wp-att-193&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-193&#34; src=&#34;http://kazunoko.sakura.ne.jp/wordpress/wp-content/uploads/2009/10/chanmio.jpg&#34; alt=&#34;chanmio&#34; width=&#34;128&#34; height=&#34;128&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。&lt;/p&gt;
-
-&lt;p&gt;実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。&lt;/p&gt;
-
-&lt;h3 id=&#34;悩まされていた問題&#34;&gt;悩まされていた問題&lt;/h3&gt;
-
-&lt;p&gt;会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。&lt;/p&gt;
-
-&lt;p&gt;VMのネットワーク設定を「Macと共有」の時は問題なくて「自動検出」にするとVMのUbuntuのIPが正しく設定されない。&lt;/p&gt;
-
-&lt;h3 id=&#34;ひとまず解決&#34;&gt;ひとまず解決？&lt;/h3&gt;
-
-&lt;p&gt;前提として、このUbuntuはDesktop 14.04LTSです。なのでUbuntuServerの場合は違うかも。&lt;/p&gt;
-
-&lt;p&gt;/etc/NetworkManager/system-connections/ 配下のネットワークの設定ファイルのファイル名に日本語(マルチバイト文字)が含まれていたので、ASCII文字のみに変更。&lt;/p&gt;
-
-&lt;p&gt;/etc/NetworkManager/system-connections/ のファイル名を変更したものを開く&lt;/p&gt;
-
-&lt;p&gt;この設定ファイルの中の「connection」にあるidの設定を変更したファイル名に合わせる。&lt;/p&gt;
-
-&lt;p&gt;これだけでネットワークつながるようになった。というかipが正しくふられるようになった。&lt;/p&gt;
-
-&lt;p&gt;まさかのマルチバイト文字ファイル名問題？&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2015/03/08/ubuntu-wifi/</guid>
+      <description>長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。
+実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。
+悩まされていた問題 会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。
+VMのネットワーク設定を「Macと共有」の時は問題なくて「自動検出」にするとVMのUbuntuのIPが正しく設定されない。
+ひとまず解決？ 前提として、このUbuntuはDesktop 14.04LTSです。なのでUbuntuServerの場合は違うかも。
+/etc/NetworkManager/system-connections/ 配下のネットワークの設定ファイルのファイル名に日本語(マルチバイト文字)が含まれていたので、ASCII文字のみに変更。
+/etc/NetworkManager/system-connections/ のファイル名を変更したものを開く
+この設定ファイルの中の「connection」にあるidの設定を変更したファイル名に合わせる。
+これだけでネットワークつながるようになった。というかipが正しくふられるようになった。
+まさかのマルチバイト文字ファイル名問題？</description>
     </item>
     
   </channel>

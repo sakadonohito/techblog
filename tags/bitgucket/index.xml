@@ -2,35 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bitgucket on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/bitgucket/index.xml</link>
+    <link>http://tech.k-zak.com/tags/bitgucket/</link>
     <description>Recent content in Bitgucket on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/bitgucket/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Mar 2017 21:47:01 +0900</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/bitgucket/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Bitbucket is cool</title>
-      <link>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool</link>
+      <link>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool/</link>
       <pubDate>Wed, 22 Mar 2017 21:47:01 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool</guid>
-      <description>
-
-&lt;h1 id=&#34;bitbucketけっこういいかも&#34;&gt;Bitbucketけっこういいかも&lt;/h1&gt;
-
-&lt;p&gt;プライベートリポジトリ欲しくてBitbucket試してみた。&lt;/p&gt;
-
-&lt;h2 id=&#34;乾燥&#34;&gt;乾燥&lt;/h2&gt;
-
-&lt;p&gt;Gitが使えるのでhg clone フォー！(古い)とかやらなくていいし抵抗なくて使えていいですね。&lt;/p&gt;
-
-&lt;p&gt;なんかWikiとか課題(issue)とかも使えるし、どうやらGithubPagesみたいのもできるみたい。
-なんかTrelloともなんか連携できるみたいでいいですね。&lt;/p&gt;
-
-&lt;p&gt;使いこなせる自信ないけどPipelineてのもあるらしい。&lt;/p&gt;
-
-&lt;p&gt;Githubとの使い分けがなやましいけど、とりあえずはプライベートにしたいものは基本Bitbucketにしよう。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool/</guid>
+      <description>Bitbucketけっこういいかも プライベートリポジトリ欲しくてBitbucket試してみた。
+乾燥 Gitが使えるのでhg clone フォー！(古い)とかやらなくていいし抵抗なくて使えていいですね。
+なんかWikiとか課題(issue)とかも使えるし、どうやらGithubPagesみたいのもできるみたい。 なんかTrelloともなんか連携できるみたいでいいですね。
+使いこなせる自信ないけどPipelineてのもあるらしい。
+Githubとの使い分けがなやましいけど、とりあえずはプライベートにしたいものは基本Bitbucketにしよう。</description>
     </item>
     
   </channel>

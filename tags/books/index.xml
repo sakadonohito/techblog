@@ -2,77 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Books on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/books/index.xml</link>
+    <link>http://tech.k-zak.com/tags/books/</link>
     <description>Recent content in Books on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/books/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 May 2010 14:05:29 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/books/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>もう30回位連休来ないかな？</title>
-      <link>http://tech.k-zak.com/2010/05/09/reinstall-mac</link>
+      <link>http://tech.k-zak.com/2010/05/09/reinstall-mac/</link>
       <pubDate>Sun, 09 May 2010 14:05:29 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/05/09/reinstall-mac</guid>
-      <description>&lt;p&gt;えー、どうもMacのHDDが原因だったようで、&lt;/p&gt;
-
-&lt;div&gt;
-  連休中初日にOSの再インストール。やっぱ駄目。→次の日にHDD購入。
-&lt;/div&gt;
-
-&lt;div&gt;
-  換装してOS入れ直し。でようやく正常に動くようになりました。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  えぇ、今のところちゃんと動いていますとも。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  OS入れ直した後、折角なのでApacheもPHPも雪豹に初めから入ってるものを
-&lt;/div&gt;
-
-&lt;div&gt;
-  使おうとしたのですが、設定ファイルの場所が分からなかったり、編集には
-&lt;/div&gt;
-
-&lt;div&gt;
-  root権限が必要だったり、ユーザ別の設定ファイルを作るのとか、うにゃーんて
-&lt;/div&gt;
-
-&lt;div&gt;
-  なって。。結局XAMPP入れちゃいました ^q^
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  新標準 PostgreSQL という本でPostgreSQLを勉強してます。
-&lt;/div&gt;
-
-&lt;div&gt;
-  途中のアプリサンプルはPHPのはそのままやったのですが、Javaは敷居が
-&lt;/div&gt;
-
-&lt;div&gt;
-  高かったため、そこから脱線して、eclipse本(Tomcatの使い方を学ぶ)、
-&lt;/div&gt;
-
-&lt;div&gt;
-  JavaでPostgreSQLのコードサンプルが入っている「はじめてのJavaフレームワーク」
-&lt;/div&gt;
-
-&lt;div&gt;
-  というものを試してます。Javaとかめちゃメンド臭いですね。。
-&lt;/div&gt;
-</description>
+      <guid>http://tech.k-zak.com/2010/05/09/reinstall-mac/</guid>
+      <description>えー、どうもMacのHDDが原因だったようで、
+ 連休中初日にOSの再インストール。やっぱ駄目。→次の日にHDD購入。   換装してOS入れ直し。でようやく正常に動くようになりました。     えぇ、今のところちゃんと動いていますとも。     OS入れ直した後、折角なのでApacheもPHPも雪豹に初めから入ってるものを   使おうとしたのですが、設定ファイルの場所が分からなかったり、編集には   root権限が必要だったり、ユーザ別の設定ファイルを作るのとか、うにゃーんて   なって。。結局XAMPP入れちゃいました ^q^     新標準 PostgreSQL という本でPostgreSQLを勉強してます。   途中のアプリサンプルはPHPのはそのままやったのですが、Javaは敷居が   高かったため、そこから脱線して、eclipse本(Tomcatの使い方を学ぶ)、   JavaでPostgreSQLのコードサンプルが入っている「はじめてのJavaフレームワーク」   というものを試してます。Javaとかめちゃメンド臭いですね。。  </description>
     </item>
     
   </channel>

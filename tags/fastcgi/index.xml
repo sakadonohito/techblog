@@ -2,70 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fastcgi on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/fastcgi/index.xml</link>
+    <link>http://tech.k-zak.com/tags/fastcgi/</link>
     <description>Recent content in Fastcgi on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/fastcgi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jan 2015 15:51:41 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/fastcgi/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>http://tech.k-zak.com/2015/01/05/perl-cgi</link>
+      <link>http://tech.k-zak.com/2015/01/05/perl-cgi/</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi</guid>
-      <description>&lt;p&gt;古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ&lt;/p&gt;
-
-&lt;p&gt;最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。&lt;/p&gt;
-
-&lt;p&gt;502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。&lt;/p&gt;
-
-&lt;p&gt;結局、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install fcgiwrap
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも&lt;br /&gt;
-/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo sysv-rc-conf on fcgiwrap
-sudo service fcgiwrap start
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;でFastCGIが動くようになる。&lt;br /&gt;
-最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、&lt;br /&gt;
-参考：&lt;a href=&#34;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&#34;&gt;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&lt;/a&gt;&lt;br /&gt;
-これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。&lt;/p&gt;
-
-&lt;p&gt;Nginxの設定はlocationディレクティブだけ抜粋すると&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#拡張子が.plで終わるリクエストの場合
-location ~ \.pl$ {
-    try_files $uri = 404;
-    gzip off;
-    #インストールしたfcgiwrapのソケットファイルのパス
-    fastcgi_pass unix:/var/run/fcgiwrap.socket;
-    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    #/etc/nginx/fastcgi_paramsの内容を読み込む。
-    include fastcgi_params;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;で&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service nginx restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで適用にperl書いて(シェバンはもちろん#!/usr/bin/env perl ですよ)試したら動きました。&lt;/p&gt;
-
-&lt;p&gt;自分はplenvを使っているのですが、システムのperl読み込まれてライブラリねーぞゴルァなった事があった。謎。&lt;br /&gt;
-plenvの場合、require syscall.ph とかあると駄目っぽい？&lt;/p&gt;
-
-&lt;p&gt;この記事書いてる時に見つけた他の方のWeb。先にここを見つけたかった。。。&lt;br /&gt;
-参考：&lt;a href=&#34;http://ekzemplaro.org/data_base/doc/web_server/nginx/&#34;&gt;http://ekzemplaro.org/data_base/doc/web_server/nginx/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;やれやれですよ。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
+      <description>古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
+最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
+502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
+結局、
+sudo apt-get install fcgiwrap  ※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも
+/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで
+sudo sysv-rc-conf on fcgiwrap sudo service fcgiwrap start  でFastCGIが動くようになる。
+最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、
+参考：http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/
+これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。
+Nginxの設定はlocationディレクティブだけ抜粋すると
+#拡張子が.plで終わるリクエストの場合 location ~ \.pl$ { try_files $uri = 404; gzip off; #インストールしたfcgiwrapのソケットファイルのパス fastcgi_pass unix:/var/run/fcgiwrap.socket; fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; #/etc/nginx/fastcgi_paramsの内容を読み込む。 include fastcgi_params; }  で
+sudo service nginx restart  これで適用にperl書いて(シェバンはもちろん#!/usr/bin/env perl ですよ)試したら動きました。
+自分はplenvを使っているのですが、システムのperl読み込まれてライブラリねーぞゴルァなった事があった。謎。
+plenvの場合、require syscall.ph とかあると駄目っぽい？
+この記事書いてる時に見つけた他の方のWeb。先にここを見つけたかった。。。
+参考：http://ekzemplaro.org/data_base/doc/web_server/nginx/</description>
     </item>
     
   </channel>

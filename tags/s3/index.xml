@@ -2,50 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>S3 on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/s3/index.xml</link>
+    <link>http://tech.k-zak.com/tags/s3/</link>
     <description>Recent content in S3 on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Aug 2014 16:02:30 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible</link>
+      <link>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible</guid>
-      <description>
-
-&lt;p&gt;Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。&lt;/p&gt;
-
-&lt;p&gt;の、前にAWSのS3試したので。&lt;/p&gt;
-
-&lt;p&gt;・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る&lt;/p&gt;
-
-&lt;p&gt;・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折&lt;/p&gt;
-
-&lt;p&gt;・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。&lt;/p&gt;
-
-&lt;p&gt;・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。&lt;/p&gt;
-
-&lt;h4 id=&#34;ansible試す&#34;&gt;Ansible試す&lt;/h4&gt;
-
-&lt;p&gt;・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。&lt;/p&gt;
-
-&lt;p&gt;・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる&lt;/p&gt;
-
-&lt;p&gt;・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。&lt;/p&gt;
-
-&lt;p&gt;・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う&lt;/p&gt;
-
-&lt;p&gt;・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ&lt;/p&gt;
-
-&lt;p&gt;以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事&lt;/p&gt;
-
-&lt;p&gt;・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう&lt;/p&gt;
-
-&lt;p&gt;・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
+      <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
+の、前にAWSのS3試したので。
+・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
+・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折
+・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。
+・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。
+Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。
+・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる
+・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。
+・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う
+・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ
+以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事
+・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう
+・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する</description>
     </item>
     
   </channel>

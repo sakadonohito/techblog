@@ -2,383 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unicorn on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/unicorn/index.xml</link>
+    <link>http://tech.k-zak.com/tags/unicorn/</link>
     <description>Recent content in Unicorn on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/unicorn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Sep 2014 15:48:13 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/unicorn/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm</link>
+      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm</guid>
-      <description>
-
-&lt;h3 id=&#34;ubuntu14-64bit-のvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;イメージからVMWareFusionに作成&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ターミナルから LANG=C xdg-user-dirs-gtk-update を実行
-LANG=C xdg-user-dirs-gtk-update&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;設定画面が出てくるので、そのままOK&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;VMWare toolsをインストール&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開&lt;/li&gt;
-&lt;li&gt;展開したディレクトリの中に入ってインストール実行&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;aptのアップデートとアップグレード
-    sudo apt-get update&lt;br /&gt;
-    sudo apt-get upgrade&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Dropboxクライアントのインストール&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール&lt;/li&gt;
-&lt;li&gt;Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Emacsのインストール
-    sudo apt-get install emacs24&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成&lt;/li&gt;
-&lt;li&gt;作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった
-ln -s ~/Dropbox/emacs.d ~/emacs.d&lt;br /&gt;
-mv ~/emacs.d ~/.emacs.d
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;バージョン管理のインストール
-    sudo apt-get install git&lt;br /&gt;
-    sudo apt-get install mercurial&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;nginxのインストール
-    sudo apt-get install nginx&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;xEnvや各バージョンのインストールに必要になる諸々のインストール
-    sudo add-apt-repository ppa:webupd8team/java&lt;br /&gt;
-    sudo apt-get update&lt;br /&gt;
-    sudo apt-get install oracle-java7-installer ※for jruby&lt;br /&gt;
-    sudo apt-get install oracle-java8-installer ※必要であれば。&lt;br /&gt;
-    sudo update-alternatives &amp;ndash;config java&lt;br /&gt;
-    ※java7を選択する&lt;br /&gt;
-    sudo apt-get install g++ ※これをインストールしないとインストール失敗する&lt;br /&gt;
-    sudo apt-get install libssl-dev ※これをインストールしないとインストール失敗する&lt;br /&gt;
-    sudo apt-get install build-essential ※pyenvで必要になるようだ&lt;br /&gt;
-    sudo apt-get install curl ※ndenv install &amp;ndash;list で必要になる&lt;br /&gt;
-    sudo apt-get install libjpeg-dev ※phpのインストールで必要になる&lt;br /&gt;
-    sudo apt-get install re2c ※phpのインストールで必要になる&lt;br /&gt;
-    sudo apt-get install bison ※phpのインストールで必要になる&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;rbenvのインストール
-    git clone &lt;a href=&#34;https://github.com/sstephenson/rbenv.git&#34;&gt;https://github.com/sstephenson/rbenv.git&lt;/a&gt; ~/.rbenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/sstephenson/ruby-build.git&#34;&gt;https://github.com/sstephenson/ruby-build.git&lt;/a&gt; ~/.rbenv/plugins/ruby-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.rbenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${rbenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;plenvのインストール
-    git clone &lt;a href=&#34;https://github.com/tokuhirom/plenv.git&#34;&gt;https://github.com/tokuhirom/plenv.git&lt;/a&gt; ~/.plenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/tokuhirom/Perl-Build.git&#34;&gt;https://github.com/tokuhirom/Perl-Build.git&lt;/a&gt; ~/.plenv/plugins/perl-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.plenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${plenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;pyenvのインストール
-    git clone &lt;a href=&#34;https://github.com/yyuu/pyenv.git&#34;&gt;https://github.com/yyuu/pyenv.git&lt;/a&gt; ~/.pyenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/yyuu/python-virtualenv.git&#34;&gt;https://github.com/yyuu/python-virtualenv.git&lt;/a&gt; ~/.pyenv/plugins/python-virtualenv&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.pyenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${pyenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ndenvのインストール
-    git clone &lt;a href=&#34;https://github.com/riywo/ndenv.git&#34;&gt;https://github.com/riywo/ndenv.git&lt;/a&gt; ~/.ndenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/riywo/node-build.git&#34;&gt;https://github.com/riywo/node-build.git&lt;/a&gt; ~/.ndenv/plugins/node-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.ndenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${ndenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;phpenvのインストール
-    git clone &lt;a href=&#34;https://github.com/CHH/phpenv.git&#34;&gt;https://github.com/CHH/phpenv.git&lt;/a&gt; ~/.phpenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/CHH/php-build.git&#34;&gt;https://github.com/CHH/php-build.git&lt;/a&gt; ~/.phpenv/plugins/php-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.phpenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${phpenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;rubyのインストールとjrubyのインストール
-    rbenv install 1.9.3-p547&lt;br /&gt;
-    rbenv install 2.1.2&lt;br /&gt;
-    rbenv install jruby-1.7.15&lt;br /&gt;
-    rbenv global 2.1.2&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;perlのインストール
-    plenv install 5.20.0&lt;br /&gt;
-    plenv global 5.20.0&lt;br /&gt;
-    plenv rehash&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;pyenvのインストール
-    pyenv install jython-2.5.3&lt;br /&gt;
-    pyenv install 3.4.1&lt;br /&gt;
-    pyenv install 2.7.8&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ndenvのインストール
-    ndenv install v0.11.13&lt;br /&gt;
-    ndenv global v0.11.13&lt;br /&gt;
-    ndenv rehash&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;phpenvのインストール
-    phpenv install 5.5.16&lt;br /&gt;
-    phpenv install 5.6.0&lt;br /&gt;
-    phpenv global 5.5.16&lt;br /&gt;
-    phpenv rehash&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;php-fpmの設定
-    -: listen = 127.0.0.1:9000&lt;br /&gt;
-    +: /home/{{myhome}}/.phpenv/versions/5.5.16/var/run/php-fpm.sock&lt;br /&gt;
-    -: ;request_terminate_timeout = 0&lt;br /&gt;
-    +: request_terminate_timeout = 0&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;php.iniの設定&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;適宜timeoutやmax_sizeの調整&lt;/li&gt;
-&lt;li&gt;timezoneの設定&lt;/li&gt;
-&lt;li&gt;mbstringの設定&lt;/li&gt;
-&lt;li&gt;拡張ライブラリ分の追記&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;mysqlのインストール
-    sudo apt-get install mysq&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;nginxの設定&lt;/p&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;conf.dに作成した場合はそのままで良いが、site-availableに作成した場合はsite-enableにシンボリックリンクを作成する&lt;/p&gt;
-
-&lt;p&gt;unicornで動かすredmineの分も記述する。※内容詳細は次のリンク(過去記事参照)&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;unicornでredmineの設定
-    sudo apt-get install zlib1g-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libsqlite3-dev libpcre3-dev libncurses-dev libgdbm-dev tk-dev libmagickwand-dev&lt;br /&gt;
-    sudo apt-get install python-software-properties sysv-rc-conf&lt;br /&gt;
-    gem update&lt;br /&gt;
-    gem install bundler&lt;br /&gt;
-    gem install mysql2
-    gem install rails
-    gem install rake
-    echo &amp;ldquo;gem &amp;lsquo;unicorn&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
-    echo &amp;ldquo;gem &amp;lsquo;psych&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
-    bundle install &amp;ndash;without rmagick development test sqlite postgresql
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;以降の作業については過去の記事を参照する。&lt;a href=&#34;http://kazunoko.sakura.ne.jp/wordpress/?p=240&#34;&gt;2014年の目標達成進捗管理的な&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;20140916&#34;&gt;20140916&lt;/h2&gt;
-
-&lt;h3 id=&#34;memo&#34;&gt;memo&lt;/h3&gt;
-
-&lt;p&gt;Ubuntu(64bit)のphpenvにldap入れるのに詰まった事。&lt;/p&gt;
-
-&lt;p&gt;ldapのライブラリの場所に問題があったらしい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo ln -s /usr/lib/x86_64-linux-gnu/libldap_r.so /usr/lib/libldap_r.so  
-sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ubuntu(64bit)のphpenvにpdo-oci入れるのに詰まった事。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo ln -s /home/{{myhome}}/work/oracle/libclntsh.so.11.1 /home/{{myhome}}/work/oracle/libclntsh.so  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;phpenvでphpizeで忘れていたこと。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;./configure --with-php-config=/home/.phpenv/versions/5.5.16/bin/php-config ※phpizeの対象を指定する必要がある
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Markdownのプラグインいれたけど、散々な結果。ウケる。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <description>Ubuntu14(64bit)のVM作成  イメージからVMWareFusionに作成
+ ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
+ ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
+ 設定画面が出てくるので、そのままOK
+  VMWare toolsをインストール
+ VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行  aptのアップデートとアップグレード sudo apt-get update
+sudo apt-get upgrade
+ Dropboxクライアントのインストール
+ FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから  Emacsのインストール sudo apt-get install emacs24
+ Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
+mv ~/emacs.d ~/.emacs.d   バージョン管理のインストール sudo apt-get install git
+sudo apt-get install mercurial
+ nginxのインストール sudo apt-get install nginx
+ xEnvや各バージョンのインストールに必要になる諸々のインストール sudo add-apt-repository ppa:webupd8team/java</description>
     </item>
     
     <item>
       <title>2014年の目標達成進捗管理的な</title>
-      <link>http://tech.k-zak.com/2014/01/04/milestone</link>
+      <link>http://tech.k-zak.com/2014/01/04/milestone/</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/01/04/milestone</guid>
-      <description>
-
-&lt;h2 id=&#34;新年-明けましておめでとうございました-良いお年を&#34;&gt;新年、明けましておめでとうございました。良いお年を。&lt;/h2&gt;
-
-&lt;p&gt;今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。&lt;/p&gt;
-
-&lt;p&gt;事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。&lt;/p&gt;
-
-&lt;p&gt;とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。&lt;/p&gt;
-
-&lt;p&gt;そういう話を聞いたので、ならば達成出来るように達成可能と思えるような目標をredmineでマイルストーンをチケットとして分解して期日を設定して進捗管理するのはどうだろうかと考えた。&lt;/p&gt;
-
-&lt;p&gt;要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。&lt;/p&gt;
-
-&lt;p&gt;という事で設定作業開始&lt;/p&gt;
-
-&lt;h2 id=&#34;環境&#34;&gt;環境:&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ホストOS：OS X10.9&lt;/li&gt;
-&lt;li&gt;ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T))&lt;/li&gt;
-&lt;li&gt;nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します)&lt;/li&gt;
-&lt;li&gt;ruby2.0.0dev(rbenv)&lt;/li&gt;
-&lt;li&gt;unicorn4.7.0&lt;/li&gt;
-&lt;li&gt;rails3.2.16&lt;/li&gt;
-&lt;li&gt;redmine2.4.2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;rbenvにruby2-0を追加してデフォルトにする&#34;&gt;rbenvにruby2.0を追加してデフォルトにする&lt;/h2&gt;
-
-&lt;p&gt;rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。&lt;/p&gt;
-
-&lt;p&gt;参考：&lt;a href=&#34;http://qiita.com/checkpoint/items/f8e65380d9cb0182218d&#34; target=&#34;_blank&#34;&gt;rbenvを利用して複数バージョンのRubyをインストール&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre lang=&#34;sh&#34; toggle=&#34;no&#34;&gt;~$ rbenv install 2.0.0rc-2 
-~$ rbenv global 2.0.0rc-2
-~$ rbenv rehash&lt;/pre&gt;
-
-&lt;p&gt;※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。&lt;/p&gt;
-
-&lt;p&gt;rehashの時だけsh-rehashがうんたらってエラーになる。&lt;/p&gt;
-
-&lt;p&gt;ruby2.0の状態でgem update でアップデートしてbundler入れる。&lt;/p&gt;
-
-&lt;pre lang=&#34;sh&#34; toggle=&#34;no&#34;&gt;~$ gem update
-~$ gem install bundler
-~$ gem install mysql2
-~$ ~/.rbenv/bin/rbenv rehash
-&lt;/pre&gt;
-
-&lt;h2 id=&#34;mysql側の準備&#34;&gt;MySQL側の準備&lt;/h2&gt;
-
-&lt;p&gt;redmienユーザーの作成と&lt;/p&gt;
-
-&lt;p&gt;データベース：redmineの作成&lt;/p&gt;
-
-&lt;h2 id=&#34;redmine入れる&#34;&gt;redmine入れる&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://redmine.jp/&#34; title=&#34;ここ&#34; target=&#34;_blank&#34;&gt;ここ&lt;/a&gt;から最新のredmineをダウンロード(今回は2.4.2)&lt;/p&gt;
-
-&lt;p&gt;うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。&lt;/p&gt;
-
-&lt;p&gt;DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。&lt;/p&gt;
-
-&lt;p&gt;redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。&lt;/p&gt;
-
-&lt;pre lang=&#34;sh&#34; toggle=&#34;no&#34;&gt;~$ cd redmineディレクトリの場所
-~$ echo &#34;gem &#39;unicorn&#39;&#34; &gt;&gt; Gemfile.local
-~$ bundle install --without rmagick
-&lt;/pre&gt;
-
-&lt;p&gt;bundleでのインストールが初めてだったので、なんか引数与えてやってみたかったてのと、&lt;/p&gt;
-
-&lt;p&gt;最初rmagick関連でエラー出たっぽいのでwithoutに指定した。原因は究明しない！&lt;/p&gt;
-
-&lt;p&gt;ここまでで自分が詰まったのは、最初bundler入れた後rehashしてなくてbundle installのとろこで、bundler入ってねぇよ！apt-getで入れろ！ってエラー出てアワアワしてた。どうもbundler入れた後にもrehashが必要らしい。今は何故かは調べない。&lt;/p&gt;
-
-&lt;p&gt;必要最小限にしてなかったせいか、ここでワンサカいろいろインストールされた。気がする。&lt;/p&gt;
-
-&lt;p&gt;インストールされたgemを見た所、railsは上記環境で記載したバージョンになっていたです。&lt;/p&gt;
-
-&lt;p&gt;終わったら、database.ymlのproductionの所を編集して自分の環境でDB接続できるようにする。&lt;/p&gt;
-
-&lt;p&gt;開発用じゃなくてredmine使うだけなので最初からproduction。&lt;/p&gt;
-
-&lt;p&gt;ここで一旦Webrickで動くか確認。&lt;/p&gt;
-
-&lt;pre lang=&#34;sh&#34; toggle=&#34;no&#34;&gt;~$ rails s -e production
-&lt;/pre&gt;
-
-&lt;p&gt;動かねぇ！調べてたらお決まりの必要な処理がある事を知った。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://kujira16.hateblo.jp/entry/2012/09/04/144953&#34; title=&#34;その１&#34; target=&#34;_blank&#34;&gt;その１&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://blog.wnotes.net/blog/article/108&#34; title=&#34;その２&#34; target=&#34;_blank&#34;&gt;その２&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;書いてあることの真似をする。&lt;/p&gt;
-
-&lt;pre lang=&#34;sh&#34; toggle=&#34;no&#34;&gt;~$ bundle exec rake generate_secret_token #セッションストアの秘密鍵を生成
-~$ RAILS_ENV=production bundle exec rake db:migrate # データベースの初期設定を行う
-~$ RAILS_ENV=production bundle exec rake redmine:load_default_data # デフォルトデータを設定
-# 途中言語を聞かれるので、ja と入力
-&lt;/pre&gt;
-
-&lt;p&gt;終わったら再度チャレンジでWebrickが起動しました。やったね。&lt;/p&gt;
-
-&lt;h2 id=&#34;redmineのadminユーザーのデフォルトのパスワードがわからない&#34;&gt;redmineのadminユーザーのデフォルトのパスワードがわからない！&lt;/h2&gt;
-
-&lt;p&gt;解決策は&lt;a href=&#34;http://redmine.jp/tech_note/first-step/admin/login/&#34; title=&#34;ここ&#34; target=&#34;_blank&#34;&gt;ここ&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h2 id=&#34;unicornの設定&#34;&gt;unicornの設定&lt;/h2&gt;
-
-&lt;p&gt;めんどくさくなってきた。上記の２リンクと関連リンクの&lt;a href=&#34;https://gist.github.com/arosh/3616832#file_unicorn&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;と、やや簡潔にかいてある&lt;a href=&#34;http://blog.scimpr.com/2013/12/14/ubuntu-server-12-04-nginx-unicorn%E3%81%A7redmine2-4-1%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99/&#34; target=&#34;_blank&#34;&gt;ブログ&lt;/a&gt;を参考に設定ファイルを書いていきましたので詳細は省きます。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;１，unicorn.rbを作成。&lt;/em&gt;&lt;/p&gt;
-
-&lt;pre&gt;　　設置パスはredmineパス/config/unicorn.rb
-　　unicornのgemの中にあるサンプルからみんな調整して作成しているようです。
-　　ここで一回bundle exec unicorn_rails -c config/unicorn.rb -E productionて実行する
-　　そうするとunicorn.rbに書いた場所に(例えばtmp/)unicorn.pidとunidorn.sockが出来る。
-　　ブラウザからアクセスしてredmine動くか確認。
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;２，unicornのデーモン&lt;/em&gt;&lt;/p&gt;
-
-&lt;pre&gt;　　/etc/init.d/の場所にunicornて名前のファイル作るます。
-　　内容は上記リンクものを参考に
-　　自動起動するように設定※sysv-rc-confてファイルPerlなんですね。
-&lt;/pre&gt;
-
-&lt;p&gt;自分が作業した手順としては一気にnginxの設定編集までしてから確認して動かない！ってなったんだけど、問題切り分けのために、&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;unicornの設定する前段階でWebrickで動かくか(例えば、&lt;a href=&#34;http://0.0.0.0:3000&#34;&gt;http://0.0.0.0:3000&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;unicornの設定した段階でredmine動くか(例えば、&lt;a href=&#34;http://0.0.0.0:8080&#34;&gt;http://0.0.0.0:8080&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;て接続確認しながら進めたほうが良いと思われます。&lt;/p&gt;
-
-&lt;h2 id=&#34;nginxの設定編集&#34;&gt;nginxの設定編集&lt;/h2&gt;
-
-&lt;p&gt;既にnginxが動いている環境のため、redmine専用の設定どうするのか戸惑ったけど、単にserverディレクティブを追加すればいいみたい。upstreamディレクティブも既存の仮想ホスト設定に悪影響は出ていないみたいだ。&lt;/p&gt;
-
-&lt;p&gt;最終的な結論から言うと動いたけど、参考にしたブログなんかと設定がちょい違う。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ローカルで動かしているせいかhostsファイルにredmine用の仮想URLを追記したら動いた。※追記前は参考記事と同じ設定にしても動かなかった。&lt;/li&gt;
-&lt;li&gt;動かすのに使った指定は
-
-&lt;ol&gt;
-&lt;li&gt;upstreamのunixソケットの指定&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのlisten port&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのserver_name&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのroot&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのaccess_log&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのerror_log&lt;/li&gt;
-&lt;li&gt;追加仮想ホストのlocation / にファイルじゃなかったらproxy_passの分岐&lt;/li&gt;
-&lt;li&gt;上記if文が真の時のproxy_passの指定を「http://」+「upstreamに記述した名前」&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;proxy_pass以外のproxyの設定は一つも書いてないけど動きます。なんでだろう。&lt;/p&gt;
-
-&lt;p&gt;後で気づいたんだけど、新しい仮想ホスト定義してるのに既存の仮想ホストの設定ファイルに追記してる。アホだ。もしかしたらそのせいなのかな？てか既存仮想ホストの特定のパスの場合unicorn使えばいいのかな？できるかな？&lt;/p&gt;
-
-&lt;p&gt;という事で無事動きました。汚い文章。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/01/04/milestone/</guid>
+      <description>新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
+事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
+とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
+そういう話を聞いたので、ならば達成出来るように達成可能と思えるような目標をredmineでマイルストーンをチケットとして分解して期日を設定して進捗管理するのはどうだろうかと考えた。
+要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。
+という事で設定作業開始
+環境:  ホストOS：OS X10.9 ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T)) nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します) ruby2.0.0dev(rbenv) unicorn4.7.0 rails3.2.16 redmine2.4.2  rbenvにruby2.0を追加してデフォルトにする rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。
+参考：rbenvを利用して複数バージョンのRubyをインストール
+~$ rbenv install 2.0.0rc-2 ~$ rbenv global 2.0.0rc-2 ~$ rbenv rehash ※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
+rehashの時だけsh-rehashがうんたらってエラーになる。
+ruby2.0の状態でgem update でアップデートしてbundler入れる。
+~$ gem update ~$ gem install bundler ~$ gem install mysql2 ~$ ~/.rbenv/bin/rbenv rehash  MySQL側の準備 redmienユーザーの作成と
+データベース：redmineの作成
+redmine入れる ここから最新のredmineをダウンロード(今回は2.4.2)
+うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。
+DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。
+redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。
+~$ cd redmineディレクトリの場所 ~$ echo &#34;gem &#39;unicorn&#39;&#34;  Gemfile.</description>
     </item>
     
   </channel>

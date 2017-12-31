@@ -2,750 +2,103 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emacs on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/emacs/index.xml</link>
+    <link>http://tech.k-zak.com/tags/emacs/</link>
     <description>Recent content in Emacs on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Sep 2014 15:48:13 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm</link>
+      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm</guid>
-      <description>
-
-&lt;h3 id=&#34;ubuntu14-64bit-のvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;イメージからVMWareFusionに作成&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ターミナルから LANG=C xdg-user-dirs-gtk-update を実行
-LANG=C xdg-user-dirs-gtk-update&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;設定画面が出てくるので、そのままOK&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;VMWare toolsをインストール&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開&lt;/li&gt;
-&lt;li&gt;展開したディレクトリの中に入ってインストール実行&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;aptのアップデートとアップグレード
-    sudo apt-get update&lt;br /&gt;
-    sudo apt-get upgrade&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Dropboxクライアントのインストール&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール&lt;/li&gt;
-&lt;li&gt;Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Emacsのインストール
-    sudo apt-get install emacs24&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成&lt;/li&gt;
-&lt;li&gt;作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった
-ln -s ~/Dropbox/emacs.d ~/emacs.d&lt;br /&gt;
-mv ~/emacs.d ~/.emacs.d
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;バージョン管理のインストール
-    sudo apt-get install git&lt;br /&gt;
-    sudo apt-get install mercurial&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;nginxのインストール
-    sudo apt-get install nginx&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;xEnvや各バージョンのインストールに必要になる諸々のインストール
-    sudo add-apt-repository ppa:webupd8team/java&lt;br /&gt;
-    sudo apt-get update&lt;br /&gt;
-    sudo apt-get install oracle-java7-installer ※for jruby&lt;br /&gt;
-    sudo apt-get install oracle-java8-installer ※必要であれば。&lt;br /&gt;
-    sudo update-alternatives &amp;ndash;config java&lt;br /&gt;
-    ※java7を選択する&lt;br /&gt;
-    sudo apt-get install g++ ※これをインストールしないとインストール失敗する&lt;br /&gt;
-    sudo apt-get install libssl-dev ※これをインストールしないとインストール失敗する&lt;br /&gt;
-    sudo apt-get install build-essential ※pyenvで必要になるようだ&lt;br /&gt;
-    sudo apt-get install curl ※ndenv install &amp;ndash;list で必要になる&lt;br /&gt;
-    sudo apt-get install libjpeg-dev ※phpのインストールで必要になる&lt;br /&gt;
-    sudo apt-get install re2c ※phpのインストールで必要になる&lt;br /&gt;
-    sudo apt-get install bison ※phpのインストールで必要になる&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;rbenvのインストール
-    git clone &lt;a href=&#34;https://github.com/sstephenson/rbenv.git&#34;&gt;https://github.com/sstephenson/rbenv.git&lt;/a&gt; ~/.rbenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/sstephenson/ruby-build.git&#34;&gt;https://github.com/sstephenson/ruby-build.git&lt;/a&gt; ~/.rbenv/plugins/ruby-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.rbenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${rbenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;plenvのインストール
-    git clone &lt;a href=&#34;https://github.com/tokuhirom/plenv.git&#34;&gt;https://github.com/tokuhirom/plenv.git&lt;/a&gt; ~/.plenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/tokuhirom/Perl-Build.git&#34;&gt;https://github.com/tokuhirom/Perl-Build.git&lt;/a&gt; ~/.plenv/plugins/perl-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.plenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${plenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;pyenvのインストール
-    git clone &lt;a href=&#34;https://github.com/yyuu/pyenv.git&#34;&gt;https://github.com/yyuu/pyenv.git&lt;/a&gt; ~/.pyenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/yyuu/python-virtualenv.git&#34;&gt;https://github.com/yyuu/python-virtualenv.git&lt;/a&gt; ~/.pyenv/plugins/python-virtualenv&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.pyenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${pyenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ndenvのインストール
-    git clone &lt;a href=&#34;https://github.com/riywo/ndenv.git&#34;&gt;https://github.com/riywo/ndenv.git&lt;/a&gt; ~/.ndenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/riywo/node-build.git&#34;&gt;https://github.com/riywo/node-build.git&lt;/a&gt; ~/.ndenv/plugins/node-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.ndenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${ndenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;phpenvのインストール
-    git clone &lt;a href=&#34;https://github.com/CHH/phpenv.git&#34;&gt;https://github.com/CHH/phpenv.git&lt;/a&gt; ~/.phpenv&lt;br /&gt;
-    git clone &lt;a href=&#34;https://github.com/CHH/php-build.git&#34;&gt;https://github.com/CHH/php-build.git&lt;/a&gt; ~/.phpenv/plugins/php-build&lt;br /&gt;
-    echo &amp;lsquo;export PATH=&amp;ldquo;$HOME/.phpenv/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
-    echo &amp;lsquo;eval &amp;ldquo;${phpenv init -)&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;rubyのインストールとjrubyのインストール
-    rbenv install 1.9.3-p547&lt;br /&gt;
-    rbenv install 2.1.2&lt;br /&gt;
-    rbenv install jruby-1.7.15&lt;br /&gt;
-    rbenv global 2.1.2&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;perlのインストール
-    plenv install 5.20.0&lt;br /&gt;
-    plenv global 5.20.0&lt;br /&gt;
-    plenv rehash&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;pyenvのインストール
-    pyenv install jython-2.5.3&lt;br /&gt;
-    pyenv install 3.4.1&lt;br /&gt;
-    pyenv install 2.7.8&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ndenvのインストール
-    ndenv install v0.11.13&lt;br /&gt;
-    ndenv global v0.11.13&lt;br /&gt;
-    ndenv rehash&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;phpenvのインストール
-    phpenv install 5.5.16&lt;br /&gt;
-    phpenv install 5.6.0&lt;br /&gt;
-    phpenv global 5.5.16&lt;br /&gt;
-    phpenv rehash&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;php-fpmの設定
-    -: listen = 127.0.0.1:9000&lt;br /&gt;
-    +: /home/{{myhome}}/.phpenv/versions/5.5.16/var/run/php-fpm.sock&lt;br /&gt;
-    -: ;request_terminate_timeout = 0&lt;br /&gt;
-    +: request_terminate_timeout = 0&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;php.iniの設定&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;適宜timeoutやmax_sizeの調整&lt;/li&gt;
-&lt;li&gt;timezoneの設定&lt;/li&gt;
-&lt;li&gt;mbstringの設定&lt;/li&gt;
-&lt;li&gt;拡張ライブラリ分の追記&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;mysqlのインストール
-    sudo apt-get install mysq&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;nginxの設定&lt;/p&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;conf.dに作成した場合はそのままで良いが、site-availableに作成した場合はsite-enableにシンボリックリンクを作成する&lt;/p&gt;
-
-&lt;p&gt;unicornで動かすredmineの分も記述する。※内容詳細は次のリンク(過去記事参照)&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;unicornでredmineの設定
-    sudo apt-get install zlib1g-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libsqlite3-dev libpcre3-dev libncurses-dev libgdbm-dev tk-dev libmagickwand-dev&lt;br /&gt;
-    sudo apt-get install python-software-properties sysv-rc-conf&lt;br /&gt;
-    gem update&lt;br /&gt;
-    gem install bundler&lt;br /&gt;
-    gem install mysql2
-    gem install rails
-    gem install rake
-    echo &amp;ldquo;gem &amp;lsquo;unicorn&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
-    echo &amp;ldquo;gem &amp;lsquo;psych&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; Gemfile.local
-    bundle install &amp;ndash;without rmagick development test sqlite postgresql
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;以降の作業については過去の記事を参照する。&lt;a href=&#34;http://kazunoko.sakura.ne.jp/wordpress/?p=240&#34;&gt;2014年の目標達成進捗管理的な&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;20140916&#34;&gt;20140916&lt;/h2&gt;
-
-&lt;h3 id=&#34;memo&#34;&gt;memo&lt;/h3&gt;
-
-&lt;p&gt;Ubuntu(64bit)のphpenvにldap入れるのに詰まった事。&lt;/p&gt;
-
-&lt;p&gt;ldapのライブラリの場所に問題があったらしい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo ln -s /usr/lib/x86_64-linux-gnu/libldap_r.so /usr/lib/libldap_r.so  
-sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ubuntu(64bit)のphpenvにpdo-oci入れるのに詰まった事。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo ln -s /home/{{myhome}}/work/oracle/libclntsh.so.11.1 /home/{{myhome}}/work/oracle/libclntsh.so  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;phpenvでphpizeで忘れていたこと。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;./configure --with-php-config=/home/.phpenv/versions/5.5.16/bin/php-config ※phpizeの対象を指定する必要がある
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Markdownのプラグインいれたけど、散々な結果。ウケる。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <description>Ubuntu14(64bit)のVM作成  イメージからVMWareFusionに作成
+ ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
+ ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
+ 設定画面が出てくるので、そのままOK
+  VMWare toolsをインストール
+ VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行  aptのアップデートとアップグレード sudo apt-get update
+sudo apt-get upgrade
+ Dropboxクライアントのインストール
+ FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから  Emacsのインストール sudo apt-get install emacs24
+ Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
+mv ~/emacs.d ~/.emacs.d   バージョン管理のインストール sudo apt-get install git
+sudo apt-get install mercurial
+ nginxのインストール sudo apt-get install nginx
+ xEnvや各バージョンのインストールに必要になる諸々のインストール sudo add-apt-repository ppa:webupd8team/java</description>
     </item>
     
     <item>
       <title>最近やったいろいろ</title>
-      <link>http://tech.k-zak.com/2014/03/16/milestone</link>
+      <link>http://tech.k-zak.com/2014/03/16/milestone/</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/milestone</guid>
-      <description>&lt;p&gt;最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。&lt;/p&gt;
-
-&lt;p&gt;◆PostgreSQLのSQLダンプ&lt;/p&gt;
-
-&lt;p&gt;　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！&lt;/p&gt;
-
-&lt;p&gt;◆残念VBSバッチスクリプト&lt;/p&gt;
-
-&lt;p&gt;　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない&lt;/p&gt;
-
-&lt;p&gt;　・windowsのコマンドでディレクトリ削除するコマンド&lt;/p&gt;
-
-&lt;p&gt;◆謎！IISの設定&lt;/p&gt;
-
-&lt;p&gt;　・IISのRewrite設定&lt;/p&gt;
-
-&lt;p&gt;　　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定&lt;/p&gt;
-
-&lt;p&gt;　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、&lt;/p&gt;
-
-&lt;p&gt;　　DefaultWebSiteにリダイレクトするやり方がある。&lt;/p&gt;
-
-&lt;p&gt;　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない&lt;/p&gt;
-
-&lt;p&gt;◆Win8.1&lt;/p&gt;
-
-&lt;p&gt;　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。&lt;/p&gt;
-
-&lt;p&gt;　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。&lt;/p&gt;
-
-&lt;p&gt;　・win8でSQLServer2012のodbc設定がうまくいかない&lt;/p&gt;
-
-&lt;p&gt;　　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも&lt;/p&gt;
-
-&lt;p&gt;◆PHP&lt;/p&gt;
-
-&lt;p&gt;　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。&lt;/p&gt;
-
-&lt;p&gt;　・PHPで頼りになるのはやはりPHP.net&lt;/p&gt;
-
-&lt;p&gt;　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。&lt;/p&gt;
-
-&lt;p&gt;　　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。&lt;/p&gt;
-
-&lt;p&gt;　　※セッション制御が楽かも&lt;/p&gt;
-
-&lt;p&gt;　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。&lt;/p&gt;
-
-&lt;p&gt;　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ&lt;/p&gt;
-
-&lt;p&gt;　　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない&lt;/p&gt;
-
-&lt;p&gt;　・php5.4以降はセーフモード使えない&lt;/p&gt;
-
-&lt;p&gt;　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。&lt;/p&gt;
-
-&lt;p&gt;　・ファイルのオーナーとかに気をつけましょう&lt;/p&gt;
-
-&lt;p&gt;◆Apacheの設定&lt;/p&gt;
-
-&lt;p&gt;　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く&lt;/p&gt;
-
-&lt;p&gt;　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて&lt;/p&gt;
-
-&lt;p&gt;　　vhost.confの方に書いた&lt;/p&gt;
-
-&lt;p&gt;◆SSH&lt;/p&gt;
-
-&lt;p&gt;　・SSHで認証鍵ファイルを使う場合の設定方法&lt;/p&gt;
-
-&lt;p&gt;　　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む&lt;/p&gt;
-
-&lt;p&gt;　・~/.ssh/に設定ファイルを置いておくと楽&lt;/p&gt;
-
-&lt;p&gt;◆ポートフォワーディング&lt;/p&gt;
-
-&lt;p&gt;　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、&lt;/p&gt;
-
-&lt;p&gt;　　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。&lt;/p&gt;
-
-&lt;p&gt;◆忘れちゃうからメモ(Linuxコマンド)&lt;/p&gt;
-
-&lt;p&gt;　・scp&lt;/p&gt;
-
-&lt;p&gt;　　scp sourcefile remotehost target&lt;/p&gt;
-
-&lt;p&gt;◆emacs&lt;/p&gt;
-
-&lt;p&gt;　・ssh→sudo or su root する方法&lt;/p&gt;
-
-&lt;p&gt;　　/ssh:SSHRemoteConfName|su(do):SSHRemoteConfName:/path/to/&lt;/p&gt;
-
-&lt;p&gt;◆AWSについて&lt;/p&gt;
-
-&lt;p&gt;　・EC2インスタンス楽、でもメモリが2,4,8GBの-0.5GBなのでいつもアプリ要求仕様の1ランク上を使わないといけないのが残念。&lt;/p&gt;
-
-&lt;p&gt;　・EC2そのもにセキュリティグループの設定があるのでその設定を忘れると、Server側でFireWall無効にしても意味ない(無防備接続確認テストによる切り分けができない)。&lt;/p&gt;
-
-&lt;p&gt;　・EC2インスタンス作成時に選択するネットワークセグメント間違うと後で大変。&lt;/p&gt;
-
-&lt;p&gt;　・作成したインスタンスのストレージを付け替えることが出来る。&lt;/p&gt;
-
-&lt;p&gt;　・仮想プライベートネットワーク領域を作成することが出来る。&lt;/p&gt;
-
-&lt;p&gt;◆jQueryについて&lt;/p&gt;
-
-&lt;p&gt;　・jQuery-Validation-Engine&lt;/p&gt;
-
-&lt;p&gt;　　簡単だけど、複雑な制御が必要になった途端に難易度が急上昇&lt;/p&gt;
-
-&lt;p&gt;◆新規でVPSの設定したよ&lt;/p&gt;
-
-&lt;p&gt;　・sshの設定、rootでログインさせないとかパスワード認証許可しないとか&lt;/p&gt;
-
-&lt;p&gt;　・iptablesの設定&lt;/p&gt;
-
-&lt;p&gt;　・apacheのお決まりのvhost設定とか&lt;/p&gt;
-
-&lt;p&gt;　・PHPインストール&lt;/p&gt;
-
-&lt;p&gt;　・MySQLインストール&lt;/p&gt;
-
-&lt;p&gt;　・PostgreSQLインストール&lt;/p&gt;
-
-&lt;p&gt;　・Emacsインストール※設定ファイルのカスタマイズまでちゃんと面倒を見よう！あとインストールまでが長い&lt;/p&gt;
-
-&lt;p&gt;　・Vimのインストール&lt;/p&gt;
-
-&lt;p&gt;　・useadd,usermod,userdel,idgpasswd -a,passwd,/etc/group,checkconfig &amp;#8211;list,chown u:g,chown -h,※シンボリックリンクのグループ変更&lt;/p&gt;
-
-&lt;p&gt;chgrp dir grp,scp file account@remotehost:/path/to/file,ln -s&lt;/p&gt;
-
-&lt;p&gt;　・グループとアクセス権について&lt;/p&gt;
-
-&lt;p&gt;　・apacheで使うからとユーザーのホームディレクトリ以下全てグループをapacheにしていたが、そうするとFTPで書き込みができなかった&lt;/p&gt;
-
-&lt;p&gt;　　グループをユーザー本来のに戻して解決。apacheの場合はユーザーのグループでもユーザーがapacheグループにも入っていれば大丈夫な模様&lt;/p&gt;
-
-&lt;p&gt;　・iptablesの設定　FWみたいなもん/etc/sysconfig/iptables ※CentOS6.4&lt;/p&gt;
-
-&lt;p&gt;　・FTPの設定&lt;/p&gt;
-
-&lt;p&gt;　　vsftpdがCentOS6.4にデフォルトで入っていなかったのでyum install vsftpd&lt;/p&gt;
-
-&lt;p&gt;　　設定では、アノニマス不許可、ユーザーのホームをディレクトリにする、ユーザーリストをホワイトリストとして使うの設定&lt;/p&gt;
-
-&lt;p&gt;　・Linux、apacheでbasic認証をする場合&lt;/p&gt;
-
-&lt;p&gt;　・.htaccessで使うよと書く&lt;/p&gt;
-
-&lt;p&gt;　・.htpasswdファイルにidとパスワードを書く&lt;/p&gt;
-
-&lt;p&gt;◆MySQLからデータダンプ&lt;/p&gt;
-
-&lt;p&gt;　・sqlで書き出して新しいDBに書きだしたsqlを取り込む。楽ちん！&lt;/p&gt;
-
-&lt;p&gt;　・よく使うMySQLコマンド&lt;/p&gt;
-
-&lt;p&gt;　　create database ,show databases ,show variables,create user xxx@x identified by xxx,grant all on db.table to user@localhost,drop show processlist,&lt;/p&gt;
-
-&lt;p&gt;　・MySQLにデータダンプしたsqlファイルをインポート&lt;/p&gt;
-
-&lt;p&gt;　　sqlファイルのある場所に移動してmysqlコマンド→. xxx.sql&lt;/p&gt;
-
-&lt;p&gt;　　※ファイルパスの指定が楽になるのでインポートファイルの有る場所でmysqlする。&lt;/p&gt;
-
-&lt;p&gt;◆MovableTypeの設定&lt;/p&gt;
-
-&lt;p&gt;　・mt-config.cgi でStaticWebPathには静的ファイルを配置するディレクトリのためのパスを記述、相対パスを推奨らしい※web上のURLパスの相対パス&lt;/p&gt;
-
-&lt;p&gt;　・mt-config.cgi でCGIPathにはmt.cgi以外のCGIスクリプトリンクを生成するためのパスを記述、AdminCGIPathがない場合はmt.cgiもこの値を使う。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/03/16/milestone/</guid>
+      <description>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
+◆PostgreSQLのSQLダンプ
+　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
+◆残念VBSバッチスクリプト
+　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない
+　・windowsのコマンドでディレクトリ削除するコマンド
+◆謎！IISの設定
+　・IISのRewrite設定
+　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定
+　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、
+　DefaultWebSiteにリダイレクトするやり方がある。
+　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない
+◆Win8.1
+　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。
+　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。
+　・win8でSQLServer2012のodbc設定がうまくいかない
+　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも
+◆PHP
+　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。
+　・PHPで頼りになるのはやはりPHP.net
+　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。
+　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。
+　※セッション制御が楽かも
+　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。
+　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ
+　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない
+　・php5.4以降はセーフモード使えない
+　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。
+　・ファイルのオーナーとかに気をつけましょう
+◆Apacheの設定
+　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く
+　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて
+　vhost.confの方に書いた
+◆SSH
+　・SSHで認証鍵ファイルを使う場合の設定方法
+　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む
+　・~/.ssh/に設定ファイルを置いておくと楽
+◆ポートフォワーディング
+　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、
+　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。</description>
     </item>
     
     <item>
       <title>シンポナシウム</title>
-      <link>http://tech.k-zak.com/2011/11/05/milestone</link>
+      <link>http://tech.k-zak.com/2011/11/05/milestone/</link>
       <pubDate>Sat, 05 Nov 2011 03:34:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/11/05/milestone</guid>
-      <description>&lt;p&gt;前回の更新からはや4ヶ月超。どのような進歩があったと言うと&amp;#8230;&lt;/p&gt;
-
-&lt;div&gt;
-  内に等しい！？
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ホント自己嫌悪してくるわー。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  一応、
-&lt;/div&gt;
-
-&lt;div&gt;
-  DB関係：
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・MySQL、ターミナルで入る時に「mysql -u name -p」って「-p」入れるの忘れないの覚えた。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  環境関係：
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・gitとMercurial少しづつ試した。コマンドも少し覚えた
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・レンタルサーバーVPS、Macの様々な操作のお陰でターミナルでのコマンド操作馴れた。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・emacsの設定ファイルいろいろコピペで入れて、開発はeclipse→emacsになった。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　必然的にemacsの基本的な操作を覚えた。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  プログラム言語：
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・pythonをちょろちょろ自習しているがちっとも上達しない、ちょっと入り組んだ処理の
-&lt;/div&gt;
-
-&lt;div&gt;
-  　ソースになると途端にちんぷんかんぷん。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・PythonでapacheにDjangoを置く、WSGIの設定とかおぼ&amp;#8230;えた&amp;#8230;？
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  あーだめだこりゃ、話しにならん。。。
-&lt;/div&gt;
-</description>
+      <guid>http://tech.k-zak.com/2011/11/05/milestone/</guid>
+      <description>前回の更新からはや4ヶ月超。どのような進歩があったと言うと&amp;#8230;
+ 内に等しい！？     ホント自己嫌悪してくるわー。     一応、   DB関係：   ・MySQL、ターミナルで入る時に「mysql -u name -p」って「-p」入れるの忘れないの覚えた。     環境関係：   ・gitとMercurial少しづつ試した。コマンドも少し覚えた   ・レンタルサーバーVPS、Macの様々な操作のお陰でターミナルでのコマンド操作馴れた。   ・emacsの設定ファイルいろいろコピペで入れて、開発はeclipse→emacsになった。   必然的にemacsの基本的な操作を覚えた。     プログラム言語：   ・pythonをちょろちょろ自習しているがちっとも上達しない、ちょっと入り組んだ処理の   ソースになると途端にちんぷんかんぷん。   ・PythonでapacheにDjangoを置く、WSGIの設定とかおぼ&amp;#8230;えた&amp;#8230;？     あーだめだこりゃ、話しにならん。。。  </description>
     </item>
     
     <item>
       <title>emacs初めてみようか</title>
-      <link>http://tech.k-zak.com/2011/04/29/emacs-setting</link>
+      <link>http://tech.k-zak.com/2011/04/29/emacs-setting/</link>
       <pubDate>Fri, 29 Apr 2011 17:47:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/29/emacs-setting</guid>
-      <description>&lt;p&gt;現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている&lt;/p&gt;
-
-&lt;div&gt;
-  軽いけどまだまだ完成度の低いKodに代わりテキストエディタを探そうと思い
-&lt;/div&gt;
-
-&lt;div&gt;
-  emacsを試すことにした。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  まずはインストール。自分のPCはMacBookPro10.6なのでemacs23.xを入れる事に
-&lt;/div&gt;
-
-&lt;div&gt;
-  最初に入れたのは22.2のアプリタイプのもの、
-&lt;/div&gt;
-
-&lt;div&gt;
-  CarbonEmacs
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://www.apple.com/jp/downloads/macosx/tools/carbonemacs.html&#34;&gt;http://www.apple.com/jp/downloads/macosx/tools/carbonemacs.html&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://homepage.mac.com/zenitani/emacs-j.html&#34;&gt;http://homepage.mac.com/zenitani/emacs-j.html&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  いや、折角なのでちゃんと最新のでやりましょう。と探して次に見つけたのが
-&lt;/div&gt;
-
-&lt;div&gt;
-  Aquamacs2.0 &lt;a href=&#34;http://sourceforge.jp/magazine/10/05/12/090234&#34;&gt;http://sourceforge.jp/magazine/10/05/12/090234&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  これでもよかったんでしょうけど、普通のemacs23.xを入れようとさらに探し、
-&lt;/div&gt;
-
-&lt;div&gt;
-  MacPortsからインストールの方法を見つける。
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://d.hatena.ne.jp/tomoya/20090210/1234297520&#34;&gt;http://d.hatena.ne.jp/tomoya/20090210/1234297520&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  入れるものを間違えたのか、自分のやつだとGUIの設定画面がでない。。。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ざっと、通し見したブログ
-&lt;/div&gt;
-
-&lt;div&gt;
-  「CarbonからCocoaへ&amp;#8211;Snow LeopardでEmacs 23を使う」
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20409879/&#34;&gt;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20409879/&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410292/&#34;&gt;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410292/&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410578/&#34;&gt;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410578/&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410802/&#34;&gt;http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410802/&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  最初はマウスでメニューとか開いてコマンド実行、ヘルプのところに
-&lt;/div&gt;
-
-&lt;div&gt;
-  「Emacs Tutorial (choose language)」てのがあるのでそれを実行。言語はお好みで。
-&lt;/div&gt;
-
-&lt;div&gt;
-  中身を見ながら試す。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  初めはどうしたら「filename.xxx~」という編集前ファイルのバック
-&lt;/div&gt;
-
-&lt;div&gt;
-  アップ的なものが出来るので、うわぁ&amp;#8230;てなってたけど、設定で変えられるようだ。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  emacs自体を操作出来るようになったので、次は設定をいじる。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・キーバインド→変なクセつけたくないので設定変えず。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・文字色と背景色→変えたいけど方法がわからない&amp;#8230;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・PHPのコード色つけ機能→後述
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・PHPのコード補完機能→後述
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・バックアップファイルの設定変更→後述
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  という事で設定作業。emacsでは設定をELispというLispで記述されたファイルを
-&lt;/div&gt;
-
-&lt;div&gt;
-  特定の場所に置いておくようです。Lispなんて憶える気力も知力もないので
-&lt;/div&gt;
-
-&lt;div&gt;
-  ググってこぴぺです。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  設定ファイルは、ホームディレクトリ直下に「.emacs.d」というディレクトリが
-&lt;/div&gt;
-
-&lt;div&gt;
-  作られているので、「~/.emacs.d」内に「init.el」というファイルを作成します。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  init.elの中に基本的な設定と外部ファイル(他の人が作った設定ファイル)のロード
-&lt;/div&gt;
-
-&lt;div&gt;
-  PATHの設定を書き込みます。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  以下参考にしたブログなど
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://www.clear-code.com/blog/2011/2/16.html&#34;&gt;http://www.clear-code.com/blog/2011/2/16.html&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://webcache.googleusercontent.com/search?oe=UTF-8&amp;hl=ja&amp;q=cache:g1RXzEMRD0MJ:blog.iss.ms/2010/02/20/091647&#34;&gt;http://webcache.googleusercontent.com/search?oe=UTF-8&amp;hl=ja&amp;q=cache:g1RXzEMRD0MJ:blog.iss.ms/2010/02/20/091647&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://www.cozmixng.org/~kou/emacs/dot_emacs&#34;&gt;http://www.cozmixng.org/~kou/emacs/dot_emacs&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  で、次がelispファイルを落としてきての拡張設定。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・JavaScript用？
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://d.hatena.ne.jp/speg03/20091011/1255244329&#34;&gt;http://d.hatena.ne.jp/speg03/20091011/1255244329&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・PHP用
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://bluestar.s32.xrea.com/text/php-mode.php&#34;&gt;http://bluestar.s32.xrea.com/text/php-mode.php&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  この時点でPHPファイルを開くとコードに色がつくようになりました。
-&lt;/div&gt;
-
-&lt;div&gt;
-  どうせならコード補完の機能もおるといいなぁって。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・インストール拡張？これでEmacsWikiにあるものなら簡単にインストールできる！
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://d.hatena.ne.jp/tomoya/20090121/1232536106&#34;&gt;http://d.hatena.ne.jp/tomoya/20090121/1232536106&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ・PHPコード補完
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;a href=&#34;http://tech.kayac.com/archive/php-completion.html&#34;&gt;http://tech.kayac.com/archive/php-completion.html&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  ふぅ。1日かけてこの程度。。これでPHP触りやすくなりました。
-&lt;/div&gt;
-
-&lt;div&gt;
-  次はPython。。。
-&lt;/div&gt;
-</description>
+      <guid>http://tech.k-zak.com/2011/04/29/emacs-setting/</guid>
+      <description>現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている
+ 軽いけどまだまだ完成度の低いKodに代わりテキストエディタを探そうと思い   emacsを試すことにした。     まずはインストール。自分のPCはMacBookPro10.6なのでemacs23.xを入れる事に   最初に入れたのは22.2のアプリタイプのもの、   CarbonEmacs   http://www.apple.com/jp/downloads/macosx/tools/carbonemacs.html   http://homepage.mac.com/zenitani/emacs-j.html     いや、折角なのでちゃんと最新のでやりましょう。と探して次に見つけたのが   Aquamacs2.0 http://sourceforge.jp/magazine/10/05/12/090234   これでもよかったんでしょうけど、普通のemacs23.xを入れようとさらに探し、   MacPortsからインストールの方法を見つける。   http://d.hatena.ne.jp/tomoya/20090210/1234297520     入れるものを間違えたのか、自分のやつだとGUIの設定画面がでない。。。   ざっと、通し見したブログ   「CarbonからCocoaへ&amp;#8211;Snow LeopardでEmacs 23を使う」   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20409879/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410292/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410578/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410802/     最初はマウスでメニューとか開いてコマンド実行、ヘルプのところに   「Emacs Tutorial (choose language)」てのがあるのでそれを実行。言語はお好みで。   中身を見ながら試す。     初めはどうしたら「filename.</description>
     </item>
     
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oracle on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/oracle/</link>
+    <description>Recent content in Oracle on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 30 Nov 2016 11:46:20 +0900</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Oracle Setup</title>
+      <link>http://tech.k-zak.com/2016/11/30/oracle-setup/</link>
+      <pubDate>Wed, 30 Nov 2016 11:46:20 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2016/11/30/oracle-setup/</guid>
+      <description> Ubuntu14.04にOracle11gを入れる 大まかな手順  必要なものをいれる(unzip, libaio1, unixodbc, alien) oracle download(rpmパッケージだけどな！) /sbin/chkconfigを作ってあげる alienでrpmパッケージをdebに変換 インストール 設定ファイル周りの編集(パスが違うとか、memory_targetの変更とか) hostsに外向けIPとhostnameの対応を追加(一番大事！)  </description>
+    </item>
+    
+  </channel>
+</rss>

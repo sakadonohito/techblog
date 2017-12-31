@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Selenium on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/selenium/</link>
+    <description>Recent content in Selenium on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 30 Jun 2017 11:32:45 +0900</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/selenium/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Selenium WebDriver Setup</title>
+      <link>http://tech.k-zak.com/2017/06/30/selenium-webdriver-setup/</link>
+      <pubDate>Fri, 30 Jun 2017 11:32:45 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/06/30/selenium-webdriver-setup/</guid>
+      <description>Selenium WebDriver を試してみた 環境は - Ubuntu 16.04 - Python 3.6.1
+ついでにChromeのheadlessモードも試す。
+事前準備 pyenvで3.6.1を入れてお試し環境にセットする
+gecko driverをダウンロード Release v0.17.0 · mozilla/geckodriver · GitHub ※任意のバージョンを入れる。
+PATHを通す。今回は/usr/local/sbin/に置いて勝手にPATHが通るようにした。
+Chromeを最新にする バージョン59にする。 ChromeDriverDownloads - ChromeDriver - WebDriver for Chromeをダウンロードしてgeckodriverと同じくPATHの通った場所に配置する。</description>
+    </item>
+    
+  </channel>
+</rss>

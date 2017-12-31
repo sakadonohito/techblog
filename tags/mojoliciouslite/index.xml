@@ -2,60 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mojoliciouslite on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/mojoliciouslite/index.xml</link>
+    <link>http://tech.k-zak.com/tags/mojoliciouslite/</link>
     <description>Recent content in Mojoliciouslite on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/mojoliciouslite/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Oct 2012 14:00:56 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/mojoliciouslite/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</link>
+      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</guid>
-      <description>&lt;p&gt;ここ最近はフレームワークを少し触ってる。&lt;/p&gt;
-
-&lt;p&gt;Perl：Mojolicious::Lite&lt;/p&gt;
-
-&lt;p&gt;→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に&lt;/p&gt;
-
-&lt;p&gt;各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/&lt;/p&gt;
-
-&lt;p&gt;layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。&lt;/p&gt;
-
-&lt;p&gt;このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;Ruby：Sinatra&lt;/p&gt;
-
-&lt;p&gt;→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか&lt;/p&gt;
-
-&lt;p&gt;ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。&lt;/p&gt;
-
-&lt;p&gt;これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;PHP：FuelPHP&lt;/p&gt;
-
-&lt;p&gt;→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。&lt;/p&gt;
-
-&lt;p&gt;これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや&lt;/p&gt;
-
-&lt;p&gt;コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは&lt;/p&gt;
-
-&lt;p&gt;public/assetsて階層に配置するんですね。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。&lt;/p&gt;
-
-&lt;p&gt;OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート&lt;/p&gt;
-
-&lt;p&gt;出来ないとかで&amp;#8230;&amp;#8230;&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <description>ここ最近はフレームワークを少し触ってる。
+Perl：Mojolicious::Lite
+→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
+各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
+layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
+このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
+&amp;nbsp;
+Ruby：Sinatra
+→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
+ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
+これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
+&amp;nbsp;
+PHP：FuelPHP
+→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
+これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
+コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
+public/assetsて階層に配置するんですね。
+&amp;nbsp;
+PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
+OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
+出来ないとかで&amp;#8230;&amp;#8230;</description>
     </item>
     
   </channel>

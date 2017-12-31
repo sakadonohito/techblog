@@ -2,218 +2,79 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ssh on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/ssh/index.xml</link>
+    <link>http://tech.k-zak.com/tags/ssh/</link>
     <description>Recent content in Ssh on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Mar 2014 15:12:56 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>最近やったいろいろ</title>
-      <link>http://tech.k-zak.com/2014/03/16/milestone</link>
+      <link>http://tech.k-zak.com/2014/03/16/milestone/</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/milestone</guid>
-      <description>&lt;p&gt;最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。&lt;/p&gt;
-
-&lt;p&gt;◆PostgreSQLのSQLダンプ&lt;/p&gt;
-
-&lt;p&gt;　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！&lt;/p&gt;
-
-&lt;p&gt;◆残念VBSバッチスクリプト&lt;/p&gt;
-
-&lt;p&gt;　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない&lt;/p&gt;
-
-&lt;p&gt;　・windowsのコマンドでディレクトリ削除するコマンド&lt;/p&gt;
-
-&lt;p&gt;◆謎！IISの設定&lt;/p&gt;
-
-&lt;p&gt;　・IISのRewrite設定&lt;/p&gt;
-
-&lt;p&gt;　　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定&lt;/p&gt;
-
-&lt;p&gt;　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、&lt;/p&gt;
-
-&lt;p&gt;　　DefaultWebSiteにリダイレクトするやり方がある。&lt;/p&gt;
-
-&lt;p&gt;　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない&lt;/p&gt;
-
-&lt;p&gt;◆Win8.1&lt;/p&gt;
-
-&lt;p&gt;　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。&lt;/p&gt;
-
-&lt;p&gt;　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。&lt;/p&gt;
-
-&lt;p&gt;　・win8でSQLServer2012のodbc設定がうまくいかない&lt;/p&gt;
-
-&lt;p&gt;　　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも&lt;/p&gt;
-
-&lt;p&gt;◆PHP&lt;/p&gt;
-
-&lt;p&gt;　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。&lt;/p&gt;
-
-&lt;p&gt;　・PHPで頼りになるのはやはりPHP.net&lt;/p&gt;
-
-&lt;p&gt;　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。&lt;/p&gt;
-
-&lt;p&gt;　　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。&lt;/p&gt;
-
-&lt;p&gt;　　※セッション制御が楽かも&lt;/p&gt;
-
-&lt;p&gt;　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。&lt;/p&gt;
-
-&lt;p&gt;　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ&lt;/p&gt;
-
-&lt;p&gt;　　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない&lt;/p&gt;
-
-&lt;p&gt;　・php5.4以降はセーフモード使えない&lt;/p&gt;
-
-&lt;p&gt;　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。&lt;/p&gt;
-
-&lt;p&gt;　・ファイルのオーナーとかに気をつけましょう&lt;/p&gt;
-
-&lt;p&gt;◆Apacheの設定&lt;/p&gt;
-
-&lt;p&gt;　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く&lt;/p&gt;
-
-&lt;p&gt;　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて&lt;/p&gt;
-
-&lt;p&gt;　　vhost.confの方に書いた&lt;/p&gt;
-
-&lt;p&gt;◆SSH&lt;/p&gt;
-
-&lt;p&gt;　・SSHで認証鍵ファイルを使う場合の設定方法&lt;/p&gt;
-
-&lt;p&gt;　　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む&lt;/p&gt;
-
-&lt;p&gt;　・~/.ssh/に設定ファイルを置いておくと楽&lt;/p&gt;
-
-&lt;p&gt;◆ポートフォワーディング&lt;/p&gt;
-
-&lt;p&gt;　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、&lt;/p&gt;
-
-&lt;p&gt;　　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。&lt;/p&gt;
-
-&lt;p&gt;◆忘れちゃうからメモ(Linuxコマンド)&lt;/p&gt;
-
-&lt;p&gt;　・scp&lt;/p&gt;
-
-&lt;p&gt;　　scp sourcefile remotehost target&lt;/p&gt;
-
-&lt;p&gt;◆emacs&lt;/p&gt;
-
-&lt;p&gt;　・ssh→sudo or su root する方法&lt;/p&gt;
-
-&lt;p&gt;　　/ssh:SSHRemoteConfName|su(do):SSHRemoteConfName:/path/to/&lt;/p&gt;
-
-&lt;p&gt;◆AWSについて&lt;/p&gt;
-
-&lt;p&gt;　・EC2インスタンス楽、でもメモリが2,4,8GBの-0.5GBなのでいつもアプリ要求仕様の1ランク上を使わないといけないのが残念。&lt;/p&gt;
-
-&lt;p&gt;　・EC2そのもにセキュリティグループの設定があるのでその設定を忘れると、Server側でFireWall無効にしても意味ない(無防備接続確認テストによる切り分けができない)。&lt;/p&gt;
-
-&lt;p&gt;　・EC2インスタンス作成時に選択するネットワークセグメント間違うと後で大変。&lt;/p&gt;
-
-&lt;p&gt;　・作成したインスタンスのストレージを付け替えることが出来る。&lt;/p&gt;
-
-&lt;p&gt;　・仮想プライベートネットワーク領域を作成することが出来る。&lt;/p&gt;
-
-&lt;p&gt;◆jQueryについて&lt;/p&gt;
-
-&lt;p&gt;　・jQuery-Validation-Engine&lt;/p&gt;
-
-&lt;p&gt;　　簡単だけど、複雑な制御が必要になった途端に難易度が急上昇&lt;/p&gt;
-
-&lt;p&gt;◆新規でVPSの設定したよ&lt;/p&gt;
-
-&lt;p&gt;　・sshの設定、rootでログインさせないとかパスワード認証許可しないとか&lt;/p&gt;
-
-&lt;p&gt;　・iptablesの設定&lt;/p&gt;
-
-&lt;p&gt;　・apacheのお決まりのvhost設定とか&lt;/p&gt;
-
-&lt;p&gt;　・PHPインストール&lt;/p&gt;
-
-&lt;p&gt;　・MySQLインストール&lt;/p&gt;
-
-&lt;p&gt;　・PostgreSQLインストール&lt;/p&gt;
-
-&lt;p&gt;　・Emacsインストール※設定ファイルのカスタマイズまでちゃんと面倒を見よう！あとインストールまでが長い&lt;/p&gt;
-
-&lt;p&gt;　・Vimのインストール&lt;/p&gt;
-
-&lt;p&gt;　・useadd,usermod,userdel,idgpasswd -a,passwd,/etc/group,checkconfig &amp;#8211;list,chown u:g,chown -h,※シンボリックリンクのグループ変更&lt;/p&gt;
-
-&lt;p&gt;chgrp dir grp,scp file account@remotehost:/path/to/file,ln -s&lt;/p&gt;
-
-&lt;p&gt;　・グループとアクセス権について&lt;/p&gt;
-
-&lt;p&gt;　・apacheで使うからとユーザーのホームディレクトリ以下全てグループをapacheにしていたが、そうするとFTPで書き込みができなかった&lt;/p&gt;
-
-&lt;p&gt;　　グループをユーザー本来のに戻して解決。apacheの場合はユーザーのグループでもユーザーがapacheグループにも入っていれば大丈夫な模様&lt;/p&gt;
-
-&lt;p&gt;　・iptablesの設定　FWみたいなもん/etc/sysconfig/iptables ※CentOS6.4&lt;/p&gt;
-
-&lt;p&gt;　・FTPの設定&lt;/p&gt;
-
-&lt;p&gt;　　vsftpdがCentOS6.4にデフォルトで入っていなかったのでyum install vsftpd&lt;/p&gt;
-
-&lt;p&gt;　　設定では、アノニマス不許可、ユーザーのホームをディレクトリにする、ユーザーリストをホワイトリストとして使うの設定&lt;/p&gt;
-
-&lt;p&gt;　・Linux、apacheでbasic認証をする場合&lt;/p&gt;
-
-&lt;p&gt;　・.htaccessで使うよと書く&lt;/p&gt;
-
-&lt;p&gt;　・.htpasswdファイルにidとパスワードを書く&lt;/p&gt;
-
-&lt;p&gt;◆MySQLからデータダンプ&lt;/p&gt;
-
-&lt;p&gt;　・sqlで書き出して新しいDBに書きだしたsqlを取り込む。楽ちん！&lt;/p&gt;
-
-&lt;p&gt;　・よく使うMySQLコマンド&lt;/p&gt;
-
-&lt;p&gt;　　create database ,show databases ,show variables,create user xxx@x identified by xxx,grant all on db.table to user@localhost,drop show processlist,&lt;/p&gt;
-
-&lt;p&gt;　・MySQLにデータダンプしたsqlファイルをインポート&lt;/p&gt;
-
-&lt;p&gt;　　sqlファイルのある場所に移動してmysqlコマンド→. xxx.sql&lt;/p&gt;
-
-&lt;p&gt;　　※ファイルパスの指定が楽になるのでインポートファイルの有る場所でmysqlする。&lt;/p&gt;
-
-&lt;p&gt;◆MovableTypeの設定&lt;/p&gt;
-
-&lt;p&gt;　・mt-config.cgi でStaticWebPathには静的ファイルを配置するディレクトリのためのパスを記述、相対パスを推奨らしい※web上のURLパスの相対パス&lt;/p&gt;
-
-&lt;p&gt;　・mt-config.cgi でCGIPathにはmt.cgi以外のCGIスクリプトリンクを生成するためのパスを記述、AdminCGIPathがない場合はmt.cgiもこの値を使う。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/03/16/milestone/</guid>
+      <description>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
+◆PostgreSQLのSQLダンプ
+　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
+◆残念VBSバッチスクリプト
+　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない
+　・windowsのコマンドでディレクトリ削除するコマンド
+◆謎！IISの設定
+　・IISのRewrite設定
+　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定
+　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、
+　DefaultWebSiteにリダイレクトするやり方がある。
+　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない
+◆Win8.1
+　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。
+　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。
+　・win8でSQLServer2012のodbc設定がうまくいかない
+　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも
+◆PHP
+　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。
+　・PHPで頼りになるのはやはりPHP.net
+　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。
+　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。
+　※セッション制御が楽かも
+　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。
+　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ
+　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない
+　・php5.4以降はセーフモード使えない
+　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。
+　・ファイルのオーナーとかに気をつけましょう
+◆Apacheの設定
+　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く
+　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて
+　vhost.confの方に書いた
+◆SSH
+　・SSHで認証鍵ファイルを使う場合の設定方法
+　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む
+　・~/.ssh/に設定ファイルを置いておくと楽
+◆ポートフォワーディング
+　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、
+　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。</description>
     </item>
     
     <item>
       <title>sshで、ぷごふぁ</title>
-      <link>http://tech.k-zak.com/2013/10/02/ssh</link>
+      <link>http://tech.k-zak.com/2013/10/02/ssh/</link>
       <pubDate>Wed, 02 Oct 2013 17:10:04 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/10/02/ssh</guid>
-      <description>&lt;p&gt;WordPress勉強してます。テーマについてはだいたい分かったので、自作テーマとか作っていきたい。&lt;/p&gt;
-
-&lt;p&gt;ゆくゆくは案件事例的なぽーとふぉりおサイトを作ろうと、とりあえずさくらVPSを立てて、SSHの&lt;/p&gt;
-
-&lt;p&gt;設定をする。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;契約だけしてながらく放置していたので、OS再インストールしてSSHで接続しようとしたらエラー出て&lt;/p&gt;
-
-&lt;p&gt;ぷごふぁ！ってなった。調べたら出てきました。&lt;/p&gt;
-
-&lt;p&gt;参照： &lt;a href=&#34;http://qiita.com/wnoguchi/items/690f3f4651f8f11e4ed3&#34;&gt;http://qiita.com/wnoguchi/items/690f3f4651f8f11e4ed3&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;要は以前に接続した際のゴミが残っていて再インストールしたのでIPとポート同じなのに鍵あわないじゃん！&lt;/p&gt;
-
-&lt;p&gt;て言うことでした。やっぱりデータを消せばいいだけだったんだ。初期化するコマンドとかないんかな？&lt;/p&gt;
-
-&lt;p&gt;Qiitaは素人同然の自分には本当に助かる。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/10/02/ssh/</guid>
+      <description>WordPress勉強してます。テーマについてはだいたい分かったので、自作テーマとか作っていきたい。
+ゆくゆくは案件事例的なぽーとふぉりおサイトを作ろうと、とりあえずさくらVPSを立てて、SSHの
+設定をする。
+&amp;nbsp;
+契約だけしてながらく放置していたので、OS再インストールしてSSHで接続しようとしたらエラー出て
+ぷごふぁ！ってなった。調べたら出てきました。
+参照： http://qiita.com/wnoguchi/items/690f3f4651f8f11e4ed3
+要は以前に接続した際のゴミが残っていて再インストールしたのでIPとポート同じなのに鍵あわないじゃん！
+て言うことでした。やっぱりデータを消せばいいだけだったんだ。初期化するコマンドとかないんかな？
+Qiitaは素人同然の自分には本当に助かる。</description>
     </item>
     
   </channel>

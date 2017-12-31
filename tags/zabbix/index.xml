@@ -2,45 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zabbix on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/zabbix/index.xml</link>
+    <link>http://tech.k-zak.com/tags/zabbix/</link>
     <description>Recent content in Zabbix on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Apr 2017 22:19:58 +0900</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Zabbix remote command</title>
-      <link>http://tech.k-zak.com/2017/04/23/zabbix-remote-command</link>
+      <link>http://tech.k-zak.com/2017/04/23/zabbix-remote-command/</link>
       <pubDate>Sun, 23 Apr 2017 22:19:58 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/23/zabbix-remote-command</guid>
-      <description>
-
-&lt;h1 id=&#34;zabbixのアクション定義でリモートコマンドを実行する&#34;&gt;Zabbixのアクション定義でリモートコマンドを実行する&lt;/h1&gt;
-
-&lt;p&gt;サーバーを監視するソフトウェア？Zabbixで、トリガーを元にアクションを起こす場合、メール通知やSlackにPostする以外に対象のホストもしくは任意のサーバーにコマンドを投げて実行することが出来る。&lt;/p&gt;
-
-&lt;h2 id=&#34;agent側の設定&#34;&gt;Agent側の設定&lt;/h2&gt;
-
-&lt;p&gt;Zabbixエージェント側(コマンドを投げつけられる側)の設定ファイルの&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#EnableRemoteCommands = 0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;となっている箇所をコメントアウトを解除して値を1に変更する。&lt;/p&gt;
-
-&lt;p&gt;Zabbix-Agentサービスを再起動してエージェント側は最低限の準備完了&lt;/p&gt;
-
-&lt;h2 id=&#34;zabbix-アクションの設定&#34;&gt;Zabbix: アクションの設定&lt;/h2&gt;
-
-&lt;p&gt;アクションの設定で実行内容を「リモートコマンド」にして、タイプを「カスタムスクリプト」にする。&lt;/p&gt;
-
-&lt;p&gt;コマンドはエージェント側にスクリプトを用意している場合は、それを、用意していない場合は直接コマンドを書く。&lt;/p&gt;
-
-&lt;p&gt;パイプが使えるので、何か実行して結果をテキストファイルに追記するとかが可能。&lt;/p&gt;
-
-&lt;p&gt;Zabbixは敷居が高いけど便利ですね。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2017/04/23/zabbix-remote-command/</guid>
+      <description>Zabbixのアクション定義でリモートコマンドを実行する サーバーを監視するソフトウェア？Zabbixで、トリガーを元にアクションを起こす場合、メール通知やSlackにPostする以外に対象のホストもしくは任意のサーバーにコマンドを投げて実行することが出来る。
+Agent側の設定 Zabbixエージェント側(コマンドを投げつけられる側)の設定ファイルの
+#EnableRemoteCommands = 0  となっている箇所をコメントアウトを解除して値を1に変更する。
+Zabbix-Agentサービスを再起動してエージェント側は最低限の準備完了
+Zabbix: アクションの設定 アクションの設定で実行内容を「リモートコマンド」にして、タイプを「カスタムスクリプト」にする。
+コマンドはエージェント側にスクリプトを用意している場合は、それを、用意していない場合は直接コマンドを書く。
+パイプが使えるので、何か実行して結果をテキストファイルに追記するとかが可能。
+Zabbixは敷居が高いけど便利ですね。</description>
     </item>
     
   </channel>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wkhtmltopdf on 開発メモてきな</title>
+    <link>http://tech.k-zak.com/tags/wkhtmltopdf/</link>
+    <description>Recent content in Wkhtmltopdf on 開発メモてきな</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Thu, 28 Dec 2017 14:26:45 +0900</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/wkhtmltopdf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wkhtmltopdf</title>
+      <link>http://tech.k-zak.com/2017/12/28/wkhtmltopdf/</link>
+      <pubDate>Thu, 28 Dec 2017 14:26:45 +0900</pubDate>
+      
+      <guid>http://tech.k-zak.com/2017/12/28/wkhtmltopdf/</guid>
+      <description>wkhtmltopdfを試した なんとかしてhtmlからPDFを生成する手段を増やしたい。
+ということでwkhtmltopdfを試す。
+しかしバージョンによって画面サイズがおかしくなる。
+結論 0.12.4のバージョンは使わない。代わりに0.12.3を使う。
+オマケ wkhtmltopdfをgolangを使ってURL指定してhtmlコンテンツをPDF化する。 この方法であれば、PhantomJSの時と同じでPrint用cssが使える。
+golangを試すにあたって我がEmacsにgolangの設定を施した。 GOPATHの関係もあるため、macの時だけ設定を読み込むような設定にした。</description>
+    </item>
+    
+  </channel>
+</rss>

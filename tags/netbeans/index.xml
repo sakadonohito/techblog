@@ -2,108 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Netbeans on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/netbeans/index.xml</link>
+    <link>http://tech.k-zak.com/tags/netbeans/</link>
     <description>Recent content in Netbeans on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/netbeans/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2011 06:55:10 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/netbeans/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>ちっともすすまない</title>
-      <link>http://tech.k-zak.com/2011/04/10/milestone</link>
+      <link>http://tech.k-zak.com/2011/04/10/milestone/</link>
       <pubDate>Sun, 10 Apr 2011 06:55:10 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/10/milestone</guid>
-      <description>&lt;p&gt;前に更新したのはいつの頃か・・・&lt;/p&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  中身に進歩がないのが更新がない証拠。。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  先日、MovableTypeにもう一つブログ追加しました。
-&lt;/div&gt;
-
-&lt;div&gt;
-  元々Microsoftのスペースっていうブログの場所でゲームとか趣味関連の少し
-&lt;/div&gt;
-
-&lt;div&gt;
-  やってたんですが、閉鎖されたので、心機一転こちらで始めました。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  この間、初めてAmazonアソシエイトのIDとったのでのリンクバシバシ貼ろうと思います。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  このブログで書くようなジャンルの事では、最近NetBeansをインスコしてみました。
-&lt;/div&gt;
-
-&lt;div&gt;
-  Eclipseでは無視してたんですが、サンプルプロジェクト作成して中のコード読むのって
-&lt;/div&gt;
-
-&lt;div&gt;
-  結構勉強になるんじゃないかって考えてます。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  まだまともに触れてないレベルですが、NetBeansはEclipseに比べて軽い気がします。
-&lt;/div&gt;
-
-&lt;div&gt;
-  まぁ、設定とかプラグインとかそういうところは圧倒的にEclipseなんでしょうけど。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  今はNetBeansでRuby on Rails　のサンプル作成したら、Railsのバージョンがおかしいとか
-&lt;/div&gt;
-
-&lt;div&gt;
-  エラー出てハマってます(-_- 😉
-&lt;/div&gt;
-
-&lt;div&gt;
-  ここのブログは今後、作業日誌的な、勉強、開発そういったことを何かしたら
-&lt;/div&gt;
-
-&lt;div&gt;
-  それを簡潔に書く。そうやって続けていこうかと。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  いつになったら図や画像ありの記事になれるのか・・・
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  NetBeansの日本語サイト：&lt;a style=&#34;text-decoration: underline;&#34; href=&#34;http://ja.netbeans.org/&#34;&gt;http://ja.netbeans.org/&lt;/a&gt;
-&lt;/div&gt;
-</description>
+      <guid>http://tech.k-zak.com/2011/04/10/milestone/</guid>
+      <description>前に更新したのはいつの頃か・・・
+   中身に進歩がないのが更新がない証拠。。     先日、MovableTypeにもう一つブログ追加しました。   元々Microsoftのスペースっていうブログの場所でゲームとか趣味関連の少し   やってたんですが、閉鎖されたので、心機一転こちらで始めました。     この間、初めてAmazonアソシエイトのIDとったのでのリンクバシバシ貼ろうと思います。     このブログで書くようなジャンルの事では、最近NetBeansをインスコしてみました。   Eclipseでは無視してたんですが、サンプルプロジェクト作成して中のコード読むのって   結構勉強になるんじゃないかって考えてます。     まだまともに触れてないレベルですが、NetBeansはEclipseに比べて軽い気がします。   まぁ、設定とかプラグインとかそういうところは圧倒的にEclipseなんでしょうけど。     今はNetBeansでRuby on Rails　のサンプル作成したら、Railsのバージョンがおかしいとか   エラー出てハマってます(-_- 😉   ここのブログは今後、作業日誌的な、勉強、開発そういったことを何かしたら   それを簡潔に書く。そうやって続けていこうかと。     いつになったら図や画像ありの記事になれるのか・・・     NetBeansの日本語サイト：http://ja.netbeans.org/  </description>
     </item>
     
   </channel>

@@ -2,58 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Log on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/log/index.xml</link>
+    <link>http://tech.k-zak.com/tags/log/</link>
     <description>Recent content in Log on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/log/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Oct 2014 16:10:39 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/log/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>思い出せない</title>
-      <link>http://tech.k-zak.com/2014/10/25/milestone</link>
+      <link>http://tech.k-zak.com/2014/10/25/milestone/</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/10/25/milestone</guid>
-      <description>
-
-&lt;p&gt;前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。&lt;/p&gt;
-
-&lt;h3 id=&#34;サーバー関係&#34;&gt;サーバー関係&lt;/h3&gt;
-
-&lt;p&gt;ログローテーションの設定を行った。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;yum install logrotate&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;/etc/logrotate.d/配下に追加の設定を行う&lt;/p&gt;
-
-&lt;p&gt;/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる&lt;/p&gt;
-
-&lt;h3 id=&#34;ansible&#34;&gt;Ansible&lt;/h3&gt;
-
-&lt;p&gt;1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中&lt;/p&gt;
-
-&lt;p&gt;ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。&lt;/p&gt;
-
-&lt;p&gt;yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。&lt;/p&gt;
-
-&lt;p&gt;後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。&lt;/p&gt;
-
-&lt;p&gt;Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。&lt;/p&gt;
-
-&lt;h3 id=&#34;javascript&#34;&gt;JavaScript&lt;/h3&gt;
-
-&lt;p&gt;AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。&lt;/p&gt;
-
-&lt;p&gt;マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。&lt;/p&gt;
-
-&lt;p&gt;AWSのS3のCORSで許可ヘッダーの設定が必要でした。&lt;/p&gt;
-
-&lt;h3 id=&#34;php&#34;&gt;PHP&lt;/h3&gt;
-
-&lt;p&gt;namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く&lt;/p&gt;
-
-&lt;p&gt;毎日ちゃんとメモとらないと駄目ですね。。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/10/25/milestone/</guid>
+      <description>前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
+サーバー関係 ログローテーションの設定を行った。
+yum install logrotate
+/etc/logrotate.d/配下に追加の設定を行う
+/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる
+Ansible 1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中
+ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。
+yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。
+後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。
+Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。
+JavaScript AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。
+マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。
+AWSのS3のCORSで許可ヘッダーの設定が必要でした。
+PHP namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く
+毎日ちゃんとメモとらないと駄目ですね。。</description>
     </item>
     
   </channel>

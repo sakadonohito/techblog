@@ -2,600 +2,256 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/javascript/index.xml</link>
+    <link>http://tech.k-zak.com/tags/javascript/</link>
     <description>Recent content in Javascript on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Apr 2017 23:11:59 +0900</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>2017 04 09 daily</title>
-      <link>http://tech.k-zak.com/2017/04/09/2017-04-09-daily</link>
+      <link>http://tech.k-zak.com/2017/04/09/2017-04-09-daily/</link>
       <pubDate>Sun, 09 Apr 2017 23:11:59 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/09/2017-04-09-daily</guid>
-      <description>
-
-&lt;h1 id=&#34;進捗ありません&#34;&gt;進捗ありません&lt;/h1&gt;
-
-&lt;p&gt;この1週間、調子が悪かったり仕事に追われたりしていて何も勉強できていない。
-少しだけReduxのサンプルを写経して動かない箇所を動くように修正した程度。&lt;/p&gt;
-
-&lt;h2 id=&#34;es2015で理解が足りていない事&#34;&gt;ES2015で理解が足りていない事&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import Hoge from &#39;./hoge&#39;; //hogeファイルの中でexport defaultされたものをHogeとなづけてimport
-import * as Hoge from &#39;./hoge&#39;; //hogeファイルの中でexportされたもの全てをHogeオブジェクトとしてimport
-import { Hoge } from &#39;./hoge&#39;; //hogeファイルの中でHogeという名でexportされたものをimport
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;という理解だったのだけれど、Reduxのサンプルで意図する挙動をしなくて困った。
-最終的に記述ミスだったのか、勘違いだったのか、動くようになったけど。&lt;/p&gt;
-
-&lt;p&gt;いっぺん基礎を網羅的に勉強しないとダメですね。
-しかし、ECMAScript2015のドキュメント原文を読むのはなー。。。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2017/04/09/2017-04-09-daily/</guid>
+      <description>進捗ありません この1週間、調子が悪かったり仕事に追われたりしていて何も勉強できていない。 少しだけReduxのサンプルを写経して動かない箇所を動くように修正した程度。
+ES2015で理解が足りていない事 import Hoge from &#39;./hoge&#39;; //hogeファイルの中でexport defaultされたものをHogeとなづけてimport import * as Hoge from &#39;./hoge&#39;; //hogeファイルの中でexportされたもの全てをHogeオブジェクトとしてimport import { Hoge } from &#39;./hoge&#39;; //hogeファイルの中でHogeという名でexportされたものをimport  という理解だったのだけれど、Reduxのサンプルで意図する挙動をしなくて困った。 最終的に記述ミスだったのか、勘違いだったのか、動くようになったけど。
+いっぺん基礎を網羅的に勉強しないとダメですね。 しかし、ECMAScript2015のドキュメント原文を読むのはなー。。。</description>
     </item>
     
     <item>
       <title>recent frontend circumstance</title>
-      <link>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance</link>
+      <link>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</link>
       <pubDate>Sun, 02 Apr 2017 22:50:14 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance</guid>
-      <description>
-
-&lt;h1 id=&#34;最近のフロントエンド事情はまるで発展途上国の交通事情ですか&#34;&gt;最近のフロントエンド事情はまるで発展途上国の交通事情ですか&lt;/h1&gt;
-
-&lt;p&gt;ES6で書いてES5に変換したいだけなのに、なんなんですか？&lt;/p&gt;
-
-&lt;h2 id=&#34;es6からes5に変換したいだけなんだ&#34;&gt;ES6からES5に変換したいだけなんだ&lt;/h2&gt;
-
-&lt;h3 id=&#34;babel&#34;&gt;Babel&lt;/h3&gt;
-
-&lt;p&gt;Babelを使えば変換できる。。。&lt;/p&gt;
-
-&lt;p&gt;Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。&lt;/p&gt;
-
-&lt;p&gt;考えはいい。それで十分だし、何も難しいことはなさそうだ。&lt;/p&gt;
-
-&lt;p&gt;でもいざ環境を揃えようとすると&amp;hellip;&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;以下をインストールする。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;webpack&lt;/li&gt;
-&lt;li&gt;webpack-dev-server&lt;/li&gt;
-&lt;li&gt;babel-core&lt;/li&gt;
-&lt;li&gt;babel-loader&lt;/li&gt;
-&lt;li&gt;babel-preset-es2015&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;webpack.config.jsと.babelrcにも設定を書く。&lt;/p&gt;
-
-&lt;p&gt;これですむのならいい。&lt;/p&gt;
-
-&lt;p&gt;実行したら文法エラーが出た。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;babel-preset-stage-0&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;を追加したら解決した。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;なんだよそれ！最初からbabel-coreだけで対応しろよ！&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;他にもbrowserify,babelifyとかいろいろプラグイン的なものがある。&lt;/p&gt;
-
-&lt;p&gt;自分の書いたES6のコードを動くようにするのにいったいどれを入れたら動くのか分からない！&lt;/p&gt;
-
-&lt;h3 id=&#34;babelとwebpack&#34;&gt;BabelとWebpack&lt;/h3&gt;
-
-&lt;p&gt;webpackの設定及び.babelrcにも何を変換処理に使うのか書かないとちゃんと変換されない。&lt;/p&gt;
-
-&lt;p&gt;webpackに書いただけじゃダメで.babelrcにも書かないといけない。という認識だけど、多分理解が足りなくて本当は綺麗な書き方があると信じてる。&lt;/p&gt;
-
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;ES6で書いてES5に変換するの辛い。&lt;/p&gt;
-
-&lt;p&gt;早くブラウザが標準でES6対応してほしい。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</guid>
+      <description>最近のフロントエンド事情はまるで発展途上国の交通事情ですか ES6で書いてES5に変換したいだけなのに、なんなんですか？
+ES6からES5に変換したいだけなんだ Babel Babelを使えば変換できる。。。
+Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。
+考えはいい。それで十分だし、何も難しいことはなさそうだ。
+でもいざ環境を揃えようとすると&amp;hellip;&amp;hellip;
+以下をインストールする。
+ webpack webpack-dev-server babel-core babel-loader babel-preset-es2015  webpack.config.jsと.babelrcにも設定を書く。
+これですむのならいい。
+実行したら文法エラーが出た。
+ babel-preset-stage-0  を追加したら解決した。
+なんだよそれ！最初からbabel-coreだけで対応しろよ！
+他にもbrowserify,babelifyとかいろいろプラグイン的なものがある。
+自分の書いたES6のコードを動くようにするのにいったいどれを入れたら動くのか分からない！
+BabelとWebpack webpackの設定及び.babelrcにも何を変換処理に使うのか書かないとちゃんと変換されない。
+webpackに書いただけじゃダメで.babelrcにも書かないといけない。という認識だけど、多分理解が足りなくて本当は綺麗な書き方があると信じてる。
+まとめ ES6で書いてES5に変換するの辛い。
+早くブラウザが標準でES6対応してほしい。</description>
     </item>
     
     <item>
       <title>think about redux</title>
-      <link>http://tech.k-zak.com/2017/04/02/think-about-redux</link>
+      <link>http://tech.k-zak.com/2017/04/02/think-about-redux/</link>
       <pubDate>Sun, 02 Apr 2017 22:49:50 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/02/think-about-redux</guid>
-      <description>
-
-&lt;h1 id=&#34;reduxについて感化されたこと&#34;&gt;Reduxについて感化されたこと&lt;/h1&gt;
-
-&lt;p&gt;Reduxについて不満に思っている部分について考察している記事を見かけた。&lt;/p&gt;
-
-&lt;p&gt;自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。&lt;/p&gt;
-
-&lt;h2 id=&#34;理解して納得していること&#34;&gt;理解して納得していること&lt;/h2&gt;
-
-&lt;p&gt;Reactの場合は上からもらうプロパティはPropsで読み取り専用。&lt;/p&gt;
-
-&lt;p&gt;要素ごとにstateという読み書き可能なプロパティを持つ。&lt;/p&gt;
-
-&lt;p&gt;ReduxはFluxアーキテクチャの実装。&lt;/p&gt;
-
-&lt;p&gt;1つの状態を管理するStoreのみ。&lt;/p&gt;
-
-&lt;p&gt;Actionを呼びReducerが状態を更新する。それぞれはプレーンなjavacsriptで書く。&lt;/p&gt;
-
-&lt;p&gt;ここまではいい。とても素敵に感じた。&lt;/p&gt;
-
-&lt;h2 id=&#34;受け入れがたいところ&#34;&gt;受け入れがたいところ&lt;/h2&gt;
-
-&lt;p&gt;javascriptといえば、画面上の何かを触ったらイベントを拾って画面を変えたりとか、非同期で外からデータを持ってくるとかですよね。&lt;/p&gt;
-
-&lt;p&gt;その非同期処理をReduxではどう書くのか、実はActionは処理のオブジェクトを生成するだけだし、Reducerは更新結果の状態を同期処理で作るだけ。&lt;/p&gt;
-
-&lt;p&gt;ビジネスロジック的なものや非同期処理はどこに書くのか？&lt;/p&gt;
-
-&lt;p&gt;基本的には無い。なので後付け？でてきたMiddlewareてのを作る。&lt;/p&gt;
-
-&lt;p&gt;Reduxの思想では、非同期の処理前、処理中、処理結果(成功・失敗)をそれぞれ状態として更新する。&lt;/p&gt;
-
-&lt;p&gt;その処理をMiddlewareに書くのだけれど&amp;hellip;書くのだけれど、これがすごく気持ち悪いと感じていた。&lt;/p&gt;
-
-&lt;p&gt;いろいろ他の書き方が無いのかとか本来自分はどう書きたいのかということを考えると、乖離が大きく、辛い。&lt;/p&gt;
-
-&lt;p&gt;その辺りをReducerの状態を更新する処理のところで非同期処理を呼び出して結果を入れる書き方を考えた方がいらっしゃって、外国のReduxのコミュニティに投稿したら、disられてた。&lt;/p&gt;
-
-&lt;p&gt;Reduxの基本設計に不備があって、それをごまかすためのMiddlewareは許されて、Reducerに非同期処理結果を突っ込むのは違うとかって言うの、どうなの？&lt;/p&gt;
-
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;ReduxのMiddlewareがいまいち気に入らないので、非同期処理も考慮されたFluxアーキテクチャのオレオレ実装を作るしか無いのか。。。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2017/04/02/think-about-redux/</guid>
+      <description>Reduxについて感化されたこと Reduxについて不満に思っている部分について考察している記事を見かけた。
+自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。
+理解して納得していること Reactの場合は上からもらうプロパティはPropsで読み取り専用。
+要素ごとにstateという読み書き可能なプロパティを持つ。
+ReduxはFluxアーキテクチャの実装。
+1つの状態を管理するStoreのみ。
+Actionを呼びReducerが状態を更新する。それぞれはプレーンなjavacsriptで書く。
+ここまではいい。とても素敵に感じた。
+受け入れがたいところ javascriptといえば、画面上の何かを触ったらイベントを拾って画面を変えたりとか、非同期で外からデータを持ってくるとかですよね。
+その非同期処理をReduxではどう書くのか、実はActionは処理のオブジェクトを生成するだけだし、Reducerは更新結果の状態を同期処理で作るだけ。
+ビジネスロジック的なものや非同期処理はどこに書くのか？
+基本的には無い。なので後付け？でてきたMiddlewareてのを作る。
+Reduxの思想では、非同期の処理前、処理中、処理結果(成功・失敗)をそれぞれ状態として更新する。
+その処理をMiddlewareに書くのだけれど&amp;hellip;書くのだけれど、これがすごく気持ち悪いと感じていた。
+いろいろ他の書き方が無いのかとか本来自分はどう書きたいのかということを考えると、乖離が大きく、辛い。
+その辺りをReducerの状態を更新する処理のところで非同期処理を呼び出して結果を入れる書き方を考えた方がいらっしゃって、外国のReduxのコミュニティに投稿したら、disられてた。
+Reduxの基本設計に不備があって、それをごまかすためのMiddlewareは許されて、Reducerに非同期処理結果を突っ込むのは違うとかって言うの、どうなの？
+まとめ ReduxのMiddlewareがいまいち気に入らないので、非同期処理も考慮されたFluxアーキテクチャのオレオレ実装を作るしか無いのか。。。</description>
     </item>
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj</link>
+      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj</guid>
-      <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;概要としては、FileMaker Server の XML公開を使う。&lt;/p&gt;
-
-&lt;p&gt;Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。&lt;/p&gt;
-
-&lt;p&gt;◆ハマった事：サンプルPHPの内容&lt;/p&gt;
-
-&lt;p&gt;サンプルのPHPをよく読んでなかった。。。&lt;/p&gt;
-
-&lt;p&gt;JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。&lt;/p&gt;
-
-&lt;p&gt;-db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに&lt;/p&gt;
-
-&lt;p&gt;u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数&lt;/p&gt;
-
-&lt;p&gt;ていうのがくっついてPHPにpostされてくる。&lt;/p&gt;
-
-&lt;p&gt;それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。&lt;/p&gt;
-
-&lt;p&gt;そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。&lt;/p&gt;
-
-&lt;p&gt;なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。&lt;/p&gt;
-
-&lt;p&gt;サンプルって事でいろいろハードコーディングされてるけど、気にしない。&lt;/p&gt;
-
-&lt;p&gt;◆ハマった：Nginxの設定&lt;/p&gt;
-
-&lt;p&gt;欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら&lt;/p&gt;
-
-&lt;p&gt;WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。&lt;/p&gt;
-
-&lt;p&gt;これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。&lt;/p&gt;
-
-&lt;p&gt;しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。&lt;/p&gt;
-
-&lt;p&gt;※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても&lt;/p&gt;
-
-&lt;p&gt;　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。&lt;/p&gt;
-
-&lt;p&gt;その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。&lt;/p&gt;
-
-&lt;p&gt;最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。&lt;/p&gt;
-
-&lt;p&gt;自分はUbuntuの環境なので、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;sudo apt-get install nginx-extras&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)&lt;/p&gt;
-
-&lt;p&gt;more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;&lt;/p&gt;
-
-&lt;p&gt;を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！&lt;/p&gt;
-
-&lt;p&gt;これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。&lt;/p&gt;
-
-&lt;p&gt;いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
+      <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
+https://github.com/seedcode/fmxj
+概要としては、FileMaker Server の XML公開を使う。
+Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。
+◆ハマった事：サンプルPHPの内容
+サンプルのPHPをよく読んでなかった。。。
+JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。
+-db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに
+u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数
+ていうのがくっついてPHPにpostされてくる。
+それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。
+そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。
+なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。
+サンプルって事でいろいろハードコーディングされてるけど、気にしない。
+◆ハマった：Nginxの設定
+欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら
+WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
+これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
+しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
+※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても
+　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
+その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
+最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
+自分はUbuntuの環境なので、
+ sudo apt-get install nginx-extras
+ 後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
+more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;
+を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
+これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
+いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</description>
     </item>
     
     <item>
       <title>2014年を振り返る JavaScript編</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-js</link>
+      <link>http://tech.k-zak.com/2014/12/30/milestone-js/</link>
       <pubDate>Tue, 30 Dec 2014 09:34:05 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-js</guid>
-      <description>&lt;p&gt;今年を振り返ってみる。クライアントサイド、特にJavaScriptについて&lt;/p&gt;
-
-&lt;p&gt;JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。&lt;/p&gt;
-
-&lt;p&gt;結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。&lt;/p&gt;
-
-&lt;p&gt;document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。&lt;/p&gt;
-
-&lt;p&gt;jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。&lt;/p&gt;
-
-&lt;p&gt;ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。&lt;/p&gt;
-
-&lt;p&gt;ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。&lt;/p&gt;
-
-&lt;p&gt;もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。&lt;/p&gt;
-
-&lt;p&gt;CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/12/30/milestone-js/</guid>
+      <description>今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
+JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
+結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
+document.getElementByIdとか使える場合は積極的に使ったほうがコストが抑えられるけど、中途半端に混ぜても他のオブジェクトとの兼ね合いで結局jQueryオブジェクトに変換しないといけなかったりして、もにょる。
+jQueryでdata属性使うとキャッシュの関係で後から値の変更がうまくいかないとか、なんて地雷だよ！て憤ったよ。
+ただ今後はBackbone.jsに手を出していきたいと考えているのでjQueryとは仲良くやっていきたいと思っている。
+ただ、思ったよりはJavaScriptの学習や経験は積めなかったのが残念。
+もっとCanvasとかSVGのコントロールとか挑戦したかったし、TypeScriptやClojureScriptにも挑戦したかった。
+CoffeeScriptはちゃんと学習する前にオワコンになりそうだし、あんまりやらなくていいかなって考えている。</description>
     </item>
     
     <item>
       <title>思い出せない</title>
-      <link>http://tech.k-zak.com/2014/10/25/milestone</link>
+      <link>http://tech.k-zak.com/2014/10/25/milestone/</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/10/25/milestone</guid>
-      <description>
-
-&lt;p&gt;前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。&lt;/p&gt;
-
-&lt;h3 id=&#34;サーバー関係&#34;&gt;サーバー関係&lt;/h3&gt;
-
-&lt;p&gt;ログローテーションの設定を行った。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;yum install logrotate&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;/etc/logrotate.d/配下に追加の設定を行う&lt;/p&gt;
-
-&lt;p&gt;/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる&lt;/p&gt;
-
-&lt;h3 id=&#34;ansible&#34;&gt;Ansible&lt;/h3&gt;
-
-&lt;p&gt;1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中&lt;/p&gt;
-
-&lt;p&gt;ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。&lt;/p&gt;
-
-&lt;p&gt;yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。&lt;/p&gt;
-
-&lt;p&gt;後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。&lt;/p&gt;
-
-&lt;p&gt;Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。&lt;/p&gt;
-
-&lt;h3 id=&#34;javascript&#34;&gt;JavaScript&lt;/h3&gt;
-
-&lt;p&gt;AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。&lt;/p&gt;
-
-&lt;p&gt;マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。&lt;/p&gt;
-
-&lt;p&gt;AWSのS3のCORSで許可ヘッダーの設定が必要でした。&lt;/p&gt;
-
-&lt;h3 id=&#34;php&#34;&gt;PHP&lt;/h3&gt;
-
-&lt;p&gt;namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く&lt;/p&gt;
-
-&lt;p&gt;毎日ちゃんとメモとらないと駄目ですね。。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/10/25/milestone/</guid>
+      <description>前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
+サーバー関係 ログローテーションの設定を行った。
+yum install logrotate
+/etc/logrotate.d/配下に追加の設定を行う
+/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる
+Ansible 1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中
+ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。
+yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。
+後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。
+Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。
+JavaScript AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。
+マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。
+AWSのS3のCORSで許可ヘッダーの設定が必要でした。
+PHP namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く
+毎日ちゃんとメモとらないと駄目ですね。。</description>
     </item>
     
     <item>
       <title>低レベルプログラマだからJavaScriptで知らなかった事</title>
-      <link>http://tech.k-zak.com/2014/08/02/spec-js</link>
+      <link>http://tech.k-zak.com/2014/08/02/spec-js/</link>
       <pubDate>Sat, 02 Aug 2014 15:29:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/spec-js</guid>
-      <description>&lt;p&gt;JavaScriptで知らないせいでハマったところなどなど&lt;/p&gt;
-
-&lt;p&gt;Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。&lt;/p&gt;
-
-&lt;p&gt;そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。&lt;/p&gt;
-
-&lt;p&gt;JS数字計算で2進数から10進数への変換誤差がでて死ぬる。&lt;/p&gt;
-
-&lt;p&gt;100+10.1とかやろうとすると物凄い小さい数字が誤差として丸められず残る。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/08/02/spec-js/</guid>
+      <description>JavaScriptで知らないせいでハマったところなどなど
+Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。
+そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。
+JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
+100+10.1とかやろうとすると物凄い小さい数字が誤差として丸められず残る。</description>
     </item>
     
     <item>
       <title>JavaScriptで7の倍数と7のつく数字の時だけtrue</title>
-      <link>http://tech.k-zak.com/2013/12/22/x7-true-js</link>
+      <link>http://tech.k-zak.com/2013/12/22/x7-true-js/</link>
       <pubDate>Sun, 22 Dec 2013 19:18:49 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/22/x7-true-js</guid>
-      <description>&lt;p&gt;Javascriptてこんな書き方できるのか&lt;/p&gt;
-
-&lt;p&gt;◆7の倍数か7の付く数字の場合のみtrueを返す。&lt;/p&gt;
-
-&lt;pre lang=&#34;js&#34; toggle=&#34;no&#34;&gt;var nana = function(num){
-    var arr = [0];
-    for(var i=1;i&amp;lt; =num;i++){
-        arr.push(
-            (!(i%7)||/7/.test(i))||i
-        );
-    }
-    return arr;
-};
-&lt;/pre&gt;
-
-&lt;p&gt;7の剰余が0ではない、もしくは７が含まれる数字が真なら論理値(true)、そうでなければ数値(i)&lt;/p&gt;
-
-&lt;p&gt;最初はおぉ？って思ったけれど、こうしてみるとさして不思議でもないか。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/12/22/x7-true-js/</guid>
+      <description>Javascriptてこんな書き方できるのか
+◆7の倍数か7の付く数字の場合のみtrueを返す。
+var nana = function(num){ var arr = [0]; for(var i=1;i&amp;lt; =num;i++){ arr.push( (!(i%7)||/7/.test(i))||i ); } return arr; };  7の剰余が0ではない、もしくは７が含まれる数字が真なら論理値(true)、そうでなければ数値(i)
+最初はおぉ？って思ったけれど、こうしてみるとさして不思議でもないか。</description>
     </item>
     
     <item>
       <title>fizzbuzz</title>
-      <link>http://tech.k-zak.com/2013/12/22/fizzbuzz-js</link>
+      <link>http://tech.k-zak.com/2013/12/22/fizzbuzz-js/</link>
       <pubDate>Sun, 22 Dec 2013 18:44:51 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/22/fizzbuzz-js</guid>
-      <description>&lt;p&gt;Javascriptでfizzbuzz&lt;/p&gt;
-
-&lt;p&gt;◆シンプルなやつ&lt;/p&gt;
-
-&lt;pre lang=&#34;js&#34; toggle=&#34;no&#34;&gt;var fizzbuzz = function(num){
-    //3の倍数の時はFizz
-    //5の倍数の時はBuzz
-    //3かつ5の倍数の時はFizzBuzz
-    var arr = [0];
-    for(var i=1;i&amp;lt;=num;i++){
-        arr.push([i,&#34;Fizz&#34;,&#34;Buzz&#34;,&#34;FizzBuzz&#34;]
-             [(0==i%3)+(0==i%5)*2]
-        );
-    }
-    return arr;
-};&lt;/pre&gt;
-
-&lt;p&gt;=を使わないなら論理値を整数に戻すみたいな面倒なことやる。剰余を用いないならいろいろごちゃごちゃやる。&lt;/p&gt;
-
-&lt;p&gt;とりあえず可読性とシンプルさから考えるとこんな書き方になるのかな。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/12/22/fizzbuzz-js/</guid>
+      <description>Javascriptでfizzbuzz
+◆シンプルなやつ
+var fizzbuzz = function(num){ //3の倍数の時はFizz //5の倍数の時はBuzz //3かつ5の倍数の時はFizzBuzz var arr = [0]; for(var i=1;i&amp;lt;=num;i++){ arr.push([i,&#34;Fizz&#34;,&#34;Buzz&#34;,&#34;FizzBuzz&#34;] [(0==i%3)+(0==i%5)*2] ); } return arr; }; =を使わないなら論理値を整数に戻すみたいな面倒なことやる。剰余を用いないならいろいろごちゃごちゃやる。
+とりあえず可読性とシンプルさから考えるとこんな書き方になるのかな。</description>
     </item>
     
     <item>
       <title>jQueryでまた使い方忘れて調べそうなやつらメモ</title>
-      <link>http://tech.k-zak.com/2013/08/25/jquery-memo</link>
+      <link>http://tech.k-zak.com/2013/08/25/jquery-memo/</link>
       <pubDate>Sun, 25 Aug 2013 04:50:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/jquery-memo</guid>
-      <description>&lt;p&gt;gistベタ貼りじゃ！&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/08/25/jquery-memo/</guid>
+      <description>gistベタ貼りじゃ！</description>
     </item>
     
     <item>
       <title>jQueryで要素の高さを変える</title>
-      <link>http://tech.k-zak.com/2013/08/25/jquery-toggle</link>
+      <link>http://tech.k-zak.com/2013/08/25/jquery-toggle/</link>
       <pubDate>Sun, 25 Aug 2013 04:47:47 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/jquery-toggle</guid>
-      <description>&lt;p&gt;まぁ、アレですよ。よかれと思って表示非表示をトグルする要素作ったら、&lt;/p&gt;
-
-&lt;p&gt;非表示にした分、開いたスペースだけ下にあるリスト(table)要素の高さ広げてよ&lt;/p&gt;
-
-&lt;p&gt;っていうオマケに品質求めちゃう的な要望があったわけですよ。&lt;/p&gt;
-
-&lt;p&gt;jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、今要素をたたんでいるのか&lt;/p&gt;
-
-&lt;p&gt;広げてるのか分からないのでis(&amp;#8220;:hidden&amp;#8221;)なんてのを使って調べるわけですね。&lt;/p&gt;
-
-&lt;p&gt;だったらshow()とhide()使っても良くね？的な。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/08/25/jquery-toggle/</guid>
+      <description>まぁ、アレですよ。よかれと思って表示非表示をトグルする要素作ったら、
+非表示にした分、開いたスペースだけ下にあるリスト(table)要素の高さ広げてよ
+っていうオマケに品質求めちゃう的な要望があったわけですよ。
+jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、今要素をたたんでいるのか
+広げてるのか分からないのでis(&amp;#8220;:hidden&amp;#8221;)なんてのを使って調べるわけですね。
+だったらshow()とhide()使っても良くね？的な。</description>
     </item>
     
     <item>
       <title>cssメモ 配下の指定</title>
-      <link>http://tech.k-zak.com/2013/08/25/css-tech</link>
+      <link>http://tech.k-zak.com/2013/08/25/css-tech/</link>
       <pubDate>Sun, 25 Aug 2013 04:11:02 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/css-tech</guid>
-      <description>&lt;p&gt;cssで配下の指定勘違いしておかしな事やってたのでメモ&lt;/p&gt;
-
-&lt;p&gt;結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。&lt;/p&gt;
-
-&lt;p&gt;最初&lt;/p&gt;
-
-&lt;p&gt;１，scrollさせたいdivの定義&lt;/p&gt;
-
-&lt;p&gt;２，position:absoluteを使ってtableのheaderを上に固定させつつbodyだけスクールするよう&lt;/p&gt;
-
-&lt;p&gt;定義&lt;/p&gt;
-
-&lt;p&gt;この時、１で基準となるdivとその配下のdiv(scrollの指定したdev)の定義をしていて&lt;/p&gt;
-
-&lt;p&gt;tableヘッダはscrollの定義をしたdivの子要素だからってそういう書き方してたら、&lt;/p&gt;
-
-&lt;p&gt;tableヘッダ要素が意図する位置に固定されたような感じになるんだけど目には見えない&lt;/p&gt;
-
-&lt;p&gt;状態になった。レイヤーの上下関係とかかな？とか思っていじくり回してたけど、違った。&lt;/p&gt;
-
-&lt;p&gt;tableヘッダ要素は基準になるdiv配下のtheadみたいな描き方しないと駄目でした。&lt;/p&gt;
-
-&lt;p&gt;div#base{&lt;/p&gt;
-
-&lt;p&gt;posision: relative;&lt;/p&gt;
-
-&lt;p&gt;}&lt;/p&gt;
-
-&lt;p&gt;div#scroll{&lt;/p&gt;
-
-&lt;p&gt;スクロールの設定(html上ではdiv#baseの子要素)&lt;/p&gt;
-
-&lt;p&gt;}&lt;/p&gt;
-
-&lt;p&gt;てやっている状態の時に&lt;/p&gt;
-
-&lt;p&gt;ｘ div#scroll table thead ・・・これだとscroll定義されたdivの影響下(間違って無くね？)&lt;/p&gt;
-
-&lt;p&gt;◯ div#base table thead ・・・これだと基準divの位置を基準にして正しく表示される。&lt;/p&gt;
-
-&lt;p&gt;div#scrollは#baseの子要素なんだから問題無いだろうと思ってて、開発者ツールとかで確認すると&lt;/p&gt;
-
-&lt;p&gt;意図する位置にいるのに表示されない状態。cssからすると、htmlどう書かれているか知ったこっちゃない&lt;/p&gt;
-
-&lt;p&gt;ってことなんだろうね。css上でキチンとどこの配下の何の要素か書いてあげないといけんというこってす。&lt;/p&gt;
-
-&lt;p&gt;そうそう、tableのheaderとbodyを分けるとheaderとbodyでtdの幅が合わなくなる事がある(内容次第)ので&lt;/p&gt;
-
-&lt;p&gt;javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせるって事も必要です。固定幅じゃない場合。&lt;/p&gt;
-
-&lt;p&gt;最終的な見本を下に(htmlはめんどうなので載せてません)&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/08/25/css-tech/</guid>
+      <description>cssで配下の指定勘違いしておかしな事やってたのでメモ
+結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。
+最初
+１，scrollさせたいdivの定義
+２，position:absoluteを使ってtableのheaderを上に固定させつつbodyだけスクールするよう
+定義
+この時、１で基準となるdivとその配下のdiv(scrollの指定したdev)の定義をしていて
+tableヘッダはscrollの定義をしたdivの子要素だからってそういう書き方してたら、
+tableヘッダ要素が意図する位置に固定されたような感じになるんだけど目には見えない
+状態になった。レイヤーの上下関係とかかな？とか思っていじくり回してたけど、違った。
+tableヘッダ要素は基準になるdiv配下のtheadみたいな描き方しないと駄目でした。
+div#base{
+posision: relative;
+}
+div#scroll{
+スクロールの設定(html上ではdiv#baseの子要素)
+}
+てやっている状態の時に
+ｘ div#scroll table thead ・・・これだとscroll定義されたdivの影響下(間違って無くね？)
+◯ div#base table thead ・・・これだと基準divの位置を基準にして正しく表示される。
+div#scrollは#baseの子要素なんだから問題無いだろうと思ってて、開発者ツールとかで確認すると
+意図する位置にいるのに表示されない状態。cssからすると、htmlどう書かれているか知ったこっちゃない
+ってことなんだろうね。css上でキチンとどこの配下の何の要素か書いてあげないといけんというこってす。
+そうそう、tableのheaderとbodyを分けるとheaderとbodyでtdの幅が合わなくなる事がある(内容次第)ので
+javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせるって事も必要です。固定幅じゃない場合。
+最終的な見本を下に(htmlはめんどうなので載せてません)</description>
     </item>
     
     <item>
       <title>JavaのDWRって何さ　設定メモ</title>
-      <link>http://tech.k-zak.com/2011/04/13/java-dwr</link>
+      <link>http://tech.k-zak.com/2011/04/13/java-dwr/</link>
       <pubDate>Wed, 13 Apr 2011 19:26:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/13/java-dwr</guid>
-      <description>&lt;div&gt;
-  JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。
-&lt;/div&gt;
-
-&lt;div&gt;
-  原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを
-&lt;/div&gt;
-
-&lt;div&gt;
-  作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで
-&lt;/div&gt;
-
-&lt;div&gt;
-  構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。
-&lt;/div&gt;
-
-&lt;div&gt;
-  とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを
-&lt;/div&gt;
-
-&lt;div&gt;
-  簡単にJavaScript上で扱う仕組み？な感じ。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  参考URL：
-&lt;/div&gt;
-
-&lt;div&gt;
-  DWRのサイト　&lt;a href=&#34;http://directwebremoting.org/dwr/index.html&#34;&gt;http://directwebremoting.org/dwr/index.html&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  2007の@ITの記事　&lt;a href=&#34;http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html&#34;&gt;http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  具体的な手順の説明
-&lt;/div&gt;
-
-&lt;div&gt;
-  １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　落とす。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　２つを入れる。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　あと、このクラスの定義のパッケージは何でも良い。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも
-&lt;/div&gt;
-
-&lt;div&gt;
-        良い。この時、実在しない(dwr.jarが自動生成する)JSを&lt;script&gt;タグに書いておく
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　※説明たるいので、サイトとか参照して下さい。
-&lt;/div&gt;
-
-&lt;div&gt;
-  　　どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。
-&lt;/div&gt;
-
-&lt;div&gt;
-  ５，dwr用のxmlとweb.xmlに必要情報を定義。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  これでもう終わりのはずだったんだけど、動かない。
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  原因は冒頭で書いた、DWRを動かすための必要なパッケージを間違った作り方してた。
-&lt;/div&gt;
-
-&lt;div&gt;
-  パッケージを作ることは必要だけど、中身はいらない。
-&lt;/div&gt;
-
-&lt;div&gt;
-  おそらく、パッケージ内が空なのはどこにも書いてなかったけど必要なようだ。
-&lt;/div&gt;
-</description>
+      <guid>http://tech.k-zak.com/2011/04/13/java-dwr/</guid>
+      <description>JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。   原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを   作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。     アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？     DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで   構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。   とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを   簡単にJavaScript上で扱う仕組み？な感じ。     参考URL：   DWRのサイト　http://directwebremoting.org/dwr/index.html   2007の@ITの記事　http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html     具体的な手順の説明   １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を   落とす。   ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル   ２つを入れる。   ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな   あと、このクラスの定義のパッケージは何でも良い。   ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも   良い。この時、実在しない(dwr.jarが自動生成する)JSをタグに書いておく   ※説明たるいので、サイトとか参照して下さい。   どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。   ５，dwr用のxmlとweb.</description>
     </item>
     
   </channel>

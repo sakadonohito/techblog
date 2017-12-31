@@ -23,18 +23,37 @@
 	<div class="main-contents">
 		<article class="main-content">
 			<header>
-				<h1>コーディングリハビリ05</h1>
+				<h1>コーディングリハビリ06</h1>
 				<ul class="horizontal-list-over767">
 					<li>Published: 2013年12月08日</li>
 				</ul>
 				<p>Category:  <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a> </p>
 			</header>
 			<section>
-				<p><p>昨日の文字チェックをPHP以外で試す。</p>
+				<p><p>リハビリその3</p>
 
-<p>与えられた文字列が全てユニークな文字で構成されているかのチェック。</p>
+<p>今回は、バブルソート</p>
 
-<p>PHPは前回やっているので、今回は掲載無し。</p>
+<p>PHPでは、</p>
+
+<pre lang="php" toggle="no">&lt;?php 
+$num = trim(fgets(STDIN));
+
+$num = ($num)?(int)$num:10;
+
+$arr = array(1);
+for($i=0;$i&lt;$num;$i++){
+
+    $len = count($arr);
+    $tmp = array(1);
+    for($j=0;$j&lt;$len-1;$j++){
+        array_push($tmp,$arr[$j]+$arr[$j+1]);
+    }
+    array_push($tmp,1);
+    $arr = $tmp;
+    echo join(',',$arr)."\n";
+}
+?&gt;</pre>
 
 <p>Perlでは、</p>
 
@@ -43,47 +62,37 @@
 use strict;
 use warnings;
 
-sub check_unique{
-     my $str = shift;
-     my $len = length($str);
-     for(my $i=0;$i&lt;$len;$i++){
-         my $char = substr($str,$i);
-         if(index($str,$char) != rindex($str,$char)){
-             return "False";
-         }
-     }
-     return "True";
+my $num = &lt;STDIN&gt;;
+chomp($num);
+
+$num ||= 10;
+
+my @list = (1);
+
+for(my $i=0;$i&lt;$num;$i++){
+    my $len = @list;
+    my @tmp = (1);
+    for(my $j=0;$j&lt;$len-1;$j++){
+        push(@tmp,$list[$j]+$list[$j+1]);
+    }
+    push(@tmp,1);
+    @list = @tmp;
+    print join(',',@list)."\n";
 }
-
-my $input = '1234567890-=\`!@#$%^&*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:"asdfghjkl;\'zxcvbnm,./ZXCVBNM&lt;&gt;?';
-#my $input = &lt;STDIN&gt;;
-#chomp($input);
-
-print check_unique($input)."\n";</pre>
+</pre>
 
 <p>Pythonでは、</p>
 
 <pre lang="py" toggle="no">#!/usr/bin/python
-#--*-- coding: utf-8 --*--
 
-import datetime
-
-def check_unique(str):
-
-    set_str = set(list(str))
-    if len(str) == len(set_str):
-        return True
-    else:
-        return False
-
-if __name__ == "__main__":
-
-    input_str = '1234567890-=\`!@#$%^&*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:"asdfghjkl;\'zxcvbnm,./ZXCVBNM&lt;&gt;?'
-    #input_str = raw_input()
-    start_time = datetime.datetime.now().microsecond
-    print check_unique(input_str)
-    end_time = datetime.datetime.now().microsecond
-    print "%f" % (end_time - start_time)
+if __name__ == '__main__':
+    num = raw_input()
+    num = int(num) if num else 10
+    l = [1]
+    print l
+    for i in range(num):
+        l = map(lambda x,y:x+y,[0]+l,l+[0])
+        print l
 </pre>
 
 <p>Rubyでは、</p>
@@ -91,31 +100,24 @@ if __name__ == "__main__":
 <pre lang="ruby" toggle="no">#!/usr/bin/ruby
 #--*-- coding: utf-8 --*--
 
-def check_unique(str)
-
-    #インデックス最大値=文字の長さ-1
-    for i in 0..str.length-1
-        unless str.index(str[i].to_s) == str.rindex(str[i].to_s) then
-            return false
-        end
-    end
-    return true
-end
-
-_input = '1234567890-=\`!@#$%^&*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:"asdfghjkl;\'zxcvbnm,./ZXCVBNM&lt;&gt;?'
-
-puts check_unique(_input)
+num = gets.to_i
+num ||= 10
+a=[1]
+num.times{
+    a=[1]+a.zip(a.slice(1..(a.size))).map{|a,b| a.to_i+b.to_i}
+    p a.join(' ')
+}
 </pre>
 
-<p>文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。</p>
+<p>習熟度が低いのでPerlとPHPが同じ内容になる。</p>
 
-<p>配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。</p>
+<p>pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。</p>
 
-<p>pythonが一番スッキリしているようだけど、やっぱりRubyかな</p>
+<p>すんなり1つのリストだけでできないものか&#8230;&#8230;</p>
 </p>
 			</section>
 			<footer>
-				<p>tags:  <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>,  <a href="http://tech.k-zak.com/tags/python/">#Python</a>,  <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>, </p>
+				<p>tags:  <a href="http://tech.k-zak.com/tags/perl/">#Perl</a>,  <a href="http://tech.k-zak.com/tags/php/">#PHP</a>,  <a href="http://tech.k-zak.com/tags/python/">#Python</a>,  <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>, </p>
 			</footer>
 		</article>
 	</div>
@@ -127,11 +129,11 @@ puts check_unique(_input)
 			<p>Categories</p>
 			<ul>
 				
-				<li><a href="http://tech.k-zak.com/categories/setting-construction">setting-construction</a>(36)</li>
+				<li><a href="http://tech.k-zak.com/categories/setting-construction">setting-construction</a>(37)</li>
 				
-				<li><a href="http://tech.k-zak.com/categories/study-daily">study-daily</a>(79)</li>
+				<li><a href="http://tech.k-zak.com/categories/study-daily">study-daily</a>(91)</li>
 				
-				<li><a href="http://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(5)</li>
+				<li><a href="http://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(6)</li>
 				
 			</ul>
 		</section>
@@ -139,11 +141,17 @@ puts check_unique(_input)
 			<p><a href="http://tech.k-zak.com/tags/">Tags</a></p>
 			<ul>
 				
-				<li><a href="http://tech.k-zak.com/tags/ansible">ansible</a>(4)</li>
+				<li><a href="http://tech.k-zak.com/tags/ansible">ansible</a>(5)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/anyenv">anyenv</a>(1)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/apache">apache</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/aws">aws</a>(3)</li>
+				<li><a href="http://tech.k-zak.com/tags/aws">aws</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/aws-lambda">aws-lambda</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/batch">batch</a>(1)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
 				
@@ -151,19 +159,21 @@ puts check_unique(_input)
 				
 				<li><a href="http://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/cakephp">cakephp</a>(2)</li>
+				<li><a href="http://tech.k-zak.com/tags/cakephp">cakephp</a>(3)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/character">character</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/cmd">cmd</a>(1)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/complain">complain</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/css">css</a>(4)</li>
+				<li><a href="http://tech.k-zak.com/tags/css">css</a>(5)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/django">django</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/docker">docker</a>(3)</li>
+				<li><a href="http://tech.k-zak.com/tags/docker">docker</a>(4)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
 				
@@ -185,17 +195,21 @@ puts check_unique(_input)
 				
 				<li><a href="http://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/groovy">groovy</a>(1)</li>
+				<li><a href="http://tech.k-zak.com/tags/golang">golang</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/groovy">groovy</a>(2)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/hugo">hugo</a>(2)</li>
+				<li><a href="http://tech.k-zak.com/tags/html">html</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/hugo">hugo</a>(3)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/iis">iis</a>(1)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/imap">imap</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/java">java</a>(3)</li>
+				<li><a href="http://tech.k-zak.com/tags/java">java</a>(4)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
 				
@@ -209,7 +223,9 @@ puts check_unique(_input)
 				
 				<li><a href="http://tech.k-zak.com/tags/log">log</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mac">mac</a>(1)</li>
+				<li><a href="http://tech.k-zak.com/tags/lolipopcloud">lolipopcloud</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/mac">mac</a>(2)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
 				
@@ -231,11 +247,17 @@ puts check_unique(_input)
 				
 				<li><a href="http://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
 				
+				<li><a href="http://tech.k-zak.com/tags/node.js">node.js</a>(1)</li>
+				
 				<li><a href="http://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/oracle">oracle</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/otrs">otrs</a>(1)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/perl">perl</a>(12)</li>
+				<li><a href="http://tech.k-zak.com/tags/perl">perl</a>(13)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/php">php</a>(21)</li>
 				
@@ -243,33 +265,57 @@ puts check_unique(_input)
 				
 				<li><a href="http://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
 				
+				<li><a href="http://tech.k-zak.com/tags/powershell">powershell</a>(2)</li>
+				
 				<li><a href="http://tech.k-zak.com/tags/python">python</a>(15)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/rails">rails</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/rbenv">rbenv</a>(1)</li>
+				<li><a href="http://tech.k-zak.com/tags/rbenv">rbenv</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/react">react</a>(1)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/redux">redux</a>(1)</li>
+				<li><a href="http://tech.k-zak.com/tags/redux">redux</a>(2)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/s3">s3</a>(1)</li>
 				
+				<li><a href="http://tech.k-zak.com/tags/selenium">selenium</a>(1)</li>
+				
 				<li><a href="http://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/socket.io">socket.io</a>(1)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
 				
+				<li><a href="http://tech.k-zak.com/tags/swift">swift</a>(1)</li>
+				
 				<li><a href="http://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/terraform">terraform</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/typescript">typescript</a>(1)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/vagrant">vagrant</a>(2)</li>
+				<li><a href="http://tech.k-zak.com/tags/vagrant">vagrant</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/wordpress">wordpress</a>(3)</li>
+				<li><a href="http://tech.k-zak.com/tags/vscode">vscode</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/webpack">webpack</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/windowsserver">windowsserver</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/wkhtmltopdf">wkhtmltopdf</a>(1)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/wordpress">wordpress</a>(4)</li>
+				
+				<li><a href="http://tech.k-zak.com/tags/xcode">xcode</a>(1)</li>
 				
 				<li><a href="http://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
 				

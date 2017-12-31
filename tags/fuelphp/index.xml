@@ -2,239 +2,137 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fuelphp on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/fuelphp/index.xml</link>
+    <link>http://tech.k-zak.com/tags/fuelphp/</link>
     <description>Recent content in Fuelphp on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/fuelphp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Aug 2014 15:34:29 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/fuelphp/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>PHPあべし！</title>
-      <link>http://tech.k-zak.com/2014/08/02/spec-php5.5</link>
+      <link>http://tech.k-zak.com/2014/08/02/spec-php5.5/</link>
       <pubDate>Sat, 02 Aug 2014 15:34:29 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/spec-php5.5</guid>
-      <description>&lt;p&gt;最近PHP触ってて「あべし！」ってなった事。&lt;/p&gt;
-
-&lt;p&gt;PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。&lt;/p&gt;
-
-&lt;p&gt;愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2014/08/02/spec-php5.5/</guid>
+      <description>最近PHP触ってて「あべし！」ってなった事。
+PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。
+愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。</description>
     </item>
     
     <item>
       <title>FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</title>
-      <link>http://tech.k-zak.com/2013/11/13/trouble-charset</link>
+      <link>http://tech.k-zak.com/2013/11/13/trouble-charset/</link>
       <pubDate>Wed, 13 Nov 2013 15:27:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/11/13/trouble-charset</guid>
-      <description>
-
-&lt;p&gt;FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、&lt;/p&gt;
-
-&lt;h2 id=&#34;windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている&#34;&gt;Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！&lt;/h2&gt;
-
-&lt;p&gt;(PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)&lt;/p&gt;
-
-&lt;p&gt;→アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。&lt;/p&gt;
-
-&lt;p&gt;FuelPHPのUpload::save()を行う前に&lt;/p&gt;
-
-&lt;p&gt;ってやってアップロードファイル名をエンコードする。&lt;/p&gt;
-
-&lt;p&gt;弊害としては本来は内部エンコードのまま処理が進むはずだったので、同名ファイルが有る場合に枝番を付加する処理なんかが正常に動作しなくなる。&lt;/p&gt;
-
-&lt;p&gt;これでWindowsサーバーのフォルダに読める文字のファイル名でアップロードされる。&lt;/p&gt;
-
-&lt;p&gt;最初エンコードをSJISにしてたけど、CP932にしたら、①みたいなMS拡張の機種依存文字も大丈夫になった。&lt;/p&gt;
-
-&lt;p&gt;本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも 　　&lt;/p&gt;
-
-&lt;pre&gt;Upload::register(&#39;after&#39;,function($file){
- 　　　　文字化け状態のファイルをエンコードしなおしたファイル名でリネーム 　　
-})
-&lt;/pre&gt;
-
-&lt;p&gt;とかやったら良かったのかな？&lt;/p&gt;
-
-&lt;h2 id=&#34;文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け&#34;&gt;文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け！&lt;/h2&gt;
-
-&lt;p&gt;(ま、そりゃそうですね)&lt;/p&gt;
-
-&lt;p&gt;→上記１の結果を受けてメール送信のメソッドに引数として添付ファイル名を渡す。その処理は何も加工しない。&lt;/p&gt;
-
-&lt;p&gt;メール送信用のメソッドの中で、引数で受け取った添付ファイル名をFuelPHPのmailに渡す処理を加工&lt;/p&gt;
-
-&lt;p&gt;それでも、メールヘッダがISO-2022-JPなので、機種依存文字の類はメールを受信した時に「?」とかになってるけど、それはしょうがないよね。&lt;/p&gt;
-
-&lt;h2 id=&#34;メールの件名が文字化けすることがある&#34;&gt;メールの件名が文字化けすることがある！&lt;/h2&gt;
-
-&lt;p&gt;→犯人は半角カナ。使わないで！件名はFuelPHP側で送信時にISO-2022-JPに変換してるっぽいので、mb_convert_kana関数使って件名に含まれている半角カナを全角に変換して誤魔化す。&lt;/p&gt;
-
-&lt;p&gt;以上、うんこメモでした。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/11/13/trouble-charset/</guid>
+      <description>FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、
+Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！ (PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)
+→アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。
+FuelPHPのUpload::save()を行う前に
+ってやってアップロードファイル名をエンコードする。
+弊害としては本来は内部エンコードのまま処理が進むはずだったので、同名ファイルが有る場合に枝番を付加する処理なんかが正常に動作しなくなる。
+これでWindowsサーバーのフォルダに読める文字のファイル名でアップロードされる。
+最初エンコードをSJISにしてたけど、CP932にしたら、①みたいなMS拡張の機種依存文字も大丈夫になった。
+本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも Upload::register(&#39;after&#39;,function($file){ 文字化け状態のファイルをエンコードしなおしたファイル名でリネーム })  とかやったら良かったのかな？
+文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け！ (ま、そりゃそうですね)
+→上記１の結果を受けてメール送信のメソッドに引数として添付ファイル名を渡す。その処理は何も加工しない。
+メール送信用のメソッドの中で、引数で受け取った添付ファイル名をFuelPHPのmailに渡す処理を加工
+それでも、メールヘッダがISO-2022-JPなので、機種依存文字の類はメールを受信した時に「?」とかになってるけど、それはしょうがないよね。
+メールの件名が文字化けすることがある！ →犯人は半角カナ。使わないで！件名はFuelPHP側で送信時にISO-2022-JPに変換してるっぽいので、mb_convert_kana関数使って件名に含まれている半角カナを全角に変換して誤魔化す。
+以上、うんこメモでした。</description>
     </item>
     
     <item>
       <title>fuelphp使って分からなかったこと</title>
-      <link>http://tech.k-zak.com/2013/08/25/challenge-fuelphp</link>
+      <link>http://tech.k-zak.com/2013/08/25/challenge-fuelphp/</link>
       <pubDate>Sun, 25 Aug 2013 12:51:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/challenge-fuelphp</guid>
-      <description>&lt;p&gt;fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな&lt;/p&gt;
-
-&lt;p&gt;感じなんですけど。&lt;/p&gt;
-
-&lt;p&gt;以下に分からなかったことなど&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;１，modelの検索メソッドがクラスメソッド&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;検索条件を検索メソッドに渡してレコードオブジェクトを受け取るんだから別に&lt;/p&gt;
-
-&lt;p&gt;インスタンスメソッドである必要はないんだけど、じゃぁ返ってきたモノは&lt;/p&gt;
-
-&lt;p&gt;ただの連想配列なのかモデルオブジェクトの塊なのか&amp;#8230;&lt;/p&gt;
-
-&lt;p&gt;昔、Javaを少し自習した時にレコードオブジェクトのクラスとオブジェクトの塊を保持する&lt;/p&gt;
-
-&lt;p&gt;クラスが別になる書き方があって、自分にはその方がしっくり来るんだけど、多分塊を保持&lt;/p&gt;
-
-&lt;p&gt;するクラスが余計っていう考えなのだろうか。&lt;/p&gt;
-
-&lt;p&gt;何にしっくりこないかというと、モデルクラスの1インスタンスが1レコードオブジェクトなのか&lt;/p&gt;
-
-&lt;p&gt;その塊(1個以上)が1インスタンスなのかという事。&lt;/p&gt;
-
-&lt;p&gt;Model_Crudのメソッド見てるとhas_next()とかあるから、1個以上のレコードオブジェクトを&lt;/p&gt;
-
-&lt;p&gt;保持するイテレータオブジェクトが1インスタンスなのかなーって思う。でもそうすると、fuelphp&lt;/p&gt;
-
-&lt;p&gt;においては1レコードオブジェクトってのは1モデルインスタンスが保持するただの連想配列なのか&lt;/p&gt;
-
-&lt;p&gt;な？&lt;/p&gt;
-
-&lt;p&gt;このあたりは、PHPの他のフレームワーク勉強したり他の言語のフレームワーク勉強していくしか&lt;/p&gt;
-
-&lt;p&gt;ないかな。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;２，FieldSetクラスという便利なものの中のcheckboxの名前の付け方&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;これは多分自分の学習が足りないだけなんだと思うけど、PHPでinputフォームのチェックボックス&lt;/p&gt;
-
-&lt;p&gt;を複数用意する時、name属性をname=&amp;#8221;◯◯[]&amp;#8221;とかにして受け取ったPHPで値を配列で扱うんだけ&lt;/p&gt;
-
-&lt;p&gt;ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=&amp;#8221;◯◯[i]&amp;#8221;って[]の中&lt;/p&gt;
-
-&lt;p&gt;に数字を入れてくるんです。受け取るPHP側では配列として受け取れるぽいんだけど、fuelphpの&lt;/p&gt;
-
-&lt;p&gt;Validationでこのチェックボックスグループらのどれか1つにはチェックしていること！みたいな&lt;/p&gt;
-
-&lt;p&gt;事が出来ない。あと、jQueryのvalidationプラグインが動かない。別のものとして扱ってしまう。&lt;/p&gt;
-
-&lt;p&gt;core/classes/foeldset/の中にあるファイルのcheckboxのフォームの名前属性を作る部分を直接&lt;/p&gt;
-
-&lt;p&gt;書き換えて(本当はappフォルダにコピーするべき)使っている。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;３，FieldSetオブジェクトのフォームオブジェクトのラベル出力の時に出力されるラベル要素に&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;クラス(htmlのclass)を追加する手段が分からない。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;こいつ、checkboxやradioのグループ出力する場合は&lt;label&gt;タグ出力しないんだぜ。意味不明。&lt;br /&gt; 親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。&lt;/label&gt;&lt;/p&gt;
-
-&lt;p&gt;やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用&lt;/p&gt;
-
-&lt;p&gt;されなくて、仕方なく、requiredの場合出力されるデフォルト「*」のやつを「(必須)」てかえて&lt;/p&gt;
-
-&lt;p&gt;それを赤字にした(requiredの時に出力される奴はlabel要素外)。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;４，単にどこに何を書くかがまだ理解できていない。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;controllerのactionメソッド内にloginチェックの詳細処理を書いてるんだけど、そこは外に&lt;/p&gt;
-
-&lt;p&gt;切り出すべきなんじゃないの？とかactionメソッド内でのみ使う提携処理＆ちょっと複雑みたいな&lt;/p&gt;
-
-&lt;p&gt;のは外に切り出すべきなんだろうけど、それは別のcomponentクラスとかにクラスメソッドとして&lt;/p&gt;
-
-&lt;p&gt;出すべきなのか、同じcontrollクラスのprivateメソッドとして切り出すべきなのか。今は別の&lt;/p&gt;
-
-&lt;p&gt;クラスでも使う汎用的なものはcomponentクラスに、特定のactionメソッドからのみ呼び出すよう&lt;/p&gt;
-
-&lt;p&gt;なものは同じクラス内のprivateメソッドにしてる。actionメソッド内の記述がシンプルになれば&lt;/p&gt;
-
-&lt;p&gt;privateメソッド増産してcontrollerクラス内の行数は多くても良いのか、別クラスにどんどん&lt;/p&gt;
-
-&lt;p&gt;出していくべきなのか。でも、publicにしたくないメソッドとかあるんですよ。&lt;/p&gt;
-
-&lt;p&gt;あとはやっぱりmodelとViewModelとView。検索して取り出したレコードオブジェクトを展開する&lt;/p&gt;
-
-&lt;p&gt;のはViewModelなのかViewでやるのか、Pagenationは？formオブジェクトにデータぶっこむのは？&lt;/p&gt;
-
-&lt;p&gt;とか分からんですし、ViewModelとViewの連携のさせ方とかまだ理解できていない。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;５，やっぱりPHPのクロージャの使い所が分からない&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptは分かるんですよ。callbackとかその時だけの処理をそこに直接書くとか、function&lt;/p&gt;
-
-&lt;p&gt;定義しちゃうとグローバル領域にはいっちゃうから変数の中にいれといて、特定の処理の時に呼び出す&lt;/p&gt;
-
-&lt;p&gt;とかね。&lt;/p&gt;
-
-&lt;p&gt;でもPHPてクラスメソッドとかインスタンスメソッドとか定義してるわけじゃないですか、だから&lt;/p&gt;
-
-&lt;p&gt;JavaScriptと同じ用途ってない気がして&amp;#8230;ちょっとだけViewファイルの中で書いたりもしたけれど、&lt;/p&gt;
-
-&lt;p&gt;Helper作る程でもない処理専用って事？後は再帰定義のcallbaclくらい？よく分からんです。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/08/25/challenge-fuelphp/</guid>
+      <description>fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな
+感じなんですけど。
+以下に分からなかったことなど
+１，modelの検索メソッドがクラスメソッド
+検索条件を検索メソッドに渡してレコードオブジェクトを受け取るんだから別に
+インスタンスメソッドである必要はないんだけど、じゃぁ返ってきたモノは
+ただの連想配列なのかモデルオブジェクトの塊なのか&amp;#8230;
+昔、Javaを少し自習した時にレコードオブジェクトのクラスとオブジェクトの塊を保持する
+クラスが別になる書き方があって、自分にはその方がしっくり来るんだけど、多分塊を保持
+するクラスが余計っていう考えなのだろうか。
+何にしっくりこないかというと、モデルクラスの1インスタンスが1レコードオブジェクトなのか
+その塊(1個以上)が1インスタンスなのかという事。
+Model_Crudのメソッド見てるとhas_next()とかあるから、1個以上のレコードオブジェクトを
+保持するイテレータオブジェクトが1インスタンスなのかなーって思う。でもそうすると、fuelphp
+においては1レコードオブジェクトってのは1モデルインスタンスが保持するただの連想配列なのか
+な？
+このあたりは、PHPの他のフレームワーク勉強したり他の言語のフレームワーク勉強していくしか
+ないかな。
+２，FieldSetクラスという便利なものの中のcheckboxの名前の付け方
+これは多分自分の学習が足りないだけなんだと思うけど、PHPでinputフォームのチェックボックス
+を複数用意する時、name属性をname=&amp;#8221;◯◯[]&amp;#8221;とかにして受け取ったPHPで値を配列で扱うんだけ
+ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=&amp;#8221;◯◯[i]&amp;#8221;って[]の中
+に数字を入れてくるんです。受け取るPHP側では配列として受け取れるぽいんだけど、fuelphpの
+Validationでこのチェックボックスグループらのどれか1つにはチェックしていること！みたいな
+事が出来ない。あと、jQueryのvalidationプラグインが動かない。別のものとして扱ってしまう。
+core/classes/foeldset/の中にあるファイルのcheckboxのフォームの名前属性を作る部分を直接
+書き換えて(本当はappフォルダにコピーするべき)使っている。
+３，FieldSetオブジェクトのフォームオブジェクトのラベル出力の時に出力されるラベル要素に
+クラス(htmlのclass)を追加する手段が分からない。
+こいつ、checkboxやradioのグループ出力する場合はタグ出力しないんだぜ。意味不明。
+親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。
+やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用
+されなくて、仕方なく、requiredの場合出力されるデフォルト「*」のやつを「(必須)」てかえて
+それを赤字にした(requiredの時に出力される奴はlabel要素外)。
+４，単にどこに何を書くかがまだ理解できていない。
+controllerのactionメソッド内にloginチェックの詳細処理を書いてるんだけど、そこは外に
+切り出すべきなんじゃないの？とかactionメソッド内でのみ使う提携処理＆ちょっと複雑みたいな
+のは外に切り出すべきなんだろうけど、それは別のcomponentクラスとかにクラスメソッドとして
+出すべきなのか、同じcontrollクラスのprivateメソッドとして切り出すべきなのか。今は別の
+クラスでも使う汎用的なものはcomponentクラスに、特定のactionメソッドからのみ呼び出すよう
+なものは同じクラス内のprivateメソッドにしてる。actionメソッド内の記述がシンプルになれば
+privateメソッド増産してcontrollerクラス内の行数は多くても良いのか、別クラスにどんどん
+出していくべきなのか。でも、publicにしたくないメソッドとかあるんですよ。
+あとはやっぱりmodelとViewModelとView。検索して取り出したレコードオブジェクトを展開する
+のはViewModelなのかViewでやるのか、Pagenationは？formオブジェクトにデータぶっこむのは？
+とか分からんですし、ViewModelとViewの連携のさせ方とかまだ理解できていない。
+５，やっぱりPHPのクロージャの使い所が分からない
+JavaScriptは分かるんですよ。callbackとかその時だけの処理をそこに直接書くとか、function
+定義しちゃうとグローバル領域にはいっちゃうから変数の中にいれといて、特定の処理の時に呼び出す
+とかね。
+でもPHPてクラスメソッドとかインスタンスメソッドとか定義してるわけじゃないですか、だから
+JavaScriptと同じ用途ってない気がして&amp;#8230;ちょっとだけViewファイルの中で書いたりもしたけれど、
+Helper作る程でもない処理専用って事？後は再帰定義のcallbaclくらい？よく分からんです。</description>
     </item>
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</link>
+      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks</guid>
-      <description>&lt;p&gt;ここ最近はフレームワークを少し触ってる。&lt;/p&gt;
-
-&lt;p&gt;Perl：Mojolicious::Lite&lt;/p&gt;
-
-&lt;p&gt;→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に&lt;/p&gt;
-
-&lt;p&gt;各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/&lt;/p&gt;
-
-&lt;p&gt;layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。&lt;/p&gt;
-
-&lt;p&gt;このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;Ruby：Sinatra&lt;/p&gt;
-
-&lt;p&gt;→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか&lt;/p&gt;
-
-&lt;p&gt;ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。&lt;/p&gt;
-
-&lt;p&gt;これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;PHP：FuelPHP&lt;/p&gt;
-
-&lt;p&gt;→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。&lt;/p&gt;
-
-&lt;p&gt;これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや&lt;/p&gt;
-
-&lt;p&gt;コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは&lt;/p&gt;
-
-&lt;p&gt;public/assetsて階層に配置するんですね。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。&lt;/p&gt;
-
-&lt;p&gt;OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート&lt;/p&gt;
-
-&lt;p&gt;出来ないとかで&amp;#8230;&amp;#8230;&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <description>ここ最近はフレームワークを少し触ってる。
+Perl：Mojolicious::Lite
+→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
+各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
+layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
+このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
+&amp;nbsp;
+Ruby：Sinatra
+→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
+ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
+これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
+&amp;nbsp;
+PHP：FuelPHP
+→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
+これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
+コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
+public/assetsて階層に配置するんですね。
+&amp;nbsp;
+PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
+OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
+出来ないとかで&amp;#8230;&amp;#8230;</description>
     </item>
     
   </channel>

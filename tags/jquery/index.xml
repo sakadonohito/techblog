@@ -2,40 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jquery on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/jquery/index.xml</link>
+    <link>http://tech.k-zak.com/tags/jquery/</link>
     <description>Recent content in Jquery on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://tech.k-zak.com/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Aug 2013 04:50:50 +0000</lastBuildDate>
+    
+	<atom:link href="http://tech.k-zak.com/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>jQueryでまた使い方忘れて調べそうなやつらメモ</title>
-      <link>http://tech.k-zak.com/2013/08/25/jquery-memo</link>
+      <link>http://tech.k-zak.com/2013/08/25/jquery-memo/</link>
       <pubDate>Sun, 25 Aug 2013 04:50:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/jquery-memo</guid>
-      <description>&lt;p&gt;gistベタ貼りじゃ！&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/08/25/jquery-memo/</guid>
+      <description>gistベタ貼りじゃ！</description>
     </item>
     
     <item>
       <title>jQueryで要素の高さを変える</title>
-      <link>http://tech.k-zak.com/2013/08/25/jquery-toggle</link>
+      <link>http://tech.k-zak.com/2013/08/25/jquery-toggle/</link>
       <pubDate>Sun, 25 Aug 2013 04:47:47 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/jquery-toggle</guid>
-      <description>&lt;p&gt;まぁ、アレですよ。よかれと思って表示非表示をトグルする要素作ったら、&lt;/p&gt;
-
-&lt;p&gt;非表示にした分、開いたスペースだけ下にあるリスト(table)要素の高さ広げてよ&lt;/p&gt;
-
-&lt;p&gt;っていうオマケに品質求めちゃう的な要望があったわけですよ。&lt;/p&gt;
-
-&lt;p&gt;jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、今要素をたたんでいるのか&lt;/p&gt;
-
-&lt;p&gt;広げてるのか分からないのでis(&amp;#8220;:hidden&amp;#8221;)なんてのを使って調べるわけですね。&lt;/p&gt;
-
-&lt;p&gt;だったらshow()とhide()使っても良くね？的な。&lt;/p&gt;
-</description>
+      <guid>http://tech.k-zak.com/2013/08/25/jquery-toggle/</guid>
+      <description>まぁ、アレですよ。よかれと思って表示非表示をトグルする要素作ったら、
+非表示にした分、開いたスペースだけ下にあるリスト(table)要素の高さ広げてよ
+っていうオマケに品質求めちゃう的な要望があったわけですよ。
+jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、今要素をたたんでいるのか
+広げてるのか分からないのでis(&amp;#8220;:hidden&amp;#8221;)なんてのを使って調べるわけですね。
+だったらshow()とhide()使っても良くね？的な。</description>
     </item>
     
   </channel>
