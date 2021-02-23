@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 21 Mar 2017 23:52:11 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/complain/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Agile and Sprint myself</title>
-      <link>https://tech.k-zak.com/2017/03/21/agile-and-sprint-myself/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-21-thinkagailemyself/</link>
       <pubDate>Tue, 21 Mar 2017 23:52:11 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/21/agile-and-sprint-myself/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-21-thinkagailemyself/</guid>
       <description>自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい と、言うことです。
 覚えたいこと、挑戦したいことを目標とするはいいけど、いつまでたっても着手しなかったり遅々として進まなかったりするので優先順位をつけて期限を設けて手中して取り組んでいけば少しは結果が変わってくると信じたい。
 現在の目標  ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) AWSの機能のだいたいを触って感覚を掴んでおきたい Microsoft Azureを触ってAWSとの違いを掴んでおきたい GCC？を以下略 Blumixに挑戦したい FreeBSDを構築したい Alpineを構築して慣れたい Ansibleを一通り触っていろいろできるよういなりたい Dockerをある程度使えるようになりたい IPv6の学習と擬似ネットワークの構築してみたい VPNの設定をGUIじゃなくても設定できるようになりたい VyOS？を試してみたい Shell及びAWKを覚えたい Powershellを覚えたい dot net C#を覚えたい Javaを覚えたい Androidを覚えたい Swiftを覚えたい JavaScriptをもっと使いこなせるようになりmたい Perl6/Perl5を使えるようになりたい PHP7を覚えたい PHPのフレームワーク、Laravelを覚えたい Nginxに組み込むLuaを少し試したい Ruby/Railsを覚えたい Python3をもう少し使えるようになりたい Scalaちょっと覚えたい Lispわかるようになりたい Clojure書けるようになりたい Haskell読めるようになりたい F#ちょっとしたものなら書けるようになりたい ActiveDirectory/OpenDirectoryがわかるようになりたい。 Golang書けるようになりたい Makerel試したい Erlang読み書きできるようになりたい Elasticsearch扱えるようになりたい Neo4j試したい MongoDB試したい DynamoDB試したい Redis扱えるようになりたい  とっても曖昧なものが多い。。
@@ -23,10 +23,10 @@
     
     <item>
       <title>再始動</title>
-      <link>https://tech.k-zak.com/2017/02/18/restart/</link>
+      <link>https://tech.k-zak.com/posts/restart/</link>
       <pubDate>Sat, 18 Feb 2017 23:26:18 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/18/restart/</guid>
+      <guid>https://tech.k-zak.com/posts/restart/</guid>
       <description>ブログ引越して再始動 &amp;hellip;の予定
 再始動 契約していたレンタルサーバーを解約して、長らく契約するも放置状態が続いていたVPSにいろいろ引っ越そうと検討。
 ついでにいろいろ構成などを再検討してやり直そうと考えました。
@@ -41,10 +41,10 @@ VPSサーバーの設定やHugoについて 後日、それぞれ別の記事に
     
     <item>
       <title>なんとか再開したい</title>
-      <link>https://tech.k-zak.com/2013/08/24/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 24 Aug 2013 16:16:57 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/24/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>memo的な感じで再開したい。
 でもその前にWordPressの勉強をしなおして、改良してから再開したい。
 当面はメモはEvernoteにとどめておくしか無いかな。</description>
@@ -52,10 +52,10 @@ VPSサーバーの設定やHugoについて 後日、それぞれ別の記事に
     
     <item>
       <title>現状整理</title>
-      <link>https://tech.k-zak.com/2012/09/30/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 30 Sep 2012 12:19:52 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/09/30/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>現状の整理。ちっとも進まない。。
 開発環境：
 ・開発環境のOSはOSX 10.8にアップグレード
@@ -81,10 +81,10 @@ VPSサーバーの設定やHugoについて 後日、それぞれ別の記事に
     
     <item>
       <title>趣旨変え</title>
-      <link>https://tech.k-zak.com/2012/05/20/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 20 May 2012 09:38:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/05/20/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>ここのブログの内容の趣旨を変えました。
 元々のネタはBlogger？Googleのところに移動。
 ここは元々MTで少しやってた勉強メモに変更。それに伴いMTでからデータも適当に移行。</description>

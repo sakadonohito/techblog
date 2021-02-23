@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 24 Apr 2017 13:48:14 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/categories/setting-construction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>setting ntp on Ubuntu</title>
-      <link>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-24-ntp/</link>
       <pubDate>Mon, 24 Apr 2017 13:48:14 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-24-ntp/</guid>
       <description>EC2のUbuntu14.04にntpを設定 事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。
 エラー内容はInvalidSigunatureException なんかタイムスタンプが早すぎるみたいなエラー内容。
 Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。 タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。
@@ -30,10 +30,10 @@ sudo timedatectl set-timezone Asia/Tokyo これでOK</description>
     
     <item>
       <title>docker reinstall</title>
-      <link>https://tech.k-zak.com/2017/03/28/docker-reinstall/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-28-docker/</link>
       <pubDate>Tue, 28 Mar 2017 23:57:46 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/28/docker-reinstall/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-28-docker/</guid>
       <description>Dockerを再インストールした Dockerが全然触らないうちにどんどん進化していってしまったので、一旦アンインストールして、入れ直した。
 環境はmacOS 10.11 えるかぴたん
 やったこと  docker-machine(boot2docker)の中身を全て削除  docker-machine rm defaultとか   docker-machineを完全削除するらしいツールを使って削除実行 Virtualboxを確認して環境が残っていないか確認 .bash_profileに記述していた環境変数設定を削除 homeディレクトリ直下の.dockerみたいな隠し領域も削除 公式から改めてdocker for mac をダウンロードしてインストール ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置  ハマったこと 単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対してdocker -vとかやってエラーを出してた。
@@ -44,10 +44,10 @@ sudo timedatectl set-timezone Asia/Tokyo これでOK</description>
     
     <item>
       <title>Pelicanのレイアウト作成</title>
-      <link>https://tech.k-zak.com/2017/03/20/create-pelican-theme/</link>
+      <link>https://tech.k-zak.com/posts/create-pelican-theme/</link>
       <pubDate>Mon, 20 Mar 2017 18:26:58 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/20/create-pelican-theme/</guid>
+      <guid>https://tech.k-zak.com/posts/create-pelican-theme/</guid>
       <description>Pelicanで使う自分用テーマを作成した 静的サイトジェネレーター用の基本的なブログレイアウトを一つ作っておくと使い回しができると思い、Python製のPelicanから着手することにしてみた。
 結論から言うと、なかなか時間がとれないのもあって、足掛け2ヶ月かかった。
 その1：ベースとなるレイアウトを素組する htmlとCSSのみでできるだけレスポンシブな簡易ブログ用のレイアウトを考えて作った。
@@ -69,10 +69,10 @@ MONTH_ARCHIVE_SAVE_AS = &amp;#39;{date:%Y}/{date:%m}/index.html&amp;#39; 他に�
     
     <item>
       <title>Pelicanを試す</title>
-      <link>https://tech.k-zak.com/2017/02/20/first-pelican/</link>
+      <link>https://tech.k-zak.com/posts/first-pelican/</link>
       <pubDate>Mon, 20 Feb 2017 15:26:44 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/20/first-pelican/</guid>
+      <guid>https://tech.k-zak.com/posts/first-pelican/</guid>
       <description>Python製の静的サイトジェネレーターPelicanを試す Hugo,Hexo,Jekyllと試してきて、せっかくなのでPython製のものも試そうとPelicanを試した。
 インストール mkdir &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; pip install pelican Markdown pelican-quickstart なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。
 記事を書く 記事はcontent以下にreStructuredTextもしくはMarkdownで書きます。 content以下にディレクトリを配置するとそのディレクトリ名がカテゴリ名扱いされるらしい。当分はいいや。 もちろん、カテゴリはテキストファイルないのヘッダー？に記述できますので、カテゴリが必要だからといってディレクトリでわかなければいけないわけではありません。
@@ -82,10 +82,10 @@ pelican content -s pelicanconf.py でoutputディレクトリに静的ファイ�
     
     <item>
       <title>Jekyllを試す</title>
-      <link>https://tech.k-zak.com/2017/02/19/first-jekyll/</link>
+      <link>https://tech.k-zak.com/posts/first-jekyll/</link>
       <pubDate>Sun, 19 Feb 2017 23:22:39 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/19/first-jekyll/</guid>
+      <guid>https://tech.k-zak.com/posts/first-jekyll/</guid>
       <description>Jekyllを試す Ruby製の静的サイトジェネレーターを試してる。
 インストール 以下下記URLを参考にいろいろ試したけど、情報が古くコマンドが変わってた。 参考
 gem install jekyll mkdir _site _posts _site assets mkdir -p assets/css 構造はこんな感じ
@@ -98,10 +98,10 @@ Ruby製だから？ヘルプが分かりやすい。
     
     <item>
       <title>Hexoを試す</title>
-      <link>https://tech.k-zak.com/2017/02/19/first-hexo/</link>
+      <link>https://tech.k-zak.com/posts/first-hexo/</link>
       <pubDate>Sun, 19 Feb 2017 22:21:50 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/19/first-hexo/</guid>
+      <guid>https://tech.k-zak.com/posts/first-hexo/</guid>
       <description>JavaScriptの静的サイトジェネレーターHexoを試す JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。
 インストールと初期設定 npm install -g hexo-cli hexo init &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; npm install hexo server これでHexoがインストールされサイトを開始できる hexe serverで開発用のサーバー起動状態になりhttp://localhost:4000にアクセスできる。
 _config.ymlを編集する。
@@ -115,10 +115,10 @@ Publicファイルの生成 hexo generate これでファイルがpublicフォ�
     
     <item>
       <title>WordPressからHugoへ移行</title>
-      <link>https://tech.k-zak.com/2017/02/19/first-hugo/</link>
+      <link>https://tech.k-zak.com/posts/first-hugo/</link>
       <pubDate>Sun, 19 Feb 2017 00:09:41 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/19/first-hugo/</guid>
+      <guid>https://tech.k-zak.com/posts/first-hugo/</guid>
       <description>開発メモブログをWordPressからHugoへの移行  WordPressから記事をエクスポート Hugoをインストール エクスポートした記事を放り込む  WordPressから記事をエクスポート  WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す  参考    Hugoをインストール brew install hugo hugo new site techblog cd techblog 書き出した記事を放り込む プラグインを使ってエクスポートした記事データはHugoのcontent/postのpostディレクトリ相当のものが吐き出されているので、中身をcontent/post/にぶちまける。
 細かい設定 テーマを入れる 適当なテーマをインストール。今回はPolymer。 themeディレクトリがなかったら作ってその中でgit cloneしたらいいよ。
 config.tomlを編集 title,baseurl,languageCode,theme,paginateを修正する。
@@ -134,19 +134,19 @@ GitHubPagesで公開する  GitHubにリポジトリを追加 hugoコマンド�
     
     <item>
       <title>Oracle Setup</title>
-      <link>https://tech.k-zak.com/2016/11/30/oracle-setup/</link>
+      <link>https://tech.k-zak.com/posts/2016-11-30-oracle-setup/</link>
       <pubDate>Wed, 30 Nov 2016 11:46:20 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2016/11/30/oracle-setup/</guid>
+      <guid>https://tech.k-zak.com/posts/2016-11-30-oracle-setup/</guid>
       <description>Ubuntu14.04にOracle11gを入れる 大まかな手順  必要なものをいれる(unzip, libaio1, unixodbc, alien) oracle download(rpmパッケージだけどな！) /sbin/chkconfigを作ってあげる alienでrpmパッケージをdebに変換 インストール 設定ファイル周りの編集(パスが違うとか、memory_targetの変更とか) hostsに外向けIPとhostnameの対応を追加(一番大事！)  </description>
     </item>
     
     <item>
       <title>嘘でしょう。。。</title>
-      <link>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</link>
+      <link>https://tech.k-zak.com/posts/ubuntu-wifi/</link>
       <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</guid>
+      <guid>https://tech.k-zak.com/posts/ubuntu-wifi/</guid>
       <description>長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。
 実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。
 悩まされていた問題 会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。
@@ -161,10 +161,10 @@ VMのネットワーク設定を「Macと共有」の時は問題なくて「自
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
+      <link>https://tech.k-zak.com/posts/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-fmxj/</guid>
       <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
 https://github.com/seedcode/fmxj
 概要としては、FileMaker Server の XML公開を使う。
@@ -199,10 +199,10 @@ more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
     
     <item>
       <title>AnsibleのSSH設定について</title>
-      <link>https://tech.k-zak.com/2015/02/08/ansible-ssh/</link>
+      <link>https://tech.k-zak.com/posts/ansible-ssh/</link>
       <pubDate>Sun, 08 Feb 2015 14:43:15 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/02/08/ansible-ssh/</guid>
+      <guid>https://tech.k-zak.com/posts/ansible-ssh/</guid>
       <description>Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
 という事で調べた。
 結論としては、varsファイルに
@@ -245,10 +245,10 @@ hostsファイルにhostの後に引数オプション的にansible_ssh_passと�
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>https://tech.k-zak.com/2015/02/01/php-mail/</link>
+      <link>https://tech.k-zak.com/posts/php-mail/</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/02/01/php-mail/</guid>
+      <guid>https://tech.k-zak.com/posts/php-mail/</guid>
       <description>## install postfix
 “`
 sudo apt-get install postfix postfix-dev sasl2-bin
@@ -284,10 +284,10 @@ gmailの場合は/ssl/novalidation-certみたいのつける</description>
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>https://tech.k-zak.com/2015/01/05/perl-cgi/</link>
+      <link>https://tech.k-zak.com/posts/perl-cgi/</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
+      <guid>https://tech.k-zak.com/posts/perl-cgi/</guid>
       <description>古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
 最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
 502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
@@ -309,10 +309,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>https://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
+      <link>https://tech.k-zak.com/posts/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <guid>https://tech.k-zak.com/posts/dev-env-vm/</guid>
       <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
   ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
   設定画面が出てくるので、そのままOK
@@ -328,10 +328,10 @@ sudo apt-get install mercurial</description>
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
+      <link>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</guid>
       <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
 の、前にAWSのS3試したので。
 ・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
@@ -350,10 +350,10 @@ Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合�
     
     <item>
       <title>Linux関係のメモ201407</title>
-      <link>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</link>
+      <link>https://tech.k-zak.com/posts/setting-ubuntu/</link>
       <pubDate>Sat, 02 Aug 2014 15:47:24 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/posts/setting-ubuntu/</guid>
       <description>Ubuntu系でのchkconfigに変わるコマンドってなんだっけ？
 -&amp;gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要……
 checkconfigてLinux全般共通じゃなかったんだ……
@@ -363,10 +363,10 @@ checkconfigてLinux全般共通じゃなかったんだ……
     
     <item>
       <title>最近やったいろいろ</title>
-      <link>https://tech.k-zak.com/2014/03/16/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/03/16/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
 ◆PostgreSQLのSQLダンプ
 　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
@@ -411,10 +411,10 @@ checkconfigてLinux全般共通じゃなかったんだ……
     
     <item>
       <title>NginxでPermission denied</title>
-      <link>https://tech.k-zak.com/2014/01/16/trouble-nginx/</link>
+      <link>https://tech.k-zak.com/posts/trouble-nginx/</link>
       <pubDate>Thu, 16 Jan 2014 01:44:58 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/01/16/trouble-nginx/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-nginx/</guid>
       <description>開発環境
 OS:Ubuntu12?
 Webサーバー：Nginx
@@ -429,10 +429,10 @@ Nginxのセキュリティ機能？なのでしょうか。仕組みは調べて
     
     <item>
       <title>2014年の目標達成進捗管理的な</title>
-      <link>https://tech.k-zak.com/2014/01/04/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/01/04/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
 事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
 とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
@@ -473,10 +473,10 @@ nginxの設定編集 既にnginxが動いている環境のため、redmine専�
     
     <item>
       <title>sshで、ぷごふぁ</title>
-      <link>https://tech.k-zak.com/2013/10/02/ssh/</link>
+      <link>https://tech.k-zak.com/posts/ssh/</link>
       <pubDate>Wed, 02 Oct 2013 17:10:04 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/10/02/ssh/</guid>
+      <guid>https://tech.k-zak.com/posts/ssh/</guid>
       <description>WordPress勉強してます。テーマについてはだいたい分かったので、自作テーマとか作っていきたい。
 ゆくゆくは案件事例的なぽーとふぉりおサイトを作ろうと、とりあえずさくらVPSを立てて、SSHの
 設定をする。
@@ -490,10 +490,10 @@ Qiitaは素人同然の自分には本当に助かる。</description>
     
     <item>
       <title>Perlの動作環境？について</title>
-      <link>https://tech.k-zak.com/2013/01/20/study-perl/</link>
+      <link>https://tech.k-zak.com/posts/study-perl/</link>
       <pubDate>Sun, 20 Jan 2013 15:25:11 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/01/20/study-perl/</guid>
+      <guid>https://tech.k-zak.com/posts/study-perl/</guid>
       <description>長らく更新してませんでしたが、その間にFlask試したり、最近なんかは
 ちょっとだけVisual C++を初心者本見ながら動かしてました。
 C++分かんない。
@@ -545,10 +545,10 @@ PerlHandler ModPerl::Registry</description>
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
@@ -571,10 +571,10 @@ OS再インストールしたせいだと思うけど、前に作ったDjangoが
     
     <item>
       <title>趣旨変え</title>
-      <link>https://tech.k-zak.com/2012/05/20/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 20 May 2012 09:38:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/05/20/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>ここのブログの内容の趣旨を変えました。
 元々のネタはBlogger？Googleのところに移動。
 ここは元々MTで少しやってた勉強メモに変更。それに伴いMTでからデータも適当に移行。</description>
@@ -582,127 +582,127 @@ OS再インストールしたせいだと思うけど、前に作ったDjangoが
     
     <item>
       <title>apacheでredmine virtualhost設定</title>
-      <link>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</link>
+      <link>https://tech.k-zak.com/posts/apache-virtualhost/</link>
       <pubDate>Sat, 25 Jun 2011 16:03:16 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</guid>
+      <guid>https://tech.k-zak.com/posts/apache-virtualhost/</guid>
       <description>この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。</description>
     </item>
     
     <item>
       <title>CakePHPでぐはぁ</title>
-      <link>https://tech.k-zak.com/2011/06/14/study-cakephp/</link>
+      <link>https://tech.k-zak.com/posts/study-cakephp/</link>
       <pubDate>Tue, 14 Jun 2011 13:00:58 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/06/14/study-cakephp/</guid>
+      <guid>https://tech.k-zak.com/posts/study-cakephp/</guid>
       <description>CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ</description>
     </item>
     
     <item>
       <title>WebフレームワークとFileMaker</title>
-      <link>https://tech.k-zak.com/2011/05/29/web-filemaker/</link>
+      <link>https://tech.k-zak.com/posts/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
+      <guid>https://tech.k-zak.com/posts/web-filemaker/</guid>
       <description>FileMaker用のブログに書こうかと思ったけどこちらに書く</description>
     </item>
     
     <item>
       <title>emacs初めてみようか</title>
-      <link>https://tech.k-zak.com/2011/04/29/emacs-setting/</link>
+      <link>https://tech.k-zak.com/posts/emacs-setting/</link>
       <pubDate>Fri, 29 Apr 2011 17:47:06 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/29/emacs-setting/</guid>
+      <guid>https://tech.k-zak.com/posts/emacs-setting/</guid>
       <description>現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている</description>
     </item>
     
     <item>
       <title>PHPのフレームワーク試す</title>
-      <link>https://tech.k-zak.com/2011/04/24/php-frameworks/</link>
+      <link>https://tech.k-zak.com/posts/php-frameworks/</link>
       <pubDate>Sun, 24 Apr 2011 14:04:24 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/24/php-frameworks/</guid>
+      <guid>https://tech.k-zak.com/posts/php-frameworks/</guid>
       <description>PHPのフレームワークをいくつか試してみた。</description>
     </item>
     
     <item>
       <title>Django お勉強</title>
-      <link>https://tech.k-zak.com/2011/04/19/django-tutorial/</link>
+      <link>https://tech.k-zak.com/posts/django-tutorial/</link>
       <pubDate>Tue, 19 Apr 2011 05:10:17 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/19/django-tutorial/</guid>
+      <guid>https://tech.k-zak.com/posts/django-tutorial/</guid>
       <description>PythonのDjangoのお勉強記録</description>
     </item>
     
     <item>
       <title>JavaのDWRって何さ　設定メモ</title>
-      <link>https://tech.k-zak.com/2011/04/13/java-dwr/</link>
+      <link>https://tech.k-zak.com/posts/java-dwr/</link>
       <pubDate>Wed, 13 Apr 2011 19:26:26 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/13/java-dwr/</guid>
+      <guid>https://tech.k-zak.com/posts/java-dwr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ちっともすすまない</title>
-      <link>https://tech.k-zak.com/2011/04/10/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 10 Apr 2011 06:55:10 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/10/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>前に更新したのはいつの頃か・・・</description>
     </item>
     
     <item>
       <title>macにphpMyAdmin</title>
-      <link>https://tech.k-zak.com/2010/09/03/mcrypt/</link>
+      <link>https://tech.k-zak.com/posts/mcrypt/</link>
       <pubDate>Fri, 03 Sep 2010 15:42:34 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/09/03/mcrypt/</guid>
+      <guid>https://tech.k-zak.com/posts/mcrypt/</guid>
       <description>忘れないうちにメモ</description>
     </item>
     
     <item>
       <title>もう30回位連休来ないかな？</title>
-      <link>https://tech.k-zak.com/2010/05/09/reinstall-mac/</link>
+      <link>https://tech.k-zak.com/posts/reinstall-mac/</link>
       <pubDate>Sun, 09 May 2010 14:05:29 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/05/09/reinstall-mac/</guid>
+      <guid>https://tech.k-zak.com/posts/reinstall-mac/</guid>
       <description>えー、どうもMacのHDDが原因だったようで、</description>
     </item>
     
     <item>
       <title>PostgreSQL せきゅりてぃ？</title>
-      <link>https://tech.k-zak.com/2010/04/29/trouble-postgresql/</link>
+      <link>https://tech.k-zak.com/posts/trouble-postgresql/</link>
       <pubDate>Thu, 29 Apr 2010 01:33:02 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/04/29/trouble-postgresql/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-postgresql/</guid>
       <description>昨日の夜、眠い中PostgreSQLの勉強をしようとしたら、サービスがスタート出来ない！</description>
     </item>
     
     <item>
       <title>あばばば- PostgreSQL編</title>
-      <link>https://tech.k-zak.com/2010/04/27/reset-postgresql/</link>
+      <link>https://tech.k-zak.com/posts/reset-postgresql/</link>
       <pubDate>Tue, 27 Apr 2010 14:50:00 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/04/27/reset-postgresql/</guid>
+      <guid>https://tech.k-zak.com/posts/reset-postgresql/</guid>
       <description>機能PostgreSQLのユーザー作ったり消したりDBやテーブル作成したりしていたら、</description>
     </item>
     
     <item>
       <title>MacにPostgreSQLを入れてみた</title>
-      <link>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</link>
+      <link>https://tech.k-zak.com/posts/mac-install-postgresql/</link>
       <pubDate>Mon, 26 Apr 2010 12:39:03 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</guid>
+      <guid>https://tech.k-zak.com/posts/mac-install-postgresql/</guid>
       <description>XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。</description>
     </item>
     
     <item>
       <title>MT入れてみた</title>
-      <link>https://tech.k-zak.com/2010/04/25/first-mt/</link>
+      <link>https://tech.k-zak.com/posts/first-mt/</link>
       <pubDate>Sun, 25 Apr 2010 13:56:34 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/04/25/first-mt/</guid>
+      <guid>https://tech.k-zak.com/posts/first-mt/</guid>
       <description>MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような</description>
     </item>
     

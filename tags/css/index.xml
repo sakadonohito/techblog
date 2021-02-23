@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 25 Dec 2017 14:13:02 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lolipop Cloud</title>
-      <link>https://tech.k-zak.com/2017/12/25/lolipop-cloud/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-25-lolipop-cloud/</link>
       <pubDate>Mon, 25 Dec 2017 14:13:02 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/25/lolipop-cloud/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-25-lolipop-cloud/</guid>
       <description>Lolipopマネージドクラウドを試してみた まだベータで無料で少し使えるようだったので試した。
 簡単に作れた。恐らくコンテナで動いている。
 PHPのコンテナを作成すると別の場所にあるMySQLにデータベース領域を与えられる。 PHPからは提供されたDBのホスト名で接続できる。
@@ -23,10 +23,10 @@ LolipopCloudのデータベースについて charset として utf8mb4 は使�
     
     <item>
       <title>印刷用CSSでハマった</title>
-      <link>https://tech.k-zak.com/2013/10/02/trouble-css/</link>
+      <link>https://tech.k-zak.com/posts/trouble-css/</link>
       <pubDate>Wed, 02 Oct 2013 16:53:01 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/10/02/trouble-css/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-css/</guid>
       <description>この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。
 問題のCSS: page-break-before
 いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと
@@ -42,10 +42,10 @@ cssを適用させるって方法。Web素人には分からんよ。Web上でCS
     
     <item>
       <title>css 印刷のために</title>
-      <link>https://tech.k-zak.com/2013/08/25/print-css/</link>
+      <link>https://tech.k-zak.com/posts/print-css/</link>
       <pubDate>Sun, 25 Aug 2013 04:39:26 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/print-css/</guid>
+      <guid>https://tech.k-zak.com/posts/print-css/</guid>
       <description>なんとかPHP側でPDF作成とかじゃなくてhtml＆cssで楽したい。
 そんな時のcss設定とか。
 まず、対象レイアウトに印刷用css作っていきます。
@@ -61,10 +61,10 @@ javascriptで印刷→setTimeoutなんかで１秒後にbodyに付与したprint
     
     <item>
       <title>cssメモ ちょっとしたもの</title>
-      <link>https://tech.k-zak.com/2013/08/25/css/</link>
+      <link>https://tech.k-zak.com/posts/css/</link>
       <pubDate>Sun, 25 Aug 2013 04:21:32 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/css/</guid>
+      <guid>https://tech.k-zak.com/posts/css/</guid>
       <description>cssでwindowサイズに応じてbodyのcss定義を変える。
 まぁ、bootstrapで使っている上に固定のメニューリストみたいなのある時に
 windowの横幅めっちゃ狭めるとアレですやん。その辺の細工。
@@ -74,10 +74,10 @@ windowの横幅めっちゃ狭めるとアレですやん。その辺の細工�
     
     <item>
       <title>cssメモ 配下の指定</title>
-      <link>https://tech.k-zak.com/2013/08/25/css-tech/</link>
+      <link>https://tech.k-zak.com/posts/css-tech/</link>
       <pubDate>Sun, 25 Aug 2013 04:11:02 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/css-tech/</guid>
+      <guid>https://tech.k-zak.com/posts/css-tech/</guid>
       <description>cssで配下の指定勘違いしておかしな事やってたのでメモ
 結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。
 最初

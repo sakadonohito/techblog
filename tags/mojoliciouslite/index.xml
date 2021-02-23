@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 21 Oct 2012 14:00:56 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/mojoliciouslite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に

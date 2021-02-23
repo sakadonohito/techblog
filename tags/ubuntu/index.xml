@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 24 Apr 2017 13:48:14 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>setting ntp on Ubuntu</title>
-      <link>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-24-ntp/</link>
       <pubDate>Mon, 24 Apr 2017 13:48:14 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-24-ntp/</guid>
       <description>EC2のUbuntu14.04にntpを設定 事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。
 エラー内容はInvalidSigunatureException なんかタイムスタンプが早すぎるみたいなエラー内容。
 Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。 タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。
@@ -30,10 +30,10 @@ sudo timedatectl set-timezone Asia/Tokyo これでOK</description>
     
     <item>
       <title>嘘でしょう。。。</title>
-      <link>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</link>
+      <link>https://tech.k-zak.com/posts/ubuntu-wifi/</link>
       <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</guid>
+      <guid>https://tech.k-zak.com/posts/ubuntu-wifi/</guid>
       <description>長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。
 実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。
 悩まされていた問題 会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。
@@ -48,10 +48,10 @@ VMのネットワーク設定を「Macと共有」の時は問題なくて「自
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>https://tech.k-zak.com/2015/02/01/php-mail/</link>
+      <link>https://tech.k-zak.com/posts/php-mail/</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/02/01/php-mail/</guid>
+      <guid>https://tech.k-zak.com/posts/php-mail/</guid>
       <description>## install postfix
 “`
 sudo apt-get install postfix postfix-dev sasl2-bin
@@ -87,10 +87,10 @@ gmailの場合は/ssl/novalidation-certみたいのつける</description>
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>https://tech.k-zak.com/2015/01/05/perl-cgi/</link>
+      <link>https://tech.k-zak.com/posts/perl-cgi/</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
+      <guid>https://tech.k-zak.com/posts/perl-cgi/</guid>
       <description>古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
 最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
 502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
@@ -112,10 +112,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>https://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
+      <link>https://tech.k-zak.com/posts/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <guid>https://tech.k-zak.com/posts/dev-env-vm/</guid>
       <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
   ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
   設定画面が出てくるので、そのままOK
@@ -131,10 +131,10 @@ sudo apt-get install mercurial</description>
     
     <item>
       <title>Linux関係のメモ201407</title>
-      <link>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</link>
+      <link>https://tech.k-zak.com/posts/setting-ubuntu/</link>
       <pubDate>Sat, 02 Aug 2014 15:47:24 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/posts/setting-ubuntu/</guid>
       <description>Ubuntu系でのchkconfigに変わるコマンドってなんだっけ？
 -&amp;gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要……
 checkconfigてLinux全般共通じゃなかったんだ……

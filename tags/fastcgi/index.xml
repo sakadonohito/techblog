@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 05 Jan 2015 15:51:41 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/fastcgi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>https://tech.k-zak.com/2015/01/05/perl-cgi/</link>
+      <link>https://tech.k-zak.com/posts/perl-cgi/</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
+      <guid>https://tech.k-zak.com/posts/perl-cgi/</guid>
       <description>古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
 最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
 502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。

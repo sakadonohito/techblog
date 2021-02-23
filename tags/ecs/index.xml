@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 31 Mar 2017 18:01:34 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/ecs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>jaws-ug container</title>
-      <link>https://tech.k-zak.com/2017/03/31/jaws-ug-container/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-30-jaws-container/</link>
       <pubDate>Fri, 31 Mar 2017 18:01:34 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/31/jaws-ug-container/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-30-jaws-container/</guid>
       <description>JAWS-UG コンテナ支部 の勉強会に行ってきた 行ってきた。。
 前佛さんのお話 Dockerは仕様でコンテナが技術っていう話。
 開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。

@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 02 Apr 2017 22:50:25 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/etc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>agile progress</title>
-      <link>https://tech.k-zak.com/2017/04/02/agile-progress/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-02-daily/</link>
       <pubDate>Sun, 02 Apr 2017 22:50:25 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/02/agile-progress/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-02-daily/</guid>
       <description>進捗 直近の目標に対する結果と進捗
  ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) Makerel試したい Dockerをある程度使えるようになりたい  ブログや静的サイトのテーマをつくり込みたい Plican,Hexo,Jekyllについては完了。 Jekyllは二度と触りたく無い。
 4月にWordPressのテーマ作成他のテンプレートを作りたい。

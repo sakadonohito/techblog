@@ -6,13 +6,29 @@
     <description>Recent content in Hugo on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Feb 2021 04:25:49 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021 02 24 お久しぶりです</title>
+      <link>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</link>
+      <pubDate>Wed, 24 Feb 2021 04:25:49 +0900</pubDate>
+      
+      <guid>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</guid>
+      <description>久し振りにHugoを更新してみる 長らく何もしていなかったので色々更新するのにだいぶ手間取った。 Hugoそのものを更新するのにbrewの更新や不備を直したり、なぜかついでにEmacsを最新にアップデートしたり。
+更新作業したもの  brew(brew doctorしていろいろあって大苦戦) Emacs(brewで整合性とったり動かなくなった設定直したり大苦戦) Hugo ブログのテンプレートちょこちょこ直した GitHubのSSH鍵(pushでエラー出るようになってて結局鍵を新しくした) このブログのGitHub Pagesの設定でhttpsに変更  新たに発見したことやったこと 虚しい更新作業の合間に発見したちょい技や機能があった。
+1. デスクトップをきれいにする小技 正確にはデスクトップを整理整頓するのを諦めて、シェルでデスクトップの表示非表示を切り替えるようにした。
+defaults write com.apple.finder CreateDesktop -boolean false &amp;amp;&amp;amp; killAll Finder でmacのデスクトップ上のものを非表示にできる(falseをtrueにすれば逆の設定になる)。 んでそのシェルをAutomatorでアプリケーションに登録してLaunchpadで呼び出して実行すれば切り替えられるという。
+2. pbcopy macにあるコマンド。初めて知ったような忘れていただけのような。 今回GitHubに登録する鍵(pubの方)をGitHubのページで貼り付けるのに使った。
+cat id_rsa.pub | pbcopy って感じでクリップボードに送り込めるのでGitHubの入力フォームで貼り付け！ 便利なコマンドがあったんですね。以前はターミナル上もしくはエディタで開いたものをコピーしてたけどこれなら余計な改行やスペースが混ざり込む心配が無いですね。
+3. GitHub Pagesのhttps化 このブログが長らくhttpsにしないで放置していたのでどこかに移行してhttps化しようと考えていたんだけどいつの間にかGitHub Pagesはhttpsできるようになっていたんですね。 早速設定でhttpsをオンにした。
+やれやれですよ。。</description>
+    </item>
+    
     <item>
       <title>Not Posted</title>
-      <link>https://tech.k-zak.com/2017/12/31/not-posted/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-31-noposts/</link>
       <pubDate>Sun, 31 Dec 2017 11:49:55 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/31/not-posted/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-31-noposts/</guid>
       <description>2017年記事にしそこねたやったこと  コマンドプロンプト(バッチファイル) コマンドプロンプトからPowershell実行 シェルスクリプト AWS System Manager Run Command (sum) VagrantでSQL Server他DBもセットアップしたよ Nano Server試そうとした React Redux…etc Webpack Docker再入門とWP開発環境の作成 WordPressテーマ開発用のベースを作成した AWS Lambda をPythonで AWS Lambda をNode.jsで CakePHP 3 tutorial 少しやった Vagrant でPHP開発環境作成 Terraform試した Hugo用テーマを作成した  忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。
 コマンドプロンプト(バッチファイル) Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。
 例えばこんなこと。実行結果を変数に入れるのが面倒。
@@ -24,10 +40,10 @@ start %~dp0\called_subscripts\computer_restart.bat %~dp0 はLinuxでいうとこ
     
     <item>
       <title>replace hugo post rule</title>
-      <link>https://tech.k-zak.com/2017/03/25/replace-hugo-post-rule/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-25-replace/</link>
       <pubDate>Sat, 25 Mar 2017 22:43:59 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/25/replace-hugo-post-rule/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-25-replace/</guid>
       <description>Hugoの記事の命名規則を見直して直した 辛かった。
 カテゴリ名、タグ名、ファイル名、記事のタイトル。これらが日本語だとジェネレート後のディレクトリ名、ファイル名、URLパス等で日本語が混ざってしまうので、片っ端から探して変更した。
 今後は記事内容以外では絶対に日本語を使わないようにしないと。
@@ -37,10 +53,10 @@ start %~dp0\called_subscripts\computer_restart.bat %~dp0 はLinuxでいうとこ
     
     <item>
       <title>WordPressからHugoへ移行</title>
-      <link>https://tech.k-zak.com/2017/02/19/first-hugo/</link>
+      <link>https://tech.k-zak.com/posts/first-hugo/</link>
       <pubDate>Sun, 19 Feb 2017 00:09:41 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/19/first-hugo/</guid>
+      <guid>https://tech.k-zak.com/posts/first-hugo/</guid>
       <description>開発メモブログをWordPressからHugoへの移行  WordPressから記事をエクスポート Hugoをインストール エクスポートした記事を放り込む  WordPressから記事をエクスポート  WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す  参考    Hugoをインストール brew install hugo hugo new site techblog cd techblog 書き出した記事を放り込む プラグインを使ってエクスポートした記事データはHugoのcontent/postのpostディレクトリ相当のものが吐き出されているので、中身をcontent/post/にぶちまける。
 細かい設定 テーマを入れる 適当なテーマをインストール。今回はPolymer。 themeディレクトリがなかったら作ってその中でgit cloneしたらいいよ。
 config.tomlを編集 title,baseurl,languageCode,theme,paginateを修正する。

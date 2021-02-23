@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 29 Dec 2017 14:36:17 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/categories/trouble-memo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mac Account Broken</title>
-      <link>https://tech.k-zak.com/2017/12/29/mac-account-broken/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-29-mac-account/</link>
       <pubDate>Fri, 29 Dec 2017 14:36:17 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/29/mac-account-broken/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-29-mac-account/</guid>
       <description>Macのデータ移行時のトラブル  Macデータ移行した アカウントの権限を壊してしまった。  データ移行した TimeMachineを使うと時間はかかるが何も考えなくても諸々移行できるので便利。用途不定になってしまったHDD(1TB)があったのでそれを新たにTimeMachine用にすることにした
 アカウントの権限を壊してしまった。 データ移行のついでにアカウント名やアカウント情報を変更したら、管理者権限が外れてしまった。まじ焦った。 権限変更やアカウント情報変更用アカウントを用意してそのアカウントでログインして対象アカウントの情報を変更すべき。
 管理者権限が外れてしまったアカウントを復旧させる方法  シングルユーザーモードで起動する(cmd+s押しっぱなし)  rootユーザーでのターミナル操作になる   /sbin/mount -uw / を実行してディスクへの書込許可状態にする rm /var/db/.AppleSetupDoneを実行してセットアップ完了フラグファイルを削除 reboot実行  上記で最初のセットアップウィザードが始まるので、そこで新規に管理者権限を作成する
@@ -22,10 +22,10 @@
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
-      <link>https://tech.k-zak.com/2014/09/07/challenge-ansible/</link>
+      <link>https://tech.k-zak.com/posts/challenge-ansible/</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/09/07/challenge-ansible/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-ansible/</guid>
       <description>・botoが使えないってエラーになる。
 　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
 つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
@@ -64,10 +64,10 @@ UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに
     
     <item>
       <title>低レベルプログラマだからJavaScriptで知らなかった事</title>
-      <link>https://tech.k-zak.com/2014/08/02/spec-js/</link>
+      <link>https://tech.k-zak.com/posts/spec-js/</link>
       <pubDate>Sat, 02 Aug 2014 15:29:50 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/spec-js/</guid>
+      <guid>https://tech.k-zak.com/posts/spec-js/</guid>
       <description>JavaScriptで知らないせいでハマったところなどなど
 Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。
 そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。
@@ -77,10 +77,10 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     
     <item>
       <title>NginxでPermission denied</title>
-      <link>https://tech.k-zak.com/2014/01/16/trouble-nginx/</link>
+      <link>https://tech.k-zak.com/posts/trouble-nginx/</link>
       <pubDate>Thu, 16 Jan 2014 01:44:58 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/01/16/trouble-nginx/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-nginx/</guid>
       <description>開発環境
 OS:Ubuntu12?
 Webサーバー：Nginx
@@ -95,10 +95,10 @@ Nginxのセキュリティ機能？なのでしょうか。仕組みは調べて
     
     <item>
       <title>FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</title>
-      <link>https://tech.k-zak.com/2013/11/13/trouble-charset/</link>
+      <link>https://tech.k-zak.com/posts/trouble-charset/</link>
       <pubDate>Wed, 13 Nov 2013 15:27:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/11/13/trouble-charset/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-charset/</guid>
       <description>FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、
 Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！ (PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)
 →アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。
@@ -118,10 +118,10 @@ FuelPHPのUpload::save()を行う前に
     
     <item>
       <title>印刷用CSSでハマった</title>
-      <link>https://tech.k-zak.com/2013/10/02/trouble-css/</link>
+      <link>https://tech.k-zak.com/posts/trouble-css/</link>
       <pubDate>Wed, 02 Oct 2013 16:53:01 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/10/02/trouble-css/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-css/</guid>
       <description>この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。
 問題のCSS: page-break-before
 いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと

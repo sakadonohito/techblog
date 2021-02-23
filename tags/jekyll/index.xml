@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 26 Mar 2017 18:32:49 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Challenged Jekyll template and hate</title>
-      <link>https://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-26-jekyll/</link>
       <pubDate>Sun, 26 Mar 2017 18:32:49 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-26-jekyll/</guid>
       <description>Jekyllの画面(テンプレート)作った 結論から言うと、二度と使いたくない。
 Pelicanの方がいいや。
 やりたかったこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る アーカイブ(年月)ごとの記事一覧ページを作る アーカイブ(年月)の一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る  できたこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、Aboutのリンクを作る  乗り越えた事 HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。
@@ -32,10 +32,10 @@ Pelicanの場合、記事リストをgroup by　した結果をそのままfor�
     
     <item>
       <title>Jekyllを試す</title>
-      <link>https://tech.k-zak.com/2017/02/19/first-jekyll/</link>
+      <link>https://tech.k-zak.com/posts/first-jekyll/</link>
       <pubDate>Sun, 19 Feb 2017 23:22:39 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/19/first-jekyll/</guid>
+      <guid>https://tech.k-zak.com/posts/first-jekyll/</guid>
       <description>Jekyllを試す Ruby製の静的サイトジェネレーターを試してる。
 インストール 以下下記URLを参考にいろいろ試したけど、情報が古くコマンドが変わってた。 参考
 gem install jekyll mkdir _site _posts _site assets mkdir -p assets/css 構造はこんな感じ

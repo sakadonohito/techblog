@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Not Posted</title>
-      <link>https://tech.k-zak.com/2017/12/31/not-posted/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-31-noposts/</link>
       <pubDate>Sun, 31 Dec 2017 11:49:55 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/31/not-posted/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-31-noposts/</guid>
       <description>2017年記事にしそこねたやったこと  コマンドプロンプト(バッチファイル) コマンドプロンプトからPowershell実行 シェルスクリプト AWS System Manager Run Command (sum) VagrantでSQL Server他DBもセットアップしたよ Nano Server試そうとした React Redux…etc Webpack Docker再入門とWP開発環境の作成 WordPressテーマ開発用のベースを作成した AWS Lambda をPythonで AWS Lambda をNode.jsで CakePHP 3 tutorial 少しやった Vagrant でPHP開発環境作成 Terraform試した Hugo用テーマを作成した  忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。
 コマンドプロンプト(バッチファイル) Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。
 例えばこんなこと。実行結果を変数に入れるのが面倒。
@@ -24,10 +24,10 @@ start %~dp0\called_subscripts\computer_restart.bat %~dp0 はLinuxでいうとこ
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
-      <link>https://tech.k-zak.com/2014/09/07/challenge-ansible/</link>
+      <link>https://tech.k-zak.com/posts/challenge-ansible/</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/09/07/challenge-ansible/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-ansible/</guid>
       <description>・botoが使えないってエラーになる。
 　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
 つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
@@ -66,10 +66,10 @@ UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
+      <link>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</guid>
       <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
 の、前にAWSのS3試したので。
 ・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る

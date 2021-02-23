@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 27 Mar 2017 23:36:40 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>challenge mackerel plugin</title>
-      <link>https://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-27-mackerel-plugin/</link>
       <pubDate>Mon, 27 Mar 2017 23:36:40 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-27-mackerel-plugin/</guid>
       <description>Mackerelのカスタムメトリクスに挑戦 して撃沈。
 何が起きたか 公式のヘルプ を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。
 YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;quot;}\&amp;quot; unexpected (expecting \&amp;quot;then\&amp;quot;)\n&amp;quot; 改行が足りない？
@@ -23,10 +23,10 @@ rubyファイルを単独で実行すると動くので謎。
     
     <item>
       <title>Challenged Jekyll template and hate</title>
-      <link>https://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-26-jekyll/</link>
       <pubDate>Sun, 26 Mar 2017 18:32:49 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-26-jekyll/</guid>
       <description>Jekyllの画面(テンプレート)作った 結論から言うと、二度と使いたくない。
 Pelicanの方がいいや。
 やりたかったこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る アーカイブ(年月)ごとの記事一覧ページを作る アーカイブ(年月)の一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る  できたこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、Aboutのリンクを作る  乗り越えた事 HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。
@@ -46,10 +46,10 @@ Pelicanの場合、記事リストをgroup by　した結果をそのままfor�
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>https://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
+      <link>https://tech.k-zak.com/posts/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone-serverside/</guid>
       <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
 まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
 Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
@@ -64,10 +64,10 @@ Rubyは…どうだろう。試しやプロトタイプにはいいのかも、�
     
     <item>
       <title>2014年の目標達成進捗管理的な</title>
-      <link>https://tech.k-zak.com/2014/01/04/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/01/04/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
 事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
 とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
@@ -108,10 +108,10 @@ nginxの設定編集 既にnginxが動いている環境のため、redmine専�
     
     <item>
       <title>パスカルのなんとか</title>
-      <link>https://tech.k-zak.com/2013/12/22/pascal-logic/</link>
+      <link>https://tech.k-zak.com/posts/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
+      <guid>https://tech.k-zak.com/posts/pascal-logic/</guid>
       <description>今回は、パスカルの三角定理？みたいなやつ
 PHPでは、
 Perlでは、
@@ -122,10 +122,10 @@ Rubyはもっとシンプルな書き方があるのかもしれない。</descr
     
     <item>
       <title>コーディングリハビリ06</title>
-      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
@@ -139,10 +139,10 @@ pythonが好みだけど毎回２つリストを生成してmapしてるので�
     
     <item>
       <title>コーディングリハビリ05</title>
-      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
       <description>昨日の文字チェックをPHP以外で試す。
 与えられた文字列が全てユニークな文字で構成されているかのチェック。
 PHPは前回やっているので、今回は掲載無し。
@@ -156,10 +156,10 @@ pythonが一番スッキリしているようだけど、やっぱりRubyかな<
     
     <item>
       <title>コーディングリハビリ03</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo03/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo03/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
@@ -171,10 +171,10 @@ Rubyが一番スマートかな</description>
     
     <item>
       <title>コーディングリハビリ02</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo02/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo02/</guid>
       <description>リハビリその２
 今回は、ファイル読み込みとその時の簡単な例外処理
 読み込むテキストファイルの内容は以下の通り、
@@ -188,10 +188,10 @@ rubyはreturnを省略した場合に最後に評価された値がreturnされ�
     
     <item>
       <title>コーディングリハビリ01</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo01/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo01/</guid>
       <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
 paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
 という事でリハビリ。
@@ -205,10 +205,10 @@ Rubyでは、
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
@@ -231,10 +231,10 @@ OS再インストールしたせいだと思うけど、前に作ったDjangoが
     
     <item>
       <title>FileMakerとRubyのSinatra</title>
-      <link>https://tech.k-zak.com/2012/01/07/study-sinatra/</link>
+      <link>https://tech.k-zak.com/posts/study-sinatra/</link>
       <pubDate>Sat, 07 Jan 2012 10:50:19 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/01/07/study-sinatra/</guid>
+      <guid>https://tech.k-zak.com/posts/study-sinatra/</guid>
       <description>Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？
 と思ったのでやってみました。
 gihyo.jp:第９回 SinatraとSequel・Hamlで掲示板アプリを作る
@@ -278,10 +278,10 @@ Railsでやるほどじゃないけどちょっと簡単にFileMakerとWebアプ
     
     <item>
       <title>WebフレームワークとFileMaker</title>
-      <link>https://tech.k-zak.com/2011/05/29/web-filemaker/</link>
+      <link>https://tech.k-zak.com/posts/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
+      <guid>https://tech.k-zak.com/posts/web-filemaker/</guid>
       <description>FileMaker用のブログに書こうかと思ったけどこちらに書く</description>
     </item>
     

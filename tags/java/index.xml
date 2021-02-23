@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 12 Dec 2017 14:04:58 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Groovy TLS</title>
-      <link>https://tech.k-zak.com/2017/12/12/groovy-tls/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-12-groovy-tls/</link>
       <pubDate>Tue, 12 Dec 2017 14:04:58 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/12/groovy-tls/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-12-groovy-tls/</guid>
       <description>久しぶりにGroovyを触った Groovyで作成したプログラムがTLSで通信できるようにしないといけなくなったので少し調べた。
 Javaの場合 javaで強制的にTLS1.2を使うようにするにはJVM起動時オプションを渡す Java7はデフォルトでTLS利用可能 Java8はデフォルトでTLS1.2使える
 JVM起動オプションに
@@ -22,28 +22,28 @@ Groovyの場合 System.properties[‘https.protocols’] = ‘TLSv1.1,TLSv1.2 �
     
     <item>
       <title>JavaのDWRって何さ　設定メモ</title>
-      <link>https://tech.k-zak.com/2011/04/13/java-dwr/</link>
+      <link>https://tech.k-zak.com/posts/java-dwr/</link>
       <pubDate>Wed, 13 Apr 2011 19:26:26 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/13/java-dwr/</guid>
+      <guid>https://tech.k-zak.com/posts/java-dwr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>動かないじゃないか</title>
-      <link>https://tech.k-zak.com/2010/06/27/study-java/</link>
+      <link>https://tech.k-zak.com/posts/study-java/</link>
       <pubDate>Sun, 27 Jun 2010 04:08:43 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/06/27/study-java/</guid>
+      <guid>https://tech.k-zak.com/posts/study-java/</guid>
       <description>はじめての サーブレット＆JSP という本を見ながら</description>
     </item>
     
     <item>
       <title>Java分からぬぇ</title>
-      <link>https://tech.k-zak.com/2010/06/06/study-java/</link>
+      <link>https://tech.k-zak.com/posts/study-java/</link>
       <pubDate>Sun, 06 Jun 2010 06:10:29 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/06/06/study-java/</guid>
+      <guid>https://tech.k-zak.com/posts/study-java/</guid>
       <description>最近はおろそかになってきていてピンチなのですが、</description>
     </item>
     

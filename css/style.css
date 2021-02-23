@@ -75,15 +75,20 @@ div.main-part {
   aside div.side-menu {
     padding-left: 2rem; } }
 
+div.main-part > main {
+  flex-grow: 1;
+}
+
 div.main-contents {
   flex: 1;
   padding-left: 2rem;
   display: flex;
   flex-direction: column; }
 
-div.main-contents > h1,
-div.main-contents > h2 {
-  text-align: center; }
+div.main-contents > section > header > h1,
+div.main-contents article.top-single-content > section header > h2 {
+    text-align: center; }
+
 
 div.main-contents div.article-list {
   align-self: center; }

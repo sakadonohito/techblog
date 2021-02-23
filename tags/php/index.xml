@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 16 Feb 2015 16:09:59 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
+      <link>https://tech.k-zak.com/posts/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-fmxj/</guid>
       <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
 https://github.com/seedcode/fmxj
 概要としては、FileMaker Server の XML公開を使う。
@@ -47,10 +47,10 @@ more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>https://tech.k-zak.com/2015/02/01/php-mail/</link>
+      <link>https://tech.k-zak.com/posts/php-mail/</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/02/01/php-mail/</guid>
+      <guid>https://tech.k-zak.com/posts/php-mail/</guid>
       <description>## install postfix
 “`
 sudo apt-get install postfix postfix-dev sasl2-bin
@@ -86,10 +86,10 @@ gmailの場合は/ssl/novalidation-certみたいのつける</description>
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>https://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
+      <link>https://tech.k-zak.com/posts/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone-serverside/</guid>
       <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
 まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
 Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
@@ -104,10 +104,10 @@ Rubyは…どうだろう。試しやプロトタイプにはいいのかも、�
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>https://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
+      <link>https://tech.k-zak.com/posts/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <guid>https://tech.k-zak.com/posts/dev-env-vm/</guid>
       <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
   ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
   設定画面が出てくるので、そのままOK
@@ -123,10 +123,10 @@ sudo apt-get install mercurial</description>
     
     <item>
       <title>PHPのファイルアップロードについて</title>
-      <link>https://tech.k-zak.com/2014/09/07/setting-php/</link>
+      <link>https://tech.k-zak.com/posts/setting-php/</link>
       <pubDate>Sun, 07 Sep 2014 17:34:12 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/09/07/setting-php/</guid>
+      <guid>https://tech.k-zak.com/posts/setting-php/</guid>
       <description>PHPで大きなファイルアップロードを作成する
 ・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。
 ・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file
@@ -137,10 +137,10 @@ sudo apt-get install mercurial</description>
     
     <item>
       <title>PHPあべし！</title>
-      <link>https://tech.k-zak.com/2014/08/02/spec-php5.5/</link>
+      <link>https://tech.k-zak.com/posts/spec-php5.5/</link>
       <pubDate>Sat, 02 Aug 2014 15:34:29 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/spec-php5.5/</guid>
+      <guid>https://tech.k-zak.com/posts/spec-php5.5/</guid>
       <description>最近PHP触ってて「あべし！」ってなった事。
 PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。
 愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。</description>
@@ -148,10 +148,10 @@ PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5
     
     <item>
       <title>最近やったいろいろ</title>
-      <link>https://tech.k-zak.com/2014/03/16/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/03/16/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
 ◆PostgreSQLのSQLダンプ
 　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
@@ -196,10 +196,10 @@ PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5
     
     <item>
       <title>パスカルのなんとか</title>
-      <link>https://tech.k-zak.com/2013/12/22/pascal-logic/</link>
+      <link>https://tech.k-zak.com/posts/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
+      <guid>https://tech.k-zak.com/posts/pascal-logic/</guid>
       <description>今回は、パスカルの三角定理？みたいなやつ
 PHPでは、
 Perlでは、
@@ -210,10 +210,10 @@ Rubyはもっとシンプルな書き方があるのかもしれない。</descr
     
     <item>
       <title>コーディングリハビリ06</title>
-      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
@@ -227,10 +227,10 @@ pythonが好みだけど毎回２つリストを生成してmapしてるので�
     
     <item>
       <title>コーディングリハビリ04</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo04/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo04/</link>
       <pubDate>Fri, 06 Dec 2013 16:06:49 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo04/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo04/</guid>
       <description>今回は与えられた文字列が全てユニークな文字の構成かどうか調べる。
 そういう問題を出されてスマートに答えられなかったので、調べた。
 1,回答した内容を修正したもの
@@ -244,10 +244,10 @@ pythonが好みだけど毎回２つリストを生成してmapしてるので�
     
     <item>
       <title>コーディングリハビリ03</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo03/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo03/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
@@ -259,10 +259,10 @@ Rubyが一番スマートかな</description>
     
     <item>
       <title>コーディングリハビリ02</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo02/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo02/</guid>
       <description>リハビリその２
 今回は、ファイル読み込みとその時の簡単な例外処理
 読み込むテキストファイルの内容は以下の通り、
@@ -276,10 +276,10 @@ rubyはreturnを省略した場合に最後に評価された値がreturnされ�
     
     <item>
       <title>コーディングリハビリ01</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo01/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo01/</guid>
       <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
 paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
 という事でリハビリ。
@@ -293,10 +293,10 @@ Rubyでは、
     
     <item>
       <title>Laravel4触り始めました</title>
-      <link>https://tech.k-zak.com/2013/12/06/study-larabel4/</link>
+      <link>https://tech.k-zak.com/posts/study-larabel4/</link>
       <pubDate>Fri, 06 Dec 2013 14:07:20 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/study-larabel4/</guid>
+      <guid>https://tech.k-zak.com/posts/study-larabel4/</guid>
       <description>Laravel4がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。
 テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。
 {{– コメントアウトしたいコード –}}って書かないといけない。ていうか、そもそもの外で変な書き方してたのが悪い。
@@ -307,10 +307,10 @@ Rubyでは、
     
     <item>
       <title>FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</title>
-      <link>https://tech.k-zak.com/2013/11/13/trouble-charset/</link>
+      <link>https://tech.k-zak.com/posts/trouble-charset/</link>
       <pubDate>Wed, 13 Nov 2013 15:27:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/11/13/trouble-charset/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-charset/</guid>
       <description>FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、
 Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！ (PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)
 →アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。
@@ -330,10 +330,10 @@ FuelPHPのUpload::save()を行う前に
     
     <item>
       <title>fuelphp使って分からなかったこと</title>
-      <link>https://tech.k-zak.com/2013/08/25/challenge-fuelphp/</link>
+      <link>https://tech.k-zak.com/posts/challenge-fuelphp/</link>
       <pubDate>Sun, 25 Aug 2013 12:51:13 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/challenge-fuelphp/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-fuelphp/</guid>
       <description>fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな
 感じなんですけど。
 以下に分からなかったことなど
@@ -389,10 +389,10 @@ Helper作る程でもない処理専用って事？後は再帰定義のcallbacl
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
@@ -415,37 +415,37 @@ OS再インストールしたせいだと思うけど、前に作ったDjangoが
     
     <item>
       <title>CakePHPでぐはぁ</title>
-      <link>https://tech.k-zak.com/2011/06/14/study-cakephp/</link>
+      <link>https://tech.k-zak.com/posts/study-cakephp/</link>
       <pubDate>Tue, 14 Jun 2011 13:00:58 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/06/14/study-cakephp/</guid>
+      <guid>https://tech.k-zak.com/posts/study-cakephp/</guid>
       <description>CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ</description>
     </item>
     
     <item>
       <title>WebフレームワークとFileMaker</title>
-      <link>https://tech.k-zak.com/2011/05/29/web-filemaker/</link>
+      <link>https://tech.k-zak.com/posts/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
+      <guid>https://tech.k-zak.com/posts/web-filemaker/</guid>
       <description>FileMaker用のブログに書こうかと思ったけどこちらに書く</description>
     </item>
     
     <item>
       <title>PHPのフレームワーク試す</title>
-      <link>https://tech.k-zak.com/2011/04/24/php-frameworks/</link>
+      <link>https://tech.k-zak.com/posts/php-frameworks/</link>
       <pubDate>Sun, 24 Apr 2011 14:04:24 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/24/php-frameworks/</guid>
+      <guid>https://tech.k-zak.com/posts/php-frameworks/</guid>
       <description>PHPのフレームワークをいくつか試してみた。</description>
     </item>
     
     <item>
       <title>macにphpMyAdmin</title>
-      <link>https://tech.k-zak.com/2010/09/03/mcrypt/</link>
+      <link>https://tech.k-zak.com/posts/mcrypt/</link>
       <pubDate>Fri, 03 Sep 2010 15:42:34 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/09/03/mcrypt/</guid>
+      <guid>https://tech.k-zak.com/posts/mcrypt/</guid>
       <description>忘れないうちにメモ</description>
     </item>
     

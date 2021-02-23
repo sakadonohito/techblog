@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 02 Apr 2017 22:50:14 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>recent frontend circumstance</title>
-      <link>https://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-01-frontend/</link>
       <pubDate>Sun, 02 Apr 2017 22:50:14 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-01-frontend/</guid>
       <description>最近のフロントエンド事情はまるで発展途上国の交通事情ですか ES6で書いてES5に変換したいだけなのに、なんなんですか？
 ES6からES5に変換したいだけなんだ Babel Babelを使えば変換できる。。。
 Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。
@@ -34,10 +34,10 @@ webpackに書いただけじゃダメで.babelrcにも書かないといけな�
     
     <item>
       <title>think about redux</title>
-      <link>https://tech.k-zak.com/2017/04/02/think-about-redux/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-31-redux/</link>
       <pubDate>Sun, 02 Apr 2017 22:49:50 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/02/think-about-redux/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-31-redux/</guid>
       <description>Reduxについて感化されたこと Reduxについて不満に思っている部分について考察している記事を見かけた。
 自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。
 理解して納得していること Reactの場合は上からもらうプロパティはPropsで読み取り専用。

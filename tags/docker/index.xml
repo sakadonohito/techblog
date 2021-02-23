@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Not Posted</title>
-      <link>https://tech.k-zak.com/2017/12/31/not-posted/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-31-noposts/</link>
       <pubDate>Sun, 31 Dec 2017 11:49:55 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/31/not-posted/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-31-noposts/</guid>
       <description>2017年記事にしそこねたやったこと  コマンドプロンプト(バッチファイル) コマンドプロンプトからPowershell実行 シェルスクリプト AWS System Manager Run Command (sum) VagrantでSQL Server他DBもセットアップしたよ Nano Server試そうとした React Redux…etc Webpack Docker再入門とWP開発環境の作成 WordPressテーマ開発用のベースを作成した AWS Lambda をPythonで AWS Lambda をNode.jsで CakePHP 3 tutorial 少しやった Vagrant でPHP開発環境作成 Terraform試した Hugo用テーマを作成した  忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。
 コマンドプロンプト(バッチファイル) Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。
 例えばこんなこと。実行結果を変数に入れるのが面倒。
@@ -24,10 +24,10 @@ start %~dp0\called_subscripts\computer_restart.bat %~dp0 はLinuxでいうとこ
     
     <item>
       <title>jaws-ug container</title>
-      <link>https://tech.k-zak.com/2017/03/31/jaws-ug-container/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-30-jaws-container/</link>
       <pubDate>Fri, 31 Mar 2017 18:01:34 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/31/jaws-ug-container/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-30-jaws-container/</guid>
       <description>JAWS-UG コンテナ支部 の勉強会に行ってきた 行ってきた。。
 前佛さんのお話 Dockerは仕様でコンテナが技術っていう話。
 開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。
@@ -52,10 +52,10 @@ ECSを活用する上での勘所 データについて  なるべくDocker Volu
     
     <item>
       <title>Hexo etc</title>
-      <link>https://tech.k-zak.com/2017/03/29/hexo-etc/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-29-daily/</link>
       <pubDate>Wed, 29 Mar 2017 22:37:07 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/29/hexo-etc/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-29-daily/</guid>
       <description>勉強の進捗とHexoの改修 いろいろいっぱいいっぱいで諦めたことと、作業したこと。
 スプリントの進捗  Mackerelのプラグイン試すとか諦めて、3月までの課題終了。 Docker学習、3月までの課題終了。Swarmとか諦めた。  時間に余裕ができたらまた集中して取り組む。
 Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃう感じだったのでCSSを変えるとかしようと考えてた。
@@ -67,10 +67,10 @@ Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃ
     
     <item>
       <title>docker reinstall</title>
-      <link>https://tech.k-zak.com/2017/03/28/docker-reinstall/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-28-docker/</link>
       <pubDate>Tue, 28 Mar 2017 23:57:46 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/28/docker-reinstall/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-28-docker/</guid>
       <description>Dockerを再インストールした Dockerが全然触らないうちにどんどん進化していってしまったので、一旦アンインストールして、入れ直した。
 環境はmacOS 10.11 えるかぴたん
 やったこと  docker-machine(boot2docker)の中身を全て削除  docker-machine rm defaultとか   docker-machineを完全削除するらしいツールを使って削除実行 Virtualboxを確認して環境が残っていないか確認 .bash_profileに記述していた環境変数設定を削除 homeディレクトリ直下の.dockerみたいな隠し領域も削除 公式から改めてdocker for mac をダウンロードしてインストール ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置  ハマったこと 単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対してdocker -vとかやってエラーを出してた。

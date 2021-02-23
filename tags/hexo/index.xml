@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 29 Mar 2017 22:37:07 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hexo etc</title>
-      <link>https://tech.k-zak.com/2017/03/29/hexo-etc/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-29-daily/</link>
       <pubDate>Wed, 29 Mar 2017 22:37:07 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/29/hexo-etc/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-29-daily/</guid>
       <description>勉強の進捗とHexoの改修 いろいろいっぱいいっぱいで諦めたことと、作業したこと。
 スプリントの進捗  Mackerelのプラグイン試すとか諦めて、3月までの課題終了。 Docker学習、3月までの課題終了。Swarmとか諦めた。  時間に余裕ができたらまた集中して取り組む。
 Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃう感じだったのでCSSを変えるとかしようと考えてた。
@@ -24,10 +24,10 @@ Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃ
     
     <item>
       <title>Hexoを試す</title>
-      <link>https://tech.k-zak.com/2017/02/19/first-hexo/</link>
+      <link>https://tech.k-zak.com/posts/first-hexo/</link>
       <pubDate>Sun, 19 Feb 2017 22:21:50 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/19/first-hexo/</guid>
+      <guid>https://tech.k-zak.com/posts/first-hexo/</guid>
       <description>JavaScriptの静的サイトジェネレーターHexoを試す JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。
 インストールと初期設定 npm install -g hexo-cli hexo init &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; npm install hexo server これでHexoがインストールされサイトを開始できる hexe serverで開発用のサーバー起動状態になりhttp://localhost:4000にアクセスできる。
 _config.ymlを編集する。

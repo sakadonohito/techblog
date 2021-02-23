@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 25 Dec 2017 14:13:02 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/lolipopcloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lolipop Cloud</title>
-      <link>https://tech.k-zak.com/2017/12/25/lolipop-cloud/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-25-lolipop-cloud/</link>
       <pubDate>Mon, 25 Dec 2017 14:13:02 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/25/lolipop-cloud/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-25-lolipop-cloud/</guid>
       <description>Lolipopマネージドクラウドを試してみた まだベータで無料で少し使えるようだったので試した。
 簡単に作れた。恐らくコンテナで動いている。
 PHPのコンテナを作成すると別の場所にあるMySQLにデータベース領域を与えられる。 PHPからは提供されたDBのホスト名で接続できる。

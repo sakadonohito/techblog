@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 09 Apr 2017 23:11:59 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2017 04 09 daily</title>
-      <link>https://tech.k-zak.com/2017/04/09/2017-04-09-daily/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-09-daily/</link>
       <pubDate>Sun, 09 Apr 2017 23:11:59 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/09/2017-04-09-daily/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-09-daily/</guid>
       <description>進捗ありません この1週間、調子が悪かったり仕事に追われたりしていて何も勉強できていない。 少しだけReduxのサンプルを写経して動かない箇所を動くように修正した程度。
 ES2015で理解が足りていない事 import Hoge from &amp;#39;./hoge&amp;#39;; //hogeファイルの中でexport defaultされたものをHogeとなづけてimport import * as Hoge from &amp;#39;./hoge&amp;#39;; //hogeファイルの中でexportされたもの全てをHogeオブジェクトとしてimport import { Hoge } from &amp;#39;./hoge&amp;#39;; //hogeファイルの中でHogeという名でexportされたものをimport という理解だったのだけれど、Reduxのサンプルで意図する挙動をしなくて困った。 最終的に記述ミスだったのか、勘違いだったのか、動くようになったけど。
 いっぺん基礎を網羅的に勉強しないとダメですね。 しかし、ECMAScript2015のドキュメント原文を読むのはなー。。。</description>
@@ -20,10 +20,10 @@ ES2015で理解が足りていない事 import Hoge from &amp;#39;./hoge&amp;#39
     
     <item>
       <title>recent frontend circumstance</title>
-      <link>https://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-01-frontend/</link>
       <pubDate>Sun, 02 Apr 2017 22:50:14 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-01-frontend/</guid>
       <description>最近のフロントエンド事情はまるで発展途上国の交通事情ですか ES6で書いてES5に変換したいだけなのに、なんなんですか？
 ES6からES5に変換したいだけなんだ Babel Babelを使えば変換できる。。。
 Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。
@@ -45,10 +45,10 @@ webpackに書いただけじゃダメで.babelrcにも書かないといけな�
     
     <item>
       <title>think about redux</title>
-      <link>https://tech.k-zak.com/2017/04/02/think-about-redux/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-31-redux/</link>
       <pubDate>Sun, 02 Apr 2017 22:49:50 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/02/think-about-redux/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-31-redux/</guid>
       <description>Reduxについて感化されたこと Reduxについて不満に思っている部分について考察している記事を見かけた。
 自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。
 理解して納得していること Reactの場合は上からもらうプロパティはPropsで読み取り専用。
@@ -71,10 +71,10 @@ Reduxの基本設計に不備があって、それをごまかすためのMiddle
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
+      <link>https://tech.k-zak.com/posts/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-fmxj/</guid>
       <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
 https://github.com/seedcode/fmxj
 概要としては、FileMaker Server の XML公開を使う。
@@ -109,10 +109,10 @@ more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
     
     <item>
       <title>2014年を振り返る JavaScript編</title>
-      <link>https://tech.k-zak.com/2014/12/30/milestone-js/</link>
+      <link>https://tech.k-zak.com/posts/milestone-js/</link>
       <pubDate>Tue, 30 Dec 2014 09:34:05 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/12/30/milestone-js/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone-js/</guid>
       <description>今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
 JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
 結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
@@ -126,10 +126,10 @@ CoffeeScriptはちゃんと学習する前にオワコンになりそうだし�
     
     <item>
       <title>思い出せない</title>
-      <link>https://tech.k-zak.com/2014/10/25/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/10/25/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
 サーバー関係 ログローテーションの設定を行った。
 yum install logrotate
@@ -149,10 +149,10 @@ PHP namespaceやautoloadをまだ理解しきれていない部分があるよ�
     
     <item>
       <title>低レベルプログラマだからJavaScriptで知らなかった事</title>
-      <link>https://tech.k-zak.com/2014/08/02/spec-js/</link>
+      <link>https://tech.k-zak.com/posts/spec-js/</link>
       <pubDate>Sat, 02 Aug 2014 15:29:50 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/spec-js/</guid>
+      <guid>https://tech.k-zak.com/posts/spec-js/</guid>
       <description>JavaScriptで知らないせいでハマったところなどなど
 Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。
 そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。
@@ -162,10 +162,10 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     
     <item>
       <title>JavaScriptで7の倍数と7のつく数字の時だけtrue</title>
-      <link>https://tech.k-zak.com/2013/12/22/x7-true-js/</link>
+      <link>https://tech.k-zak.com/posts/x7-true-js/</link>
       <pubDate>Sun, 22 Dec 2013 19:18:49 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/22/x7-true-js/</guid>
+      <guid>https://tech.k-zak.com/posts/x7-true-js/</guid>
       <description>Javascriptてこんな書き方できるのか
 ◆7の倍数か7の付く数字の場合のみtrueを返す。
 7の剰余が0ではない、もしくは７が含まれる数字が真なら論理値(true)、そうでなければ数値(i)
@@ -174,10 +174,10 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     
     <item>
       <title>fizzbuzz</title>
-      <link>https://tech.k-zak.com/2013/12/22/fizzbuzz-js/</link>
+      <link>https://tech.k-zak.com/posts/fizzbuzz-js/</link>
       <pubDate>Sun, 22 Dec 2013 18:44:51 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/22/fizzbuzz-js/</guid>
+      <guid>https://tech.k-zak.com/posts/fizzbuzz-js/</guid>
       <description>Javascriptでfizzbuzz
 ◆シンプルなやつ
 =を使わないなら論理値を整数に戻すみたいな面倒なことやる。剰余を用いないならいろいろごちゃごちゃやる。
@@ -186,19 +186,19 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     
     <item>
       <title>jQueryでまた使い方忘れて調べそうなやつらメモ</title>
-      <link>https://tech.k-zak.com/2013/08/25/jquery-memo/</link>
+      <link>https://tech.k-zak.com/posts/jquery-memo/</link>
       <pubDate>Sun, 25 Aug 2013 04:50:50 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/jquery-memo/</guid>
+      <guid>https://tech.k-zak.com/posts/jquery-memo/</guid>
       <description>gistベタ貼りじゃ！</description>
     </item>
     
     <item>
       <title>jQueryで要素の高さを変える</title>
-      <link>https://tech.k-zak.com/2013/08/25/jquery-toggle/</link>
+      <link>https://tech.k-zak.com/posts/jquery-toggle/</link>
       <pubDate>Sun, 25 Aug 2013 04:47:47 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/jquery-toggle/</guid>
+      <guid>https://tech.k-zak.com/posts/jquery-toggle/</guid>
       <description>まぁ、アレですよ。よかれと思って表示非表示をトグルする要素作ったら、
 非表示にした分、開いたスペースだけ下にあるリスト(table)要素の高さ広げてよ
 っていうオマケに品質求めちゃう的な要望があったわけですよ。
@@ -209,10 +209,10 @@ jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、
     
     <item>
       <title>cssメモ 配下の指定</title>
-      <link>https://tech.k-zak.com/2013/08/25/css-tech/</link>
+      <link>https://tech.k-zak.com/posts/css-tech/</link>
       <pubDate>Sun, 25 Aug 2013 04:11:02 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/css-tech/</guid>
+      <guid>https://tech.k-zak.com/posts/css-tech/</guid>
       <description>cssで配下の指定勘違いしておかしな事やってたのでメモ
 結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。
 最初
@@ -243,10 +243,10 @@ javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせる�
     
     <item>
       <title>JavaのDWRって何さ　設定メモ</title>
-      <link>https://tech.k-zak.com/2011/04/13/java-dwr/</link>
+      <link>https://tech.k-zak.com/posts/java-dwr/</link>
       <pubDate>Wed, 13 Apr 2011 19:26:26 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/13/java-dwr/</guid>
+      <guid>https://tech.k-zak.com/posts/java-dwr/</guid>
       <description></description>
     </item>
     

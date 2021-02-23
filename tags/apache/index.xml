@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 25 Oct 2014 16:10:39 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/apache/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>思い出せない</title>
-      <link>https://tech.k-zak.com/2014/10/25/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/10/25/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
 サーバー関係 ログローテーションの設定を行った。
 yum install logrotate
@@ -32,10 +32,10 @@ PHP namespaceやautoloadをまだ理解しきれていない部分があるよ�
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
-      <link>https://tech.k-zak.com/2014/09/07/challenge-ansible/</link>
+      <link>https://tech.k-zak.com/posts/challenge-ansible/</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/09/07/challenge-ansible/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-ansible/</guid>
       <description>・botoが使えないってエラーになる。
 　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
 つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
@@ -74,10 +74,10 @@ UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
+      <link>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</guid>
       <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
 の、前にAWSのS3試したので。
 ・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
@@ -96,10 +96,10 @@ Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合�
     
     <item>
       <title>apacheでredmine virtualhost設定</title>
-      <link>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</link>
+      <link>https://tech.k-zak.com/posts/apache-virtualhost/</link>
       <pubDate>Sat, 25 Jun 2011 16:03:16 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</guid>
+      <guid>https://tech.k-zak.com/posts/apache-virtualhost/</guid>
       <description>この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。</description>
     </item>
     

@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 10 Aug 2017 22:28:13 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/rbenv/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>anyenv systemwide</title>
-      <link>https://tech.k-zak.com/2017/08/10/anyenv-systemwide/</link>
+      <link>https://tech.k-zak.com/posts/2017-08-10-anyenv-systemwide/</link>
       <pubDate>Thu, 10 Aug 2017 22:28:13 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/08/10/anyenv-systemwide/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-08-10-anyenv-systemwide/</guid>
       <description>anyenvをシステムワイドにインストールしようとした 環境はUbuntu16.04
 anyenvをシステムワイドにインストールしてrbenvいれようとしたら、sslのチェックを無視しないと入らなかった。 rbenvからrubyをインストールしようとしたらダウンロードに失敗してできない。
 結論から書くと apt-get install ca-certificates して、ca-certificates入れてからrbenv install を再度試したら成功した。</description>
@@ -20,10 +20,10 @@ anyenvをシステムワイドにインストールしてrbenvいれようとし
     
     <item>
       <title>2014年の目標達成進捗管理的な</title>
-      <link>https://tech.k-zak.com/2014/01/04/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/01/04/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
 事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
 とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。

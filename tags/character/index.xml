@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 23 Mar 2017 21:47:31 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/character/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>i got caught in utf8</title>
-      <link>https://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-23-utf8/</link>
       <pubDate>Thu, 23 Mar 2017 21:47:31 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-23-utf8/</guid>
       <description>UTF-8-MAC にまたしてもやられた 全角のチルダだか波ダッシュだかがmacOSの時とそれ以外で違う文字コードなのか別の文字なのか、とにかく想定外の文字コードのものがバリデーションをすり抜けてきた。
 一つのOS上で禁止文字を羅列して出来たつもりになってたけどUTF−8−MACにはこれからも悩まされるんだろうなー。</description>
     </item>

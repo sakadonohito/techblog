@@ -6,13 +6,29 @@
     <description>Recent content in mac on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 29 Dec 2017 14:36:17 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Feb 2021 04:25:49 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021 02 24 お久しぶりです</title>
+      <link>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</link>
+      <pubDate>Wed, 24 Feb 2021 04:25:49 +0900</pubDate>
+      
+      <guid>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</guid>
+      <description>久し振りにHugoを更新してみる 長らく何もしていなかったので色々更新するのにだいぶ手間取った。 Hugoそのものを更新するのにbrewの更新や不備を直したり、なぜかついでにEmacsを最新にアップデートしたり。
+更新作業したもの  brew(brew doctorしていろいろあって大苦戦) Emacs(brewで整合性とったり動かなくなった設定直したり大苦戦) Hugo ブログのテンプレートちょこちょこ直した GitHubのSSH鍵(pushでエラー出るようになってて結局鍵を新しくした) このブログのGitHub Pagesの設定でhttpsに変更  新たに発見したことやったこと 虚しい更新作業の合間に発見したちょい技や機能があった。
+1. デスクトップをきれいにする小技 正確にはデスクトップを整理整頓するのを諦めて、シェルでデスクトップの表示非表示を切り替えるようにした。
+defaults write com.apple.finder CreateDesktop -boolean false &amp;amp;&amp;amp; killAll Finder でmacのデスクトップ上のものを非表示にできる(falseをtrueにすれば逆の設定になる)。 んでそのシェルをAutomatorでアプリケーションに登録してLaunchpadで呼び出して実行すれば切り替えられるという。
+2. pbcopy macにあるコマンド。初めて知ったような忘れていただけのような。 今回GitHubに登録する鍵(pubの方)をGitHubのページで貼り付けるのに使った。
+cat id_rsa.pub | pbcopy って感じでクリップボードに送り込めるのでGitHubの入力フォームで貼り付け！ 便利なコマンドがあったんですね。以前はターミナル上もしくはエディタで開いたものをコピーしてたけどこれなら余計な改行やスペースが混ざり込む心配が無いですね。
+3. GitHub Pagesのhttps化 このブログが長らくhttpsにしないで放置していたのでどこかに移行してhttps化しようと考えていたんだけどいつの間にかGitHub Pagesはhttpsできるようになっていたんですね。 早速設定でhttpsをオンにした。
+やれやれですよ。。</description>
+    </item>
+    
     <item>
       <title>Mac Account Broken</title>
-      <link>https://tech.k-zak.com/2017/12/29/mac-account-broken/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-29-mac-account/</link>
       <pubDate>Fri, 29 Dec 2017 14:36:17 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/29/mac-account-broken/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-29-mac-account/</guid>
       <description>Macのデータ移行時のトラブル  Macデータ移行した アカウントの権限を壊してしまった。  データ移行した TimeMachineを使うと時間はかかるが何も考えなくても諸々移行できるので便利。用途不定になってしまったHDD(1TB)があったのでそれを新たにTimeMachine用にすることにした
 アカウントの権限を壊してしまった。 データ移行のついでにアカウント名やアカウント情報を変更したら、管理者権限が外れてしまった。まじ焦った。 権限変更やアカウント情報変更用アカウントを用意してそのアカウントでログインして対象アカウントの情報を変更すべき。
 管理者権限が外れてしまったアカウントを復旧させる方法  シングルユーザーモードで起動する(cmd+s押しっぱなし)  rootユーザーでのターミナル操作になる   /sbin/mount -uw / を実行してディスクへの書込許可状態にする rm /var/db/.AppleSetupDoneを実行してセットアップ完了フラグファイルを削除 reboot実行  上記で最初のセットアップウィザードが始まるので、そこで新規に管理者権限を作成する
@@ -22,10 +38,10 @@
     
     <item>
       <title>MacにPostgreSQLを入れてみた</title>
-      <link>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</link>
+      <link>https://tech.k-zak.com/posts/mac-install-postgresql/</link>
       <pubDate>Mon, 26 Apr 2010 12:39:03 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</guid>
+      <guid>https://tech.k-zak.com/posts/mac-install-postgresql/</guid>
       <description>XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。</description>
     </item>
     

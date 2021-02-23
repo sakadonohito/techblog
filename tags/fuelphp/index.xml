@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 02 Aug 2014 15:34:29 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/fuelphp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHPあべし！</title>
-      <link>https://tech.k-zak.com/2014/08/02/spec-php5.5/</link>
+      <link>https://tech.k-zak.com/posts/spec-php5.5/</link>
       <pubDate>Sat, 02 Aug 2014 15:34:29 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/spec-php5.5/</guid>
+      <guid>https://tech.k-zak.com/posts/spec-php5.5/</guid>
       <description>最近PHP触ってて「あべし！」ってなった事。
 PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。
 愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。</description>
@@ -20,10 +20,10 @@ PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5
     
     <item>
       <title>FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</title>
-      <link>https://tech.k-zak.com/2013/11/13/trouble-charset/</link>
+      <link>https://tech.k-zak.com/posts/trouble-charset/</link>
       <pubDate>Wed, 13 Nov 2013 15:27:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/11/13/trouble-charset/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-charset/</guid>
       <description>FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、
 Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！ (PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)
 →アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。
@@ -43,10 +43,10 @@ FuelPHPのUpload::save()を行う前に
     
     <item>
       <title>fuelphp使って分からなかったこと</title>
-      <link>https://tech.k-zak.com/2013/08/25/challenge-fuelphp/</link>
+      <link>https://tech.k-zak.com/posts/challenge-fuelphp/</link>
       <pubDate>Sun, 25 Aug 2013 12:51:13 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/challenge-fuelphp/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-fuelphp/</guid>
       <description>fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな
 感じなんですけど。
 以下に分からなかったことなど
@@ -102,10 +102,10 @@ Helper作る程でもない処理専用って事？後は再帰定義のcallbacl
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に

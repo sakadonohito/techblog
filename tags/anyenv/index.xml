@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 10 Aug 2017 22:28:13 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/anyenv/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>anyenv systemwide</title>
-      <link>https://tech.k-zak.com/2017/08/10/anyenv-systemwide/</link>
+      <link>https://tech.k-zak.com/posts/2017-08-10-anyenv-systemwide/</link>
       <pubDate>Thu, 10 Aug 2017 22:28:13 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/08/10/anyenv-systemwide/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-08-10-anyenv-systemwide/</guid>
       <description>anyenvをシステムワイドにインストールしようとした 環境はUbuntu16.04
 anyenvをシステムワイドにインストールしてrbenvいれようとしたら、sslのチェックを無視しないと入らなかった。 rbenvからrubyをインストールしようとしたらダウンロードに失敗してできない。
 結論から書くと apt-get install ca-certificates して、ca-certificates入れてからrbenv install を再度試したら成功した。</description>

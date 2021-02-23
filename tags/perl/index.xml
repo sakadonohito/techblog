@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 28 Nov 2017 22:00:00 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/perl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup OTRS</title>
-      <link>https://tech.k-zak.com/2017/11/28/setup-otrs/</link>
+      <link>https://tech.k-zak.com/posts/2017-11-28-otrs-install/</link>
       <pubDate>Tue, 28 Nov 2017 22:00:00 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/11/28/setup-otrs/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-11-28-otrs-install/</guid>
       <description>OTRSをインストールしてみた オープンソースのチケット管理システム的なもの主にサービス・サポート部署で使うようなもの
 セットアップ 環境はUbuntu16.04
 基本はダウンロードしてきて実行するだけ。 本体はWeb公開領域におけばいいかな?
@@ -21,10 +21,10 @@
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
+      <link>https://tech.k-zak.com/posts/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-fmxj/</guid>
       <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
 https://github.com/seedcode/fmxj
 概要としては、FileMaker Server の XML公開を使う。
@@ -59,10 +59,10 @@ more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>https://tech.k-zak.com/2015/01/05/perl-cgi/</link>
+      <link>https://tech.k-zak.com/posts/perl-cgi/</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
+      <guid>https://tech.k-zak.com/posts/perl-cgi/</guid>
       <description>古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
 最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
 502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
@@ -84,10 +84,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>https://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
+      <link>https://tech.k-zak.com/posts/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone-serverside/</guid>
       <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
 まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
 Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
@@ -102,10 +102,10 @@ Rubyは…どうだろう。試しやプロトタイプにはいいのかも、�
     
     <item>
       <title>パスカルのなんとか</title>
-      <link>https://tech.k-zak.com/2013/12/22/pascal-logic/</link>
+      <link>https://tech.k-zak.com/posts/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
+      <guid>https://tech.k-zak.com/posts/pascal-logic/</guid>
       <description>今回は、パスカルの三角定理？みたいなやつ
 PHPでは、
 Perlでは、
@@ -116,10 +116,10 @@ Rubyはもっとシンプルな書き方があるのかもしれない。</descr
     
     <item>
       <title>コーディングリハビリ06</title>
-      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
@@ -133,10 +133,10 @@ pythonが好みだけど毎回２つリストを生成してmapしてるので�
     
     <item>
       <title>コーディングリハビリ05</title>
-      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
       <description>昨日の文字チェックをPHP以外で試す。
 与えられた文字列が全てユニークな文字で構成されているかのチェック。
 PHPは前回やっているので、今回は掲載無し。
@@ -150,10 +150,10 @@ pythonが一番スッキリしているようだけど、やっぱりRubyかな<
     
     <item>
       <title>コーディングリハビリ03</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo03/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo03/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
@@ -165,10 +165,10 @@ Rubyが一番スマートかな</description>
     
     <item>
       <title>コーディングリハビリ02</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo02/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo02/</guid>
       <description>リハビリその２
 今回は、ファイル読み込みとその時の簡単な例外処理
 読み込むテキストファイルの内容は以下の通り、
@@ -182,10 +182,10 @@ rubyはreturnを省略した場合に最後に評価された値がreturnされ�
     
     <item>
       <title>コーディングリハビリ01</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo01/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo01/</guid>
       <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
 paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
 という事でリハビリ。
@@ -199,10 +199,10 @@ Rubyでは、
     
     <item>
       <title>Perlの動作環境？について</title>
-      <link>https://tech.k-zak.com/2013/01/20/study-perl/</link>
+      <link>https://tech.k-zak.com/posts/study-perl/</link>
       <pubDate>Sun, 20 Jan 2013 15:25:11 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/01/20/study-perl/</guid>
+      <guid>https://tech.k-zak.com/posts/study-perl/</guid>
       <description>長らく更新してませんでしたが、その間にFlask試したり、最近なんかは
 ちょっとだけVisual C++を初心者本見ながら動かしてました。
 C++分かんない。
@@ -254,10 +254,10 @@ PerlHandler ModPerl::Registry</description>
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
@@ -280,10 +280,10 @@ OS再インストールしたせいだと思うけど、前に作ったDjangoが
     
     <item>
       <title>Perl勉強してるメモ１</title>
-      <link>https://tech.k-zak.com/2012/10/09/study-perl/</link>
+      <link>https://tech.k-zak.com/posts/study-perl/</link>
       <pubDate>Tue, 09 Oct 2012 05:02:19 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/10/09/study-perl/</guid>
+      <guid>https://tech.k-zak.com/posts/study-perl/</guid>
       <description>何故か最近Perlの勉強を始めた。
 気になった箇所のまとめ、
 ■変数と型

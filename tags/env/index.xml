@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 15 Sep 2014 15:48:13 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/env/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>新しく開発環境作成中</title>
-      <link>https://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
+      <link>https://tech.k-zak.com/posts/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <guid>https://tech.k-zak.com/posts/dev-env-vm/</guid>
       <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
   ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
   設定画面が出てくるので、そのままOK

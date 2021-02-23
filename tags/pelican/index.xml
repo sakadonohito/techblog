@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 20 Mar 2017 18:26:58 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/pelican/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pelicanのレイアウト作成</title>
-      <link>https://tech.k-zak.com/2017/03/20/create-pelican-theme/</link>
+      <link>https://tech.k-zak.com/posts/create-pelican-theme/</link>
       <pubDate>Mon, 20 Mar 2017 18:26:58 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/20/create-pelican-theme/</guid>
+      <guid>https://tech.k-zak.com/posts/create-pelican-theme/</guid>
       <description>Pelicanで使う自分用テーマを作成した 静的サイトジェネレーター用の基本的なブログレイアウトを一つ作っておくと使い回しができると思い、Python製のPelicanから着手することにしてみた。
 結論から言うと、なかなか時間がとれないのもあって、足掛け2ヶ月かかった。
 その1：ベースとなるレイアウトを素組する htmlとCSSのみでできるだけレスポンシブな簡易ブログ用のレイアウトを考えて作った。
@@ -34,10 +34,10 @@ MONTH_ARCHIVE_SAVE_AS = &amp;#39;{date:%Y}/{date:%m}/index.html&amp;#39; 他に�
     
     <item>
       <title>Pelicanを試す</title>
-      <link>https://tech.k-zak.com/2017/02/20/first-pelican/</link>
+      <link>https://tech.k-zak.com/posts/first-pelican/</link>
       <pubDate>Mon, 20 Feb 2017 15:26:44 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/20/first-pelican/</guid>
+      <guid>https://tech.k-zak.com/posts/first-pelican/</guid>
       <description>Python製の静的サイトジェネレーターPelicanを試す Hugo,Hexo,Jekyllと試してきて、せっかくなのでPython製のものも試そうとPelicanを試した。
 インストール mkdir &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; pip install pelican Markdown pelican-quickstart なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。
 記事を書く 記事はcontent以下にreStructuredTextもしくはMarkdownで書きます。 content以下にディレクトリを配置するとそのディレクトリ名がカテゴリ名扱いされるらしい。当分はいいや。 もちろん、カテゴリはテキストファイルないのヘッダー？に記述できますので、カテゴリが必要だからといってディレクトリでわかなければいけないわけではありません。

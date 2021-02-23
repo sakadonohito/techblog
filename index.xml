@@ -6,13 +6,29 @@
     <description>Recent content on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Feb 2021 04:25:49 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021 02 24 お久しぶりです</title>
+      <link>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</link>
+      <pubDate>Wed, 24 Feb 2021 04:25:49 +0900</pubDate>
+      
+      <guid>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</guid>
+      <description>久し振りにHugoを更新してみる 長らく何もしていなかったので色々更新するのにだいぶ手間取った。 Hugoそのものを更新するのにbrewの更新や不備を直したり、なぜかついでにEmacsを最新にアップデートしたり。
+更新作業したもの  brew(brew doctorしていろいろあって大苦戦) Emacs(brewで整合性とったり動かなくなった設定直したり大苦戦) Hugo ブログのテンプレートちょこちょこ直した GitHubのSSH鍵(pushでエラー出るようになってて結局鍵を新しくした) このブログのGitHub Pagesの設定でhttpsに変更  新たに発見したことやったこと 虚しい更新作業の合間に発見したちょい技や機能があった。
+1. デスクトップをきれいにする小技 正確にはデスクトップを整理整頓するのを諦めて、シェルでデスクトップの表示非表示を切り替えるようにした。
+defaults write com.apple.finder CreateDesktop -boolean false &amp;amp;&amp;amp; killAll Finder でmacのデスクトップ上のものを非表示にできる(falseをtrueにすれば逆の設定になる)。 んでそのシェルをAutomatorでアプリケーションに登録してLaunchpadで呼び出して実行すれば切り替えられるという。
+2. pbcopy macにあるコマンド。初めて知ったような忘れていただけのような。 今回GitHubに登録する鍵(pubの方)をGitHubのページで貼り付けるのに使った。
+cat id_rsa.pub | pbcopy って感じでクリップボードに送り込めるのでGitHubの入力フォームで貼り付け！ 便利なコマンドがあったんですね。以前はターミナル上もしくはエディタで開いたものをコピーしてたけどこれなら余計な改行やスペースが混ざり込む心配が無いですね。
+3. GitHub Pagesのhttps化 このブログが長らくhttpsにしないで放置していたのでどこかに移行してhttps化しようと考えていたんだけどいつの間にかGitHub Pagesはhttpsできるようになっていたんですね。 早速設定でhttpsをオンにした。
+やれやれですよ。。</description>
+    </item>
+    
     <item>
       <title>Not Posted</title>
-      <link>https://tech.k-zak.com/2017/12/31/not-posted/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-31-noposts/</link>
       <pubDate>Sun, 31 Dec 2017 11:49:55 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/31/not-posted/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-31-noposts/</guid>
       <description>2017年記事にしそこねたやったこと  コマンドプロンプト(バッチファイル) コマンドプロンプトからPowershell実行 シェルスクリプト AWS System Manager Run Command (sum) VagrantでSQL Server他DBもセットアップしたよ Nano Server試そうとした React Redux…etc Webpack Docker再入門とWP開発環境の作成 WordPressテーマ開発用のベースを作成した AWS Lambda をPythonで AWS Lambda をNode.jsで CakePHP 3 tutorial 少しやった Vagrant でPHP開発環境作成 Terraform試した Hugo用テーマを作成した  忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。
 コマンドプロンプト(バッチファイル) Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。
 例えばこんなこと。実行結果を変数に入れるのが面倒。
@@ -24,10 +40,10 @@ start %~dp0\called_subscripts\computer_restart.bat %~dp0 はLinuxでいうとこ
     
     <item>
       <title>First Swift</title>
-      <link>https://tech.k-zak.com/2017/12/30/first-swift/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-30-first-swift/</link>
       <pubDate>Sat, 30 Dec 2017 14:39:52 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/30/first-swift/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-30-first-swift/</guid>
       <description>PlaygroundでSwift 初めてということでもないけど初心に帰ってSwiftをPlaygroundで触った。
 iOS再再再入門 xcodeで新規プロジェクト作成してMap UI Kit?使ってべっ！っておいたらそれだけでMapアプリ完成。
 Swift再入門  varは変数 letは定数 Swiftはブロックスコープ 繰り返しはfor n in range{}  まだまだ入り口。</description>
@@ -35,10 +51,10 @@ Swift再入門  varは変数 letは定数 Swiftはブロックスコープ 繰�
     
     <item>
       <title>Mac Account Broken</title>
-      <link>https://tech.k-zak.com/2017/12/29/mac-account-broken/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-29-mac-account/</link>
       <pubDate>Fri, 29 Dec 2017 14:36:17 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/29/mac-account-broken/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-29-mac-account/</guid>
       <description>Macのデータ移行時のトラブル  Macデータ移行した アカウントの権限を壊してしまった。  データ移行した TimeMachineを使うと時間はかかるが何も考えなくても諸々移行できるので便利。用途不定になってしまったHDD(1TB)があったのでそれを新たにTimeMachine用にすることにした
 アカウントの権限を壊してしまった。 データ移行のついでにアカウント名やアカウント情報を変更したら、管理者権限が外れてしまった。まじ焦った。 権限変更やアカウント情報変更用アカウントを用意してそのアカウントでログインして対象アカウントの情報を変更すべき。
 管理者権限が外れてしまったアカウントを復旧させる方法  シングルユーザーモードで起動する(cmd+s押しっぱなし)  rootユーザーでのターミナル操作になる   /sbin/mount -uw / を実行してディスクへの書込許可状態にする rm /var/db/.AppleSetupDoneを実行してセットアップ完了フラグファイルを削除 reboot実行  上記で最初のセットアップウィザードが始まるので、そこで新規に管理者権限を作成する
@@ -48,10 +64,10 @@ Swift再入門  varは変数 letは定数 Swiftはブロックスコープ 繰�
     
     <item>
       <title>Wkhtmltopdf</title>
-      <link>https://tech.k-zak.com/2017/12/28/wkhtmltopdf/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-28-wkhtmltopdf/</link>
       <pubDate>Thu, 28 Dec 2017 14:26:45 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/28/wkhtmltopdf/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-28-wkhtmltopdf/</guid>
       <description>wkhtmltopdfを試した なんとかしてhtmlからPDFを生成する手段を増やしたい。
 ということでwkhtmltopdfを試す。
 しかしバージョンによって画面サイズがおかしくなる。
@@ -62,10 +78,10 @@ golangを試すにあたって我がEmacsにgolangの設定を施した。 GOPAT
     
     <item>
       <title>Typescript</title>
-      <link>https://tech.k-zak.com/2017/12/27/typescript/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-27-typescript/</link>
       <pubDate>Wed, 27 Dec 2017 14:10:35 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/27/typescript/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-27-typescript/</guid>
       <description>初めての？Typescript TypeScript自習 TypeScript 日本語ハンドブック | js STUDIO 他Quitなど
 上記ハンドブックを読みつつ少しコードを書く。 ビルドは上記ハンドブックの方法だとうまく動かなかったので、別途Qiitaで調べた。
 感想 まだ途中。 型をそこまで書きたくない。推論して欲しい。 PHPのタイプヒンティングと戻り値の型指定程度で十分だと思う。 でも引数の型指定なんかは別途定義をかけるので、メソッド本体の記述はスッキリして良いと思った。
@@ -75,10 +91,10 @@ golangを試すにあたって我がEmacsにgolangの設定を施した。 GOPAT
     
     <item>
       <title>Lolipop Cloud</title>
-      <link>https://tech.k-zak.com/2017/12/25/lolipop-cloud/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-25-lolipop-cloud/</link>
       <pubDate>Mon, 25 Dec 2017 14:13:02 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/25/lolipop-cloud/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-25-lolipop-cloud/</guid>
       <description>Lolipopマネージドクラウドを試してみた まだベータで無料で少し使えるようだったので試した。
 簡単に作れた。恐らくコンテナで動いている。
 PHPのコンテナを作成すると別の場所にあるMySQLにデータベース領域を与えられる。 PHPからは提供されたDBのホスト名で接続できる。
@@ -89,10 +105,10 @@ LolipopCloudのデータベースについて charset として utf8mb4 は使�
     
     <item>
       <title>Groovy TLS</title>
-      <link>https://tech.k-zak.com/2017/12/12/groovy-tls/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-12-groovy-tls/</link>
       <pubDate>Tue, 12 Dec 2017 14:04:58 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/12/groovy-tls/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-12-groovy-tls/</guid>
       <description>久しぶりにGroovyを触った Groovyで作成したプログラムがTLSで通信できるようにしないといけなくなったので少し調べた。
 Javaの場合 javaで強制的にTLS1.2を使うようにするにはJVM起動時オプションを渡す Java7はデフォルトでTLS利用可能 Java8はデフォルトでTLS1.2使える
 JVM起動オプションに
@@ -102,10 +118,10 @@ Groovyの場合 System.properties[‘https.protocols’] = ‘TLSv1.1,TLSv1.2 �
     
     <item>
       <title>Socket.io</title>
-      <link>https://tech.k-zak.com/2017/12/07/socket.io/</link>
+      <link>https://tech.k-zak.com/posts/2017-12-07-socketio/</link>
       <pubDate>Thu, 07 Dec 2017 13:56:42 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/12/07/socket.io/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-12-07-socketio/</guid>
       <description>Node.jsとSocket.io Node.jsの復習ついでにSocket.ioを試した。
 メモ  emitで送信者から送信者以外全員に送信 broadcastで全員に送信 socket.idを指定することで特定の相手にのみ送信 /namespace#room#idで特定の相手に送信できる。idのみだとダメっぽい。 redisにメッセージを押し込んでおくと複数プロセスでメッセージを共有できる  オマケ alpineのredisのdockerイメージを使うと軽くてお得。
 以下でredisのtail -fぽい感じで全部見れるので便利
@@ -114,10 +130,10 @@ $&amp;gt; redis-cli -h ${HOST} -p ${PORT} monitor </description>
     
     <item>
       <title>Setup OTRS</title>
-      <link>https://tech.k-zak.com/2017/11/28/setup-otrs/</link>
+      <link>https://tech.k-zak.com/posts/2017-11-28-otrs-install/</link>
       <pubDate>Tue, 28 Nov 2017 22:00:00 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/11/28/setup-otrs/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-11-28-otrs-install/</guid>
       <description>OTRSをインストールしてみた オープンソースのチケット管理システム的なもの主にサービス・サポート部署で使うようなもの
 セットアップ 環境はUbuntu16.04
 基本はダウンロードしてきて実行するだけ。 本体はWeb公開領域におけばいいかな?
@@ -126,10 +142,10 @@ $&amp;gt; redis-cli -h ${HOST} -p ${PORT} monitor </description>
     
     <item>
       <title>anyenv systemwide</title>
-      <link>https://tech.k-zak.com/2017/08/10/anyenv-systemwide/</link>
+      <link>https://tech.k-zak.com/posts/2017-08-10-anyenv-systemwide/</link>
       <pubDate>Thu, 10 Aug 2017 22:28:13 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/08/10/anyenv-systemwide/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-08-10-anyenv-systemwide/</guid>
       <description>anyenvをシステムワイドにインストールしようとした 環境はUbuntu16.04
 anyenvをシステムワイドにインストールしてrbenvいれようとしたら、sslのチェックを無視しないと入らなかった。 rbenvからrubyをインストールしようとしたらダウンロードに失敗してできない。
 結論から書くと apt-get install ca-certificates して、ca-certificates入れてからrbenv install を再度試したら成功した。</description>
@@ -137,10 +153,10 @@ anyenvをシステムワイドにインストールしてrbenvいれようとし
     
     <item>
       <title>Selenium WebDriver Setup</title>
-      <link>https://tech.k-zak.com/2017/06/30/selenium-webdriver-setup/</link>
+      <link>https://tech.k-zak.com/posts/2017-06-30-selenium-setup/</link>
       <pubDate>Fri, 30 Jun 2017 11:32:45 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/06/30/selenium-webdriver-setup/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-06-30-selenium-setup/</guid>
       <description>Selenium WebDriver を試してみた 環境は
  Ubuntu 16.04 Python 3.6.1  ついでにChromeのheadlessモードも試す。
 事前準備 pyenvで3.6.1を入れてお試し環境にセットする
@@ -151,10 +167,10 @@ Chromeを最新にする バージョン59にする。 ChromeDriverDownloads - C
     
     <item>
       <title>create wordpress theme</title>
-      <link>https://tech.k-zak.com/2017/05/08/create-wordpress-theme/</link>
+      <link>https://tech.k-zak.com/posts/2017-05-08-wordpress-theme/</link>
       <pubDate>Mon, 08 May 2017 22:28:13 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/05/08/create-wordpress-theme/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-05-08-wordpress-theme/</guid>
       <description>WordPressのテーマを作成してみた レスポンシブな自作レイアウトをWordPress用テーマを作成してみた。
 今確認してみたら、いくつかおかしい箇所が見つかった(´・ω・`)
 大雑把な構成 以下のファイルを作成した。
@@ -163,10 +179,10 @@ Chromeを最新にする バージョン59にする。 ChromeDriverDownloads - C
     
     <item>
       <title>VSCode</title>
-      <link>https://tech.k-zak.com/2017/04/30/vscode/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-30-vscode/</link>
       <pubDate>Sun, 30 Apr 2017 11:37:10 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/30/vscode/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-30-vscode/</guid>
       <description>VSCodeでよく使うショートカットなど 基本はEmacsを使うけどWindows環境で何かする場合はVSCodeの方が使いやすいので忘備録てきな
 画面 コマンドパレット： Cmd+Shift+p クイックオープン： Cmd+p 統合ターミナル： Cmd+` Zenモードとの切り替え： Cmd+k -&amp;gt; z
 エディター マルチカーソル： Cmd+Opt+矢印 同じ単語(選択済み？)選択： Cmd+F2 選択した単語を同じもののうち、編集してもよさそうなやつだけ編集： F2</description>
@@ -174,10 +190,10 @@ Chromeを最新にする バージョン59にする。 ChromeDriverDownloads - C
     
     <item>
       <title>setting ntp on Ubuntu</title>
-      <link>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-24-ntp/</link>
       <pubDate>Mon, 24 Apr 2017 13:48:14 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-24-ntp/</guid>
       <description>EC2のUbuntu14.04にntpを設定 事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。
 エラー内容はInvalidSigunatureException なんかタイムスタンプが早すぎるみたいなエラー内容。
 Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。 タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。
@@ -195,10 +211,10 @@ sudo timedatectl set-timezone Asia/Tokyo これでOK</description>
     
     <item>
       <title>Zabbix remote command</title>
-      <link>https://tech.k-zak.com/2017/04/23/zabbix-remote-command/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-23-zabbix/</link>
       <pubDate>Sun, 23 Apr 2017 22:19:58 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/23/zabbix-remote-command/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-23-zabbix/</guid>
       <description>Zabbixのアクション定義でリモートコマンドを実行する サーバーを監視するソフトウェア？Zabbixで、トリガーを元にアクションを起こす場合、メール通知やSlackにPostする以外に対象のホストもしくは任意のサーバーにコマンドを投げて実行することが出来る。
 Agent側の設定 Zabbixエージェント側(コマンドを投げつけられる側)の設定ファイルの
 #EnableRemoteCommands = 0 となっている箇所をコメントアウトを解除して値を1に変更する。
@@ -211,10 +227,10 @@ Zabbixは敷居が高いけど便利ですね。</description>
     
     <item>
       <title>Mastodon git clone</title>
-      <link>https://tech.k-zak.com/2017/04/18/mastodon-git-clone/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-18-mastodon-01/</link>
       <pubDate>Tue, 18 Apr 2017 21:34:18 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/18/mastodon-git-clone/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-18-mastodon-01/</guid>
       <description>Mastodonをgit cloneして中を見てみる 今流行りのMastodonをgit cloneしてみた。
 中は設定ファイルが沢山とrails関係、フロント用のnode_modules、テスト関係、それからVagrantfileやDocker関係のファイル。
 ファイル群について 今日は内容をざっと見るところまで。
@@ -224,10 +240,10 @@ Zabbixは敷居が高いけど便利ですね。</description>
     
     <item>
       <title>2017 04 09 daily</title>
-      <link>https://tech.k-zak.com/2017/04/09/2017-04-09-daily/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-09-daily/</link>
       <pubDate>Sun, 09 Apr 2017 23:11:59 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/09/2017-04-09-daily/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-09-daily/</guid>
       <description>進捗ありません この1週間、調子が悪かったり仕事に追われたりしていて何も勉強できていない。 少しだけReduxのサンプルを写経して動かない箇所を動くように修正した程度。
 ES2015で理解が足りていない事 import Hoge from &amp;#39;./hoge&amp;#39;; //hogeファイルの中でexport defaultされたものをHogeとなづけてimport import * as Hoge from &amp;#39;./hoge&amp;#39;; //hogeファイルの中でexportされたもの全てをHogeオブジェクトとしてimport import { Hoge } from &amp;#39;./hoge&amp;#39;; //hogeファイルの中でHogeという名でexportされたものをimport という理解だったのだけれど、Reduxのサンプルで意図する挙動をしなくて困った。 最終的に記述ミスだったのか、勘違いだったのか、動くようになったけど。
 いっぺん基礎を網羅的に勉強しないとダメですね。 しかし、ECMAScript2015のドキュメント原文を読むのはなー。。。</description>
@@ -235,10 +251,10 @@ ES2015で理解が足りていない事 import Hoge from &amp;#39;./hoge&amp;#39
     
     <item>
       <title>I use Markdown</title>
-      <link>https://tech.k-zak.com/2017/04/03/i-use-markdown/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-03-markdown/</link>
       <pubDate>Mon, 03 Apr 2017 22:43:54 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/03/i-use-markdown/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-03-markdown/</guid>
       <description>気がつけばMarkdown いつの頃からかドキュメントはMarkdownで書くようになった。
 最初はなんじゃこりゃ書きにくい、意味わからんと思っていた。
 でも一度慣れてしまうととても書きやすい。
@@ -250,10 +266,10 @@ WordPressを普通のテキストを書くなんて苦行でしかない。
     
     <item>
       <title>agile progress</title>
-      <link>https://tech.k-zak.com/2017/04/02/agile-progress/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-02-daily/</link>
       <pubDate>Sun, 02 Apr 2017 22:50:25 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/02/agile-progress/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-02-daily/</guid>
       <description>進捗 直近の目標に対する結果と進捗
  ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) Makerel試したい Dockerをある程度使えるようになりたい  ブログや静的サイトのテーマをつくり込みたい Plican,Hexo,Jekyllについては完了。 Jekyllは二度と触りたく無い。
 4月にWordPressのテーマ作成他のテンプレートを作りたい。
@@ -273,10 +289,10 @@ SwarmやKubernetesはハードル高いので今は諦めた。
     
     <item>
       <title>recent frontend circumstance</title>
-      <link>https://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</link>
+      <link>https://tech.k-zak.com/posts/2017-04-01-frontend/</link>
       <pubDate>Sun, 02 Apr 2017 22:50:14 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-04-01-frontend/</guid>
       <description>最近のフロントエンド事情はまるで発展途上国の交通事情ですか ES6で書いてES5に変換したいだけなのに、なんなんですか？
 ES6からES5に変換したいだけなんだ Babel Babelを使えば変換できる。。。
 Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。
@@ -298,10 +314,10 @@ webpackに書いただけじゃダメで.babelrcにも書かないといけな�
     
     <item>
       <title>think about redux</title>
-      <link>https://tech.k-zak.com/2017/04/02/think-about-redux/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-31-redux/</link>
       <pubDate>Sun, 02 Apr 2017 22:49:50 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/04/02/think-about-redux/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-31-redux/</guid>
       <description>Reduxについて感化されたこと Reduxについて不満に思っている部分について考察している記事を見かけた。
 自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。
 理解して納得していること Reactの場合は上からもらうプロパティはPropsで読み取り専用。
@@ -324,10 +340,10 @@ Reduxの基本設計に不備があって、それをごまかすためのMiddle
     
     <item>
       <title>jaws-ug container</title>
-      <link>https://tech.k-zak.com/2017/03/31/jaws-ug-container/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-30-jaws-container/</link>
       <pubDate>Fri, 31 Mar 2017 18:01:34 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/31/jaws-ug-container/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-30-jaws-container/</guid>
       <description>JAWS-UG コンテナ支部 の勉強会に行ってきた 行ってきた。。
 前佛さんのお話 Dockerは仕様でコンテナが技術っていう話。
 開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。
@@ -352,20 +368,20 @@ ECSを活用する上での勘所 データについて  なるべくDocker Volu
     
     <item>
       <title>Powershell</title>
-      <link>https://tech.k-zak.com/2017/03/30/powershell/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-30-powershell/</link>
       <pubDate>Thu, 30 Mar 2017 11:40:40 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/30/powershell/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-30-powershell/</guid>
       <description>Powershellでやったことメモn Powershellの実行権限について Get-ExecutionPolicy Set-ExecutionPolicy &amp;lt;PolicyName&amp;gt; # RemoteSignedとか よく使いそうなやつ ファイル操作、実行、インストールなど
 Copy-Item &amp;lt;&amp;lt;source&amp;gt;&amp;gt; -Destination &amp;lt;&amp;lt;dest&amp;gt;&amp;gt; -Recurse Move-Item &amp;lt;&amp;lt;sourse&amp;gt;&amp;gt; -Destination &amp;lt;&amp;lt;dest&amp;gt;&amp;gt; Remove-Item &amp;lt;&amp;lt;source&amp;gt;&amp;gt; -Recurse Rename-Item &amp;lt;&amp;lt;sourse&amp;gt;&amp;gt; Get-Content &amp;lt;&amp;lt;path/to/file&amp;gt;&amp;gt; Get-WmiObject Win32_Product Enter-PSSession &amp;lt;&amp;lt;container_id&amp;gt;&amp;gt; -RunAsAdministrator docker inspect &amp;lt;&amp;lt;container&amp;gt;&amp;gt; --format=&amp;quot;{{.Id}}&amp;quot; | sv container_id Install-WindowsFeature -Name &amp;lt;&amp;lt;FeatureName | SubFeatureName&amp;gt;&amp;gt; Install-WindowsFeature Web-Server -IncludeAllSubFeature Get-NetTCPConnection Get-WebSiteState -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Start-WebSite -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Stop-WebSite -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Get-WindowsFeature -Name Web-Server Get-WindowsFeature -Name Web-* IIS関連 Import-Module IISAdministration Reset-IISServerManager -confirm:$false $sm = Get-IISServerManager $appHostconfig = $sm.</description>
     </item>
     
     <item>
       <title>Hexo etc</title>
-      <link>https://tech.k-zak.com/2017/03/29/hexo-etc/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-29-daily/</link>
       <pubDate>Wed, 29 Mar 2017 22:37:07 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/29/hexo-etc/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-29-daily/</guid>
       <description>勉強の進捗とHexoの改修 いろいろいっぱいいっぱいで諦めたことと、作業したこと。
 スプリントの進捗  Mackerelのプラグイン試すとか諦めて、3月までの課題終了。 Docker学習、3月までの課題終了。Swarmとか諦めた。  時間に余裕ができたらまた集中して取り組む。
 Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃう感じだったのでCSSを変えるとかしようと考えてた。
@@ -377,10 +393,10 @@ Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃ
     
     <item>
       <title>docker reinstall</title>
-      <link>https://tech.k-zak.com/2017/03/28/docker-reinstall/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-28-docker/</link>
       <pubDate>Tue, 28 Mar 2017 23:57:46 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/28/docker-reinstall/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-28-docker/</guid>
       <description>Dockerを再インストールした Dockerが全然触らないうちにどんどん進化していってしまったので、一旦アンインストールして、入れ直した。
 環境はmacOS 10.11 えるかぴたん
 やったこと  docker-machine(boot2docker)の中身を全て削除  docker-machine rm defaultとか   docker-machineを完全削除するらしいツールを使って削除実行 Virtualboxを確認して環境が残っていないか確認 .bash_profileに記述していた環境変数設定を削除 homeディレクトリ直下の.dockerみたいな隠し領域も削除 公式から改めてdocker for mac をダウンロードしてインストール ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置  ハマったこと 単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対してdocker -vとかやってエラーを出してた。
@@ -391,10 +407,10 @@ Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃ
     
     <item>
       <title>challenge mackerel plugin</title>
-      <link>https://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-27-mackerel-plugin/</link>
       <pubDate>Mon, 27 Mar 2017 23:36:40 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-27-mackerel-plugin/</guid>
       <description>Mackerelのカスタムメトリクスに挑戦 して撃沈。
 何が起きたか 公式のヘルプ を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。
 YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;quot;}\&amp;quot; unexpected (expecting \&amp;quot;then\&amp;quot;)\n&amp;quot; 改行が足りない？
@@ -405,10 +421,10 @@ rubyファイルを単独で実行すると動くので謎。
     
     <item>
       <title>Challenged Jekyll template and hate</title>
-      <link>https://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-26-jekyll/</link>
       <pubDate>Sun, 26 Mar 2017 18:32:49 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-26-jekyll/</guid>
       <description>Jekyllの画面(テンプレート)作った 結論から言うと、二度と使いたくない。
 Pelicanの方がいいや。
 やりたかったこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る アーカイブ(年月)ごとの記事一覧ページを作る アーカイブ(年月)の一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る  できたこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、Aboutのリンクを作る  乗り越えた事 HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。
@@ -428,10 +444,10 @@ Pelicanの場合、記事リストをgroup by　した結果をそのままfor�
     
     <item>
       <title>replace hugo post rule</title>
-      <link>https://tech.k-zak.com/2017/03/25/replace-hugo-post-rule/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-25-replace/</link>
       <pubDate>Sat, 25 Mar 2017 22:43:59 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/25/replace-hugo-post-rule/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-25-replace/</guid>
       <description>Hugoの記事の命名規則を見直して直した 辛かった。
 カテゴリ名、タグ名、ファイル名、記事のタイトル。これらが日本語だとジェネレート後のディレクトリ名、ファイル名、URLパス等で日本語が混ざってしまうので、片っ端から探して変更した。
 今後は記事内容以外では絶対に日本語を使わないようにしないと。
@@ -441,10 +457,10 @@ Pelicanの場合、記事リストをgroup by　した結果をそのままfor�
     
     <item>
       <title>I tried Mackerel</title>
-      <link>https://tech.k-zak.com/2017/03/24/i-tried-mackerel/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-24-meckerel/</link>
       <pubDate>Fri, 24 Mar 2017 18:32:38 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/24/i-tried-mackerel/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-24-meckerel/</guid>
       <description>勇気を出してMackerelを試してみた 前々から気にはなっていたMackerelをお試しで入れてみた。
  VPS契約しているUbuntu16.04 使い捨てのAWS上WIndows2012  インストール ヘルプに書いてある通りに作業してつまずく事もなくすんなりできた。
 監視項目 デフォルト監視項目 通常の監視項目で既に普段Zabbixで見て使っている項目を監視できているので、Zabbix使いこなす気がないならMackerelでいいかなって思った。
@@ -465,20 +481,20 @@ Zabbixサーバーを一台用意する場合との費用比較とか調べて�
     
     <item>
       <title>i got caught in utf8</title>
-      <link>https://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-23-utf8/</link>
       <pubDate>Thu, 23 Mar 2017 21:47:31 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-23-utf8/</guid>
       <description>UTF-8-MAC にまたしてもやられた 全角のチルダだか波ダッシュだかがmacOSの時とそれ以外で違う文字コードなのか別の文字なのか、とにかく想定外の文字コードのものがバリデーションをすり抜けてきた。
 一つのOS上で禁止文字を羅列して出来たつもりになってたけどUTF−8−MACにはこれからも悩まされるんだろうなー。</description>
     </item>
     
     <item>
       <title>Bitbucket is cool</title>
-      <link>https://tech.k-zak.com/2017/03/22/bitbucket-is-cool/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-22-bitbucket/</link>
       <pubDate>Wed, 22 Mar 2017 21:47:01 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/22/bitbucket-is-cool/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-22-bitbucket/</guid>
       <description>Bitbucketけっこういいかも プライベートリポジトリ欲しくてBitbucket試してみた。
 乾燥 Gitが使えるのでhg clone フォー！(古い)とかやらなくていいし抵抗なくて使えていいですね。
 なんかWikiとか課題(issue)とかも使えるし、どうやらGithubPagesみたいのもできるみたい。 なんかTrelloともなんか連携できるみたいでいいですね。
@@ -488,10 +504,10 @@ Githubとの使い分けがなやましいけど、とりあえずはプライ�
     
     <item>
       <title>Agile and Sprint myself</title>
-      <link>https://tech.k-zak.com/2017/03/21/agile-and-sprint-myself/</link>
+      <link>https://tech.k-zak.com/posts/2017-03-21-thinkagailemyself/</link>
       <pubDate>Tue, 21 Mar 2017 23:52:11 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/21/agile-and-sprint-myself/</guid>
+      <guid>https://tech.k-zak.com/posts/2017-03-21-thinkagailemyself/</guid>
       <description>自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい と、言うことです。
 覚えたいこと、挑戦したいことを目標とするはいいけど、いつまでたっても着手しなかったり遅々として進まなかったりするので優先順位をつけて期限を設けて手中して取り組んでいけば少しは結果が変わってくると信じたい。
 現在の目標  ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) AWSの機能のだいたいを触って感覚を掴んでおきたい Microsoft Azureを触ってAWSとの違いを掴んでおきたい GCC？を以下略 Blumixに挑戦したい FreeBSDを構築したい Alpineを構築して慣れたい Ansibleを一通り触っていろいろできるよういなりたい Dockerをある程度使えるようになりたい IPv6の学習と擬似ネットワークの構築してみたい VPNの設定をGUIじゃなくても設定できるようになりたい VyOS？を試してみたい Shell及びAWKを覚えたい Powershellを覚えたい dot net C#を覚えたい Javaを覚えたい Androidを覚えたい Swiftを覚えたい JavaScriptをもっと使いこなせるようになりmたい Perl6/Perl5を使えるようになりたい PHP7を覚えたい PHPのフレームワーク、Laravelを覚えたい Nginxに組み込むLuaを少し試したい Ruby/Railsを覚えたい Python3をもう少し使えるようになりたい Scalaちょっと覚えたい Lispわかるようになりたい Clojure書けるようになりたい Haskell読めるようになりたい F#ちょっとしたものなら書けるようになりたい ActiveDirectory/OpenDirectoryがわかるようになりたい。 Golang書けるようになりたい Makerel試したい Erlang読み書きできるようになりたい Elasticsearch扱えるようになりたい Neo4j試したい MongoDB試したい DynamoDB試したい Redis扱えるようになりたい  とっても曖昧なものが多い。。
@@ -502,10 +518,10 @@ Githubとの使い分けがなやましいけど、とりあえずはプライ�
     
     <item>
       <title>Pelicanのレイアウト作成</title>
-      <link>https://tech.k-zak.com/2017/03/20/create-pelican-theme/</link>
+      <link>https://tech.k-zak.com/posts/create-pelican-theme/</link>
       <pubDate>Mon, 20 Mar 2017 18:26:58 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/03/20/create-pelican-theme/</guid>
+      <guid>https://tech.k-zak.com/posts/create-pelican-theme/</guid>
       <description>Pelicanで使う自分用テーマを作成した 静的サイトジェネレーター用の基本的なブログレイアウトを一つ作っておくと使い回しができると思い、Python製のPelicanから着手することにしてみた。
 結論から言うと、なかなか時間がとれないのもあって、足掛け2ヶ月かかった。
 その1：ベースとなるレイアウトを素組する htmlとCSSのみでできるだけレスポンシブな簡易ブログ用のレイアウトを考えて作った。
@@ -527,10 +543,10 @@ MONTH_ARCHIVE_SAVE_AS = &amp;#39;{date:%Y}/{date:%m}/index.html&amp;#39; 他に�
     
     <item>
       <title>Pelicanを試す</title>
-      <link>https://tech.k-zak.com/2017/02/20/first-pelican/</link>
+      <link>https://tech.k-zak.com/posts/first-pelican/</link>
       <pubDate>Mon, 20 Feb 2017 15:26:44 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/20/first-pelican/</guid>
+      <guid>https://tech.k-zak.com/posts/first-pelican/</guid>
       <description>Python製の静的サイトジェネレーターPelicanを試す Hugo,Hexo,Jekyllと試してきて、せっかくなのでPython製のものも試そうとPelicanを試した。
 インストール mkdir &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; pip install pelican Markdown pelican-quickstart なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。
 記事を書く 記事はcontent以下にreStructuredTextもしくはMarkdownで書きます。 content以下にディレクトリを配置するとそのディレクトリ名がカテゴリ名扱いされるらしい。当分はいいや。 もちろん、カテゴリはテキストファイルないのヘッダー？に記述できますので、カテゴリが必要だからといってディレクトリでわかなければいけないわけではありません。
@@ -540,10 +556,10 @@ pelican content -s pelicanconf.py でoutputディレクトリに静的ファイ�
     
     <item>
       <title>Jekyllを試す</title>
-      <link>https://tech.k-zak.com/2017/02/19/first-jekyll/</link>
+      <link>https://tech.k-zak.com/posts/first-jekyll/</link>
       <pubDate>Sun, 19 Feb 2017 23:22:39 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/19/first-jekyll/</guid>
+      <guid>https://tech.k-zak.com/posts/first-jekyll/</guid>
       <description>Jekyllを試す Ruby製の静的サイトジェネレーターを試してる。
 インストール 以下下記URLを参考にいろいろ試したけど、情報が古くコマンドが変わってた。 参考
 gem install jekyll mkdir _site _posts _site assets mkdir -p assets/css 構造はこんな感じ
@@ -556,10 +572,10 @@ Ruby製だから？ヘルプが分かりやすい。
     
     <item>
       <title>Hexoを試す</title>
-      <link>https://tech.k-zak.com/2017/02/19/first-hexo/</link>
+      <link>https://tech.k-zak.com/posts/first-hexo/</link>
       <pubDate>Sun, 19 Feb 2017 22:21:50 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/19/first-hexo/</guid>
+      <guid>https://tech.k-zak.com/posts/first-hexo/</guid>
       <description>JavaScriptの静的サイトジェネレーターHexoを試す JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。
 インストールと初期設定 npm install -g hexo-cli hexo init &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; npm install hexo server これでHexoがインストールされサイトを開始できる hexe serverで開発用のサーバー起動状態になりhttp://localhost:4000にアクセスできる。
 _config.ymlを編集する。
@@ -573,10 +589,10 @@ Publicファイルの生成 hexo generate これでファイルがpublicフォ�
     
     <item>
       <title>WordPressからHugoへ移行</title>
-      <link>https://tech.k-zak.com/2017/02/19/first-hugo/</link>
+      <link>https://tech.k-zak.com/posts/first-hugo/</link>
       <pubDate>Sun, 19 Feb 2017 00:09:41 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/19/first-hugo/</guid>
+      <guid>https://tech.k-zak.com/posts/first-hugo/</guid>
       <description>開発メモブログをWordPressからHugoへの移行  WordPressから記事をエクスポート Hugoをインストール エクスポートした記事を放り込む  WordPressから記事をエクスポート  WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す  参考    Hugoをインストール brew install hugo hugo new site techblog cd techblog 書き出した記事を放り込む プラグインを使ってエクスポートした記事データはHugoのcontent/postのpostディレクトリ相当のものが吐き出されているので、中身をcontent/post/にぶちまける。
 細かい設定 テーマを入れる 適当なテーマをインストール。今回はPolymer。 themeディレクトリがなかったら作ってその中でgit cloneしたらいいよ。
 config.tomlを編集 title,baseurl,languageCode,theme,paginateを修正する。
@@ -592,10 +608,10 @@ GitHubPagesで公開する  GitHubにリポジトリを追加 hugoコマンド�
     
     <item>
       <title>再始動</title>
-      <link>https://tech.k-zak.com/2017/02/18/restart/</link>
+      <link>https://tech.k-zak.com/posts/restart/</link>
       <pubDate>Sat, 18 Feb 2017 23:26:18 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2017/02/18/restart/</guid>
+      <guid>https://tech.k-zak.com/posts/restart/</guid>
       <description>ブログ引越して再始動 &amp;hellip;の予定
 再始動 契約していたレンタルサーバーを解約して、長らく契約するも放置状態が続いていたVPSにいろいろ引っ越そうと検討。
 ついでにいろいろ構成などを再検討してやり直そうと考えました。
@@ -621,19 +637,19 @@ VPSサーバーの設定やHugoについて 後日、それぞれ別の記事に
     
     <item>
       <title>Oracle Setup</title>
-      <link>https://tech.k-zak.com/2016/11/30/oracle-setup/</link>
+      <link>https://tech.k-zak.com/posts/2016-11-30-oracle-setup/</link>
       <pubDate>Wed, 30 Nov 2016 11:46:20 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/2016/11/30/oracle-setup/</guid>
+      <guid>https://tech.k-zak.com/posts/2016-11-30-oracle-setup/</guid>
       <description>Ubuntu14.04にOracle11gを入れる 大まかな手順  必要なものをいれる(unzip, libaio1, unixodbc, alien) oracle download(rpmパッケージだけどな！) /sbin/chkconfigを作ってあげる alienでrpmパッケージをdebに変換 インストール 設定ファイル周りの編集(パスが違うとか、memory_targetの変更とか) hostsに外向けIPとhostnameの対応を追加(一番大事！)  </description>
     </item>
     
     <item>
       <title>嘘でしょう。。。</title>
-      <link>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</link>
+      <link>https://tech.k-zak.com/posts/ubuntu-wifi/</link>
       <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</guid>
+      <guid>https://tech.k-zak.com/posts/ubuntu-wifi/</guid>
       <description>長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。
 実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。
 悩まされていた問題 会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。
@@ -648,10 +664,10 @@ VMのネットワーク設定を「Macと共有」の時は問題なくて「自
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
+      <link>https://tech.k-zak.com/posts/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-fmxj/</guid>
       <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
 https://github.com/seedcode/fmxj
 概要としては、FileMaker Server の XML公開を使う。
@@ -686,10 +702,10 @@ more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
     
     <item>
       <title>AnsibleのSSH設定について</title>
-      <link>https://tech.k-zak.com/2015/02/08/ansible-ssh/</link>
+      <link>https://tech.k-zak.com/posts/ansible-ssh/</link>
       <pubDate>Sun, 08 Feb 2015 14:43:15 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/02/08/ansible-ssh/</guid>
+      <guid>https://tech.k-zak.com/posts/ansible-ssh/</guid>
       <description>Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
 という事で調べた。
 結論としては、varsファイルに
@@ -732,10 +748,10 @@ hostsファイルにhostの後に引数オプション的にansible_ssh_passと�
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>https://tech.k-zak.com/2015/02/01/php-mail/</link>
+      <link>https://tech.k-zak.com/posts/php-mail/</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/02/01/php-mail/</guid>
+      <guid>https://tech.k-zak.com/posts/php-mail/</guid>
       <description>## install postfix
 “`
 sudo apt-get install postfix postfix-dev sasl2-bin
@@ -771,10 +787,10 @@ gmailの場合は/ssl/novalidation-certみたいのつける</description>
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>https://tech.k-zak.com/2015/01/05/perl-cgi/</link>
+      <link>https://tech.k-zak.com/posts/perl-cgi/</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
+      <guid>https://tech.k-zak.com/posts/perl-cgi/</guid>
       <description>古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
 最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
 502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
@@ -796,10 +812,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？
     
     <item>
       <title>2014年を振り返る インフラ系</title>
-      <link>https://tech.k-zak.com/2014/12/30/milestone-infra/</link>
+      <link>https://tech.k-zak.com/posts/milestone-infra/</link>
       <pubDate>Tue, 30 Dec 2014 09:50:19 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/12/30/milestone-infra/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone-infra/</guid>
       <description>2014年を振り返る。インフラ関係について
 今年もっとも多く成長したのはインフラ関係についてだと思う。
 来年はもう少しスタートアップ用のシェルスクリプト理解して作れるようになりたい。
@@ -812,10 +828,10 @@ Ansibleは様々な構成管理、できればWindows環境も。
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>https://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
+      <link>https://tech.k-zak.com/posts/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone-serverside/</guid>
       <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
 まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
 Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
@@ -830,10 +846,10 @@ Rubyは…どうだろう。試しやプロトタイプにはいいのかも、�
     
     <item>
       <title>2014年を振り返る JavaScript編</title>
-      <link>https://tech.k-zak.com/2014/12/30/milestone-js/</link>
+      <link>https://tech.k-zak.com/posts/milestone-js/</link>
       <pubDate>Tue, 30 Dec 2014 09:34:05 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/12/30/milestone-js/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone-js/</guid>
       <description>今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
 JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
 結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
@@ -847,10 +863,10 @@ CoffeeScriptはちゃんと学習する前にオワコンになりそうだし�
     
     <item>
       <title>思い出せない</title>
-      <link>https://tech.k-zak.com/2014/10/25/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/10/25/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
 サーバー関係 ログローテーションの設定を行った。
 yum install logrotate
@@ -870,10 +886,10 @@ PHP namespaceやautoloadをまだ理解しきれていない部分があるよ�
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>https://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
+      <link>https://tech.k-zak.com/posts/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <guid>https://tech.k-zak.com/posts/dev-env-vm/</guid>
       <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
   ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
   設定画面が出てくるので、そのままOK
@@ -889,10 +905,10 @@ sudo apt-get install mercurial</description>
     
     <item>
       <title>PHPのファイルアップロードについて</title>
-      <link>https://tech.k-zak.com/2014/09/07/setting-php/</link>
+      <link>https://tech.k-zak.com/posts/setting-php/</link>
       <pubDate>Sun, 07 Sep 2014 17:34:12 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/09/07/setting-php/</guid>
+      <guid>https://tech.k-zak.com/posts/setting-php/</guid>
       <description>PHPで大きなファイルアップロードを作成する
 ・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。
 ・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file
@@ -903,10 +919,10 @@ sudo apt-get install mercurial</description>
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
-      <link>https://tech.k-zak.com/2014/09/07/challenge-ansible/</link>
+      <link>https://tech.k-zak.com/posts/challenge-ansible/</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/09/07/challenge-ansible/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-ansible/</guid>
       <description>・botoが使えないってエラーになる。
 　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
 つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
@@ -945,10 +961,10 @@ UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
+      <link>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</guid>
       <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
 の、前にAWSのS3試したので。
 ・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
@@ -967,10 +983,10 @@ Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合�
     
     <item>
       <title>Linux関係のメモ201407</title>
-      <link>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</link>
+      <link>https://tech.k-zak.com/posts/setting-ubuntu/</link>
       <pubDate>Sat, 02 Aug 2014 15:47:24 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/posts/setting-ubuntu/</guid>
       <description>Ubuntu系でのchkconfigに変わるコマンドってなんだっけ？
 -&amp;gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要……
 checkconfigてLinux全般共通じゃなかったんだ……
@@ -980,10 +996,10 @@ checkconfigてLinux全般共通じゃなかったんだ……
     
     <item>
       <title>PHPあべし！</title>
-      <link>https://tech.k-zak.com/2014/08/02/spec-php5.5/</link>
+      <link>https://tech.k-zak.com/posts/spec-php5.5/</link>
       <pubDate>Sat, 02 Aug 2014 15:34:29 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/spec-php5.5/</guid>
+      <guid>https://tech.k-zak.com/posts/spec-php5.5/</guid>
       <description>最近PHP触ってて「あべし！」ってなった事。
 PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。
 愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。</description>
@@ -991,10 +1007,10 @@ PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5
     
     <item>
       <title>低レベルプログラマだからJavaScriptで知らなかった事</title>
-      <link>https://tech.k-zak.com/2014/08/02/spec-js/</link>
+      <link>https://tech.k-zak.com/posts/spec-js/</link>
       <pubDate>Sat, 02 Aug 2014 15:29:50 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/08/02/spec-js/</guid>
+      <guid>https://tech.k-zak.com/posts/spec-js/</guid>
       <description>JavaScriptで知らないせいでハマったところなどなど
 Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。
 そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。
@@ -1004,10 +1020,10 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     
     <item>
       <title>最近やったいろいろ</title>
-      <link>https://tech.k-zak.com/2014/03/16/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/03/16/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
 ◆PostgreSQLのSQLダンプ
 　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
@@ -1052,40 +1068,40 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     
     <item>
       <title>Win上のpythonでバッチ処理3</title>
-      <link>https://tech.k-zak.com/2014/03/16/batch-python-03/</link>
+      <link>https://tech.k-zak.com/posts/batch-python-03/</link>
       <pubDate>Sun, 16 Mar 2014 14:36:07 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/03/16/batch-python-03/</guid>
+      <guid>https://tech.k-zak.com/posts/batch-python-03/</guid>
       <description>windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを
 取得し、コマンドを叩く。</description>
     </item>
     
     <item>
       <title>Win上のPythonでバッチ処理2</title>
-      <link>https://tech.k-zak.com/2014/03/16/batch-python-02/</link>
+      <link>https://tech.k-zak.com/posts/batch-python-02/</link>
       <pubDate>Sun, 16 Mar 2014 14:29:40 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/03/16/batch-python-02/</guid>
+      <guid>https://tech.k-zak.com/posts/batch-python-02/</guid>
       <description>windows server2008上のFileMakerServerのバッチ処理を行うにあたり、前回使用した作業用の
 csvファイルが存在していたら消す処理。</description>
     </item>
     
     <item>
       <title>Windows上でpythonでバッチ処理1</title>
-      <link>https://tech.k-zak.com/2014/03/16/batch-python-01/</link>
+      <link>https://tech.k-zak.com/posts/batch-python-01/</link>
       <pubDate>Sun, 16 Mar 2014 14:23:49 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/03/16/batch-python-01/</guid>
+      <guid>https://tech.k-zak.com/posts/batch-python-01/</guid>
       <description>windows server2008上のFileMakerServerのWeb公開エンジンのプロセスを監視して
 異常終了していたらプロセスを再起動するバッチプログラムをpythonで書いてみた。</description>
     </item>
     
     <item>
       <title>NginxでPermission denied</title>
-      <link>https://tech.k-zak.com/2014/01/16/trouble-nginx/</link>
+      <link>https://tech.k-zak.com/posts/trouble-nginx/</link>
       <pubDate>Thu, 16 Jan 2014 01:44:58 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/01/16/trouble-nginx/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-nginx/</guid>
       <description>開発環境
 OS:Ubuntu12?
 Webサーバー：Nginx
@@ -1100,10 +1116,10 @@ Nginxのセキュリティ機能？なのでしょうか。仕組みは調べて
     
     <item>
       <title>2014年の目標達成進捗管理的な</title>
-      <link>https://tech.k-zak.com/2014/01/04/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2014/01/04/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
 事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
 とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
@@ -1144,10 +1160,10 @@ nginxの設定編集 既にnginxが動いている環境のため、redmine専�
     
     <item>
       <title>JavaScriptで7の倍数と7のつく数字の時だけtrue</title>
-      <link>https://tech.k-zak.com/2013/12/22/x7-true-js/</link>
+      <link>https://tech.k-zak.com/posts/x7-true-js/</link>
       <pubDate>Sun, 22 Dec 2013 19:18:49 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/22/x7-true-js/</guid>
+      <guid>https://tech.k-zak.com/posts/x7-true-js/</guid>
       <description>Javascriptてこんな書き方できるのか
 ◆7の倍数か7の付く数字の場合のみtrueを返す。
 7の剰余が0ではない、もしくは７が含まれる数字が真なら論理値(true)、そうでなければ数値(i)
@@ -1156,10 +1172,10 @@ nginxの設定編集 既にnginxが動いている環境のため、redmine専�
     
     <item>
       <title>fizzbuzz</title>
-      <link>https://tech.k-zak.com/2013/12/22/fizzbuzz-js/</link>
+      <link>https://tech.k-zak.com/posts/fizzbuzz-js/</link>
       <pubDate>Sun, 22 Dec 2013 18:44:51 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/22/fizzbuzz-js/</guid>
+      <guid>https://tech.k-zak.com/posts/fizzbuzz-js/</guid>
       <description>Javascriptでfizzbuzz
 ◆シンプルなやつ
 =を使わないなら論理値を整数に戻すみたいな面倒なことやる。剰余を用いないならいろいろごちゃごちゃやる。
@@ -1168,10 +1184,10 @@ nginxの設定編集 既にnginxが動いている環境のため、redmine専�
     
     <item>
       <title>パスカルのなんとか</title>
-      <link>https://tech.k-zak.com/2013/12/22/pascal-logic/</link>
+      <link>https://tech.k-zak.com/posts/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
+      <guid>https://tech.k-zak.com/posts/pascal-logic/</guid>
       <description>今回は、パスカルの三角定理？みたいなやつ
 PHPでは、
 Perlでは、
@@ -1182,10 +1198,10 @@ Rubyはもっとシンプルな書き方があるのかもしれない。</descr
     
     <item>
       <title>平方根ろじく</title>
-      <link>https://tech.k-zak.com/2013/12/08/square-root/</link>
+      <link>https://tech.k-zak.com/posts/square-root/</link>
       <pubDate>Sun, 08 Dec 2013 15:52:17 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/08/square-root/</guid>
+      <guid>https://tech.k-zak.com/posts/square-root/</guid>
       <description>平方根で最も少ない桁数で0から9までの数字が揃うのは何？
 Pythonでチャレンジ
 今回はPython以外で考える気が起きない。</description>
@@ -1193,10 +1209,10 @@ Pythonでチャレンジ
     
     <item>
       <title>コーディングリハビリ06</title>
-      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
@@ -1210,10 +1226,10 @@ pythonが好みだけど毎回２つリストを生成してmapしてるので�
     
     <item>
       <title>コーディングリハビリ05</title>
-      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
       <description>昨日の文字チェックをPHP以外で試す。
 与えられた文字列が全てユニークな文字で構成されているかのチェック。
 PHPは前回やっているので、今回は掲載無し。
@@ -1227,10 +1243,10 @@ pythonが一番スッキリしているようだけど、やっぱりRubyかな<
     
     <item>
       <title>コーディングリハビリ04</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo04/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo04/</link>
       <pubDate>Fri, 06 Dec 2013 16:06:49 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo04/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo04/</guid>
       <description>今回は与えられた文字列が全てユニークな文字の構成かどうか調べる。
 そういう問題を出されてスマートに答えられなかったので、調べた。
 1,回答した内容を修正したもの
@@ -1244,10 +1260,10 @@ pythonが一番スッキリしているようだけど、やっぱりRubyかな<
     
     <item>
       <title>コーディングリハビリ03</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo03/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo03/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
@@ -1259,10 +1275,10 @@ Rubyが一番スマートかな</description>
     
     <item>
       <title>コーディングリハビリ02</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo02/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo02/</guid>
       <description>リハビリその２
 今回は、ファイル読み込みとその時の簡単な例外処理
 読み込むテキストファイルの内容は以下の通り、
@@ -1276,10 +1292,10 @@ rubyはreturnを省略した場合に最後に評価された値がreturnされ�
     
     <item>
       <title>コーディングリハビリ01</title>
-      <link>https://tech.k-zak.com/2013/12/06/coding-memo01/</link>
+      <link>https://tech.k-zak.com/posts/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
+      <guid>https://tech.k-zak.com/posts/coding-memo01/</guid>
       <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
 paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
 という事でリハビリ。
@@ -1293,10 +1309,10 @@ Rubyでは、
     
     <item>
       <title>Laravel4触り始めました</title>
-      <link>https://tech.k-zak.com/2013/12/06/study-larabel4/</link>
+      <link>https://tech.k-zak.com/posts/study-larabel4/</link>
       <pubDate>Fri, 06 Dec 2013 14:07:20 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/12/06/study-larabel4/</guid>
+      <guid>https://tech.k-zak.com/posts/study-larabel4/</guid>
       <description>Laravel4がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。
 テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。
 {{– コメントアウトしたいコード –}}って書かないといけない。ていうか、そもそもの外で変な書き方してたのが悪い。
@@ -1307,10 +1323,10 @@ Rubyでは、
     
     <item>
       <title>FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</title>
-      <link>https://tech.k-zak.com/2013/11/13/trouble-charset/</link>
+      <link>https://tech.k-zak.com/posts/trouble-charset/</link>
       <pubDate>Wed, 13 Nov 2013 15:27:30 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/11/13/trouble-charset/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-charset/</guid>
       <description>FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、
 Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！ (PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)
 →アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。
@@ -1330,10 +1346,10 @@ FuelPHPのUpload::save()を行う前に
     
     <item>
       <title>sshで、ぷごふぁ</title>
-      <link>https://tech.k-zak.com/2013/10/02/ssh/</link>
+      <link>https://tech.k-zak.com/posts/ssh/</link>
       <pubDate>Wed, 02 Oct 2013 17:10:04 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/10/02/ssh/</guid>
+      <guid>https://tech.k-zak.com/posts/ssh/</guid>
       <description>WordPress勉強してます。テーマについてはだいたい分かったので、自作テーマとか作っていきたい。
 ゆくゆくは案件事例的なぽーとふぉりおサイトを作ろうと、とりあえずさくらVPSを立てて、SSHの
 設定をする。
@@ -1347,10 +1363,10 @@ Qiitaは素人同然の自分には本当に助かる。</description>
     
     <item>
       <title>印刷用CSSでハマった</title>
-      <link>https://tech.k-zak.com/2013/10/02/trouble-css/</link>
+      <link>https://tech.k-zak.com/posts/trouble-css/</link>
       <pubDate>Wed, 02 Oct 2013 16:53:01 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/10/02/trouble-css/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-css/</guid>
       <description>この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。
 問題のCSS: page-break-before
 いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと
@@ -1366,10 +1382,10 @@ cssを適用させるって方法。Web素人には分からんよ。Web上でCS
     
     <item>
       <title>fuelphp使って分からなかったこと</title>
-      <link>https://tech.k-zak.com/2013/08/25/challenge-fuelphp/</link>
+      <link>https://tech.k-zak.com/posts/challenge-fuelphp/</link>
       <pubDate>Sun, 25 Aug 2013 12:51:13 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/challenge-fuelphp/</guid>
+      <guid>https://tech.k-zak.com/posts/challenge-fuelphp/</guid>
       <description>fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな
 感じなんですけど。
 以下に分からなかったことなど
@@ -1425,19 +1441,19 @@ Helper作る程でもない処理専用って事？後は再帰定義のcallbacl
     
     <item>
       <title>jQueryでまた使い方忘れて調べそうなやつらメモ</title>
-      <link>https://tech.k-zak.com/2013/08/25/jquery-memo/</link>
+      <link>https://tech.k-zak.com/posts/jquery-memo/</link>
       <pubDate>Sun, 25 Aug 2013 04:50:50 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/jquery-memo/</guid>
+      <guid>https://tech.k-zak.com/posts/jquery-memo/</guid>
       <description>gistベタ貼りじゃ！</description>
     </item>
     
     <item>
       <title>jQueryで要素の高さを変える</title>
-      <link>https://tech.k-zak.com/2013/08/25/jquery-toggle/</link>
+      <link>https://tech.k-zak.com/posts/jquery-toggle/</link>
       <pubDate>Sun, 25 Aug 2013 04:47:47 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/jquery-toggle/</guid>
+      <guid>https://tech.k-zak.com/posts/jquery-toggle/</guid>
       <description>まぁ、アレですよ。よかれと思って表示非表示をトグルする要素作ったら、
 非表示にした分、開いたスペースだけ下にあるリスト(table)要素の高さ広げてよ
 っていうオマケに品質求めちゃう的な要望があったわけですよ。
@@ -1448,10 +1464,10 @@ jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、
     
     <item>
       <title>css 印刷のために</title>
-      <link>https://tech.k-zak.com/2013/08/25/print-css/</link>
+      <link>https://tech.k-zak.com/posts/print-css/</link>
       <pubDate>Sun, 25 Aug 2013 04:39:26 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/print-css/</guid>
+      <guid>https://tech.k-zak.com/posts/print-css/</guid>
       <description>なんとかPHP側でPDF作成とかじゃなくてhtml＆cssで楽したい。
 そんな時のcss設定とか。
 まず、対象レイアウトに印刷用css作っていきます。
@@ -1467,10 +1483,10 @@ javascriptで印刷→setTimeoutなんかで１秒後にbodyに付与したprint
     
     <item>
       <title>cssメモ ちょっとしたもの</title>
-      <link>https://tech.k-zak.com/2013/08/25/css/</link>
+      <link>https://tech.k-zak.com/posts/css/</link>
       <pubDate>Sun, 25 Aug 2013 04:21:32 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/css/</guid>
+      <guid>https://tech.k-zak.com/posts/css/</guid>
       <description>cssでwindowサイズに応じてbodyのcss定義を変える。
 まぁ、bootstrapで使っている上に固定のメニューリストみたいなのある時に
 windowの横幅めっちゃ狭めるとアレですやん。その辺の細工。
@@ -1480,10 +1496,10 @@ windowの横幅めっちゃ狭めるとアレですやん。その辺の細工�
     
     <item>
       <title>cssメモ 配下の指定</title>
-      <link>https://tech.k-zak.com/2013/08/25/css-tech/</link>
+      <link>https://tech.k-zak.com/posts/css-tech/</link>
       <pubDate>Sun, 25 Aug 2013 04:11:02 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/25/css-tech/</guid>
+      <guid>https://tech.k-zak.com/posts/css-tech/</guid>
       <description>cssで配下の指定勘違いしておかしな事やってたのでメモ
 結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。
 最初
@@ -1514,10 +1530,10 @@ javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせる�
     
     <item>
       <title>なんとか再開したい</title>
-      <link>https://tech.k-zak.com/2013/08/24/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 24 Aug 2013 16:16:57 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/08/24/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>memo的な感じで再開したい。
 でもその前にWordPressの勉強をしなおして、改良してから再開したい。
 当面はメモはEvernoteにとどめておくしか無いかな。</description>
@@ -1525,10 +1541,10 @@ javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせる�
     
     <item>
       <title>Perlの動作環境？について</title>
-      <link>https://tech.k-zak.com/2013/01/20/study-perl/</link>
+      <link>https://tech.k-zak.com/posts/study-perl/</link>
       <pubDate>Sun, 20 Jan 2013 15:25:11 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2013/01/20/study-perl/</guid>
+      <guid>https://tech.k-zak.com/posts/study-perl/</guid>
       <description>長らく更新してませんでしたが、その間にFlask試したり、最近なんかは
 ちょっとだけVisual C++を初心者本見ながら動かしてました。
 C++分かんない。
@@ -1580,10 +1596,10 @@ PerlHandler ModPerl::Registry</description>
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
@@ -1606,10 +1622,10 @@ OS再インストールしたせいだと思うけど、前に作ったDjangoが
     
     <item>
       <title>Perl勉強してるメモ１</title>
-      <link>https://tech.k-zak.com/2012/10/09/study-perl/</link>
+      <link>https://tech.k-zak.com/posts/study-perl/</link>
       <pubDate>Tue, 09 Oct 2012 05:02:19 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/10/09/study-perl/</guid>
+      <guid>https://tech.k-zak.com/posts/study-perl/</guid>
       <description>何故か最近Perlの勉強を始めた。
 気になった箇所のまとめ、
 ■変数と型
@@ -1650,10 +1666,10 @@ open(my $fh,&#39;&amp;lt;‘,$file_path);
     
     <item>
       <title>現状整理</title>
-      <link>https://tech.k-zak.com/2012/09/30/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 30 Sep 2012 12:19:52 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/09/30/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>現状の整理。ちっとも進まない。。
 開発環境：
 ・開発環境のOSはOSX 10.8にアップグレード
@@ -1679,10 +1695,10 @@ open(my $fh,&#39;&amp;lt;‘,$file_path);
     
     <item>
       <title>趣旨変え</title>
-      <link>https://tech.k-zak.com/2012/05/20/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 20 May 2012 09:38:56 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/05/20/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>ここのブログの内容の趣旨を変えました。
 元々のネタはBlogger？Googleのところに移動。
 ここは元々MTで少しやってた勉強メモに変更。それに伴いMTでからデータも適当に移行。</description>
@@ -1690,10 +1706,10 @@ open(my $fh,&#39;&amp;lt;‘,$file_path);
     
     <item>
       <title>FileMakerとRubyのSinatra</title>
-      <link>https://tech.k-zak.com/2012/01/07/study-sinatra/</link>
+      <link>https://tech.k-zak.com/posts/study-sinatra/</link>
       <pubDate>Sat, 07 Jan 2012 10:50:19 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2012/01/07/study-sinatra/</guid>
+      <guid>https://tech.k-zak.com/posts/study-sinatra/</guid>
       <description>Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？
 と思ったのでやってみました。
 gihyo.jp:第９回 SinatraとSequel・Hamlで掲示板アプリを作る
@@ -1737,181 +1753,181 @@ Railsでやるほどじゃないけどちょっと簡単にFileMakerとWebアプ
     
     <item>
       <title>シンポナシウム</title>
-      <link>https://tech.k-zak.com/2011/11/05/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 05 Nov 2011 03:34:57 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/11/05/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>前回の更新からはや4ヶ月超。どのような進歩があったと言うと…</description>
     </item>
     
     <item>
       <title>apacheでredmine virtualhost設定</title>
-      <link>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</link>
+      <link>https://tech.k-zak.com/posts/apache-virtualhost/</link>
       <pubDate>Sat, 25 Jun 2011 16:03:16 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</guid>
+      <guid>https://tech.k-zak.com/posts/apache-virtualhost/</guid>
       <description>この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。</description>
     </item>
     
     <item>
       <title>CakePHPでぐはぁ</title>
-      <link>https://tech.k-zak.com/2011/06/14/study-cakephp/</link>
+      <link>https://tech.k-zak.com/posts/study-cakephp/</link>
       <pubDate>Tue, 14 Jun 2011 13:00:58 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/06/14/study-cakephp/</guid>
+      <guid>https://tech.k-zak.com/posts/study-cakephp/</guid>
       <description>CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ</description>
     </item>
     
     <item>
       <title>WebフレームワークとFileMaker</title>
-      <link>https://tech.k-zak.com/2011/05/29/web-filemaker/</link>
+      <link>https://tech.k-zak.com/posts/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
+      <guid>https://tech.k-zak.com/posts/web-filemaker/</guid>
       <description>FileMaker用のブログに書こうかと思ったけどこちらに書く</description>
     </item>
     
     <item>
       <title>emacs初めてみようか</title>
-      <link>https://tech.k-zak.com/2011/04/29/emacs-setting/</link>
+      <link>https://tech.k-zak.com/posts/emacs-setting/</link>
       <pubDate>Fri, 29 Apr 2011 17:47:06 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/29/emacs-setting/</guid>
+      <guid>https://tech.k-zak.com/posts/emacs-setting/</guid>
       <description>現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている</description>
     </item>
     
     <item>
       <title>PHPのフレームワーク試す</title>
-      <link>https://tech.k-zak.com/2011/04/24/php-frameworks/</link>
+      <link>https://tech.k-zak.com/posts/php-frameworks/</link>
       <pubDate>Sun, 24 Apr 2011 14:04:24 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/24/php-frameworks/</guid>
+      <guid>https://tech.k-zak.com/posts/php-frameworks/</guid>
       <description>PHPのフレームワークをいくつか試してみた。</description>
     </item>
     
     <item>
       <title>Django お勉強 Part3</title>
-      <link>https://tech.k-zak.com/2011/04/21/django-tutorial/</link>
+      <link>https://tech.k-zak.com/posts/django-tutorial/</link>
       <pubDate>Thu, 21 Apr 2011 08:43:01 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/21/django-tutorial/</guid>
+      <guid>https://tech.k-zak.com/posts/django-tutorial/</guid>
       <description>参考：http://ntm.ex-blog.net/archives/91</description>
     </item>
     
     <item>
       <title>Django お勉強 Part2</title>
-      <link>https://tech.k-zak.com/2011/04/20/django-tutorial/</link>
+      <link>https://tech.k-zak.com/posts/django-tutorial/</link>
       <pubDate>Wed, 20 Apr 2011 11:20:34 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/20/django-tutorial/</guid>
+      <guid>https://tech.k-zak.com/posts/django-tutorial/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Django お勉強</title>
-      <link>https://tech.k-zak.com/2011/04/19/django-tutorial/</link>
+      <link>https://tech.k-zak.com/posts/django-tutorial/</link>
       <pubDate>Tue, 19 Apr 2011 05:10:17 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/19/django-tutorial/</guid>
+      <guid>https://tech.k-zak.com/posts/django-tutorial/</guid>
       <description>PythonのDjangoのお勉強記録</description>
     </item>
     
     <item>
       <title>JavaのDWRって何さ　設定メモ</title>
-      <link>https://tech.k-zak.com/2011/04/13/java-dwr/</link>
+      <link>https://tech.k-zak.com/posts/java-dwr/</link>
       <pubDate>Wed, 13 Apr 2011 19:26:26 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/13/java-dwr/</guid>
+      <guid>https://tech.k-zak.com/posts/java-dwr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ちっともすすまない</title>
-      <link>https://tech.k-zak.com/2011/04/10/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 10 Apr 2011 06:55:10 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2011/04/10/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>前に更新したのはいつの頃か・・・</description>
     </item>
     
     <item>
       <title>macにphpMyAdmin</title>
-      <link>https://tech.k-zak.com/2010/09/03/mcrypt/</link>
+      <link>https://tech.k-zak.com/posts/mcrypt/</link>
       <pubDate>Fri, 03 Sep 2010 15:42:34 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/09/03/mcrypt/</guid>
+      <guid>https://tech.k-zak.com/posts/mcrypt/</guid>
       <description>忘れないうちにメモ</description>
     </item>
     
     <item>
       <title>挫折のまとめ</title>
-      <link>https://tech.k-zak.com/2010/07/24/milestone/</link>
+      <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 24 Jul 2010 09:49:21 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/07/24/milestone/</guid>
+      <guid>https://tech.k-zak.com/posts/milestone/</guid>
       <description>マイルストーンというからには定期的にまとめておかないとね。</description>
     </item>
     
     <item>
       <title>動かないじゃないか</title>
-      <link>https://tech.k-zak.com/2010/06/27/study-java/</link>
+      <link>https://tech.k-zak.com/posts/study-java/</link>
       <pubDate>Sun, 27 Jun 2010 04:08:43 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/06/27/study-java/</guid>
+      <guid>https://tech.k-zak.com/posts/study-java/</guid>
       <description>はじめての サーブレット＆JSP という本を見ながら</description>
     </item>
     
     <item>
       <title>Java分からぬぇ</title>
-      <link>https://tech.k-zak.com/2010/06/06/study-java/</link>
+      <link>https://tech.k-zak.com/posts/study-java/</link>
       <pubDate>Sun, 06 Jun 2010 06:10:29 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/06/06/study-java/</guid>
+      <guid>https://tech.k-zak.com/posts/study-java/</guid>
       <description>最近はおろそかになってきていてピンチなのですが、</description>
     </item>
     
     <item>
       <title>もう30回位連休来ないかな？</title>
-      <link>https://tech.k-zak.com/2010/05/09/reinstall-mac/</link>
+      <link>https://tech.k-zak.com/posts/reinstall-mac/</link>
       <pubDate>Sun, 09 May 2010 14:05:29 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/05/09/reinstall-mac/</guid>
+      <guid>https://tech.k-zak.com/posts/reinstall-mac/</guid>
       <description>えー、どうもMacのHDDが原因だったようで、</description>
     </item>
     
     <item>
       <title>PostgreSQL せきゅりてぃ？</title>
-      <link>https://tech.k-zak.com/2010/04/29/trouble-postgresql/</link>
+      <link>https://tech.k-zak.com/posts/trouble-postgresql/</link>
       <pubDate>Thu, 29 Apr 2010 01:33:02 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/04/29/trouble-postgresql/</guid>
+      <guid>https://tech.k-zak.com/posts/trouble-postgresql/</guid>
       <description>昨日の夜、眠い中PostgreSQLの勉強をしようとしたら、サービスがスタート出来ない！</description>
     </item>
     
     <item>
       <title>あばばば- PostgreSQL編</title>
-      <link>https://tech.k-zak.com/2010/04/27/reset-postgresql/</link>
+      <link>https://tech.k-zak.com/posts/reset-postgresql/</link>
       <pubDate>Tue, 27 Apr 2010 14:50:00 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/04/27/reset-postgresql/</guid>
+      <guid>https://tech.k-zak.com/posts/reset-postgresql/</guid>
       <description>機能PostgreSQLのユーザー作ったり消したりDBやテーブル作成したりしていたら、</description>
     </item>
     
     <item>
       <title>MacにPostgreSQLを入れてみた</title>
-      <link>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</link>
+      <link>https://tech.k-zak.com/posts/mac-install-postgresql/</link>
       <pubDate>Mon, 26 Apr 2010 12:39:03 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</guid>
+      <guid>https://tech.k-zak.com/posts/mac-install-postgresql/</guid>
       <description>XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。</description>
     </item>
     
     <item>
       <title>MT入れてみた</title>
-      <link>https://tech.k-zak.com/2010/04/25/first-mt/</link>
+      <link>https://tech.k-zak.com/posts/first-mt/</link>
       <pubDate>Sun, 25 Apr 2010 13:56:34 +0000</pubDate>
       
-      <guid>https://tech.k-zak.com/2010/04/25/first-mt/</guid>
+      <guid>https://tech.k-zak.com/posts/first-mt/</guid>
       <description>MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような</description>
     </item>
     
