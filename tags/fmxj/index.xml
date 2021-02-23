@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fmxj on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/fmxj/</link>
-    <description>Recent content in Fmxj on 開発メモてきな</description>
+    <title>fmxj on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/fmxj/</link>
+    <description>Recent content in fmxj on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 16 Feb 2015 16:09:59 +0000</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/fmxj/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 16 Feb 2015 16:09:59 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/fmxj/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
+      <link>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
+      <guid>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
       <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
 https://github.com/seedcode/fmxj
 概要としては、FileMaker Server の XML公開を使う。
@@ -36,15 +32,15 @@ u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数
 WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
 これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
 しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
-※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても
+※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても
 　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
 その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
 最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
 自分はUbuntuの環境なので、
  sudo apt-get install nginx-extras
  後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
-more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;
-を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
+more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
+を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
 これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
 いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</description>
     </item>

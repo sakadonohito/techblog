@@ -1,54 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Postgresql on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/postgresql/</link>
-    <description>Recent content in Postgresql on 開発メモてきな</description>
+    <title>PostgreSQL on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/postgresql/</link>
+    <description>Recent content in PostgreSQL on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 09 May 2010 14:05:29 +0000</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 09 May 2010 14:05:29 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>もう30回位連休来ないかな？</title>
-      <link>http://tech.k-zak.com/2010/05/09/reinstall-mac/</link>
+      <link>https://tech.k-zak.com/2010/05/09/reinstall-mac/</link>
       <pubDate>Sun, 09 May 2010 14:05:29 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/05/09/reinstall-mac/</guid>
-      <description>えー、どうもMacのHDDが原因だったようで、
- 連休中初日にOSの再インストール。やっぱ駄目。→次の日にHDD購入。   換装してOS入れ直し。でようやく正常に動くようになりました。     えぇ、今のところちゃんと動いていますとも。     OS入れ直した後、折角なのでApacheもPHPも雪豹に初めから入ってるものを   使おうとしたのですが、設定ファイルの場所が分からなかったり、編集には   root権限が必要だったり、ユーザ別の設定ファイルを作るのとか、うにゃーんて   なって。。結局XAMPP入れちゃいました ^q^     新標準 PostgreSQL という本でPostgreSQLを勉強してます。   途中のアプリサンプルはPHPのはそのままやったのですが、Javaは敷居が   高かったため、そこから脱線して、eclipse本(Tomcatの使い方を学ぶ)、   JavaでPostgreSQLのコードサンプルが入っている「はじめてのJavaフレームワーク」   というものを試してます。Javaとかめちゃメンド臭いですね。。  </description>
+      <guid>https://tech.k-zak.com/2010/05/09/reinstall-mac/</guid>
+      <description>えー、どうもMacのHDDが原因だったようで、</description>
     </item>
     
     <item>
       <title>PostgreSQL せきゅりてぃ？</title>
-      <link>http://tech.k-zak.com/2010/04/29/trouble-postgresql/</link>
+      <link>https://tech.k-zak.com/2010/04/29/trouble-postgresql/</link>
       <pubDate>Thu, 29 Apr 2010 01:33:02 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/29/trouble-postgresql/</guid>
-      <description>昨日の夜、眠い中PostgreSQLの勉強をしようとしたら、サービスがスタート出来ない！
-   さっさとあきらめて、爆睡して今再度確認した所、/Library/PostgreSQL/8.4/dataディレクトリの   アクセス権がログインユーザー？作成者？意外もアクセス可能になってるから駄目！っていうエラー   でした。     MacのFinderから覗いてEveryoneをアクセス不可に変更したらPostgreSQLのサービスが   開始出来るようになりました。     これは普段Macを使う時のユーザーアカウント(スーパーユーザー含む？)、Postgresという   ユーザー(インストール時にデフォで作成されるユーザー)の関係ですかね。  </description>
+      <guid>https://tech.k-zak.com/2010/04/29/trouble-postgresql/</guid>
+      <description>昨日の夜、眠い中PostgreSQLの勉強をしようとしたら、サービスがスタート出来ない！</description>
     </item>
     
     <item>
       <title>あばばば- PostgreSQL編</title>
-      <link>http://tech.k-zak.com/2010/04/27/reset-postgresql/</link>
+      <link>https://tech.k-zak.com/2010/04/27/reset-postgresql/</link>
       <pubDate>Tue, 27 Apr 2010 14:50:00 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/27/reset-postgresql/</guid>
-      <description>機能PostgreSQLのユーザー作ったり消したりDBやテーブル作成したりしていたら、
- 急に接続出来なくなった(泣     仕方ないので一旦削除していれ直しを図った訳ですが、これがなかなか上手く行かない。     で、ちゃんと削除するためのメモとなった訳です。     １、/ライブラリの中にいるから削除しましょう   ライブラリの中にPostgreSQLさんがいますので削除します。   アンインストーラを使って削除した時に、アクセス権が無いと残ってしまうフォルダが   あるかもしれません。     そんな時は、手動で消しましょう。とにかくライブラリの中からPostgreSQLを抹殺します。     ２、アプリケーションフォルダの中もきれいにしましょう。   手動で削除     ３、入れ直し   ちょっと不安なので、当分の間はDLしたPostgreSQLのインストーラは消さずに   もっていようと思います。おーコワ     ※蛇足、前回、ApacheとPHPとphpPgAdminを入れていましたが、今回は入れませんでした。     ※今回の原因はユーザー作成した後のパスワード設定した時にヘマしたようです。   別ユーザー作った後に、デフォルトのpostgresのパスワード変えてしまったというorz  </description>
+      <guid>https://tech.k-zak.com/2010/04/27/reset-postgresql/</guid>
+      <description>機能PostgreSQLのユーザー作ったり消したりDBやテーブル作成したりしていたら、</description>
     </item>
     
     <item>
       <title>MacにPostgreSQLを入れてみた</title>
-      <link>http://tech.k-zak.com/2010/04/26/mac-install-postgresql/</link>
+      <link>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</link>
       <pubDate>Mon, 26 Apr 2010 12:39:03 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/26/mac-install-postgresql/</guid>
-      <description>XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。
-   参考：Mac OS XでPostgreSQLを使ってみよう     基本これの通りに進めます。リンクにある通り、Mac用のインストーラーを使って簡単に   入れる事が出来ます。     インストール後、スタックビルダなるものでphppgadminを入れるに際し、既にXAMPPの中に   PHPもApacheも入っているのに改めてApacheとPHPを入れさせられたのにはとっと不安。   JDBCドライバだけにしておけば良かったかしら？     とりあえず、上記のリンクからインストール、shellで簡単に操作、phpPgAdminで簡単に操作   までをざっくり出来ます。     インストール後の中身を見てみると、pgAdmin?なんてのがありますね。もしかしてphpPgAdmin   いらなかった？     いずれにしろ現在自分のMac内でApacheとPHPが２つ存在してしまっているので、   今度掃除しよう。  </description>
+      <guid>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</guid>
+      <description>XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。</description>
     </item>
     
   </channel>

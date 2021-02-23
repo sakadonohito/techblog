@@ -1,37 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>開発メモてきな</title>
-    <link>http://tech.k-zak.com/</link>
+    <link>https://tech.k-zak.com/</link>
     <description>Recent content on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Not Posted</title>
-      <link>http://tech.k-zak.com/2017/12/31/not-posted/</link>
+      <link>https://tech.k-zak.com/2017/12/31/not-posted/</link>
       <pubDate>Sun, 31 Dec 2017 11:49:55 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/31/not-posted/</guid>
+      <guid>https://tech.k-zak.com/2017/12/31/not-posted/</guid>
       <description>2017年記事にしそこねたやったこと  コマンドプロンプト(バッチファイル) コマンドプロンプトからPowershell実行 シェルスクリプト AWS System Manager Run Command (sum) VagrantでSQL Server他DBもセットアップしたよ Nano Server試そうとした React Redux…etc Webpack Docker再入門とWP開発環境の作成 WordPressテーマ開発用のベースを作成した AWS Lambda をPythonで AWS Lambda をNode.jsで CakePHP 3 tutorial 少しやった Vagrant でPHP開発環境作成 Terraform試した Hugo用テーマを作成した  忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。
 コマンドプロンプト(バッチファイル) Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。
 例えばこんなこと。実行結果を変数に入れるのが面倒。
-setlocal enabledelayedexpansion for /f %%a in (&#39;whoami&#39;) do @set watashi=%%a echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log  別プロセスで実行する方法
-start %~dp0\called_subscripts\computer_restart.bat  %~dp0 はLinuxでいうところのpwdみたいなもの
+setlocal enabledelayedexpansion for /f %%a in (&#39;whoami&#39;) do @set watashi=%%a echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log 別プロセスで実行する方法
+start %~dp0\called_subscripts\computer_restart.bat %~dp0 はLinuxでいうところのpwdみたいなもの
 コマンドプロンプトからPowershell実行 @powershell てやればできる。
 シェルスクリプト 少し覚えた。 $#は引数の数 $1は引数の一つ目 if [ a op b ]; てやつとaとbをopでチェックできる。変数の値のチェックやファイルの存在チェックなどを行う。 ファイルの存在チェックはシンプルに-e オプションを使う。</description>
     </item>
     
     <item>
       <title>First Swift</title>
-      <link>http://tech.k-zak.com/2017/12/30/first-swift/</link>
+      <link>https://tech.k-zak.com/2017/12/30/first-swift/</link>
       <pubDate>Sat, 30 Dec 2017 14:39:52 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/30/first-swift/</guid>
+      <guid>https://tech.k-zak.com/2017/12/30/first-swift/</guid>
       <description>PlaygroundでSwift 初めてということでもないけど初心に帰ってSwiftをPlaygroundで触った。
 iOS再再再入門 xcodeで新規プロジェクト作成してMap UI Kit?使ってべっ！っておいたらそれだけでMapアプリ完成。
 Swift再入門  varは変数 letは定数 Swiftはブロックスコープ 繰り返しはfor n in range{}  まだまだ入り口。</description>
@@ -39,23 +35,23 @@ Swift再入門  varは変数 letは定数 Swiftはブロックスコープ 繰�
     
     <item>
       <title>Mac Account Broken</title>
-      <link>http://tech.k-zak.com/2017/12/29/mac-account-broken/</link>
+      <link>https://tech.k-zak.com/2017/12/29/mac-account-broken/</link>
       <pubDate>Fri, 29 Dec 2017 14:36:17 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/29/mac-account-broken/</guid>
+      <guid>https://tech.k-zak.com/2017/12/29/mac-account-broken/</guid>
       <description>Macのデータ移行時のトラブル  Macデータ移行した アカウントの権限を壊してしまった。  データ移行した TimeMachineを使うと時間はかかるが何も考えなくても諸々移行できるので便利。用途不定になってしまったHDD(1TB)があったのでそれを新たにTimeMachine用にすることにした
 アカウントの権限を壊してしまった。 データ移行のついでにアカウント名やアカウント情報を変更したら、管理者権限が外れてしまった。まじ焦った。 権限変更やアカウント情報変更用アカウントを用意してそのアカウントでログインして対象アカウントの情報を変更すべき。
-管理者権限が外れてしまったアカウントを復旧させる方法  シングルユーザーモードで起動する(cmd+s押しっぱなし)  rootユーザーでのターミナル操作になる  /sbin/mount -uw /を実行してディスクへの書込許可状態にする rm /var/db/.AppleSetupDoneを実行してセットアップ完了フラグファイルを削除 reboot実行  上記で最初のセットアップウィザードが始まるので、そこで新規に管理者権限を作成する
+管理者権限が外れてしまったアカウントを復旧させる方法  シングルユーザーモードで起動する(cmd+s押しっぱなし)  rootユーザーでのターミナル操作になる   /sbin/mount -uw / を実行してディスクへの書込許可状態にする rm /var/db/.AppleSetupDoneを実行してセットアップ完了フラグファイルを削除 reboot実行  上記で最初のセットアップウィザードが始まるので、そこで新規に管理者権限を作成する
 その後はその新規管理者権限でログインし、権限が壊れてしまった対象アカウントを再度管理者に設定する。
 これでめでたしめでたし。</description>
     </item>
     
     <item>
       <title>Wkhtmltopdf</title>
-      <link>http://tech.k-zak.com/2017/12/28/wkhtmltopdf/</link>
+      <link>https://tech.k-zak.com/2017/12/28/wkhtmltopdf/</link>
       <pubDate>Thu, 28 Dec 2017 14:26:45 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/28/wkhtmltopdf/</guid>
+      <guid>https://tech.k-zak.com/2017/12/28/wkhtmltopdf/</guid>
       <description>wkhtmltopdfを試した なんとかしてhtmlからPDFを生成する手段を増やしたい。
 ということでwkhtmltopdfを試す。
 しかしバージョンによって画面サイズがおかしくなる。
@@ -66,10 +62,10 @@ golangを試すにあたって我がEmacsにgolangの設定を施した。 GOPAT
     
     <item>
       <title>Typescript</title>
-      <link>http://tech.k-zak.com/2017/12/27/typescript/</link>
+      <link>https://tech.k-zak.com/2017/12/27/typescript/</link>
       <pubDate>Wed, 27 Dec 2017 14:10:35 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/27/typescript/</guid>
+      <guid>https://tech.k-zak.com/2017/12/27/typescript/</guid>
       <description>初めての？Typescript TypeScript自習 TypeScript 日本語ハンドブック | js STUDIO 他Quitなど
 上記ハンドブックを読みつつ少しコードを書く。 ビルドは上記ハンドブックの方法だとうまく動かなかったので、別途Qiitaで調べた。
 感想 まだ途中。 型をそこまで書きたくない。推論して欲しい。 PHPのタイプヒンティングと戻り値の型指定程度で十分だと思う。 でも引数の型指定なんかは別途定義をかけるので、メソッド本体の記述はスッキリして良いと思った。
@@ -79,10 +75,10 @@ golangを試すにあたって我がEmacsにgolangの設定を施した。 GOPAT
     
     <item>
       <title>Lolipop Cloud</title>
-      <link>http://tech.k-zak.com/2017/12/25/lolipop-cloud/</link>
+      <link>https://tech.k-zak.com/2017/12/25/lolipop-cloud/</link>
       <pubDate>Mon, 25 Dec 2017 14:13:02 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/25/lolipop-cloud/</guid>
+      <guid>https://tech.k-zak.com/2017/12/25/lolipop-cloud/</guid>
       <description>Lolipopマネージドクラウドを試してみた まだベータで無料で少し使えるようだったので試した。
 簡単に作れた。恐らくコンテナで動いている。
 PHPのコンテナを作成すると別の場所にあるMySQLにデータベース領域を与えられる。 PHPからは提供されたDBのホスト名で接続できる。
@@ -93,47 +89,47 @@ LolipopCloudのデータベースについて charset として utf8mb4 は使�
     
     <item>
       <title>Groovy TLS</title>
-      <link>http://tech.k-zak.com/2017/12/12/groovy-tls/</link>
+      <link>https://tech.k-zak.com/2017/12/12/groovy-tls/</link>
       <pubDate>Tue, 12 Dec 2017 14:04:58 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/12/groovy-tls/</guid>
+      <guid>https://tech.k-zak.com/2017/12/12/groovy-tls/</guid>
       <description>久しぶりにGroovyを触った Groovyで作成したプログラムがTLSで通信できるようにしないといけなくなったので少し調べた。
 Javaの場合 javaで強制的にTLS1.2を使うようにするにはJVM起動時オプションを渡す Java7はデフォルトでTLS利用可能 Java8はデフォルトでTLS1.2使える
 JVM起動オプションに
--Dhttps.protocols=TLSv1.1,TLSv1.2 -Djdk.tls.client.protocols=TLSv1.1,TLSv1.2  を指定する。Eclipse等IDEの場合はJREの起動VMオプション設定に追加する。
-Groovyの場合 System.properties[‘https.protocols’] = ‘TLSv1.1,TLSv1.2 ’ System.properties[‘jdk.tls.client.protocols’] = ‘TLSv1.1,TLSv1.2 ’  これシステムプロパティを書き換えてるので、同時に他社のJVMプログラムとかあったりすると影響与えそうなんだけど&amp;hellip;&amp;hellip;</description>
+-Dhttps.protocols=TLSv1.1,TLSv1.2 -Djdk.tls.client.protocols=TLSv1.1,TLSv1.2 を指定する。Eclipse等IDEの場合はJREの起動VMオプション設定に追加する。
+Groovyの場合 System.properties[‘https.protocols’] = ‘TLSv1.1,TLSv1.2 ’ System.properties[‘jdk.tls.client.protocols’] = ‘TLSv1.1,TLSv1.2 ’ これシステムプロパティを書き換えてるので、同時に他社のJVMプログラムとかあったりすると影響与えそうなんだけど&amp;hellip;&amp;hellip;</description>
     </item>
     
     <item>
       <title>Socket.io</title>
-      <link>http://tech.k-zak.com/2017/12/07/socket.io/</link>
+      <link>https://tech.k-zak.com/2017/12/07/socket.io/</link>
       <pubDate>Thu, 07 Dec 2017 13:56:42 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/07/socket.io/</guid>
-      <description> Node.jsとSocket.io Node.jsの復習ついでにSocket.ioを試した。
+      <guid>https://tech.k-zak.com/2017/12/07/socket.io/</guid>
+      <description>Node.jsとSocket.io Node.jsの復習ついでにSocket.ioを試した。
 メモ  emitで送信者から送信者以外全員に送信 broadcastで全員に送信 socket.idを指定することで特定の相手にのみ送信 /namespace#room#idで特定の相手に送信できる。idのみだとダメっぽい。 redisにメッセージを押し込んでおくと複数プロセスでメッセージを共有できる  オマケ alpineのredisのdockerイメージを使うと軽くてお得。
 以下でredisのtail -fぽい感じで全部見れるので便利
-$&amp;gt; redis-cli -h ${HOST} -p ${PORT} monitor  </description>
+$&amp;gt; redis-cli -h ${HOST} -p ${PORT} monitor </description>
     </item>
     
     <item>
       <title>Setup OTRS</title>
-      <link>http://tech.k-zak.com/2017/11/28/setup-otrs/</link>
+      <link>https://tech.k-zak.com/2017/11/28/setup-otrs/</link>
       <pubDate>Tue, 28 Nov 2017 22:00:00 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/11/28/setup-otrs/</guid>
+      <guid>https://tech.k-zak.com/2017/11/28/setup-otrs/</guid>
       <description>OTRSをインストールしてみた オープンソースのチケット管理システム的なもの主にサービス・サポート部署で使うようなもの
 セットアップ 環境はUbuntu16.04
 基本はダウンロードしてきて実行するだけ。 本体はWeb公開領域におけばいいかな?
-つまったところ  anynevを使おうとして詰まった、anyenvをシステムワイドに使う場合は割り切ってrootで設定する plenvをインストールすることはすんなりいくが、モジュールパスなどで使おうとすると詰まる  -&amp;gt;システムのperlを結局使うことに  cpanmでDBD::mysqlをインストールする場合、以下の事が必要  先にMySQLがインストールされていること Ubuntuの場合はlibmysqlclient-devがインストールされていること  というか/opt/otrs/bin/otrs.CheckModules.pl の実行で必要なモジュールが確認できる モジュールが依存するライブラリも存在するので合わせて入れること  感想 domainやメールの設定がちゃんとできていれば特に躓くこと無くセットアップできそう。 最終調整？セットアップがGUIのため、Ansibleでセットアップとかは難しそう。</description>
+つまったところ  anynevを使おうとして詰まった、anyenvをシステムワイドに使う場合は割り切ってrootで設定する plenvをインストールすることはすんなりいくが、モジュールパスなどで使おうとすると詰まる  -&amp;gt;システムのperlを結局使うことに   cpanmでDBD::mysqlをインストールする場合、以下の事が必要  先にMySQLがインストールされていること Ubuntuの場合はlibmysqlclient-devがインストールされていること   というか/opt/otrs/bin/otrs.CheckModules.pl の実行で必要なモジュールが確認できる モジュールが依存するライブラリも存在するので合わせて入れること  感想 domainやメールの設定がちゃんとできていれば特に躓くこと無くセットアップできそう。 最終調整？セットアップがGUIのため、Ansibleでセットアップとかは難しそう。</description>
     </item>
     
     <item>
       <title>anyenv systemwide</title>
-      <link>http://tech.k-zak.com/2017/08/10/anyenv-systemwide/</link>
+      <link>https://tech.k-zak.com/2017/08/10/anyenv-systemwide/</link>
       <pubDate>Thu, 10 Aug 2017 22:28:13 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/08/10/anyenv-systemwide/</guid>
+      <guid>https://tech.k-zak.com/2017/08/10/anyenv-systemwide/</guid>
       <description>anyenvをシステムワイドにインストールしようとした 環境はUbuntu16.04
 anyenvをシステムワイドにインストールしてrbenvいれようとしたら、sslのチェックを無視しないと入らなかった。 rbenvからrubyをインストールしようとしたらダウンロードに失敗してできない。
 結論から書くと apt-get install ca-certificates して、ca-certificates入れてからrbenv install を再度試したら成功した。</description>
@@ -141,12 +137,12 @@ anyenvをシステムワイドにインストールしてrbenvいれようとし
     
     <item>
       <title>Selenium WebDriver Setup</title>
-      <link>http://tech.k-zak.com/2017/06/30/selenium-webdriver-setup/</link>
+      <link>https://tech.k-zak.com/2017/06/30/selenium-webdriver-setup/</link>
       <pubDate>Fri, 30 Jun 2017 11:32:45 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/06/30/selenium-webdriver-setup/</guid>
-      <description>Selenium WebDriver を試してみた 環境は - Ubuntu 16.04 - Python 3.6.1
-ついでにChromeのheadlessモードも試す。
+      <guid>https://tech.k-zak.com/2017/06/30/selenium-webdriver-setup/</guid>
+      <description>Selenium WebDriver を試してみた 環境は
+ Ubuntu 16.04 Python 3.6.1  ついでにChromeのheadlessモードも試す。
 事前準備 pyenvで3.6.1を入れてお試し環境にセットする
 gecko driverをダウンロード Release v0.17.0 · mozilla/geckodriver · GitHub ※任意のバージョンを入れる。
 PATHを通す。今回は/usr/local/sbin/に置いて勝手にPATHが通るようにした。
@@ -155,10 +151,10 @@ Chromeを最新にする バージョン59にする。 ChromeDriverDownloads - C
     
     <item>
       <title>create wordpress theme</title>
-      <link>http://tech.k-zak.com/2017/05/08/create-wordpress-theme/</link>
+      <link>https://tech.k-zak.com/2017/05/08/create-wordpress-theme/</link>
       <pubDate>Mon, 08 May 2017 22:28:13 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/05/08/create-wordpress-theme/</guid>
+      <guid>https://tech.k-zak.com/2017/05/08/create-wordpress-theme/</guid>
       <description>WordPressのテーマを作成してみた レスポンシブな自作レイアウトをWordPress用テーマを作成してみた。
 今確認してみたら、いくつかおかしい箇所が見つかった(´・ω・`)
 大雑把な構成 以下のファイルを作成した。
@@ -167,10 +163,10 @@ Chromeを最新にする バージョン59にする。 ChromeDriverDownloads - C
     
     <item>
       <title>VSCode</title>
-      <link>http://tech.k-zak.com/2017/04/30/vscode/</link>
+      <link>https://tech.k-zak.com/2017/04/30/vscode/</link>
       <pubDate>Sun, 30 Apr 2017 11:37:10 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/30/vscode/</guid>
+      <guid>https://tech.k-zak.com/2017/04/30/vscode/</guid>
       <description>VSCodeでよく使うショートカットなど 基本はEmacsを使うけどWindows環境で何かする場合はVSCodeの方が使いやすいので忘備録てきな
 画面 コマンドパレット： Cmd+Shift+p クイックオープン： Cmd+p 統合ターミナル： Cmd+` Zenモードとの切り替え： Cmd+k -&amp;gt; z
 エディター マルチカーソル： Cmd+Opt+矢印 同じ単語(選択済み？)選択： Cmd+F2 選択した単語を同じもののうち、編集してもよさそうなやつだけ編集： F2</description>
@@ -178,34 +174,34 @@ Chromeを最新にする バージョン59にする。 ChromeDriverDownloads - C
     
     <item>
       <title>setting ntp on Ubuntu</title>
-      <link>http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</link>
+      <link>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</link>
       <pubDate>Mon, 24 Apr 2017 13:48:14 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</guid>
       <description>EC2のUbuntu14.04にntpを設定 事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。
 エラー内容はInvalidSigunatureException なんかタイムスタンプが早すぎるみたいなエラー内容。
 Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。 タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。
 要はCognitoでトークンを生成するためのタイムスタンプがずれるのでどうしたってエラーになっちゃう問題。
 時刻がずれていることが原因と分かったので、暫定措置として時刻をあわせる(日本標準時)。 ※サーバーはUbuntu14.04
-sudo ntpdate ntp.nict.jp  ※前提としてntpdateがインストールされていること
+sudo ntpdate ntp.nict.jp ※前提としてntpdateがインストールされていること
 いろいろ調べていたら、EC2でUbuntuを使うならNTPサーバーを利用して下さい的な感じだった。
  EC2インスタンスでの時刻同期について  NTPを入れる 根本解決のため、NTPサーバー機能をいれる。
-sudo apt-get install -y ntp  そんで設定ファイルを編集する。 /etc/ntp.conf
+sudo apt-get install -y ntp そんで設定ファイルを編集する。 /etc/ntp.conf
  デフォルトの時刻サーバーをコメントアウト 代わりにserver ntp.nict.jpを3行書く  上記の設定と内容の説明については他人の記事をご参照ください。
  NTPサーバーの構築 NTPで時刻合わせ  編集したらNTPサーバービスを再起動する
 ぐお、タイムゾーンが 作業したサーバー(どちらもUbuntu14.04)のうち、1つがUTC、1つがJSTのタイムゾーンになってて、キモティ悪かったので、揃える。
-sudo timedatectl set-timezone Asia/Tokyo  これでOK</description>
+sudo timedatectl set-timezone Asia/Tokyo これでOK</description>
     </item>
     
     <item>
       <title>Zabbix remote command</title>
-      <link>http://tech.k-zak.com/2017/04/23/zabbix-remote-command/</link>
+      <link>https://tech.k-zak.com/2017/04/23/zabbix-remote-command/</link>
       <pubDate>Sun, 23 Apr 2017 22:19:58 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/23/zabbix-remote-command/</guid>
+      <guid>https://tech.k-zak.com/2017/04/23/zabbix-remote-command/</guid>
       <description>Zabbixのアクション定義でリモートコマンドを実行する サーバーを監視するソフトウェア？Zabbixで、トリガーを元にアクションを起こす場合、メール通知やSlackにPostする以外に対象のホストもしくは任意のサーバーにコマンドを投げて実行することが出来る。
 Agent側の設定 Zabbixエージェント側(コマンドを投げつけられる側)の設定ファイルの
-#EnableRemoteCommands = 0  となっている箇所をコメントアウトを解除して値を1に変更する。
+#EnableRemoteCommands = 0 となっている箇所をコメントアウトを解除して値を1に変更する。
 Zabbix-Agentサービスを再起動してエージェント側は最低限の準備完了
 Zabbix: アクションの設定 アクションの設定で実行内容を「リモートコマンド」にして、タイプを「カスタムスクリプト」にする。
 コマンドはエージェント側にスクリプトを用意している場合は、それを、用意していない場合は直接コマンドを書く。
@@ -215,34 +211,34 @@ Zabbixは敷居が高いけど便利ですね。</description>
     
     <item>
       <title>Mastodon git clone</title>
-      <link>http://tech.k-zak.com/2017/04/18/mastodon-git-clone/</link>
+      <link>https://tech.k-zak.com/2017/04/18/mastodon-git-clone/</link>
       <pubDate>Tue, 18 Apr 2017 21:34:18 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/18/mastodon-git-clone/</guid>
+      <guid>https://tech.k-zak.com/2017/04/18/mastodon-git-clone/</guid>
       <description>Mastodonをgit cloneして中を見てみる 今流行りのMastodonをgit cloneしてみた。
 中は設定ファイルが沢山とrails関係、フロント用のnode_modules、テスト関係、それからVagrantfileやDocker関係のファイル。
 ファイル群について 今日は内容をざっと見るところまで。
 内訳は、以下です。ディレクトリを意味するものは最期に「/」をつけています。
- ライセンスとかReadmeとかDocumentとか  CONTRIBUTING.md ISSUE_TEMPLATE.md LICENSE README.md docs/  buildpack  .buildpacks  Heroku用設定ファイル  .slugignore Procfile  デプロイツール(サービス)用  scalingo.json  コードレビュー用？設定ファイル  .codeclimate.yml  エディターの設定統一用設定ファイル  .editorconfig  git  .git/ .gitignore  環境変数設定ファイル(もしかしたらRails専用かも？)  .env.production.sample .env.test .env.vagrant  Ruby on Rails関係  .rspec .rubocop.yml .ruby-version Capfile Gemfile Gemfile.lock Rakefile app/ app.json bin/ config/ config.ru db/ lib/ log/ public/ spec/ tmp/ vendor/  JavaScriptのトランスパイルとかビルドとかフロントエンド開発用とか  .</description>
+ ライセンスとかReadmeとかDocumentとか  CONTRIBUTING.md ISSUE_TEMPLATE.md LICENSE README.md docs/   buildpack  .buildpacks   Heroku用設定ファイル  .slugignore Procfile   デプロイツール(サービス)用  scalingo.json   コードレビュー用？設定ファイル  .codeclimate.yml   エディターの設定統一用設定ファイル  .editorconfig   git  .git/ .gitignore   環境変数設定ファイル(もしかしたらRails専用かも？)  .env.production.sample .env.test .env.vagrant   Ruby on Rails関係  .rspec .rubocop.yml .ruby-version Capfile Gemfile Gemfile.lock Rakefile app/ app.json bin/ config/ config.</description>
     </item>
     
     <item>
       <title>2017 04 09 daily</title>
-      <link>http://tech.k-zak.com/2017/04/09/2017-04-09-daily/</link>
+      <link>https://tech.k-zak.com/2017/04/09/2017-04-09-daily/</link>
       <pubDate>Sun, 09 Apr 2017 23:11:59 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/09/2017-04-09-daily/</guid>
+      <guid>https://tech.k-zak.com/2017/04/09/2017-04-09-daily/</guid>
       <description>進捗ありません この1週間、調子が悪かったり仕事に追われたりしていて何も勉強できていない。 少しだけReduxのサンプルを写経して動かない箇所を動くように修正した程度。
-ES2015で理解が足りていない事 import Hoge from &#39;./hoge&#39;; //hogeファイルの中でexport defaultされたものをHogeとなづけてimport import * as Hoge from &#39;./hoge&#39;; //hogeファイルの中でexportされたもの全てをHogeオブジェクトとしてimport import { Hoge } from &#39;./hoge&#39;; //hogeファイルの中でHogeという名でexportされたものをimport  という理解だったのだけれど、Reduxのサンプルで意図する挙動をしなくて困った。 最終的に記述ミスだったのか、勘違いだったのか、動くようになったけど。
+ES2015で理解が足りていない事 import Hoge from &amp;#39;./hoge&amp;#39;; //hogeファイルの中でexport defaultされたものをHogeとなづけてimport import * as Hoge from &amp;#39;./hoge&amp;#39;; //hogeファイルの中でexportされたもの全てをHogeオブジェクトとしてimport import { Hoge } from &amp;#39;./hoge&amp;#39;; //hogeファイルの中でHogeという名でexportされたものをimport という理解だったのだけれど、Reduxのサンプルで意図する挙動をしなくて困った。 最終的に記述ミスだったのか、勘違いだったのか、動くようになったけど。
 いっぺん基礎を網羅的に勉強しないとダメですね。 しかし、ECMAScript2015のドキュメント原文を読むのはなー。。。</description>
     </item>
     
     <item>
       <title>I use Markdown</title>
-      <link>http://tech.k-zak.com/2017/04/03/i-use-markdown/</link>
+      <link>https://tech.k-zak.com/2017/04/03/i-use-markdown/</link>
       <pubDate>Mon, 03 Apr 2017 22:43:54 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/03/i-use-markdown/</guid>
+      <guid>https://tech.k-zak.com/2017/04/03/i-use-markdown/</guid>
       <description>気がつけばMarkdown いつの頃からかドキュメントはMarkdownで書くようになった。
 最初はなんじゃこりゃ書きにくい、意味わからんと思っていた。
 でも一度慣れてしまうととても書きやすい。
@@ -254,10 +250,10 @@ WordPressを普通のテキストを書くなんて苦行でしかない。
     
     <item>
       <title>agile progress</title>
-      <link>http://tech.k-zak.com/2017/04/02/agile-progress/</link>
+      <link>https://tech.k-zak.com/2017/04/02/agile-progress/</link>
       <pubDate>Sun, 02 Apr 2017 22:50:25 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/02/agile-progress/</guid>
+      <guid>https://tech.k-zak.com/2017/04/02/agile-progress/</guid>
       <description>進捗 直近の目標に対する結果と進捗
  ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) Makerel試したい Dockerをある程度使えるようになりたい  ブログや静的サイトのテーマをつくり込みたい Plican,Hexo,Jekyllについては完了。 Jekyllは二度と触りたく無い。
 4月にWordPressのテーマ作成他のテンプレートを作りたい。
@@ -277,10 +273,10 @@ SwarmやKubernetesはハードル高いので今は諦めた。
     
     <item>
       <title>recent frontend circumstance</title>
-      <link>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</link>
+      <link>https://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</link>
       <pubDate>Sun, 02 Apr 2017 22:50:14 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</guid>
+      <guid>https://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</guid>
       <description>最近のフロントエンド事情はまるで発展途上国の交通事情ですか ES6で書いてES5に変換したいだけなのに、なんなんですか？
 ES6からES5に変換したいだけなんだ Babel Babelを使えば変換できる。。。
 Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。
@@ -302,10 +298,10 @@ webpackに書いただけじゃダメで.babelrcにも書かないといけな�
     
     <item>
       <title>think about redux</title>
-      <link>http://tech.k-zak.com/2017/04/02/think-about-redux/</link>
+      <link>https://tech.k-zak.com/2017/04/02/think-about-redux/</link>
       <pubDate>Sun, 02 Apr 2017 22:49:50 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/02/think-about-redux/</guid>
+      <guid>https://tech.k-zak.com/2017/04/02/think-about-redux/</guid>
       <description>Reduxについて感化されたこと Reduxについて不満に思っている部分について考察している記事を見かけた。
 自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。
 理解して納得していること Reactの場合は上からもらうプロパティはPropsで読み取り専用。
@@ -328,10 +324,10 @@ Reduxの基本設計に不備があって、それをごまかすためのMiddle
     
     <item>
       <title>jaws-ug container</title>
-      <link>http://tech.k-zak.com/2017/03/31/jaws-ug-container/</link>
+      <link>https://tech.k-zak.com/2017/03/31/jaws-ug-container/</link>
       <pubDate>Fri, 31 Mar 2017 18:01:34 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/31/jaws-ug-container/</guid>
+      <guid>https://tech.k-zak.com/2017/03/31/jaws-ug-container/</guid>
       <description>JAWS-UG コンテナ支部 の勉強会に行ってきた 行ってきた。。
 前佛さんのお話 Dockerは仕様でコンテナが技術っていう話。
 開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。
@@ -351,25 +347,25 @@ API Gateway を通じてリクエストを受け取り、ECS環境でバッチ�
 ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。
 すごい。
 NTTとDocker ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。
-ECSを活用する上での勘所 データについて  なるべくDocker Volumeを使わないで済む設計にする  いつでもインスタンスを捨てられるようにする設計 永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する awslogs ログドライバ便利です。積極的に使っていきましょう。  URLパスの設計  ALBを活用しましょう 関連サービスのエントリポイントとかは環境変数で渡しましょう。  セッションの管理  インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い ElastiCache,Redis,Memcachedを活用しましょう。    環境構築について 書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</description>
+ECSを活用する上での勘所 データについて  なるべくDocker Volumeを使わないで済む設計にする  いつでもインスタンスを捨てられるようにする設計 永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する awslogs ログドライバ便利です。積極的に使っていきましょう。   URLパスの設計  ALBを活用しましょう 関連サービスのエントリポイントとかは環境変数で渡しましょう。   セッションの管理  インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い ElastiCache,Redis,Memcachedを活用しましょう。    環境構築について 書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</description>
     </item>
     
     <item>
       <title>Powershell</title>
-      <link>http://tech.k-zak.com/2017/03/30/powershell/</link>
+      <link>https://tech.k-zak.com/2017/03/30/powershell/</link>
       <pubDate>Thu, 30 Mar 2017 11:40:40 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/30/powershell/</guid>
-      <description>Powershellでやったことメモn Powershellの実行権限について Get-ExecutionPolicy Set-ExecutionPolicy &amp;lt;PolicyName&amp;gt; # RemoteSignedとか  よく使いそうなやつ ファイル操作、実行、インストールなど
-Copy-Item &amp;lt;&amp;lt;source&amp;gt;&amp;gt; -Destination &amp;lt;&amp;lt;dest&amp;gt;&amp;gt; -Recurse Move-Item &amp;lt;&amp;lt;sourse&amp;gt;&amp;gt; -Destination &amp;lt;&amp;lt;dest&amp;gt;&amp;gt; Remove-Item &amp;lt;&amp;lt;source&amp;gt;&amp;gt; -Recurse Rename-Item &amp;lt;&amp;lt;sourse&amp;gt;&amp;gt; Get-Content &amp;lt;&amp;lt;path/to/file&amp;gt;&amp;gt; Get-WmiObject Win32_Product Enter-PSSession &amp;lt;&amp;lt;container_id&amp;gt;&amp;gt; -RunAsAdministrator docker inspect &amp;lt;&amp;lt;container&amp;gt;&amp;gt; --format=&amp;quot;{{.Id}}&amp;quot; | sv container_id Install-WindowsFeature -Name &amp;lt;&amp;lt;FeatureName | SubFeatureName&amp;gt;&amp;gt; Install-WindowsFeature Web-Server -IncludeAllSubFeature Get-NetTCPConnection Get-WebSiteState -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Start-WebSite -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Stop-WebSite -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Get-WindowsFeature -Name Web-Server Get-WindowsFeature -Name Web-*  IIS関連 Import-Module IISAdministration Reset-IISServerManager -confirm:$false $sm = Get-IISServerManager $appHostconfig = $sm.</description>
+      <guid>https://tech.k-zak.com/2017/03/30/powershell/</guid>
+      <description>Powershellでやったことメモn Powershellの実行権限について Get-ExecutionPolicy Set-ExecutionPolicy &amp;lt;PolicyName&amp;gt; # RemoteSignedとか よく使いそうなやつ ファイル操作、実行、インストールなど
+Copy-Item &amp;lt;&amp;lt;source&amp;gt;&amp;gt; -Destination &amp;lt;&amp;lt;dest&amp;gt;&amp;gt; -Recurse Move-Item &amp;lt;&amp;lt;sourse&amp;gt;&amp;gt; -Destination &amp;lt;&amp;lt;dest&amp;gt;&amp;gt; Remove-Item &amp;lt;&amp;lt;source&amp;gt;&amp;gt; -Recurse Rename-Item &amp;lt;&amp;lt;sourse&amp;gt;&amp;gt; Get-Content &amp;lt;&amp;lt;path/to/file&amp;gt;&amp;gt; Get-WmiObject Win32_Product Enter-PSSession &amp;lt;&amp;lt;container_id&amp;gt;&amp;gt; -RunAsAdministrator docker inspect &amp;lt;&amp;lt;container&amp;gt;&amp;gt; --format=&amp;quot;{{.Id}}&amp;quot; | sv container_id Install-WindowsFeature -Name &amp;lt;&amp;lt;FeatureName | SubFeatureName&amp;gt;&amp;gt; Install-WindowsFeature Web-Server -IncludeAllSubFeature Get-NetTCPConnection Get-WebSiteState -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Start-WebSite -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Stop-WebSite -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Get-WindowsFeature -Name Web-Server Get-WindowsFeature -Name Web-* IIS関連 Import-Module IISAdministration Reset-IISServerManager -confirm:$false $sm = Get-IISServerManager $appHostconfig = $sm.</description>
     </item>
     
     <item>
       <title>Hexo etc</title>
-      <link>http://tech.k-zak.com/2017/03/29/hexo-etc/</link>
+      <link>https://tech.k-zak.com/2017/03/29/hexo-etc/</link>
       <pubDate>Wed, 29 Mar 2017 22:37:07 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/29/hexo-etc/</guid>
+      <guid>https://tech.k-zak.com/2017/03/29/hexo-etc/</guid>
       <description>勉強の進捗とHexoの改修 いろいろいっぱいいっぱいで諦めたことと、作業したこと。
 スプリントの進捗  Mackerelのプラグイン試すとか諦めて、3月までの課題終了。 Docker学習、3月までの課題終了。Swarmとか諦めた。  時間に余裕ができたらまた集中して取り組む。
 Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃう感じだったのでCSSを変えるとかしようと考えてた。
@@ -381,13 +377,13 @@ Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃ
     
     <item>
       <title>docker reinstall</title>
-      <link>http://tech.k-zak.com/2017/03/28/docker-reinstall/</link>
+      <link>https://tech.k-zak.com/2017/03/28/docker-reinstall/</link>
       <pubDate>Tue, 28 Mar 2017 23:57:46 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/28/docker-reinstall/</guid>
+      <guid>https://tech.k-zak.com/2017/03/28/docker-reinstall/</guid>
       <description>Dockerを再インストールした Dockerが全然触らないうちにどんどん進化していってしまったので、一旦アンインストールして、入れ直した。
 環境はmacOS 10.11 えるかぴたん
-やったこと  docker-machine(boot2docker)の中身を全て削除  docker-machine rm defaultとか  docker-machineを完全削除するらしいツールを使って削除実行 Virtualboxを確認して環境が残っていないか確認 .bash_profileに記述していた環境変数設定を削除 homeディレクトリ直下の.dockerみたいな隠し領域も削除 公式から改めてdocker for mac をダウンロードしてインストール ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置  ハマったこと 単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対してdocker -vとかやってエラーを出してた。
+やったこと  docker-machine(boot2docker)の中身を全て削除  docker-machine rm defaultとか   docker-machineを完全削除するらしいツールを使って削除実行 Virtualboxを確認して環境が残っていないか確認 .bash_profileに記述していた環境変数設定を削除 homeディレクトリ直下の.dockerみたいな隠し領域も削除 公式から改めてdocker for mac をダウンロードしてインストール ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置  ハマったこと 単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対してdocker -vとかやってエラーを出してた。
 ターミナルを再起動して解決
 ここまで 今日はここまで。
 今後、先送りしてたswarmモードとやらを試したりしたい。</description>
@@ -395,13 +391,13 @@ Hexoのレイアウト改修 TOPの画像がサイトタイトルを隠しちゃ
     
     <item>
       <title>challenge mackerel plugin</title>
-      <link>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</link>
+      <link>https://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</link>
       <pubDate>Mon, 27 Mar 2017 23:36:40 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</guid>
+      <guid>https://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</guid>
       <description>Mackerelのカスタムメトリクスに挑戦 して撃沈。
 何が起きたか 公式のヘルプ を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。
-YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;quot;}\&amp;quot; unexpected (expecting \&amp;quot;then\&amp;quot;)\n&amp;quot;  改行が足りない？
+YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;quot;}\&amp;quot; unexpected (expecting \&amp;quot;then\&amp;quot;)\n&amp;quot; 改行が足りない？
 rubyファイルを単独で実行すると動くので謎。
 これだからRubyは。
 とりあえず、Mackerelは初期設定のままのメトリクスだけでいいや。</description>
@@ -409,10 +405,10 @@ rubyファイルを単独で実行すると動くので謎。
     
     <item>
       <title>Challenged Jekyll template and hate</title>
-      <link>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</link>
+      <link>https://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</link>
       <pubDate>Sun, 26 Mar 2017 18:32:49 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</guid>
+      <guid>https://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</guid>
       <description>Jekyllの画面(テンプレート)作った 結論から言うと、二度と使いたくない。
 Pelicanの方がいいや。
 やりたかったこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る アーカイブ(年月)ごとの記事一覧ページを作る アーカイブ(年月)の一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る  できたこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、Aboutのリンクを作る  乗り越えた事 HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。
@@ -432,10 +428,10 @@ Pelicanの場合、記事リストをgroup by　した結果をそのままfor�
     
     <item>
       <title>replace hugo post rule</title>
-      <link>http://tech.k-zak.com/2017/03/25/replace-hugo-post-rule/</link>
+      <link>https://tech.k-zak.com/2017/03/25/replace-hugo-post-rule/</link>
       <pubDate>Sat, 25 Mar 2017 22:43:59 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/25/replace-hugo-post-rule/</guid>
+      <guid>https://tech.k-zak.com/2017/03/25/replace-hugo-post-rule/</guid>
       <description>Hugoの記事の命名規則を見直して直した 辛かった。
 カテゴリ名、タグ名、ファイル名、記事のタイトル。これらが日本語だとジェネレート後のディレクトリ名、ファイル名、URLパス等で日本語が混ざってしまうので、片っ端から探して変更した。
 今後は記事内容以外では絶対に日本語を使わないようにしないと。
@@ -445,10 +441,10 @@ Pelicanの場合、記事リストをgroup by　した結果をそのままfor�
     
     <item>
       <title>I tried Mackerel</title>
-      <link>http://tech.k-zak.com/2017/03/24/i-tried-mackerel/</link>
+      <link>https://tech.k-zak.com/2017/03/24/i-tried-mackerel/</link>
       <pubDate>Fri, 24 Mar 2017 18:32:38 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/24/i-tried-mackerel/</guid>
+      <guid>https://tech.k-zak.com/2017/03/24/i-tried-mackerel/</guid>
       <description>勇気を出してMackerelを試してみた 前々から気にはなっていたMackerelをお試しで入れてみた。
  VPS契約しているUbuntu16.04 使い捨てのAWS上WIndows2012  インストール ヘルプに書いてある通りに作業してつまずく事もなくすんなりできた。
 監視項目 デフォルト監視項目 通常の監視項目で既に普段Zabbixで見て使っている項目を監視できているので、Zabbix使いこなす気がないならMackerelでいいかなって思った。
@@ -469,20 +465,20 @@ Zabbixサーバーを一台用意する場合との費用比較とか調べて�
     
     <item>
       <title>i got caught in utf8</title>
-      <link>http://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8/</link>
+      <link>https://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8/</link>
       <pubDate>Thu, 23 Mar 2017 21:47:31 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8/</guid>
+      <guid>https://tech.k-zak.com/2017/03/23/i-got-caught-in-utf8/</guid>
       <description>UTF-8-MAC にまたしてもやられた 全角のチルダだか波ダッシュだかがmacOSの時とそれ以外で違う文字コードなのか別の文字なのか、とにかく想定外の文字コードのものがバリデーションをすり抜けてきた。
 一つのOS上で禁止文字を羅列して出来たつもりになってたけどUTF−8−MACにはこれからも悩まされるんだろうなー。</description>
     </item>
     
     <item>
       <title>Bitbucket is cool</title>
-      <link>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool/</link>
+      <link>https://tech.k-zak.com/2017/03/22/bitbucket-is-cool/</link>
       <pubDate>Wed, 22 Mar 2017 21:47:01 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/22/bitbucket-is-cool/</guid>
+      <guid>https://tech.k-zak.com/2017/03/22/bitbucket-is-cool/</guid>
       <description>Bitbucketけっこういいかも プライベートリポジトリ欲しくてBitbucket試してみた。
 乾燥 Gitが使えるのでhg clone フォー！(古い)とかやらなくていいし抵抗なくて使えていいですね。
 なんかWikiとか課題(issue)とかも使えるし、どうやらGithubPagesみたいのもできるみたい。 なんかTrelloともなんか連携できるみたいでいいですね。
@@ -492,10 +488,10 @@ Githubとの使い分けがなやましいけど、とりあえずはプライ�
     
     <item>
       <title>Agile and Sprint myself</title>
-      <link>http://tech.k-zak.com/2017/03/21/agile-and-sprint-myself/</link>
+      <link>https://tech.k-zak.com/2017/03/21/agile-and-sprint-myself/</link>
       <pubDate>Tue, 21 Mar 2017 23:52:11 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/21/agile-and-sprint-myself/</guid>
+      <guid>https://tech.k-zak.com/2017/03/21/agile-and-sprint-myself/</guid>
       <description>自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい と、言うことです。
 覚えたいこと、挑戦したいことを目標とするはいいけど、いつまでたっても着手しなかったり遅々として進まなかったりするので優先順位をつけて期限を設けて手中して取り組んでいけば少しは結果が変わってくると信じたい。
 現在の目標  ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) AWSの機能のだいたいを触って感覚を掴んでおきたい Microsoft Azureを触ってAWSとの違いを掴んでおきたい GCC？を以下略 Blumixに挑戦したい FreeBSDを構築したい Alpineを構築して慣れたい Ansibleを一通り触っていろいろできるよういなりたい Dockerをある程度使えるようになりたい IPv6の学習と擬似ネットワークの構築してみたい VPNの設定をGUIじゃなくても設定できるようになりたい VyOS？を試してみたい Shell及びAWKを覚えたい Powershellを覚えたい dot net C#を覚えたい Javaを覚えたい Androidを覚えたい Swiftを覚えたい JavaScriptをもっと使いこなせるようになりmたい Perl6/Perl5を使えるようになりたい PHP7を覚えたい PHPのフレームワーク、Laravelを覚えたい Nginxに組み込むLuaを少し試したい Ruby/Railsを覚えたい Python3をもう少し使えるようになりたい Scalaちょっと覚えたい Lispわかるようになりたい Clojure書けるようになりたい Haskell読めるようになりたい F#ちょっとしたものなら書けるようになりたい ActiveDirectory/OpenDirectoryがわかるようになりたい。 Golang書けるようになりたい Makerel試したい Erlang読み書きできるようになりたい Elasticsearch扱えるようになりたい Neo4j試したい MongoDB試したい DynamoDB試したい Redis扱えるようになりたい  とっても曖昧なものが多い。。
@@ -506,10 +502,10 @@ Githubとの使い分けがなやましいけど、とりあえずはプライ�
     
     <item>
       <title>Pelicanのレイアウト作成</title>
-      <link>http://tech.k-zak.com/2017/03/20/create-pelican-theme/</link>
+      <link>https://tech.k-zak.com/2017/03/20/create-pelican-theme/</link>
       <pubDate>Mon, 20 Mar 2017 18:26:58 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/20/create-pelican-theme/</guid>
+      <guid>https://tech.k-zak.com/2017/03/20/create-pelican-theme/</guid>
       <description>Pelicanで使う自分用テーマを作成した 静的サイトジェネレーター用の基本的なブログレイアウトを一つ作っておくと使い回しができると思い、Python製のPelicanから着手することにしてみた。
 結論から言うと、なかなか時間がとれないのもあって、足掛け2ヶ月かかった。
 その1：ベースとなるレイアウトを素組する htmlとCSSのみでできるだけレスポンシブな簡易ブログ用のレイアウトを考えて作った。
@@ -523,35 +519,35 @@ CSSはSCSSからWebpackでビルドしているけど、限りなく必要ない
 ショートカットキーのタイポとかで変な場所に意図せず文字を入力してしまっているのに気づかず、ビルドが失敗した時には、身に覚えがなかったので解決に時間がかかった(2分探索みたいにコードを消したり戻したりしながらビルドしてエラー箇所を探した)。
 3. 記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある period_Archives.htmlっていう特定の期間の記事リストを表示するためのパーツの上でarticlesという記事リストオブジェクトは全体じゃなくて、その期間の記事リストオブジェクト。全記事のリストは代わりにall_articlesてのある。じゃぁ常にall_articlesを使えば？ってなるんだけど、TOPとか他の場所だとこのall_articlesは空欄。
 4. 年月毎に記事のカウントを取ったりURL分ける方法の説明がおろそか 結論からいうと、URLについては設定ファイルに
-MONTH_ARCHIVE_SAVE_AS = &#39;{date:%Y}/{date:%m}/index.html&#39; 他にも AUTHOR_SAVE_AS とか PAGE_SAVE_AS なんかもあるのよ  とか書いておくと、/2017/03/みたいなパスで2017年3月の記事の一覧ページが生成される。今にして思うと年のフォルダ&amp;amp;月を意味するファイルの組み合わせでよかったんじゃないか説もある。
+MONTH_ARCHIVE_SAVE_AS = &amp;#39;{date:%Y}/{date:%m}/index.html&amp;#39; 他にも AUTHOR_SAVE_AS とか PAGE_SAVE_AS なんかもあるのよ とか書いておくと、/2017/03/みたいなパスで2017年3月の記事の一覧ページが生成される。今にして思うと年のフォルダ&amp;amp;月を意味するファイルの組み合わせでよかったんじゃないか説もある。
 年月の記事カウントについては全記事を年でまとめた記事リストの記事リストを作成して「記事リスト」をさらに月でまとめてカウントを取るみたいなことをやる。 これはそんなようなことをするサンプルのテーマがたまたま見つかったから作れたけど見つからなかったらアーカイブのページが断念したと思う。
 こんな感じ
-&amp;lt;section&amp;gt; &amp;lt;p&amp;gt;Archives&amp;lt;/p&amp;gt; {% if all_articles|count %} &amp;lt;ul&amp;gt; {% for year, date_year in all_articles|groupby(&#39;date.year&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %} {% for month, articles in date_year|groupby(&#39;date.month&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %} &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/{{ year }}/{{ &#39;%02d&#39; % month }}/&amp;quot;&amp;gt;{{ year }}年{{ month }}月&amp;lt;/a&amp;gt;({{ articles|count }})&amp;lt;/li&amp;gt; {% endfor %} {% endfor %} &amp;lt;/ul&amp;gt; {% elif articles %} &amp;lt;ul&amp;gt; {% for year, date_year in articles|groupby(&#39;date.</description>
+&amp;lt;section&amp;gt; &amp;lt;p&amp;gt;Archives&amp;lt;/p&amp;gt; {% if all_articles|count %} &amp;lt;ul&amp;gt; {% for year, date_year in all_articles|groupby(&amp;#39;date.year&amp;#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %} {% for month, articles in date_year|groupby(&amp;#39;date.month&amp;#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %} &amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;/{{ year }}/{{ &amp;#39;%02d&amp;#39; % month }}/&amp;#34;&amp;gt;{{ year }}年{{ month }}月&amp;lt;/a&amp;gt;({{ articles|count }})&amp;lt;/li&amp;gt; {% endfor %} {% endfor %} &amp;lt;/ul&amp;gt; {% elif articles %} &amp;lt;ul&amp;gt; {% for year, date_year in articles|groupby(&amp;#39;date.</description>
     </item>
     
     <item>
       <title>Pelicanを試す</title>
-      <link>http://tech.k-zak.com/2017/02/20/first-pelican/</link>
+      <link>https://tech.k-zak.com/2017/02/20/first-pelican/</link>
       <pubDate>Mon, 20 Feb 2017 15:26:44 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/02/20/first-pelican/</guid>
+      <guid>https://tech.k-zak.com/2017/02/20/first-pelican/</guid>
       <description>Python製の静的サイトジェネレーターPelicanを試す Hugo,Hexo,Jekyllと試してきて、せっかくなのでPython製のものも試そうとPelicanを試した。
-インストール mkdir &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; pip install pelican Markdown pelican-quickstart  なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。
+インストール mkdir &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; pip install pelican Markdown pelican-quickstart なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。
 記事を書く 記事はcontent以下にreStructuredTextもしくはMarkdownで書きます。 content以下にディレクトリを配置するとそのディレクトリ名がカテゴリ名扱いされるらしい。当分はいいや。 もちろん、カテゴリはテキストファイルないのヘッダー？に記述できますので、カテゴリが必要だからといってディレクトリでわかなければいけないわけではありません。
-pelican content -s pelicanconf.py  でoutputディレクトリに静的ファイルが生成されます。
+pelican content -s pelicanconf.py でoutputディレクトリに静的ファイルが生成されます。
 簡単ですな。</description>
     </item>
     
     <item>
       <title>Jekyllを試す</title>
-      <link>http://tech.k-zak.com/2017/02/19/first-jekyll/</link>
+      <link>https://tech.k-zak.com/2017/02/19/first-jekyll/</link>
       <pubDate>Sun, 19 Feb 2017 23:22:39 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/02/19/first-jekyll/</guid>
+      <guid>https://tech.k-zak.com/2017/02/19/first-jekyll/</guid>
       <description>Jekyllを試す Ruby製の静的サイトジェネレーターを試してる。
 インストール 以下下記URLを参考にいろいろ試したけど、情報が古くコマンドが変わってた。 参考
-gem install jekyll mkdir _site _posts _site assets mkdir -p assets/css  構造はこんな感じ
-├── _config.yml ├── _layouts │ ├── layout.html │ └── post.html ├── _posts ├── _site ├── assets │ └── css └── index.md  jekyll serve --watch  で編集内容が即時される。
+gem install jekyll mkdir _site _posts _site assets mkdir -p assets/css 構造はこんな感じ
+├── _config.yml ├── _layouts │ ├── layout.html │ └── post.html ├── _posts ├── _site ├── assets │ └── css └── index.md jekyll serve --watch で編集内容が即時される。
 こんな感じでやっていこうと思います。
 レイアウトがとてもダサイ感じなので、テーマをちゃんと作っていきたい。
 Ruby製だから？ヘルプが分かりやすい。
@@ -560,46 +556,46 @@ Ruby製だから？ヘルプが分かりやすい。
     
     <item>
       <title>Hexoを試す</title>
-      <link>http://tech.k-zak.com/2017/02/19/first-hexo/</link>
+      <link>https://tech.k-zak.com/2017/02/19/first-hexo/</link>
       <pubDate>Sun, 19 Feb 2017 22:21:50 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/02/19/first-hexo/</guid>
+      <guid>https://tech.k-zak.com/2017/02/19/first-hexo/</guid>
       <description>JavaScriptの静的サイトジェネレーターHexoを試す JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。
-インストールと初期設定 npm install -g hexo-cli hexo init &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; npm install hexo server  これでHexoがインストールされサイトを開始できる hexe serverで開発用のサーバー起動状態になりhttp://localhost:4000にアクセスできる。
+インストールと初期設定 npm install -g hexo-cli hexo init &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; npm install hexo server これでHexoがインストールされサイトを開始できる hexe serverで開発用のサーバー起動状態になりhttp://localhost:4000にアクセスできる。
 _config.ymlを編集する。
-title: &amp;quot;サイトタイトル&amp;quot; subtitle: &amp;quot;サブタイトル&amp;quot; description: &amp;quot;サイトの説明&amp;quot; author: &amp;lt;&amp;lt;author&amp;gt;&amp;gt; language: ja timezone: Asia/Tokyo url: http://&amp;lt;&amp;lt;site-domain&amp;gt;&amp;gt; root: / permalink: :year/:month/:day/:title/  languageはjaにしてtimezoneはAsia/Tokyoにした。 urlは公開したいドメイン、rootはトップレベルにした。
+title: &amp;quot;サイトタイトル&amp;quot; subtitle: &amp;quot;サブタイトル&amp;quot; description: &amp;quot;サイトの説明&amp;quot; author: &amp;lt;&amp;lt;author&amp;gt;&amp;gt; language: ja timezone: Asia/Tokyo url: http://&amp;lt;&amp;lt;site-domain&amp;gt;&amp;gt; root: / permalink: :year/:month/:day/:title/ languageはjaにしてtimezoneはAsia/Tokyoにした。 urlは公開したいドメイン、rootはトップレベルにした。
 permalinkの設定は:year/:month/:day/:title/のデフォルト設定のままにした。
-記事の追加 hexo new &amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;  これでHugoみたいに初期状態のができる。 このあたり、Hugoと同じ感じで出来るので入りやすい。
+記事の追加 hexo new &amp;lt;&amp;lt;post-name&amp;gt;&amp;gt; これでHugoみたいに初期状態のができる。 このあたり、Hugoと同じ感じで出来るので入りやすい。
 当初、React製の「gatsby」にしようかと思ったけど、なんか違うと思ったので、止めた。
-Publicファイルの生成 hexo generate  これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。
+Publicファイルの生成 hexo generate これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。
 今回はここまで。</description>
     </item>
     
     <item>
       <title>WordPressからHugoへ移行</title>
-      <link>http://tech.k-zak.com/2017/02/19/first-hugo/</link>
+      <link>https://tech.k-zak.com/2017/02/19/first-hugo/</link>
       <pubDate>Sun, 19 Feb 2017 00:09:41 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/02/19/first-hugo/</guid>
-      <description>開発メモブログをWordPressからHugoへの移行  WordPressから記事をエクスポート Hugoをインストール エクスポートした記事を放り込む  WordPressから記事をエクスポート  WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す  参考   Hugoをインストール brew install hugo hugo new site techblog cd techblog  書き出した記事を放り込む プラグインを使ってエクスポートした記事データはHugoのcontent/postのpostディレクトリ相当のものが吐き出されているので、中身をcontent/post/にぶちまける。
+      <guid>https://tech.k-zak.com/2017/02/19/first-hugo/</guid>
+      <description>開発メモブログをWordPressからHugoへの移行  WordPressから記事をエクスポート Hugoをインストール エクスポートした記事を放り込む  WordPressから記事をエクスポート  WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す  参考    Hugoをインストール brew install hugo hugo new site techblog cd techblog 書き出した記事を放り込む プラグインを使ってエクスポートした記事データはHugoのcontent/postのpostディレクトリ相当のものが吐き出されているので、中身をcontent/post/にぶちまける。
 細かい設定 テーマを入れる 適当なテーマをインストール。今回はPolymer。 themeディレクトリがなかったら作ってその中でgit cloneしたらいいよ。
 config.tomlを編集 title,baseurl,languageCode,theme,paginateを修正する。
 後で独自ドメインでGitHubPagesで運用するため、canonifyurls = trueを設定する。
 GoogleAnalyticsのコードを入れるため、config.tomlに以下を追記
-[params] googleAnalyticsUserID = &amp;quot;&amp;lt;&amp;lt;code&amp;gt;&amp;gt;&amp;quot;  またURLの構造を検討する。 今回からパーマリンクを以下のようにした。permelink設定を追加
-[permalinks] post = &amp;quot;/:year/:month/:day/:slug&amp;quot;  これでyyyy/mm/dd/slugというようなURLになる。
+[params] googleAnalyticsUserID = &amp;quot;&amp;lt;&amp;lt;code&amp;gt;&amp;gt;&amp;quot; またURLの構造を検討する。 今回からパーマリンクを以下のようにした。permelink設定を追加
+[permalinks] post = &amp;quot;/:year/:month/:day/:slug&amp;quot; これでyyyy/mm/dd/slugというようなURLになる。
 URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。
 新しい記事を追加する時には
-hugo new post/&amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;.md  で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。
+hugo new post/&amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;.md で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。
 GitHubPagesで公開する  GitHubにリポジトリを追加 hugoコマンドで出力されるpublicディレクトリの静的ファイルをコミット settingsのGitHub Pagesの項にあるCustom domainにドメインを入れて保存。 hugoのpublicにCNAMEというファイルを追加。内容は公開ドメイン名 再度publicディレクトリの内容をコミット DNS(今回はRoute53)でCNAMEの設定をする。  今回はひとまずこんな感じ。 今後は記事の追加だけじゃなく、テーマを自作していきたい。</description>
     </item>
     
     <item>
       <title>再始動</title>
-      <link>http://tech.k-zak.com/2017/02/18/restart/</link>
+      <link>https://tech.k-zak.com/2017/02/18/restart/</link>
       <pubDate>Sat, 18 Feb 2017 23:26:18 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/02/18/restart/</guid>
+      <guid>https://tech.k-zak.com/2017/02/18/restart/</guid>
       <description>ブログ引越して再始動 &amp;hellip;の予定
 再始動 契約していたレンタルサーバーを解約して、長らく契約するも放置状態が続いていたVPSにいろいろ引っ越そうと検討。
 ついでにいろいろ構成などを再検討してやり直そうと考えました。
@@ -614,30 +610,30 @@ VPSサーバーの設定やHugoについて 後日、それぞれ別の記事に
     
     <item>
       <title>自己紹介</title>
-      <link>http://tech.k-zak.com/author/</link>
+      <link>https://tech.k-zak.com/author/</link>
       <pubDate>Sat, 18 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/author/</guid>
-      <description> いろいろな作業メモ、備忘録です。
+      <guid>https://tech.k-zak.com/author/</guid>
+      <description>いろいろな作業メモ、備忘録です。
 2017−02−18時点のスキルセトッ(レベルに差はあり)
  FileMaker Windows Server Powershell shell MySQL Ubuntu Ansible Docker PHP JavaScript Python  カテゴリの区分  構築・設定 -&amp;gt; 何かをインストールしたり設定したりした時の備忘録 勉強日誌 -&amp;gt; 何かの勉強した時の備忘録 トラブル -&amp;gt; トラブルルシュートした時の備忘録  タグの区分  プログラミング言語の名称 -&amp;gt; 言語の勉強とかした時につけます。 フレームワークの名称 -&amp;gt; フレームワーク固有の事についての記事につけます。 OSの名称 -&amp;gt; OSの設定についての記事につけます。 ツールの名称 -&amp;gt; ツールについての記事につけます。 購入・所持している書籍についての記事につけます。  </description>
     </item>
     
     <item>
       <title>Oracle Setup</title>
-      <link>http://tech.k-zak.com/2016/11/30/oracle-setup/</link>
+      <link>https://tech.k-zak.com/2016/11/30/oracle-setup/</link>
       <pubDate>Wed, 30 Nov 2016 11:46:20 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2016/11/30/oracle-setup/</guid>
-      <description> Ubuntu14.04にOracle11gを入れる 大まかな手順  必要なものをいれる(unzip, libaio1, unixodbc, alien) oracle download(rpmパッケージだけどな！) /sbin/chkconfigを作ってあげる alienでrpmパッケージをdebに変換 インストール 設定ファイル周りの編集(パスが違うとか、memory_targetの変更とか) hostsに外向けIPとhostnameの対応を追加(一番大事！)  </description>
+      <guid>https://tech.k-zak.com/2016/11/30/oracle-setup/</guid>
+      <description>Ubuntu14.04にOracle11gを入れる 大まかな手順  必要なものをいれる(unzip, libaio1, unixodbc, alien) oracle download(rpmパッケージだけどな！) /sbin/chkconfigを作ってあげる alienでrpmパッケージをdebに変換 インストール 設定ファイル周りの編集(パスが違うとか、memory_targetの変更とか) hostsに外向けIPとhostnameの対応を追加(一番大事！)  </description>
     </item>
     
     <item>
       <title>嘘でしょう。。。</title>
-      <link>http://tech.k-zak.com/2015/03/08/ubuntu-wifi/</link>
+      <link>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</link>
       <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/03/08/ubuntu-wifi/</guid>
+      <guid>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</guid>
       <description>長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。
 実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。
 悩まされていた問題 会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。
@@ -652,10 +648,10 @@ VMのネットワーク設定を「Macと共有」の時は問題なくて「自
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
+      <link>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
+      <guid>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
       <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
 https://github.com/seedcode/fmxj
 概要としては、FileMaker Server の XML公開を使う。
@@ -675,26 +671,26 @@ u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数
 WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
 これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
 しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
-※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても
+※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても
 　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
 その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
 最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
 自分はUbuntuの環境なので、
  sudo apt-get install nginx-extras
  後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
-more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;
-を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
+more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
+を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
 これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
 いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</description>
     </item>
     
     <item>
       <title>AnsibleのSSH設定について</title>
-      <link>http://tech.k-zak.com/2015/02/08/ansible-ssh/</link>
+      <link>https://tech.k-zak.com/2015/02/08/ansible-ssh/</link>
       <pubDate>Sun, 08 Feb 2015 14:43:15 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/08/ansible-ssh/</guid>
-      <description>Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+      <guid>https://tech.k-zak.com/2015/02/08/ansible-ssh/</guid>
+      <description>Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
 という事で調べた。
 結論としては、varsファイルに
 ・ansible_ssh_user
@@ -703,7 +699,7 @@ more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#821
 の3つを書いておきましょう。でした。
 最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
 例えばhostsファイルに
-`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
 という事で調べた。
 結論としては、varsファイルに
 ・ansible_ssh_user
@@ -714,45 +710,45 @@ more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#821
 例えばhostsファイルに
 `
 とか書いてグループ名が「dev」の場合に
--playbook
+-playbook\
 |
-|&amp;#8211;dev.yml
+|–dev.yml
 |
-|&amp;#8211;group_vars
+|–group_vars\
 | |
-| |&amp;#8211;dev.yml
+| |–dev.yml
 |
-|&amp;#8211;roles\※内容略
+|–roles\※内容略
 |
-|&amp;#8211;site.yml
+|–site.yml
 みたいな感じで書く。
-group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより&amp;#8211;ask-passの指定が必要なくなった。
+group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより–ask-passの指定が必要なくなった。
 問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。
 なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。
-ansible-playbookを実行する時に復号のために&amp;#8211;vault-passの引数とそのファイルパスを渡さないといけないってのも&amp;#8211;ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。
+ansible-playbookを実行する時に復号のために–vault-passの引数とそのファイルパスを渡さないといけないってのも–ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。
 hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー
 って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。</description>
     </item>
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/2015/02/01/php-mail/</link>
+      <link>https://tech.k-zak.com/2015/02/01/php-mail/</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/01/php-mail/</guid>
+      <guid>https://tech.k-zak.com/2015/02/01/php-mail/</guid>
       <description>## install postfix
-&amp;#8220;`
+“`
 sudo apt-get install postfix postfix-dev sasl2-bin
 sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt
-&amp;#8220;`
+“`
 ## Settings
-&amp;#8220;`
+“`
 sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf
 sudo emacs -nw /etc/postfix/main.cf
-&amp;#8220;`
+“`
 ### 参考
-&amp;#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail
-&amp;#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2
+– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail
+– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2
 ### gmailに転送する設定に変更
 relayhostにgmailを指定
 パスワードの設定とかね。
@@ -775,10 +771,10 @@ gmailの場合は/ssl/novalidation-certみたいのつける</description>
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>http://tech.k-zak.com/2015/01/05/perl-cgi/</link>
+      <link>https://tech.k-zak.com/2015/01/05/perl-cgi/</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
+      <guid>https://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
       <description>古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
 最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
 502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
@@ -800,10 +796,10 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？
     
     <item>
       <title>2014年を振り返る インフラ系</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-infra/</link>
+      <link>https://tech.k-zak.com/2014/12/30/milestone-infra/</link>
       <pubDate>Tue, 30 Dec 2014 09:50:19 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-infra/</guid>
+      <guid>https://tech.k-zak.com/2014/12/30/milestone-infra/</guid>
       <description>2014年を振り返る。インフラ関係について
 今年もっとも多く成長したのはインフラ関係についてだと思う。
 来年はもう少しスタートアップ用のシェルスクリプト理解して作れるようになりたい。
@@ -816,11 +812,11 @@ Ansibleは様々な構成管理、できればWindows環境も。
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
+      <link>https://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
-      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る
+      <guid>https://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
+      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
 まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
 Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
 Perl,Python,Rubyについては全然触れなくてフラストレーション。
@@ -829,15 +825,15 @@ PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.
 家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
 PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
 枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
+Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
     </item>
     
     <item>
       <title>2014年を振り返る JavaScript編</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-js/</link>
+      <link>https://tech.k-zak.com/2014/12/30/milestone-js/</link>
       <pubDate>Tue, 30 Dec 2014 09:34:05 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-js/</guid>
+      <guid>https://tech.k-zak.com/2014/12/30/milestone-js/</guid>
       <description>今年を振り返ってみる。クライアントサイド、特にJavaScriptについて
 JavaScriptについては今年、なるべくjQueryを使わないようにチャレンジする時期があった。
 結局IEとの互換を維持するコードを書かないといけない事を考えるのが面倒になってjQuery使わないの諦めた。
@@ -851,10 +847,10 @@ CoffeeScriptはちゃんと学習する前にオワコンになりそうだし�
     
     <item>
       <title>思い出せない</title>
-      <link>http://tech.k-zak.com/2014/10/25/milestone/</link>
+      <link>https://tech.k-zak.com/2014/10/25/milestone/</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/10/25/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/10/25/milestone/</guid>
       <description>前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
 サーバー関係 ログローテーションの設定を行った。
 yum install logrotate
@@ -874,32 +870,29 @@ PHP namespaceやautoloadをまだ理解しきれていない部分があるよ�
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
+      <link>https://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
-      <description>Ubuntu14(64bit)のVM作成  イメージからVMWareFusionに作成
- ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
- ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
- 設定画面が出てくるので、そのままOK
-  VMWare toolsをインストール
- VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行  aptのアップデートとアップグレード sudo apt-get update
+      <guid>https://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
+  ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
+  設定画面が出てくるので、そのままOK
+    VMWare toolsをインストール
+ VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行    aptのアップデートとアップグレード sudo apt-get update
 sudo apt-get upgrade
- Dropboxクライアントのインストール
- FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから  Emacsのインストール sudo apt-get install emacs24
+  Dropboxクライアントのインストール
+ FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから    Emacsのインストール sudo apt-get install emacs24
  Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
-mv ~/emacs.d ~/.emacs.d   バージョン管理のインストール sudo apt-get install git
-sudo apt-get install mercurial
- nginxのインストール sudo apt-get install nginx
- xEnvや各バージョンのインストールに必要になる諸々のインストール sudo add-apt-repository ppa:webupd8team/java</description>
+mv ~/emacs.d ~/.emacs.d    バージョン管理のインストール sudo apt-get install git
+sudo apt-get install mercurial</description>
     </item>
     
     <item>
       <title>PHPのファイルアップロードについて</title>
-      <link>http://tech.k-zak.com/2014/09/07/setting-php/</link>
+      <link>https://tech.k-zak.com/2014/09/07/setting-php/</link>
       <pubDate>Sun, 07 Sep 2014 17:34:12 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/07/setting-php/</guid>
+      <guid>https://tech.k-zak.com/2014/09/07/setting-php/</guid>
       <description>PHPで大きなファイルアップロードを作成する
 ・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。
 ・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file
@@ -910,10 +903,10 @@ sudo apt-get install mercurial
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
-      <link>http://tech.k-zak.com/2014/09/07/challenge-ansible/</link>
+      <link>https://tech.k-zak.com/2014/09/07/challenge-ansible/</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/07/challenge-ansible/</guid>
+      <guid>https://tech.k-zak.com/2014/09/07/challenge-ansible/</guid>
       <description>・botoが使えないってエラーになる。
 　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
 つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
@@ -923,15 +916,15 @@ sudo apt-get install mercurial
 ・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。
 ・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。
 　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。
-　なので「NameVirtuakHost *:80」の記述があれば、その後VirtualHostディレクティブが
+　なので「NameVirtuakHost *:80」の記述があれば、その後&amp;lt;virtualhost *:80&amp;gt;VirtualHostディレクティブが
 　ないといけない。
-もしもみたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
+もしも&amp;lt;virtualhost {{hostname}}:80&amp;gt;みたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
 整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。
 ・Ubuntuに入ってるApache2のVirtualHostの有効化無効化
 　sites-availableディレクトリにVirtualHost設定書く
 　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化
 ・Hostの指定が足りない！？
-Could not reliably determine the server&amp;#8217;s fully qualified domain name, using for ServerName
+Could not reliably determine the server’s fully qualified domain name, using for ServerName
 こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った
 　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、
 　そこに{{hostname}}.localを追記する処理追加
@@ -940,23 +933,22 @@ Ansibleでmysql_userモジュールを使ってユーザーを追加する際に
 host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)
 リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要
 ・netstat -ant で現在使ってるポートとか観れる
-　(適当な解釈、後で意味をちゃんと調べる&amp;#8230;かも)
+　(適当な解釈、後で意味をちゃんと調べる…かも)
 ・MySQLが外部からつながらぬ
 webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。
 my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。
 これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。
 ・ApacheのRewriteの設定漏れ
 UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。
-　AllowOverride をAllにしなかった。。。
-ということで？今のところ、Vagrantで作成したVMにMySQLやApacheの設定、それからWordPressの設置は出来るように</description>
+　AllowOverride をAllにしなかった。。。</description>
     </item>
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
+      <link>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
+      <guid>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
       <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
 の、前にAWSのS3試したので。
 ・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
@@ -975,24 +967,23 @@ Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合�
     
     <item>
       <title>Linux関係のメモ201407</title>
-      <link>http://tech.k-zak.com/2014/08/02/setting-ubuntu/</link>
+      <link>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</link>
       <pubDate>Sat, 02 Aug 2014 15:47:24 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/setting-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</guid>
       <description>Ubuntu系でのchkconfigに変わるコマンドってなんだっけ？
--&amp;gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要&amp;#8230;&amp;#8230;
-checkconfigてLinux全般共通じゃなかったんだ&amp;#8230;&amp;#8230;
+-&amp;gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要……
+checkconfigてLinux全般共通じゃなかったんだ……
 ・Ubuntu系でインストール済みのパッケージを見るのはdpkg -l(える) この後にgrep付けるヨロシ
-・Ubuntuでパッケージの検索はapt-cache search 
-　apt-get searchじゃなかった&amp;#8230;&amp;#8230;</description>
+・Ubuntuでパッケージの検索はapt-cache search 　apt-get searchじゃなかった……</description>
     </item>
     
     <item>
       <title>PHPあべし！</title>
-      <link>http://tech.k-zak.com/2014/08/02/spec-php5.5/</link>
+      <link>https://tech.k-zak.com/2014/08/02/spec-php5.5/</link>
       <pubDate>Sat, 02 Aug 2014 15:34:29 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/spec-php5.5/</guid>
+      <guid>https://tech.k-zak.com/2014/08/02/spec-php5.5/</guid>
       <description>最近PHP触ってて「あべし！」ってなった事。
 PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。
 愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。</description>
@@ -1000,10 +991,10 @@ PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5
     
     <item>
       <title>低レベルプログラマだからJavaScriptで知らなかった事</title>
-      <link>http://tech.k-zak.com/2014/08/02/spec-js/</link>
+      <link>https://tech.k-zak.com/2014/08/02/spec-js/</link>
       <pubDate>Sat, 02 Aug 2014 15:29:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/spec-js/</guid>
+      <guid>https://tech.k-zak.com/2014/08/02/spec-js/</guid>
       <description>JavaScriptで知らないせいでハマったところなどなど
 Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。
 そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。
@@ -1013,10 +1004,10 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     
     <item>
       <title>最近やったいろいろ</title>
-      <link>http://tech.k-zak.com/2014/03/16/milestone/</link>
+      <link>https://tech.k-zak.com/2014/03/16/milestone/</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/03/16/milestone/</guid>
       <description>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
 ◆PostgreSQLのSQLダンプ
 　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
@@ -1061,43 +1052,40 @@ JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
     
     <item>
       <title>Win上のpythonでバッチ処理3</title>
-      <link>http://tech.k-zak.com/2014/03/16/batch-python-03/</link>
+      <link>https://tech.k-zak.com/2014/03/16/batch-python-03/</link>
       <pubDate>Sun, 16 Mar 2014 14:36:07 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/batch-python-03/</guid>
+      <guid>https://tech.k-zak.com/2014/03/16/batch-python-03/</guid>
       <description>windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを
-取得し、コマンドを叩く。
-#!/usr/bin/env python # -*- coding: utf-8 -*- import os,csv,json def get_conf(path): try: os.path.isfile(path) f = open(path,&#39;r&#39;) data = json.load(f) f.close() return data except Exception as e: #print &#34;FileNotFound or Access Error.&#34; return None def read_file(path): try: os.path.isfile(path) f = open(path,&#39;r&#39;) data = csv.reader(f) users = [line[0] for line in data] f.close() return users except Exception as e: #print &#34;FileNotFound or Access Error.&#34; return None def bu_cmd(users,bu_path): if isinstance(users,list) and len(users)  0: cmds = map(lambda x:&#34;</description>
+取得し、コマンドを叩く。</description>
     </item>
     
     <item>
       <title>Win上のPythonでバッチ処理2</title>
-      <link>http://tech.k-zak.com/2014/03/16/batch-python-02/</link>
+      <link>https://tech.k-zak.com/2014/03/16/batch-python-02/</link>
       <pubDate>Sun, 16 Mar 2014 14:29:40 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/batch-python-02/</guid>
+      <guid>https://tech.k-zak.com/2014/03/16/batch-python-02/</guid>
       <description>windows server2008上のFileMakerServerのバッチ処理を行うにあたり、前回使用した作業用の
-csvファイルが存在していたら消す処理。
-#!/usr/bin/env python # -*- coding: utf-8 -*- import os.path,json def get_conf(path): try: os.path.isfile(path) f = open(path,&#39;r&#39;) data = json.load(f) f.close() print data return data except Exception as e: #ファイルは存在しない print &#34;FileNotFound or Access Error.&#34; return None def is_file(path): try: os.path.isfile(path) os.remove(path) #print &#34;消してやったぜ、ヒャッハー！&#34; return 0 except Exception as e: #print &#34;ファイルなど存在しない&#34; return 0 if __name__ == &#39;__main__&#39;: #jsonファイルに作業対象ファイルパスなんかを書いておく conf_data = get_conf(&#34;conf.json&#34;) is_file(conf_data[&#34;test&#34;][&#34;csvPath&#34;])  </description>
+csvファイルが存在していたら消す処理。</description>
     </item>
     
     <item>
       <title>Windows上でpythonでバッチ処理1</title>
-      <link>http://tech.k-zak.com/2014/03/16/batch-python-01/</link>
+      <link>https://tech.k-zak.com/2014/03/16/batch-python-01/</link>
       <pubDate>Sun, 16 Mar 2014 14:23:49 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/batch-python-01/</guid>
+      <guid>https://tech.k-zak.com/2014/03/16/batch-python-01/</guid>
       <description>windows server2008上のFileMakerServerのWeb公開エンジンのプロセスを監視して
-異常終了していたらプロセスを再起動するバッチプログラムをpythonで書いてみた。
-#-*- coding:utf-8 -*- import os import urllib2 def send_mail_batch: try: import smtplib host,port = &#39;www.example.jp&#39;,587 username,password = &#39;email@example.jp&#39;,&#39;passwd&#39; to_address = &#39;email@example.jp&#39; msg = &#34;&#34;&#34;From: %s To: %s Subject: Web公開エンジン再起動 異常終了したWeb公開エンジンプロセスを再起動しました。 . &#34;&#34;&#34; % (username,to_address) smtp = smtplib.SMTP(host,port) smtp.set_debuglevel(True) smtp.ehlo(host) smtp.login(username,password) smtp.sendmail(username,to_address,msg) smtp.quit() return True except: return False if __name__ == &#39;__main__&#39;: testurl = &#34;http://10.0.0.124/fmi/iwp&#34; try: res = urllib2.urlopen(testurl) res.read() os.system(&#39;echo ok  ok.txt&#39;) send_mail_batch() except: os.system(&#34;fmsadmin -u account -p password start wpe&#34;</description>
+異常終了していたらプロセスを再起動するバッチプログラムをpythonで書いてみた。</description>
     </item>
     
     <item>
       <title>NginxでPermission denied</title>
-      <link>http://tech.k-zak.com/2014/01/16/trouble-nginx/</link>
+      <link>https://tech.k-zak.com/2014/01/16/trouble-nginx/</link>
       <pubDate>Thu, 16 Jan 2014 01:44:58 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/01/16/trouble-nginx/</guid>
+      <guid>https://tech.k-zak.com/2014/01/16/trouble-nginx/</guid>
       <description>開発環境
 OS:Ubuntu12?
 Webサーバー：Nginx
@@ -1112,10 +1100,10 @@ Nginxのセキュリティ機能？なのでしょうか。仕組みは調べて
     
     <item>
       <title>2014年の目標達成進捗管理的な</title>
-      <link>http://tech.k-zak.com/2014/01/04/milestone/</link>
+      <link>https://tech.k-zak.com/2014/01/04/milestone/</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/01/04/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/01/04/milestone/</guid>
       <description>新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
 事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
 とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
@@ -1123,99 +1111,126 @@ Nginxのセキュリティ機能？なのでしょうか。仕組みは調べて
 要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。
 という事で設定作業開始
 環境:  ホストOS：OS X10.9 ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T)) nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します) ruby2.0.0dev(rbenv) unicorn4.7.0 rails3.2.16 redmine2.4.2  rbenvにruby2.0を追加してデフォルトにする rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。
-参考：rbenvを利用して複数バージョンのRubyをインストール
-~$ rbenv install 2.0.0rc-2 ~$ rbenv global 2.0.0rc-2 ~$ rbenv rehash ※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
+参考：rbenvを利用して複数バージョンのRubyをインストール※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
 rehashの時だけsh-rehashがうんたらってエラーになる。
 ruby2.0の状態でgem update でアップデートしてbundler入れる。
-~$ gem update ~$ gem install bundler ~$ gem install mysql2 ~$ ~/.rbenv/bin/rbenv rehash  MySQL側の準備 redmienユーザーの作成と
+MySQL側の準備 redmienユーザーの作成と
 データベース：redmineの作成
 redmine入れる ここから最新のredmineをダウンロード(今回は2.4.2)
 うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。
 DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。
 redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。
-~$ cd redmineディレクトリの場所 ~$ echo &#34;gem &#39;unicorn&#39;&#34;  Gemfile.</description>
+bundleでのインストールが初めてだったので、なんか引数与えてやってみたかったてのと、
+最初rmagick関連でエラー出たっぽいのでwithoutに指定した。原因は究明しない！
+ここまでで自分が詰まったのは、最初bundler入れた後rehashしてなくてbundle installのとろこで、bundler入ってねぇよ！apt-getで入れろ！ってエラー出てアワアワしてた。どうもbundler入れた後にもrehashが必要らしい。今は何故かは調べない。
+必要最小限にしてなかったせいか、ここでワンサカいろいろインストールされた。気がする。
+インストールされたgemを見た所、railsは上記環境で記載したバージョンになっていたです。
+終わったら、database.ymlのproductionの所を編集して自分の環境でDB接続できるようにする。
+開発用じゃなくてredmine使うだけなので最初からproduction。
+ここで一旦Webrickで動くか確認。
+動かねぇ！調べてたらお決まりの必要な処理がある事を知った。
+その１その２書いてあることの真似をする。
+終わったら再度チャレンジでWebrickが起動しました。やったね。
+redmineのadminユーザーのデフォルトのパスワードがわからない！ 解決策はここ。
+unicornの設定 めんどくさくなってきた。上記の２リンクと関連リンクのGithubと、やや簡潔にかいてあるブログを参考に設定ファイルを書いていきましたので詳細は省きます。
+１，unicorn.rbを作成。
+２，unicornのデーモン
+自分が作業した手順としては一気にnginxの設定編集までしてから確認して動かない！ってなったんだけど、問題切り分けのために、
+ unicornの設定する前段階でWebrickで動かくか(例えば、http://0.0.0.0:3000) unicornの設定した段階でredmine動くか(例えば、http://0.0.0.0:8080)  て接続確認しながら進めたほうが良いと思われます。
+nginxの設定編集 既にnginxが動いている環境のため、redmine専用の設定どうするのか戸惑ったけど、単にserverディレクティブを追加すればいいみたい。upstreamディレクティブも既存の仮想ホスト設定に悪影響は出ていないみたいだ。
+最終的な結論から言うと動いたけど、参考にしたブログなんかと設定がちょい違う。
+ ローカルで動かしているせいかhostsファイルにredmine用の仮想URLを追記したら動いた。※追記前は参考記事と同じ設定にしても動かなかった。 動かすのに使った指定は  upstreamのunixソケットの指定 追加仮想ホストのlisten port 追加仮想ホストのserver_name 追加仮想ホストのroot 追加仮想ホストのaccess_log 追加仮想ホストのerror_log 追加仮想ホストのlocation / にファイルじゃなかったらproxy_passの分岐 上記if文が真の時のproxy_passの指定を「http://」+「upstreamに記述した名前」    proxy_pass以外のproxyの設定は一つも書いてないけど動きます。なんでだろう。</description>
     </item>
     
     <item>
       <title>JavaScriptで7の倍数と7のつく数字の時だけtrue</title>
-      <link>http://tech.k-zak.com/2013/12/22/x7-true-js/</link>
+      <link>https://tech.k-zak.com/2013/12/22/x7-true-js/</link>
       <pubDate>Sun, 22 Dec 2013 19:18:49 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/22/x7-true-js/</guid>
+      <guid>https://tech.k-zak.com/2013/12/22/x7-true-js/</guid>
       <description>Javascriptてこんな書き方できるのか
 ◆7の倍数か7の付く数字の場合のみtrueを返す。
-var nana = function(num){ var arr = [0]; for(var i=1;i&amp;lt; =num;i++){ arr.push( (!(i%7)||/7/.test(i))||i ); } return arr; };  7の剰余が0ではない、もしくは７が含まれる数字が真なら論理値(true)、そうでなければ数値(i)
+7の剰余が0ではない、もしくは７が含まれる数字が真なら論理値(true)、そうでなければ数値(i)
 最初はおぉ？って思ったけれど、こうしてみるとさして不思議でもないか。</description>
     </item>
     
     <item>
       <title>fizzbuzz</title>
-      <link>http://tech.k-zak.com/2013/12/22/fizzbuzz-js/</link>
+      <link>https://tech.k-zak.com/2013/12/22/fizzbuzz-js/</link>
       <pubDate>Sun, 22 Dec 2013 18:44:51 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/22/fizzbuzz-js/</guid>
+      <guid>https://tech.k-zak.com/2013/12/22/fizzbuzz-js/</guid>
       <description>Javascriptでfizzbuzz
 ◆シンプルなやつ
-var fizzbuzz = function(num){ //3の倍数の時はFizz //5の倍数の時はBuzz //3かつ5の倍数の時はFizzBuzz var arr = [0]; for(var i=1;i&amp;lt;=num;i++){ arr.push([i,&#34;Fizz&#34;,&#34;Buzz&#34;,&#34;FizzBuzz&#34;] [(0==i%3)+(0==i%5)*2] ); } return arr; }; =を使わないなら論理値を整数に戻すみたいな面倒なことやる。剰余を用いないならいろいろごちゃごちゃやる。
+=を使わないなら論理値を整数に戻すみたいな面倒なことやる。剰余を用いないならいろいろごちゃごちゃやる。
 とりあえず可読性とシンプルさから考えるとこんな書き方になるのかな。</description>
     </item>
     
     <item>
       <title>パスカルのなんとか</title>
-      <link>http://tech.k-zak.com/2013/12/22/pascal-logic/</link>
+      <link>https://tech.k-zak.com/2013/12/22/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
+      <guid>https://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
       <description>今回は、パスカルの三角定理？みたいなやつ
 PHPでは、
-&amp;lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&amp;lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&amp;lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(&#39;,&#39;,$arr).&#34;\n&#34;; } ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; my $num = &amp;lt;stdin; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&amp;lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&amp;lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(&#39;,&#39;,@list).&#34;\n&#34;; } &amp;lt;/stdin Pythonでは、</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+Rubyはもっとシンプルな書き方があるのかもしれない。</description>
     </item>
     
     <item>
       <title>平方根ろじく</title>
-      <link>http://tech.k-zak.com/2013/12/08/square-root/</link>
+      <link>https://tech.k-zak.com/2013/12/08/square-root/</link>
       <pubDate>Sun, 08 Dec 2013 15:52:17 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/08/square-root/</guid>
+      <guid>https://tech.k-zak.com/2013/12/08/square-root/</guid>
       <description>平方根で最も少ない桁数で0から9までの数字が揃うのは何？
 Pythonでチャレンジ
-#!usr/bin/python #--*-- coding: utf-8 --*-- import math from decimal import * def change_list(num): return list(str(num).replace(&#39;.&#39;,&#39;&#39;)) def check_num10(num_list): #num_list max length is 28 (default Decimal) s = set() i = 0 for x in num_list: s.add(x) i += 1 if len(s) == 10: return i #set length shorter than 10 return False return False if __name__ == &#39;__main__&#39;: #上限100万でLoop max_loop = 1000000 k = False #桁数 i = False #数値 for x in range(0,max_loop): result = check_num10(change_list(Decimal(x).</description>
+今回はPython以外で考える気が起きない。</description>
     </item>
     
     <item>
       <title>コーディングリハビリ06</title>
-      <link>http://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
-&amp;lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&amp;lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&amp;lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(&#39;,&#39;,$arr).&#34;\n&#34;; } ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; my $num = &amp;lt;STDIN&amp;gt;; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&amp;lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&amp;lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(&#39;,&#39;,@list).&#34;\n&#34;; }  Pythonでは、</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+習熟度が低いのでPerlとPHPが同じ内容になる。
+pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。
+すんなり1つのリストだけでできないものか……</description>
     </item>
     
     <item>
       <title>コーディングリハビリ05</title>
-      <link>http://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
       <description>昨日の文字チェックをPHP以外で試す。
 与えられた文字列が全てユニークな文字で構成されているかのチェック。
 PHPは前回やっているので、今回は掲載無し。
 Perlでは、
-#!/usr/bin/perl use strict; use warnings; sub check_unique{ my $str = shift; my $len = length($str); for(my $i=0;$i&amp;lt;$len;$i++){ my $char = substr($str,$i); if(index($str,$char) != rindex($str,$char)){ return &#34;False&#34;; } } return &#34;True&#34;; } my $input = &#39;1234567890-=\`!@#$%^&amp;*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:&#34;asdfghjkl;\&#39;zxcvbnm,./ZXCVBNM&amp;lt;&amp;gt;?&#39;; #my $input = &amp;lt;STDIN&amp;gt;; #chomp($input); print check_unique($input).&#34;\n&#34;; Pythonでは、
-#!/usr/bin/python #--*-- coding: utf-8 --*-- import datetime def check_unique(str): set_str = set(list(str)) if len(str) == len(set_str): return True else: return False if __name__ == &#34;</description>
+Pythonでは、
+Rubyでは、
+文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。
+配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。
+pythonが一番スッキリしているようだけど、やっぱりRubyかな</description>
     </item>
     
     <item>
       <title>コーディングリハビリ04</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo04/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo04/</link>
       <pubDate>Fri, 06 Dec 2013 16:06:49 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo04/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo04/</guid>
       <description>今回は与えられた文字列が全てユニークな文字の構成かどうか調べる。
 そういう問題を出されてスマートに答えられなかったので、調べた。
 1,回答した内容を修正したもの
@@ -1229,56 +1244,62 @@ Perlでは、
     
     <item>
       <title>コーディングリハビリ03</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo03/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
-&amp;lt;?php function bubble_sort(array $arr,$r){ if(1 == $r){ return $arr; } $len = count($arr)-1; for($i=0;$i&amp;lt;$len;$i++){ if($arr[$i] &amp;gt; $arr[$i+1]){ $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } return bubble_sort($arr,$r-1); } $input = trim(fgets(STDIN)); $arr = explode(&#34;,&#34;,$input); echo implode(&#34;,&#34;,bubble_sort($arr,count($arr))).&#34;\n&#34;; ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; sub bubble_sort{ my($arr,$r) = @_; my @arr = @{$arr}; if(1 == $r){ return @arr; }else{ my $len = @arr; for(my $i=0;$i&amp;lt;$len-1;$i++){ if($arr[$i] &amp;gt; $arr[$i+1]){ my $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } bubble_sort(\@arr,$r-1) } } my $input = &amp;lt;STDIN&amp;gt;; chomp($input); my @arr = split(&#39;,&#39;,$input); print join(&#34;</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+Rubyが一番スマートかな</description>
     </item>
     
     <item>
       <title>コーディングリハビリ02</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo02/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
       <description>リハビリその２
 今回は、ファイル読み込みとその時の簡単な例外処理
 読み込むテキストファイルの内容は以下の通り、
-7 1000 1992 あ A 2000 2001 1900 16 12 400  PHPでは、
-&amp;lt;?php function isLeap($year=null){ if($year == null) return false; $intYear = (int)$year; if(0 != $intYear%4){ return false; }elseif(0 == $intYear%400){ return true; }elseif(0 == $intYear%100){ return false; }else{ return true; } } try{ if(!file_exists(&#34;leap.txt&#34;)){ throw new Exception(&#34;ファイルが見つかりません。&#34;); } $fp = fopen(&#34;leap.txt&#34;,&#34;r&#34;); $lines = fgets($fp); for($i=0;$i&amp;lt;$lines;$i++){ $year = trim(fgets($fp)); printf(&#34;%s is%s a leap year\n&#34;, $year,((isLeap($year))?&#34;&#34;:&#34; not&#34;)); } fclose($fp); }catch(Exception $e){ echo $e-&amp;gt;getMessage().</description>
+PHPでは、
+Perlでは、
+Pythonでは、
+Rubyでは、
+うるう年の判定処理は適当。pythonが一番しっくりくるかな。
+rubyはreturnを省略した場合に最後に評価された値がreturnされるんだけど、pythonもだと勘違いしててハマった。</description>
     </item>
     
     <item>
       <title>コーディングリハビリ01</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo01/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
       <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
 paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
 という事でリハビリ。
 今回は標準入力。
 PHPでは、
-&amp;lt;?php //標準入力をfgets関数で取得して前後の空白や改行文字を削り取る $input = trim(fgets(STDIN)); ?&amp;gt; Perlでは、
-use strict; use warnings; my $input = &amp;lt;STDIN&amp;gt;; #行末の改行文字を削る chomp($input); Pythonでは、
-input = raw_input() #行末の改行文字とるのは厳密にはいろいろあるらしいので今回は無視 Rubyでは、
-input = gets.chomp 標準入力が「gets」だけで取れるRubyはダンディ。</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+標準入力が「gets」だけで取れるRubyはダンディ。</description>
     </item>
     
     <item>
       <title>Laravel4触り始めました</title>
-      <link>http://tech.k-zak.com/2013/12/06/study-larabel4/</link>
+      <link>https://tech.k-zak.com/2013/12/06/study-larabel4/</link>
       <pubDate>Fri, 06 Dec 2013 14:07:20 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/study-larabel4/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/study-larabel4/</guid>
       <description>Laravel4がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。
 テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。
-{{&amp;#8211; コメントアウトしたいコード &amp;#8211;}}って書かないといけない。ていうか、そもそもの外で変な書き方してたのが悪い。
+{{– コメントアウトしたいコード –}}って書かないといけない。ていうか、そもそもの外で変な書き方してたのが悪い。
 あと、migrationの使い方全然理解していないのでそこで詰まった。
 検索フォームの値を受け取ってモデルに検索処理投げてレコードオブジェクト(モデルイングタンス？)受け取る処理はコントローラーに書くの？それともViewファイル？
 わかりません。。。</description>
@@ -1286,10 +1307,10 @@ input = gets.chomp 標準入力が「gets」だけで取れるRubyはダンデ�
     
     <item>
       <title>FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</title>
-      <link>http://tech.k-zak.com/2013/11/13/trouble-charset/</link>
+      <link>https://tech.k-zak.com/2013/11/13/trouble-charset/</link>
       <pubDate>Wed, 13 Nov 2013 15:27:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/11/13/trouble-charset/</guid>
+      <guid>https://tech.k-zak.com/2013/11/13/trouble-charset/</guid>
       <description>FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、
 Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！ (PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)
 →アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。
@@ -1298,7 +1319,7 @@ FuelPHPのUpload::save()を行う前に
 弊害としては本来は内部エンコードのまま処理が進むはずだったので、同名ファイルが有る場合に枝番を付加する処理なんかが正常に動作しなくなる。
 これでWindowsサーバーのフォルダに読める文字のファイル名でアップロードされる。
 最初エンコードをSJISにしてたけど、CP932にしたら、①みたいなMS拡張の機種依存文字も大丈夫になった。
-本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも Upload::register(&#39;after&#39;,function($file){ 文字化け状態のファイルをエンコードしなおしたファイル名でリネーム })  とかやったら良かったのかな？
+本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも とかやったら良かったのかな？
 文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け！ (ま、そりゃそうですね)
 →上記１の結果を受けてメール送信のメソッドに引数として添付ファイル名を渡す。その処理は何も加工しない。
 メール送信用のメソッドの中で、引数で受け取った添付ファイル名をFuelPHPのmailに渡す処理を加工
@@ -1309,15 +1330,14 @@ FuelPHPのUpload::save()を行う前に
     
     <item>
       <title>sshで、ぷごふぁ</title>
-      <link>http://tech.k-zak.com/2013/10/02/ssh/</link>
+      <link>https://tech.k-zak.com/2013/10/02/ssh/</link>
       <pubDate>Wed, 02 Oct 2013 17:10:04 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/10/02/ssh/</guid>
+      <guid>https://tech.k-zak.com/2013/10/02/ssh/</guid>
       <description>WordPress勉強してます。テーマについてはだいたい分かったので、自作テーマとか作っていきたい。
 ゆくゆくは案件事例的なぽーとふぉりおサイトを作ろうと、とりあえずさくらVPSを立てて、SSHの
 設定をする。
-&amp;nbsp;
-契約だけしてながらく放置していたので、OS再インストールしてSSHで接続しようとしたらエラー出て
+ 契約だけしてながらく放置していたので、OS再インストールしてSSHで接続しようとしたらエラー出て
 ぷごふぁ！ってなった。調べたら出てきました。
 参照： http://qiita.com/wnoguchi/items/690f3f4651f8f11e4ed3
 要は以前に接続した際のゴミが残っていて再インストールしたのでIPとポート同じなのに鍵あわないじゃん！
@@ -1327,10 +1347,10 @@ Qiitaは素人同然の自分には本当に助かる。</description>
     
     <item>
       <title>印刷用CSSでハマった</title>
-      <link>http://tech.k-zak.com/2013/10/02/trouble-css/</link>
+      <link>https://tech.k-zak.com/2013/10/02/trouble-css/</link>
       <pubDate>Wed, 02 Oct 2013 16:53:01 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/10/02/trouble-css/</guid>
+      <guid>https://tech.k-zak.com/2013/10/02/trouble-css/</guid>
       <description>この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。
 問題のCSS: page-break-before
 いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと
@@ -1346,17 +1366,17 @@ cssを適用させるって方法。Web素人には分からんよ。Web上でCS
     
     <item>
       <title>fuelphp使って分からなかったこと</title>
-      <link>http://tech.k-zak.com/2013/08/25/challenge-fuelphp/</link>
+      <link>https://tech.k-zak.com/2013/08/25/challenge-fuelphp/</link>
       <pubDate>Sun, 25 Aug 2013 12:51:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/challenge-fuelphp/</guid>
+      <guid>https://tech.k-zak.com/2013/08/25/challenge-fuelphp/</guid>
       <description>fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな
 感じなんですけど。
 以下に分からなかったことなど
 １，modelの検索メソッドがクラスメソッド
 検索条件を検索メソッドに渡してレコードオブジェクトを受け取るんだから別に
 インスタンスメソッドである必要はないんだけど、じゃぁ返ってきたモノは
-ただの連想配列なのかモデルオブジェクトの塊なのか&amp;#8230;
+ただの連想配列なのかモデルオブジェクトの塊なのか…
 昔、Javaを少し自習した時にレコードオブジェクトのクラスとオブジェクトの塊を保持する
 クラスが別になる書き方があって、自分にはその方がしっくり来るんだけど、多分塊を保持
 するクラスが余計っていう考えなのだろうか。
@@ -1370,8 +1390,8 @@ Model_Crudのメソッド見てるとhas_next()とかあるから、1個以上�
 ないかな。
 ２，FieldSetクラスという便利なものの中のcheckboxの名前の付け方
 これは多分自分の学習が足りないだけなんだと思うけど、PHPでinputフォームのチェックボックス
-を複数用意する時、name属性をname=&amp;#8221;◯◯[]&amp;#8221;とかにして受け取ったPHPで値を配列で扱うんだけ
-ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=&amp;#8221;◯◯[i]&amp;#8221;って[]の中
+を複数用意する時、name属性をname=”◯◯[]”とかにして受け取ったPHPで値を配列で扱うんだけ
+ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=”◯◯[i]”って[]の中
 に数字を入れてくるんです。受け取るPHP側では配列として受け取れるぽいんだけど、fuelphpの
 Validationでこのチェックボックスグループらのどれか1つにはチェックしていること！みたいな
 事が出来ない。あと、jQueryのvalidationプラグインが動かない。別のものとして扱ってしまう。
@@ -1379,9 +1399,7 @@ core/classes/foeldset/の中にあるファイルのcheckboxのフォームの�
 書き換えて(本当はappフォルダにコピーするべき)使っている。
 ３，FieldSetオブジェクトのフォームオブジェクトのラベル出力の時に出力されるラベル要素に
 クラス(htmlのclass)を追加する手段が分からない。
-こいつ、checkboxやradioのグループ出力する場合はタグ出力しないんだぜ。意味不明。
-親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。
-やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用
+こいつ、checkboxやradioのグループ出力する場合はタグ出力しないんだぜ。意味不明。親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用
 されなくて、仕方なく、requiredの場合出力されるデフォルト「*」のやつを「(必須)」てかえて
 それを赤字にした(requiredの時に出力される奴はlabel要素外)。
 ４，単にどこに何を書くかがまだ理解できていない。
@@ -1401,46 +1419,46 @@ JavaScriptは分かるんですよ。callbackとかその時だけの処理を�
 定義しちゃうとグローバル領域にはいっちゃうから変数の中にいれといて、特定の処理の時に呼び出す
 とかね。
 でもPHPてクラスメソッドとかインスタンスメソッドとか定義してるわけじゃないですか、だから
-JavaScriptと同じ用途ってない気がして&amp;#8230;ちょっとだけViewファイルの中で書いたりもしたけれど、
+JavaScriptと同じ用途ってない気がして…ちょっとだけViewファイルの中で書いたりもしたけれど、
 Helper作る程でもない処理専用って事？後は再帰定義のcallbaclくらい？よく分からんです。</description>
     </item>
     
     <item>
       <title>jQueryでまた使い方忘れて調べそうなやつらメモ</title>
-      <link>http://tech.k-zak.com/2013/08/25/jquery-memo/</link>
+      <link>https://tech.k-zak.com/2013/08/25/jquery-memo/</link>
       <pubDate>Sun, 25 Aug 2013 04:50:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/jquery-memo/</guid>
+      <guid>https://tech.k-zak.com/2013/08/25/jquery-memo/</guid>
       <description>gistベタ貼りじゃ！</description>
     </item>
     
     <item>
       <title>jQueryで要素の高さを変える</title>
-      <link>http://tech.k-zak.com/2013/08/25/jquery-toggle/</link>
+      <link>https://tech.k-zak.com/2013/08/25/jquery-toggle/</link>
       <pubDate>Sun, 25 Aug 2013 04:47:47 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/jquery-toggle/</guid>
+      <guid>https://tech.k-zak.com/2013/08/25/jquery-toggle/</guid>
       <description>まぁ、アレですよ。よかれと思って表示非表示をトグルする要素作ったら、
 非表示にした分、開いたスペースだけ下にあるリスト(table)要素の高さ広げてよ
 っていうオマケに品質求めちゃう的な要望があったわけですよ。
 jQueryのtoggle()が勝手にon-offやってくれるのはいいんだけど、今要素をたたんでいるのか
-広げてるのか分からないのでis(&amp;#8220;:hidden&amp;#8221;)なんてのを使って調べるわけですね。
+広げてるのか分からないのでis(“:hidden”)なんてのを使って調べるわけですね。
 だったらshow()とhide()使っても良くね？的な。</description>
     </item>
     
     <item>
       <title>css 印刷のために</title>
-      <link>http://tech.k-zak.com/2013/08/25/print-css/</link>
+      <link>https://tech.k-zak.com/2013/08/25/print-css/</link>
       <pubDate>Sun, 25 Aug 2013 04:39:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/print-css/</guid>
+      <guid>https://tech.k-zak.com/2013/08/25/print-css/</guid>
       <description>なんとかPHP側でPDF作成とかじゃなくてhtml＆cssで楽したい。
 そんな時のcss設定とか。
 まず、対象レイアウトに印刷用css作っていきます。
 cssの中で@media print とかやっておくと、印刷の時だけ適用されるので、css作ってる間は
 その指定外しておいたほうが楽ね。
-出来上がったら、htmlのheadでそのcssをmedia=&amp;#8221;print&amp;#8221;の指定付きで読み込む。
-後はhtml内に印刷ボタン配置して印刷ボタン押したらbody要素のクラスに&amp;#8221;print&amp;#8221;を付与
+出来上がったら、htmlのheadでそのcssをmedia=”print”の指定付きで読み込む。
+後はhtml内に印刷ボタン配置して印刷ボタン押したらbody要素のクラスに”print”を付与
 javascriptで印刷→setTimeoutなんかで１秒後にbodyに付与したprintクラスを今度は
 消してやれば、元通り！って寸法です。
 ページ番号とかリンク？とか印刷日付とかはブラウザの仕様らしいので我慢。
@@ -1449,10 +1467,10 @@ javascriptで印刷→setTimeoutなんかで１秒後にbodyに付与したprint
     
     <item>
       <title>cssメモ ちょっとしたもの</title>
-      <link>http://tech.k-zak.com/2013/08/25/css/</link>
+      <link>https://tech.k-zak.com/2013/08/25/css/</link>
       <pubDate>Sun, 25 Aug 2013 04:21:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/css/</guid>
+      <guid>https://tech.k-zak.com/2013/08/25/css/</guid>
       <description>cssでwindowサイズに応じてbodyのcss定義を変える。
 まぁ、bootstrapで使っている上に固定のメニューリストみたいなのある時に
 windowの横幅めっちゃ狭めるとアレですやん。その辺の細工。
@@ -1462,10 +1480,10 @@ windowの横幅めっちゃ狭めるとアレですやん。その辺の細工�
     
     <item>
       <title>cssメモ 配下の指定</title>
-      <link>http://tech.k-zak.com/2013/08/25/css-tech/</link>
+      <link>https://tech.k-zak.com/2013/08/25/css-tech/</link>
       <pubDate>Sun, 25 Aug 2013 04:11:02 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/css-tech/</guid>
+      <guid>https://tech.k-zak.com/2013/08/25/css-tech/</guid>
       <description>cssで配下の指定勘違いしておかしな事やってたのでメモ
 結論としては、きちんと継承させたい(関連を持たせたい)事が分かるように書かないと駄目。
 最初
@@ -1496,10 +1514,10 @@ javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせる�
     
     <item>
       <title>なんとか再開したい</title>
-      <link>http://tech.k-zak.com/2013/08/24/milestone/</link>
+      <link>https://tech.k-zak.com/2013/08/24/milestone/</link>
       <pubDate>Sat, 24 Aug 2013 16:16:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/24/milestone/</guid>
+      <guid>https://tech.k-zak.com/2013/08/24/milestone/</guid>
       <description>memo的な感じで再開したい。
 でもその前にWordPressの勉強をしなおして、改良してから再開したい。
 当面はメモはEvernoteにとどめておくしか無いかな。</description>
@@ -1507,10 +1525,10 @@ javascriptで無理やりbody側のtdの幅にheaderのthの幅をあわせる�
     
     <item>
       <title>Perlの動作環境？について</title>
-      <link>http://tech.k-zak.com/2013/01/20/study-perl/</link>
+      <link>https://tech.k-zak.com/2013/01/20/study-perl/</link>
       <pubDate>Sun, 20 Jan 2013 15:25:11 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/01/20/study-perl/</guid>
+      <guid>https://tech.k-zak.com/2013/01/20/study-perl/</guid>
       <description>長らく更新してませんでしたが、その間にFlask試したり、最近なんかは
 ちょっとだけVisual C++を初心者本見ながら動かしてました。
 C++分かんない。
@@ -1522,7 +1540,7 @@ perlを使えるように設定する
 ※perl -v でバージョンの確認ができます。
 ２，Perlbrewを入れましょうバージョンを切り替えたりライブラリを追加したりが楽になるそうです。
 ３，ターミナルベースで動かす
-ファイルの拡張子を「.pl」とかにして内容はprint &amp;#8220;Hello,World\n&amp;#8221;;とか書いて
+ファイルの拡張子を「.pl」とかにして内容はprint “Hello,World\n”;とか書いて
 ターミナルで「perl aaa.pl」とかやると起動して処理実行しますね。
 厳密にはファイルエンコードはUTF-8にしましょうとか、ソースの行頭にお決まりの書き方をするとかありますけど
 その内容については省略するので他で調べてください。
@@ -1534,14 +1552,14 @@ perlを使えるように設定する
 などが主な理由です。権限についてはchmodコマンドで実行権限を付与してください。
 Apacheの設定ファイル「httpd.conf」もしくはVirtual-Hostの設定をしているなら「httpd-vhost.conf」を
 開いて設定を記述します。
-&amp;#8212;&amp;#8212;&amp;#8212;-
+———-
+&amp;lt;Directory “/virtualhostdirectory/hoge”&amp;gt;
 AddHandler cgi-script .cgi .pl .py .rb
 Options All
 AllowOverride All
 Order allow,deny
 Allow from all
-
-&amp;#8212;&amp;#8212;&amp;#8212;-
+———-
 こんな感じで。「AddHandler cgi-script」に対象拡張子を連ねる感じで記述すると動くようになります。
 ※当然LoadModuleのところでmod_cgiを読み込んでいるのが前提です。
 ※上の例では、Perl以外にもRubyやPythonもCGiで動く設定にしてますのん。
@@ -1554,55 +1572,52 @@ Allow from all
 を追記
 ・適当なとこに下記の記述※自分の場合は上記のvirtualhostディレクトリ内に追記
 ・上記の設定で既に普通のCGIでPerlが動くようになってしまっているのでPerl関係拡張子を除外しておくこと!
-&amp;#8212;&amp;#8212;&amp;#8212;-
+———-
+&amp;lt;FilesMatch “.(pl|cgi)$”&amp;gt;
 SetHandler perl-script
-PerlHandler ModPerl::Registry
-# Options +ExecCGII</description>
+PerlHandler ModPerl::Registry</description>
     </item>
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
 各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
 layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
 このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
-&amp;nbsp;
-Ruby：Sinatra
+ Ruby：Sinatra
 →Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
 ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
 これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
-&amp;nbsp;
-PHP：FuelPHP
+ PHP：FuelPHP
 →最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
 これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
 コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
 public/assetsて階層に配置するんですね。
-&amp;nbsp;
-PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
+ PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
 OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
-出来ないとかで&amp;#8230;&amp;#8230;</description>
+出来ないとかで……</description>
     </item>
     
     <item>
       <title>Perl勉強してるメモ１</title>
-      <link>http://tech.k-zak.com/2012/10/09/study-perl/</link>
+      <link>https://tech.k-zak.com/2012/10/09/study-perl/</link>
       <pubDate>Tue, 09 Oct 2012 05:02:19 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/10/09/study-perl/</guid>
+      <guid>https://tech.k-zak.com/2012/10/09/study-perl/</guid>
       <description>何故か最近Perlの勉強を始めた。
 気になった箇所のまとめ、
 ■変数と型
-・普通(単一)のデータはスカラー変数で扱う：$val = &amp;#8216;Hello&amp;#8217;;
+・普通(単一)のデータはスカラー変数で扱う：$val = ‘Hello’;
 ・配列は「$」の代わりに「＠」でも中の要素を扱う時は「$」でインデックスの指定は[]
 ：@array = (1,2,3,4,5); print $array[0] # 1
 ・ハッシュは「$」の代わりに「%」でも中の要素を扱う時は「$」で指定は{}
-：%hash = (&amp;#8216;a&amp;#8217;=&amp;gt;&amp;#8217;1&amp;#8242;,&amp;#8217;b&amp;#8217;=&amp;gt;&amp;#8217;2&amp;#8217;); print $hash{a} # 1
+：%hash = (‘a’=&amp;gt;’1′,’b’=&amp;gt;’2’); print $hash{a} # 1
 ■変数スコープ
 ・{}ブロックでスコープは仕切られている。そのため変数はmyを使ってスコープを意識した変数宣言を
 すると良いとされている。
@@ -1610,69 +1625,64 @@ OS再インストールしたせいだと思うけど、前に作ったDjangoが
 ・例えばファイル直下の位置で$cgi = CGI-&amp;gt;new; とかやっておけば、subを呼ぶ時に毎回$cgiを
 引数として渡す必要はない。
 参考 Gist：https://gist.github.com/3855891
-&amp;nbsp;
-■リファレンス
+ ■リファレンス
 ・C言語で言うところのポインタ？配列やハッシュをサブルーチンに渡す際に変数のリファレンスを
 渡す。そうしないと呼び出し先では１つの引数データに連結されてしまっているのでうまく復元できない。
 ・リファレンスで渡された値をsubスコープ内の新たな変数に入れてデリファレンスして編集すると、
 元の変数の値が変わっている。デリファレンスした値を新たな変数に入れて編集した場合は影響しない。
 参考Gist：https://gist.github.com/3850245
 https://gist.github.com/3856617
-&amp;nbsp;
-■ファイルの扱いなど
-・use IO=&amp;gt;&amp;#8217;utf8&amp;#8242;; としておくとUTF-8でファイルIOで扱う。
+ ■ファイルの扱いなど
+・use IO=&amp;gt;’utf8′; としておくとUTF-8でファイルIOで扱う。
 ・ファイルハンドルはレキシカルスコープ変数を使うようにしましょう。
 ・またopen関数は3引数の形で使いましょう。
-open(my $fh,&amp;rsquo;&amp;lt;&amp;#8216;,$file_path);
-&amp;nbsp;
-■モジュールについて
+open(my $fh,&#39;&amp;lt;‘,$file_path);
+ ■モジュールについて
 ・use strict;と use warnings; はワンライナー(or実験)以外では必ずつけましょう。
-・use feature &amp;#8216;say&amp;#8217;;とするとsay関数が使える。これはprint関数+改行らしい。便利。
+・use feature ‘say’;とするとsay関数が使える。これはprint関数+改行らしい。便利。
 ・自作外部ファイル、PHPでいうところのrequire用ファイルのようなファイルは拡張子を
 「.pm」にする。
-&amp;nbsp;
-■他
+ ■他
 ・qq や qw は便利なので積極的に使って行きましょう。
-例：qq({name}&amp;#8221;/&amp;gt;);
+例：qq({name}”/&amp;gt;);
 て感じで使える。</description>
     </item>
     
     <item>
       <title>現状整理</title>
-      <link>http://tech.k-zak.com/2012/09/30/milestone/</link>
+      <link>https://tech.k-zak.com/2012/09/30/milestone/</link>
       <pubDate>Sun, 30 Sep 2012 12:19:52 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/09/30/milestone/</guid>
+      <guid>https://tech.k-zak.com/2012/09/30/milestone/</guid>
       <description>現状の整理。ちっとも進まない。。
 開発環境：
 ・開発環境のOSはOSX 10.8にアップグレード
 ・WebサーバーはローカルのApache、エディタは主にEmacs
-&amp;nbsp;
-各言語の勉強進捗：
+ 各言語の勉強進捗：
 ・Java・・・お休み中。来年にはAndroidさわさわする一環で復帰したい。
 ・Grovy・・・お休み中。たまにメンテナンスで仕事で既存のもののデバッグ用途に使用する程度。
 ・Scala・・・未着手。
 ・Clojure・・・未着手。
 ・Haskell・・・未着手。有名な本は買ったけれど、まともに読んでいない。
-・PHP・・・唯一仕事で使えるレベル。最近は全くふれず、CakePHPやFuelPHPにそろそろ触れねば&amp;#8230;
+・PHP・・・唯一仕事で使えるレベル。最近は全くふれず、CakePHPやFuelPHPにそろそろ触れねば…
 ・Ruby・・・Railsの進化が早すぎるので、もう少し他の言語の習得が進んで余裕が出るまでは手を出さない。
-・Python・・・去年そこそこ触ったきり。まだ仕事で使えるレベルに達していないのに中断中&amp;#8230;
-・Perl・・・なぜか最近はPerlを勉強中。基本文法は理解したが&amp;#8230;
-・ActionScript・・・簡単なものは分かるとして、使用用途が特殊なのでなかなか&amp;#8230;
-・JavaScript・・・一番習得が進んでいると思うが、スマフォ向けや派生言語の習得まで考えると&amp;#8230;
-・VB・・・簡単なデスクトップアプリなら&amp;#8230;
+・Python・・・去年そこそこ触ったきり。まだ仕事で使えるレベルに達していないのに中断中…
+・Perl・・・なぜか最近はPerlを勉強中。基本文法は理解したが…
+・ActionScript・・・簡単なものは分かるとして、使用用途が特殊なのでなかなか…
+・JavaScript・・・一番習得が進んでいると思うが、スマフォ向けや派生言語の習得まで考えると…
+・VB・・・簡単なデスクトップアプリなら…
 ・C#・・・来年には着手したい
 ・C++・・・いいかげん、そろそろ勉強しないとな〜
-・Objective-C・・・本はいろいろ買い揃えたけれど&amp;#8230;
+・Objective-C・・・本はいろいろ買い揃えたけれど…
 あぁ、自分の心の弱さに嫌になりますね。</description>
     </item>
     
     <item>
       <title>趣旨変え</title>
-      <link>http://tech.k-zak.com/2012/05/20/milestone/</link>
+      <link>https://tech.k-zak.com/2012/05/20/milestone/</link>
       <pubDate>Sun, 20 May 2012 09:38:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/05/20/milestone/</guid>
+      <guid>https://tech.k-zak.com/2012/05/20/milestone/</guid>
       <description>ここのブログの内容の趣旨を変えました。
 元々のネタはBlogger？Googleのところに移動。
 ここは元々MTで少しやってた勉強メモに変更。それに伴いMTでからデータも適当に移行。</description>
@@ -1680,10 +1690,10 @@ open(my $fh,&amp;rsquo;&amp;lt;&amp;#8216;,$file_path);
     
     <item>
       <title>FileMakerとRubyのSinatra</title>
-      <link>http://tech.k-zak.com/2012/01/07/study-sinatra/</link>
+      <link>https://tech.k-zak.com/2012/01/07/study-sinatra/</link>
       <pubDate>Sat, 07 Jan 2012 10:50:19 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/01/07/study-sinatra/</guid>
+      <guid>https://tech.k-zak.com/2012/01/07/study-sinatra/</guid>
       <description>Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？
 と思ったのでやってみました。
 gihyo.jp:第９回 SinatraとSequel・Hamlで掲示板アプリを作る
@@ -1692,221 +1702,217 @@ http://gihyo.jp/dev/serial/01/ruby/0009
 置換えました。
 ※FileMakerやRuby、Sinatraそのものの細かい説明は省きます。
 最終的な階層は以下(見本のファイルも混在してます)
-&amp;#8212;
-app/ start.rb model/ comment.rb view / layout.haml index.haml fmbbs.haml style.sass &amp;#8212;
+—
+—
 FileMaker部分
 ・bbsテーブルの作成、カラムは見本のapp/model/comment.rb内で定義しているクラス
 Commentsを真似て定義。但し、posted_dateはFileMaker側ではtimestamp型で作成時に自動で
 現在のタイムスタンプが入るよう設定。
 Ruby部分
 ・app/model/comment.rbにFileMakerとの接続クラス追加
-&amp;#8212;以下をcomment.rbに追加&amp;#8212;
-require &#39;rfm&#39; class FMServer def initialize() @FM_CONFIG = { :host =&amp;gt; &#34;FileMakerServerの接続先IP&#34;, :account_name =&amp;gt; &#34;FileMakerFileのログインアカウント&#34;, :password =&amp;gt; &#34;FileMakerFileのログインパスワード&#34;, :database =&amp;gt; &#34;FileMakerFileの名前&#34;, :ssl =&amp;gt; false, :root_cert =&amp;gt; false, } @fm = Rfm::Server.new(@FM_CONFIG) end def listAll(lay,sortCond) return @fm[@FM_CONFIG[:database]][lay].all(sortCond) end def create(lay,obj) @fm[@FM_CONFIG[:database]][lay].create(obj) end end ・hamlを編集(追加)</description>
+—以下をcomment.rbに追加—
+・hamlを編集(追加)
+—app/view/fmbbs.haml
+※HamlはPythonのようにインデントが文法になってるので注意！
+・app/start.rbを編集
+—app/start.rbを以下のように変更—
+・rfm(lardawge-rfm)をインストールするの忘れずに！
+$ sudo gem install lardawge-rfm
+GitHub：https://github.com/lardawge/rfm
+これでstart.rbのある位置をカレントにして
+$ ruby -rubygems start.rb
+これで
+http://localhost:4567/fmbbs
+で試せます。簡単ですね！
+今回、自分がつまずいた所は、
+１，rfm経由でFileMakerにレコード作成(多分編集も同じ)でtimestamp型のカラムに値を
+設定するための方法が分からなかった。※DateTime型だとエラーになる、整形してもエラー
+になる。なんでや！
+→読み込みは出来るので、FileMaker側で作成時自動で値設定にした。
+２，投稿済みデータの降順ソートがうまくいかない！
+→lardawge-rfmでは降順の指定が”desc”ではなく、”descend”だった。
+Railsでやるほどじゃないけどちょっと簡単にFileMakerとWebアプリつなぎたいとか、これで
+どうでしょうか？</description>
     </item>
     
     <item>
       <title>シンポナシウム</title>
-      <link>http://tech.k-zak.com/2011/11/05/milestone/</link>
+      <link>https://tech.k-zak.com/2011/11/05/milestone/</link>
       <pubDate>Sat, 05 Nov 2011 03:34:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/11/05/milestone/</guid>
-      <description>前回の更新からはや4ヶ月超。どのような進歩があったと言うと&amp;#8230;
- 内に等しい！？     ホント自己嫌悪してくるわー。     一応、   DB関係：   ・MySQL、ターミナルで入る時に「mysql -u name -p」って「-p」入れるの忘れないの覚えた。     環境関係：   ・gitとMercurial少しづつ試した。コマンドも少し覚えた   ・レンタルサーバーVPS、Macの様々な操作のお陰でターミナルでのコマンド操作馴れた。   ・emacsの設定ファイルいろいろコピペで入れて、開発はeclipse→emacsになった。   必然的にemacsの基本的な操作を覚えた。     プログラム言語：   ・pythonをちょろちょろ自習しているがちっとも上達しない、ちょっと入り組んだ処理の   ソースになると途端にちんぷんかんぷん。   ・PythonでapacheにDjangoを置く、WSGIの設定とかおぼ&amp;#8230;えた&amp;#8230;？     あーだめだこりゃ、話しにならん。。。  </description>
+      <guid>https://tech.k-zak.com/2011/11/05/milestone/</guid>
+      <description>前回の更新からはや4ヶ月超。どのような進歩があったと言うと…</description>
     </item>
     
     <item>
       <title>apacheでredmine virtualhost設定</title>
-      <link>http://tech.k-zak.com/2011/06/25/apache-virtualhost/</link>
+      <link>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</link>
       <pubDate>Sat, 25 Jun 2011 16:03:16 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/06/25/apache-virtualhost/</guid>
-      <description>この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。
-   で、急遽同タイプのを買いなおしてHDD移植してOS再インストールとかして   つまったapacheでredmine再設定をここにメモす。     なぜこんなことが起きたのか。。それはOS再インストールした際に、apacheの   virtualhost.confが初期化され、redmine用の設定が消えたからです。   再設定のため、webや本を見ながら書いたつもりの設定ではCSS等が読み込まれなんだ   ( °д°)ﾅﾝﾃﾞ？     結局関係ないと思ってたところが関係してた(apacheの設定とか理解してなかった)   という話。     以下が正常に動いた設定(virtualhost)      #Redmine用   
- ServerAdmin oira@virtualhostDomain 
- DocumentRoot &amp;#8220;redmineのある場所/redmine/public&amp;#8221; 
- ServerName virtualhostDomain 
- ErrorLog &amp;#8220;/private/var/log/apache2/virtualhostDomain-error_log&amp;#8221; 
- CustomLog &amp;#8220;/private/var/log/apache2/virtualhostDomain-access_log&amp;#8221; common 
- 
- RailsBaseURI / ※redmine専用のバーチャルホストのため、ルートを指定</description>
+      <guid>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</guid>
+      <description>この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。</description>
     </item>
     
     <item>
       <title>CakePHPでぐはぁ</title>
-      <link>http://tech.k-zak.com/2011/06/14/study-cakephp/</link>
+      <link>https://tech.k-zak.com/2011/06/14/study-cakephp/</link>
       <pubDate>Tue, 14 Jun 2011 13:00:58 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/06/14/study-cakephp/</guid>
-      <description>CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ
-   どうもPHP5.3で動かすと非推奨なコードが沢山あるらしく、そのエラーが   ドバドバでるの。で、その対処法のメモ。絶対また忘れるので。。。     ぐぐったら沢山でてきまする。     cake/libs/configure.phpの自分がDLしたCakePHPだと110行目から少し下あたりにある   $reportingという変数にエラーの定数を格納する箇所で、従来の&amp;#8217;E_ALL&amp;#8217;に非推奨エラーの   定数は除外するよう編集する。こんな感じ   前：$reporting = E_ALL   後：$reporting = E_ALL &amp; ~E_DEPRECATED   場所がよく分からなかったらエラー定数(E_ALL)で検索すればいいよ。  </description>
+      <guid>https://tech.k-zak.com/2011/06/14/study-cakephp/</guid>
+      <description>CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ</description>
     </item>
     
     <item>
       <title>WebフレームワークとFileMaker</title>
-      <link>http://tech.k-zak.com/2011/05/29/web-filemaker/</link>
+      <link>https://tech.k-zak.com/2011/05/29/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
-      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く
- FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの   データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて   ２つの方法があります。   １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する   ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。     で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。     ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。   ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では   載っていない文法のXMLが返ってくる。   具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に   rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが   rowタグの中にあるのではなく、本当に&amp;#8221;col&amp;#8221;という名のタグが入っているからメタタグの   カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー     で、世間ではどうしているのかというと、   a,FileMaker文法を解釈するxsltで開発   b,PHPでライブラリが出ているのでそれを使う(FX.php)   c,Rubyでライブラリが出ているのでそれを使う(rfm)   d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)     ってところ。   実際にはFX.phpを利用するのがメジャーでしょう。。   これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、   案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は   ある程度覚えておいたほうが良いと思う。     ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを   作れさえすれば、言語は何でも良いという事。   なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。   Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど   Perlは自分には無理。そもそもPerlがほぼ分からない。     Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては   Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている   ようなので、将来性は微妙。     Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの   両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを   継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。     PHPのFX.</description>
+      <guid>https://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
+      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く</description>
     </item>
     
     <item>
       <title>emacs初めてみようか</title>
-      <link>http://tech.k-zak.com/2011/04/29/emacs-setting/</link>
+      <link>https://tech.k-zak.com/2011/04/29/emacs-setting/</link>
       <pubDate>Fri, 29 Apr 2011 17:47:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/29/emacs-setting/</guid>
-      <description>現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている
- 軽いけどまだまだ完成度の低いKodに代わりテキストエディタを探そうと思い   emacsを試すことにした。     まずはインストール。自分のPCはMacBookPro10.6なのでemacs23.xを入れる事に   最初に入れたのは22.2のアプリタイプのもの、   CarbonEmacs   http://www.apple.com/jp/downloads/macosx/tools/carbonemacs.html   http://homepage.mac.com/zenitani/emacs-j.html     いや、折角なのでちゃんと最新のでやりましょう。と探して次に見つけたのが   Aquamacs2.0 http://sourceforge.jp/magazine/10/05/12/090234   これでもよかったんでしょうけど、普通のemacs23.xを入れようとさらに探し、   MacPortsからインストールの方法を見つける。   http://d.hatena.ne.jp/tomoya/20090210/1234297520     入れるものを間違えたのか、自分のやつだとGUIの設定画面がでない。。。   ざっと、通し見したブログ   「CarbonからCocoaへ&amp;#8211;Snow LeopardでEmacs 23を使う」   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20409879/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410292/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410578/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410802/     最初はマウスでメニューとか開いてコマンド実行、ヘルプのところに   「Emacs Tutorial (choose language)」てのがあるのでそれを実行。言語はお好みで。   中身を見ながら試す。     初めはどうしたら「filename.</description>
+      <guid>https://tech.k-zak.com/2011/04/29/emacs-setting/</guid>
+      <description>現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている</description>
     </item>
     
     <item>
       <title>PHPのフレームワーク試す</title>
-      <link>http://tech.k-zak.com/2011/04/24/php-frameworks/</link>
+      <link>https://tech.k-zak.com/2011/04/24/php-frameworks/</link>
       <pubDate>Sun, 24 Apr 2011 14:04:24 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/24/php-frameworks/</guid>
-      <description>PHPのフレームワークをいくつか試してみた。
- 以下、試したフレームワーク名と参考にしたチュートリアルサイト及び記事     ・CakePHP   本家？の日本語版サイトのチュートリアルを試す。   http://book.cakephp.org/ja/view/1528/CakePHPブログチュートリアル     ・Zend Framework   これも本家？の翻訳サイトにあるチュートリアルを試す。   http://web-rhodia.com/zf-tutorial/     ・Symfony   これは日本symfonyユーザー会サイトのチュートリアルを試す。   http://www.symfony.gr.jp/docs/for-beginners/blog-tutorial/01-introduction     ・CodeIgniter   ここは、調度良いのチュートリアルが見つからなかった。。。   http://codeigniter.jp/user_guide_ja/toc.html   http://d.hatena.ne.jp/it-tech-dm/20091025/1256465675       感想としては、   CakePHP:1.1や1.2で何回か触ったことあり、特に詰まることもなく、あっさり   お試し終了。他のフレームワークとの比較用(基準)として今回チュート   リアルを試しました。   感触としては、ちょろっとだけ触ったことあるRailsに似ていて(マネしたんだ   から当たり前)これを覚えとくとRuby on Rails も憶えやすくなるなんてお得。   構造的にも自分にとっては、理解しやすい。     Zend Framework:これは、自分にはあいそうもありません。。大文字から始まる単語を   アンダースコアでつなぐ名前のつけ方は慣れていなくて、非常に違和感があ   りました。あと、チュートリアルひと通りコーディングしたけど、画面真っ白   エンコードか、URLの問題かな。。。生理的に受け付けない感じ。     Symfony:チュートリアルがCakePHPのチュートリアルを参考に作ってあるだけあって   とっつきやすかった。比較としてこっちは何だかJavaのStrutsを簡単にしたような   印象を受けました。あとyaml設定ファイル多い。     CodeIgniter:これは、チュートリアルがちゃんと見つからなかったこともあり、まともに   試せていない。手本にしたブログ記事の内容はコーディングしてみたけど、   BaseURLの記述がおかしいのか、どこかのディレクトリのパーミッションの   問題か動きませんでした。   印象としては、あんまりフレームワークっぽくない(至れり尽くせりではない)。   でも、軽いとか必要最小限とかの評価を良く耳にするので、ちゃんと動くところ   まで持って行ってから評価したいと思っています。     今回のお試しの結果、自分の中での評価順位は   １，CakePHP   ２，Symfony   ３，CodeIgniter (暫定)   ４，Zend Framework     以上、PHP低レベル者が勝手にフレームワークを評価してみました。      </description>
+      <guid>https://tech.k-zak.com/2011/04/24/php-frameworks/</guid>
+      <description>PHPのフレームワークをいくつか試してみた。</description>
     </item>
     
     <item>
       <title>Django お勉強 Part3</title>
-      <link>http://tech.k-zak.com/2011/04/21/django-tutorial/</link>
+      <link>https://tech.k-zak.com/2011/04/21/django-tutorial/</link>
       <pubDate>Thu, 21 Apr 2011 08:43:01 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/21/django-tutorial/</guid>
-      <description> 引き続きDjangoのお勉強。今回はDjango Projectのチュートリアルであばば。     参考：http://djangoproject.jp/doc/ja/1.0/intro/tutorial01.html#intro-tutorial01     最後の方まで順調だったのですが、最後の汎用ビューでつまりました。   同じようなところで詰まって、解決された方のブログを見つけたので、   それを参考に解決しました。    参考：http://ntm.ex-blog.net/archives/91
-   よくあることですが、チュートリアルそのままやってても、説明不足の箇所が   あって、それが原因でうまく動作しなくあるっていうやつです。     １，汎用ビューを使う設定したら、該当テンプレートファイルの名称を   規則に沿った名前にしないといけない。     ２，チュートリアルの通りにコードを編集すると、今まで「poll」という名の   オブジェクトだった箇所を「object」という名前に編集しないといけない。     解決した後から再度チュートリアルを読むと、説明不足というよりは、   翻訳の関係で分かり難い文章になってしまっている。という感じ。     確かにどこを変えないといけないか書いてあるといえば書いてあるのですが、   自分みたいなアホウは良く解らんでした(つまりどこをどう編集すべきなのか   理解できなかった)。     日本語って難しいですね。。。    </description>
+      <guid>https://tech.k-zak.com/2011/04/21/django-tutorial/</guid>
+      <description>参考：http://ntm.ex-blog.net/archives/91</description>
     </item>
     
     <item>
       <title>Django お勉強 Part2</title>
-      <link>http://tech.k-zak.com/2011/04/20/django-tutorial/</link>
+      <link>https://tech.k-zak.com/2011/04/20/django-tutorial/</link>
       <pubDate>Wed, 20 Apr 2011 11:20:34 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/20/django-tutorial/</guid>
-      <description>古いDBMagazineに載ってたDjangoのチュートリアル的なものを   試してみたら、また詰まった。     正しいかどうかは別にして解決したメモ     症状：見本通りにコード書いたらエラー出た。(reverse関数)   views.pyファイルの◯◯メソッドのreturnにDjango組込みのreverse関数   を使って、画面遷移させようとした。     雑誌の通りにコーディングしたら、エラーが出た。   意訳：その関数の引数argsはシーケンスじゃないと駄目だぜ、おまいの    はlongだぜ。   最初、どう書いたかというと、   return HttpResponseRedirect(reverse(&amp;#8216;enkai.enkai_app.views.detail&amp;#8217;,args=(e.id)))     はて？と思い、引数の値を固定値にしてみた   return HttpResponseRedirect(reverse(&amp;#8216;enkai.enkai_app.views.detail&amp;#8217;,args=(1)))   そしたら今度は「おまいのはintだぜ」ってエラーになった。      これは引数に与えるデータ型が問題なのだと考え至ったがpython初心者   の自分はエラーメッセージ中の「シーケンス」の意味を理解していなか   った。      次に固定値で与えてる引数を文字列として与えてみた。   return HttpResponseRedirect(reverse(&amp;#8216;enkai.</description>
+      <guid>https://tech.k-zak.com/2011/04/20/django-tutorial/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>Django お勉強</title>
-      <link>http://tech.k-zak.com/2011/04/19/django-tutorial/</link>
+      <link>https://tech.k-zak.com/2011/04/19/django-tutorial/</link>
       <pubDate>Tue, 19 Apr 2011 05:10:17 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/19/django-tutorial/</guid>
-      <description>PythonのDjangoのお勉強記録
-   いろいろとつまったのでメモ。     まず試したのはCodoZineのチュートリアル記事   Djangoチュートリアル前篇：　http://codezine.jp/article/detail/4065   Djangoチュートリアル後編：　http://codezine.jp/article/detail/4264   ※記事内のインストールや参考記事のURLは割愛     ０，環境はMacOSX10.6 Pythonはインストール済み   １，チュートリアルにしたがってDjangoインストール→プロジェクト作成、MySQLにDB作成   →アプリケーション作成   チュートリアルではDBはSQLiteだったけど、なんとなくMySQLを使った   ２，チュートリアルにしたがって写経   以上。     時折詰まったので、後はそのポイント     ・Pythonの文法にうっかりハマる。   自動でインデントしてくれるエディタを使っていると、改行時に自動でインデントしてくれますよね   それを忘れて、別のメソッドを続けて書く時にはインデント位置を戻さないといけないのに、   うっかりインデントされたままコード書き続けて、自爆するので気をつけましょう   views.pyで定義したはずのものが(ビューメソッド？)見つからないエラーが出たら真っ先に   インデントや誤字を疑いましょう。     ・動作するのに必要な記述の説明が抜けている。追加ファイルの事。   当たり前の事といえばそれまでなのですが、views.</description>
+      <guid>https://tech.k-zak.com/2011/04/19/django-tutorial/</guid>
+      <description>PythonのDjangoのお勉強記録</description>
     </item>
     
     <item>
       <title>JavaのDWRって何さ　設定メモ</title>
-      <link>http://tech.k-zak.com/2011/04/13/java-dwr/</link>
+      <link>https://tech.k-zak.com/2011/04/13/java-dwr/</link>
       <pubDate>Wed, 13 Apr 2011 19:26:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/13/java-dwr/</guid>
-      <description>JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。   原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを   作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。     アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？     DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで   構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。   とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを   簡単にJavaScript上で扱う仕組み？な感じ。     参考URL：   DWRのサイト　http://directwebremoting.org/dwr/index.html   2007の@ITの記事　http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html     具体的な手順の説明   １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を   落とす。   ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル   ２つを入れる。   ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな   あと、このクラスの定義のパッケージは何でも良い。   ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも   良い。この時、実在しない(dwr.jarが自動生成する)JSをタグに書いておく   ※説明たるいので、サイトとか参照して下さい。   どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。   ５，dwr用のxmlとweb.</description>
+      <guid>https://tech.k-zak.com/2011/04/13/java-dwr/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>ちっともすすまない</title>
-      <link>http://tech.k-zak.com/2011/04/10/milestone/</link>
+      <link>https://tech.k-zak.com/2011/04/10/milestone/</link>
       <pubDate>Sun, 10 Apr 2011 06:55:10 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/10/milestone/</guid>
-      <description>前に更新したのはいつの頃か・・・
-   中身に進歩がないのが更新がない証拠。。     先日、MovableTypeにもう一つブログ追加しました。   元々Microsoftのスペースっていうブログの場所でゲームとか趣味関連の少し   やってたんですが、閉鎖されたので、心機一転こちらで始めました。     この間、初めてAmazonアソシエイトのIDとったのでのリンクバシバシ貼ろうと思います。     このブログで書くようなジャンルの事では、最近NetBeansをインスコしてみました。   Eclipseでは無視してたんですが、サンプルプロジェクト作成して中のコード読むのって   結構勉強になるんじゃないかって考えてます。     まだまともに触れてないレベルですが、NetBeansはEclipseに比べて軽い気がします。   まぁ、設定とかプラグインとかそういうところは圧倒的にEclipseなんでしょうけど。     今はNetBeansでRuby on Rails　のサンプル作成したら、Railsのバージョンがおかしいとか   エラー出てハマってます(-_- 😉   ここのブログは今後、作業日誌的な、勉強、開発そういったことを何かしたら   それを簡潔に書く。そうやって続けていこうかと。     いつになったら図や画像ありの記事になれるのか・・・     NetBeansの日本語サイト：http://ja.netbeans.org/  </description>
+      <guid>https://tech.k-zak.com/2011/04/10/milestone/</guid>
+      <description>前に更新したのはいつの頃か・・・</description>
     </item>
     
     <item>
       <title>macにphpMyAdmin</title>
-      <link>http://tech.k-zak.com/2010/09/03/mcrypt/</link>
+      <link>https://tech.k-zak.com/2010/09/03/mcrypt/</link>
       <pubDate>Fri, 03 Sep 2010 15:42:34 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/09/03/mcrypt/</guid>
-      <description>忘れないうちにメモ
-   前のMacBokでは成功して、今回新しく購入したMacBookProでなかなかうまくいかなかった事をメモ。     て、実はただの勘違いだったんですけど。。。     環境はMac OS X 10.6 ( 64bitで常時起動 )   ここにApache2.2?とPHP5.3.2が初めから入っているので、MySQL入れて   phpMyAdminを入れる。     １、MySQL入れる   MySQLのサイトからdmgをダウンロード。理由は楽だから。     http://dev.mysql.com/downloads/mysql/5.1.html     ２、MySQLのPATHを通す   例として(自分の場合)emacsで.bash_profileを編集     $ sudo -s emacs   ( emacsが起動しました )   C-x C-f ( Ctrl + x その後 Ctrl + f でファイル開く )   ~/.</description>
+      <guid>https://tech.k-zak.com/2010/09/03/mcrypt/</guid>
+      <description>忘れないうちにメモ</description>
     </item>
     
     <item>
       <title>挫折のまとめ</title>
-      <link>http://tech.k-zak.com/2010/07/24/milestone/</link>
+      <link>https://tech.k-zak.com/2010/07/24/milestone/</link>
       <pubDate>Sat, 24 Jul 2010 09:49:21 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/07/24/milestone/</guid>
-      <description>マイルストーンというからには定期的にまとめておかないとね。
-   現在、投げ出している状態のものをピックアップ     １、Macでの各種設定     MySQLとPostgreSQLのPATH登録して、いちいちターミナルでフルPATHいれないでも起動終了できるように   登録したい。     PHPの設定がデフォルトのままなので、phpMyAdminを起動すると、エラー表示が出る、何かのモジュール？   が足りないみたいなのでいつか調べて解決したい。     あんまり興味はないけれど、phpPgAdminも入れてみたいとは考えています。     まぁ、とどのつまり、XAMPPに頼らず、Apache、PHP等の設定が出来るようになりたい。     ２、FMCakeMixについて     これはマイナーなFileMakerでWeb公開するための技術の一つ、XMLWeb公開でCakePHPとFX.phpという   PHPファイル群を使う技術の習得をしたい。   現在、FX.phpのみを使ったWeb公開は仕事でも少しだけ使っているので、時間を見つけて取り組みたい。     ３、CとC++をMacで出来ればEclipseのCDT使って作業できるように設定をキチンと行ないたい。     現在はCをgcc使って単純に「$ gcc filename.c filename.out」程度しか出来ていないので、   拡張子が.outじゃないCやC++で作られた実行ファイルを作れるようになりたいのと、その作業がEclipseで   出来るように設定を行ないたいという事です。     ４、MovableTypeとWordPressをカスタマイズ     現在は単にブログとして使っているだけなので、中身を触ってカスタマイズ出来るようになりたいれす。。   今の所は、何をどうしたいってのが無いので触る動機が無いですが、ひとまずレイアウトを変えるとかでしょうか     ５、テキトーにWebサイト作ってみたい     これは、ドロップシッピングのサイトを一つ作ってみたいってのと、XOOPSやOpenPNEを使ったサイト、   それからこれはローカルで試す程度で十分ですが、EC-CUBEも触ってみたい。。   あと、GAEを使って何か実験してみたいし     ６、CSSのお勉強     上記のいくつかに関わってくるのでCSSをある程度すらすらと書けるようにならないとねー   と、常日頃思っている次第であります。     ７、各種言語の勉強     特にJavaですかね。本を見ながらJSPとServletで簡単なものは作成しました。でも、HibernateやStruts、さらに   SpringFrameWorkを使うとなると、本を読んでも全くもってチンプンカンプン。これを何とかしたい。   特にStruts、まぁバージョンは最新のでいいともいますけど。     Javaはようはフレームワークがある程度使える、仕組みを理解できる。になればいいと思います。   と、同時に欲張りですが、Grails開発、RoR開発、PythonでDjango開発、ScalaをかじるPerlでサイト構築、   各種言語でFileMakerに接続、各種DBの設定と簡単な開発、AIRやJavaFXで簡単なアプリ開発、   Android用の何かとかとか・・・     いやぁ欲張りですねー。頑張ります。。  </description>
+      <guid>https://tech.k-zak.com/2010/07/24/milestone/</guid>
+      <description>マイルストーンというからには定期的にまとめておかないとね。</description>
     </item>
     
     <item>
       <title>動かないじゃないか</title>
-      <link>http://tech.k-zak.com/2010/06/27/study-java/</link>
+      <link>https://tech.k-zak.com/2010/06/27/study-java/</link>
       <pubDate>Sun, 27 Jun 2010 04:08:43 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/06/27/study-java/</guid>
-      <description>はじめての サーブレット＆JSP という本を見ながら
- 写経してますが、サーブレットからJNDIを使ってMySQLに接続する   章がうまくいきません。     MySQLは入れる事自体は非常に簡単、ターミナルで操作する時は   いつもキャラセットをいれてやらにゃいかんので、   phpMyAdminを導入しました。     参考URL   http://planet.mysql.com/entry/?id=23997     直接接続処理を書くと、うまくいくのですが、JNDIを使う、   Server.xml や context.xml にリソースの設定を書いておく方法だと   サーブレットエラー、中を見てるとどうも、名前がみつからないだか   ドライバが使えないだかのエラーががが。。     Webで調べて出てきたような事は一通りやってみたけど   状況が進展しないので、JNDI使わないやり方で先に進む。     以下が参考にしたURL     http://d.hatena.ne.jp/uen1130/touch/20090621/1245563877     http://www.javaroad.jp/opensource/js_tomcat8.htm     http://d.</description>
+      <guid>https://tech.k-zak.com/2010/06/27/study-java/</guid>
+      <description>はじめての サーブレット＆JSP という本を見ながら</description>
     </item>
     
     <item>
       <title>Java分からぬぇ</title>
-      <link>http://tech.k-zak.com/2010/06/06/study-java/</link>
+      <link>https://tech.k-zak.com/2010/06/06/study-java/</link>
       <pubDate>Sun, 06 Jun 2010 06:10:29 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/06/06/study-java/</guid>
-      <description>最近はおろそかになってきていてピンチなのですが、
- 連休終了後も「はじめてのJavaフレームワーク」と「はじめてのJSPあんどサーブレット」   なる本を見ながら写経のごときコーディングしてみてます。   JSPやサーブレット単体であればTomcatに乗せて動かすとかだいたい分かったのですが、   StrutsやHibernate、SpringFrameworkを使うとなるともう分かりません。      読めば分かるけど、理解までしていない感じですかね。   なんであんなにXMLを沢山書かないといけないんですか？      とりあえず、DBと直接やり取りするクラスがDAO(Impl)で、そいつに対して   どんなレコードセット(DAOオブジェクト？)を取得するか、書き込みに行くかとか   ロジックを実装するのがBeanクラスって事で合ってるのかしら？      Hibernateだけならなんとかイケそうだったんだけど、そこにStrutsによるディスパッチャと   SpringFrameworkによるDIコンテナがなんちゃらってのが混ざり込んできて、   よっくわっからん！　＞＜      ジュンク堂にSpringFrameworkが理解出来るようになりそうな本を探しに行ったけど   ありませんでした。初心者は手を出すなって分野なのでしょうか？そんな気がします。      Javaについての当面の目標は簡単なWebアプリの作成です。   少なくとも画面遷移をコントロールするStrutsは理解出来るようになりたいです。。  </description>
+      <guid>https://tech.k-zak.com/2010/06/06/study-java/</guid>
+      <description>最近はおろそかになってきていてピンチなのですが、</description>
     </item>
     
     <item>
       <title>もう30回位連休来ないかな？</title>
-      <link>http://tech.k-zak.com/2010/05/09/reinstall-mac/</link>
+      <link>https://tech.k-zak.com/2010/05/09/reinstall-mac/</link>
       <pubDate>Sun, 09 May 2010 14:05:29 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/05/09/reinstall-mac/</guid>
-      <description>えー、どうもMacのHDDが原因だったようで、
- 連休中初日にOSの再インストール。やっぱ駄目。→次の日にHDD購入。   換装してOS入れ直し。でようやく正常に動くようになりました。     えぇ、今のところちゃんと動いていますとも。     OS入れ直した後、折角なのでApacheもPHPも雪豹に初めから入ってるものを   使おうとしたのですが、設定ファイルの場所が分からなかったり、編集には   root権限が必要だったり、ユーザ別の設定ファイルを作るのとか、うにゃーんて   なって。。結局XAMPP入れちゃいました ^q^     新標準 PostgreSQL という本でPostgreSQLを勉強してます。   途中のアプリサンプルはPHPのはそのままやったのですが、Javaは敷居が   高かったため、そこから脱線して、eclipse本(Tomcatの使い方を学ぶ)、   JavaでPostgreSQLのコードサンプルが入っている「はじめてのJavaフレームワーク」   というものを試してます。Javaとかめちゃメンド臭いですね。。  </description>
+      <guid>https://tech.k-zak.com/2010/05/09/reinstall-mac/</guid>
+      <description>えー、どうもMacのHDDが原因だったようで、</description>
     </item>
     
     <item>
       <title>PostgreSQL せきゅりてぃ？</title>
-      <link>http://tech.k-zak.com/2010/04/29/trouble-postgresql/</link>
+      <link>https://tech.k-zak.com/2010/04/29/trouble-postgresql/</link>
       <pubDate>Thu, 29 Apr 2010 01:33:02 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/29/trouble-postgresql/</guid>
-      <description>昨日の夜、眠い中PostgreSQLの勉強をしようとしたら、サービスがスタート出来ない！
-   さっさとあきらめて、爆睡して今再度確認した所、/Library/PostgreSQL/8.4/dataディレクトリの   アクセス権がログインユーザー？作成者？意外もアクセス可能になってるから駄目！っていうエラー   でした。     MacのFinderから覗いてEveryoneをアクセス不可に変更したらPostgreSQLのサービスが   開始出来るようになりました。     これは普段Macを使う時のユーザーアカウント(スーパーユーザー含む？)、Postgresという   ユーザー(インストール時にデフォで作成されるユーザー)の関係ですかね。  </description>
+      <guid>https://tech.k-zak.com/2010/04/29/trouble-postgresql/</guid>
+      <description>昨日の夜、眠い中PostgreSQLの勉強をしようとしたら、サービスがスタート出来ない！</description>
     </item>
     
     <item>
       <title>あばばば- PostgreSQL編</title>
-      <link>http://tech.k-zak.com/2010/04/27/reset-postgresql/</link>
+      <link>https://tech.k-zak.com/2010/04/27/reset-postgresql/</link>
       <pubDate>Tue, 27 Apr 2010 14:50:00 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/27/reset-postgresql/</guid>
-      <description>機能PostgreSQLのユーザー作ったり消したりDBやテーブル作成したりしていたら、
- 急に接続出来なくなった(泣     仕方ないので一旦削除していれ直しを図った訳ですが、これがなかなか上手く行かない。     で、ちゃんと削除するためのメモとなった訳です。     １、/ライブラリの中にいるから削除しましょう   ライブラリの中にPostgreSQLさんがいますので削除します。   アンインストーラを使って削除した時に、アクセス権が無いと残ってしまうフォルダが   あるかもしれません。     そんな時は、手動で消しましょう。とにかくライブラリの中からPostgreSQLを抹殺します。     ２、アプリケーションフォルダの中もきれいにしましょう。   手動で削除     ３、入れ直し   ちょっと不安なので、当分の間はDLしたPostgreSQLのインストーラは消さずに   もっていようと思います。おーコワ     ※蛇足、前回、ApacheとPHPとphpPgAdminを入れていましたが、今回は入れませんでした。     ※今回の原因はユーザー作成した後のパスワード設定した時にヘマしたようです。   別ユーザー作った後に、デフォルトのpostgresのパスワード変えてしまったというorz  </description>
+      <guid>https://tech.k-zak.com/2010/04/27/reset-postgresql/</guid>
+      <description>機能PostgreSQLのユーザー作ったり消したりDBやテーブル作成したりしていたら、</description>
     </item>
     
     <item>
       <title>MacにPostgreSQLを入れてみた</title>
-      <link>http://tech.k-zak.com/2010/04/26/mac-install-postgresql/</link>
+      <link>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</link>
       <pubDate>Mon, 26 Apr 2010 12:39:03 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/26/mac-install-postgresql/</guid>
-      <description>XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。
-   参考：Mac OS XでPostgreSQLを使ってみよう     基本これの通りに進めます。リンクにある通り、Mac用のインストーラーを使って簡単に   入れる事が出来ます。     インストール後、スタックビルダなるものでphppgadminを入れるに際し、既にXAMPPの中に   PHPもApacheも入っているのに改めてApacheとPHPを入れさせられたのにはとっと不安。   JDBCドライバだけにしておけば良かったかしら？     とりあえず、上記のリンクからインストール、shellで簡単に操作、phpPgAdminで簡単に操作   までをざっくり出来ます。     インストール後の中身を見てみると、pgAdmin?なんてのがありますね。もしかしてphpPgAdmin   いらなかった？     いずれにしろ現在自分のMac内でApacheとPHPが２つ存在してしまっているので、   今度掃除しよう。  </description>
+      <guid>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</guid>
+      <description>XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。</description>
     </item>
     
     <item>
       <title>MT入れてみた</title>
-      <link>http://tech.k-zak.com/2010/04/25/first-mt/</link>
+      <link>https://tech.k-zak.com/2010/04/25/first-mt/</link>
       <pubDate>Sun, 25 Apr 2010 13:56:34 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/25/first-mt/</guid>
-      <description>MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような
- 目的なら、無料のようなので、何事も経験経験。Web屋じゃないのでもしかしたら   一生、仕事で触れる事無いかもしれないけど、ふにゃふにゃやってみる。     １、ダウンロード   MovableTypeのサイト行ってダウンロード：http://www.sixapart.jp/movabletype/     ２、ここの手順にそって設定：http://nsf.jp/movabletype/movabletype.html     終わり。     え？   そうですね、前提条件として１、レンタルサーバー借りてるor自分で持ってる。   ２、MySQL5.x入ってる。３、メール使える。４、FTPアプリ持ってる。   あたりが必要です。     自分はサーバー→さくらのレンタル、MySQL5.xおけ！Perl5.xおけ！メールおけ！   FTPはWinにFFFTPが入ってたので、それを使った。     FTPアプリの代わりとして、Firefoxのアドオンてのもありますじぇ：https://addons.mozilla.org/ja/firefox/addon/684     んで、MTが入って使えるようになったので、特に何の設定もせずとりあえず記事１号を   これにしました。  </description>
+      <guid>https://tech.k-zak.com/2010/04/25/first-mt/</guid>
+      <description>MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような</description>
     </item>
     
   </channel>

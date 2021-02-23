@@ -1,38 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ansible on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/ansible/</link>
+    <link>https://tech.k-zak.com/tags/ansible/</link>
     <description>Recent content in Ansible on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Not Posted</title>
-      <link>http://tech.k-zak.com/2017/12/31/not-posted/</link>
+      <link>https://tech.k-zak.com/2017/12/31/not-posted/</link>
       <pubDate>Sun, 31 Dec 2017 11:49:55 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/31/not-posted/</guid>
+      <guid>https://tech.k-zak.com/2017/12/31/not-posted/</guid>
       <description>2017年記事にしそこねたやったこと  コマンドプロンプト(バッチファイル) コマンドプロンプトからPowershell実行 シェルスクリプト AWS System Manager Run Command (sum) VagrantでSQL Server他DBもセットアップしたよ Nano Server試そうとした React Redux…etc Webpack Docker再入門とWP開発環境の作成 WordPressテーマ開発用のベースを作成した AWS Lambda をPythonで AWS Lambda をNode.jsで CakePHP 3 tutorial 少しやった Vagrant でPHP開発環境作成 Terraform試した Hugo用テーマを作成した  忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。
 コマンドプロンプト(バッチファイル) Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。
 例えばこんなこと。実行結果を変数に入れるのが面倒。
-setlocal enabledelayedexpansion for /f %%a in (&#39;whoami&#39;) do @set watashi=%%a echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log  別プロセスで実行する方法
-start %~dp0\called_subscripts\computer_restart.bat  %~dp0 はLinuxでいうところのpwdみたいなもの
+setlocal enabledelayedexpansion for /f %%a in (&#39;whoami&#39;) do @set watashi=%%a echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log 別プロセスで実行する方法
+start %~dp0\called_subscripts\computer_restart.bat %~dp0 はLinuxでいうところのpwdみたいなもの
 コマンドプロンプトからPowershell実行 @powershell てやればできる。
 シェルスクリプト 少し覚えた。 $#は引数の数 $1は引数の一つ目 if [ a op b ]; てやつとaとbをopでチェックできる。変数の値のチェックやファイルの存在チェックなどを行う。 ファイルの存在チェックはシンプルに-e オプションを使う。</description>
     </item>
     
     <item>
       <title>AnsibleのSSH設定について</title>
-      <link>http://tech.k-zak.com/2015/02/08/ansible-ssh/</link>
+      <link>https://tech.k-zak.com/2015/02/08/ansible-ssh/</link>
       <pubDate>Sun, 08 Feb 2015 14:43:15 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/08/ansible-ssh/</guid>
-      <description>Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+      <guid>https://tech.k-zak.com/2015/02/08/ansible-ssh/</guid>
+      <description>Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
 という事で調べた。
 結論としては、varsファイルに
 ・ansible_ssh_user
@@ -41,7 +37,7 @@ start %~dp0\called_subscripts\computer_restart.bat  %~dp0 はLinuxでいうと�
 の3つを書いておきましょう。でした。
 最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
 例えばhostsファイルに
-`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
 という事で調べた。
 結論としては、varsファイルに
 ・ansible_ssh_user
@@ -52,32 +48,32 @@ start %~dp0\called_subscripts\computer_restart.bat  %~dp0 はLinuxでいうと�
 例えばhostsファイルに
 `
 とか書いてグループ名が「dev」の場合に
--playbook
+-playbook\
 |
-|&amp;#8211;dev.yml
+|–dev.yml
 |
-|&amp;#8211;group_vars
+|–group_vars\
 | |
-| |&amp;#8211;dev.yml
+| |–dev.yml
 |
-|&amp;#8211;roles\※内容略
+|–roles\※内容略
 |
-|&amp;#8211;site.yml
+|–site.yml
 みたいな感じで書く。
-group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより&amp;#8211;ask-passの指定が必要なくなった。
+group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより–ask-passの指定が必要なくなった。
 問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。
 なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。
-ansible-playbookを実行する時に復号のために&amp;#8211;vault-passの引数とそのファイルパスを渡さないといけないってのも&amp;#8211;ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。
+ansible-playbookを実行する時に復号のために–vault-passの引数とそのファイルパスを渡さないといけないってのも–ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。
 hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー
 って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。</description>
     </item>
     
     <item>
       <title>思い出せない</title>
-      <link>http://tech.k-zak.com/2014/10/25/milestone/</link>
+      <link>https://tech.k-zak.com/2014/10/25/milestone/</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/10/25/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/10/25/milestone/</guid>
       <description>前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
 サーバー関係 ログローテーションの設定を行った。
 yum install logrotate
@@ -97,10 +93,10 @@ PHP namespaceやautoloadをまだ理解しきれていない部分があるよ�
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
-      <link>http://tech.k-zak.com/2014/09/07/challenge-ansible/</link>
+      <link>https://tech.k-zak.com/2014/09/07/challenge-ansible/</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/07/challenge-ansible/</guid>
+      <guid>https://tech.k-zak.com/2014/09/07/challenge-ansible/</guid>
       <description>・botoが使えないってエラーになる。
 　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
 つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
@@ -110,15 +106,15 @@ PHP namespaceやautoloadをまだ理解しきれていない部分があるよ�
 ・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。
 ・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。
 　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。
-　なので「NameVirtuakHost *:80」の記述があれば、その後VirtualHostディレクティブが
+　なので「NameVirtuakHost *:80」の記述があれば、その後&amp;lt;virtualhost *:80&amp;gt;VirtualHostディレクティブが
 　ないといけない。
-もしもみたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
+もしも&amp;lt;virtualhost {{hostname}}:80&amp;gt;みたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
 整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。
 ・Ubuntuに入ってるApache2のVirtualHostの有効化無効化
 　sites-availableディレクトリにVirtualHost設定書く
 　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化
 ・Hostの指定が足りない！？
-Could not reliably determine the server&amp;#8217;s fully qualified domain name, using for ServerName
+Could not reliably determine the server’s fully qualified domain name, using for ServerName
 こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った
 　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、
 　そこに{{hostname}}.localを追記する処理追加
@@ -127,23 +123,22 @@ Ansibleでmysql_userモジュールを使ってユーザーを追加する際に
 host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)
 リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要
 ・netstat -ant で現在使ってるポートとか観れる
-　(適当な解釈、後で意味をちゃんと調べる&amp;#8230;かも)
+　(適当な解釈、後で意味をちゃんと調べる…かも)
 ・MySQLが外部からつながらぬ
 webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。
 my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。
 これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。
 ・ApacheのRewriteの設定漏れ
 UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。
-　AllowOverride をAllにしなかった。。。
-ということで？今のところ、Vagrantで作成したVMにMySQLやApacheの設定、それからWordPressの設置は出来るように</description>
+　AllowOverride をAllにしなかった。。。</description>
     </item>
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
+      <link>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
+      <guid>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
       <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
 の、前にAWSのS3試したので。
 ・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る

@@ -1,34 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Perl on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/perl/</link>
+    <link>https://tech.k-zak.com/tags/perl/</link>
     <description>Recent content in Perl on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 28 Nov 2017 22:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/perl/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 28 Nov 2017 22:00:00 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/perl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup OTRS</title>
-      <link>http://tech.k-zak.com/2017/11/28/setup-otrs/</link>
+      <link>https://tech.k-zak.com/2017/11/28/setup-otrs/</link>
       <pubDate>Tue, 28 Nov 2017 22:00:00 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/11/28/setup-otrs/</guid>
+      <guid>https://tech.k-zak.com/2017/11/28/setup-otrs/</guid>
       <description>OTRSをインストールしてみた オープンソースのチケット管理システム的なもの主にサービス・サポート部署で使うようなもの
 セットアップ 環境はUbuntu16.04
 基本はダウンロードしてきて実行するだけ。 本体はWeb公開領域におけばいいかな?
-つまったところ  anynevを使おうとして詰まった、anyenvをシステムワイドに使う場合は割り切ってrootで設定する plenvをインストールすることはすんなりいくが、モジュールパスなどで使おうとすると詰まる  -&amp;gt;システムのperlを結局使うことに  cpanmでDBD::mysqlをインストールする場合、以下の事が必要  先にMySQLがインストールされていること Ubuntuの場合はlibmysqlclient-devがインストールされていること  というか/opt/otrs/bin/otrs.CheckModules.pl の実行で必要なモジュールが確認できる モジュールが依存するライブラリも存在するので合わせて入れること  感想 domainやメールの設定がちゃんとできていれば特に躓くこと無くセットアップできそう。 最終調整？セットアップがGUIのため、Ansibleでセットアップとかは難しそう。</description>
+つまったところ  anynevを使おうとして詰まった、anyenvをシステムワイドに使う場合は割り切ってrootで設定する plenvをインストールすることはすんなりいくが、モジュールパスなどで使おうとすると詰まる  -&amp;gt;システムのperlを結局使うことに   cpanmでDBD::mysqlをインストールする場合、以下の事が必要  先にMySQLがインストールされていること Ubuntuの場合はlibmysqlclient-devがインストールされていること   というか/opt/otrs/bin/otrs.CheckModules.pl の実行で必要なモジュールが確認できる モジュールが依存するライブラリも存在するので合わせて入れること  感想 domainやメールの設定がちゃんとできていれば特に躓くこと無くセットアップできそう。 最終調整？セットアップがGUIのため、Ansibleでセットアップとかは難しそう。</description>
     </item>
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
+      <link>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
+      <guid>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
       <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
 https://github.com/seedcode/fmxj
 概要としては、FileMaker Server の XML公開を使う。
@@ -48,25 +44,25 @@ u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数
 WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
 これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
 しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
-※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても
+※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても
 　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
 その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
 最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
 自分はUbuntuの環境なので、
  sudo apt-get install nginx-extras
  後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
-more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;
-を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
+more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
+を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
 これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
 いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</description>
     </item>
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>http://tech.k-zak.com/2015/01/05/perl-cgi/</link>
+      <link>https://tech.k-zak.com/2015/01/05/perl-cgi/</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
+      <guid>https://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
       <description>古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
 最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
 502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
@@ -88,11 +84,11 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
+      <link>https://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
-      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る
+      <guid>https://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
+      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
 まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
 Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
 Perl,Python,Rubyについては全然触れなくてフラストレーション。
@@ -101,97 +97,112 @@ PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.
 家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
 PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
 枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
+Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
     </item>
     
     <item>
       <title>パスカルのなんとか</title>
-      <link>http://tech.k-zak.com/2013/12/22/pascal-logic/</link>
+      <link>https://tech.k-zak.com/2013/12/22/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
+      <guid>https://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
       <description>今回は、パスカルの三角定理？みたいなやつ
 PHPでは、
-&amp;lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&amp;lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&amp;lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(&#39;,&#39;,$arr).&#34;\n&#34;; } ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; my $num = &amp;lt;stdin; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&amp;lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&amp;lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(&#39;,&#39;,@list).&#34;\n&#34;; } &amp;lt;/stdin Pythonでは、</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+Rubyはもっとシンプルな書き方があるのかもしれない。</description>
     </item>
     
     <item>
       <title>コーディングリハビリ06</title>
-      <link>http://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
-&amp;lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&amp;lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&amp;lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(&#39;,&#39;,$arr).&#34;\n&#34;; } ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; my $num = &amp;lt;STDIN&amp;gt;; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&amp;lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&amp;lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(&#39;,&#39;,@list).&#34;\n&#34;; }  Pythonでは、</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+習熟度が低いのでPerlとPHPが同じ内容になる。
+pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。
+すんなり1つのリストだけでできないものか……</description>
     </item>
     
     <item>
       <title>コーディングリハビリ05</title>
-      <link>http://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
       <description>昨日の文字チェックをPHP以外で試す。
 与えられた文字列が全てユニークな文字で構成されているかのチェック。
 PHPは前回やっているので、今回は掲載無し。
 Perlでは、
-#!/usr/bin/perl use strict; use warnings; sub check_unique{ my $str = shift; my $len = length($str); for(my $i=0;$i&amp;lt;$len;$i++){ my $char = substr($str,$i); if(index($str,$char) != rindex($str,$char)){ return &#34;False&#34;; } } return &#34;True&#34;; } my $input = &#39;1234567890-=\`!@#$%^&amp;*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:&#34;asdfghjkl;\&#39;zxcvbnm,./ZXCVBNM&amp;lt;&amp;gt;?&#39;; #my $input = &amp;lt;STDIN&amp;gt;; #chomp($input); print check_unique($input).&#34;\n&#34;; Pythonでは、
-#!/usr/bin/python #--*-- coding: utf-8 --*-- import datetime def check_unique(str): set_str = set(list(str)) if len(str) == len(set_str): return True else: return False if __name__ == &#34;</description>
+Pythonでは、
+Rubyでは、
+文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。
+配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。
+pythonが一番スッキリしているようだけど、やっぱりRubyかな</description>
     </item>
     
     <item>
       <title>コーディングリハビリ03</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo03/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
-&amp;lt;?php function bubble_sort(array $arr,$r){ if(1 == $r){ return $arr; } $len = count($arr)-1; for($i=0;$i&amp;lt;$len;$i++){ if($arr[$i] &amp;gt; $arr[$i+1]){ $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } return bubble_sort($arr,$r-1); } $input = trim(fgets(STDIN)); $arr = explode(&#34;,&#34;,$input); echo implode(&#34;,&#34;,bubble_sort($arr,count($arr))).&#34;\n&#34;; ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; sub bubble_sort{ my($arr,$r) = @_; my @arr = @{$arr}; if(1 == $r){ return @arr; }else{ my $len = @arr; for(my $i=0;$i&amp;lt;$len-1;$i++){ if($arr[$i] &amp;gt; $arr[$i+1]){ my $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } bubble_sort(\@arr,$r-1) } } my $input = &amp;lt;STDIN&amp;gt;; chomp($input); my @arr = split(&#39;,&#39;,$input); print join(&#34;</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+Rubyが一番スマートかな</description>
     </item>
     
     <item>
       <title>コーディングリハビリ02</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo02/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
       <description>リハビリその２
 今回は、ファイル読み込みとその時の簡単な例外処理
 読み込むテキストファイルの内容は以下の通り、
-7 1000 1992 あ A 2000 2001 1900 16 12 400  PHPでは、
-&amp;lt;?php function isLeap($year=null){ if($year == null) return false; $intYear = (int)$year; if(0 != $intYear%4){ return false; }elseif(0 == $intYear%400){ return true; }elseif(0 == $intYear%100){ return false; }else{ return true; } } try{ if(!file_exists(&#34;leap.txt&#34;)){ throw new Exception(&#34;ファイルが見つかりません。&#34;); } $fp = fopen(&#34;leap.txt&#34;,&#34;r&#34;); $lines = fgets($fp); for($i=0;$i&amp;lt;$lines;$i++){ $year = trim(fgets($fp)); printf(&#34;%s is%s a leap year\n&#34;, $year,((isLeap($year))?&#34;&#34;:&#34; not&#34;)); } fclose($fp); }catch(Exception $e){ echo $e-&amp;gt;getMessage().</description>
+PHPでは、
+Perlでは、
+Pythonでは、
+Rubyでは、
+うるう年の判定処理は適当。pythonが一番しっくりくるかな。
+rubyはreturnを省略した場合に最後に評価された値がreturnされるんだけど、pythonもだと勘違いしててハマった。</description>
     </item>
     
     <item>
       <title>コーディングリハビリ01</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo01/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
       <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
 paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
 という事でリハビリ。
 今回は標準入力。
 PHPでは、
-&amp;lt;?php //標準入力をfgets関数で取得して前後の空白や改行文字を削り取る $input = trim(fgets(STDIN)); ?&amp;gt; Perlでは、
-use strict; use warnings; my $input = &amp;lt;STDIN&amp;gt;; #行末の改行文字を削る chomp($input); Pythonでは、
-input = raw_input() #行末の改行文字とるのは厳密にはいろいろあるらしいので今回は無視 Rubyでは、
-input = gets.chomp 標準入力が「gets」だけで取れるRubyはダンディ。</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+標準入力が「gets」だけで取れるRubyはダンディ。</description>
     </item>
     
     <item>
       <title>Perlの動作環境？について</title>
-      <link>http://tech.k-zak.com/2013/01/20/study-perl/</link>
+      <link>https://tech.k-zak.com/2013/01/20/study-perl/</link>
       <pubDate>Sun, 20 Jan 2013 15:25:11 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/01/20/study-perl/</guid>
+      <guid>https://tech.k-zak.com/2013/01/20/study-perl/</guid>
       <description>長らく更新してませんでしたが、その間にFlask試したり、最近なんかは
 ちょっとだけVisual C++を初心者本見ながら動かしてました。
 C++分かんない。
@@ -203,7 +214,7 @@ perlを使えるように設定する
 ※perl -v でバージョンの確認ができます。
 ２，Perlbrewを入れましょうバージョンを切り替えたりライブラリを追加したりが楽になるそうです。
 ３，ターミナルベースで動かす
-ファイルの拡張子を「.pl」とかにして内容はprint &amp;#8220;Hello,World\n&amp;#8221;;とか書いて
+ファイルの拡張子を「.pl」とかにして内容はprint “Hello,World\n”;とか書いて
 ターミナルで「perl aaa.pl」とかやると起動して処理実行しますね。
 厳密にはファイルエンコードはUTF-8にしましょうとか、ソースの行頭にお決まりの書き方をするとかありますけど
 その内容については省略するので他で調べてください。
@@ -215,14 +226,14 @@ perlを使えるように設定する
 などが主な理由です。権限についてはchmodコマンドで実行権限を付与してください。
 Apacheの設定ファイル「httpd.conf」もしくはVirtual-Hostの設定をしているなら「httpd-vhost.conf」を
 開いて設定を記述します。
-&amp;#8212;&amp;#8212;&amp;#8212;-
+———-
+&amp;lt;Directory “/virtualhostdirectory/hoge”&amp;gt;
 AddHandler cgi-script .cgi .pl .py .rb
 Options All
 AllowOverride All
 Order allow,deny
 Allow from all
-
-&amp;#8212;&amp;#8212;&amp;#8212;-
+———-
 こんな感じで。「AddHandler cgi-script」に対象拡張子を連ねる感じで記述すると動くようになります。
 ※当然LoadModuleのところでmod_cgiを読み込んでいるのが前提です。
 ※上の例では、Perl以外にもRubyやPythonもCGiで動く設定にしてますのん。
@@ -235,55 +246,52 @@ Allow from all
 を追記
 ・適当なとこに下記の記述※自分の場合は上記のvirtualhostディレクトリ内に追記
 ・上記の設定で既に普通のCGIでPerlが動くようになってしまっているのでPerl関係拡張子を除外しておくこと!
-&amp;#8212;&amp;#8212;&amp;#8212;-
+———-
+&amp;lt;FilesMatch “.(pl|cgi)$”&amp;gt;
 SetHandler perl-script
-PerlHandler ModPerl::Registry
-# Options +ExecCGII</description>
+PerlHandler ModPerl::Registry</description>
     </item>
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
 各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
 layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
 このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
-&amp;nbsp;
-Ruby：Sinatra
+ Ruby：Sinatra
 →Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
 ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
 これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
-&amp;nbsp;
-PHP：FuelPHP
+ PHP：FuelPHP
 →最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
 これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
 コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
 public/assetsて階層に配置するんですね。
-&amp;nbsp;
-PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
+ PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
 OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
-出来ないとかで&amp;#8230;&amp;#8230;</description>
+出来ないとかで……</description>
     </item>
     
     <item>
       <title>Perl勉強してるメモ１</title>
-      <link>http://tech.k-zak.com/2012/10/09/study-perl/</link>
+      <link>https://tech.k-zak.com/2012/10/09/study-perl/</link>
       <pubDate>Tue, 09 Oct 2012 05:02:19 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/10/09/study-perl/</guid>
+      <guid>https://tech.k-zak.com/2012/10/09/study-perl/</guid>
       <description>何故か最近Perlの勉強を始めた。
 気になった箇所のまとめ、
 ■変数と型
-・普通(単一)のデータはスカラー変数で扱う：$val = &amp;#8216;Hello&amp;#8217;;
+・普通(単一)のデータはスカラー変数で扱う：$val = ‘Hello’;
 ・配列は「$」の代わりに「＠」でも中の要素を扱う時は「$」でインデックスの指定は[]
 ：@array = (1,2,3,4,5); print $array[0] # 1
 ・ハッシュは「$」の代わりに「%」でも中の要素を扱う時は「$」で指定は{}
-：%hash = (&amp;#8216;a&amp;#8217;=&amp;gt;&amp;#8217;1&amp;#8242;,&amp;#8217;b&amp;#8217;=&amp;gt;&amp;#8217;2&amp;#8217;); print $hash{a} # 1
+：%hash = (‘a’=&amp;gt;’1′,’b’=&amp;gt;’2’); print $hash{a} # 1
 ■変数スコープ
 ・{}ブロックでスコープは仕切られている。そのため変数はmyを使ってスコープを意識した変数宣言を
 すると良いとされている。
@@ -291,30 +299,26 @@ OS再インストールしたせいだと思うけど、前に作ったDjangoが
 ・例えばファイル直下の位置で$cgi = CGI-&amp;gt;new; とかやっておけば、subを呼ぶ時に毎回$cgiを
 引数として渡す必要はない。
 参考 Gist：https://gist.github.com/3855891
-&amp;nbsp;
-■リファレンス
+ ■リファレンス
 ・C言語で言うところのポインタ？配列やハッシュをサブルーチンに渡す際に変数のリファレンスを
 渡す。そうしないと呼び出し先では１つの引数データに連結されてしまっているのでうまく復元できない。
 ・リファレンスで渡された値をsubスコープ内の新たな変数に入れてデリファレンスして編集すると、
 元の変数の値が変わっている。デリファレンスした値を新たな変数に入れて編集した場合は影響しない。
 参考Gist：https://gist.github.com/3850245
 https://gist.github.com/3856617
-&amp;nbsp;
-■ファイルの扱いなど
-・use IO=&amp;gt;&amp;#8217;utf8&amp;#8242;; としておくとUTF-8でファイルIOで扱う。
+ ■ファイルの扱いなど
+・use IO=&amp;gt;’utf8′; としておくとUTF-8でファイルIOで扱う。
 ・ファイルハンドルはレキシカルスコープ変数を使うようにしましょう。
 ・またopen関数は3引数の形で使いましょう。
-open(my $fh,&amp;rsquo;&amp;lt;&amp;#8216;,$file_path);
-&amp;nbsp;
-■モジュールについて
+open(my $fh,&#39;&amp;lt;‘,$file_path);
+ ■モジュールについて
 ・use strict;と use warnings; はワンライナー(or実験)以外では必ずつけましょう。
-・use feature &amp;#8216;say&amp;#8217;;とするとsay関数が使える。これはprint関数+改行らしい。便利。
+・use feature ‘say’;とするとsay関数が使える。これはprint関数+改行らしい。便利。
 ・自作外部ファイル、PHPでいうところのrequire用ファイルのようなファイルは拡張子を
 「.pm」にする。
-&amp;nbsp;
-■他
+ ■他
 ・qq や qw は便利なので積極的に使って行きましょう。
-例：qq({name}&amp;#8221;/&amp;gt;);
+例：qq({name}”/&amp;gt;);
 て感じで使える。</description>
     </item>
     

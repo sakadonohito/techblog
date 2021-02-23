@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rbenv on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/rbenv/</link>
-    <description>Recent content in Rbenv on 開発メモてきな</description>
+    <title>rbenv on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/rbenv/</link>
+    <description>Recent content in rbenv on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 10 Aug 2017 22:28:13 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/rbenv/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 10 Aug 2017 22:28:13 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/rbenv/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>anyenv systemwide</title>
-      <link>http://tech.k-zak.com/2017/08/10/anyenv-systemwide/</link>
+      <link>https://tech.k-zak.com/2017/08/10/anyenv-systemwide/</link>
       <pubDate>Thu, 10 Aug 2017 22:28:13 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/08/10/anyenv-systemwide/</guid>
+      <guid>https://tech.k-zak.com/2017/08/10/anyenv-systemwide/</guid>
       <description>anyenvをシステムワイドにインストールしようとした 環境はUbuntu16.04
 anyenvをシステムワイドにインストールしてrbenvいれようとしたら、sslのチェックを無視しないと入らなかった。 rbenvからrubyをインストールしようとしたらダウンロードに失敗してできない。
 結論から書くと apt-get install ca-certificates して、ca-certificates入れてからrbenv install を再度試したら成功した。</description>
@@ -24,10 +20,10 @@ anyenvをシステムワイドにインストールしてrbenvいれようとし
     
     <item>
       <title>2014年の目標達成進捗管理的な</title>
-      <link>http://tech.k-zak.com/2014/01/04/milestone/</link>
+      <link>https://tech.k-zak.com/2014/01/04/milestone/</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/01/04/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/01/04/milestone/</guid>
       <description>新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
 事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
 とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
@@ -35,17 +31,35 @@ anyenvをシステムワイドにインストールしてrbenvいれようとし
 要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。
 という事で設定作業開始
 環境:  ホストOS：OS X10.9 ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T)) nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します) ruby2.0.0dev(rbenv) unicorn4.7.0 rails3.2.16 redmine2.4.2  rbenvにruby2.0を追加してデフォルトにする rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。
-参考：rbenvを利用して複数バージョンのRubyをインストール
-~$ rbenv install 2.0.0rc-2 ~$ rbenv global 2.0.0rc-2 ~$ rbenv rehash ※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
+参考：rbenvを利用して複数バージョンのRubyをインストール※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
 rehashの時だけsh-rehashがうんたらってエラーになる。
 ruby2.0の状態でgem update でアップデートしてbundler入れる。
-~$ gem update ~$ gem install bundler ~$ gem install mysql2 ~$ ~/.rbenv/bin/rbenv rehash  MySQL側の準備 redmienユーザーの作成と
+MySQL側の準備 redmienユーザーの作成と
 データベース：redmineの作成
 redmine入れる ここから最新のredmineをダウンロード(今回は2.4.2)
 うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。
 DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。
 redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。
-~$ cd redmineディレクトリの場所 ~$ echo &#34;gem &#39;unicorn&#39;&#34;  Gemfile.</description>
+bundleでのインストールが初めてだったので、なんか引数与えてやってみたかったてのと、
+最初rmagick関連でエラー出たっぽいのでwithoutに指定した。原因は究明しない！
+ここまでで自分が詰まったのは、最初bundler入れた後rehashしてなくてbundle installのとろこで、bundler入ってねぇよ！apt-getで入れろ！ってエラー出てアワアワしてた。どうもbundler入れた後にもrehashが必要らしい。今は何故かは調べない。
+必要最小限にしてなかったせいか、ここでワンサカいろいろインストールされた。気がする。
+インストールされたgemを見た所、railsは上記環境で記載したバージョンになっていたです。
+終わったら、database.ymlのproductionの所を編集して自分の環境でDB接続できるようにする。
+開発用じゃなくてredmine使うだけなので最初からproduction。
+ここで一旦Webrickで動くか確認。
+動かねぇ！調べてたらお決まりの必要な処理がある事を知った。
+その１その２書いてあることの真似をする。
+終わったら再度チャレンジでWebrickが起動しました。やったね。
+redmineのadminユーザーのデフォルトのパスワードがわからない！ 解決策はここ。
+unicornの設定 めんどくさくなってきた。上記の２リンクと関連リンクのGithubと、やや簡潔にかいてあるブログを参考に設定ファイルを書いていきましたので詳細は省きます。
+１，unicorn.rbを作成。
+２，unicornのデーモン
+自分が作業した手順としては一気にnginxの設定編集までしてから確認して動かない！ってなったんだけど、問題切り分けのために、
+ unicornの設定する前段階でWebrickで動かくか(例えば、http://0.0.0.0:3000) unicornの設定した段階でredmine動くか(例えば、http://0.0.0.0:8080)  て接続確認しながら進めたほうが良いと思われます。
+nginxの設定編集 既にnginxが動いている環境のため、redmine専用の設定どうするのか戸惑ったけど、単にserverディレクティブを追加すればいいみたい。upstreamディレクティブも既存の仮想ホスト設定に悪影響は出ていないみたいだ。
+最終的な結論から言うと動いたけど、参考にしたブログなんかと設定がちょい違う。
+ ローカルで動かしているせいかhostsファイルにredmine用の仮想URLを追記したら動いた。※追記前は参考記事と同じ設定にしても動かなかった。 動かすのに使った指定は  upstreamのunixソケットの指定 追加仮想ホストのlisten port 追加仮想ホストのserver_name 追加仮想ホストのroot 追加仮想ホストのaccess_log 追加仮想ホストのerror_log 追加仮想ホストのlocation / にファイルじゃなかったらproxy_passの分岐 上記if文が真の時のproxy_passの指定を「http://」+「upstreamに記述した名前」    proxy_pass以外のproxyの設定は一つも書いてないけど動きます。なんでだろう。</description>
     </item>
     
   </channel>

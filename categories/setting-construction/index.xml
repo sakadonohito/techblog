@@ -1,46 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Setting Construction on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/categories/setting-construction/</link>
-    <description>Recent content in Setting Construction on 開発メモてきな</description>
+    <title>setting-construction on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/categories/setting-construction/</link>
+    <description>Recent content in setting-construction on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 24 Apr 2017 13:48:14 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/categories/setting-construction/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 24 Apr 2017 13:48:14 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/categories/setting-construction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>setting ntp on Ubuntu</title>
-      <link>http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</link>
+      <link>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</link>
       <pubDate>Mon, 24 Apr 2017 13:48:14 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</guid>
       <description>EC2のUbuntu14.04にntpを設定 事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。
 エラー内容はInvalidSigunatureException なんかタイムスタンプが早すぎるみたいなエラー内容。
 Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。 タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。
 要はCognitoでトークンを生成するためのタイムスタンプがずれるのでどうしたってエラーになっちゃう問題。
 時刻がずれていることが原因と分かったので、暫定措置として時刻をあわせる(日本標準時)。 ※サーバーはUbuntu14.04
-sudo ntpdate ntp.nict.jp  ※前提としてntpdateがインストールされていること
+sudo ntpdate ntp.nict.jp ※前提としてntpdateがインストールされていること
 いろいろ調べていたら、EC2でUbuntuを使うならNTPサーバーを利用して下さい的な感じだった。
  EC2インスタンスでの時刻同期について  NTPを入れる 根本解決のため、NTPサーバー機能をいれる。
-sudo apt-get install -y ntp  そんで設定ファイルを編集する。 /etc/ntp.conf
+sudo apt-get install -y ntp そんで設定ファイルを編集する。 /etc/ntp.conf
  デフォルトの時刻サーバーをコメントアウト 代わりにserver ntp.nict.jpを3行書く  上記の設定と内容の説明については他人の記事をご参照ください。
  NTPサーバーの構築 NTPで時刻合わせ  編集したらNTPサーバービスを再起動する
 ぐお、タイムゾーンが 作業したサーバー(どちらもUbuntu14.04)のうち、1つがUTC、1つがJSTのタイムゾーンになってて、キモティ悪かったので、揃える。
-sudo timedatectl set-timezone Asia/Tokyo  これでOK</description>
+sudo timedatectl set-timezone Asia/Tokyo これでOK</description>
     </item>
     
     <item>
       <title>docker reinstall</title>
-      <link>http://tech.k-zak.com/2017/03/28/docker-reinstall/</link>
+      <link>https://tech.k-zak.com/2017/03/28/docker-reinstall/</link>
       <pubDate>Tue, 28 Mar 2017 23:57:46 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/28/docker-reinstall/</guid>
+      <guid>https://tech.k-zak.com/2017/03/28/docker-reinstall/</guid>
       <description>Dockerを再インストールした Dockerが全然触らないうちにどんどん進化していってしまったので、一旦アンインストールして、入れ直した。
 環境はmacOS 10.11 えるかぴたん
-やったこと  docker-machine(boot2docker)の中身を全て削除  docker-machine rm defaultとか  docker-machineを完全削除するらしいツールを使って削除実行 Virtualboxを確認して環境が残っていないか確認 .bash_profileに記述していた環境変数設定を削除 homeディレクトリ直下の.dockerみたいな隠し領域も削除 公式から改めてdocker for mac をダウンロードしてインストール ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置  ハマったこと 単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対してdocker -vとかやってエラーを出してた。
+やったこと  docker-machine(boot2docker)の中身を全て削除  docker-machine rm defaultとか   docker-machineを完全削除するらしいツールを使って削除実行 Virtualboxを確認して環境が残っていないか確認 .bash_profileに記述していた環境変数設定を削除 homeディレクトリ直下の.dockerみたいな隠し領域も削除 公式から改めてdocker for mac をダウンロードしてインストール ついでに改めてKitematicもダウンロードしてアプリケーションディレクトリに配置  ハマったこと 単に自分が愚かなだけなんだけど、最初、docker-machineを削除した後にターミナルを再起動？しなかったため、Docker関係の環境変数が残ったま間の状態で新しく入れたDockerに対してdocker -vとかやってエラーを出してた。
 ターミナルを再起動して解決
 ここまで 今日はここまで。
 今後、先送りしてたswarmモードとやらを試したりしたい。</description>
@@ -48,10 +44,10 @@ sudo timedatectl set-timezone Asia/Tokyo  これでOK</description>
     
     <item>
       <title>Pelicanのレイアウト作成</title>
-      <link>http://tech.k-zak.com/2017/03/20/create-pelican-theme/</link>
+      <link>https://tech.k-zak.com/2017/03/20/create-pelican-theme/</link>
       <pubDate>Mon, 20 Mar 2017 18:26:58 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/20/create-pelican-theme/</guid>
+      <guid>https://tech.k-zak.com/2017/03/20/create-pelican-theme/</guid>
       <description>Pelicanで使う自分用テーマを作成した 静的サイトジェネレーター用の基本的なブログレイアウトを一つ作っておくと使い回しができると思い、Python製のPelicanから着手することにしてみた。
 結論から言うと、なかなか時間がとれないのもあって、足掛け2ヶ月かかった。
 その1：ベースとなるレイアウトを素組する htmlとCSSのみでできるだけレスポンシブな簡易ブログ用のレイアウトを考えて作った。
@@ -65,35 +61,35 @@ CSSはSCSSからWebpackでビルドしているけど、限りなく必要ない
 ショートカットキーのタイポとかで変な場所に意図せず文字を入力してしまっているのに気づかず、ビルドが失敗した時には、身に覚えがなかったので解決に時間がかかった(2分探索みたいにコードを消したり戻したりしながらビルドしてエラー箇所を探した)。
 3. 記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある period_Archives.htmlっていう特定の期間の記事リストを表示するためのパーツの上でarticlesという記事リストオブジェクトは全体じゃなくて、その期間の記事リストオブジェクト。全記事のリストは代わりにall_articlesてのある。じゃぁ常にall_articlesを使えば？ってなるんだけど、TOPとか他の場所だとこのall_articlesは空欄。
 4. 年月毎に記事のカウントを取ったりURL分ける方法の説明がおろそか 結論からいうと、URLについては設定ファイルに
-MONTH_ARCHIVE_SAVE_AS = &#39;{date:%Y}/{date:%m}/index.html&#39; 他にも AUTHOR_SAVE_AS とか PAGE_SAVE_AS なんかもあるのよ  とか書いておくと、/2017/03/みたいなパスで2017年3月の記事の一覧ページが生成される。今にして思うと年のフォルダ&amp;amp;月を意味するファイルの組み合わせでよかったんじゃないか説もある。
+MONTH_ARCHIVE_SAVE_AS = &amp;#39;{date:%Y}/{date:%m}/index.html&amp;#39; 他にも AUTHOR_SAVE_AS とか PAGE_SAVE_AS なんかもあるのよ とか書いておくと、/2017/03/みたいなパスで2017年3月の記事の一覧ページが生成される。今にして思うと年のフォルダ&amp;amp;月を意味するファイルの組み合わせでよかったんじゃないか説もある。
 年月の記事カウントについては全記事を年でまとめた記事リストの記事リストを作成して「記事リスト」をさらに月でまとめてカウントを取るみたいなことをやる。 これはそんなようなことをするサンプルのテーマがたまたま見つかったから作れたけど見つからなかったらアーカイブのページが断念したと思う。
 こんな感じ
-&amp;lt;section&amp;gt; &amp;lt;p&amp;gt;Archives&amp;lt;/p&amp;gt; {% if all_articles|count %} &amp;lt;ul&amp;gt; {% for year, date_year in all_articles|groupby(&#39;date.year&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %} {% for month, articles in date_year|groupby(&#39;date.month&#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %} &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/{{ year }}/{{ &#39;%02d&#39; % month }}/&amp;quot;&amp;gt;{{ year }}年{{ month }}月&amp;lt;/a&amp;gt;({{ articles|count }})&amp;lt;/li&amp;gt; {% endfor %} {% endfor %} &amp;lt;/ul&amp;gt; {% elif articles %} &amp;lt;ul&amp;gt; {% for year, date_year in articles|groupby(&#39;date.</description>
+&amp;lt;section&amp;gt; &amp;lt;p&amp;gt;Archives&amp;lt;/p&amp;gt; {% if all_articles|count %} &amp;lt;ul&amp;gt; {% for year, date_year in all_articles|groupby(&amp;#39;date.year&amp;#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %} {% for month, articles in date_year|groupby(&amp;#39;date.month&amp;#39;)|sort(reverse=NEWEST_FIRST_ARCHIVES) %} &amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;/{{ year }}/{{ &amp;#39;%02d&amp;#39; % month }}/&amp;#34;&amp;gt;{{ year }}年{{ month }}月&amp;lt;/a&amp;gt;({{ articles|count }})&amp;lt;/li&amp;gt; {% endfor %} {% endfor %} &amp;lt;/ul&amp;gt; {% elif articles %} &amp;lt;ul&amp;gt; {% for year, date_year in articles|groupby(&amp;#39;date.</description>
     </item>
     
     <item>
       <title>Pelicanを試す</title>
-      <link>http://tech.k-zak.com/2017/02/20/first-pelican/</link>
+      <link>https://tech.k-zak.com/2017/02/20/first-pelican/</link>
       <pubDate>Mon, 20 Feb 2017 15:26:44 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/02/20/first-pelican/</guid>
+      <guid>https://tech.k-zak.com/2017/02/20/first-pelican/</guid>
       <description>Python製の静的サイトジェネレーターPelicanを試す Hugo,Hexo,Jekyllと試してきて、せっかくなのでPython製のものも試そうとPelicanを試した。
-インストール mkdir &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; pip install pelican Markdown pelican-quickstart  なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。
+インストール mkdir &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog&amp;gt;&amp;gt; pip install pelican Markdown pelican-quickstart なんかいろいろ聞かれるので適当に答える。今回はS3にFTPで物理コピーをする運用のため、デプロイに関する質問は全てNo。
 記事を書く 記事はcontent以下にreStructuredTextもしくはMarkdownで書きます。 content以下にディレクトリを配置するとそのディレクトリ名がカテゴリ名扱いされるらしい。当分はいいや。 もちろん、カテゴリはテキストファイルないのヘッダー？に記述できますので、カテゴリが必要だからといってディレクトリでわかなければいけないわけではありません。
-pelican content -s pelicanconf.py  でoutputディレクトリに静的ファイルが生成されます。
+pelican content -s pelicanconf.py でoutputディレクトリに静的ファイルが生成されます。
 簡単ですな。</description>
     </item>
     
     <item>
       <title>Jekyllを試す</title>
-      <link>http://tech.k-zak.com/2017/02/19/first-jekyll/</link>
+      <link>https://tech.k-zak.com/2017/02/19/first-jekyll/</link>
       <pubDate>Sun, 19 Feb 2017 23:22:39 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/02/19/first-jekyll/</guid>
+      <guid>https://tech.k-zak.com/2017/02/19/first-jekyll/</guid>
       <description>Jekyllを試す Ruby製の静的サイトジェネレーターを試してる。
 インストール 以下下記URLを参考にいろいろ試したけど、情報が古くコマンドが変わってた。 参考
-gem install jekyll mkdir _site _posts _site assets mkdir -p assets/css  構造はこんな感じ
-├── _config.yml ├── _layouts │ ├── layout.html │ └── post.html ├── _posts ├── _site ├── assets │ └── css └── index.md  jekyll serve --watch  で編集内容が即時される。
+gem install jekyll mkdir _site _posts _site assets mkdir -p assets/css 構造はこんな感じ
+├── _config.yml ├── _layouts │ ├── layout.html │ └── post.html ├── _posts ├── _site ├── assets │ └── css └── index.md jekyll serve --watch で編集内容が即時される。
 こんな感じでやっていこうと思います。
 レイアウトがとてもダサイ感じなので、テーマをちゃんと作っていきたい。
 Ruby製だから？ヘルプが分かりやすい。
@@ -102,55 +98,55 @@ Ruby製だから？ヘルプが分かりやすい。
     
     <item>
       <title>Hexoを試す</title>
-      <link>http://tech.k-zak.com/2017/02/19/first-hexo/</link>
+      <link>https://tech.k-zak.com/2017/02/19/first-hexo/</link>
       <pubDate>Sun, 19 Feb 2017 22:21:50 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/02/19/first-hexo/</guid>
+      <guid>https://tech.k-zak.com/2017/02/19/first-hexo/</guid>
       <description>JavaScriptの静的サイトジェネレーターHexoを試す JavaScript(Node.js)ベースの静的サイトジェネレーターを試してみようと思った。
-インストールと初期設定 npm install -g hexo-cli hexo init &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; npm install hexo server  これでHexoがインストールされサイトを開始できる hexe serverで開発用のサーバー起動状態になりhttp://localhost:4000にアクセスできる。
+インストールと初期設定 npm install -g hexo-cli hexo init &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; cd &amp;lt;&amp;lt;blog-name&amp;gt;&amp;gt; npm install hexo server これでHexoがインストールされサイトを開始できる hexe serverで開発用のサーバー起動状態になりhttp://localhost:4000にアクセスできる。
 _config.ymlを編集する。
-title: &amp;quot;サイトタイトル&amp;quot; subtitle: &amp;quot;サブタイトル&amp;quot; description: &amp;quot;サイトの説明&amp;quot; author: &amp;lt;&amp;lt;author&amp;gt;&amp;gt; language: ja timezone: Asia/Tokyo url: http://&amp;lt;&amp;lt;site-domain&amp;gt;&amp;gt; root: / permalink: :year/:month/:day/:title/  languageはjaにしてtimezoneはAsia/Tokyoにした。 urlは公開したいドメイン、rootはトップレベルにした。
+title: &amp;quot;サイトタイトル&amp;quot; subtitle: &amp;quot;サブタイトル&amp;quot; description: &amp;quot;サイトの説明&amp;quot; author: &amp;lt;&amp;lt;author&amp;gt;&amp;gt; language: ja timezone: Asia/Tokyo url: http://&amp;lt;&amp;lt;site-domain&amp;gt;&amp;gt; root: / permalink: :year/:month/:day/:title/ languageはjaにしてtimezoneはAsia/Tokyoにした。 urlは公開したいドメイン、rootはトップレベルにした。
 permalinkの設定は:year/:month/:day/:title/のデフォルト設定のままにした。
-記事の追加 hexo new &amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;  これでHugoみたいに初期状態のができる。 このあたり、Hugoと同じ感じで出来るので入りやすい。
+記事の追加 hexo new &amp;lt;&amp;lt;post-name&amp;gt;&amp;gt; これでHugoみたいに初期状態のができる。 このあたり、Hugoと同じ感じで出来るので入りやすい。
 当初、React製の「gatsby」にしようかと思ったけど、なんか違うと思ったので、止めた。
-Publicファイルの生成 hexo generate  これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。
+Publicファイルの生成 hexo generate これでファイルがpublicフォルダに出力されるので、後は目的の場所にアップロードするだけ。
 今回はここまで。</description>
     </item>
     
     <item>
       <title>WordPressからHugoへ移行</title>
-      <link>http://tech.k-zak.com/2017/02/19/first-hugo/</link>
+      <link>https://tech.k-zak.com/2017/02/19/first-hugo/</link>
       <pubDate>Sun, 19 Feb 2017 00:09:41 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/02/19/first-hugo/</guid>
-      <description>開発メモブログをWordPressからHugoへの移行  WordPressから記事をエクスポート Hugoをインストール エクスポートした記事を放り込む  WordPressから記事をエクスポート  WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す  参考   Hugoをインストール brew install hugo hugo new site techblog cd techblog  書き出した記事を放り込む プラグインを使ってエクスポートした記事データはHugoのcontent/postのpostディレクトリ相当のものが吐き出されているので、中身をcontent/post/にぶちまける。
+      <guid>https://tech.k-zak.com/2017/02/19/first-hugo/</guid>
+      <description>開発メモブログをWordPressからHugoへの移行  WordPressから記事をエクスポート Hugoをインストール エクスポートした記事を放り込む  WordPressから記事をエクスポート  WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す  参考    Hugoをインストール brew install hugo hugo new site techblog cd techblog 書き出した記事を放り込む プラグインを使ってエクスポートした記事データはHugoのcontent/postのpostディレクトリ相当のものが吐き出されているので、中身をcontent/post/にぶちまける。
 細かい設定 テーマを入れる 適当なテーマをインストール。今回はPolymer。 themeディレクトリがなかったら作ってその中でgit cloneしたらいいよ。
 config.tomlを編集 title,baseurl,languageCode,theme,paginateを修正する。
 後で独自ドメインでGitHubPagesで運用するため、canonifyurls = trueを設定する。
 GoogleAnalyticsのコードを入れるため、config.tomlに以下を追記
-[params] googleAnalyticsUserID = &amp;quot;&amp;lt;&amp;lt;code&amp;gt;&amp;gt;&amp;quot;  またURLの構造を検討する。 今回からパーマリンクを以下のようにした。permelink設定を追加
-[permalinks] post = &amp;quot;/:year/:month/:day/:slug&amp;quot;  これでyyyy/mm/dd/slugというようなURLになる。
+[params] googleAnalyticsUserID = &amp;quot;&amp;lt;&amp;lt;code&amp;gt;&amp;gt;&amp;quot; またURLの構造を検討する。 今回からパーマリンクを以下のようにした。permelink設定を追加
+[permalinks] post = &amp;quot;/:year/:month/:day/:slug&amp;quot; これでyyyy/mm/dd/slugというようなURLになる。
 URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。
 新しい記事を追加する時には
-hugo new post/&amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;.md  で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。
+hugo new post/&amp;lt;&amp;lt;post-name&amp;gt;&amp;gt;.md で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。
 GitHubPagesで公開する  GitHubにリポジトリを追加 hugoコマンドで出力されるpublicディレクトリの静的ファイルをコミット settingsのGitHub Pagesの項にあるCustom domainにドメインを入れて保存。 hugoのpublicにCNAMEというファイルを追加。内容は公開ドメイン名 再度publicディレクトリの内容をコミット DNS(今回はRoute53)でCNAMEの設定をする。  今回はひとまずこんな感じ。 今後は記事の追加だけじゃなく、テーマを自作していきたい。</description>
     </item>
     
     <item>
       <title>Oracle Setup</title>
-      <link>http://tech.k-zak.com/2016/11/30/oracle-setup/</link>
+      <link>https://tech.k-zak.com/2016/11/30/oracle-setup/</link>
       <pubDate>Wed, 30 Nov 2016 11:46:20 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2016/11/30/oracle-setup/</guid>
-      <description> Ubuntu14.04にOracle11gを入れる 大まかな手順  必要なものをいれる(unzip, libaio1, unixodbc, alien) oracle download(rpmパッケージだけどな！) /sbin/chkconfigを作ってあげる alienでrpmパッケージをdebに変換 インストール 設定ファイル周りの編集(パスが違うとか、memory_targetの変更とか) hostsに外向けIPとhostnameの対応を追加(一番大事！)  </description>
+      <guid>https://tech.k-zak.com/2016/11/30/oracle-setup/</guid>
+      <description>Ubuntu14.04にOracle11gを入れる 大まかな手順  必要なものをいれる(unzip, libaio1, unixodbc, alien) oracle download(rpmパッケージだけどな！) /sbin/chkconfigを作ってあげる alienでrpmパッケージをdebに変換 インストール 設定ファイル周りの編集(パスが違うとか、memory_targetの変更とか) hostsに外向けIPとhostnameの対応を追加(一番大事！)  </description>
     </item>
     
     <item>
       <title>嘘でしょう。。。</title>
-      <link>http://tech.k-zak.com/2015/03/08/ubuntu-wifi/</link>
+      <link>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</link>
       <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/03/08/ubuntu-wifi/</guid>
+      <guid>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</guid>
       <description>長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。
 実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。
 悩まされていた問題 会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。
@@ -165,10 +161,10 @@ VMのネットワーク設定を「Macと共有」の時は問題なくて「自
     
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
+      <link>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
+      <guid>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
       <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
 https://github.com/seedcode/fmxj
 概要としては、FileMaker Server の XML公開を使う。
@@ -188,26 +184,26 @@ u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数
 WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
 これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
 しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
-※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても
+※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても
 　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
 その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
 最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
 自分はUbuntuの環境なので、
  sudo apt-get install nginx-extras
  後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
-more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;
-を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
+more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
+を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
 これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
 いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</description>
     </item>
     
     <item>
       <title>AnsibleのSSH設定について</title>
-      <link>http://tech.k-zak.com/2015/02/08/ansible-ssh/</link>
+      <link>https://tech.k-zak.com/2015/02/08/ansible-ssh/</link>
       <pubDate>Sun, 08 Feb 2015 14:43:15 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/08/ansible-ssh/</guid>
-      <description>Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+      <guid>https://tech.k-zak.com/2015/02/08/ansible-ssh/</guid>
+      <description>Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
 という事で調べた。
 結論としては、varsファイルに
 ・ansible_ssh_user
@@ -216,7 +212,7 @@ more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#821
 の3つを書いておきましょう。でした。
 最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
 例えばhostsファイルに
-`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも&amp;#8211;ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
+`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
 という事で調べた。
 結論としては、varsファイルに
 ・ansible_ssh_user
@@ -227,45 +223,45 @@ more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#821
 例えばhostsファイルに
 `
 とか書いてグループ名が「dev」の場合に
--playbook
+-playbook\
 |
-|&amp;#8211;dev.yml
+|–dev.yml
 |
-|&amp;#8211;group_vars
+|–group_vars\
 | |
-| |&amp;#8211;dev.yml
+| |–dev.yml
 |
-|&amp;#8211;roles\※内容略
+|–roles\※内容略
 |
-|&amp;#8211;site.yml
+|–site.yml
 みたいな感じで書く。
-group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより&amp;#8211;ask-passの指定が必要なくなった。
+group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより–ask-passの指定が必要なくなった。
 問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。
 なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。
-ansible-playbookを実行する時に復号のために&amp;#8211;vault-passの引数とそのファイルパスを渡さないといけないってのも&amp;#8211;ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。
+ansible-playbookを実行する時に復号のために–vault-passの引数とそのファイルパスを渡さないといけないってのも–ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。
 hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー
 って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。</description>
     </item>
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/2015/02/01/php-mail/</link>
+      <link>https://tech.k-zak.com/2015/02/01/php-mail/</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/01/php-mail/</guid>
+      <guid>https://tech.k-zak.com/2015/02/01/php-mail/</guid>
       <description>## install postfix
-&amp;#8220;`
+“`
 sudo apt-get install postfix postfix-dev sasl2-bin
 sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt
-&amp;#8220;`
+“`
 ## Settings
-&amp;#8220;`
+“`
 sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf
 sudo emacs -nw /etc/postfix/main.cf
-&amp;#8220;`
+“`
 ### 参考
-&amp;#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail
-&amp;#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2
+– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail
+– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2
 ### gmailに転送する設定に変更
 relayhostにgmailを指定
 パスワードの設定とかね。
@@ -288,10 +284,10 @@ gmailの場合は/ssl/novalidation-certみたいのつける</description>
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>http://tech.k-zak.com/2015/01/05/perl-cgi/</link>
+      <link>https://tech.k-zak.com/2015/01/05/perl-cgi/</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
+      <guid>https://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
       <description>古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
 最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
 502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
@@ -313,32 +309,29 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
+      <link>https://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
-      <description>Ubuntu14(64bit)のVM作成  イメージからVMWareFusionに作成
- ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
- ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
- 設定画面が出てくるので、そのままOK
-  VMWare toolsをインストール
- VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行  aptのアップデートとアップグレード sudo apt-get update
+      <guid>https://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
+  ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
+  設定画面が出てくるので、そのままOK
+    VMWare toolsをインストール
+ VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行    aptのアップデートとアップグレード sudo apt-get update
 sudo apt-get upgrade
- Dropboxクライアントのインストール
- FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから  Emacsのインストール sudo apt-get install emacs24
+  Dropboxクライアントのインストール
+ FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから    Emacsのインストール sudo apt-get install emacs24
  Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
-mv ~/emacs.d ~/.emacs.d   バージョン管理のインストール sudo apt-get install git
-sudo apt-get install mercurial
- nginxのインストール sudo apt-get install nginx
- xEnvや各バージョンのインストールに必要になる諸々のインストール sudo add-apt-repository ppa:webupd8team/java</description>
+mv ~/emacs.d ~/.emacs.d    バージョン管理のインストール sudo apt-get install git
+sudo apt-get install mercurial</description>
     </item>
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
+      <link>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
+      <guid>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
       <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
 の、前にAWSのS3試したので。
 ・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
@@ -357,24 +350,23 @@ Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合�
     
     <item>
       <title>Linux関係のメモ201407</title>
-      <link>http://tech.k-zak.com/2014/08/02/setting-ubuntu/</link>
+      <link>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</link>
       <pubDate>Sat, 02 Aug 2014 15:47:24 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/setting-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</guid>
       <description>Ubuntu系でのchkconfigに変わるコマンドってなんだっけ？
--&amp;gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要&amp;#8230;&amp;#8230;
-checkconfigてLinux全般共通じゃなかったんだ&amp;#8230;&amp;#8230;
+-&amp;gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要……
+checkconfigてLinux全般共通じゃなかったんだ……
 ・Ubuntu系でインストール済みのパッケージを見るのはdpkg -l(える) この後にgrep付けるヨロシ
-・Ubuntuでパッケージの検索はapt-cache search 
-　apt-get searchじゃなかった&amp;#8230;&amp;#8230;</description>
+・Ubuntuでパッケージの検索はapt-cache search 　apt-get searchじゃなかった……</description>
     </item>
     
     <item>
       <title>最近やったいろいろ</title>
-      <link>http://tech.k-zak.com/2014/03/16/milestone/</link>
+      <link>https://tech.k-zak.com/2014/03/16/milestone/</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/03/16/milestone/</guid>
       <description>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
 ◆PostgreSQLのSQLダンプ
 　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
@@ -419,10 +411,10 @@ checkconfigてLinux全般共通じゃなかったんだ&amp;#8230;&amp;#8230;
     
     <item>
       <title>NginxでPermission denied</title>
-      <link>http://tech.k-zak.com/2014/01/16/trouble-nginx/</link>
+      <link>https://tech.k-zak.com/2014/01/16/trouble-nginx/</link>
       <pubDate>Thu, 16 Jan 2014 01:44:58 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/01/16/trouble-nginx/</guid>
+      <guid>https://tech.k-zak.com/2014/01/16/trouble-nginx/</guid>
       <description>開発環境
 OS:Ubuntu12?
 Webサーバー：Nginx
@@ -437,10 +429,10 @@ Nginxのセキュリティ機能？なのでしょうか。仕組みは調べて
     
     <item>
       <title>2014年の目標達成進捗管理的な</title>
-      <link>http://tech.k-zak.com/2014/01/04/milestone/</link>
+      <link>https://tech.k-zak.com/2014/01/04/milestone/</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/01/04/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/01/04/milestone/</guid>
       <description>新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
 事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
 とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
@@ -448,30 +440,47 @@ Nginxのセキュリティ機能？なのでしょうか。仕組みは調べて
 要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。
 という事で設定作業開始
 環境:  ホストOS：OS X10.9 ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T)) nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します) ruby2.0.0dev(rbenv) unicorn4.7.0 rails3.2.16 redmine2.4.2  rbenvにruby2.0を追加してデフォルトにする rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。
-参考：rbenvを利用して複数バージョンのRubyをインストール
-~$ rbenv install 2.0.0rc-2 ~$ rbenv global 2.0.0rc-2 ~$ rbenv rehash ※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
+参考：rbenvを利用して複数バージョンのRubyをインストール※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
 rehashの時だけsh-rehashがうんたらってエラーになる。
 ruby2.0の状態でgem update でアップデートしてbundler入れる。
-~$ gem update ~$ gem install bundler ~$ gem install mysql2 ~$ ~/.rbenv/bin/rbenv rehash  MySQL側の準備 redmienユーザーの作成と
+MySQL側の準備 redmienユーザーの作成と
 データベース：redmineの作成
 redmine入れる ここから最新のredmineをダウンロード(今回は2.4.2)
 うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。
 DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。
 redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。
-~$ cd redmineディレクトリの場所 ~$ echo &#34;gem &#39;unicorn&#39;&#34;  Gemfile.</description>
+bundleでのインストールが初めてだったので、なんか引数与えてやってみたかったてのと、
+最初rmagick関連でエラー出たっぽいのでwithoutに指定した。原因は究明しない！
+ここまでで自分が詰まったのは、最初bundler入れた後rehashしてなくてbundle installのとろこで、bundler入ってねぇよ！apt-getで入れろ！ってエラー出てアワアワしてた。どうもbundler入れた後にもrehashが必要らしい。今は何故かは調べない。
+必要最小限にしてなかったせいか、ここでワンサカいろいろインストールされた。気がする。
+インストールされたgemを見た所、railsは上記環境で記載したバージョンになっていたです。
+終わったら、database.ymlのproductionの所を編集して自分の環境でDB接続できるようにする。
+開発用じゃなくてredmine使うだけなので最初からproduction。
+ここで一旦Webrickで動くか確認。
+動かねぇ！調べてたらお決まりの必要な処理がある事を知った。
+その１その２書いてあることの真似をする。
+終わったら再度チャレンジでWebrickが起動しました。やったね。
+redmineのadminユーザーのデフォルトのパスワードがわからない！ 解決策はここ。
+unicornの設定 めんどくさくなってきた。上記の２リンクと関連リンクのGithubと、やや簡潔にかいてあるブログを参考に設定ファイルを書いていきましたので詳細は省きます。
+１，unicorn.rbを作成。
+２，unicornのデーモン
+自分が作業した手順としては一気にnginxの設定編集までしてから確認して動かない！ってなったんだけど、問題切り分けのために、
+ unicornの設定する前段階でWebrickで動かくか(例えば、http://0.0.0.0:3000) unicornの設定した段階でredmine動くか(例えば、http://0.0.0.0:8080)  て接続確認しながら進めたほうが良いと思われます。
+nginxの設定編集 既にnginxが動いている環境のため、redmine専用の設定どうするのか戸惑ったけど、単にserverディレクティブを追加すればいいみたい。upstreamディレクティブも既存の仮想ホスト設定に悪影響は出ていないみたいだ。
+最終的な結論から言うと動いたけど、参考にしたブログなんかと設定がちょい違う。
+ ローカルで動かしているせいかhostsファイルにredmine用の仮想URLを追記したら動いた。※追記前は参考記事と同じ設定にしても動かなかった。 動かすのに使った指定は  upstreamのunixソケットの指定 追加仮想ホストのlisten port 追加仮想ホストのserver_name 追加仮想ホストのroot 追加仮想ホストのaccess_log 追加仮想ホストのerror_log 追加仮想ホストのlocation / にファイルじゃなかったらproxy_passの分岐 上記if文が真の時のproxy_passの指定を「http://」+「upstreamに記述した名前」    proxy_pass以外のproxyの設定は一つも書いてないけど動きます。なんでだろう。</description>
     </item>
     
     <item>
       <title>sshで、ぷごふぁ</title>
-      <link>http://tech.k-zak.com/2013/10/02/ssh/</link>
+      <link>https://tech.k-zak.com/2013/10/02/ssh/</link>
       <pubDate>Wed, 02 Oct 2013 17:10:04 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/10/02/ssh/</guid>
+      <guid>https://tech.k-zak.com/2013/10/02/ssh/</guid>
       <description>WordPress勉強してます。テーマについてはだいたい分かったので、自作テーマとか作っていきたい。
 ゆくゆくは案件事例的なぽーとふぉりおサイトを作ろうと、とりあえずさくらVPSを立てて、SSHの
 設定をする。
-&amp;nbsp;
-契約だけしてながらく放置していたので、OS再インストールしてSSHで接続しようとしたらエラー出て
+ 契約だけしてながらく放置していたので、OS再インストールしてSSHで接続しようとしたらエラー出て
 ぷごふぁ！ってなった。調べたら出てきました。
 参照： http://qiita.com/wnoguchi/items/690f3f4651f8f11e4ed3
 要は以前に接続した際のゴミが残っていて再インストールしたのでIPとポート同じなのに鍵あわないじゃん！
@@ -481,10 +490,10 @@ Qiitaは素人同然の自分には本当に助かる。</description>
     
     <item>
       <title>Perlの動作環境？について</title>
-      <link>http://tech.k-zak.com/2013/01/20/study-perl/</link>
+      <link>https://tech.k-zak.com/2013/01/20/study-perl/</link>
       <pubDate>Sun, 20 Jan 2013 15:25:11 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/01/20/study-perl/</guid>
+      <guid>https://tech.k-zak.com/2013/01/20/study-perl/</guid>
       <description>長らく更新してませんでしたが、その間にFlask試したり、最近なんかは
 ちょっとだけVisual C++を初心者本見ながら動かしてました。
 C++分かんない。
@@ -496,7 +505,7 @@ perlを使えるように設定する
 ※perl -v でバージョンの確認ができます。
 ２，Perlbrewを入れましょうバージョンを切り替えたりライブラリを追加したりが楽になるそうです。
 ３，ターミナルベースで動かす
-ファイルの拡張子を「.pl」とかにして内容はprint &amp;#8220;Hello,World\n&amp;#8221;;とか書いて
+ファイルの拡張子を「.pl」とかにして内容はprint “Hello,World\n”;とか書いて
 ターミナルで「perl aaa.pl」とかやると起動して処理実行しますね。
 厳密にはファイルエンコードはUTF-8にしましょうとか、ソースの行頭にお決まりの書き方をするとかありますけど
 その内容については省略するので他で調べてください。
@@ -508,14 +517,14 @@ perlを使えるように設定する
 などが主な理由です。権限についてはchmodコマンドで実行権限を付与してください。
 Apacheの設定ファイル「httpd.conf」もしくはVirtual-Hostの設定をしているなら「httpd-vhost.conf」を
 開いて設定を記述します。
-&amp;#8212;&amp;#8212;&amp;#8212;-
+———-
+&amp;lt;Directory “/virtualhostdirectory/hoge”&amp;gt;
 AddHandler cgi-script .cgi .pl .py .rb
 Options All
 AllowOverride All
 Order allow,deny
 Allow from all
-
-&amp;#8212;&amp;#8212;&amp;#8212;-
+———-
 こんな感じで。「AddHandler cgi-script」に対象拡張子を連ねる感じで記述すると動くようになります。
 ※当然LoadModuleのところでmod_cgiを読み込んでいるのが前提です。
 ※上の例では、Perl以外にもRubyやPythonもCGiで動く設定にしてますのん。
@@ -528,47 +537,44 @@ Allow from all
 を追記
 ・適当なとこに下記の記述※自分の場合は上記のvirtualhostディレクトリ内に追記
 ・上記の設定で既に普通のCGIでPerlが動くようになってしまっているのでPerl関係拡張子を除外しておくこと!
-&amp;#8212;&amp;#8212;&amp;#8212;-
+———-
+&amp;lt;FilesMatch “.(pl|cgi)$”&amp;gt;
 SetHandler perl-script
-PerlHandler ModPerl::Registry
-# Options +ExecCGII</description>
+PerlHandler ModPerl::Registry</description>
     </item>
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
 各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
 layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
 このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
-&amp;nbsp;
-Ruby：Sinatra
+ Ruby：Sinatra
 →Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
 ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
 これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
-&amp;nbsp;
-PHP：FuelPHP
+ PHP：FuelPHP
 →最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
 これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
 コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
 public/assetsて階層に配置するんですね。
-&amp;nbsp;
-PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
+ PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
 OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
-出来ないとかで&amp;#8230;&amp;#8230;</description>
+出来ないとかで……</description>
     </item>
     
     <item>
       <title>趣旨変え</title>
-      <link>http://tech.k-zak.com/2012/05/20/milestone/</link>
+      <link>https://tech.k-zak.com/2012/05/20/milestone/</link>
       <pubDate>Sun, 20 May 2012 09:38:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/05/20/milestone/</guid>
+      <guid>https://tech.k-zak.com/2012/05/20/milestone/</guid>
       <description>ここのブログの内容の趣旨を変えました。
 元々のネタはBlogger？Googleのところに移動。
 ここは元々MTで少しやってた勉強メモに変更。それに伴いMTでからデータも適当に移行。</description>
@@ -576,148 +582,128 @@ OS再インストールしたせいだと思うけど、前に作ったDjangoが
     
     <item>
       <title>apacheでredmine virtualhost設定</title>
-      <link>http://tech.k-zak.com/2011/06/25/apache-virtualhost/</link>
+      <link>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</link>
       <pubDate>Sat, 25 Jun 2011 16:03:16 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/06/25/apache-virtualhost/</guid>
-      <description>この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。
-   で、急遽同タイプのを買いなおしてHDD移植してOS再インストールとかして   つまったapacheでredmine再設定をここにメモす。     なぜこんなことが起きたのか。。それはOS再インストールした際に、apacheの   virtualhost.confが初期化され、redmine用の設定が消えたからです。   再設定のため、webや本を見ながら書いたつもりの設定ではCSS等が読み込まれなんだ   ( °д°)ﾅﾝﾃﾞ？     結局関係ないと思ってたところが関係してた(apacheの設定とか理解してなかった)   という話。     以下が正常に動いた設定(virtualhost)      #Redmine用   
- ServerAdmin oira@virtualhostDomain 
- DocumentRoot &amp;#8220;redmineのある場所/redmine/public&amp;#8221; 
- ServerName virtualhostDomain 
- ErrorLog &amp;#8220;/private/var/log/apache2/virtualhostDomain-error_log&amp;#8221; 
- CustomLog &amp;#8220;/private/var/log/apache2/virtualhostDomain-access_log&amp;#8221; common 
- 
- RailsBaseURI / ※redmine専用のバーチャルホストのため、ルートを指定</description>
+      <guid>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</guid>
+      <description>この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。</description>
     </item>
     
     <item>
       <title>CakePHPでぐはぁ</title>
-      <link>http://tech.k-zak.com/2011/06/14/study-cakephp/</link>
+      <link>https://tech.k-zak.com/2011/06/14/study-cakephp/</link>
       <pubDate>Tue, 14 Jun 2011 13:00:58 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/06/14/study-cakephp/</guid>
-      <description>CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ
-   どうもPHP5.3で動かすと非推奨なコードが沢山あるらしく、そのエラーが   ドバドバでるの。で、その対処法のメモ。絶対また忘れるので。。。     ぐぐったら沢山でてきまする。     cake/libs/configure.phpの自分がDLしたCakePHPだと110行目から少し下あたりにある   $reportingという変数にエラーの定数を格納する箇所で、従来の&amp;#8217;E_ALL&amp;#8217;に非推奨エラーの   定数は除外するよう編集する。こんな感じ   前：$reporting = E_ALL   後：$reporting = E_ALL &amp; ~E_DEPRECATED   場所がよく分からなかったらエラー定数(E_ALL)で検索すればいいよ。  </description>
+      <guid>https://tech.k-zak.com/2011/06/14/study-cakephp/</guid>
+      <description>CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ</description>
     </item>
     
     <item>
       <title>WebフレームワークとFileMaker</title>
-      <link>http://tech.k-zak.com/2011/05/29/web-filemaker/</link>
+      <link>https://tech.k-zak.com/2011/05/29/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
-      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く
- FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの   データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて   ２つの方法があります。   １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する   ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。     で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。     ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。   ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では   載っていない文法のXMLが返ってくる。   具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に   rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが   rowタグの中にあるのではなく、本当に&amp;#8221;col&amp;#8221;という名のタグが入っているからメタタグの   カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー     で、世間ではどうしているのかというと、   a,FileMaker文法を解釈するxsltで開発   b,PHPでライブラリが出ているのでそれを使う(FX.php)   c,Rubyでライブラリが出ているのでそれを使う(rfm)   d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)     ってところ。   実際にはFX.phpを利用するのがメジャーでしょう。。   これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、   案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は   ある程度覚えておいたほうが良いと思う。     ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを   作れさえすれば、言語は何でも良いという事。   なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。   Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど   Perlは自分には無理。そもそもPerlがほぼ分からない。     Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては   Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている   ようなので、将来性は微妙。     Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの   両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを   継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。     PHPのFX.</description>
+      <guid>https://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
+      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く</description>
     </item>
     
     <item>
       <title>emacs初めてみようか</title>
-      <link>http://tech.k-zak.com/2011/04/29/emacs-setting/</link>
+      <link>https://tech.k-zak.com/2011/04/29/emacs-setting/</link>
       <pubDate>Fri, 29 Apr 2011 17:47:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/29/emacs-setting/</guid>
-      <description>現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている
- 軽いけどまだまだ完成度の低いKodに代わりテキストエディタを探そうと思い   emacsを試すことにした。     まずはインストール。自分のPCはMacBookPro10.6なのでemacs23.xを入れる事に   最初に入れたのは22.2のアプリタイプのもの、   CarbonEmacs   http://www.apple.com/jp/downloads/macosx/tools/carbonemacs.html   http://homepage.mac.com/zenitani/emacs-j.html     いや、折角なのでちゃんと最新のでやりましょう。と探して次に見つけたのが   Aquamacs2.0 http://sourceforge.jp/magazine/10/05/12/090234   これでもよかったんでしょうけど、普通のemacs23.xを入れようとさらに探し、   MacPortsからインストールの方法を見つける。   http://d.hatena.ne.jp/tomoya/20090210/1234297520     入れるものを間違えたのか、自分のやつだとGUIの設定画面がでない。。。   ざっと、通し見したブログ   「CarbonからCocoaへ&amp;#8211;Snow LeopardでEmacs 23を使う」   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20409879/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410292/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410578/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410802/     最初はマウスでメニューとか開いてコマンド実行、ヘルプのところに   「Emacs Tutorial (choose language)」てのがあるのでそれを実行。言語はお好みで。   中身を見ながら試す。     初めはどうしたら「filename.</description>
+      <guid>https://tech.k-zak.com/2011/04/29/emacs-setting/</guid>
+      <description>現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている</description>
     </item>
     
     <item>
       <title>PHPのフレームワーク試す</title>
-      <link>http://tech.k-zak.com/2011/04/24/php-frameworks/</link>
+      <link>https://tech.k-zak.com/2011/04/24/php-frameworks/</link>
       <pubDate>Sun, 24 Apr 2011 14:04:24 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/24/php-frameworks/</guid>
-      <description>PHPのフレームワークをいくつか試してみた。
- 以下、試したフレームワーク名と参考にしたチュートリアルサイト及び記事     ・CakePHP   本家？の日本語版サイトのチュートリアルを試す。   http://book.cakephp.org/ja/view/1528/CakePHPブログチュートリアル     ・Zend Framework   これも本家？の翻訳サイトにあるチュートリアルを試す。   http://web-rhodia.com/zf-tutorial/     ・Symfony   これは日本symfonyユーザー会サイトのチュートリアルを試す。   http://www.symfony.gr.jp/docs/for-beginners/blog-tutorial/01-introduction     ・CodeIgniter   ここは、調度良いのチュートリアルが見つからなかった。。。   http://codeigniter.jp/user_guide_ja/toc.html   http://d.hatena.ne.jp/it-tech-dm/20091025/1256465675       感想としては、   CakePHP:1.1や1.2で何回か触ったことあり、特に詰まることもなく、あっさり   お試し終了。他のフレームワークとの比較用(基準)として今回チュート   リアルを試しました。   感触としては、ちょろっとだけ触ったことあるRailsに似ていて(マネしたんだ   から当たり前)これを覚えとくとRuby on Rails も憶えやすくなるなんてお得。   構造的にも自分にとっては、理解しやすい。     Zend Framework:これは、自分にはあいそうもありません。。大文字から始まる単語を   アンダースコアでつなぐ名前のつけ方は慣れていなくて、非常に違和感があ   りました。あと、チュートリアルひと通りコーディングしたけど、画面真っ白   エンコードか、URLの問題かな。。。生理的に受け付けない感じ。     Symfony:チュートリアルがCakePHPのチュートリアルを参考に作ってあるだけあって   とっつきやすかった。比較としてこっちは何だかJavaのStrutsを簡単にしたような   印象を受けました。あとyaml設定ファイル多い。     CodeIgniter:これは、チュートリアルがちゃんと見つからなかったこともあり、まともに   試せていない。手本にしたブログ記事の内容はコーディングしてみたけど、   BaseURLの記述がおかしいのか、どこかのディレクトリのパーミッションの   問題か動きませんでした。   印象としては、あんまりフレームワークっぽくない(至れり尽くせりではない)。   でも、軽いとか必要最小限とかの評価を良く耳にするので、ちゃんと動くところ   まで持って行ってから評価したいと思っています。     今回のお試しの結果、自分の中での評価順位は   １，CakePHP   ２，Symfony   ３，CodeIgniter (暫定)   ４，Zend Framework     以上、PHP低レベル者が勝手にフレームワークを評価してみました。      </description>
+      <guid>https://tech.k-zak.com/2011/04/24/php-frameworks/</guid>
+      <description>PHPのフレームワークをいくつか試してみた。</description>
     </item>
     
     <item>
       <title>Django お勉強</title>
-      <link>http://tech.k-zak.com/2011/04/19/django-tutorial/</link>
+      <link>https://tech.k-zak.com/2011/04/19/django-tutorial/</link>
       <pubDate>Tue, 19 Apr 2011 05:10:17 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/19/django-tutorial/</guid>
-      <description>PythonのDjangoのお勉強記録
-   いろいろとつまったのでメモ。     まず試したのはCodoZineのチュートリアル記事   Djangoチュートリアル前篇：　http://codezine.jp/article/detail/4065   Djangoチュートリアル後編：　http://codezine.jp/article/detail/4264   ※記事内のインストールや参考記事のURLは割愛     ０，環境はMacOSX10.6 Pythonはインストール済み   １，チュートリアルにしたがってDjangoインストール→プロジェクト作成、MySQLにDB作成   →アプリケーション作成   チュートリアルではDBはSQLiteだったけど、なんとなくMySQLを使った   ２，チュートリアルにしたがって写経   以上。     時折詰まったので、後はそのポイント     ・Pythonの文法にうっかりハマる。   自動でインデントしてくれるエディタを使っていると、改行時に自動でインデントしてくれますよね   それを忘れて、別のメソッドを続けて書く時にはインデント位置を戻さないといけないのに、   うっかりインデントされたままコード書き続けて、自爆するので気をつけましょう   views.pyで定義したはずのものが(ビューメソッド？)見つからないエラーが出たら真っ先に   インデントや誤字を疑いましょう。     ・動作するのに必要な記述の説明が抜けている。追加ファイルの事。   当たり前の事といえばそれまでなのですが、views.</description>
+      <guid>https://tech.k-zak.com/2011/04/19/django-tutorial/</guid>
+      <description>PythonのDjangoのお勉強記録</description>
     </item>
     
     <item>
       <title>JavaのDWRって何さ　設定メモ</title>
-      <link>http://tech.k-zak.com/2011/04/13/java-dwr/</link>
+      <link>https://tech.k-zak.com/2011/04/13/java-dwr/</link>
       <pubDate>Wed, 13 Apr 2011 19:26:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/13/java-dwr/</guid>
-      <description>JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。   原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを   作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。     アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？     DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで   構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。   とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを   簡単にJavaScript上で扱う仕組み？な感じ。     参考URL：   DWRのサイト　http://directwebremoting.org/dwr/index.html   2007の@ITの記事　http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html     具体的な手順の説明   １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を   落とす。   ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル   ２つを入れる。   ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな   あと、このクラスの定義のパッケージは何でも良い。   ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも   良い。この時、実在しない(dwr.jarが自動生成する)JSをタグに書いておく   ※説明たるいので、サイトとか参照して下さい。   どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。   ５，dwr用のxmlとweb.</description>
+      <guid>https://tech.k-zak.com/2011/04/13/java-dwr/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>ちっともすすまない</title>
-      <link>http://tech.k-zak.com/2011/04/10/milestone/</link>
+      <link>https://tech.k-zak.com/2011/04/10/milestone/</link>
       <pubDate>Sun, 10 Apr 2011 06:55:10 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/10/milestone/</guid>
-      <description>前に更新したのはいつの頃か・・・
-   中身に進歩がないのが更新がない証拠。。     先日、MovableTypeにもう一つブログ追加しました。   元々Microsoftのスペースっていうブログの場所でゲームとか趣味関連の少し   やってたんですが、閉鎖されたので、心機一転こちらで始めました。     この間、初めてAmazonアソシエイトのIDとったのでのリンクバシバシ貼ろうと思います。     このブログで書くようなジャンルの事では、最近NetBeansをインスコしてみました。   Eclipseでは無視してたんですが、サンプルプロジェクト作成して中のコード読むのって   結構勉強になるんじゃないかって考えてます。     まだまともに触れてないレベルですが、NetBeansはEclipseに比べて軽い気がします。   まぁ、設定とかプラグインとかそういうところは圧倒的にEclipseなんでしょうけど。     今はNetBeansでRuby on Rails　のサンプル作成したら、Railsのバージョンがおかしいとか   エラー出てハマってます(-_- 😉   ここのブログは今後、作業日誌的な、勉強、開発そういったことを何かしたら   それを簡潔に書く。そうやって続けていこうかと。     いつになったら図や画像ありの記事になれるのか・・・     NetBeansの日本語サイト：http://ja.netbeans.org/  </description>
+      <guid>https://tech.k-zak.com/2011/04/10/milestone/</guid>
+      <description>前に更新したのはいつの頃か・・・</description>
     </item>
     
     <item>
       <title>macにphpMyAdmin</title>
-      <link>http://tech.k-zak.com/2010/09/03/mcrypt/</link>
+      <link>https://tech.k-zak.com/2010/09/03/mcrypt/</link>
       <pubDate>Fri, 03 Sep 2010 15:42:34 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/09/03/mcrypt/</guid>
-      <description>忘れないうちにメモ
-   前のMacBokでは成功して、今回新しく購入したMacBookProでなかなかうまくいかなかった事をメモ。     て、実はただの勘違いだったんですけど。。。     環境はMac OS X 10.6 ( 64bitで常時起動 )   ここにApache2.2?とPHP5.3.2が初めから入っているので、MySQL入れて   phpMyAdminを入れる。     １、MySQL入れる   MySQLのサイトからdmgをダウンロード。理由は楽だから。     http://dev.mysql.com/downloads/mysql/5.1.html     ２、MySQLのPATHを通す   例として(自分の場合)emacsで.bash_profileを編集     $ sudo -s emacs   ( emacsが起動しました )   C-x C-f ( Ctrl + x その後 Ctrl + f でファイル開く )   ~/.</description>
+      <guid>https://tech.k-zak.com/2010/09/03/mcrypt/</guid>
+      <description>忘れないうちにメモ</description>
     </item>
     
     <item>
       <title>もう30回位連休来ないかな？</title>
-      <link>http://tech.k-zak.com/2010/05/09/reinstall-mac/</link>
+      <link>https://tech.k-zak.com/2010/05/09/reinstall-mac/</link>
       <pubDate>Sun, 09 May 2010 14:05:29 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/05/09/reinstall-mac/</guid>
-      <description>えー、どうもMacのHDDが原因だったようで、
- 連休中初日にOSの再インストール。やっぱ駄目。→次の日にHDD購入。   換装してOS入れ直し。でようやく正常に動くようになりました。     えぇ、今のところちゃんと動いていますとも。     OS入れ直した後、折角なのでApacheもPHPも雪豹に初めから入ってるものを   使おうとしたのですが、設定ファイルの場所が分からなかったり、編集には   root権限が必要だったり、ユーザ別の設定ファイルを作るのとか、うにゃーんて   なって。。結局XAMPP入れちゃいました ^q^     新標準 PostgreSQL という本でPostgreSQLを勉強してます。   途中のアプリサンプルはPHPのはそのままやったのですが、Javaは敷居が   高かったため、そこから脱線して、eclipse本(Tomcatの使い方を学ぶ)、   JavaでPostgreSQLのコードサンプルが入っている「はじめてのJavaフレームワーク」   というものを試してます。Javaとかめちゃメンド臭いですね。。  </description>
+      <guid>https://tech.k-zak.com/2010/05/09/reinstall-mac/</guid>
+      <description>えー、どうもMacのHDDが原因だったようで、</description>
     </item>
     
     <item>
       <title>PostgreSQL せきゅりてぃ？</title>
-      <link>http://tech.k-zak.com/2010/04/29/trouble-postgresql/</link>
+      <link>https://tech.k-zak.com/2010/04/29/trouble-postgresql/</link>
       <pubDate>Thu, 29 Apr 2010 01:33:02 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/29/trouble-postgresql/</guid>
-      <description>昨日の夜、眠い中PostgreSQLの勉強をしようとしたら、サービスがスタート出来ない！
-   さっさとあきらめて、爆睡して今再度確認した所、/Library/PostgreSQL/8.4/dataディレクトリの   アクセス権がログインユーザー？作成者？意外もアクセス可能になってるから駄目！っていうエラー   でした。     MacのFinderから覗いてEveryoneをアクセス不可に変更したらPostgreSQLのサービスが   開始出来るようになりました。     これは普段Macを使う時のユーザーアカウント(スーパーユーザー含む？)、Postgresという   ユーザー(インストール時にデフォで作成されるユーザー)の関係ですかね。  </description>
+      <guid>https://tech.k-zak.com/2010/04/29/trouble-postgresql/</guid>
+      <description>昨日の夜、眠い中PostgreSQLの勉強をしようとしたら、サービスがスタート出来ない！</description>
     </item>
     
     <item>
       <title>あばばば- PostgreSQL編</title>
-      <link>http://tech.k-zak.com/2010/04/27/reset-postgresql/</link>
+      <link>https://tech.k-zak.com/2010/04/27/reset-postgresql/</link>
       <pubDate>Tue, 27 Apr 2010 14:50:00 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/27/reset-postgresql/</guid>
-      <description>機能PostgreSQLのユーザー作ったり消したりDBやテーブル作成したりしていたら、
- 急に接続出来なくなった(泣     仕方ないので一旦削除していれ直しを図った訳ですが、これがなかなか上手く行かない。     で、ちゃんと削除するためのメモとなった訳です。     １、/ライブラリの中にいるから削除しましょう   ライブラリの中にPostgreSQLさんがいますので削除します。   アンインストーラを使って削除した時に、アクセス権が無いと残ってしまうフォルダが   あるかもしれません。     そんな時は、手動で消しましょう。とにかくライブラリの中からPostgreSQLを抹殺します。     ２、アプリケーションフォルダの中もきれいにしましょう。   手動で削除     ３、入れ直し   ちょっと不安なので、当分の間はDLしたPostgreSQLのインストーラは消さずに   もっていようと思います。おーコワ     ※蛇足、前回、ApacheとPHPとphpPgAdminを入れていましたが、今回は入れませんでした。     ※今回の原因はユーザー作成した後のパスワード設定した時にヘマしたようです。   別ユーザー作った後に、デフォルトのpostgresのパスワード変えてしまったというorz  </description>
+      <guid>https://tech.k-zak.com/2010/04/27/reset-postgresql/</guid>
+      <description>機能PostgreSQLのユーザー作ったり消したりDBやテーブル作成したりしていたら、</description>
     </item>
     
     <item>
       <title>MacにPostgreSQLを入れてみた</title>
-      <link>http://tech.k-zak.com/2010/04/26/mac-install-postgresql/</link>
+      <link>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</link>
       <pubDate>Mon, 26 Apr 2010 12:39:03 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/26/mac-install-postgresql/</guid>
-      <description>XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。
-   参考：Mac OS XでPostgreSQLを使ってみよう     基本これの通りに進めます。リンクにある通り、Mac用のインストーラーを使って簡単に   入れる事が出来ます。     インストール後、スタックビルダなるものでphppgadminを入れるに際し、既にXAMPPの中に   PHPもApacheも入っているのに改めてApacheとPHPを入れさせられたのにはとっと不安。   JDBCドライバだけにしておけば良かったかしら？     とりあえず、上記のリンクからインストール、shellで簡単に操作、phpPgAdminで簡単に操作   までをざっくり出来ます。     インストール後の中身を見てみると、pgAdmin?なんてのがありますね。もしかしてphpPgAdmin   いらなかった？     いずれにしろ現在自分のMac内でApacheとPHPが２つ存在してしまっているので、   今度掃除しよう。  </description>
+      <guid>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</guid>
+      <description>XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。</description>
     </item>
     
     <item>
       <title>MT入れてみた</title>
-      <link>http://tech.k-zak.com/2010/04/25/first-mt/</link>
+      <link>https://tech.k-zak.com/2010/04/25/first-mt/</link>
       <pubDate>Sun, 25 Apr 2010 13:56:34 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/25/first-mt/</guid>
-      <description>MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような
- 目的なら、無料のようなので、何事も経験経験。Web屋じゃないのでもしかしたら   一生、仕事で触れる事無いかもしれないけど、ふにゃふにゃやってみる。     １、ダウンロード   MovableTypeのサイト行ってダウンロード：http://www.sixapart.jp/movabletype/     ２、ここの手順にそって設定：http://nsf.jp/movabletype/movabletype.html     終わり。     え？   そうですね、前提条件として１、レンタルサーバー借りてるor自分で持ってる。   ２、MySQL5.x入ってる。３、メール使える。４、FTPアプリ持ってる。   あたりが必要です。     自分はサーバー→さくらのレンタル、MySQL5.xおけ！Perl5.xおけ！メールおけ！   FTPはWinにFFFTPが入ってたので、それを使った。     FTPアプリの代わりとして、Firefoxのアドオンてのもありますじぇ：https://addons.mozilla.org/ja/firefox/addon/684     んで、MTが入って使えるようになったので、特に何の設定もせずとりあえず記事１号を   これにしました。  </description>
+      <guid>https://tech.k-zak.com/2010/04/25/first-mt/</guid>
+      <description>MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような</description>
     </item>
     
   </channel>

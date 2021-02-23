@@ -1,26 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Node.js on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/node.js/</link>
+    <link>https://tech.k-zak.com/tags/node.js/</link>
     <description>Recent content in Node.js on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 07 Dec 2017 13:56:42 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 07 Dec 2017 13:56:42 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Socket.io</title>
-      <link>http://tech.k-zak.com/2017/12/07/socket.io/</link>
+      <link>https://tech.k-zak.com/2017/12/07/socket.io/</link>
       <pubDate>Thu, 07 Dec 2017 13:56:42 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/07/socket.io/</guid>
-      <description> Node.jsとSocket.io Node.jsの復習ついでにSocket.ioを試した。
+      <guid>https://tech.k-zak.com/2017/12/07/socket.io/</guid>
+      <description>Node.jsとSocket.io Node.jsの復習ついでにSocket.ioを試した。
 メモ  emitで送信者から送信者以外全員に送信 broadcastで全員に送信 socket.idを指定することで特定の相手にのみ送信 /namespace#room#idで特定の相手に送信できる。idのみだとダメっぽい。 redisにメッセージを押し込んでおくと複数プロセスでメッセージを共有できる  オマケ alpineのredisのdockerイメージを使うと軽くてお得。
 以下でredisのtail -fぽい感じで全部見れるので便利
-$&amp;gt; redis-cli -h ${HOST} -p ${PORT} monitor  </description>
+$&amp;gt; redis-cli -h ${HOST} -p ${PORT} monitor </description>
     </item>
     
   </channel>

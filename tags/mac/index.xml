@@ -1,37 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mac on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/mac/</link>
-    <description>Recent content in Mac on 開発メモてきな</description>
+    <title>mac on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/mac/</link>
+    <description>Recent content in mac on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 29 Dec 2017 14:36:17 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 29 Dec 2017 14:36:17 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mac Account Broken</title>
-      <link>http://tech.k-zak.com/2017/12/29/mac-account-broken/</link>
+      <link>https://tech.k-zak.com/2017/12/29/mac-account-broken/</link>
       <pubDate>Fri, 29 Dec 2017 14:36:17 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/29/mac-account-broken/</guid>
+      <guid>https://tech.k-zak.com/2017/12/29/mac-account-broken/</guid>
       <description>Macのデータ移行時のトラブル  Macデータ移行した アカウントの権限を壊してしまった。  データ移行した TimeMachineを使うと時間はかかるが何も考えなくても諸々移行できるので便利。用途不定になってしまったHDD(1TB)があったのでそれを新たにTimeMachine用にすることにした
 アカウントの権限を壊してしまった。 データ移行のついでにアカウント名やアカウント情報を変更したら、管理者権限が外れてしまった。まじ焦った。 権限変更やアカウント情報変更用アカウントを用意してそのアカウントでログインして対象アカウントの情報を変更すべき。
-管理者権限が外れてしまったアカウントを復旧させる方法  シングルユーザーモードで起動する(cmd+s押しっぱなし)  rootユーザーでのターミナル操作になる  /sbin/mount -uw /を実行してディスクへの書込許可状態にする rm /var/db/.AppleSetupDoneを実行してセットアップ完了フラグファイルを削除 reboot実行  上記で最初のセットアップウィザードが始まるので、そこで新規に管理者権限を作成する
+管理者権限が外れてしまったアカウントを復旧させる方法  シングルユーザーモードで起動する(cmd+s押しっぱなし)  rootユーザーでのターミナル操作になる   /sbin/mount -uw / を実行してディスクへの書込許可状態にする rm /var/db/.AppleSetupDoneを実行してセットアップ完了フラグファイルを削除 reboot実行  上記で最初のセットアップウィザードが始まるので、そこで新規に管理者権限を作成する
 その後はその新規管理者権限でログインし、権限が壊れてしまった対象アカウントを再度管理者に設定する。
 これでめでたしめでたし。</description>
     </item>
     
     <item>
       <title>MacにPostgreSQLを入れてみた</title>
-      <link>http://tech.k-zak.com/2010/04/26/mac-install-postgresql/</link>
+      <link>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</link>
       <pubDate>Mon, 26 Apr 2010 12:39:03 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/26/mac-install-postgresql/</guid>
-      <description>XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。
-   参考：Mac OS XでPostgreSQLを使ってみよう     基本これの通りに進めます。リンクにある通り、Mac用のインストーラーを使って簡単に   入れる事が出来ます。     インストール後、スタックビルダなるものでphppgadminを入れるに際し、既にXAMPPの中に   PHPもApacheも入っているのに改めてApacheとPHPを入れさせられたのにはとっと不安。   JDBCドライバだけにしておけば良かったかしら？     とりあえず、上記のリンクからインストール、shellで簡単に操作、phpPgAdminで簡単に操作   までをざっくり出来ます。     インストール後の中身を見てみると、pgAdmin?なんてのがありますね。もしかしてphpPgAdmin   いらなかった？     いずれにしろ現在自分のMac内でApacheとPHPが２つ存在してしまっているので、   今度掃除しよう。  </description>
+      <guid>https://tech.k-zak.com/2010/04/26/mac-install-postgresql/</guid>
+      <description>XAMPPは既に入っているんですけども、勉強のため、PostgreSQLも入れてみました。</description>
     </item>
     
   </channel>

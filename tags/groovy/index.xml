@@ -1,36 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Groovy on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/groovy/</link>
+    <link>https://tech.k-zak.com/tags/groovy/</link>
     <description>Recent content in Groovy on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 12 Dec 2017 14:04:58 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/groovy/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 12 Dec 2017 14:04:58 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/groovy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Groovy TLS</title>
-      <link>http://tech.k-zak.com/2017/12/12/groovy-tls/</link>
+      <link>https://tech.k-zak.com/2017/12/12/groovy-tls/</link>
       <pubDate>Tue, 12 Dec 2017 14:04:58 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/12/groovy-tls/</guid>
+      <guid>https://tech.k-zak.com/2017/12/12/groovy-tls/</guid>
       <description>久しぶりにGroovyを触った Groovyで作成したプログラムがTLSで通信できるようにしないといけなくなったので少し調べた。
 Javaの場合 javaで強制的にTLS1.2を使うようにするにはJVM起動時オプションを渡す Java7はデフォルトでTLS利用可能 Java8はデフォルトでTLS1.2使える
 JVM起動オプションに
--Dhttps.protocols=TLSv1.1,TLSv1.2 -Djdk.tls.client.protocols=TLSv1.1,TLSv1.2  を指定する。Eclipse等IDEの場合はJREの起動VMオプション設定に追加する。
-Groovyの場合 System.properties[‘https.protocols’] = ‘TLSv1.1,TLSv1.2 ’ System.properties[‘jdk.tls.client.protocols’] = ‘TLSv1.1,TLSv1.2 ’  これシステムプロパティを書き換えてるので、同時に他社のJVMプログラムとかあったりすると影響与えそうなんだけど&amp;hellip;&amp;hellip;</description>
+-Dhttps.protocols=TLSv1.1,TLSv1.2 -Djdk.tls.client.protocols=TLSv1.1,TLSv1.2 を指定する。Eclipse等IDEの場合はJREの起動VMオプション設定に追加する。
+Groovyの場合 System.properties[‘https.protocols’] = ‘TLSv1.1,TLSv1.2 ’ System.properties[‘jdk.tls.client.protocols’] = ‘TLSv1.1,TLSv1.2 ’ これシステムプロパティを書き換えてるので、同時に他社のJVMプログラムとかあったりすると影響与えそうなんだけど&amp;hellip;&amp;hellip;</description>
     </item>
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
+      <link>https://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
-      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る
+      <guid>https://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
+      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
 まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
 Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
 Perl,Python,Rubyについては全然触れなくてフラストレーション。
@@ -39,7 +35,7 @@ PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.
 家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
 PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
 枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
+Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
     </item>
     
   </channel>

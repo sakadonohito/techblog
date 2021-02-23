@@ -1,24 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Netbeans on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/netbeans/</link>
-    <description>Recent content in Netbeans on 開発メモてきな</description>
+    <title>NetBeans on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/netbeans/</link>
+    <description>Recent content in NetBeans on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 10 Apr 2011 06:55:10 +0000</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/netbeans/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 10 Apr 2011 06:55:10 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/netbeans/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ちっともすすまない</title>
-      <link>http://tech.k-zak.com/2011/04/10/milestone/</link>
+      <link>https://tech.k-zak.com/2011/04/10/milestone/</link>
       <pubDate>Sun, 10 Apr 2011 06:55:10 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/10/milestone/</guid>
-      <description>前に更新したのはいつの頃か・・・
-   中身に進歩がないのが更新がない証拠。。     先日、MovableTypeにもう一つブログ追加しました。   元々Microsoftのスペースっていうブログの場所でゲームとか趣味関連の少し   やってたんですが、閉鎖されたので、心機一転こちらで始めました。     この間、初めてAmazonアソシエイトのIDとったのでのリンクバシバシ貼ろうと思います。     このブログで書くようなジャンルの事では、最近NetBeansをインスコしてみました。   Eclipseでは無視してたんですが、サンプルプロジェクト作成して中のコード読むのって   結構勉強になるんじゃないかって考えてます。     まだまともに触れてないレベルですが、NetBeansはEclipseに比べて軽い気がします。   まぁ、設定とかプラグインとかそういうところは圧倒的にEclipseなんでしょうけど。     今はNetBeansでRuby on Rails　のサンプル作成したら、Railsのバージョンがおかしいとか   エラー出てハマってます(-_- 😉   ここのブログは今後、作業日誌的な、勉強、開発そういったことを何かしたら   それを簡潔に書く。そうやって続けていこうかと。     いつになったら図や画像ありの記事になれるのか・・・     NetBeansの日本語サイト：http://ja.netbeans.org/  </description>
+      <guid>https://tech.k-zak.com/2011/04/10/milestone/</guid>
+      <description>前に更新したのはいつの頃か・・・</description>
     </item>
     
   </channel>

@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ecs on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/ecs/</link>
-    <description>Recent content in Ecs on 開発メモてきな</description>
+    <title>ECS on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/ecs/</link>
+    <description>Recent content in ECS on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 31 Mar 2017 18:01:34 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/ecs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 31 Mar 2017 18:01:34 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/ecs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>jaws-ug container</title>
-      <link>http://tech.k-zak.com/2017/03/31/jaws-ug-container/</link>
+      <link>https://tech.k-zak.com/2017/03/31/jaws-ug-container/</link>
       <pubDate>Fri, 31 Mar 2017 18:01:34 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/31/jaws-ug-container/</guid>
+      <guid>https://tech.k-zak.com/2017/03/31/jaws-ug-container/</guid>
       <description>JAWS-UG コンテナ支部 の勉強会に行ってきた 行ってきた。。
 前佛さんのお話 Dockerは仕様でコンテナが技術っていう話。
 開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。
@@ -36,7 +32,7 @@ API Gateway を通じてリクエストを受け取り、ECS環境でバッチ�
 ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。
 すごい。
 NTTとDocker ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。
-ECSを活用する上での勘所 データについて  なるべくDocker Volumeを使わないで済む設計にする  いつでもインスタンスを捨てられるようにする設計 永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する awslogs ログドライバ便利です。積極的に使っていきましょう。  URLパスの設計  ALBを活用しましょう 関連サービスのエントリポイントとかは環境変数で渡しましょう。  セッションの管理  インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い ElastiCache,Redis,Memcachedを活用しましょう。    環境構築について 書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</description>
+ECSを活用する上での勘所 データについて  なるべくDocker Volumeを使わないで済む設計にする  いつでもインスタンスを捨てられるようにする設計 永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する awslogs ログドライバ便利です。積極的に使っていきましょう。   URLパスの設計  ALBを活用しましょう 関連サービスのエントリポイントとかは環境変数で渡しましょう。   セッションの管理  インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い ElastiCache,Redis,Memcachedを活用しましょう。    環境構築について 書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</description>
     </item>
     
   </channel>

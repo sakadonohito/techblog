@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Log on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/log/</link>
+    <link>https://tech.k-zak.com/tags/log/</link>
     <description>Recent content in Log on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 25 Oct 2014 16:10:39 +0000</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/log/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 25 Oct 2014 16:10:39 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/log/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>思い出せない</title>
-      <link>http://tech.k-zak.com/2014/10/25/milestone/</link>
+      <link>https://tech.k-zak.com/2014/10/25/milestone/</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/10/25/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/10/25/milestone/</guid>
       <description>前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
 サーバー関係 ログローテーションの設定を行った。
 yum install logrotate

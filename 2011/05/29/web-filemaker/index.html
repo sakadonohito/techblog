@@ -5,15 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 		<title>開発メモてきな</title>
-		<link rel="stylesheet" href="http://tech.k-zak.com/css/style.css" type="text/css"/>
+		<link rel="stylesheet" href="https://tech.k-zak.com/css/style.css" type="text/css"/>
 
 	</head>
 	<body>
 		<div class="wrapper">
 			<header class="site-main">
 	<div class="header-image-main">
-		<img alt="サイトのメインテーマ画像" src="http://tech.k-zak.com/image/top-min.png"/>
-		<a href="http://tech.k-zak.com/" class="site-title">開発メモてきな</a>
+		<img alt="サイトのメインテーマ画像" src="https://tech.k-zak.com/image/top-min.png"/>
+		<a href="https://tech.k-zak.com/" class="site-title">開発メモてきな</a>
 	</div>
 </header>
 
@@ -27,249 +27,76 @@
 				<ul class="horizontal-list-over767">
 					<li>Published: 2011年05月29日</li>
 				</ul>
-				<p>Category:  <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a>  <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a> </p>
+				<p>Category:  <a href="https://tech.k-zak.com/categories/setting-construction/">setting-construction</a>  <a href="https://tech.k-zak.com/categories/study-daily/">study-daily</a> </p>
 			</header>
 			<section>
 				<p><p>FileMaker用のブログに書こうかと思ったけどこちらに書く</p>
-
-<div>
-  FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの
-</div>
-
-<div>
-  データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて
-</div>
-
-<div>
-  ２つの方法があります。
-</div>
-
-<div>
-  １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する
-</div>
-
-<div>
-  ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。
-</div>
-
-<div>
-</div>
-
-<div>
-  で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。
-</div>
-
-<div>
-</div>
-
-<div>
-  ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。
-</div>
-
-<div>
-  ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では
-</div>
-
-<div>
-  載っていない文法のXMLが返ってくる。
-</div>
-
-<div>
-  具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に
-</div>
-
-<div>
-  rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが
-</div>
-
-<div>
-  rowタグの中にあるのではなく、本当に&#8221;col&#8221;という名のタグが入っているからメタタグの
-</div>
-
-<div>
-  カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー
-</div>
-
-<div>
-</div>
-
-<div>
-  で、世間ではどうしているのかというと、
-</div>
-
-<div>
-  a,FileMaker文法を解釈するxsltで開発
-</div>
-
-<div>
-  b,PHPでライブラリが出ているのでそれを使う(FX.php)
-</div>
-
-<div>
-  c,Rubyでライブラリが出ているのでそれを使う(rfm)
-</div>
-
-<div>
-  d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)
-</div>
-
-<div>
-</div>
-
-<div>
-  ってところ。
-</div>
-
-<div>
-  実際にはFX.phpを利用するのがメジャーでしょう。。
-</div>
-
-<div>
-  これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、
-</div>
-
-<div>
-  案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は
-</div>
-
-<div>
-  ある程度覚えておいたほうが良いと思う。
-</div>
-
-<div>
-</div>
-
-<div>
-  ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを
-</div>
-
-<div>
-  作れさえすれば、言語は何でも良いという事。
-</div>
-
-<div>
-  なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。
-</div>
-
-<div>
-  Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど
-</div>
-
-<div>
-  Perlは自分には無理。そもそもPerlがほぼ分からない。
-</div>
-
-<div>
-</div>
-
-<div>
-  Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては
-</div>
-
-<div>
-  Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている
-</div>
-
-<div>
-  ようなので、将来性は微妙。
-</div>
-
-<div>
-</div>
-
-<div>
-  Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの
-</div>
-
-<div>
-  両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを
-</div>
-
-<div>
-  継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。
-</div>
-
-<div>
-</div>
-
-<div>
-  PHPのFX.phpはCodeIgniterやCakePHPでモデルとして使えるような方法が出来ている。
-</div>
-
-<div>
-</div>
-
-<div>
-  一方、Rubyのはちょっと分かりづらい。いや正確にはRailsを理解しないまま試し他自分が
-</div>
-
-<div>
-  悪いのですけど。。。
-</div>
-
-<div>
-  現状では、Railsの設定でActiveRecordを使わない設定にしてControllerに全て処理を書く
-</div>
-
-<div>
-  みたいなやり方になってしまうようです。
-</div>
-
-<div>
-  Railsの仕組みやRubyのmix-inの仕組みとか理解できると別の方法が見つかりそうですけど。
-</div>
-
-<div>
-</div>
-
-<div>
-</div>
-
-<div>
-  ◆PHPでFileMaker
-</div>
-
-<div>
-  ・FX.php <a href="http://msyk.net/fmp/fx_ja/">http://msyk.net/fmp/fx_ja/</a>
-</div>
-
-<div>
-  ・CodeIgniter でFX.php
-</div>
-
-<div>
-  <a href="http://codeigniter.com/wiki/FilemakerPro_Database_Integration/">http://codeigniter.com/wiki/FilemakerPro_Database_Integration/</a>
-</div>
-
-<div>
-  ・CakePHPでFX.php <a href="http://www.beezwax.net/solutions/FMCakeMix">http://www.beezwax.net/solutions/FMCakeMix</a>
-</div>
-
-<div>
-</div>
-
-<div>
-  ◆RubyでFileMaker
-</div>
-
-<div>
-  ・rfm <a href="http://www.famlog.jp/rfm/">http://www.famlog.jp/rfm/</a>
-</div>
-
-<div>
-</div>
-
-<div>
-  ◆PythonでFileMaker
-</div>
-
-<div>
-  ・PyFileMaker <a href="http://code.google.com/p/pyfilemaker/">http://code.google.com/p/pyfilemaker/</a>
-</div>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 </p>
 			</section>
 			<footer>
-				<p>tags:  <a href="http://tech.k-zak.com/tags/filemaker/">#FileMaker</a>,  <a href="http://tech.k-zak.com/tags/php/">#PHP</a>,  <a href="http://tech.k-zak.com/tags/python/">#Python</a>,  <a href="http://tech.k-zak.com/tags/ruby/">#Ruby</a>, </p>
+				<p>tags:  <a href="https://tech.k-zak.com/tags/filemaker/">#FileMaker</a>,  <a href="https://tech.k-zak.com/tags/php/">#PHP</a>,  <a href="https://tech.k-zak.com/tags/python/">#Python</a>,  <a href="https://tech.k-zak.com/tags/ruby/">#Ruby</a>, </p>
 			</footer>
 		</article>
 	</div>
@@ -281,197 +108,197 @@
 			<p>Categories</p>
 			<ul>
 				
-				<li><a href="http://tech.k-zak.com/categories/setting-construction">setting-construction</a>(37)</li>
+				<li><a href="https://tech.k-zak.com/categories/setting-construction">setting-construction</a>(37)</li>
 				
-				<li><a href="http://tech.k-zak.com/categories/study-daily">study-daily</a>(91)</li>
+				<li><a href="https://tech.k-zak.com/categories/study-daily">study-daily</a>(91)</li>
 				
-				<li><a href="http://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(6)</li>
+				<li><a href="https://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(6)</li>
 				
 			</ul>
 		</section>
 		<section>
-			<p><a href="http://tech.k-zak.com/tags/">Tags</a></p>
+			<p><a href="https://tech.k-zak.com/tags/">Tags</a></p>
 			<ul>
 				
-				<li><a href="http://tech.k-zak.com/tags/ansible">ansible</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/ansible">ansible</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/anyenv">anyenv</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/anyenv">anyenv</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/apache">apache</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/apache">apache</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/aws">aws</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/aws">aws</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/aws-lambda">aws-lambda</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/aws-lambda">aws-lambda</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/batch">batch</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/batch">batch</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/books">books</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/books">books</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/cakephp">cakephp</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/cakephp">cakephp</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/character">character</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/character">character</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/cmd">cmd</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/cmd">cmd</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/complain">complain</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/complain">complain</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/css">css</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/css">css</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/django">django</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/django">django</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/docker">docker</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/docker">docker</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ecs">ecs</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/ecs">ecs</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/emacs">emacs</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/emacs">emacs</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/env">env</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/env">env</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/etc">etc</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/etc">etc</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fastcgi">fastcgi</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/fastcgi">fastcgi</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/filemaker">filemaker</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/filemaker">filemaker</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fmxj">fmxj</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/fmxj">fmxj</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/golang">golang</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/golang">golang</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/groovy">groovy</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/groovy">groovy</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/html">html</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/html">html</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/hugo">hugo</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/hugo">hugo</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/iis">iis</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/iis">iis</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/imap">imap</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/imap">imap</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/java">java</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/java">java</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jaws-ug">jaws-ug</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/jaws-ug">jaws-ug</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jekyll">jekyll</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/jekyll">jekyll</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jquery">jquery</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/jquery">jquery</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/laravel4">laravel4</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/laravel4">laravel4</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/log">log</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/log">log</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/lolipopcloud">lolipopcloud</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/lolipopcloud">lolipopcloud</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mac">mac</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/mac">mac</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/markdown">markdown</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/markdown">markdown</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mastodon">mastodon</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mastodon">mastodon</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mojolicious">mojolicious</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mojolicious">mojolicious</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mojoliciouslite">mojoliciouslite</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mojoliciouslite">mojoliciouslite</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/movabletype">movabletype</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/movabletype">movabletype</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mysql">mysql</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/mysql">mysql</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/netbeans">netbeans</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/netbeans">netbeans</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/network">network</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/network">network</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/node.js">node.js</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/node.js">node.js</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/oracle">oracle</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/oracle">oracle</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/otrs">otrs</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/otrs">otrs</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/perl">perl</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/perl">perl</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/php">php</a>(21)</li>
+				<li><a href="https://tech.k-zak.com/tags/php">php</a>(21)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/postfix">postfix</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/postfix">postfix</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/powershell">powershell</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/powershell">powershell</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/python">python</a>(15)</li>
+				<li><a href="https://tech.k-zak.com/tags/python">python</a>(15)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/rails">rails</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/rails">rails</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/rbenv">rbenv</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/rbenv">rbenv</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/react">react</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/react">react</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/redux">redux</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/redux">redux</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/s3">s3</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/s3">s3</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/selenium">selenium</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/selenium">selenium</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/socket.io">socket.io</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/socket.io">socket.io</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/swift">swift</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/swift">swift</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/terraform">terraform</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/terraform">terraform</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/typescript">typescript</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/typescript">typescript</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
+				<li><a href="https://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/vagrant">vagrant</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/vagrant">vagrant</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/vscode">vscode</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/vscode">vscode</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/webpack">webpack</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/webpack">webpack</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/windowsserver">windowsserver</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/windowsserver">windowsserver</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/wkhtmltopdf">wkhtmltopdf</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/wkhtmltopdf">wkhtmltopdf</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/wordpress">wordpress</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/wordpress">wordpress</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/xcode">xcode</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/xcode">xcode</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/zend-framework">zend-framework</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/zend-framework">zend-framework</a>(1)</li>
 				
 			</ul>
 		</section>

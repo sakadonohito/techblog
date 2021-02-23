@@ -1,25 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ruby on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/ruby/</link>
+    <link>https://tech.k-zak.com/tags/ruby/</link>
     <description>Recent content in Ruby on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 27 Mar 2017 23:36:40 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 27 Mar 2017 23:36:40 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>challenge mackerel plugin</title>
-      <link>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</link>
+      <link>https://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</link>
       <pubDate>Mon, 27 Mar 2017 23:36:40 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</guid>
+      <guid>https://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</guid>
       <description>Mackerelのカスタムメトリクスに挑戦 して撃沈。
 何が起きたか 公式のヘルプ を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。
-YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;quot;}\&amp;quot; unexpected (expecting \&amp;quot;then\&amp;quot;)\n&amp;quot;  改行が足りない？
+YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;quot;}\&amp;quot; unexpected (expecting \&amp;quot;then\&amp;quot;)\n&amp;quot; 改行が足りない？
 rubyファイルを単独で実行すると動くので謎。
 これだからRubyは。
 とりあえず、Mackerelは初期設定のままのメトリクスだけでいいや。</description>
@@ -27,10 +23,10 @@ rubyファイルを単独で実行すると動くので謎。
     
     <item>
       <title>Challenged Jekyll template and hate</title>
-      <link>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</link>
+      <link>https://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</link>
       <pubDate>Sun, 26 Mar 2017 18:32:49 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</guid>
+      <guid>https://tech.k-zak.com/2017/03/26/challenged-jekyll-template-and-hate/</guid>
       <description>Jekyllの画面(テンプレート)作った 結論から言うと、二度と使いたくない。
 Pelicanの方がいいや。
 やりたかったこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る アーカイブ(年月)ごとの記事一覧ページを作る アーカイブ(年月)の一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る  できたこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、Aboutのリンクを作る  乗り越えた事 HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。
@@ -50,11 +46,11 @@ Pelicanの場合、記事リストをgroup by　した結果をそのままfor�
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
+      <link>https://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
-      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る
+      <guid>https://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
+      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
 まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
 Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
 Perl,Python,Rubyについては全然触れなくてフラストレーション。
@@ -63,15 +59,15 @@ PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.
 家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
 PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
 枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
+Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
     </item>
     
     <item>
       <title>2014年の目標達成進捗管理的な</title>
-      <link>http://tech.k-zak.com/2014/01/04/milestone/</link>
+      <link>https://tech.k-zak.com/2014/01/04/milestone/</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/01/04/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/01/04/milestone/</guid>
       <description>新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
 事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
 とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
@@ -79,136 +75,166 @@ Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいの�
 要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。
 という事で設定作業開始
 環境:  ホストOS：OS X10.9 ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T)) nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します) ruby2.0.0dev(rbenv) unicorn4.7.0 rails3.2.16 redmine2.4.2  rbenvにruby2.0を追加してデフォルトにする rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。
-参考：rbenvを利用して複数バージョンのRubyをインストール
-~$ rbenv install 2.0.0rc-2 ~$ rbenv global 2.0.0rc-2 ~$ rbenv rehash ※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
+参考：rbenvを利用して複数バージョンのRubyをインストール※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
 rehashの時だけsh-rehashがうんたらってエラーになる。
 ruby2.0の状態でgem update でアップデートしてbundler入れる。
-~$ gem update ~$ gem install bundler ~$ gem install mysql2 ~$ ~/.rbenv/bin/rbenv rehash  MySQL側の準備 redmienユーザーの作成と
+MySQL側の準備 redmienユーザーの作成と
 データベース：redmineの作成
 redmine入れる ここから最新のredmineをダウンロード(今回は2.4.2)
 うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。
 DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。
 redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。
-~$ cd redmineディレクトリの場所 ~$ echo &#34;gem &#39;unicorn&#39;&#34;  Gemfile.</description>
+bundleでのインストールが初めてだったので、なんか引数与えてやってみたかったてのと、
+最初rmagick関連でエラー出たっぽいのでwithoutに指定した。原因は究明しない！
+ここまでで自分が詰まったのは、最初bundler入れた後rehashしてなくてbundle installのとろこで、bundler入ってねぇよ！apt-getで入れろ！ってエラー出てアワアワしてた。どうもbundler入れた後にもrehashが必要らしい。今は何故かは調べない。
+必要最小限にしてなかったせいか、ここでワンサカいろいろインストールされた。気がする。
+インストールされたgemを見た所、railsは上記環境で記載したバージョンになっていたです。
+終わったら、database.ymlのproductionの所を編集して自分の環境でDB接続できるようにする。
+開発用じゃなくてredmine使うだけなので最初からproduction。
+ここで一旦Webrickで動くか確認。
+動かねぇ！調べてたらお決まりの必要な処理がある事を知った。
+その１その２書いてあることの真似をする。
+終わったら再度チャレンジでWebrickが起動しました。やったね。
+redmineのadminユーザーのデフォルトのパスワードがわからない！ 解決策はここ。
+unicornの設定 めんどくさくなってきた。上記の２リンクと関連リンクのGithubと、やや簡潔にかいてあるブログを参考に設定ファイルを書いていきましたので詳細は省きます。
+１，unicorn.rbを作成。
+２，unicornのデーモン
+自分が作業した手順としては一気にnginxの設定編集までしてから確認して動かない！ってなったんだけど、問題切り分けのために、
+ unicornの設定する前段階でWebrickで動かくか(例えば、http://0.0.0.0:3000) unicornの設定した段階でredmine動くか(例えば、http://0.0.0.0:8080)  て接続確認しながら進めたほうが良いと思われます。
+nginxの設定編集 既にnginxが動いている環境のため、redmine専用の設定どうするのか戸惑ったけど、単にserverディレクティブを追加すればいいみたい。upstreamディレクティブも既存の仮想ホスト設定に悪影響は出ていないみたいだ。
+最終的な結論から言うと動いたけど、参考にしたブログなんかと設定がちょい違う。
+ ローカルで動かしているせいかhostsファイルにredmine用の仮想URLを追記したら動いた。※追記前は参考記事と同じ設定にしても動かなかった。 動かすのに使った指定は  upstreamのunixソケットの指定 追加仮想ホストのlisten port 追加仮想ホストのserver_name 追加仮想ホストのroot 追加仮想ホストのaccess_log 追加仮想ホストのerror_log 追加仮想ホストのlocation / にファイルじゃなかったらproxy_passの分岐 上記if文が真の時のproxy_passの指定を「http://」+「upstreamに記述した名前」    proxy_pass以外のproxyの設定は一つも書いてないけど動きます。なんでだろう。</description>
     </item>
     
     <item>
       <title>パスカルのなんとか</title>
-      <link>http://tech.k-zak.com/2013/12/22/pascal-logic/</link>
+      <link>https://tech.k-zak.com/2013/12/22/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
+      <guid>https://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
       <description>今回は、パスカルの三角定理？みたいなやつ
 PHPでは、
-&amp;lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&amp;lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&amp;lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(&#39;,&#39;,$arr).&#34;\n&#34;; } ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; my $num = &amp;lt;stdin; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&amp;lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&amp;lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(&#39;,&#39;,@list).&#34;\n&#34;; } &amp;lt;/stdin Pythonでは、</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+Rubyはもっとシンプルな書き方があるのかもしれない。</description>
     </item>
     
     <item>
       <title>コーディングリハビリ06</title>
-      <link>http://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
-&amp;lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&amp;lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&amp;lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(&#39;,&#39;,$arr).&#34;\n&#34;; } ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; my $num = &amp;lt;STDIN&amp;gt;; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&amp;lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&amp;lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(&#39;,&#39;,@list).&#34;\n&#34;; }  Pythonでは、</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+習熟度が低いのでPerlとPHPが同じ内容になる。
+pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。
+すんなり1つのリストだけでできないものか……</description>
     </item>
     
     <item>
       <title>コーディングリハビリ05</title>
-      <link>http://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
       <description>昨日の文字チェックをPHP以外で試す。
 与えられた文字列が全てユニークな文字で構成されているかのチェック。
 PHPは前回やっているので、今回は掲載無し。
 Perlでは、
-#!/usr/bin/perl use strict; use warnings; sub check_unique{ my $str = shift; my $len = length($str); for(my $i=0;$i&amp;lt;$len;$i++){ my $char = substr($str,$i); if(index($str,$char) != rindex($str,$char)){ return &#34;False&#34;; } } return &#34;True&#34;; } my $input = &#39;1234567890-=\`!@#$%^&amp;*()_+|~qwertyuiop[]QWERTYUIOP{}ASDFGHJKL:&#34;asdfghjkl;\&#39;zxcvbnm,./ZXCVBNM&amp;lt;&amp;gt;?&#39;; #my $input = &amp;lt;STDIN&amp;gt;; #chomp($input); print check_unique($input).&#34;\n&#34;; Pythonでは、
-#!/usr/bin/python #--*-- coding: utf-8 --*-- import datetime def check_unique(str): set_str = set(list(str)) if len(str) == len(set_str): return True else: return False if __name__ == &#34;</description>
+Pythonでは、
+Rubyでは、
+文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。
+配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。
+pythonが一番スッキリしているようだけど、やっぱりRubyかな</description>
     </item>
     
     <item>
       <title>コーディングリハビリ03</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo03/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
-&amp;lt;?php function bubble_sort(array $arr,$r){ if(1 == $r){ return $arr; } $len = count($arr)-1; for($i=0;$i&amp;lt;$len;$i++){ if($arr[$i] &amp;gt; $arr[$i+1]){ $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } return bubble_sort($arr,$r-1); } $input = trim(fgets(STDIN)); $arr = explode(&#34;,&#34;,$input); echo implode(&#34;,&#34;,bubble_sort($arr,count($arr))).&#34;\n&#34;; ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; sub bubble_sort{ my($arr,$r) = @_; my @arr = @{$arr}; if(1 == $r){ return @arr; }else{ my $len = @arr; for(my $i=0;$i&amp;lt;$len-1;$i++){ if($arr[$i] &amp;gt; $arr[$i+1]){ my $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } bubble_sort(\@arr,$r-1) } } my $input = &amp;lt;STDIN&amp;gt;; chomp($input); my @arr = split(&#39;,&#39;,$input); print join(&#34;</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+Rubyが一番スマートかな</description>
     </item>
     
     <item>
       <title>コーディングリハビリ02</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo02/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
       <description>リハビリその２
 今回は、ファイル読み込みとその時の簡単な例外処理
 読み込むテキストファイルの内容は以下の通り、
-7 1000 1992 あ A 2000 2001 1900 16 12 400  PHPでは、
-&amp;lt;?php function isLeap($year=null){ if($year == null) return false; $intYear = (int)$year; if(0 != $intYear%4){ return false; }elseif(0 == $intYear%400){ return true; }elseif(0 == $intYear%100){ return false; }else{ return true; } } try{ if(!file_exists(&#34;leap.txt&#34;)){ throw new Exception(&#34;ファイルが見つかりません。&#34;); } $fp = fopen(&#34;leap.txt&#34;,&#34;r&#34;); $lines = fgets($fp); for($i=0;$i&amp;lt;$lines;$i++){ $year = trim(fgets($fp)); printf(&#34;%s is%s a leap year\n&#34;, $year,((isLeap($year))?&#34;&#34;:&#34; not&#34;)); } fclose($fp); }catch(Exception $e){ echo $e-&amp;gt;getMessage().</description>
+PHPでは、
+Perlでは、
+Pythonでは、
+Rubyでは、
+うるう年の判定処理は適当。pythonが一番しっくりくるかな。
+rubyはreturnを省略した場合に最後に評価された値がreturnされるんだけど、pythonもだと勘違いしててハマった。</description>
     </item>
     
     <item>
       <title>コーディングリハビリ01</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo01/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
       <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
 paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
 という事でリハビリ。
 今回は標準入力。
 PHPでは、
-&amp;lt;?php //標準入力をfgets関数で取得して前後の空白や改行文字を削り取る $input = trim(fgets(STDIN)); ?&amp;gt; Perlでは、
-use strict; use warnings; my $input = &amp;lt;STDIN&amp;gt;; #行末の改行文字を削る chomp($input); Pythonでは、
-input = raw_input() #行末の改行文字とるのは厳密にはいろいろあるらしいので今回は無視 Rubyでは、
-input = gets.chomp 標準入力が「gets」だけで取れるRubyはダンディ。</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+標準入力が「gets」だけで取れるRubyはダンディ。</description>
     </item>
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
 各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
 layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
 このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
-&amp;nbsp;
-Ruby：Sinatra
+ Ruby：Sinatra
 →Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
 ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
 これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
-&amp;nbsp;
-PHP：FuelPHP
+ PHP：FuelPHP
 →最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
 これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
 コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
 public/assetsて階層に配置するんですね。
-&amp;nbsp;
-PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
+ PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
 OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
-出来ないとかで&amp;#8230;&amp;#8230;</description>
+出来ないとかで……</description>
     </item>
     
     <item>
       <title>FileMakerとRubyのSinatra</title>
-      <link>http://tech.k-zak.com/2012/01/07/study-sinatra/</link>
+      <link>https://tech.k-zak.com/2012/01/07/study-sinatra/</link>
       <pubDate>Sat, 07 Jan 2012 10:50:19 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/01/07/study-sinatra/</guid>
+      <guid>https://tech.k-zak.com/2012/01/07/study-sinatra/</guid>
       <description>Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？
 と思ったのでやってみました。
 gihyo.jp:第９回 SinatraとSequel・Hamlで掲示板アプリを作る
@@ -217,26 +243,46 @@ http://gihyo.jp/dev/serial/01/ruby/0009
 置換えました。
 ※FileMakerやRuby、Sinatraそのものの細かい説明は省きます。
 最終的な階層は以下(見本のファイルも混在してます)
-&amp;#8212;
-app/ start.rb model/ comment.rb view / layout.haml index.haml fmbbs.haml style.sass &amp;#8212;
+—
+—
 FileMaker部分
 ・bbsテーブルの作成、カラムは見本のapp/model/comment.rb内で定義しているクラス
 Commentsを真似て定義。但し、posted_dateはFileMaker側ではtimestamp型で作成時に自動で
 現在のタイムスタンプが入るよう設定。
 Ruby部分
 ・app/model/comment.rbにFileMakerとの接続クラス追加
-&amp;#8212;以下をcomment.rbに追加&amp;#8212;
-require &#39;rfm&#39; class FMServer def initialize() @FM_CONFIG = { :host =&amp;gt; &#34;FileMakerServerの接続先IP&#34;, :account_name =&amp;gt; &#34;FileMakerFileのログインアカウント&#34;, :password =&amp;gt; &#34;FileMakerFileのログインパスワード&#34;, :database =&amp;gt; &#34;FileMakerFileの名前&#34;, :ssl =&amp;gt; false, :root_cert =&amp;gt; false, } @fm = Rfm::Server.new(@FM_CONFIG) end def listAll(lay,sortCond) return @fm[@FM_CONFIG[:database]][lay].all(sortCond) end def create(lay,obj) @fm[@FM_CONFIG[:database]][lay].create(obj) end end ・hamlを編集(追加)</description>
+—以下をcomment.rbに追加—
+・hamlを編集(追加)
+—app/view/fmbbs.haml
+※HamlはPythonのようにインデントが文法になってるので注意！
+・app/start.rbを編集
+—app/start.rbを以下のように変更—
+・rfm(lardawge-rfm)をインストールするの忘れずに！
+$ sudo gem install lardawge-rfm
+GitHub：https://github.com/lardawge/rfm
+これでstart.rbのある位置をカレントにして
+$ ruby -rubygems start.rb
+これで
+http://localhost:4567/fmbbs
+で試せます。簡単ですね！
+今回、自分がつまずいた所は、
+１，rfm経由でFileMakerにレコード作成(多分編集も同じ)でtimestamp型のカラムに値を
+設定するための方法が分からなかった。※DateTime型だとエラーになる、整形してもエラー
+になる。なんでや！
+→読み込みは出来るので、FileMaker側で作成時自動で値設定にした。
+２，投稿済みデータの降順ソートがうまくいかない！
+→lardawge-rfmでは降順の指定が”desc”ではなく、”descend”だった。
+Railsでやるほどじゃないけどちょっと簡単にFileMakerとWebアプリつなぎたいとか、これで
+どうでしょうか？</description>
     </item>
     
     <item>
       <title>WebフレームワークとFileMaker</title>
-      <link>http://tech.k-zak.com/2011/05/29/web-filemaker/</link>
+      <link>https://tech.k-zak.com/2011/05/29/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
-      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く
- FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの   データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて   ２つの方法があります。   １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する   ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。     で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。     ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。   ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では   載っていない文法のXMLが返ってくる。   具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に   rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが   rowタグの中にあるのではなく、本当に&amp;#8221;col&amp;#8221;という名のタグが入っているからメタタグの   カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー     で、世間ではどうしているのかというと、   a,FileMaker文法を解釈するxsltで開発   b,PHPでライブラリが出ているのでそれを使う(FX.php)   c,Rubyでライブラリが出ているのでそれを使う(rfm)   d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)     ってところ。   実際にはFX.phpを利用するのがメジャーでしょう。。   これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、   案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は   ある程度覚えておいたほうが良いと思う。     ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを   作れさえすれば、言語は何でも良いという事。   なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。   Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど   Perlは自分には無理。そもそもPerlがほぼ分からない。     Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては   Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている   ようなので、将来性は微妙。     Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの   両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを   継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。     PHPのFX.</description>
+      <guid>https://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
+      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く</description>
     </item>
     
   </channel>

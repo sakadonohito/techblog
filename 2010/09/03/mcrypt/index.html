@@ -5,15 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 		<title>開発メモてきな</title>
-		<link rel="stylesheet" href="http://tech.k-zak.com/css/style.css" type="text/css"/>
+		<link rel="stylesheet" href="https://tech.k-zak.com/css/style.css" type="text/css"/>
 
 	</head>
 	<body>
 		<div class="wrapper">
 			<header class="site-main">
 	<div class="header-image-main">
-		<img alt="サイトのメインテーマ画像" src="http://tech.k-zak.com/image/top-min.png"/>
-		<a href="http://tech.k-zak.com/" class="site-title">開発メモてきな</a>
+		<img alt="サイトのメインテーマ画像" src="https://tech.k-zak.com/image/top-min.png"/>
+		<a href="https://tech.k-zak.com/" class="site-title">開発メモてきな</a>
 	</div>
 </header>
 
@@ -27,336 +27,100 @@
 				<ul class="horizontal-list-over767">
 					<li>Published: 2010年09月03日</li>
 				</ul>
-				<p>Category:  <a href="http://tech.k-zak.com/categories/study-daily/">study-daily</a>  <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a> </p>
+				<p>Category:  <a href="https://tech.k-zak.com/categories/study-daily/">study-daily</a>  <a href="https://tech.k-zak.com/categories/setting-construction/">setting-construction</a> </p>
 			</header>
 			<section>
 				<p><p>忘れないうちにメモ</p>
-
-<div>
-</div>
-
-<div>
-  前のMacBokでは成功して、今回新しく購入したMacBookProでなかなかうまくいかなかった事をメモ。
-</div>
-
-<div>
-</div>
-
-<div>
-  て、実はただの勘違いだったんですけど。。。
-</div>
-
-<div>
-</div>
-
-<div>
-  環境はMac OS X 10.6 ( 64bitで常時起動 )
-</div>
-
-<div>
-  ここにApache2.2?とPHP5.3.2が初めから入っているので、MySQL入れて
-</div>
-
-<div>
-  phpMyAdminを入れる。
-</div>
-
-<div>
-</div>
-
-<div>
-  １、MySQL入れる
-</div>
-
-<div>
-  　MySQLのサイトからdmgをダウンロード。理由は楽だから。
-</div>
-
-<div>
-</div>
-
-<div>
-  <a href="http://dev.mysql.com/downloads/mysql/5.1.html">http://dev.mysql.com/downloads/mysql/5.1.html</a>
-</div>
-
-<div>
-</div>
-
-<div>
-  ２、MySQLのPATHを通す
-</div>
-
-<div>
-  　例として(自分の場合)emacsで.bash_profileを編集
-</div>
-
-<div>
-</div>
-
-<div>
-  $ sudo -s emacs
-</div>
-
-<div>
-  ( emacsが起動しました )
-</div>
-
-<div>
-  C-x C-f ( Ctrl + x その後 Ctrl + f でファイル開く )
-</div>
-
-<div>
-   ~/.bash_profileをミニバッファに入力してEnter
-</div>
-
-<div>
-  ( .bash_profileの中身が開く)
-</div>
-
-<div>
-</div>
-
-<div>
-  &#8211;以下中身の記述(追記部分のみ)&#8211;
-</div>
-
-<div>
-</div>
-
-<div>
-  PATH=/usr/local/mysql/bin:$PATH ( MySQLにログインするコマンド用 )
-</div>
-
-<div>
-  PATH=/usr/local/mysql/support-files:$PATH ( MySQLのサービス起動・停止用)
-</div>
-
-<div>
-  ※ファイルの最後にexport $PATHを忘れずに！
-</div>
-
-<div>
-  &#8211;追記部分終了&#8211;
-</div>
-
-<div>
-</div>
-
-<div>
-  これで、
-</div>
-
-<div>
-</div>
-
-<div>
-  $ mysql.server start (or stor or restart)
-</div>
-
-<div>
-  　でサービスの操作。
-</div>
-
-<div>
-</div>
-
-<div>
-  $ mysql ( -u root -p sample )
-</div>
-
-<div>
-  　て感じでMySQLにログインできる。
-</div>
-
-<div>
-  初めてログインする時にrootのパスワード決めた気がする。
-</div>
-
-<div>
-</div>
-
-<div>
-  インストールから設定まで、参照した記事
-</div>
-
-<div>
-  <a href="http://mialweb.ddo.jp/jam/?p=127">http://mialweb.ddo.jp/jam/?p=127</a>
-</div>
-
-<div>
-</div>
-
-<div>
-  本題の前が長いな・・・
-</div>
-
-<div>
-</div>
-
-<div>
-  ３、phpMyAdminを入れる　※今日の本題！！！
-</div>
-
-<div>
-  　まずは、ダウンロード。phpmyadminでぐぐればすぐでてくるでしょ。
-</div>
-
-<div>
-  　※URL忘れた
-</div>
-
-<div>
-</div>
-
-<div>
-  　簡単に設定してアクセス！・・・前にも経験しましたが、この時アラートが
-</div>
-
-<div>
-  　表示されます。「mcrypt拡張がなんたら」と。
-</div>
-
-<div>
-</div>
-
-<div>
-  　で、ここで詰まりました。以前の記憶をもとに有効と思われるキーワードで
-</div>
-
-<div>
-  　色々と検索して試すも駄目。何が原因だったかというと、自分がちゃんと
-</div>
-
-<div>
-  　理解していなかったのと、思い込みでした(爆
-</div>
-
-<div>
-</div>
-
-<div>
-  　先に正解を
-</div>
-
-<div>
-</div>
-
-<div>
-  　?) libmcryptとPHPをダウンロード。
-</div>
-
-<div>
-  　?) libcrypt-2.5.8.tar.gzみたいのを解凍してそのディレクトリをターミナル上で
-</div>
-
-<div>
-  　　カレントにします。
-</div>
-
-<div>
-  　?)ぱんちざこまんど
-</div>
-
-<div>
-  　　$ export CFLAGS=&#8221;-arch x86_64&#8243; ※本当はもっと指定があったけどこれだけしかやらなかったです。
-</div>
-
-<div>
-  　　$ sudo -s ./congirure -disable&#8211;posix-threads &#8211;enable-static
-</div>
-
-<div>
-  　　$ sudo -s make
-</div>
-
-<div>
-  　　$ sudo -s make install
-</div>
-
-<div>
-  　　※常にroot権限で実行できるよう毎回sudoコマンドつけてました。
-</div>
-
-<div>
-</div>
-
-<div>
-  　　自分はここで、libmcrypt.so or mcrypt.so なるライブラリファイルができないぞーうおー！！！
-</div>
-
-<div>
-  　　って１週間近く悩んでました。
-</div>
-
-<div>
-  　　んで、XAMPP落としてきてその中身のファイルぱくればいいんじゃね？
-</div>
-
-<div>
-  　　とかやってましたが、先ほど「mcrypt.soファイル出来るのこのあとの作業でじゃん？」と
-</div>
-
-<div>
-  　　気づきました。時間を返せ＠自分。。
-</div>
-
-<div>
-  　　という事で続き。
-</div>
-
-<div>
-</div>
-
-<div>
-  　　ダウンロードしてきたPHPを解凍し、ターミナル上で以下のディレクトリに移動します。
-</div>
-
-<div>
-  　　$ cd ( ダウンロードしたパス＆ )/php-(ダウンロードしたバージョン)/ext/mcrypt/
-</div>
-
-<div>
-  　　$ sudo -s phpize
-</div>
-
-<div>
-  　　$ sudo -s ./configure
-</div>
-
-<div>
-  　　$ sudo -s make
-</div>
-
-<div>
-  　　はい！ちゃんと作られました！！！ mcrypt.soが！
-</div>
-
-<div>
-  　　後はこいつを現在使っているPHPのextensionディレクトリに放り込む。
-</div>
-
-<div>
-  　　php.iniにextensionsの設定していなければ設定してください。
-</div>
-
-<div>
-  　　こうしてapacheを再起動してみると、ちゃんと適用されましたーーーーー！
-</div>
-
-<div>
-</div>
-
-<div>
-  　　参考記事
-</div>
-
-<div>
-  <a style="text-decoration: underline;" href="http://hatomugi.sakura.ne.jp/forum.php?id=200">http://hatomugi.sakura.ne.jp/forum.php?id=200</a>
-</div>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 </p>
 			</section>
 			<footer>
-				<p>tags:  <a href="http://tech.k-zak.com/tags/mysql/">#MySQL</a>,  <a href="http://tech.k-zak.com/tags/php/">#PHP</a>, </p>
+				<p>tags:  <a href="https://tech.k-zak.com/tags/mysql/">#MySQL</a>,  <a href="https://tech.k-zak.com/tags/php/">#PHP</a>, </p>
 			</footer>
 		</article>
 	</div>
@@ -368,197 +132,197 @@
 			<p>Categories</p>
 			<ul>
 				
-				<li><a href="http://tech.k-zak.com/categories/setting-construction">setting-construction</a>(37)</li>
+				<li><a href="https://tech.k-zak.com/categories/setting-construction">setting-construction</a>(37)</li>
 				
-				<li><a href="http://tech.k-zak.com/categories/study-daily">study-daily</a>(91)</li>
+				<li><a href="https://tech.k-zak.com/categories/study-daily">study-daily</a>(91)</li>
 				
-				<li><a href="http://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(6)</li>
+				<li><a href="https://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(6)</li>
 				
 			</ul>
 		</section>
 		<section>
-			<p><a href="http://tech.k-zak.com/tags/">Tags</a></p>
+			<p><a href="https://tech.k-zak.com/tags/">Tags</a></p>
 			<ul>
 				
-				<li><a href="http://tech.k-zak.com/tags/ansible">ansible</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/ansible">ansible</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/anyenv">anyenv</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/anyenv">anyenv</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/apache">apache</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/apache">apache</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/aws">aws</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/aws">aws</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/aws-lambda">aws-lambda</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/aws-lambda">aws-lambda</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/batch">batch</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/batch">batch</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/books">books</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/books">books</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/cakephp">cakephp</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/cakephp">cakephp</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/character">character</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/character">character</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/cmd">cmd</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/cmd">cmd</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/complain">complain</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/complain">complain</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/css">css</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/css">css</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/django">django</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/django">django</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/docker">docker</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/docker">docker</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ecs">ecs</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/ecs">ecs</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/emacs">emacs</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/emacs">emacs</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/env">env</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/env">env</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/etc">etc</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/etc">etc</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fastcgi">fastcgi</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/fastcgi">fastcgi</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/filemaker">filemaker</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/filemaker">filemaker</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fmxj">fmxj</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/fmxj">fmxj</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/golang">golang</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/golang">golang</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/groovy">groovy</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/groovy">groovy</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/html">html</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/html">html</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/hugo">hugo</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/hugo">hugo</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/iis">iis</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/iis">iis</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/imap">imap</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/imap">imap</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/java">java</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/java">java</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jaws-ug">jaws-ug</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/jaws-ug">jaws-ug</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jekyll">jekyll</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/jekyll">jekyll</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jquery">jquery</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/jquery">jquery</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/laravel4">laravel4</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/laravel4">laravel4</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/log">log</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/log">log</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/lolipopcloud">lolipopcloud</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/lolipopcloud">lolipopcloud</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mac">mac</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/mac">mac</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/markdown">markdown</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/markdown">markdown</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mastodon">mastodon</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mastodon">mastodon</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mojolicious">mojolicious</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mojolicious">mojolicious</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mojoliciouslite">mojoliciouslite</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mojoliciouslite">mojoliciouslite</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/movabletype">movabletype</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/movabletype">movabletype</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mysql">mysql</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/mysql">mysql</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/netbeans">netbeans</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/netbeans">netbeans</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/network">network</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/network">network</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/node.js">node.js</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/node.js">node.js</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/oracle">oracle</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/oracle">oracle</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/otrs">otrs</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/otrs">otrs</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/perl">perl</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/perl">perl</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/php">php</a>(21)</li>
+				<li><a href="https://tech.k-zak.com/tags/php">php</a>(21)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/postfix">postfix</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/postfix">postfix</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/powershell">powershell</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/powershell">powershell</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/python">python</a>(15)</li>
+				<li><a href="https://tech.k-zak.com/tags/python">python</a>(15)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/rails">rails</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/rails">rails</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/rbenv">rbenv</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/rbenv">rbenv</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/react">react</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/react">react</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/redux">redux</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/redux">redux</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/s3">s3</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/s3">s3</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/selenium">selenium</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/selenium">selenium</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/socket.io">socket.io</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/socket.io">socket.io</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/swift">swift</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/swift">swift</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/terraform">terraform</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/terraform">terraform</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/typescript">typescript</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/typescript">typescript</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
+				<li><a href="https://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/vagrant">vagrant</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/vagrant">vagrant</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/vscode">vscode</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/vscode">vscode</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/webpack">webpack</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/webpack">webpack</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/windowsserver">windowsserver</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/windowsserver">windowsserver</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/wkhtmltopdf">wkhtmltopdf</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/wkhtmltopdf">wkhtmltopdf</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/wordpress">wordpress</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/wordpress">wordpress</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/xcode">xcode</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/xcode">xcode</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/zend-framework">zend-framework</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/zend-framework">zend-framework</a>(1)</li>
 				
 			</ul>
 		</section>

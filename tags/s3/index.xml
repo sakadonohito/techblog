@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>S3 on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/s3/</link>
+    <link>https://tech.k-zak.com/tags/s3/</link>
     <description>Recent content in S3 on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 02 Aug 2014 16:02:30 +0000</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/s3/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 02 Aug 2014 16:02:30 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/s3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
+      <link>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
+      <guid>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
       <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
 の、前にAWSのS3試したので。
 ・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る

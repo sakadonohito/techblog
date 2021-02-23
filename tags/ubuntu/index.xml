@@ -1,43 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/ubuntu/</link>
+    <link>https://tech.k-zak.com/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 24 Apr 2017 13:48:14 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 24 Apr 2017 13:48:14 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>setting ntp on Ubuntu</title>
-      <link>http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</link>
+      <link>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</link>
       <pubDate>Mon, 24 Apr 2017 13:48:14 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/2017/04/24/setting-ntp-on-ubuntu/</guid>
       <description>EC2のUbuntu14.04にntpを設定 事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。
 エラー内容はInvalidSigunatureException なんかタイムスタンプが早すぎるみたいなエラー内容。
 Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。 タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。
 要はCognitoでトークンを生成するためのタイムスタンプがずれるのでどうしたってエラーになっちゃう問題。
 時刻がずれていることが原因と分かったので、暫定措置として時刻をあわせる(日本標準時)。 ※サーバーはUbuntu14.04
-sudo ntpdate ntp.nict.jp  ※前提としてntpdateがインストールされていること
+sudo ntpdate ntp.nict.jp ※前提としてntpdateがインストールされていること
 いろいろ調べていたら、EC2でUbuntuを使うならNTPサーバーを利用して下さい的な感じだった。
  EC2インスタンスでの時刻同期について  NTPを入れる 根本解決のため、NTPサーバー機能をいれる。
-sudo apt-get install -y ntp  そんで設定ファイルを編集する。 /etc/ntp.conf
+sudo apt-get install -y ntp そんで設定ファイルを編集する。 /etc/ntp.conf
  デフォルトの時刻サーバーをコメントアウト 代わりにserver ntp.nict.jpを3行書く  上記の設定と内容の説明については他人の記事をご参照ください。
  NTPサーバーの構築 NTPで時刻合わせ  編集したらNTPサーバービスを再起動する
 ぐお、タイムゾーンが 作業したサーバー(どちらもUbuntu14.04)のうち、1つがUTC、1つがJSTのタイムゾーンになってて、キモティ悪かったので、揃える。
-sudo timedatectl set-timezone Asia/Tokyo  これでOK</description>
+sudo timedatectl set-timezone Asia/Tokyo これでOK</description>
     </item>
     
     <item>
       <title>嘘でしょう。。。</title>
-      <link>http://tech.k-zak.com/2015/03/08/ubuntu-wifi/</link>
+      <link>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</link>
       <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/03/08/ubuntu-wifi/</guid>
+      <guid>https://tech.k-zak.com/2015/03/08/ubuntu-wifi/</guid>
       <description>長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。
 実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。
 悩まされていた問題 会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。
@@ -52,23 +48,23 @@ VMのネットワーク設定を「Macと共有」の時は問題なくて「自
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/2015/02/01/php-mail/</link>
+      <link>https://tech.k-zak.com/2015/02/01/php-mail/</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/01/php-mail/</guid>
+      <guid>https://tech.k-zak.com/2015/02/01/php-mail/</guid>
       <description>## install postfix
-&amp;#8220;`
+“`
 sudo apt-get install postfix postfix-dev sasl2-bin
 sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt
-&amp;#8220;`
+“`
 ## Settings
-&amp;#8220;`
+“`
 sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf
 sudo emacs -nw /etc/postfix/main.cf
-&amp;#8220;`
+“`
 ### 参考
-&amp;#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail
-&amp;#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2
+– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail
+– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2
 ### gmailに転送する設定に変更
 relayhostにgmailを指定
 パスワードの設定とかね。
@@ -91,10 +87,10 @@ gmailの場合は/ssl/novalidation-certみたいのつける</description>
     
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
-      <link>http://tech.k-zak.com/2015/01/05/perl-cgi/</link>
+      <link>https://tech.k-zak.com/2015/01/05/perl-cgi/</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
+      <guid>https://tech.k-zak.com/2015/01/05/perl-cgi/</guid>
       <description>古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
 最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
 502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
@@ -116,38 +112,34 @@ plenvの場合、require syscall.ph とかあると駄目っぽい？
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
+      <link>https://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
-      <description>Ubuntu14(64bit)のVM作成  イメージからVMWareFusionに作成
- ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
- ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
- 設定画面が出てくるので、そのままOK
-  VMWare toolsをインストール
- VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行  aptのアップデートとアップグレード sudo apt-get update
+      <guid>https://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
+  ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
+  設定画面が出てくるので、そのままOK
+    VMWare toolsをインストール
+ VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行    aptのアップデートとアップグレード sudo apt-get update
 sudo apt-get upgrade
- Dropboxクライアントのインストール
- FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから  Emacsのインストール sudo apt-get install emacs24
+  Dropboxクライアントのインストール
+ FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから    Emacsのインストール sudo apt-get install emacs24
  Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
-mv ~/emacs.d ~/.emacs.d   バージョン管理のインストール sudo apt-get install git
-sudo apt-get install mercurial
- nginxのインストール sudo apt-get install nginx
- xEnvや各バージョンのインストールに必要になる諸々のインストール sudo add-apt-repository ppa:webupd8team/java</description>
+mv ~/emacs.d ~/.emacs.d    バージョン管理のインストール sudo apt-get install git
+sudo apt-get install mercurial</description>
     </item>
     
     <item>
       <title>Linux関係のメモ201407</title>
-      <link>http://tech.k-zak.com/2014/08/02/setting-ubuntu/</link>
+      <link>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</link>
       <pubDate>Sat, 02 Aug 2014 15:47:24 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/setting-ubuntu/</guid>
+      <guid>https://tech.k-zak.com/2014/08/02/setting-ubuntu/</guid>
       <description>Ubuntu系でのchkconfigに変わるコマンドってなんだっけ？
--&amp;gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要&amp;#8230;&amp;#8230;
-checkconfigてLinux全般共通じゃなかったんだ&amp;#8230;&amp;#8230;
+-&amp;gt; sysv-rc-confがそれに相当するがデフォルトでは入っていないのでインストールが必要……
+checkconfigてLinux全般共通じゃなかったんだ……
 ・Ubuntu系でインストール済みのパッケージを見るのはdpkg -l(える) この後にgrep付けるヨロシ
-・Ubuntuでパッケージの検索はapt-cache search 
-　apt-get searchじゃなかった&amp;#8230;&amp;#8230;</description>
+・Ubuntuでパッケージの検索はapt-cache search 　apt-get searchじゃなかった……</description>
     </item>
     
   </channel>

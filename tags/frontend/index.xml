@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Frontend on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/frontend/</link>
-    <description>Recent content in Frontend on 開発メモてきな</description>
+    <title>frontend on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/frontend/</link>
+    <description>Recent content in frontend on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 02 Apr 2017 22:50:14 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 02 Apr 2017 22:50:14 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>recent frontend circumstance</title>
-      <link>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</link>
+      <link>https://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</link>
       <pubDate>Sun, 02 Apr 2017 22:50:14 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</guid>
+      <guid>https://tech.k-zak.com/2017/04/02/recent-frontend-circumstance/</guid>
       <description>最近のフロントエンド事情はまるで発展途上国の交通事情ですか ES6で書いてES5に変換したいだけなのに、なんなんですか？
 ES6からES5に変換したいだけなんだ Babel Babelを使えば変換できる。。。
 Babelを毎回実行するのだるいからWebpackでタスクランナー的に実行する。
@@ -38,10 +34,10 @@ webpackに書いただけじゃダメで.babelrcにも書かないといけな�
     
     <item>
       <title>think about redux</title>
-      <link>http://tech.k-zak.com/2017/04/02/think-about-redux/</link>
+      <link>https://tech.k-zak.com/2017/04/02/think-about-redux/</link>
       <pubDate>Sun, 02 Apr 2017 22:49:50 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/02/think-about-redux/</guid>
+      <guid>https://tech.k-zak.com/2017/04/02/think-about-redux/</guid>
       <description>Reduxについて感化されたこと Reduxについて不満に思っている部分について考察している記事を見かけた。
 自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。
 理解して納得していること Reactの場合は上からもらうプロパティはPropsで読み取り専用。

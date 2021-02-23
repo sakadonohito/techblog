@@ -1,24 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Movabletype on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/movabletype/</link>
-    <description>Recent content in Movabletype on 開発メモてきな</description>
+    <title>MovableType on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/movabletype/</link>
+    <description>Recent content in MovableType on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 25 Apr 2010 13:56:34 +0000</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/movabletype/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 25 Apr 2010 13:56:34 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/movabletype/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MT入れてみた</title>
-      <link>http://tech.k-zak.com/2010/04/25/first-mt/</link>
+      <link>https://tech.k-zak.com/2010/04/25/first-mt/</link>
       <pubDate>Sun, 25 Apr 2010 13:56:34 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/04/25/first-mt/</guid>
-      <description>MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような
- 目的なら、無料のようなので、何事も経験経験。Web屋じゃないのでもしかしたら   一生、仕事で触れる事無いかもしれないけど、ふにゃふにゃやってみる。     １、ダウンロード   MovableTypeのサイト行ってダウンロード：http://www.sixapart.jp/movabletype/     ２、ここの手順にそって設定：http://nsf.jp/movabletype/movabletype.html     終わり。     え？   そうですね、前提条件として１、レンタルサーバー借りてるor自分で持ってる。   ２、MySQL5.x入ってる。３、メール使える。４、FTPアプリ持ってる。   あたりが必要です。     自分はサーバー→さくらのレンタル、MySQL5.xおけ！Perl5.xおけ！メールおけ！   FTPはWinにFFFTPが入ってたので、それを使った。     FTPアプリの代わりとして、Firefoxのアドオンてのもありますじぇ：https://addons.mozilla.org/ja/firefox/addon/684     んで、MTが入って使えるようになったので、特に何の設定もせずとりあえず記事１号を   これにしました。  </description>
+      <guid>https://tech.k-zak.com/2010/04/25/first-mt/</guid>
+      <description>MTを入れてみた。ライセンス的に個人で普通のブログのようなメモのような</description>
     </item>
     
   </channel>

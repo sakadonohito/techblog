@@ -1,25 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mackerel on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/mackerel/</link>
+    <link>https://tech.k-zak.com/tags/mackerel/</link>
     <description>Recent content in Mackerel on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 27 Mar 2017 23:36:40 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/mackerel/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 27 Mar 2017 23:36:40 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/mackerel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>challenge mackerel plugin</title>
-      <link>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</link>
+      <link>https://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</link>
       <pubDate>Mon, 27 Mar 2017 23:36:40 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</guid>
+      <guid>https://tech.k-zak.com/2017/03/27/challenge-mackerel-plugin/</guid>
       <description>Mackerelのカスタムメトリクスに挑戦 して撃沈。
 何が起きたか 公式のヘルプ を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。
-YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;quot;}\&amp;quot; unexpected (expecting \&amp;quot;then\&amp;quot;)\n&amp;quot;  改行が足りない？
+YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;quot;}\&amp;quot; unexpected (expecting \&amp;quot;then\&amp;quot;)\n&amp;quot; 改行が足りない？
 rubyファイルを単独で実行すると動くので謎。
 これだからRubyは。
 とりあえず、Mackerelは初期設定のままのメトリクスだけでいいや。</description>
@@ -27,10 +23,10 @@ rubyファイルを単独で実行すると動くので謎。
     
     <item>
       <title>I tried Mackerel</title>
-      <link>http://tech.k-zak.com/2017/03/24/i-tried-mackerel/</link>
+      <link>https://tech.k-zak.com/2017/03/24/i-tried-mackerel/</link>
       <pubDate>Fri, 24 Mar 2017 18:32:38 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/24/i-tried-mackerel/</guid>
+      <guid>https://tech.k-zak.com/2017/03/24/i-tried-mackerel/</guid>
       <description>勇気を出してMackerelを試してみた 前々から気にはなっていたMackerelをお試しで入れてみた。
  VPS契約しているUbuntu16.04 使い捨てのAWS上WIndows2012  インストール ヘルプに書いてある通りに作業してつまずく事もなくすんなりできた。
 監視項目 デフォルト監視項目 通常の監視項目で既に普段Zabbixで見て使っている項目を監視できているので、Zabbix使いこなす気がないならMackerelでいいかなって思った。

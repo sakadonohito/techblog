@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vscode on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/vscode/</link>
-    <description>Recent content in Vscode on 開発メモてきな</description>
+    <title>VSCode on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/vscode/</link>
+    <description>Recent content in VSCode on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 30 Apr 2017 11:37:10 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 30 Apr 2017 11:37:10 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VSCode</title>
-      <link>http://tech.k-zak.com/2017/04/30/vscode/</link>
+      <link>https://tech.k-zak.com/2017/04/30/vscode/</link>
       <pubDate>Sun, 30 Apr 2017 11:37:10 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/04/30/vscode/</guid>
+      <guid>https://tech.k-zak.com/2017/04/30/vscode/</guid>
       <description>VSCodeでよく使うショートカットなど 基本はEmacsを使うけどWindows環境で何かする場合はVSCodeの方が使いやすいので忘備録てきな
 画面 コマンドパレット： Cmd+Shift+p クイックオープン： Cmd+p 統合ターミナル： Cmd+` Zenモードとの切り替え： Cmd+k -&amp;gt; z
 エディター マルチカーソル： Cmd+Opt+矢印 同じ単語(選択済み？)選択： Cmd+F2 選択した単語を同じもののうち、編集してもよさそうなやつだけ編集： F2</description>

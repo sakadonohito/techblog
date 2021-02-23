@@ -1,35 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Imap on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/imap/</link>
-    <description>Recent content in Imap on 開発メモてきな</description>
+    <title>imap on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/imap/</link>
+    <description>Recent content in imap on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 01 Feb 2015 14:51:57 +0000</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/imap/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 01 Feb 2015 14:51:57 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/imap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/2015/02/01/php-mail/</link>
+      <link>https://tech.k-zak.com/2015/02/01/php-mail/</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/01/php-mail/</guid>
+      <guid>https://tech.k-zak.com/2015/02/01/php-mail/</guid>
       <description>## install postfix
-&amp;#8220;`
+“`
 sudo apt-get install postfix postfix-dev sasl2-bin
 sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt
-&amp;#8220;`
+“`
 ## Settings
-&amp;#8220;`
+“`
 sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf
 sudo emacs -nw /etc/postfix/main.cf
-&amp;#8220;`
+“`
 ### 参考
-&amp;#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail
-&amp;#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2
+– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail
+– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2
 ### gmailに転送する設定に変更
 relayhostにgmailを指定
 パスワードの設定とかね。

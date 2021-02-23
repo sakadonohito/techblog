@@ -1,56 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/java/</link>
+    <link>https://tech.k-zak.com/tags/java/</link>
     <description>Recent content in Java on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 12 Dec 2017 14:04:58 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 12 Dec 2017 14:04:58 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Groovy TLS</title>
-      <link>http://tech.k-zak.com/2017/12/12/groovy-tls/</link>
+      <link>https://tech.k-zak.com/2017/12/12/groovy-tls/</link>
       <pubDate>Tue, 12 Dec 2017 14:04:58 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/12/groovy-tls/</guid>
+      <guid>https://tech.k-zak.com/2017/12/12/groovy-tls/</guid>
       <description>久しぶりにGroovyを触った Groovyで作成したプログラムがTLSで通信できるようにしないといけなくなったので少し調べた。
 Javaの場合 javaで強制的にTLS1.2を使うようにするにはJVM起動時オプションを渡す Java7はデフォルトでTLS利用可能 Java8はデフォルトでTLS1.2使える
 JVM起動オプションに
--Dhttps.protocols=TLSv1.1,TLSv1.2 -Djdk.tls.client.protocols=TLSv1.1,TLSv1.2  を指定する。Eclipse等IDEの場合はJREの起動VMオプション設定に追加する。
-Groovyの場合 System.properties[‘https.protocols’] = ‘TLSv1.1,TLSv1.2 ’ System.properties[‘jdk.tls.client.protocols’] = ‘TLSv1.1,TLSv1.2 ’  これシステムプロパティを書き換えてるので、同時に他社のJVMプログラムとかあったりすると影響与えそうなんだけど&amp;hellip;&amp;hellip;</description>
+-Dhttps.protocols=TLSv1.1,TLSv1.2 -Djdk.tls.client.protocols=TLSv1.1,TLSv1.2 を指定する。Eclipse等IDEの場合はJREの起動VMオプション設定に追加する。
+Groovyの場合 System.properties[‘https.protocols’] = ‘TLSv1.1,TLSv1.2 ’ System.properties[‘jdk.tls.client.protocols’] = ‘TLSv1.1,TLSv1.2 ’ これシステムプロパティを書き換えてるので、同時に他社のJVMプログラムとかあったりすると影響与えそうなんだけど&amp;hellip;&amp;hellip;</description>
     </item>
     
     <item>
       <title>JavaのDWRって何さ　設定メモ</title>
-      <link>http://tech.k-zak.com/2011/04/13/java-dwr/</link>
+      <link>https://tech.k-zak.com/2011/04/13/java-dwr/</link>
       <pubDate>Wed, 13 Apr 2011 19:26:26 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/13/java-dwr/</guid>
-      <description>JavaのDWRていうやつをDBMagazine(2007年8月号)を読みながら軽く試してみたら動かない。   原因は、必要なパッケージは作ったが、中に空の(何も定義していない)Servletを   作成してしまっていたため、それが動いて結果何も起きないアプリになっていた。     アホ過ぎる。てかそれ基本？空のパッケージだけ必要とか誰も思わないでしょ？     DWRってなんじゃ？の概要としては、サーバーサイドをJava、クライアントサイドをJavaScriptで   構築。んでJSP経由じゃなくてhtml←→JavaScript←→Javaインスタンス(Beanとか)　みたいな感じ。   とあるJavaクラスとxmlでひもづけた自動生成されるJavaScriptを使って、Javaのインスタンスを   簡単にJavaScript上で扱う仕組み？な感じ。     参考URL：   DWRのサイト　http://directwebremoting.org/dwr/index.html   2007の@ITの記事　http://www.atmarkit.co.jp/fjava/rensai4/myeclipse02/myeclipse02_1.html     具体的な手順の説明   １，DWRのサイトよりdwr.jarとcommons-logging-xxx.jarとちゃんと動いてる版(トラブった時便利)を   落とす。   ２，例えばEclipseで動的Webアプリとか作成する。Web-INFのLibフォルダに落としてきたjarファイル   ２つを入れる。   ３，普通のJavaクラスを定義(サーブレットとかでもいいんでしょうけど)Beanってやつかな   あと、このクラスの定義のパッケージは何でも良い。   ４，クライアントサイドで使うHTMLとacaScript(以下、JS)作る。JSはHTML内でも別ファイルでも   良い。この時、実在しない(dwr.jarが自動生成する)JSをタグに書いておく   ※説明たるいので、サイトとか参照して下さい。   どんな感じに書くかは、サイトに書いてあるsampleを参照下さい。   ５，dwr用のxmlとweb.</description>
+      <guid>https://tech.k-zak.com/2011/04/13/java-dwr/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>動かないじゃないか</title>
-      <link>http://tech.k-zak.com/2010/06/27/study-java/</link>
+      <link>https://tech.k-zak.com/2010/06/27/study-java/</link>
       <pubDate>Sun, 27 Jun 2010 04:08:43 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/06/27/study-java/</guid>
-      <description>はじめての サーブレット＆JSP という本を見ながら
- 写経してますが、サーブレットからJNDIを使ってMySQLに接続する   章がうまくいきません。     MySQLは入れる事自体は非常に簡単、ターミナルで操作する時は   いつもキャラセットをいれてやらにゃいかんので、   phpMyAdminを導入しました。     参考URL   http://planet.mysql.com/entry/?id=23997     直接接続処理を書くと、うまくいくのですが、JNDIを使う、   Server.xml や context.xml にリソースの設定を書いておく方法だと   サーブレットエラー、中を見てるとどうも、名前がみつからないだか   ドライバが使えないだかのエラーががが。。     Webで調べて出てきたような事は一通りやってみたけど   状況が進展しないので、JNDI使わないやり方で先に進む。     以下が参考にしたURL     http://d.hatena.ne.jp/uen1130/touch/20090621/1245563877     http://www.javaroad.jp/opensource/js_tomcat8.htm     http://d.</description>
+      <guid>https://tech.k-zak.com/2010/06/27/study-java/</guid>
+      <description>はじめての サーブレット＆JSP という本を見ながら</description>
     </item>
     
     <item>
       <title>Java分からぬぇ</title>
-      <link>http://tech.k-zak.com/2010/06/06/study-java/</link>
+      <link>https://tech.k-zak.com/2010/06/06/study-java/</link>
       <pubDate>Sun, 06 Jun 2010 06:10:29 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/06/06/study-java/</guid>
-      <description>最近はおろそかになってきていてピンチなのですが、
- 連休終了後も「はじめてのJavaフレームワーク」と「はじめてのJSPあんどサーブレット」   なる本を見ながら写経のごときコーディングしてみてます。   JSPやサーブレット単体であればTomcatに乗せて動かすとかだいたい分かったのですが、   StrutsやHibernate、SpringFrameworkを使うとなるともう分かりません。      読めば分かるけど、理解までしていない感じですかね。   なんであんなにXMLを沢山書かないといけないんですか？      とりあえず、DBと直接やり取りするクラスがDAO(Impl)で、そいつに対して   どんなレコードセット(DAOオブジェクト？)を取得するか、書き込みに行くかとか   ロジックを実装するのがBeanクラスって事で合ってるのかしら？      Hibernateだけならなんとかイケそうだったんだけど、そこにStrutsによるディスパッチャと   SpringFrameworkによるDIコンテナがなんちゃらってのが混ざり込んできて、   よっくわっからん！　＞＜      ジュンク堂にSpringFrameworkが理解出来るようになりそうな本を探しに行ったけど   ありませんでした。初心者は手を出すなって分野なのでしょうか？そんな気がします。      Javaについての当面の目標は簡単なWebアプリの作成です。   少なくとも画面遷移をコントロールするStrutsは理解出来るようになりたいです。。  </description>
+      <guid>https://tech.k-zak.com/2010/06/06/study-java/</guid>
+      <description>最近はおろそかになってきていてピンチなのですが、</description>
     </item>
     
   </channel>

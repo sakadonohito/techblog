@@ -1,39 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Powershell on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/powershell/</link>
-    <description>Recent content in Powershell on 開発メモてきな</description>
+    <title>powershell on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/powershell/</link>
+    <description>Recent content in powershell on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Not Posted</title>
-      <link>http://tech.k-zak.com/2017/12/31/not-posted/</link>
+      <link>https://tech.k-zak.com/2017/12/31/not-posted/</link>
       <pubDate>Sun, 31 Dec 2017 11:49:55 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/31/not-posted/</guid>
+      <guid>https://tech.k-zak.com/2017/12/31/not-posted/</guid>
       <description>2017年記事にしそこねたやったこと  コマンドプロンプト(バッチファイル) コマンドプロンプトからPowershell実行 シェルスクリプト AWS System Manager Run Command (sum) VagrantでSQL Server他DBもセットアップしたよ Nano Server試そうとした React Redux…etc Webpack Docker再入門とWP開発環境の作成 WordPressテーマ開発用のベースを作成した AWS Lambda をPythonで AWS Lambda をNode.jsで CakePHP 3 tutorial 少しやった Vagrant でPHP開発環境作成 Terraform試した Hugo用テーマを作成した  忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。
 コマンドプロンプト(バッチファイル) Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。
 例えばこんなこと。実行結果を変数に入れるのが面倒。
-setlocal enabledelayedexpansion for /f %%a in (&#39;whoami&#39;) do @set watashi=%%a echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log  別プロセスで実行する方法
-start %~dp0\called_subscripts\computer_restart.bat  %~dp0 はLinuxでいうところのpwdみたいなもの
+setlocal enabledelayedexpansion for /f %%a in (&#39;whoami&#39;) do @set watashi=%%a echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log 別プロセスで実行する方法
+start %~dp0\called_subscripts\computer_restart.bat %~dp0 はLinuxでいうところのpwdみたいなもの
 コマンドプロンプトからPowershell実行 @powershell てやればできる。
 シェルスクリプト 少し覚えた。 $#は引数の数 $1は引数の一つ目 if [ a op b ]; てやつとaとbをopでチェックできる。変数の値のチェックやファイルの存在チェックなどを行う。 ファイルの存在チェックはシンプルに-e オプションを使う。</description>
     </item>
     
     <item>
       <title>Powershell</title>
-      <link>http://tech.k-zak.com/2017/03/30/powershell/</link>
+      <link>https://tech.k-zak.com/2017/03/30/powershell/</link>
       <pubDate>Thu, 30 Mar 2017 11:40:40 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/03/30/powershell/</guid>
-      <description>Powershellでやったことメモn Powershellの実行権限について Get-ExecutionPolicy Set-ExecutionPolicy &amp;lt;PolicyName&amp;gt; # RemoteSignedとか  よく使いそうなやつ ファイル操作、実行、インストールなど
-Copy-Item &amp;lt;&amp;lt;source&amp;gt;&amp;gt; -Destination &amp;lt;&amp;lt;dest&amp;gt;&amp;gt; -Recurse Move-Item &amp;lt;&amp;lt;sourse&amp;gt;&amp;gt; -Destination &amp;lt;&amp;lt;dest&amp;gt;&amp;gt; Remove-Item &amp;lt;&amp;lt;source&amp;gt;&amp;gt; -Recurse Rename-Item &amp;lt;&amp;lt;sourse&amp;gt;&amp;gt; Get-Content &amp;lt;&amp;lt;path/to/file&amp;gt;&amp;gt; Get-WmiObject Win32_Product Enter-PSSession &amp;lt;&amp;lt;container_id&amp;gt;&amp;gt; -RunAsAdministrator docker inspect &amp;lt;&amp;lt;container&amp;gt;&amp;gt; --format=&amp;quot;{{.Id}}&amp;quot; | sv container_id Install-WindowsFeature -Name &amp;lt;&amp;lt;FeatureName | SubFeatureName&amp;gt;&amp;gt; Install-WindowsFeature Web-Server -IncludeAllSubFeature Get-NetTCPConnection Get-WebSiteState -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Start-WebSite -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Stop-WebSite -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Get-WindowsFeature -Name Web-Server Get-WindowsFeature -Name Web-*  IIS関連 Import-Module IISAdministration Reset-IISServerManager -confirm:$false $sm = Get-IISServerManager $appHostconfig = $sm.</description>
+      <guid>https://tech.k-zak.com/2017/03/30/powershell/</guid>
+      <description>Powershellでやったことメモn Powershellの実行権限について Get-ExecutionPolicy Set-ExecutionPolicy &amp;lt;PolicyName&amp;gt; # RemoteSignedとか よく使いそうなやつ ファイル操作、実行、インストールなど
+Copy-Item &amp;lt;&amp;lt;source&amp;gt;&amp;gt; -Destination &amp;lt;&amp;lt;dest&amp;gt;&amp;gt; -Recurse Move-Item &amp;lt;&amp;lt;sourse&amp;gt;&amp;gt; -Destination &amp;lt;&amp;lt;dest&amp;gt;&amp;gt; Remove-Item &amp;lt;&amp;lt;source&amp;gt;&amp;gt; -Recurse Rename-Item &amp;lt;&amp;lt;sourse&amp;gt;&amp;gt; Get-Content &amp;lt;&amp;lt;path/to/file&amp;gt;&amp;gt; Get-WmiObject Win32_Product Enter-PSSession &amp;lt;&amp;lt;container_id&amp;gt;&amp;gt; -RunAsAdministrator docker inspect &amp;lt;&amp;lt;container&amp;gt;&amp;gt; --format=&amp;quot;{{.Id}}&amp;quot; | sv container_id Install-WindowsFeature -Name &amp;lt;&amp;lt;FeatureName | SubFeatureName&amp;gt;&amp;gt; Install-WindowsFeature Web-Server -IncludeAllSubFeature Get-NetTCPConnection Get-WebSiteState -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Start-WebSite -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Stop-WebSite -Name &amp;lt;&amp;lt;WebSiteName&amp;gt;&amp;gt; Get-WindowsFeature -Name Web-Server Get-WindowsFeature -Name Web-* IIS関連 Import-Module IISAdministration Reset-IISServerManager -confirm:$false $sm = Get-IISServerManager $appHostconfig = $sm.</description>
     </item>
     
   </channel>

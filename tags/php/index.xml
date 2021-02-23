@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Php on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/php/</link>
-    <description>Recent content in Php on 開発メモてきな</description>
+    <title>PHP on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/php/</link>
+    <description>Recent content in PHP on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 16 Feb 2015 16:09:59 +0000</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 16 Feb 2015 16:09:59 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
-      <link>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
+      <link>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
+      <guid>https://tech.k-zak.com/2015/02/16/challenge-fmxj/</guid>
       <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
 https://github.com/seedcode/fmxj
 概要としては、FileMaker Server の XML公開を使う。
@@ -36,38 +32,38 @@ u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数
 WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
 これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
 しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
-※Nginxで add_header Content-Type &amp;#8216;application/xml&amp;#8217;してもmime-typeの設定ファイルに追記しても
+※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても
 　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
 その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
 最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
 自分はUbuntuの環境なので、
  sudo apt-get install nginx-extras
  後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
-more_set_headers &amp;#8216;Content-Type: application/xml; charset=UTF8&amp;#8217;;
-を追記、more&amp;#8230;がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
+more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
+を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
 これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
 いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</description>
     </item>
     
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
-      <link>http://tech.k-zak.com/2015/02/01/php-mail/</link>
+      <link>https://tech.k-zak.com/2015/02/01/php-mail/</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2015/02/01/php-mail/</guid>
+      <guid>https://tech.k-zak.com/2015/02/01/php-mail/</guid>
       <description>## install postfix
-&amp;#8220;`
+“`
 sudo apt-get install postfix postfix-dev sasl2-bin
 sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt
-&amp;#8220;`
+“`
 ## Settings
-&amp;#8220;`
+“`
 sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf
 sudo emacs -nw /etc/postfix/main.cf
-&amp;#8220;`
+“`
 ### 参考
-&amp;#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail
-&amp;#8211; http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2
+– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail
+– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2
 ### gmailに転送する設定に変更
 relayhostにgmailを指定
 パスワードの設定とかね。
@@ -90,11 +86,11 @@ gmailの場合は/ssl/novalidation-certみたいのつける</description>
     
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
-      <link>http://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
+      <link>https://tech.k-zak.com/2014/12/30/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
-      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc&amp;#8230;)について振り返る
+      <guid>https://tech.k-zak.com/2014/12/30/milestone-serverside/</guid>
+      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
 まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
 Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
 Perl,Python,Rubyについては全然触れなくてフラストレーション。
@@ -103,37 +99,34 @@ PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.
 家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
 PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
 枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは&amp;#8230;どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
+Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
     </item>
     
     <item>
       <title>新しく開発環境作成中</title>
-      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
+      <link>https://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
-      <description>Ubuntu14(64bit)のVM作成  イメージからVMWareFusionに作成
- ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
- ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
- 設定画面が出てくるので、そのままOK
-  VMWare toolsをインストール
- VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行  aptのアップデートとアップグレード sudo apt-get update
+      <guid>https://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
+  ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
+  設定画面が出てくるので、そのままOK
+    VMWare toolsをインストール
+ VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行    aptのアップデートとアップグレード sudo apt-get update
 sudo apt-get upgrade
- Dropboxクライアントのインストール
- FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから  Emacsのインストール sudo apt-get install emacs24
+  Dropboxクライアントのインストール
+ FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから    Emacsのインストール sudo apt-get install emacs24
  Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
-mv ~/emacs.d ~/.emacs.d   バージョン管理のインストール sudo apt-get install git
-sudo apt-get install mercurial
- nginxのインストール sudo apt-get install nginx
- xEnvや各バージョンのインストールに必要になる諸々のインストール sudo add-apt-repository ppa:webupd8team/java</description>
+mv ~/emacs.d ~/.emacs.d    バージョン管理のインストール sudo apt-get install git
+sudo apt-get install mercurial</description>
     </item>
     
     <item>
       <title>PHPのファイルアップロードについて</title>
-      <link>http://tech.k-zak.com/2014/09/07/setting-php/</link>
+      <link>https://tech.k-zak.com/2014/09/07/setting-php/</link>
       <pubDate>Sun, 07 Sep 2014 17:34:12 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/07/setting-php/</guid>
+      <guid>https://tech.k-zak.com/2014/09/07/setting-php/</guid>
       <description>PHPで大きなファイルアップロードを作成する
 ・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。
 ・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file
@@ -144,10 +137,10 @@ sudo apt-get install mercurial
     
     <item>
       <title>PHPあべし！</title>
-      <link>http://tech.k-zak.com/2014/08/02/spec-php5.5/</link>
+      <link>https://tech.k-zak.com/2014/08/02/spec-php5.5/</link>
       <pubDate>Sat, 02 Aug 2014 15:34:29 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/spec-php5.5/</guid>
+      <guid>https://tech.k-zak.com/2014/08/02/spec-php5.5/</guid>
       <description>最近PHP触ってて「あべし！」ってなった事。
 PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。
 愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。</description>
@@ -155,10 +148,10 @@ PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5
     
     <item>
       <title>最近やったいろいろ</title>
-      <link>http://tech.k-zak.com/2014/03/16/milestone/</link>
+      <link>https://tech.k-zak.com/2014/03/16/milestone/</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/03/16/milestone/</guid>
       <description>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
 ◆PostgreSQLのSQLダンプ
 　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
@@ -203,35 +196,41 @@ PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5
     
     <item>
       <title>パスカルのなんとか</title>
-      <link>http://tech.k-zak.com/2013/12/22/pascal-logic/</link>
+      <link>https://tech.k-zak.com/2013/12/22/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
+      <guid>https://tech.k-zak.com/2013/12/22/pascal-logic/</guid>
       <description>今回は、パスカルの三角定理？みたいなやつ
 PHPでは、
-&amp;lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&amp;lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&amp;lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(&#39;,&#39;,$arr).&#34;\n&#34;; } ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; my $num = &amp;lt;stdin; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&amp;lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&amp;lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(&#39;,&#39;,@list).&#34;\n&#34;; } &amp;lt;/stdin Pythonでは、</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+Rubyはもっとシンプルな書き方があるのかもしれない。</description>
     </item>
     
     <item>
       <title>コーディングリハビリ06</title>
-      <link>http://tech.k-zak.com/2013/12/08/coding-memo05/</link>
+      <link>https://tech.k-zak.com/2013/12/08/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
+      <guid>https://tech.k-zak.com/2013/12/08/coding-memo05/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
-&amp;lt;?php $num = trim(fgets(STDIN)); $num = ($num)?(int)$num:10; $arr = array(1); for($i=0;$i&amp;lt;$num;$i++){ $len = count($arr); $tmp = array(1); for($j=0;$j&amp;lt;$len-1;$j++){ array_push($tmp,$arr[$j]+$arr[$j+1]); } array_push($tmp,1); $arr = $tmp; echo join(&#39;,&#39;,$arr).&#34;\n&#34;; } ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; my $num = &amp;lt;STDIN&amp;gt;; chomp($num); $num ||= 10; my @list = (1); for(my $i=0;$i&amp;lt;$num;$i++){ my $len = @list; my @tmp = (1); for(my $j=0;$j&amp;lt;$len-1;$j++){ push(@tmp,$list[$j]+$list[$j+1]); } push(@tmp,1); @list = @tmp; print join(&#39;,&#39;,@list).&#34;\n&#34;; }  Pythonでは、</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+習熟度が低いのでPerlとPHPが同じ内容になる。
+pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。
+すんなり1つのリストだけでできないものか……</description>
     </item>
     
     <item>
       <title>コーディングリハビリ04</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo04/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo04/</link>
       <pubDate>Fri, 06 Dec 2013 16:06:49 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo04/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo04/</guid>
       <description>今回は与えられた文字列が全てユニークな文字の構成かどうか調べる。
 そういう問題を出されてスマートに答えられなかったので、調べた。
 1,回答した内容を修正したもの
@@ -245,56 +244,62 @@ PHPでは、
     
     <item>
       <title>コーディングリハビリ03</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo03/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo03/</guid>
       <description>リハビリその3
 今回は、バブルソート
 PHPでは、
-&amp;lt;?php function bubble_sort(array $arr,$r){ if(1 == $r){ return $arr; } $len = count($arr)-1; for($i=0;$i&amp;lt;$len;$i++){ if($arr[$i] &amp;gt; $arr[$i+1]){ $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } return bubble_sort($arr,$r-1); } $input = trim(fgets(STDIN)); $arr = explode(&#34;,&#34;,$input); echo implode(&#34;,&#34;,bubble_sort($arr,count($arr))).&#34;\n&#34;; ?&amp;gt; Perlでは、
-#!/usr/bin/perl use strict; use warnings; sub bubble_sort{ my($arr,$r) = @_; my @arr = @{$arr}; if(1 == $r){ return @arr; }else{ my $len = @arr; for(my $i=0;$i&amp;lt;$len-1;$i++){ if($arr[$i] &amp;gt; $arr[$i+1]){ my $tmp = $arr[$i+1]; $arr[$i+1] = $arr[$i]; $arr[$i] = $tmp; } } bubble_sort(\@arr,$r-1) } } my $input = &amp;lt;STDIN&amp;gt;; chomp($input); my @arr = split(&#39;,&#39;,$input); print join(&#34;</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+Rubyが一番スマートかな</description>
     </item>
     
     <item>
       <title>コーディングリハビリ02</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo02/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo02/</guid>
       <description>リハビリその２
 今回は、ファイル読み込みとその時の簡単な例外処理
 読み込むテキストファイルの内容は以下の通り、
-7 1000 1992 あ A 2000 2001 1900 16 12 400  PHPでは、
-&amp;lt;?php function isLeap($year=null){ if($year == null) return false; $intYear = (int)$year; if(0 != $intYear%4){ return false; }elseif(0 == $intYear%400){ return true; }elseif(0 == $intYear%100){ return false; }else{ return true; } } try{ if(!file_exists(&#34;leap.txt&#34;)){ throw new Exception(&#34;ファイルが見つかりません。&#34;); } $fp = fopen(&#34;leap.txt&#34;,&#34;r&#34;); $lines = fgets($fp); for($i=0;$i&amp;lt;$lines;$i++){ $year = trim(fgets($fp)); printf(&#34;%s is%s a leap year\n&#34;, $year,((isLeap($year))?&#34;&#34;:&#34; not&#34;)); } fclose($fp); }catch(Exception $e){ echo $e-&amp;gt;getMessage().</description>
+PHPでは、
+Perlでは、
+Pythonでは、
+Rubyでは、
+うるう年の判定処理は適当。pythonが一番しっくりくるかな。
+rubyはreturnを省略した場合に最後に評価された値がreturnされるんだけど、pythonもだと勘違いしててハマった。</description>
     </item>
     
     <item>
       <title>コーディングリハビリ01</title>
-      <link>http://tech.k-zak.com/2013/12/06/coding-memo01/</link>
+      <link>https://tech.k-zak.com/2013/12/06/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/coding-memo01/</guid>
       <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
 paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
 という事でリハビリ。
 今回は標準入力。
 PHPでは、
-&amp;lt;?php //標準入力をfgets関数で取得して前後の空白や改行文字を削り取る $input = trim(fgets(STDIN)); ?&amp;gt; Perlでは、
-use strict; use warnings; my $input = &amp;lt;STDIN&amp;gt;; #行末の改行文字を削る chomp($input); Pythonでは、
-input = raw_input() #行末の改行文字とるのは厳密にはいろいろあるらしいので今回は無視 Rubyでは、
-input = gets.chomp 標準入力が「gets」だけで取れるRubyはダンディ。</description>
+Perlでは、
+Pythonでは、
+Rubyでは、
+標準入力が「gets」だけで取れるRubyはダンディ。</description>
     </item>
     
     <item>
       <title>Laravel4触り始めました</title>
-      <link>http://tech.k-zak.com/2013/12/06/study-larabel4/</link>
+      <link>https://tech.k-zak.com/2013/12/06/study-larabel4/</link>
       <pubDate>Fri, 06 Dec 2013 14:07:20 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/12/06/study-larabel4/</guid>
+      <guid>https://tech.k-zak.com/2013/12/06/study-larabel4/</guid>
       <description>Laravel4がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。
 テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。
-{{&amp;#8211; コメントアウトしたいコード &amp;#8211;}}って書かないといけない。ていうか、そもそもの外で変な書き方してたのが悪い。
+{{– コメントアウトしたいコード –}}って書かないといけない。ていうか、そもそもの外で変な書き方してたのが悪い。
 あと、migrationの使い方全然理解していないのでそこで詰まった。
 検索フォームの値を受け取ってモデルに検索処理投げてレコードオブジェクト(モデルイングタンス？)受け取る処理はコントローラーに書くの？それともViewファイル？
 わかりません。。。</description>
@@ -302,10 +307,10 @@ input = gets.chomp 標準入力が「gets」だけで取れるRubyはダンデ�
     
     <item>
       <title>FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</title>
-      <link>http://tech.k-zak.com/2013/11/13/trouble-charset/</link>
+      <link>https://tech.k-zak.com/2013/11/13/trouble-charset/</link>
       <pubDate>Wed, 13 Nov 2013 15:27:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/11/13/trouble-charset/</guid>
+      <guid>https://tech.k-zak.com/2013/11/13/trouble-charset/</guid>
       <description>FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、
 Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！ (PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)
 →アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。
@@ -314,7 +319,7 @@ FuelPHPのUpload::save()を行う前に
 弊害としては本来は内部エンコードのまま処理が進むはずだったので、同名ファイルが有る場合に枝番を付加する処理なんかが正常に動作しなくなる。
 これでWindowsサーバーのフォルダに読める文字のファイル名でアップロードされる。
 最初エンコードをSJISにしてたけど、CP932にしたら、①みたいなMS拡張の機種依存文字も大丈夫になった。
-本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも Upload::register(&#39;after&#39;,function($file){ 文字化け状態のファイルをエンコードしなおしたファイル名でリネーム })  とかやったら良かったのかな？
+本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも とかやったら良かったのかな？
 文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け！ (ま、そりゃそうですね)
 →上記１の結果を受けてメール送信のメソッドに引数として添付ファイル名を渡す。その処理は何も加工しない。
 メール送信用のメソッドの中で、引数で受け取った添付ファイル名をFuelPHPのmailに渡す処理を加工
@@ -325,17 +330,17 @@ FuelPHPのUpload::save()を行う前に
     
     <item>
       <title>fuelphp使って分からなかったこと</title>
-      <link>http://tech.k-zak.com/2013/08/25/challenge-fuelphp/</link>
+      <link>https://tech.k-zak.com/2013/08/25/challenge-fuelphp/</link>
       <pubDate>Sun, 25 Aug 2013 12:51:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2013/08/25/challenge-fuelphp/</guid>
+      <guid>https://tech.k-zak.com/2013/08/25/challenge-fuelphp/</guid>
       <description>fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな
 感じなんですけど。
 以下に分からなかったことなど
 １，modelの検索メソッドがクラスメソッド
 検索条件を検索メソッドに渡してレコードオブジェクトを受け取るんだから別に
 インスタンスメソッドである必要はないんだけど、じゃぁ返ってきたモノは
-ただの連想配列なのかモデルオブジェクトの塊なのか&amp;#8230;
+ただの連想配列なのかモデルオブジェクトの塊なのか…
 昔、Javaを少し自習した時にレコードオブジェクトのクラスとオブジェクトの塊を保持する
 クラスが別になる書き方があって、自分にはその方がしっくり来るんだけど、多分塊を保持
 するクラスが余計っていう考えなのだろうか。
@@ -349,8 +354,8 @@ Model_Crudのメソッド見てるとhas_next()とかあるから、1個以上�
 ないかな。
 ２，FieldSetクラスという便利なものの中のcheckboxの名前の付け方
 これは多分自分の学習が足りないだけなんだと思うけど、PHPでinputフォームのチェックボックス
-を複数用意する時、name属性をname=&amp;#8221;◯◯[]&amp;#8221;とかにして受け取ったPHPで値を配列で扱うんだけ
-ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=&amp;#8221;◯◯[i]&amp;#8221;って[]の中
+を複数用意する時、name属性をname=”◯◯[]”とかにして受け取ったPHPで値を配列で扱うんだけ
+ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=”◯◯[i]”って[]の中
 に数字を入れてくるんです。受け取るPHP側では配列として受け取れるぽいんだけど、fuelphpの
 Validationでこのチェックボックスグループらのどれか1つにはチェックしていること！みたいな
 事が出来ない。あと、jQueryのvalidationプラグインが動かない。別のものとして扱ってしまう。
@@ -358,9 +363,7 @@ core/classes/foeldset/の中にあるファイルのcheckboxのフォームの�
 書き換えて(本当はappフォルダにコピーするべき)使っている。
 ３，FieldSetオブジェクトのフォームオブジェクトのラベル出力の時に出力されるラベル要素に
 クラス(htmlのclass)を追加する手段が分からない。
-こいつ、checkboxやradioのグループ出力する場合はタグ出力しないんだぜ。意味不明。
-親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。
-やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用
+こいつ、checkboxやradioのグループ出力する場合はタグ出力しないんだぜ。意味不明。親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用
 されなくて、仕方なく、requiredの場合出力されるデフォルト「*」のやつを「(必須)」てかえて
 それを赤字にした(requiredの時に出力される奴はlabel要素外)。
 ４，単にどこに何を書くかがまだ理解できていない。
@@ -380,77 +383,70 @@ JavaScriptは分かるんですよ。callbackとかその時だけの処理を�
 定義しちゃうとグローバル領域にはいっちゃうから変数の中にいれといて、特定の処理の時に呼び出す
 とかね。
 でもPHPてクラスメソッドとかインスタンスメソッドとか定義してるわけじゃないですか、だから
-JavaScriptと同じ用途ってない気がして&amp;#8230;ちょっとだけViewファイルの中で書いたりもしたけれど、
+JavaScriptと同じ用途ってない気がして…ちょっとだけViewファイルの中で書いたりもしたけれど、
 Helper作る程でもない処理専用って事？後は再帰定義のcallbaclくらい？よく分からんです。</description>
     </item>
     
     <item>
       <title>フレームワークちょいちょい</title>
-      <link>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
+      <link>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
+      <guid>https://tech.k-zak.com/2012/10/21/scriptlanguage-frameworks/</guid>
       <description>ここ最近はフレームワークを少し触ってる。
 Perl：Mojolicious::Lite
 →DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
 各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
 layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
 このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
-&amp;nbsp;
-Ruby：Sinatra
+ Ruby：Sinatra
 →Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
 ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
 これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
-&amp;nbsp;
-PHP：FuelPHP
+ PHP：FuelPHP
 →最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
 これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
 コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
 public/assetsて階層に配置するんですね。
-&amp;nbsp;
-PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
+ PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
 OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
-出来ないとかで&amp;#8230;&amp;#8230;</description>
+出来ないとかで……</description>
     </item>
     
     <item>
       <title>CakePHPでぐはぁ</title>
-      <link>http://tech.k-zak.com/2011/06/14/study-cakephp/</link>
+      <link>https://tech.k-zak.com/2011/06/14/study-cakephp/</link>
       <pubDate>Tue, 14 Jun 2011 13:00:58 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/06/14/study-cakephp/</guid>
-      <description>CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ
-   どうもPHP5.3で動かすと非推奨なコードが沢山あるらしく、そのエラーが   ドバドバでるの。で、その対処法のメモ。絶対また忘れるので。。。     ぐぐったら沢山でてきまする。     cake/libs/configure.phpの自分がDLしたCakePHPだと110行目から少し下あたりにある   $reportingという変数にエラーの定数を格納する箇所で、従来の&amp;#8217;E_ALL&amp;#8217;に非推奨エラーの   定数は除外するよう編集する。こんな感じ   前：$reporting = E_ALL   後：$reporting = E_ALL &amp; ~E_DEPRECATED   場所がよく分からなかったらエラー定数(E_ALL)で検索すればいいよ。  </description>
+      <guid>https://tech.k-zak.com/2011/06/14/study-cakephp/</guid>
+      <description>CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ</description>
     </item>
     
     <item>
       <title>WebフレームワークとFileMaker</title>
-      <link>http://tech.k-zak.com/2011/05/29/web-filemaker/</link>
+      <link>https://tech.k-zak.com/2011/05/29/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
-      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く
- FileMakerというアクセスとMSSQLの中間みたいなApple子会社のメーカーの   データベースアプリをDBとしてブラウザUIのアプリを開発するには大きく分けて   ２つの方法があります。   １，FileMaker社が提供しているPHPのAPIを使いPHPで開発する   ２，FileMaker社が提供しているXMLでのやり取りの方法を利用し、開発する。     で、世間では１，の方法がイマイチらしく実質２，の方法が取られている。     ２，の方法の場合、クエリを投げる→XMLが返ってくる→パースするという方法。   ちょっと厄介なのは、FileMaker社の定めたXML文法なので「初めてのXML」みたいな本では   載っていない文法のXMLが返ってくる。   具体的にはメタ情報(カラム名含む)が最初のメタタグにドサっと入っていて、その後に   rowタグ(レコード)colタグ(カラム)がある。何が厄介かというと、カラム名のついたタグが   rowタグの中にあるのではなく、本当に&amp;#8221;col&amp;#8221;という名のタグが入っているからメタタグの   カラム情報を見て何番目がこのカラムとか処理しないといけない。フヒーー     で、世間ではどうしているのかというと、   a,FileMaker文法を解釈するxsltで開発   b,PHPでライブラリが出ているのでそれを使う(FX.php)   c,Rubyでライブラリが出ているのでそれを使う(rfm)   d,Pythonでライブラリが出ているのでそれを使う(PyFileMaker)     ってところ。   実際にはFX.phpを利用するのがメジャーでしょう。。   これらのライブラリがうまいことレコードオブジェクトに変換してくれるので、   案外簡単に扱える。ただ、困ったときに解決できるようXMLリクエストの文法位は   ある程度覚えておいたほうが良いと思う。     ぶっちゃけると、XMLリクエスト組み立てと返ってきたXMLをパースするライブラリを   作れさえすれば、言語は何でも良いという事。   なので上記に出てきていない、PerlやGroovy用のライブラリを作れば同じこと出来る。   Groovy用ならRubyやPythonのライブラリの中身を見ながら出来るかもしれないけど   Perlは自分には無理。そもそもPerlがほぼ分からない。     Ruby用とPython用の、それから前に仕事でPHP用のを使ってみた感想としては   Pythonの柔軟性が奏功して１歩抜きん出ている感じ。ただし開発が終わってしまっている   ようなので、将来性は微妙。     Pythonは多重継承が出来るので、例えばDjangoなんかでmodelクラスとPyFileMakerの   両方を継承するなんてことが、できそう。自分は理解が足りなかったので、modelを   継承したクラスの1プロパティとしてFMServerオブジェクトを持たせてみた。     PHPのFX.</description>
+      <guid>https://tech.k-zak.com/2011/05/29/web-filemaker/</guid>
+      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く</description>
     </item>
     
     <item>
       <title>PHPのフレームワーク試す</title>
-      <link>http://tech.k-zak.com/2011/04/24/php-frameworks/</link>
+      <link>https://tech.k-zak.com/2011/04/24/php-frameworks/</link>
       <pubDate>Sun, 24 Apr 2011 14:04:24 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/24/php-frameworks/</guid>
-      <description>PHPのフレームワークをいくつか試してみた。
- 以下、試したフレームワーク名と参考にしたチュートリアルサイト及び記事     ・CakePHP   本家？の日本語版サイトのチュートリアルを試す。   http://book.cakephp.org/ja/view/1528/CakePHPブログチュートリアル     ・Zend Framework   これも本家？の翻訳サイトにあるチュートリアルを試す。   http://web-rhodia.com/zf-tutorial/     ・Symfony   これは日本symfonyユーザー会サイトのチュートリアルを試す。   http://www.symfony.gr.jp/docs/for-beginners/blog-tutorial/01-introduction     ・CodeIgniter   ここは、調度良いのチュートリアルが見つからなかった。。。   http://codeigniter.jp/user_guide_ja/toc.html   http://d.hatena.ne.jp/it-tech-dm/20091025/1256465675       感想としては、   CakePHP:1.1や1.2で何回か触ったことあり、特に詰まることもなく、あっさり   お試し終了。他のフレームワークとの比較用(基準)として今回チュート   リアルを試しました。   感触としては、ちょろっとだけ触ったことあるRailsに似ていて(マネしたんだ   から当たり前)これを覚えとくとRuby on Rails も憶えやすくなるなんてお得。   構造的にも自分にとっては、理解しやすい。     Zend Framework:これは、自分にはあいそうもありません。。大文字から始まる単語を   アンダースコアでつなぐ名前のつけ方は慣れていなくて、非常に違和感があ   りました。あと、チュートリアルひと通りコーディングしたけど、画面真っ白   エンコードか、URLの問題かな。。。生理的に受け付けない感じ。     Symfony:チュートリアルがCakePHPのチュートリアルを参考に作ってあるだけあって   とっつきやすかった。比較としてこっちは何だかJavaのStrutsを簡単にしたような   印象を受けました。あとyaml設定ファイル多い。     CodeIgniter:これは、チュートリアルがちゃんと見つからなかったこともあり、まともに   試せていない。手本にしたブログ記事の内容はコーディングしてみたけど、   BaseURLの記述がおかしいのか、どこかのディレクトリのパーミッションの   問題か動きませんでした。   印象としては、あんまりフレームワークっぽくない(至れり尽くせりではない)。   でも、軽いとか必要最小限とかの評価を良く耳にするので、ちゃんと動くところ   まで持って行ってから評価したいと思っています。     今回のお試しの結果、自分の中での評価順位は   １，CakePHP   ２，Symfony   ３，CodeIgniter (暫定)   ４，Zend Framework     以上、PHP低レベル者が勝手にフレームワークを評価してみました。      </description>
+      <guid>https://tech.k-zak.com/2011/04/24/php-frameworks/</guid>
+      <description>PHPのフレームワークをいくつか試してみた。</description>
     </item>
     
     <item>
       <title>macにphpMyAdmin</title>
-      <link>http://tech.k-zak.com/2010/09/03/mcrypt/</link>
+      <link>https://tech.k-zak.com/2010/09/03/mcrypt/</link>
       <pubDate>Fri, 03 Sep 2010 15:42:34 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2010/09/03/mcrypt/</guid>
-      <description>忘れないうちにメモ
-   前のMacBokでは成功して、今回新しく購入したMacBookProでなかなかうまくいかなかった事をメモ。     て、実はただの勘違いだったんですけど。。。     環境はMac OS X 10.6 ( 64bitで常時起動 )   ここにApache2.2?とPHP5.3.2が初めから入っているので、MySQL入れて   phpMyAdminを入れる。     １、MySQL入れる   MySQLのサイトからdmgをダウンロード。理由は楽だから。     http://dev.mysql.com/downloads/mysql/5.1.html     ２、MySQLのPATHを通す   例として(自分の場合)emacsで.bash_profileを編集     $ sudo -s emacs   ( emacsが起動しました )   C-x C-f ( Ctrl + x その後 Ctrl + f でファイル開く )   ~/.</description>
+      <guid>https://tech.k-zak.com/2010/09/03/mcrypt/</guid>
+      <description>忘れないうちにメモ</description>
     </item>
     
   </channel>

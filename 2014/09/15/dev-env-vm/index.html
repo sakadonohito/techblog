@@ -5,15 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 		<title>開発メモてきな</title>
-		<link rel="stylesheet" href="http://tech.k-zak.com/css/style.css" type="text/css"/>
+		<link rel="stylesheet" href="https://tech.k-zak.com/css/style.css" type="text/css"/>
 
 	</head>
 	<body>
 		<div class="wrapper">
 			<header class="site-main">
 	<div class="header-image-main">
-		<img alt="サイトのメインテーマ画像" src="http://tech.k-zak.com/image/top-min.png"/>
-		<a href="http://tech.k-zak.com/" class="site-title">開発メモてきな</a>
+		<img alt="サイトのメインテーマ画像" src="https://tech.k-zak.com/image/top-min.png"/>
+		<a href="https://tech.k-zak.com/" class="site-title">開発メモてきな</a>
 	</div>
 </header>
 
@@ -27,202 +27,205 @@
 				<ul class="horizontal-list-over767">
 					<li>Published: 2014年09月15日</li>
 				</ul>
-				<p>Category:  <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a> </p>
+				<p>Category:  <a href="https://tech.k-zak.com/categories/setting-construction/">setting-construction</a> </p>
 			</header>
 			<section>
-				<p>
-
-<h3 id="ubuntu14-64bit-のvm作成">Ubuntu14(64bit)のVM作成</h3>
-
+				<p><h3 id="ubuntu1464bitのvm作成">Ubuntu14(64bit)のVM作成</h3>
 <ol>
-<li>イメージからVMWareFusionに作成</p></li>
-
-<li><p>ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更</p>
-
+<li>
+<p>イメージからVMWareFusionに作成<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更</p>
 <ul>
-<li><p>ターミナルから LANG=C xdg-user-dirs-gtk-update を実行
-LANG=C xdg-user-dirs-gtk-update</p></li>
-
-<li><p>設定画面が出てくるので、そのままOK</p></li>
-</ul></li>
-
-<li><p>VMWare toolsをインストール</p>
-
+<li>
+<p>ターミナルから LANG=C xdg-user-dirs-gtk-update を実行
+LANG=C xdg-user-dirs-gtk-update</p>
+</li>
+<li>
+<p>設定画面が出てくるので、そのままOK</p>
+</li>
+</ul>
+</li>
+<li>
+<p>VMWare toolsをインストール</p>
 <ul>
 <li>VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開</li>
 <li>展開したディレクトリの中に入ってインストール実行</li>
-</ul></li>
-
-<li><p>aptのアップデートとアップグレード
-    sudo apt-get update<br />
-    sudo apt-get upgrade</p></li>
-
-<li><p>Dropboxクライアントのインストール</p>
-
+</ul>
+</li>
+<li>
+<p>aptのアップデートとアップグレード
+sudo apt-get update<br>
+sudo apt-get upgrade</p>
+</li>
+<li>
+<p>Dropboxクライアントのインストール</p>
 <ul>
 <li>FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール</li>
 <li>Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから</li>
-</ul></li>
-
-<li><p>Emacsのインストール
-    sudo apt-get install emacs24</p>
-
+</ul>
+</li>
+<li>
+<p>Emacsのインストール
+sudo apt-get install emacs24</p>
 <ul>
 <li>Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成</li>
 <li>作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった
-ln -s ~/Dropbox/emacs.d ~/emacs.d<br />
-mv ~/emacs.d ~/.emacs.d
-<br /></li>
-</ul></li>
-
-<li><p>バージョン管理のインストール
-    sudo apt-get install git<br />
-    sudo apt-get install mercurial</p></li>
-
-<li><p>nginxのインストール
-    sudo apt-get install nginx</p></li>
-
-<li><p>xEnvや各バージョンのインストールに必要になる諸々のインストール
-    sudo add-apt-repository ppa:webupd8team/java<br />
-    sudo apt-get update<br />
-    sudo apt-get install oracle-java7-installer ※for jruby<br />
-    sudo apt-get install oracle-java8-installer ※必要であれば。<br />
-    sudo update-alternatives &ndash;config java<br />
-    ※java7を選択する<br />
-    sudo apt-get install g++ ※これをインストールしないとインストール失敗する<br />
-    sudo apt-get install libssl-dev ※これをインストールしないとインストール失敗する<br />
-    sudo apt-get install build-essential ※pyenvで必要になるようだ<br />
-    sudo apt-get install curl ※ndenv install &ndash;list で必要になる<br />
-    sudo apt-get install libjpeg-dev ※phpのインストールで必要になる<br />
-    sudo apt-get install re2c ※phpのインストールで必要になる<br />
-    sudo apt-get install bison ※phpのインストールで必要になる</p></li>
-
-<li><p>rbenvのインストール
-    git clone <a href="https://github.com/sstephenson/rbenv.git">https://github.com/sstephenson/rbenv.git</a> ~/.rbenv<br />
-    git clone <a href="https://github.com/sstephenson/ruby-build.git">https://github.com/sstephenson/ruby-build.git</a> ~/.rbenv/plugins/ruby-build<br />
-    echo &lsquo;export PATH=&ldquo;$HOME/.rbenv/bin:$PATH&rdquo;&rsquo; &gt;&gt; ~/.bash_profile<br />
-    echo &lsquo;eval &ldquo;${rbenv init -)&rdquo;&rsquo; &gt;&gt; ~/.bash_profile</p></li>
-
-<li><p>plenvのインストール
-    git clone <a href="https://github.com/tokuhirom/plenv.git">https://github.com/tokuhirom/plenv.git</a> ~/.plenv<br />
-    git clone <a href="https://github.com/tokuhirom/Perl-Build.git">https://github.com/tokuhirom/Perl-Build.git</a> ~/.plenv/plugins/perl-build<br />
-    echo &lsquo;export PATH=&ldquo;$HOME/.plenv/bin:$PATH&rdquo;&rsquo; &gt;&gt; ~/.bash_profile<br />
-    echo &lsquo;eval &ldquo;${plenv init -)&rdquo;&rsquo; &gt;&gt; ~/.bash_profile</p></li>
-
-<li><p>pyenvのインストール
-    git clone <a href="https://github.com/yyuu/pyenv.git">https://github.com/yyuu/pyenv.git</a> ~/.pyenv<br />
-    git clone <a href="https://github.com/yyuu/python-virtualenv.git">https://github.com/yyuu/python-virtualenv.git</a> ~/.pyenv/plugins/python-virtualenv<br />
-    echo &lsquo;export PATH=&ldquo;$HOME/.pyenv/bin:$PATH&rdquo;&rsquo; &gt;&gt; ~/.bash_profile<br />
-    echo &lsquo;eval &ldquo;${pyenv init -)&rdquo;&rsquo; &gt;&gt; ~/.bash_profile</p></li>
-
-<li><p>ndenvのインストール
-    git clone <a href="https://github.com/riywo/ndenv.git">https://github.com/riywo/ndenv.git</a> ~/.ndenv<br />
-    git clone <a href="https://github.com/riywo/node-build.git">https://github.com/riywo/node-build.git</a> ~/.ndenv/plugins/node-build<br />
-    echo &lsquo;export PATH=&ldquo;$HOME/.ndenv/bin:$PATH&rdquo;&rsquo; &gt;&gt; ~/.bash_profile<br />
-    echo &lsquo;eval &ldquo;${ndenv init -)&rdquo;&rsquo; &gt;&gt; ~/.bash_profile</p></li>
-
-<li><p>phpenvのインストール
-    git clone <a href="https://github.com/CHH/phpenv.git">https://github.com/CHH/phpenv.git</a> ~/.phpenv<br />
-    git clone <a href="https://github.com/CHH/php-build.git">https://github.com/CHH/php-build.git</a> ~/.phpenv/plugins/php-build<br />
-    echo &lsquo;export PATH=&ldquo;$HOME/.phpenv/bin:$PATH&rdquo;&rsquo; &gt;&gt; ~/.bash_profile<br />
-    echo &lsquo;eval &ldquo;${phpenv init -)&rdquo;&rsquo; &gt;&gt; ~/.bash_profile</p></li>
-
-<li><p>rubyのインストールとjrubyのインストール
-    rbenv install 1.9.3-p547<br />
-    rbenv install 2.1.2<br />
-    rbenv install jruby-1.7.15<br />
-    rbenv global 2.1.2</p></li>
-
-<li><p>perlのインストール
-    plenv install 5.20.0<br />
-    plenv global 5.20.0<br />
-    plenv rehash</p></li>
-
-<li><p>pyenvのインストール
-    pyenv install jython-2.5.3<br />
-    pyenv install 3.4.1<br />
-    pyenv install 2.7.8</p></li>
-
-<li><p>ndenvのインストール
-    ndenv install v0.11.13<br />
-    ndenv global v0.11.13<br />
-    ndenv rehash</p></li>
-
-<li><p>phpenvのインストール
-    phpenv install 5.5.16<br />
-    phpenv install 5.6.0<br />
-    phpenv global 5.5.16<br />
-    phpenv rehash</p></li>
-
-<li><p>php-fpmの設定
-    -: listen = 127.0.0.1:9000<br />
-    +: /home/{{myhome}}/.phpenv/versions/5.5.16/var/run/php-fpm.sock<br />
-    -: ;request_terminate_timeout = 0<br />
-    +: request_terminate_timeout = 0</p></li>
-
-<li><p>php.iniの設定</p>
-
+ln -s ~/Dropbox/emacs.d ~/emacs.d<br>
+mv ~/emacs.d ~/.emacs.d</li>
+</ul>
+</li>
+<li>
+<p>バージョン管理のインストール
+sudo apt-get install git<br>
+sudo apt-get install mercurial</p>
+</li>
+<li>
+<p>nginxのインストール
+sudo apt-get install nginx</p>
+</li>
+<li>
+<p>xEnvや各バージョンのインストールに必要になる諸々のインストール
+sudo add-apt-repository ppa:webupd8team/java<br>
+sudo apt-get update<br>
+sudo apt-get install oracle-java7-installer ※for jruby<br>
+sudo apt-get install oracle-java8-installer ※必要であれば。<br>
+sudo update-alternatives &ndash;config java<br>
+※java7を選択する<br>
+sudo apt-get install g++ ※これをインストールしないとインストール失敗する<br>
+sudo apt-get install libssl-dev ※これをインストールしないとインストール失敗する<br>
+sudo apt-get install build-essential ※pyenvで必要になるようだ<br>
+sudo apt-get install curl ※ndenv install &ndash;list で必要になる<br>
+sudo apt-get install libjpeg-dev ※phpのインストールで必要になる<br>
+sudo apt-get install re2c ※phpのインストールで必要になる<br>
+sudo apt-get install bison ※phpのインストールで必要になる</p>
+</li>
+<li>
+<p>rbenvのインストール
+git clone <a href="https://github.com/sstephenson/rbenv.git">https://github.com/sstephenson/rbenv.git</a> ~/.rbenv<br>
+git clone <a href="https://github.com/sstephenson/ruby-build.git">https://github.com/sstephenson/ruby-build.git</a> ~/.rbenv/plugins/ruby-build<br>
+echo &lsquo;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&rsquo; &gt;&gt; ~/.bash_profile<br>
+echo &lsquo;eval &ldquo;${rbenv init -)&quot;&rsquo; &gt;&gt; ~/.bash_profile</p>
+</li>
+<li>
+<p>plenvのインストール
+git clone <a href="https://github.com/tokuhirom/plenv.git">https://github.com/tokuhirom/plenv.git</a> ~/.plenv<br>
+git clone <a href="https://github.com/tokuhirom/Perl-Build.git">https://github.com/tokuhirom/Perl-Build.git</a> ~/.plenv/plugins/perl-build<br>
+echo &lsquo;export PATH=&quot;$HOME/.plenv/bin:$PATH&rdquo;&rsquo; &gt;&gt; ~/.bash_profile<br>
+echo &lsquo;eval &ldquo;${plenv init -)&quot;&rsquo; &gt;&gt; ~/.bash_profile</p>
+</li>
+<li>
+<p>pyenvのインストール
+git clone <a href="https://github.com/yyuu/pyenv.git">https://github.com/yyuu/pyenv.git</a> ~/.pyenv<br>
+git clone <a href="https://github.com/yyuu/python-virtualenv.git">https://github.com/yyuu/python-virtualenv.git</a> ~/.pyenv/plugins/python-virtualenv<br>
+echo &lsquo;export PATH=&quot;$HOME/.pyenv/bin:$PATH&rdquo;&rsquo; &gt;&gt; ~/.bash_profile<br>
+echo &lsquo;eval &ldquo;${pyenv init -)&quot;&rsquo; &gt;&gt; ~/.bash_profile</p>
+</li>
+<li>
+<p>ndenvのインストール
+git clone <a href="https://github.com/riywo/ndenv.git">https://github.com/riywo/ndenv.git</a> ~/.ndenv<br>
+git clone <a href="https://github.com/riywo/node-build.git">https://github.com/riywo/node-build.git</a> ~/.ndenv/plugins/node-build<br>
+echo &lsquo;export PATH=&quot;$HOME/.ndenv/bin:$PATH&rdquo;&rsquo; &gt;&gt; ~/.bash_profile<br>
+echo &lsquo;eval &ldquo;${ndenv init -)&quot;&rsquo; &gt;&gt; ~/.bash_profile</p>
+</li>
+<li>
+<p>phpenvのインストール
+git clone <a href="https://github.com/CHH/phpenv.git">https://github.com/CHH/phpenv.git</a> ~/.phpenv<br>
+git clone <a href="https://github.com/CHH/php-build.git">https://github.com/CHH/php-build.git</a> ~/.phpenv/plugins/php-build<br>
+echo &lsquo;export PATH=&quot;$HOME/.phpenv/bin:$PATH&rdquo;&rsquo; &gt;&gt; ~/.bash_profile<br>
+echo &lsquo;eval &ldquo;${phpenv init -)&quot;&rsquo; &gt;&gt; ~/.bash_profile</p>
+</li>
+<li>
+<p>rubyのインストールとjrubyのインストール
+rbenv install 1.9.3-p547<br>
+rbenv install 2.1.2<br>
+rbenv install jruby-1.7.15<br>
+rbenv global 2.1.2</p>
+</li>
+<li>
+<p>perlのインストール
+plenv install 5.20.0<br>
+plenv global 5.20.0<br>
+plenv rehash</p>
+</li>
+<li>
+<p>pyenvのインストール
+pyenv install jython-2.5.3<br>
+pyenv install 3.4.1<br>
+pyenv install 2.7.8</p>
+</li>
+<li>
+<p>ndenvのインストール
+ndenv install v0.11.13<br>
+ndenv global v0.11.13<br>
+ndenv rehash</p>
+</li>
+<li>
+<p>phpenvのインストール
+phpenv install 5.5.16<br>
+phpenv install 5.6.0<br>
+phpenv global 5.5.16<br>
+phpenv rehash</p>
+</li>
+<li>
+<p>php-fpmの設定
+-: listen = 127.0.0.1:9000<br>
++: /home/{{myhome}}/.phpenv/versions/5.5.16/var/run/php-fpm.sock<br>
+-: ;request_terminate_timeout = 0<br>
++: request_terminate_timeout = 0</p>
+</li>
+<li>
+<p>php.iniの設定</p>
 <ul>
 <li>適宜timeoutやmax_sizeの調整</li>
 <li>timezoneの設定</li>
 <li>mbstringの設定</li>
 <li>拡張ライブラリ分の追記</li>
-</ul></li>
-
-<li><p>mysqlのインストール
-    sudo apt-get install mysq</p></li>
-
-<li><p>nginxの設定</p></p></li>
+</ul>
+</li>
+<li>
+<p>mysqlのインストール
+sudo apt-get install mysq</p>
+</li>
+<li>
+<p>nginxの設定<!-- raw HTML omitted --></p>
+</li>
 </ol>
-
 <p>conf.dに作成した場合はそのままで良いが、site-availableに作成した場合はsite-enableにシンボリックリンクを作成する</p>
-
 <p>unicornで動かすredmineの分も記述する。※内容詳細は次のリンク(過去記事参照)</p>
-
 <ol>
 <li>unicornでredmineの設定
-    sudo apt-get install zlib1g-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libsqlite3-dev libpcre3-dev libncurses-dev libgdbm-dev tk-dev libmagickwand-dev<br />
-    sudo apt-get install python-software-properties sysv-rc-conf<br />
-    gem update<br />
-    gem install bundler<br />
-    gem install mysql2
-    gem install rails
-    gem install rake
-    echo &ldquo;gem &lsquo;unicorn&rsquo;&rdquo; &gt;&gt; Gemfile.local
-    echo &ldquo;gem &lsquo;psych&rsquo;&rdquo; &gt;&gt; Gemfile.local
-    bundle install &ndash;without rmagick development test sqlite postgresql
-<br /></li>
+sudo apt-get install zlib1g-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libsqlite3-dev libpcre3-dev libncurses-dev libgdbm-dev tk-dev libmagickwand-dev<br>
+sudo apt-get install python-software-properties sysv-rc-conf<br>
+gem update<br>
+gem install bundler<br>
+gem install mysql2
+gem install rails
+gem install rake
+echo &ldquo;gem &lsquo;unicorn&rsquo;&rdquo; &gt;&gt; Gemfile.local
+echo &ldquo;gem &lsquo;psych&rsquo;&rdquo; &gt;&gt; Gemfile.local
+bundle install &ndash;without rmagick development test sqlite postgresql</li>
 </ol>
-
 <p>以降の作業については過去の記事を参照する。<a href="http://kazunoko.sakura.ne.jp/wordpress/?p=240">2014年の目標達成進捗管理的な</a></p>
-
 <h2 id="20140916">20140916</h2>
-
 <h3 id="memo">memo</h3>
-
 <p>Ubuntu(64bit)のphpenvにldap入れるのに詰まった事。</p>
-
 <p>ldapのライブラリの場所に問題があったらしい。</p>
-
 <pre><code>sudo ln -s /usr/lib/x86_64-linux-gnu/libldap_r.so /usr/lib/libldap_r.so  
 sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so  
 </code></pre>
-
 <p>Ubuntu(64bit)のphpenvにpdo-oci入れるのに詰まった事。</p>
-
 <pre><code>sudo ln -s /home/{{myhome}}/work/oracle/libclntsh.so.11.1 /home/{{myhome}}/work/oracle/libclntsh.so  
 </code></pre>
-
 <p>phpenvでphpizeで忘れていたこと。</p>
-
 <pre><code>./configure --with-php-config=/home/.phpenv/versions/5.5.16/bin/php-config ※phpizeの対象を指定する必要がある
 </code></pre>
-
 <p>Markdownのプラグインいれたけど、散々な結果。ウケる。</p>
 </p>
 			</section>
 			<footer>
-				<p>tags:  <a href="http://tech.k-zak.com/tags/env/">#env</a>,  <a href="http://tech.k-zak.com/tags/php/">#PHP</a>,  <a href="http://tech.k-zak.com/tags/redmine/">#Redmine</a>,  <a href="http://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>,  <a href="http://tech.k-zak.com/tags/unicorn/">#unicorn</a>,  <a href="http://tech.k-zak.com/tags/emacs/">#Emacs</a>, </p>
+				<p>tags:  <a href="https://tech.k-zak.com/tags/env/">#env</a>,  <a href="https://tech.k-zak.com/tags/php/">#PHP</a>,  <a href="https://tech.k-zak.com/tags/redmine/">#Redmine</a>,  <a href="https://tech.k-zak.com/tags/ubuntu/">#ubuntu</a>,  <a href="https://tech.k-zak.com/tags/unicorn/">#unicorn</a>,  <a href="https://tech.k-zak.com/tags/emacs/">#Emacs</a>, </p>
 			</footer>
 		</article>
 	</div>
@@ -234,197 +237,197 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
 			<p>Categories</p>
 			<ul>
 				
-				<li><a href="http://tech.k-zak.com/categories/setting-construction">setting-construction</a>(37)</li>
+				<li><a href="https://tech.k-zak.com/categories/setting-construction">setting-construction</a>(37)</li>
 				
-				<li><a href="http://tech.k-zak.com/categories/study-daily">study-daily</a>(91)</li>
+				<li><a href="https://tech.k-zak.com/categories/study-daily">study-daily</a>(91)</li>
 				
-				<li><a href="http://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(6)</li>
+				<li><a href="https://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(6)</li>
 				
 			</ul>
 		</section>
 		<section>
-			<p><a href="http://tech.k-zak.com/tags/">Tags</a></p>
+			<p><a href="https://tech.k-zak.com/tags/">Tags</a></p>
 			<ul>
 				
-				<li><a href="http://tech.k-zak.com/tags/ansible">ansible</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/ansible">ansible</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/anyenv">anyenv</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/anyenv">anyenv</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/apache">apache</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/apache">apache</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/aws">aws</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/aws">aws</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/aws-lambda">aws-lambda</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/aws-lambda">aws-lambda</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/batch">batch</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/batch">batch</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/books">books</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/books">books</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/cakephp">cakephp</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/cakephp">cakephp</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/character">character</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/character">character</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/cmd">cmd</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/cmd">cmd</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/complain">complain</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/complain">complain</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/css">css</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/css">css</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/django">django</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/django">django</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/docker">docker</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/docker">docker</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ecs">ecs</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/ecs">ecs</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/emacs">emacs</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/emacs">emacs</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/env">env</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/env">env</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/etc">etc</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/etc">etc</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fastcgi">fastcgi</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/fastcgi">fastcgi</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/filemaker">filemaker</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/filemaker">filemaker</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fmxj">fmxj</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/fmxj">fmxj</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/golang">golang</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/golang">golang</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/groovy">groovy</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/groovy">groovy</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/html">html</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/html">html</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/hugo">hugo</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/hugo">hugo</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/iis">iis</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/iis">iis</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/imap">imap</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/imap">imap</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/java">java</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/java">java</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jaws-ug">jaws-ug</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/jaws-ug">jaws-ug</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jekyll">jekyll</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/jekyll">jekyll</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jquery">jquery</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/jquery">jquery</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/laravel4">laravel4</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/laravel4">laravel4</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/log">log</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/log">log</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/lolipopcloud">lolipopcloud</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/lolipopcloud">lolipopcloud</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mac">mac</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/mac">mac</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/markdown">markdown</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/markdown">markdown</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mastodon">mastodon</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mastodon">mastodon</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mojolicious">mojolicious</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mojolicious">mojolicious</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mojoliciouslite">mojoliciouslite</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mojoliciouslite">mojoliciouslite</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/movabletype">movabletype</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/movabletype">movabletype</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mysql">mysql</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/mysql">mysql</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/netbeans">netbeans</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/netbeans">netbeans</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/network">network</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/network">network</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/node.js">node.js</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/node.js">node.js</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/oracle">oracle</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/oracle">oracle</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/otrs">otrs</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/otrs">otrs</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/perl">perl</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/perl">perl</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/php">php</a>(21)</li>
+				<li><a href="https://tech.k-zak.com/tags/php">php</a>(21)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/postfix">postfix</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/postfix">postfix</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/powershell">powershell</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/powershell">powershell</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/python">python</a>(15)</li>
+				<li><a href="https://tech.k-zak.com/tags/python">python</a>(15)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/rails">rails</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/rails">rails</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/rbenv">rbenv</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/rbenv">rbenv</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/react">react</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/react">react</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/redux">redux</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/redux">redux</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/s3">s3</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/s3">s3</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/selenium">selenium</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/selenium">selenium</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/socket.io">socket.io</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/socket.io">socket.io</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/swift">swift</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/swift">swift</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/terraform">terraform</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/terraform">terraform</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/typescript">typescript</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/typescript">typescript</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
+				<li><a href="https://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/vagrant">vagrant</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/vagrant">vagrant</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/vscode">vscode</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/vscode">vscode</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/webpack">webpack</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/webpack">webpack</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/windowsserver">windowsserver</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/windowsserver">windowsserver</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/wkhtmltopdf">wkhtmltopdf</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/wkhtmltopdf">wkhtmltopdf</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/wordpress">wordpress</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/wordpress">wordpress</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/xcode">xcode</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/xcode">xcode</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/zend-framework">zend-framework</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/zend-framework">zend-framework</a>(1)</li>
 				
 			</ul>
 		</section>

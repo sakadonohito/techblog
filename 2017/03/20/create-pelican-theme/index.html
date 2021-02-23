@@ -5,15 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 		<title>開発メモてきな</title>
-		<link rel="stylesheet" href="http://tech.k-zak.com/css/style.css" type="text/css"/>
+		<link rel="stylesheet" href="https://tech.k-zak.com/css/style.css" type="text/css"/>
 
 	</head>
 	<body>
 		<div class="wrapper">
 			<header class="site-main">
 	<div class="header-image-main">
-		<img alt="サイトのメインテーマ画像" src="http://tech.k-zak.com/image/top-min.png"/>
-		<a href="http://tech.k-zak.com/" class="site-title">開発メモてきな</a>
+		<img alt="サイトのメインテーマ画像" src="https://tech.k-zak.com/image/top-min.png"/>
+		<a href="https://tech.k-zak.com/" class="site-title">開発メモてきな</a>
 	</div>
 </header>
 
@@ -27,116 +27,79 @@
 				<ul class="horizontal-list-over767">
 					<li>Published: 2017年03月20日</li>
 				</ul>
-				<p>Category:  <a href="http://tech.k-zak.com/categories/setting-construction/">setting-construction</a> </p>
+				<p>Category:  <a href="https://tech.k-zak.com/categories/setting-construction/">setting-construction</a> </p>
 			</header>
 			<section>
-				<p>
-
-<h1 id="pelicanで使う自分用テーマを作成した">Pelicanで使う自分用テーマを作成した</h1>
-
+				<p><h1 id="pelicanで使う自分用テーマを作成した">Pelicanで使う自分用テーマを作成した</h1>
 <p>静的サイトジェネレーター用の基本的なブログレイアウトを一つ作っておくと使い回しができると思い、Python製のPelicanから着手することにしてみた。</p>
-
 <p>結論から言うと、なかなか時間がとれないのもあって、足掛け2ヶ月かかった。</p>
-
-<h2 id="その1-ベースとなるレイアウトを素組する">その1：ベースとなるレイアウトを素組する</h2>
-
+<h2 id="その1ベースとなるレイアウトを素組する">その1：ベースとなるレイアウトを素組する</h2>
 <p>htmlとCSSのみでできるだけレスポンシブな簡易ブログ用のレイアウトを考えて作った。</p>
-
 <p><a href="https://github.com/sakadonohito/site-base-theme">https://github.com/sakadonohito/site-base-theme</a></p>
-
 <p>flexboxを中途半端に使っているのと、Pelicanテーマ作り終わってからフィードバックしている部分もある。ホント適当。</p>
-
 <p>CSSはSCSSからWebpackでビルドしているけど、限りなく必要ないレベル。
 EmacsならSCSS保存する時にCSSをビルドしてくれるのでホント不要な構造、しかも作り終わる前にWebpackは2がでちゃってバージョンが古いというオマケつき。
 そうです、Webpack使ってるぜアッピルがしたかっただけなのです。</p>
-
-<h2 id="その2-pelicanのテーマを作る">その2：Pelicanのテーマを作る</h2>
-
+<h2 id="その2pelicanのテーマを作る">その2：Pelicanのテーマを作る</h2>
 <ol>
 <li>ググって出てきたシンプルなテーマをコピーして</li>
 <li>作ったベースレイアウトにまるっと取り替えて</li>
 <li>変数部分がちゃんと展開されるように調整して</li>
 <li>パーツをバラす</li>
 </ol>
-
 <p>みたいな感じで作成。</p>
-
 <p>結局よくりようしたのは<a href="http://docs.getpelican.com/en/3.6.3/themes.html">公式ドキュメント</a></p>
-
 <h2 id="ハマったところ">ハマったところ</h2>
-
 <h3 id="1-見本にしたテーマのパーツ毎の役割がよくわからなかった">1. 見本にしたテーマのパーツ毎の役割がよくわからなかった</h3>
-
 <p><code>categories.html</code>と<code>category.html</code>ってあって、最初複数形のはカテゴリ別の一覧表示で単数系のは1記事のパーツかと思ったら、複数形はカテゴリ名の一覧で単数系が特定のカテゴリでの記事一覧だった。
 タグの場合はさらに1記事用パーツレイアウトにはめ込む用の記事に関連づいたタグを横一列に並べるtaglist.htmlなんてのもあって、さらに混乱した。</p>
-
 <h3 id="2-ビルド失敗した時どこでエラーが発生したのか分からない">2. ビルド失敗した時どこでエラーが発生したのか分からない</h3>
-
 <p>ビルドのエラーログの出力設定があるのか調べていないだけなんだけど、テンプレート作成している時にビルドエラー発生したけど、どこの編集のせいか分からない(1行文法エラーで失敗したぜ！的なメッセージがでるだけ)のでこまめにビルドして確認しながらじゃないと迷路に迷い込む。</p>
-
 <p>ショートカットキーのタイポとかで変な場所に意図せず文字を入力してしまっているのに気づかず、ビルドが失敗した時には、身に覚えがなかったので解決に時間がかかった(2分探索みたいにコードを消したり戻したりしながらビルドしてエラー箇所を探した)。</p>
-
 <h3 id="3-記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある">3. 記事データのリストオブジェクトは生成するページのコンテキストに依存するものがある</h3>
-
 <p><code>period_Archives.html</code>っていう特定の期間の記事リストを表示するためのパーツの上で<strong>articles</strong>という記事リストオブジェクトは全体じゃなくて、その期間の記事リストオブジェクト。全記事のリストは代わりに<strong>all_articles</strong>てのある。じゃぁ常に<strong>all_articles</strong>を使えば？ってなるんだけど、TOPとか他の場所だとこの<strong>all_articles</strong>は空欄。</p>
-
 <h3 id="4-年月毎に記事のカウントを取ったりurl分ける方法の説明がおろそか">4. 年月毎に記事のカウントを取ったりURL分ける方法の説明がおろそか</h3>
-
 <p>結論からいうと、URLについては設定ファイルに</p>
-
-<pre><code class="language-python">MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
-他にも
-AUTHOR_SAVE_AS とか
-PAGE_SAVE_AS なんかもあるのよ
-</code></pre>
-
-<p>とか書いておくと、/2017/03/みたいなパスで2017年3月の記事の一覧ページが生成される。今にして思うと年のフォルダ&amp;月を意味するファイルの組み合わせでよかったんじゃないか説もある。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">MONTH_ARCHIVE_SAVE_AS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{date:%Y}/{date:%m}/index.html&#39;</span>
+<span style="color:#960050;background-color:#1e0010">他にも</span>
+AUTHOR_SAVE_AS <span style="color:#960050;background-color:#1e0010">とか</span>
+PAGE_SAVE_AS <span style="color:#960050;background-color:#1e0010">なんかもあるのよ</span>
+</code></pre></div><p>とか書いておくと、/2017/03/みたいなパスで2017年3月の記事の一覧ページが生成される。今にして思うと年のフォルダ&amp;月を意味するファイルの組み合わせでよかったんじゃないか説もある。</p>
 <p>年月の記事カウントについては全記事を年でまとめた記事リストの記事リストを作成して「記事リスト」をさらに月でまとめてカウントを取るみたいなことをやる。
 これはそんなようなことをするサンプルのテーマがたまたま見つかったから作れたけど見つからなかったらアーカイブのページが断念したと思う。</p>
-
 <p>こんな感じ</p>
-
-<pre><code class="language-python">&lt;section&gt;
-	&lt;p&gt;Archives&lt;/p&gt;
-	{% if all_articles|count %}
-	&lt;ul&gt;
-		{% for year, date_year in all_articles|groupby('date.year')|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
-		　　{% for month, articles in date_year|groupby('date.month')|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
-		　　　　&lt;li&gt;&lt;a href=&quot;/{{ year }}/{{ '%02d' % month }}/&quot;&gt;{{ year }}年{{ month }}月&lt;/a&gt;({{ articles|count }})&lt;/li&gt;
-		　　{% endfor %}
-		{% endfor %}
-	&lt;/ul&gt;
-	{% elif articles %}
-	&lt;ul&gt;
-	{% for year, date_year in articles|groupby('date.year')|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
-	　　{% for month, articles in date_year|groupby('date.month')|sort(reverse=NEWEST_FIRST_ARCHIVES) %}
-		　　　　&lt;li&gt;&lt;a href=&quot;/{{ year }}/{{ '%02d' % month }}/&quot;&gt;{{ year }}年{{ month }}月&lt;/a&gt;({{ articles|count }})&lt;/li&gt;
-	　　{% endfor %}
-	{% endfor %}
-	&lt;/ul&gt;
-	{% endif %}
-&lt;/section&gt;
-</code></pre>
-
-<p>正直リストオブジェクトをパイプで次の処理に渡せるのjinjaのドキュメント見なかったら想像もできなかったので、このパターンのサンプルくらいPelicanのドキュメントにも載せておいてほしい。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&lt;</span>section<span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span>p<span style="color:#f92672">&gt;</span>Archives<span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;</span>
+	{<span style="color:#f92672">%</span> <span style="color:#66d9ef">if</span> all_articles<span style="color:#f92672">|</span>count <span style="color:#f92672">%</span>}
+	<span style="color:#f92672">&lt;</span>ul<span style="color:#f92672">&gt;</span>
+		{<span style="color:#f92672">%</span> <span style="color:#66d9ef">for</span> year, date_year <span style="color:#f92672">in</span> all_articles<span style="color:#f92672">|</span>groupby(<span style="color:#e6db74">&#39;date.year&#39;</span>)<span style="color:#f92672">|</span>sort(reverse<span style="color:#f92672">=</span>NEWEST_FIRST_ARCHIVES) <span style="color:#f92672">%</span>}
+		　　{<span style="color:#f92672">%</span> <span style="color:#66d9ef">for</span> month, articles <span style="color:#f92672">in</span> date_year<span style="color:#f92672">|</span>groupby(<span style="color:#e6db74">&#39;date.month&#39;</span>)<span style="color:#f92672">|</span>sort(reverse<span style="color:#f92672">=</span>NEWEST_FIRST_ARCHIVES) <span style="color:#f92672">%</span>}
+		　　　　<span style="color:#f92672">&lt;</span>li<span style="color:#f92672">&gt;&lt;</span>a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/{{ year }}/{{ &#39;</span><span style="color:#e6db74">%02d</span><span style="color:#e6db74">&#39; % month }}/&#34;</span><span style="color:#f92672">&gt;</span>{{ year }}<span style="color:#960050;background-color:#1e0010">年</span>{{ month }}<span style="color:#960050;background-color:#1e0010">月</span><span style="color:#f92672">&lt;/</span>a<span style="color:#f92672">&gt;</span>({{ articles<span style="color:#f92672">|</span>count }})<span style="color:#f92672">&lt;/</span>li<span style="color:#f92672">&gt;</span>
+		　　{<span style="color:#f92672">%</span> endfor <span style="color:#f92672">%</span>}
+		{<span style="color:#f92672">%</span> endfor <span style="color:#f92672">%</span>}
+	<span style="color:#f92672">&lt;/</span>ul<span style="color:#f92672">&gt;</span>
+	{<span style="color:#f92672">%</span> <span style="color:#66d9ef">elif</span> articles <span style="color:#f92672">%</span>}
+	<span style="color:#f92672">&lt;</span>ul<span style="color:#f92672">&gt;</span>
+	{<span style="color:#f92672">%</span> <span style="color:#66d9ef">for</span> year, date_year <span style="color:#f92672">in</span> articles<span style="color:#f92672">|</span>groupby(<span style="color:#e6db74">&#39;date.year&#39;</span>)<span style="color:#f92672">|</span>sort(reverse<span style="color:#f92672">=</span>NEWEST_FIRST_ARCHIVES) <span style="color:#f92672">%</span>}
+	　　{<span style="color:#f92672">%</span> <span style="color:#66d9ef">for</span> month, articles <span style="color:#f92672">in</span> date_year<span style="color:#f92672">|</span>groupby(<span style="color:#e6db74">&#39;date.month&#39;</span>)<span style="color:#f92672">|</span>sort(reverse<span style="color:#f92672">=</span>NEWEST_FIRST_ARCHIVES) <span style="color:#f92672">%</span>}
+		　　　　<span style="color:#f92672">&lt;</span>li<span style="color:#f92672">&gt;&lt;</span>a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/{{ year }}/{{ &#39;</span><span style="color:#e6db74">%02d</span><span style="color:#e6db74">&#39; % month }}/&#34;</span><span style="color:#f92672">&gt;</span>{{ year }}<span style="color:#960050;background-color:#1e0010">年</span>{{ month }}<span style="color:#960050;background-color:#1e0010">月</span><span style="color:#f92672">&lt;/</span>a<span style="color:#f92672">&gt;</span>({{ articles<span style="color:#f92672">|</span>count }})<span style="color:#f92672">&lt;/</span>li<span style="color:#f92672">&gt;</span>
+	　　{<span style="color:#f92672">%</span> endfor <span style="color:#f92672">%</span>}
+	{<span style="color:#f92672">%</span> endfor <span style="color:#f92672">%</span>}
+	<span style="color:#f92672">&lt;/</span>ul<span style="color:#f92672">&gt;</span>
+	{<span style="color:#f92672">%</span> endif <span style="color:#f92672">%</span>}
+<span style="color:#f92672">&lt;/</span>section<span style="color:#f92672">&gt;</span>
+</code></pre></div><p>正直リストオブジェクトをパイプで次の処理に渡せるのjinjaのドキュメント見なかったら想像もできなかったので、このパターンのサンプルくらいPelicanのドキュメントにも載せておいてほしい。</p>
 <h3 id="5-1つのテンプレートファイルに複数のブロックを書ける">5. 1つのテンプレートファイルに複数のブロックを書ける</h3>
-
 <p>ハマったことではないんだけど、パーツ側が1ブロックしか書いちゃいけないと最初思ってたので。
 複数のブロックを書けるので、メインコンテンツのブロックとは別の離れた場所に共通化できないテンプレートごとの何かを表示させたい要素がある時なんかに便利だなーと思った。</p>
-
 <h2 id="総括">総括</h2>
-
 <p>テンプレート作成したけど設計失敗かも。</p>
-
 <p>今回作成したPelicanのテーマ</p>
-
 <p><a href="https://github.com/sakadonohito/pelican-theme-simple">https://github.com/sakadonohito/pelican-theme-simple</a></p>
 </p>
 			</section>
 			<footer>
-				<p>tags:  <a href="http://tech.k-zak.com/tags/pelican/">#Pelican</a>, </p>
+				<p>tags:  <a href="https://tech.k-zak.com/tags/pelican/">#Pelican</a>, </p>
 			</footer>
 		</article>
 	</div>
@@ -148,197 +111,197 @@ PAGE_SAVE_AS なんかもあるのよ
 			<p>Categories</p>
 			<ul>
 				
-				<li><a href="http://tech.k-zak.com/categories/setting-construction">setting-construction</a>(37)</li>
+				<li><a href="https://tech.k-zak.com/categories/setting-construction">setting-construction</a>(37)</li>
 				
-				<li><a href="http://tech.k-zak.com/categories/study-daily">study-daily</a>(91)</li>
+				<li><a href="https://tech.k-zak.com/categories/study-daily">study-daily</a>(91)</li>
 				
-				<li><a href="http://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(6)</li>
+				<li><a href="https://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(6)</li>
 				
 			</ul>
 		</section>
 		<section>
-			<p><a href="http://tech.k-zak.com/tags/">Tags</a></p>
+			<p><a href="https://tech.k-zak.com/tags/">Tags</a></p>
 			<ul>
 				
-				<li><a href="http://tech.k-zak.com/tags/ansible">ansible</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/ansible">ansible</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/anyenv">anyenv</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/anyenv">anyenv</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/apache">apache</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/apache">apache</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/aws">aws</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/aws">aws</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/aws-lambda">aws-lambda</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/aws-lambda">aws-lambda</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/batch">batch</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/batch">batch</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/books">books</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/books">books</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/cakephp">cakephp</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/cakephp">cakephp</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/character">character</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/character">character</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/cmd">cmd</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/cmd">cmd</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/complain">complain</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/complain">complain</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/css">css</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/css">css</a>(5)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/django">django</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/django">django</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/docker">docker</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/docker">docker</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ecs">ecs</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/ecs">ecs</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/emacs">emacs</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/emacs">emacs</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/env">env</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/env">env</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/etc">etc</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/etc">etc</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fastcgi">fastcgi</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/fastcgi">fastcgi</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/filemaker">filemaker</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/filemaker">filemaker</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fmxj">fmxj</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/fmxj">fmxj</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/golang">golang</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/golang">golang</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/groovy">groovy</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/groovy">groovy</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/html">html</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/html">html</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/hugo">hugo</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/hugo">hugo</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/iis">iis</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/iis">iis</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/imap">imap</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/imap">imap</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/java">java</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/java">java</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jaws-ug">jaws-ug</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/jaws-ug">jaws-ug</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jekyll">jekyll</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/jekyll">jekyll</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/jquery">jquery</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/jquery">jquery</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/laravel4">laravel4</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/laravel4">laravel4</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/log">log</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/log">log</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/lolipopcloud">lolipopcloud</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/lolipopcloud">lolipopcloud</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mac">mac</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/mac">mac</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/markdown">markdown</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/markdown">markdown</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mastodon">mastodon</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mastodon">mastodon</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mojolicious">mojolicious</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mojolicious">mojolicious</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mojoliciouslite">mojoliciouslite</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/mojoliciouslite">mojoliciouslite</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/movabletype">movabletype</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/movabletype">movabletype</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/mysql">mysql</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/mysql">mysql</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/netbeans">netbeans</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/netbeans">netbeans</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/network">network</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/network">network</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/node.js">node.js</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/node.js">node.js</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/oracle">oracle</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/oracle">oracle</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/otrs">otrs</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/otrs">otrs</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/perl">perl</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/perl">perl</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/php">php</a>(21)</li>
+				<li><a href="https://tech.k-zak.com/tags/php">php</a>(21)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/postfix">postfix</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/postfix">postfix</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/powershell">powershell</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/powershell">powershell</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/python">python</a>(15)</li>
+				<li><a href="https://tech.k-zak.com/tags/python">python</a>(15)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/rails">rails</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/rails">rails</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/rbenv">rbenv</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/rbenv">rbenv</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/react">react</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/react">react</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/redux">redux</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/redux">redux</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
+				<li><a href="https://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/s3">s3</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/s3">s3</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/selenium">selenium</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/selenium">selenium</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/socket.io">socket.io</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/socket.io">socket.io</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/swift">swift</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/swift">swift</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/terraform">terraform</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/terraform">terraform</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/typescript">typescript</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/typescript">typescript</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
+				<li><a href="https://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
+				<li><a href="https://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/vagrant">vagrant</a>(3)</li>
+				<li><a href="https://tech.k-zak.com/tags/vagrant">vagrant</a>(3)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/vscode">vscode</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/vscode">vscode</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/webpack">webpack</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/webpack">webpack</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/windowsserver">windowsserver</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/windowsserver">windowsserver</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/wkhtmltopdf">wkhtmltopdf</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/wkhtmltopdf">wkhtmltopdf</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/wordpress">wordpress</a>(4)</li>
+				<li><a href="https://tech.k-zak.com/tags/wordpress">wordpress</a>(4)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/xcode">xcode</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/xcode">xcode</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
 				
-				<li><a href="http://tech.k-zak.com/tags/zend-framework">zend-framework</a>(1)</li>
+				<li><a href="https://tech.k-zak.com/tags/zend-framework">zend-framework</a>(1)</li>
 				
 			</ul>
 		</section>

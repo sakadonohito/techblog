@@ -1,43 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Django on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/django/</link>
+    <link>https://tech.k-zak.com/tags/django/</link>
     <description>Recent content in Django on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 21 Apr 2011 08:43:01 +0000</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/django/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 21 Apr 2011 08:43:01 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/django/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Django お勉強 Part3</title>
-      <link>http://tech.k-zak.com/2011/04/21/django-tutorial/</link>
+      <link>https://tech.k-zak.com/2011/04/21/django-tutorial/</link>
       <pubDate>Thu, 21 Apr 2011 08:43:01 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/21/django-tutorial/</guid>
-      <description> 引き続きDjangoのお勉強。今回はDjango Projectのチュートリアルであばば。     参考：http://djangoproject.jp/doc/ja/1.0/intro/tutorial01.html#intro-tutorial01     最後の方まで順調だったのですが、最後の汎用ビューでつまりました。   同じようなところで詰まって、解決された方のブログを見つけたので、   それを参考に解決しました。    参考：http://ntm.ex-blog.net/archives/91
-   よくあることですが、チュートリアルそのままやってても、説明不足の箇所が   あって、それが原因でうまく動作しなくあるっていうやつです。     １，汎用ビューを使う設定したら、該当テンプレートファイルの名称を   規則に沿った名前にしないといけない。     ２，チュートリアルの通りにコードを編集すると、今まで「poll」という名の   オブジェクトだった箇所を「object」という名前に編集しないといけない。     解決した後から再度チュートリアルを読むと、説明不足というよりは、   翻訳の関係で分かり難い文章になってしまっている。という感じ。     確かにどこを変えないといけないか書いてあるといえば書いてあるのですが、   自分みたいなアホウは良く解らんでした(つまりどこをどう編集すべきなのか   理解できなかった)。     日本語って難しいですね。。。    </description>
+      <guid>https://tech.k-zak.com/2011/04/21/django-tutorial/</guid>
+      <description>参考：http://ntm.ex-blog.net/archives/91</description>
     </item>
     
     <item>
       <title>Django お勉強 Part2</title>
-      <link>http://tech.k-zak.com/2011/04/20/django-tutorial/</link>
+      <link>https://tech.k-zak.com/2011/04/20/django-tutorial/</link>
       <pubDate>Wed, 20 Apr 2011 11:20:34 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/20/django-tutorial/</guid>
-      <description>古いDBMagazineに載ってたDjangoのチュートリアル的なものを   試してみたら、また詰まった。     正しいかどうかは別にして解決したメモ     症状：見本通りにコード書いたらエラー出た。(reverse関数)   views.pyファイルの◯◯メソッドのreturnにDjango組込みのreverse関数   を使って、画面遷移させようとした。     雑誌の通りにコーディングしたら、エラーが出た。   意訳：その関数の引数argsはシーケンスじゃないと駄目だぜ、おまいの    はlongだぜ。   最初、どう書いたかというと、   return HttpResponseRedirect(reverse(&amp;#8216;enkai.enkai_app.views.detail&amp;#8217;,args=(e.id)))     はて？と思い、引数の値を固定値にしてみた   return HttpResponseRedirect(reverse(&amp;#8216;enkai.enkai_app.views.detail&amp;#8217;,args=(1)))   そしたら今度は「おまいのはintだぜ」ってエラーになった。      これは引数に与えるデータ型が問題なのだと考え至ったがpython初心者   の自分はエラーメッセージ中の「シーケンス」の意味を理解していなか   った。      次に固定値で与えてる引数を文字列として与えてみた。   return HttpResponseRedirect(reverse(&amp;#8216;enkai.</description>
+      <guid>https://tech.k-zak.com/2011/04/20/django-tutorial/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>Django お勉強</title>
-      <link>http://tech.k-zak.com/2011/04/19/django-tutorial/</link>
+      <link>https://tech.k-zak.com/2011/04/19/django-tutorial/</link>
       <pubDate>Tue, 19 Apr 2011 05:10:17 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/19/django-tutorial/</guid>
-      <description>PythonのDjangoのお勉強記録
-   いろいろとつまったのでメモ。     まず試したのはCodoZineのチュートリアル記事   Djangoチュートリアル前篇：　http://codezine.jp/article/detail/4065   Djangoチュートリアル後編：　http://codezine.jp/article/detail/4264   ※記事内のインストールや参考記事のURLは割愛     ０，環境はMacOSX10.6 Pythonはインストール済み   １，チュートリアルにしたがってDjangoインストール→プロジェクト作成、MySQLにDB作成   →アプリケーション作成   チュートリアルではDBはSQLiteだったけど、なんとなくMySQLを使った   ２，チュートリアルにしたがって写経   以上。     時折詰まったので、後はそのポイント     ・Pythonの文法にうっかりハマる。   自動でインデントしてくれるエディタを使っていると、改行時に自動でインデントしてくれますよね   それを忘れて、別のメソッドを続けて書く時にはインデント位置を戻さないといけないのに、   うっかりインデントされたままコード書き続けて、自爆するので気をつけましょう   views.pyで定義したはずのものが(ビューメソッド？)見つからないエラーが出たら真っ先に   インデントや誤字を疑いましょう。     ・動作するのに必要な記述の説明が抜けている。追加ファイルの事。   当たり前の事といえばそれまでなのですが、views.</description>
+      <guid>https://tech.k-zak.com/2011/04/19/django-tutorial/</guid>
+      <description>PythonのDjangoのお勉強記録</description>
     </item>
     
   </channel>

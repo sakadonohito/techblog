@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apache on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/apache/</link>
+    <link>https://tech.k-zak.com/tags/apache/</link>
     <description>Recent content in Apache on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 25 Oct 2014 16:10:39 +0000</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/apache/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 25 Oct 2014 16:10:39 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/apache/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>思い出せない</title>
-      <link>http://tech.k-zak.com/2014/10/25/milestone/</link>
+      <link>https://tech.k-zak.com/2014/10/25/milestone/</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/10/25/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/10/25/milestone/</guid>
       <description>前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
 サーバー関係 ログローテーションの設定を行った。
 yum install logrotate
@@ -36,10 +32,10 @@ PHP namespaceやautoloadをまだ理解しきれていない部分があるよ�
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
-      <link>http://tech.k-zak.com/2014/09/07/challenge-ansible/</link>
+      <link>https://tech.k-zak.com/2014/09/07/challenge-ansible/</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/07/challenge-ansible/</guid>
+      <guid>https://tech.k-zak.com/2014/09/07/challenge-ansible/</guid>
       <description>・botoが使えないってエラーになる。
 　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
 つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
@@ -49,15 +45,15 @@ PHP namespaceやautoloadをまだ理解しきれていない部分があるよ�
 ・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。
 ・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。
 　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。
-　なので「NameVirtuakHost *:80」の記述があれば、その後VirtualHostディレクティブが
+　なので「NameVirtuakHost *:80」の記述があれば、その後&amp;lt;virtualhost *:80&amp;gt;VirtualHostディレクティブが
 　ないといけない。
-もしもみたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
+もしも&amp;lt;virtualhost {{hostname}}:80&amp;gt;みたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
 整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。
 ・Ubuntuに入ってるApache2のVirtualHostの有効化無効化
 　sites-availableディレクトリにVirtualHost設定書く
 　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化
 ・Hostの指定が足りない！？
-Could not reliably determine the server&amp;#8217;s fully qualified domain name, using for ServerName
+Could not reliably determine the server’s fully qualified domain name, using for ServerName
 こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った
 　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、
 　そこに{{hostname}}.localを追記する処理追加
@@ -66,23 +62,22 @@ Ansibleでmysql_userモジュールを使ってユーザーを追加する際に
 host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)
 リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要
 ・netstat -ant で現在使ってるポートとか観れる
-　(適当な解釈、後で意味をちゃんと調べる&amp;#8230;かも)
+　(適当な解釈、後で意味をちゃんと調べる…かも)
 ・MySQLが外部からつながらぬ
 webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。
 my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。
 これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。
 ・ApacheのRewriteの設定漏れ
 UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。
-　AllowOverride をAllにしなかった。。。
-ということで？今のところ、Vagrantで作成したVMにMySQLやApacheの設定、それからWordPressの設置は出来るように</description>
+　AllowOverride をAllにしなかった。。。</description>
     </item>
     
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
-      <link>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
+      <link>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
+      <guid>https://tech.k-zak.com/2014/08/02/challenge-vagrant-ansible/</guid>
       <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
 の、前にAWSのS3試したので。
 ・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
@@ -101,19 +96,11 @@ Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合�
     
     <item>
       <title>apacheでredmine virtualhost設定</title>
-      <link>http://tech.k-zak.com/2011/06/25/apache-virtualhost/</link>
+      <link>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</link>
       <pubDate>Sat, 25 Jun 2011 16:03:16 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/06/25/apache-virtualhost/</guid>
-      <description>この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。
-   で、急遽同タイプのを買いなおしてHDD移植してOS再インストールとかして   つまったapacheでredmine再設定をここにメモす。     なぜこんなことが起きたのか。。それはOS再インストールした際に、apacheの   virtualhost.confが初期化され、redmine用の設定が消えたからです。   再設定のため、webや本を見ながら書いたつもりの設定ではCSS等が読み込まれなんだ   ( °д°)ﾅﾝﾃﾞ？     結局関係ないと思ってたところが関係してた(apacheの設定とか理解してなかった)   という話。     以下が正常に動いた設定(virtualhost)      #Redmine用   
- ServerAdmin oira@virtualhostDomain 
- DocumentRoot &amp;#8220;redmineのある場所/redmine/public&amp;#8221; 
- ServerName virtualhostDomain 
- ErrorLog &amp;#8220;/private/var/log/apache2/virtualhostDomain-error_log&amp;#8221; 
- CustomLog &amp;#8220;/private/var/log/apache2/virtualhostDomain-access_log&amp;#8221; common 
- 
- RailsBaseURI / ※redmine専用のバーチャルホストのため、ルートを指定</description>
+      <guid>https://tech.k-zak.com/2011/06/25/apache-virtualhost/</guid>
+      <description>この間、MyMBPが死にました。。。アセロラドリンクをがぶ飲みして死にました。。。</description>
     </item>
     
   </channel>

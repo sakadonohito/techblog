@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xcode on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/xcode/</link>
+    <link>https://tech.k-zak.com/tags/xcode/</link>
     <description>Recent content in Xcode on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 30 Dec 2017 14:39:52 +0900</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 30 Dec 2017 14:39:52 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First Swift</title>
-      <link>http://tech.k-zak.com/2017/12/30/first-swift/</link>
+      <link>https://tech.k-zak.com/2017/12/30/first-swift/</link>
       <pubDate>Sat, 30 Dec 2017 14:39:52 +0900</pubDate>
       
-      <guid>http://tech.k-zak.com/2017/12/30/first-swift/</guid>
+      <guid>https://tech.k-zak.com/2017/12/30/first-swift/</guid>
       <description>PlaygroundでSwift 初めてということでもないけど初心に帰ってSwiftをPlaygroundで触った。
 iOS再再再入門 xcodeで新規プロジェクト作成してMap UI Kit?使ってべっ！っておいたらそれだけでMapアプリ完成。
 Swift再入門  varは変数 letは定数 Swiftはブロックスコープ 繰り返しはfor n in range{}  まだまだ入り口。</description>

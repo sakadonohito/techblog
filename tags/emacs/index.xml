@@ -1,44 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emacs on 開発メモてきな</title>
-    <link>http://tech.k-zak.com/tags/emacs/</link>
+    <link>https://tech.k-zak.com/tags/emacs/</link>
     <description>Recent content in Emacs on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 15 Sep 2014 15:48:13 +0000</lastBuildDate>
-    
-	<atom:link href="http://tech.k-zak.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 15 Sep 2014 15:48:13 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>新しく開発環境作成中</title>
-      <link>http://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
+      <link>https://tech.k-zak.com/2014/09/15/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
-      <description>Ubuntu14(64bit)のVM作成  イメージからVMWareFusionに作成
- ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
- ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
- 設定画面が出てくるので、そのままOK
-  VMWare toolsをインストール
- VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行  aptのアップデートとアップグレード sudo apt-get update
+      <guid>https://tech.k-zak.com/2014/09/15/dev-env-vm/</guid>
+      <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
+  ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
+  設定画面が出てくるので、そのままOK
+    VMWare toolsをインストール
+ VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行    aptのアップデートとアップグレード sudo apt-get update
 sudo apt-get upgrade
- Dropboxクライアントのインストール
- FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから  Emacsのインストール sudo apt-get install emacs24
+  Dropboxクライアントのインストール
+ FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから    Emacsのインストール sudo apt-get install emacs24
  Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
-mv ~/emacs.d ~/.emacs.d   バージョン管理のインストール sudo apt-get install git
-sudo apt-get install mercurial
- nginxのインストール sudo apt-get install nginx
- xEnvや各バージョンのインストールに必要になる諸々のインストール sudo add-apt-repository ppa:webupd8team/java</description>
+mv ~/emacs.d ~/.emacs.d    バージョン管理のインストール sudo apt-get install git
+sudo apt-get install mercurial</description>
     </item>
     
     <item>
       <title>最近やったいろいろ</title>
-      <link>http://tech.k-zak.com/2014/03/16/milestone/</link>
+      <link>https://tech.k-zak.com/2014/03/16/milestone/</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2014/03/16/milestone/</guid>
+      <guid>https://tech.k-zak.com/2014/03/16/milestone/</guid>
       <description>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
 ◆PostgreSQLのSQLダンプ
 　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
@@ -83,22 +76,20 @@ sudo apt-get install mercurial
     
     <item>
       <title>シンポナシウム</title>
-      <link>http://tech.k-zak.com/2011/11/05/milestone/</link>
+      <link>https://tech.k-zak.com/2011/11/05/milestone/</link>
       <pubDate>Sat, 05 Nov 2011 03:34:57 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/11/05/milestone/</guid>
-      <description>前回の更新からはや4ヶ月超。どのような進歩があったと言うと&amp;#8230;
- 内に等しい！？     ホント自己嫌悪してくるわー。     一応、   DB関係：   ・MySQL、ターミナルで入る時に「mysql -u name -p」って「-p」入れるの忘れないの覚えた。     環境関係：   ・gitとMercurial少しづつ試した。コマンドも少し覚えた   ・レンタルサーバーVPS、Macの様々な操作のお陰でターミナルでのコマンド操作馴れた。   ・emacsの設定ファイルいろいろコピペで入れて、開発はeclipse→emacsになった。   必然的にemacsの基本的な操作を覚えた。     プログラム言語：   ・pythonをちょろちょろ自習しているがちっとも上達しない、ちょっと入り組んだ処理の   ソースになると途端にちんぷんかんぷん。   ・PythonでapacheにDjangoを置く、WSGIの設定とかおぼ&amp;#8230;えた&amp;#8230;？     あーだめだこりゃ、話しにならん。。。  </description>
+      <guid>https://tech.k-zak.com/2011/11/05/milestone/</guid>
+      <description>前回の更新からはや4ヶ月超。どのような進歩があったと言うと…</description>
     </item>
     
     <item>
       <title>emacs初めてみようか</title>
-      <link>http://tech.k-zak.com/2011/04/29/emacs-setting/</link>
+      <link>https://tech.k-zak.com/2011/04/29/emacs-setting/</link>
       <pubDate>Fri, 29 Apr 2011 17:47:06 +0000</pubDate>
       
-      <guid>http://tech.k-zak.com/2011/04/29/emacs-setting/</guid>
-      <description>現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている
- 軽いけどまだまだ完成度の低いKodに代わりテキストエディタを探そうと思い   emacsを試すことにした。     まずはインストール。自分のPCはMacBookPro10.6なのでemacs23.xを入れる事に   最初に入れたのは22.2のアプリタイプのもの、   CarbonEmacs   http://www.apple.com/jp/downloads/macosx/tools/carbonemacs.html   http://homepage.mac.com/zenitani/emacs-j.html     いや、折角なのでちゃんと最新のでやりましょう。と探して次に見つけたのが   Aquamacs2.0 http://sourceforge.jp/magazine/10/05/12/090234   これでもよかったんでしょうけど、普通のemacs23.xを入れようとさらに探し、   MacPortsからインストールの方法を見つける。   http://d.hatena.ne.jp/tomoya/20090210/1234297520     入れるものを間違えたのか、自分のやつだとGUIの設定画面がでない。。。   ざっと、通し見したブログ   「CarbonからCocoaへ&amp;#8211;Snow LeopardでEmacs 23を使う」   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20409879/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410292/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410578/   http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20410802/     最初はマウスでメニューとか開いてコマンド実行、ヘルプのところに   「Emacs Tutorial (choose language)」てのがあるのでそれを実行。言語はお好みで。   中身を見ながら試す。     初めはどうしたら「filename.</description>
+      <guid>https://tech.k-zak.com/2011/04/29/emacs-setting/</guid>
+      <description>現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている</description>
     </item>
     
   </channel>
