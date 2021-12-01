@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 24 Feb 2021 04:25:49 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2021 02 24 お久しぶりです</title>
-      <link>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</link>
+      <link>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B5%E3%82%99%E3%82%8A%E3%81%A6%E3%82%99%E3%81%99/</link>
       <pubDate>Wed, 24 Feb 2021 04:25:49 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</guid>
+      <guid>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B5%E3%82%99%E3%82%8A%E3%81%A6%E3%82%99%E3%81%99/</guid>
       <description>久し振りにHugoを更新してみる 長らく何もしていなかったので色々更新するのにだいぶ手間取った。 Hugoそのものを更新するのにbrewの更新や不備を直したり、なぜかついでにEmacsを最新にアップデートしたり。
 更新作業したもの  brew(brew doctorしていろいろあって大苦戦) Emacs(brewで整合性とったり動かなくなった設定直したり大苦戦) Hugo ブログのテンプレートちょこちょこ直した GitHubのSSH鍵(pushでエラー出るようになってて結局鍵を新しくした) このブログのGitHub Pagesの設定でhttpsに変更  新たに発見したことやったこと 虚しい更新作業の合間に発見したちょい技や機能があった。
 1. デスクトップをきれいにする小技 正確にはデスクトップを整理整頓するのを諦めて、シェルでデスクトップの表示非表示を切り替えるようにした。

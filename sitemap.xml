@@ -3,12 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</loc>
-    <lastmod>2021-02-24T04:25:49+09:00</lastmod>
+    <loc>https://tech.k-zak.com/categories/</loc>
+    <lastmod>2021-12-01T07:53:12+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tech.k-zak.com/categories/</loc>
+    <loc>https://tech.k-zak.com/tags/css/</loc>
+    <lastmod>2021-12-01T07:53:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tech.k-zak.com/tags/gatsby/</loc>
+    <lastmod>2021-12-01T07:53:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tech.k-zak.com/posts/2021-12-01-study-gatsby/</loc>
+    <lastmod>2021-12-01T07:53:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tech.k-zak.com/posts/</loc>
+    <lastmod>2021-12-01T07:53:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tech.k-zak.com/categories/study-daily/</loc>
+    <lastmod>2021-12-01T07:53:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tech.k-zak.com/tags/</loc>
+    <lastmod>2021-12-01T07:53:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tech.k-zak.com/</loc>
+    <lastmod>2021-12-01T07:53:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B5%E3%82%99%E3%82%8A%E3%81%A6%E3%82%99%E3%81%99/</loc>
     <lastmod>2021-02-24T04:25:49+09:00</lastmod>
   </url>
   
@@ -19,26 +54,6 @@
   
   <url>
     <loc>https://tech.k-zak.com/tags/mac/</loc>
-    <lastmod>2021-02-24T04:25:49+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tech.k-zak.com/posts/</loc>
-    <lastmod>2021-02-24T04:25:49+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tech.k-zak.com/categories/study-daily/</loc>
-    <lastmod>2021-02-24T04:25:49+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tech.k-zak.com/tags/</loc>
-    <lastmod>2021-02-24T04:25:49+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tech.k-zak.com/</loc>
     <lastmod>2021-02-24T04:25:49+09:00</lastmod>
   </url>
   
@@ -170,11 +185,6 @@
   <url>
     <loc>https://tech.k-zak.com/posts/2017-12-27-typescript/</loc>
     <lastmod>2017-12-27T14:10:35+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tech.k-zak.com/tags/css/</loc>
-    <lastmod>2017-12-25T14:13:02+09:00</lastmod>
   </url>
   
   <url>

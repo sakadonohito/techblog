@@ -6,7 +6,25 @@
     <description>Recent content in Tags on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 24 Feb 2021 04:25:49 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Dec 2021 07:53:12 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS</title>
+      <link>https://tech.k-zak.com/tags/css/</link>
+      <pubDate>Wed, 01 Dec 2021 07:53:12 +0900</pubDate>
+      
+      <guid>https://tech.k-zak.com/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gatsby</title>
+      <link>https://tech.k-zak.com/tags/gatsby/</link>
+      <pubDate>Wed, 01 Dec 2021 07:53:12 +0900</pubDate>
+      
+      <guid>https://tech.k-zak.com/tags/gatsby/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Hugo</title>
       <link>https://tech.k-zak.com/tags/hugo/</link>
@@ -202,15 +220,6 @@
       <pubDate>Wed, 27 Dec 2017 14:10:35 +0900</pubDate>
       
       <guid>https://tech.k-zak.com/tags/typescript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CSS</title>
-      <link>https://tech.k-zak.com/tags/css/</link>
-      <pubDate>Mon, 25 Dec 2017 14:13:02 +0900</pubDate>
-      
-      <guid>https://tech.k-zak.com/tags/css/</guid>
       <description></description>
     </item>
     

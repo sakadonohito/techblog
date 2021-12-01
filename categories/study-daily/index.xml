@@ -6,13 +6,48 @@
     <description>Recent content in study-daily on 開発メモてきな</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 24 Feb 2021 04:25:49 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/categories/study-daily/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Dec 2021 07:53:12 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/categories/study-daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gatsbyjsでポートフォリオサイト作った</title>
+      <link>https://tech.k-zak.com/posts/2021-12-01-study-gatsby/</link>
+      <pubDate>Wed, 01 Dec 2021 07:53:12 +0900</pubDate>
+      
+      <guid>https://tech.k-zak.com/posts/2021-12-01-study-gatsby/</guid>
+      <description>Gatsbyjsでポートフォリオサイト作った ちょちょいと簡単にできるやろと思って始めてみたら、正味10日ほどかかってしまった。。
+準備 いきなりインストールで躓く。
+mpnでインストールだといろいろ警告がでるのでyarnでインストールした。
+チュートリアルを試す インストールからチュートリアル完了まで2日ほどかかった。
+へぇ、便利そうやなという感想。
+Gatsby公式チュートリアル
+ダミーサイトの作成 ポートフォリオを名乗っているが実質Webサイト練習したものを画像にして載せるものなのでまずはダミーのWebを作成。
+画像を作るので実質2日近くかかってしまった。
+サイト作成 真似したいサイトを見本にレイアウトを作成する。
+間違ってないはずなのにうまく行かない場合は
+yarn run clean yarn run develop キャッシュのせいで最新の状態にならなくてうまくいっていないように見える時があった。
+他つまったところ
+ graphqlうまくいかないと思ったらタイポ。 画像を扱うコンポーネントはhtmlに変換されたときに沢山ラッパーが生成されているのでうまくCSSできなかった。 楽したくてプラグインでモーダル導入したら目的の要素にCSSするのに難儀した。 SEO用の設定うまくいかなくて苦戦、2日位かかった。 Netlifyでビルドすると失敗する。  CSS苦労 gatsby-plugin-imageやreact-modalを使って楽をしようとしたら、CSSの指定に苦労した。
+gatsbyで直接classをつけられるのはオーバーレイコンポーネントとコンテンツコンポーネントこちらはまだわかりやすい。
+React-Modalのスタイル
+問題はgatsby-plugin-image
+gatsby-plugin-iamge
+className指定はラッパー(div)、目的のimgタグにはimgClassNameで指定。
+しかもコンポーネントに渡すpropsに含まれているスタイル要素が一番強いので指定しないでCSS側で記述してもコンポーネント側のデフォルトが優先されるという。
+(例：object-fit, objevt-position, widthとか)
+SEO用の設定うまくいかなくて苦戦 SEOまわりで2日位かかった。
+なんか最新はreact-helmet-async使ったほうが良さそうな感じだったけどうまくいかなくて、結局SSGするのだからasyncである必要ないと妥協してreact-helmetにした。
+ポイント？として、proptypesの定義しないとエラーになるからちゃんと書くこと。
+OGPの画像を固定にしようとしたら、通常の画面に出てこないものなので生成されずハマった。
+暫定措置として、対象の画像をimport及び変数格納で画像生成するように小細工した。
+以下にSEO用のコンポーネントを残す。headタグのところはうまく動いていないので後日対応予定。
+import * as React from &amp;#39;react&amp;#39; import PropTypes from &amp;#39;prop-types&amp;#39; import { Helmet } from &amp;#39;react-helmet&amp;#39; import { useLocation } from &amp;#34;@reach/router&amp;#34; import { useStaticQuery, graphql } from &amp;#39;gatsby&amp;#39; import ogpImage from &amp;#39;.</description>
+    </item>
+    
     <item>
       <title>2021 02 24 お久しぶりです</title>
-      <link>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</link>
+      <link>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B5%E3%82%99%E3%82%8A%E3%81%A6%E3%82%99%E3%81%99/</link>
       <pubDate>Wed, 24 Feb 2021 04:25:49 +0900</pubDate>
       
-      <guid>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</guid>
+      <guid>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B5%E3%82%99%E3%82%8A%E3%81%A6%E3%82%99%E3%81%99/</guid>
       <description>久し振りにHugoを更新してみる 長らく何もしていなかったので色々更新するのにだいぶ手間取った。 Hugoそのものを更新するのにbrewの更新や不備を直したり、なぜかついでにEmacsを最新にアップデートしたり。
 更新作業したもの  brew(brew doctorしていろいろあって大苦戦) Emacs(brewで整合性とったり動かなくなった設定直したり大苦戦) Hugo ブログのテンプレートちょこちょこ直した GitHubのSSH鍵(pushでエラー出るようになってて結局鍵を新しくした) このブログのGitHub Pagesの設定でhttpsに変更  新たに発見したことやったこと 虚しい更新作業の合間に発見したちょい技や機能があった。
 1. デスクトップをきれいにする小技 正確にはデスクトップを整理整頓するのを諦めて、シェルでデスクトップの表示非表示を切り替えるようにした。

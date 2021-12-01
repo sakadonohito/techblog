@@ -35,39 +35,128 @@
     <article class="top-single-content">
       <section>
         <header>
-	  <h2><a href="https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/">2021 02 24 お久しぶりです</a></h2>
+	  <h2><a href="https://tech.k-zak.com/posts/2021-12-01-study-gatsby/">Gatsbyjsでポートフォリオサイト作った</a></h2>
         </header>
       </section>
       <section>
-  <p><h2 id="久し振りにhugoを更新してみる">久し振りにHugoを更新してみる</h2>
-<p>長らく何もしていなかったので色々更新するのにだいぶ手間取った。
-Hugoそのものを更新するのにbrewの更新や不備を直したり、なぜかついでにEmacsを最新にアップデートしたり。</p>
-<h3 id="更新作業したもの">更新作業したもの</h3>
+  <p><h1 id="gatsbyjsでポートフォリオサイト作った">Gatsbyjsでポートフォリオサイト作った</h1>
+<p>ちょちょいと簡単にできるやろと思って始めてみたら、正味10日ほどかかってしまった。。</p>
+<h2 id="準備">準備</h2>
+<p>いきなりインストールで躓く。<br>
+mpnでインストールだといろいろ警告がでるのでyarnでインストールした。</p>
+<h3 id="チュートリアルを試す">チュートリアルを試す</h3>
+<p>インストールからチュートリアル完了まで2日ほどかかった。<br>
+へぇ、便利そうやなという感想。</p>
+<p><a href="https://www.gatsbyjs.com/docs/tutorial/">Gatsby公式チュートリアル</a></p>
+<h3 id="ダミーサイトの作成">ダミーサイトの作成</h3>
+<p>ポートフォリオを名乗っているが実質Webサイト練習したものを画像にして載せるものなのでまずはダミーのWebを作成。<br>
+画像を作るので実質2日近くかかってしまった。</p>
+<h2 id="サイト作成">サイト作成</h2>
+<p>真似したいサイトを見本にレイアウトを作成する。<br>
+間違ってないはずなのにうまく行かない場合は</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn run clean
+yarn run develop
+</code></pre></div><p>キャッシュのせいで最新の状態にならなくてうまくいっていないように見える時があった。<br>
+他つまったところ</p>
 <ul>
-<li>brew(brew doctorしていろいろあって大苦戦)</li>
-<li>Emacs(brewで整合性とったり動かなくなった設定直したり大苦戦)</li>
-<li>Hugo</li>
-<li>ブログのテンプレートちょこちょこ直した</li>
-<li>GitHubのSSH鍵(pushでエラー出るようになってて結局鍵を新しくした)</li>
-<li>このブログのGitHub Pagesの設定でhttpsに変更</li>
+<li>graphqlうまくいかないと思ったらタイポ。</li>
+<li>画像を扱うコンポーネントはhtmlに変換されたときに沢山ラッパーが生成されているのでうまくCSSできなかった。</li>
+<li>楽したくてプラグインでモーダル導入したら目的の要素にCSSするのに難儀した。</li>
+<li>SEO用の設定うまくいかなくて苦戦、2日位かかった。</li>
+<li>Netlifyでビルドすると失敗する。</li>
 </ul>
-<h3 id="新たに発見したことやったこと">新たに発見したことやったこと</h3>
-<p>虚しい更新作業の合間に発見したちょい技や機能があった。</p>
-<h4 id="1-デスクトップをきれいにする小技">1. デスクトップをきれいにする小技</h4>
-<p>正確にはデスクトップを整理整頓するのを諦めて、シェルでデスクトップの表示非表示を切り替えるようにした。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">defaults write com.apple.finder CreateDesktop -boolean false <span style="color:#f92672">&amp;&amp;</span> killAll Finder
-</code></pre></div><p>でmacのデスクトップ上のものを非表示にできる(falseをtrueにすれば逆の設定になる)。
-んでそのシェルをAutomatorでアプリケーションに登録してLaunchpadで呼び出して実行すれば切り替えられるという。</p>
-<h4 id="2-pbcopy">2. pbcopy</h4>
-<p>macにあるコマンド。初めて知ったような忘れていただけのような。
-今回GitHubに登録する鍵(pubの方)をGitHubのページで貼り付けるのに使った。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat id_rsa.pub | pbcopy
-</code></pre></div><p>って感じでクリップボードに送り込めるのでGitHubの入力フォームで貼り付け！
-便利なコマンドがあったんですね。以前はターミナル上もしくはエディタで開いたものをコピーしてたけどこれなら余計な改行やスペースが混ざり込む心配が無いですね。</p>
-<h4 id="3-github-pagesのhttps化">3. GitHub Pagesのhttps化</h4>
-<p>このブログが長らくhttpsにしないで放置していたのでどこかに移行してhttps化しようと考えていたんだけどいつの間にかGitHub Pagesはhttpsできるようになっていたんですね。
-早速設定でhttpsをオンにした。</p>
-<p>やれやれですよ。。</p>
+<h3 id="css苦労">CSS苦労</h3>
+<p>gatsby-plugin-imageやreact-modalを使って楽をしようとしたら、CSSの指定に苦労した。</p>
+<p>gatsbyで直接classをつけられるのはオーバーレイコンポーネントとコンテンツコンポーネントこちらはまだわかりやすい。<br>
+<a href="https://reactcommunity.org/react-modal/styles/classes/">React-Modalのスタイル</a></p>
+<p>問題はgatsby-plugin-image<br>
+<a href="https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/">gatsby-plugin-iamge</a><br>
+className指定はラッパー(div)、目的のimgタグにはimgClassNameで指定。<br>
+しかもコンポーネントに渡すpropsに含まれているスタイル要素が一番強いので指定しないでCSS側で記述してもコンポーネント側のデフォルトが優先されるという。<br>
+(例：object-fit, objevt-position, widthとか)</p>
+<h3 id="seo用の設定うまくいかなくて苦戦">SEO用の設定うまくいかなくて苦戦</h3>
+<p>SEOまわりで2日位かかった。<br>
+なんか最新はreact-helmet-async使ったほうが良さそうな感じだったけどうまくいかなくて、結局SSGするのだからasyncである必要ないと妥協してreact-helmetにした。<br>
+ポイント？として、proptypesの定義しないとエラーになるからちゃんと書くこと。<br>
+OGPの画像を固定にしようとしたら、通常の画面に出てこないものなので生成されずハマった。<br>
+暫定措置として、対象の画像をimport及び変数格納で画像生成するように小細工した。<br>
+以下にSEO用のコンポーネントを残す。headタグのところはうまく動いていないので後日対応予定。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">PropTypes</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;prop-types&#39;</span>
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Helmet</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-helmet&#39;</span>
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useLocation</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@reach/router&#34;</span>
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useStaticQuery</span>, <span style="color:#a6e22e">graphql</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;gatsby&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ogpImage</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../pages/static_images/ogp_image.png&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Seo</span> <span style="color:#f92672">=</span> ({ <span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">description</span>, <span style="color:#a6e22e">lang</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ja&#39;</span>, <span style="color:#a6e22e">article</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span> }) =&gt; {
+
+  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">pathname</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">useLocation</span>()
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useStaticQuery</span>(<span style="color:#a6e22e">graphql</span><span style="color:#e6db74">`
+</span><span style="color:#e6db74">    query {
+</span><span style="color:#e6db74">      site {
+</span><span style="color:#e6db74">        siteMetadata {
+</span><span style="color:#e6db74">          siteUrl
+</span><span style="color:#e6db74">          image
+</span><span style="color:#e6db74">          defaultTitle: title
+</span><span style="color:#e6db74">          defaultDescription: description
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">      }
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">  `</span>)
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">metaTitle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">site</span>.<span style="color:#a6e22e">siteMetadata</span>.<span style="color:#a6e22e">defaultTitle</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">metaDescription</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">description</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">site</span>.<span style="color:#a6e22e">siteMetadata</span>.<span style="color:#a6e22e">defaultDescription</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pageTitle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">?</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;TOP page&#39;</span>
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">article</span>)
+  <span style="color:#66d9ef">return</span> (
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Helmet</span>
+      <span style="color:#a6e22e">htmlAttributes</span><span style="color:#f92672">=</span>{{<span style="color:#a6e22e">lang</span>}} 
+      <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">metaTitle</span>}
+    <span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">head</span> <span style="color:#a6e22e">prefix</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og: http://ogp.me/ns#&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">metaDescription</span>} <span style="color:#f92672">/&gt;</span>
+
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:site_name&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">site</span>.<span style="color:#a6e22e">siteMetadata</span>.<span style="color:#a6e22e">defaultTitle</span>} <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:title&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">pageTitle</span>} <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:description&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">metaDescription</span>} <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:url&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">site</span>.<span style="color:#a6e22e">siteMetadata</span>.<span style="color:#a6e22e">siteUrl</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">pathname</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>} <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:image&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">site</span>.<span style="color:#a6e22e">siteMetadata</span>.<span style="color:#a6e22e">siteUrl</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">ogpImage</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>} <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">article</span><span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;article&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;website&#39;</span>} <span style="color:#f92672">/&gt;</span>
+
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;twitter:card&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;summary_large_image&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Helmet&gt;</span>
+  )
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Seo</span>
+
+<span style="color:#a6e22e">Seo</span>.<span style="color:#a6e22e">propTypes</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">string</span>,
+  <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">string</span>,
+  <span style="color:#a6e22e">image</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">string</span>,
+  <span style="color:#a6e22e">article</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">bool</span>,
+}
+
+<span style="color:#a6e22e">Seo</span>.<span style="color:#a6e22e">defaultProps</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  <span style="color:#a6e22e">image</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  <span style="color:#a6e22e">article</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+}
+</code></pre></div><h3 id="google-analytics">Google Analytics</h3>
+<p>gatsby-plugin-google-gtagを使うことによって、UA-&hellip;の従来のユニバーサルなんとかとG-&hellip;のgtagの両方登録できる。</p>
+<h2 id="デプロイ">デプロイ</h2>
+<p>公開先をNetlifyにした。理由は</p>
+<ul>
+<li>静的サイトを公開できる</li>
+<li>カスタムドメイン(自分で用意したドメイン)でもhttpsにできる</li>
+<li>自分の使い方(個人用、1サイトのみ、静的サイト)だと無料で使える</li>
+</ul>
+<p>GitHub PagesでもAWSのS3でも良かったんだけど、いくつかのサービスを経験するため今回のGatsbyで作ったポートフォリオサイトはNetlifyで運用することにした。<br>
+GitHubと連携してpushしたらNetlify側でビルドできる便利と思ったいたけど何度やってもビルド失敗するので最終的に手元でビルドしてNetlify-CLIでデプロイすることにした。<br>
+この方法だとNetlifyでビルドコストがかからないというメリットがある。<br>
+暇ができたらGitHub Actionを使ってデプロイできないか試すのもありかも。</p>
+<h2 id="終わり">終わり</h2>
+<p>今後は定期的にサンプルサイトを増やしたり、デザインを改良したりしていきたい。</p>
 </p>
 </section>
 
@@ -84,7 +173,7 @@ Hugoそのものを更新するのにbrewの更新や不備を直したり、な
 				
 				<li><a href="https://tech.k-zak.com/categories/setting-construction">setting-construction</a>(37)</li>
 				
-				<li><a href="https://tech.k-zak.com/categories/study-daily">study-daily</a>(92)</li>
+				<li><a href="https://tech.k-zak.com/categories/study-daily">study-daily</a>(93)</li>
 				
 				<li><a href="https://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(6)</li>
 				
@@ -122,7 +211,7 @@ Hugoそのものを更新するのにbrewの更新や不備を直したり、な
 				
 				<li><a href="https://tech.k-zak.com/tags/complain">complain</a>(5)</li>
 				
-				<li><a href="https://tech.k-zak.com/tags/css">css</a>(5)</li>
+				<li><a href="https://tech.k-zak.com/tags/css">css</a>(6)</li>
 				
 				<li><a href="https://tech.k-zak.com/tags/django">django</a>(3)</li>
 				
@@ -147,6 +236,8 @@ Hugoそのものを更新するのにbrewの更新や不備を直したり、な
 				<li><a href="https://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
 				
 				<li><a href="https://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/gatsby">gatsby</a>(1)</li>
 				
 				<li><a href="https://tech.k-zak.com/tags/golang">golang</a>(1)</li>
 				

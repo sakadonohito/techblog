@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <title>開発メモてきな</title>
+    <link rel="stylesheet" href="https://tech.k-zak.com/css/style.css" type="text/css"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tech.k-zak.com/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://tech.k-zak.com/favicons/android-icon-192x192.png">
+
+<link rel="icon" type="image/svg_xml" href="https://tech.k-zak.com/favicons/favicon.svg">
+<link rel="manifest" href="https://tech.k-zak.com/favicons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="site-main">
+	<div class="header-image-main">
+		<img alt="サイトのメインテーマ画像" src="https://tech.k-zak.com/image/top-min.png"/>
+		<a href="https://tech.k-zak.com/" class="site-title">開発メモてきな</a>
+	</div>
+</header>
+
+      <div class="main-part">
+        
+<main role="main">
+  <div class="main-contents">
+    <article class="main-content">
+      <section>
+        <header>
+	  <h1>Gatsbyjsでポートフォリオサイト作った</h1>
+	  <ul class="horizontal-list-over767">
+	    <li>Published: 2021年12月01日</li>
+	  </ul>
+	  <p>Category:  <a href="https://tech.k-zak.com/categories/study-daily/">study-daily</a> </p>
+        </header>
+      </section>
+      <section>
+	<p><h1 id="gatsbyjsでポートフォリオサイト作った">Gatsbyjsでポートフォリオサイト作った</h1>
+<p>ちょちょいと簡単にできるやろと思って始めてみたら、正味10日ほどかかってしまった。。</p>
+<h2 id="準備">準備</h2>
+<p>いきなりインストールで躓く。<br>
+mpnでインストールだといろいろ警告がでるのでyarnでインストールした。</p>
+<h3 id="チュートリアルを試す">チュートリアルを試す</h3>
+<p>インストールからチュートリアル完了まで2日ほどかかった。<br>
+へぇ、便利そうやなという感想。</p>
+<p><a href="https://www.gatsbyjs.com/docs/tutorial/">Gatsby公式チュートリアル</a></p>
+<h3 id="ダミーサイトの作成">ダミーサイトの作成</h3>
+<p>ポートフォリオを名乗っているが実質Webサイト練習したものを画像にして載せるものなのでまずはダミーのWebを作成。<br>
+画像を作るので実質2日近くかかってしまった。</p>
+<h2 id="サイト作成">サイト作成</h2>
+<p>真似したいサイトを見本にレイアウトを作成する。<br>
+間違ってないはずなのにうまく行かない場合は</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn run clean
+yarn run develop
+</code></pre></div><p>キャッシュのせいで最新の状態にならなくてうまくいっていないように見える時があった。<br>
+他つまったところ</p>
+<ul>
+<li>graphqlうまくいかないと思ったらタイポ。</li>
+<li>画像を扱うコンポーネントはhtmlに変換されたときに沢山ラッパーが生成されているのでうまくCSSできなかった。</li>
+<li>楽したくてプラグインでモーダル導入したら目的の要素にCSSするのに難儀した。</li>
+<li>SEO用の設定うまくいかなくて苦戦、2日位かかった。</li>
+<li>Netlifyでビルドすると失敗する。</li>
+</ul>
+<h3 id="css苦労">CSS苦労</h3>
+<p>gatsby-plugin-imageやreact-modalを使って楽をしようとしたら、CSSの指定に苦労した。</p>
+<p>gatsbyで直接classをつけられるのはオーバーレイコンポーネントとコンテンツコンポーネントこちらはまだわかりやすい。<br>
+<a href="https://reactcommunity.org/react-modal/styles/classes/">React-Modalのスタイル</a></p>
+<p>問題はgatsby-plugin-image<br>
+<a href="https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/">gatsby-plugin-iamge</a><br>
+className指定はラッパー(div)、目的のimgタグにはimgClassNameで指定。<br>
+しかもコンポーネントに渡すpropsに含まれているスタイル要素が一番強いので指定しないでCSS側で記述してもコンポーネント側のデフォルトが優先されるという。<br>
+(例：object-fit, objevt-position, widthとか)</p>
+<h3 id="seo用の設定うまくいかなくて苦戦">SEO用の設定うまくいかなくて苦戦</h3>
+<p>SEOまわりで2日位かかった。<br>
+なんか最新はreact-helmet-async使ったほうが良さそうな感じだったけどうまくいかなくて、結局SSGするのだからasyncである必要ないと妥協してreact-helmetにした。<br>
+ポイント？として、proptypesの定義しないとエラーになるからちゃんと書くこと。<br>
+OGPの画像を固定にしようとしたら、通常の画面に出てこないものなので生成されずハマった。<br>
+暫定措置として、対象の画像をimport及び変数格納で画像生成するように小細工した。<br>
+以下にSEO用のコンポーネントを残す。headタグのところはうまく動いていないので後日対応予定。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">PropTypes</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;prop-types&#39;</span>
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Helmet</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-helmet&#39;</span>
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useLocation</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@reach/router&#34;</span>
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useStaticQuery</span>, <span style="color:#a6e22e">graphql</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;gatsby&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ogpImage</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../pages/static_images/ogp_image.png&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Seo</span> <span style="color:#f92672">=</span> ({ <span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">description</span>, <span style="color:#a6e22e">lang</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ja&#39;</span>, <span style="color:#a6e22e">article</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span> }) =&gt; {
+
+  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">pathname</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">useLocation</span>()
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useStaticQuery</span>(<span style="color:#a6e22e">graphql</span><span style="color:#e6db74">`
+</span><span style="color:#e6db74">    query {
+</span><span style="color:#e6db74">      site {
+</span><span style="color:#e6db74">        siteMetadata {
+</span><span style="color:#e6db74">          siteUrl
+</span><span style="color:#e6db74">          image
+</span><span style="color:#e6db74">          defaultTitle: title
+</span><span style="color:#e6db74">          defaultDescription: description
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">      }
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">  `</span>)
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">metaTitle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">site</span>.<span style="color:#a6e22e">siteMetadata</span>.<span style="color:#a6e22e">defaultTitle</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">metaDescription</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">description</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">site</span>.<span style="color:#a6e22e">siteMetadata</span>.<span style="color:#a6e22e">defaultDescription</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pageTitle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">?</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;TOP page&#39;</span>
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">article</span>)
+  <span style="color:#66d9ef">return</span> (
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Helmet</span>
+      <span style="color:#a6e22e">htmlAttributes</span><span style="color:#f92672">=</span>{{<span style="color:#a6e22e">lang</span>}} 
+      <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">metaTitle</span>}
+    <span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">head</span> <span style="color:#a6e22e">prefix</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og: http://ogp.me/ns#&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">metaDescription</span>} <span style="color:#f92672">/&gt;</span>
+
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:site_name&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">site</span>.<span style="color:#a6e22e">siteMetadata</span>.<span style="color:#a6e22e">defaultTitle</span>} <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:title&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">pageTitle</span>} <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:description&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">metaDescription</span>} <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:url&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">site</span>.<span style="color:#a6e22e">siteMetadata</span>.<span style="color:#a6e22e">siteUrl</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">pathname</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>} <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:image&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">site</span>.<span style="color:#a6e22e">siteMetadata</span>.<span style="color:#a6e22e">siteUrl</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">ogpImage</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>} <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">article</span><span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;article&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;website&#39;</span>} <span style="color:#f92672">/&gt;</span>
+
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;twitter:card&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;summary_large_image&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Helmet&gt;</span>
+  )
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Seo</span>
+
+<span style="color:#a6e22e">Seo</span>.<span style="color:#a6e22e">propTypes</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">string</span>,
+  <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">string</span>,
+  <span style="color:#a6e22e">image</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">string</span>,
+  <span style="color:#a6e22e">article</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">bool</span>,
+}
+
+<span style="color:#a6e22e">Seo</span>.<span style="color:#a6e22e">defaultProps</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  <span style="color:#a6e22e">image</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  <span style="color:#a6e22e">article</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+}
+</code></pre></div><h3 id="google-analytics">Google Analytics</h3>
+<p>gatsby-plugin-google-gtagを使うことによって、UA-&hellip;の従来のユニバーサルなんとかとG-&hellip;のgtagの両方登録できる。</p>
+<h2 id="デプロイ">デプロイ</h2>
+<p>公開先をNetlifyにした。理由は</p>
+<ul>
+<li>静的サイトを公開できる</li>
+<li>カスタムドメイン(自分で用意したドメイン)でもhttpsにできる</li>
+<li>自分の使い方(個人用、1サイトのみ、静的サイト)だと無料で使える</li>
+</ul>
+<p>GitHub PagesでもAWSのS3でも良かったんだけど、いくつかのサービスを経験するため今回のGatsbyで作ったポートフォリオサイトはNetlifyで運用することにした。<br>
+GitHubと連携してpushしたらNetlify側でビルドできる便利と思ったいたけど何度やってもビルド失敗するので最終的に手元でビルドしてNetlify-CLIでデプロイすることにした。<br>
+この方法だとNetlifyでビルドコストがかからないというメリットがある。<br>
+暇ができたらGitHub Actionを使ってデプロイできないか試すのもありかも。</p>
+<h2 id="終わり">終わり</h2>
+<p>今後は定期的にサンプルサイトを増やしたり、デザインを改良したりしていきたい。</p>
+</p>
+      </section>
+      <footer>
+	<p>tags:  <a href="https://tech.k-zak.com/tags/css/">#css</a>,  <a href="https://tech.k-zak.com/tags/gatsby/">#gatsby</a>, </p>
+      </footer>
+    </article>
+  </div>
+</main>
+
+	<aside>
+	<div class="side-menu">
+		<section>
+			<p>Categories</p>
+			<ul>
+				
+				<li><a href="https://tech.k-zak.com/categories/setting-construction">setting-construction</a>(37)</li>
+				
+				<li><a href="https://tech.k-zak.com/categories/study-daily">study-daily</a>(93)</li>
+				
+				<li><a href="https://tech.k-zak.com/categories/trouble-memo">trouble-memo</a>(6)</li>
+				
+			</ul>
+		</section>
+		<section>
+			<p><a href="https://tech.k-zak.com/tags/">Tags</a></p>
+			<ul>
+				
+				<li><a href="https://tech.k-zak.com/tags/ansible">ansible</a>(5)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/anyenv">anyenv</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/apache">apache</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/aws">aws</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/aws-lambda">aws-lambda</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/batch">batch</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/bitgucket">bitgucket</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/books">books</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/bundler">bundler</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/cakephp">cakephp</a>(3)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/character">character</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/cmd">cmd</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/codeigniter">codeigniter</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/complain">complain</a>(5)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/css">css</a>(6)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/django">django</a>(3)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/docker">docker</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/ec2">ec2</a>(3)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/ecs">ecs</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/emacs">emacs</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/env">env</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/etc">etc</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/fastcgi">fastcgi</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/filemaker">filemaker</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/fmxj">fmxj</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/frontend">frontend</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/fuelphp">fuelphp</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/gatsby">gatsby</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/golang">golang</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/groovy">groovy</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/hexo">hexo</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/html">html</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/hugo">hugo</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/iis">iis</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/imap">imap</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/java">java</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/javascript">javascript</a>(13)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/jaws-ug">jaws-ug</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/jekyll">jekyll</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/jquery">jquery</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/laravel4">laravel4</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/log">log</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/lolipopcloud">lolipopcloud</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/mac">mac</a>(3)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/mackerel">mackerel</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/markdown">markdown</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/mastodon">mastodon</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/mojolicious">mojolicious</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/mojoliciouslite">mojoliciouslite</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/movabletype">movabletype</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/mysql">mysql</a>(3)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/netbeans">netbeans</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/network">network</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/nginx">nginx</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/node.js">node.js</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/ntp">ntp</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/oracle">oracle</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/otrs">otrs</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/pelican">pelican</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/perl">perl</a>(13)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/php">php</a>(21)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/postfix">postfix</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/postgresql">postgresql</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/powershell">powershell</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/python">python</a>(15)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/rails">rails</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/rbenv">rbenv</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/react">react</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/redmine">redmine</a>(3)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/redux">redux</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/ruby">ruby</a>(13)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/s3">s3</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/selenium">selenium</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/sinatra">sinatra</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/socket.io">socket.io</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/ssh">ssh</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/swift">swift</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/symfony">symfony</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/terraform">terraform</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/typescript">typescript</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/ubuntu">ubuntu</a>(6)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/unicorn">unicorn</a>(2)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/vagrant">vagrant</a>(3)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/vscode">vscode</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/webpack">webpack</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/windowsserver">windowsserver</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/wkhtmltopdf">wkhtmltopdf</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/wordpress">wordpress</a>(4)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/xcode">xcode</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/zabbix">zabbix</a>(1)</li>
+				
+				<li><a href="https://tech.k-zak.com/tags/zend-framework">zend-framework</a>(1)</li>
+				
+			</ul>
+		</section>
+		<section>
+			<p>Etc</p>
+			<ul>
+				<li>About</li>
+			</ul>
+		</section>
+	</div>
+</aside>
+
+      </div>
+      	<footer>
+	<small>Copyright &copy; 2021 sakadonohito All rights reserved.</small>
+	<small>powered by Hugo.</small>
+	<small>開発メモてきな</small>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+						  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ ga('create', 'UA-46285513-1', 'auto');
+ ga('send', 'pageview');
+</script>
+
+
+  </body>
+</html>
