@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jQueryでまた使い方忘れて調べそうなやつらメモ on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/posts/jquery-memo/</link>
+    <description>Recent content in jQueryでまた使い方忘れて調べそうなやつらメモ on 開発メモてきな</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/posts/jquery-memo/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -4,21 +4,16 @@
     <title>Typescript on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/typescript/</link>
     <description>Recent content in Typescript on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 27 Dec 2017 14:10:35 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Dec 2017 14:10:35 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Typescript</title>
       <link>https://tech.k-zak.com/posts/2017-12-27-typescript/</link>
       <pubDate>Wed, 27 Dec 2017 14:10:35 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-12-27-typescript/</guid>
-      <description>初めての？Typescript TypeScript自習 TypeScript 日本語ハンドブック | js STUDIO 他Quitなど
-上記ハンドブックを読みつつ少しコードを書く。 ビルドは上記ハンドブックの方法だとうまく動かなかったので、別途Qiitaで調べた。
-感想 まだ途中。 型をそこまで書きたくない。推論して欲しい。 PHPのタイプヒンティングと戻り値の型指定程度で十分だと思う。 でも引数の型指定なんかは別途定義をかけるので、メソッド本体の記述はスッキリして良いと思った。
-気づき ちゃんと使ってこなかったので、今更constで変更不可になるのは変数そのものが変わる場合のみで、オブジェクトのプロパティは変更可能だと知った。
-つまりイミュータブルなオブジェクトやインスタンスを定義したい場合は型を定義しないと防げない。</description>
+      <description>&lt;h1 id=&#34;初めてのtypescript&#34;&gt;初めての？Typescript&lt;/h1&gt;&#xA;&lt;h2 id=&#34;typescript自習&#34;&gt;TypeScript自習&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://js.studio-kingdom.com/typescript/&#34;&gt;TypeScript 日本語ハンドブック | js STUDIO&lt;/a&gt;&#xA;他Quitなど&lt;/p&gt;&#xA;&lt;p&gt;上記ハンドブックを読みつつ少しコードを書く。&#xA;ビルドは上記ハンドブックの方法だとうまく動かなかったので、別途Qiitaで調べた。&lt;/p&gt;&#xA;&lt;h3 id=&#34;感想&#34;&gt;感想&lt;/h3&gt;&#xA;&lt;p&gt;まだ途中。&#xA;型をそこまで書きたくない。推論して欲しい。&#xA;PHPのタイプヒンティングと戻り値の型指定程度で十分だと思う。&#xA;でも引数の型指定なんかは別途定義をかけるので、メソッド本体の記述はスッキリして良いと思った。&lt;/p&gt;&#xA;&lt;h3 id=&#34;気づき&#34;&gt;気づき&lt;/h3&gt;&#xA;&lt;p&gt;ちゃんと使ってこなかったので、今更constで変更不可になるのは変数そのものが変わる場合のみで、オブジェクトのプロパティは変更可能だと知った。&lt;/p&gt;&#xA;&lt;p&gt;つまりイミュータブルなオブジェクトやインスタンスを定義したい場合は型を定義しないと防げない。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

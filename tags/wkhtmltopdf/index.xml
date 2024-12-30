@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>wkhtmltopdf on 開発メモてきな</title>
+    <title>Wkhtmltopdf on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/wkhtmltopdf/</link>
-    <description>Recent content in wkhtmltopdf on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Wkhtmltopdf on 開発メモてきな</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 28 Dec 2017 14:26:45 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/wkhtmltopdf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Dec 2017 14:26:45 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/wkhtmltopdf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wkhtmltopdf</title>
       <link>https://tech.k-zak.com/posts/2017-12-28-wkhtmltopdf/</link>
       <pubDate>Thu, 28 Dec 2017 14:26:45 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-12-28-wkhtmltopdf/</guid>
-      <description>wkhtmltopdfを試した なんとかしてhtmlからPDFを生成する手段を増やしたい。
-ということでwkhtmltopdfを試す。
-しかしバージョンによって画面サイズがおかしくなる。
-結論 0.12.4のバージョンは使わない。代わりに0.12.3を使う。
-オマケ wkhtmltopdfをgolangを使ってURL指定してhtmlコンテンツをPDF化する。 この方法であれば、PhantomJSの時と同じでPrint用cssが使える。
-golangを試すにあたって我がEmacsにgolangの設定を施した。 GOPATHの関係もあるため、macの時だけ設定を読み込むような設定にした。</description>
+      <description>&lt;h1 id=&#34;wkhtmltopdfを試した&#34;&gt;wkhtmltopdfを試した&lt;/h1&gt;&#xA;&lt;p&gt;なんとかしてhtmlからPDFを生成する手段を増やしたい。&lt;/p&gt;&#xA;&lt;p&gt;ということでwkhtmltopdfを試す。&lt;/p&gt;&#xA;&lt;p&gt;しかしバージョンによって画面サイズがおかしくなる。&lt;/p&gt;&#xA;&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;&#xA;&lt;p&gt;0.12.4のバージョンは使わない。代わりに0.12.3を使う。&lt;/p&gt;&#xA;&lt;h2 id=&#34;オマケ&#34;&gt;オマケ&lt;/h2&gt;&#xA;&lt;p&gt;wkhtmltopdfをgolangを使ってURL指定してhtmlコンテンツをPDF化する。&#xA;この方法であれば、PhantomJSの時と同じでPrint用cssが使える。&lt;/p&gt;&#xA;&lt;p&gt;golangを試すにあたって我がEmacsにgolangの設定を施した。&#xA;GOPATHの関係もあるため、macの時だけ設定を読み込むような設定にした。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

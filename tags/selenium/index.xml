@@ -4,22 +4,16 @@
     <title>Selenium on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/selenium/</link>
     <description>Recent content in Selenium on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 30 Jun 2017 11:32:45 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/selenium/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Jun 2017 11:32:45 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/selenium/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Selenium WebDriver Setup</title>
       <link>https://tech.k-zak.com/posts/2017-06-30-selenium-setup/</link>
       <pubDate>Fri, 30 Jun 2017 11:32:45 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-06-30-selenium-setup/</guid>
-      <description>Selenium WebDriver を試してみた 環境は
- Ubuntu 16.04 Python 3.6.1  ついでにChromeのheadlessモードも試す。
-事前準備 pyenvで3.6.1を入れてお試し環境にセットする
-gecko driverをダウンロード Release v0.17.0 · mozilla/geckodriver · GitHub ※任意のバージョンを入れる。
-PATHを通す。今回は/usr/local/sbin/に置いて勝手にPATHが通るようにした。
-Chromeを最新にする バージョン59にする。 ChromeDriverDownloads - ChromeDriver - WebDriver for Chromeをダウンロードしてgeckodriverと同じくPATHの通った場所に配置する。</description>
+      <description>&lt;h1 id=&#34;selenium-webdriver-を試してみた&#34;&gt;Selenium WebDriver を試してみた&lt;/h1&gt;&#xA;&lt;p&gt;環境は&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Ubuntu 16.04&lt;/li&gt;&#xA;&lt;li&gt;Python 3.6.1&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;ついでにChromeのheadlessモードも試す。&lt;/p&gt;&#xA;&lt;h2 id=&#34;事前準備&#34;&gt;事前準備&lt;/h2&gt;&#xA;&lt;p&gt;pyenvで3.6.1を入れてお試し環境にセットする&lt;/p&gt;&#xA;&lt;p&gt;gecko driverをダウンロード &lt;a href=&#34;https://github.com/mozilla/geckodriver/releases/tag/v0.17.0&#34;&gt;Release v0.17.0 · mozilla/geckodriver · GitHub&lt;/a&gt;&#xA;※任意のバージョンを入れる。&lt;/p&gt;&#xA;&lt;p&gt;PATHを通す。今回は&lt;code&gt;/usr/local/sbin/&lt;/code&gt;に置いて勝手にPATHが通るようにした。&lt;/p&gt;&#xA;&lt;h2 id=&#34;chromeを最新にする&#34;&gt;Chromeを最新にする&lt;/h2&gt;&#xA;&lt;p&gt;バージョン59にする。&#xA;ChromeDriver&lt;a href=&#34;https://sites.google.com/a/chromium.org/chromedriver/downloads&#34;&gt;Downloads - ChromeDriver - WebDriver for Chrome&lt;/a&gt;をダウンロードしてgeckodriverと同じくPATHの通った場所に配置する。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

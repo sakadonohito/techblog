@@ -4,200 +4,114 @@
     <title>Python on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/python/</link>
     <description>Recent content in Python on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 30 Dec 2014 09:43:52 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Dec 2014 09:43:52 +0000</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
       <link>https://tech.k-zak.com/posts/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone-serverside/</guid>
-      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
-まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
-Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
-Perl,Python,Rubyについては全然触れなくてフラストレーション。
-PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。
-本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。
-家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
-PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
-枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
+      <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る&lt;/p&gt;&#xA;&lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;&#xA;&lt;p&gt;Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。&lt;/p&gt;&#xA;&lt;p&gt;Perl,Python,Rubyについては全然触れなくてフラストレーション。&lt;/p&gt;&#xA;&lt;p&gt;PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。&lt;/p&gt;&#xA;&lt;p&gt;本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。&lt;/p&gt;&#xA;&lt;p&gt;家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。&lt;/p&gt;&#xA;&lt;p&gt;PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は&lt;/p&gt;&#xA;&lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;&#xA;&lt;p&gt;Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Win上のpythonでバッチ処理3</title>
       <link>https://tech.k-zak.com/posts/batch-python-03/</link>
       <pubDate>Sun, 16 Mar 2014 14:36:07 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/batch-python-03/</guid>
-      <description>windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを
-取得し、コマンドを叩く。</description>
+      <description>&lt;p&gt;windows server2008上のFileMakerServerのバッチ処理を行うにあたり、作業用csvファイルから動的データを&lt;/p&gt;&#xA;&lt;p&gt;取得し、コマンドを叩く。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>Win上のPythonでバッチ処理2</title>
       <link>https://tech.k-zak.com/posts/batch-python-02/</link>
       <pubDate>Sun, 16 Mar 2014 14:29:40 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/batch-python-02/</guid>
-      <description>windows server2008上のFileMakerServerのバッチ処理を行うにあたり、前回使用した作業用の
-csvファイルが存在していたら消す処理。</description>
+      <description>&lt;p&gt;windows server2008上のFileMakerServerのバッチ処理を行うにあたり、前回使用した作業用の&lt;/p&gt;&#xA;&lt;p&gt;csvファイルが存在していたら消す処理。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>Windows上でpythonでバッチ処理1</title>
       <link>https://tech.k-zak.com/posts/batch-python-01/</link>
       <pubDate>Sun, 16 Mar 2014 14:23:49 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/batch-python-01/</guid>
-      <description>windows server2008上のFileMakerServerのWeb公開エンジンのプロセスを監視して
-異常終了していたらプロセスを再起動するバッチプログラムをpythonで書いてみた。</description>
+      <description>&lt;p&gt;windows server2008上のFileMakerServerのWeb公開エンジンのプロセスを監視して&lt;/p&gt;&#xA;&lt;p&gt;異常終了していたらプロセスを再起動するバッチプログラムをpythonで書いてみた。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>パスカルのなんとか</title>
       <link>https://tech.k-zak.com/posts/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/pascal-logic/</guid>
-      <description>今回は、パスカルの三角定理？みたいなやつ
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-Rubyはもっとシンプルな書き方があるのかもしれない。</description>
+      <description>&lt;p&gt;今回は、パスカルの三角定理？みたいなやつ&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyはもっとシンプルな書き方があるのかもしれない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>平方根ろじく</title>
       <link>https://tech.k-zak.com/posts/square-root/</link>
       <pubDate>Sun, 08 Dec 2013 15:52:17 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/square-root/</guid>
-      <description>平方根で最も少ない桁数で0から9までの数字が揃うのは何？
-Pythonでチャレンジ
-今回はPython以外で考える気が起きない。</description>
+      <description>&lt;p&gt;平方根で最も少ない桁数で0から9までの数字が揃うのは何？&lt;/p&gt;&#xA;&lt;p&gt;Pythonでチャレンジ&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;今回はPython以外で考える気が起きない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ06</title>
       <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
-      <description>リハビリその3
-今回は、バブルソート
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-習熟度が低いのでPerlとPHPが同じ内容になる。
-pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。
-すんなり1つのリストだけでできないものか……</description>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;&#xA;&lt;p&gt;今回は、バブルソート&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;習熟度が低いのでPerlとPHPが同じ内容になる。&lt;/p&gt;&#xA;&lt;p&gt;pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。&lt;/p&gt;&#xA;&lt;p&gt;すんなり1つのリストだけでできないものか……&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ05</title>
       <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
-      <description>昨日の文字チェックをPHP以外で試す。
-与えられた文字列が全てユニークな文字で構成されているかのチェック。
-PHPは前回やっているので、今回は掲載無し。
-Perlでは、
-Pythonでは、
-Rubyでは、
-文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。
-配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。
-pythonが一番スッキリしているようだけど、やっぱりRubyかな</description>
+      <description>&lt;p&gt;昨日の文字チェックをPHP以外で試す。&lt;/p&gt;&#xA;&lt;p&gt;与えられた文字列が全てユニークな文字で構成されているかのチェック。&lt;/p&gt;&#xA;&lt;p&gt;PHPは前回やっているので、今回は掲載無し。&lt;/p&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。&lt;/p&gt;&#xA;&lt;p&gt;配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。&lt;/p&gt;&#xA;&lt;p&gt;pythonが一番スッキリしているようだけど、やっぱりRubyかな&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ03</title>
       <link>https://tech.k-zak.com/posts/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo03/</guid>
-      <description>リハビリその3
-今回は、バブルソート
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-Rubyが一番スマートかな</description>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;&#xA;&lt;p&gt;今回は、バブルソート&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyが一番スマートかな&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ02</title>
       <link>https://tech.k-zak.com/posts/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo02/</guid>
-      <description>リハビリその２
-今回は、ファイル読み込みとその時の簡単な例外処理
-読み込むテキストファイルの内容は以下の通り、
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-うるう年の判定処理は適当。pythonが一番しっくりくるかな。
-rubyはreturnを省略した場合に最後に評価された値がreturnされるんだけど、pythonもだと勘違いしててハマった。</description>
+      <description>&lt;p&gt;リハビリその２&lt;/p&gt;&#xA;&lt;p&gt;今回は、ファイル読み込みとその時の簡単な例外処理&lt;/p&gt;&#xA;&lt;p&gt;読み込むテキストファイルの内容は以下の通り、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;うるう年の判定処理は適当。pythonが一番しっくりくるかな。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ01</title>
       <link>https://tech.k-zak.com/posts/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo01/</guid>
-      <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
-paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
-という事でリハビリ。
-今回は標準入力。
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-標準入力が「gets」だけで取れるRubyはダンディ。</description>
+      <description>&lt;p&gt;一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;paiza&lt;!-- raw HTML omitted --&gt;なんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。&lt;/p&gt;&#xA;&lt;p&gt;という事でリハビリ。&lt;/p&gt;&#xA;&lt;p&gt;今回は標準入力。&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;標準入力が「gets」だけで取れるRubyはダンディ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>WebフレームワークとFileMaker</title>
       <link>https://tech.k-zak.com/posts/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/web-filemaker/</guid>
-      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く</description>
+      <description>&lt;p&gt;FileMaker用のブログに書こうかと思ったけどこちらに書く&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>Django お勉強 Part3</title>
       <link>https://tech.k-zak.com/posts/django-tutorial/</link>
       <pubDate>Thu, 21 Apr 2011 08:43:01 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/django-tutorial/</guid>
-      <description>参考：http://ntm.ex-blog.net/archives/91</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;参考：&lt;a href=&#34;http://ntm.ex-blog.net/archives/91&#34;&gt;http://ntm.ex-blog.net/archives/91&lt;/a&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>Django お勉強 Part2</title>
       <link>https://tech.k-zak.com/posts/django-tutorial/</link>
       <pubDate>Wed, 20 Apr 2011 11:20:34 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/django-tutorial/</guid>
-      <description></description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>Django お勉強</title>
       <link>https://tech.k-zak.com/posts/django-tutorial/</link>
       <pubDate>Tue, 19 Apr 2011 05:10:17 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/django-tutorial/</guid>
-      <description>PythonのDjangoのお勉強記録</description>
+      <description>&lt;p&gt;PythonのDjangoのお勉強記録&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
   </channel>
 </rss>

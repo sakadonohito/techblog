@@ -4,156 +4,44 @@
     <title>Ansible on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/ansible/</link>
     <description>Recent content in Ansible on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Not Posted</title>
       <link>https://tech.k-zak.com/posts/2017-12-31-noposts/</link>
       <pubDate>Sun, 31 Dec 2017 11:49:55 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-12-31-noposts/</guid>
-      <description>2017年記事にしそこねたやったこと  コマンドプロンプト(バッチファイル) コマンドプロンプトからPowershell実行 シェルスクリプト AWS System Manager Run Command (sum) VagrantでSQL Server他DBもセットアップしたよ Nano Server試そうとした React Redux…etc Webpack Docker再入門とWP開発環境の作成 WordPressテーマ開発用のベースを作成した AWS Lambda をPythonで AWS Lambda をNode.jsで CakePHP 3 tutorial 少しやった Vagrant でPHP開発環境作成 Terraform試した Hugo用テーマを作成した  忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。
-コマンドプロンプト(バッチファイル) Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。
-例えばこんなこと。実行結果を変数に入れるのが面倒。
-setlocal enabledelayedexpansion for /f %%a in (&#39;whoami&#39;) do @set watashi=%%a echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log 別プロセスで実行する方法
-start %~dp0\called_subscripts\computer_restart.bat %~dp0 はLinuxでいうところのpwdみたいなもの
-コマンドプロンプトからPowershell実行 @powershell てやればできる。
-シェルスクリプト 少し覚えた。 $#は引数の数 $1は引数の一つ目 if [ a op b ]; てやつとaとbをopでチェックできる。変数の値のチェックやファイルの存在チェックなどを行う。 ファイルの存在チェックはシンプルに-e オプションを使う。</description>
+      <description>&lt;h1 id=&#34;2017年記事にしそこねたやったこと&#34;&gt;2017年記事にしそこねたやったこと&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;コマンドプロンプト(バッチファイル)&lt;/li&gt;&#xA;&lt;li&gt;コマンドプロンプトからPowershell実行&lt;/li&gt;&#xA;&lt;li&gt;シェルスクリプト&lt;/li&gt;&#xA;&lt;li&gt;AWS System Manager Run Command (sum)&lt;/li&gt;&#xA;&lt;li&gt;VagrantでSQL Server他DBもセットアップしたよ&lt;/li&gt;&#xA;&lt;li&gt;Nano Server試そうとした&lt;/li&gt;&#xA;&lt;li&gt;React Redux…etc&lt;/li&gt;&#xA;&lt;li&gt;Webpack&lt;/li&gt;&#xA;&lt;li&gt;Docker再入門とWP開発環境の作成&lt;/li&gt;&#xA;&lt;li&gt;WordPressテーマ開発用のベースを作成した&lt;/li&gt;&#xA;&lt;li&gt;AWS Lambda をPythonで&lt;/li&gt;&#xA;&lt;li&gt;AWS Lambda をNode.jsで&lt;/li&gt;&#xA;&lt;li&gt;CakePHP 3 tutorial 少しやった&lt;/li&gt;&#xA;&lt;li&gt;Vagrant でPHP開発環境作成&lt;/li&gt;&#xA;&lt;li&gt;Terraform試した&lt;/li&gt;&#xA;&lt;li&gt;Hugo用テーマを作成した&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。&lt;/p&gt;&#xA;&lt;h3 id=&#34;コマンドプロンプトバッチファイル&#34;&gt;コマンドプロンプト(バッチファイル)&lt;/h3&gt;&#xA;&lt;p&gt;Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。&lt;/p&gt;&#xA;&lt;p&gt;例えばこんなこと。実行結果を変数に入れるのが面倒。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;setlocal enabledelayedexpansion&#xA;for /f %%a in (&amp;#39;whoami&amp;#39;) do @set watashi=%%a&#xA;echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;別プロセスで実行する方法&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>AnsibleのSSH設定について</title>
       <link>https://tech.k-zak.com/posts/ansible-ssh/</link>
       <pubDate>Sun, 08 Feb 2015 14:43:15 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/ansible-ssh/</guid>
-      <description>Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
-という事で調べた。
-結論としては、varsファイルに
-・ansible_ssh_user
-・ansible_ssh_pass
-・ansible_sudo_pass
-の3つを書いておきましょう。でした。
-最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
-例えばhostsファイルに
-`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。
-という事で調べた。
-結論としては、varsファイルに
-・ansible_ssh_user
-・ansible_ssh_pass
-・ansible_sudo_pass
-の3つを書いておきましょう。でした。
-最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。
-例えばhostsファイルに
-`
-とか書いてグループ名が「dev」の場合に
--playbook\
-|
-|–dev.yml
-|
-|–group_vars\
-| |
-| |–dev.yml
-|
-|–roles\※内容略
-|
-|–site.yml
-みたいな感じで書く。
-group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより–ask-passの指定が必要なくなった。
-問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。
-なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。
-ansible-playbookを実行する時に復号のために–vault-passの引数とそのファイルパスを渡さないといけないってのも–ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。
-hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー
-って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。</description>
+      <description>&lt;p&gt;Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。&lt;/p&gt;&#xA;&lt;p&gt;という事で調べた。&lt;/p&gt;&#xA;&lt;p&gt;結論としては、varsファイルに&lt;/p&gt;&#xA;&lt;p&gt;・ansible_ssh_user&lt;/p&gt;&#xA;&lt;p&gt;・ansible_ssh_pass&lt;/p&gt;&#xA;&lt;p&gt;・ansible_sudo_pass&lt;/p&gt;&#xA;&lt;p&gt;の3つを書いておきましょう。でした。&lt;/p&gt;&#xA;&lt;p&gt;最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。&lt;/p&gt;&#xA;&lt;p&gt;例えばhostsファイルに&lt;/p&gt;&#xA;&lt;p&gt;`Ansibleがバージョンを上げた所為か今までのやり方だとSSHのコネクションエラーになるようになって、どうも–ask-pass の引数付きにするとパスワードいれて処理ができる事はわかったんだけど、スマートじゃない。&lt;/p&gt;&#xA;&lt;p&gt;という事で調べた。&lt;/p&gt;&#xA;&lt;p&gt;結論としては、varsファイルに&lt;/p&gt;&#xA;&lt;p&gt;・ansible_ssh_user&lt;/p&gt;&#xA;&lt;p&gt;・ansible_ssh_pass&lt;/p&gt;&#xA;&lt;p&gt;・ansible_sudo_pass&lt;/p&gt;&#xA;&lt;p&gt;の3つを書いておきましょう。でした。&lt;/p&gt;&#xA;&lt;p&gt;最初に呼び出すsite.yml内で変数定義してもいいんだけど、group_varsディレクトリ内にhostsファイルで書くグループ名のyamlに書くのがいいかなって思う。&lt;/p&gt;&#xA;&lt;p&gt;例えばhostsファイルに&lt;/p&gt;&#xA;&lt;p&gt;`&lt;/p&gt;&#xA;&lt;p&gt;とか書いてグループ名が「dev」の場合に&lt;/p&gt;&#xA;&lt;p&gt;-playbook\&lt;/p&gt;&#xA;&lt;p&gt;|&lt;/p&gt;&#xA;&lt;p&gt;|–dev.yml&lt;/p&gt;&#xA;&lt;p&gt;|&lt;/p&gt;&#xA;&lt;p&gt;|–group_vars\&lt;/p&gt;&#xA;&lt;p&gt;|   |&lt;/p&gt;&#xA;&lt;p&gt;|   |–dev.yml&lt;/p&gt;&#xA;&lt;p&gt;|&lt;/p&gt;&#xA;&lt;p&gt;|–roles\※内容略&lt;/p&gt;&#xA;&lt;p&gt;|&lt;/p&gt;&#xA;&lt;p&gt;|–site.yml&lt;/p&gt;&#xA;&lt;p&gt;みたいな感じで書く。&lt;/p&gt;&#xA;&lt;p&gt;group_varsのdev.ymlには上記のようなansible_xxx_xxxを変数定義しておくとグループに対してssh接続の時に定義された値が使われる。これにより–ask-passの指定が必要なくなった。&lt;/p&gt;&#xA;&lt;p&gt;問題は1つあって、group_varsのdev.ymlは公開したくない場合多いよねって事。&lt;/p&gt;&#xA;&lt;p&gt;なので更に、ここでいうdev.ymlはansible-vaultコマンドを使って暗号化する。もしくはバージョン管理に含めない運用を行うって事が必要になる。暗号化する場合も復号に使うキー？　ソルトみたいなもん？を書いたファイルを作る必要があって、それがないと暗号と復号ができないんだけど、そのファイルをバージョン管理に含めないって運用にするなら、最初からdev.ymlを含めないでも一緒かなって思う。&lt;/p&gt;&#xA;&lt;p&gt;ansible-playbookを実行する時に復号のために–vault-passの引数とそのファイルパスを渡さないといけないってのも–ask-pass使うのと大差ないじゃんってなるから暗号化は必要な案件だけでいいかな。&lt;/p&gt;&#xA;&lt;p&gt;hostsファイルにhostの後に引数オプション的にansible_ssh_passとか書けばいいのだけれども、それもなんだかなー&lt;/p&gt;&#xA;&lt;p&gt;って事で、今後はgroup_varsもしくはglobalに認識されるような変数を定義するファイルにssh接続情報は書こうかと考えている。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>思い出せない</title>
       <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 25 Oct 2014 16:10:39 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone/</guid>
-      <description>前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。
-サーバー関係 ログローテーションの設定を行った。
-yum install logrotate
-/etc/logrotate.d/配下に追加の設定を行う
-/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる
-Ansible 1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中
-ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。
-yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。
-後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。
-Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。
-JavaScript AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。
-マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。
-AWSのS3のCORSで許可ヘッダーの設定が必要でした。
-PHP namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く
-毎日ちゃんとメモとらないと駄目ですね。。</description>
+      <description>&lt;p&gt;前回の投稿から1ヶ月以上過ぎていて、何か書こうと思ったけど、ここ1ヶ月何やってたか記憶がほぼない。&lt;/p&gt;&#xA;&lt;h3 id=&#34;サーバー関係&#34;&gt;サーバー関係&lt;/h3&gt;&#xA;&lt;p&gt;ログローテーションの設定を行った。&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;yum install logrotate&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;/etc/logrotate.d/配下に追加の設定を行う&lt;/p&gt;&#xA;&lt;p&gt;/var/log/httpd/_/_logとかやるとユーザーごとに設置したログ・ファイル全てを対象にしたローテーション設定ができる&lt;/p&gt;&#xA;&lt;h3 id=&#34;ansible&#34;&gt;Ansible&lt;/h3&gt;&#xA;&lt;p&gt;1台のサーバーでTomcat、Gitbucket、Jenkins、Redmineを動かす計画をしているのでVagrantで実験中&lt;/p&gt;&#xA;&lt;p&gt;ついでにNginxをフロントにおいてGitbucket(Tomcat)、Jenkins、Redmine(Unicorn)、PHP(Apache)にリバースプロキシにする予定。&lt;/p&gt;&#xA;&lt;p&gt;yumモジュールはnameでhttpでrepl指定してもインストールできるようだ。&lt;/p&gt;&#xA;&lt;p&gt;後でNginxでリバースプロキシの設定する予定だからTomcatのデフォルトポートはそのままに、Jenknsは8010とか競合しない番号にポート変更。&lt;/p&gt;&#xA;&lt;p&gt;Tomcatの自動起動スクリプト調べて作ったんだけど、何かよろしくなかったらしい。daemon化うまくいかなかった。&lt;/p&gt;&#xA;&lt;h3 id=&#34;javascript&#34;&gt;JavaScript&lt;/h3&gt;&#xA;&lt;p&gt;AWSのS3へのアップロード・ダウンロードがJSのみで出来ないか調査。サンプルがいろいろあって試していたら出来た。&lt;/p&gt;&#xA;&lt;p&gt;マルチパートアップロードの場合はファイルをバッファ分割しながら送信するのがミソ。&lt;/p&gt;&#xA;&lt;p&gt;AWSのS3のCORSで許可ヘッダーの設定が必要でした。&lt;/p&gt;&#xA;&lt;h3 id=&#34;php&#34;&gt;PHP&lt;/h3&gt;&#xA;&lt;p&gt;namespaceやautoloadをまだ理解しきれていない部分があるようで、読み込みで躓く&lt;/p&gt;&#xA;&lt;p&gt;毎日ちゃんとメモとらないと駄目ですね。。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
       <link>https://tech.k-zak.com/posts/challenge-ansible/</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/challenge-ansible/</guid>
-      <description>・botoが使えないってエラーになる。
-　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
-つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
-　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか
-・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを
-　使ったら成功した。なんで？
-・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。
-・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。
-　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。
-　なので「NameVirtuakHost *:80」の記述があれば、その後&amp;lt;virtualhost *:80&amp;gt;VirtualHostディレクティブが
-　ないといけない。
-もしも&amp;lt;virtualhost {{hostname}}:80&amp;gt;みたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
-整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。
-・Ubuntuに入ってるApache2のVirtualHostの有効化無効化
-　sites-availableディレクトリにVirtualHost設定書く
-　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化
-・Hostの指定が足りない！？
-Could not reliably determine the server’s fully qualified domain name, using for ServerName
-こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った
-　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、
-　そこに{{hostname}}.localを追記する処理追加
-・Ansible用MySQLの設定追加
-Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)
-host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)
-リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要
-・netstat -ant で現在使ってるポートとか観れる
-　(適当な解釈、後で意味をちゃんと調べる…かも)
-・MySQLが外部からつながらぬ
-webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。
-my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。
-これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。
-・ApacheのRewriteの設定漏れ
-UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。
-　AllowOverride をAllにしなかった。。。</description>
+      <description>&lt;p&gt;・botoが使えないってエラーになる。&lt;/p&gt;&#xA;&lt;p&gt;　→次のURLで解決 &lt;a href=&#34;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&#34;&gt;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか&lt;/p&gt;&#xA;&lt;p&gt;　　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか&lt;/p&gt;&#xA;&lt;p&gt;・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを&lt;/p&gt;&#xA;&lt;p&gt;　使ったら成功した。なんで？&lt;/p&gt;&#xA;&lt;p&gt;・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。&lt;/p&gt;&#xA;&lt;p&gt;・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。&lt;/p&gt;&#xA;&lt;p&gt;　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。&lt;/p&gt;&#xA;&lt;p&gt;　なので「NameVirtuakHost *:80」の記述があれば、その後&amp;lt;virtualhost *:80&amp;gt;VirtualHostディレクティブが&lt;/p&gt;&#xA;&lt;p&gt;　ないといけない。&lt;/p&gt;&#xA;&lt;p&gt;もしも&lt;!-- raw HTML omitted --&gt;&amp;lt;virtualhost {{hostname}}:80&amp;gt;みたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。&lt;/p&gt;&#xA;&lt;p&gt;整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。&lt;/p&gt;&#xA;&lt;p&gt;・Ubuntuに入ってるApache2のVirtualHostの有効化無効化&lt;/p&gt;&#xA;&lt;p&gt;　sites-availableディレクトリにVirtualHost設定書く&lt;/p&gt;&#xA;&lt;p&gt;　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化&lt;/p&gt;&#xA;&lt;p&gt;・Hostの指定が足りない！？&lt;/p&gt;&#xA;&lt;p&gt;Could not reliably determine the server’s fully qualified domain name, using for ServerName&lt;/p&gt;&#xA;&lt;p&gt;こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った&lt;/p&gt;&#xA;&lt;p&gt;　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、&lt;/p&gt;&#xA;&lt;p&gt;　そこに{{hostname}}.localを追記する処理追加&lt;/p&gt;&#xA;&lt;p&gt;・Ansible用MySQLの設定追加&lt;/p&gt;&#xA;&lt;p&gt;Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)&lt;/p&gt;&#xA;&lt;p&gt;host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)&lt;/p&gt;&#xA;&lt;p&gt;リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
       <link>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</guid>
-      <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
-の、前にAWSのS3試したので。
-・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
-・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折
-・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。
-・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。
-Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。
-・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる
-・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。
-・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う
-・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ
-以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事
-・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう
-・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する</description>
+      <description>&lt;p&gt;Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。&lt;/p&gt;&#xA;&lt;p&gt;の、前にAWSのS3試したので。&lt;/p&gt;&#xA;&lt;p&gt;・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る&lt;/p&gt;&#xA;&lt;p&gt;・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折&lt;/p&gt;&#xA;&lt;p&gt;・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。&lt;/p&gt;&#xA;&lt;p&gt;・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。&lt;/p&gt;&#xA;&lt;h4 id=&#34;ansible試す&#34;&gt;Ansible試す&lt;/h4&gt;&#xA;&lt;p&gt;・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。&lt;/p&gt;&#xA;&lt;p&gt;・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる&lt;/p&gt;&#xA;&lt;p&gt;・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。&lt;/p&gt;&#xA;&lt;p&gt;・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う&lt;/p&gt;&#xA;&lt;p&gt;・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ&lt;/p&gt;&#xA;&lt;p&gt;以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事&lt;/p&gt;&#xA;&lt;p&gt;・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう&lt;/p&gt;&#xA;&lt;p&gt;・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

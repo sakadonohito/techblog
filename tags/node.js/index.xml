@@ -4,20 +4,16 @@
     <title>Node.js on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/node.js/</link>
     <description>Recent content in Node.js on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 07 Dec 2017 13:56:42 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Dec 2017 13:56:42 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Socket.io</title>
       <link>https://tech.k-zak.com/posts/2017-12-07-socketio/</link>
       <pubDate>Thu, 07 Dec 2017 13:56:42 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-12-07-socketio/</guid>
-      <description>Node.jsとSocket.io Node.jsの復習ついでにSocket.ioを試した。
-メモ  emitで送信者から送信者以外全員に送信 broadcastで全員に送信 socket.idを指定することで特定の相手にのみ送信 /namespace#room#idで特定の相手に送信できる。idのみだとダメっぽい。 redisにメッセージを押し込んでおくと複数プロセスでメッセージを共有できる  オマケ alpineのredisのdockerイメージを使うと軽くてお得。
-以下でredisのtail -fぽい感じで全部見れるので便利
-$&amp;gt; redis-cli -h ${HOST} -p ${PORT} monitor </description>
+      <description>&lt;h1 id=&#34;nodejsとsocketio&#34;&gt;Node.jsとSocket.io&lt;/h1&gt;&#xA;&lt;p&gt;Node.jsの復習ついでにSocket.ioを試した。&lt;/p&gt;&#xA;&lt;h2 id=&#34;メモ&#34;&gt;メモ&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;emitで送信者から送信者以外全員に送信&lt;/li&gt;&#xA;&lt;li&gt;broadcastで全員に送信&lt;/li&gt;&#xA;&lt;li&gt;socket.idを指定することで特定の相手にのみ送信&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;/namespace#room#id&lt;/code&gt;で特定の相手に送信できる。idのみだとダメっぽい。&lt;/li&gt;&#xA;&lt;li&gt;redisにメッセージを押し込んでおくと複数プロセスでメッセージを共有できる&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;オマケ&#34;&gt;オマケ&lt;/h2&gt;&#xA;&lt;p&gt;alpineのredisのdockerイメージを使うと軽くてお得。&lt;/p&gt;&#xA;&lt;p&gt;以下でredisのtail -fぽい感じで全部見れるので便利&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$&amp;gt; redis-cli -h ${HOST} -p ${PORT} monitor&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,93 +4,30 @@
     <title>EC2 on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/ec2/</link>
     <description>Recent content in EC2 on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 24 Apr 2017 13:48:14 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Apr 2017 13:48:14 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>setting ntp on Ubuntu</title>
       <link>https://tech.k-zak.com/posts/2017-04-24-ntp/</link>
       <pubDate>Mon, 24 Apr 2017 13:48:14 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-04-24-ntp/</guid>
-      <description>EC2のUbuntu14.04にntpを設定 事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。
-エラー内容はInvalidSigunatureException なんかタイムスタンプが早すぎるみたいなエラー内容。
-Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。 タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。
-要はCognitoでトークンを生成するためのタイムスタンプがずれるのでどうしたってエラーになっちゃう問題。
-時刻がずれていることが原因と分かったので、暫定措置として時刻をあわせる(日本標準時)。 ※サーバーはUbuntu14.04
-sudo ntpdate ntp.nict.jp ※前提としてntpdateがインストールされていること
-いろいろ調べていたら、EC2でUbuntuを使うならNTPサーバーを利用して下さい的な感じだった。
- EC2インスタンスでの時刻同期について  NTPを入れる 根本解決のため、NTPサーバー機能をいれる。
-sudo apt-get install -y ntp そんで設定ファイルを編集する。 /etc/ntp.conf
- デフォルトの時刻サーバーをコメントアウト 代わりにserver ntp.nict.jpを3行書く  上記の設定と内容の説明については他人の記事をご参照ください。
- NTPサーバーの構築 NTPで時刻合わせ  編集したらNTPサーバービスを再起動する
-ぐお、タイムゾーンが 作業したサーバー(どちらもUbuntu14.04)のうち、1つがUTC、1つがJSTのタイムゾーンになってて、キモティ悪かったので、揃える。
-sudo timedatectl set-timezone Asia/Tokyo これでOK</description>
+      <description>&lt;h1 id=&#34;ec2のubuntu1404にntpを設定&#34;&gt;EC2のUbuntu14.04にntpを設定&lt;/h1&gt;&#xA;&lt;p&gt;事の発端は、AWSのS3へのアクセスのための認証に使用しているCognitoコードで認証エラーがでるようになった。&lt;/p&gt;&#xA;&lt;p&gt;エラー内容は&lt;strong&gt;InvalidSigunatureException&lt;/strong&gt; なんかタイムスタンプが早すぎるみたいなエラー内容。&lt;/p&gt;&#xA;&lt;p&gt;Nodeのアプリを再起動しても、AWSのCognitoの設定をみても解決せず。&#xA;タイムスタンプが早すぎるって意味わかんねーよってdateコマンドを実行してみたら、あら時刻ずれてるじゃない。。&lt;/p&gt;&#xA;&lt;p&gt;要はCognitoでトークンを生成するためのタイムスタンプがずれるのでどうしたってエラーになっちゃう問題。&lt;/p&gt;&#xA;&lt;p&gt;時刻がずれていることが原因と分かったので、暫定措置として時刻をあわせる(日本標準時)。&#xA;※サーバーはUbuntu14.04&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo ntpdate ntp.nict.jp&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;※前提としてntpdateがインストールされていること&lt;/p&gt;&#xA;&lt;p&gt;いろいろ調べていたら、EC2でUbuntuを使うならNTPサーバーを利用して下さい的な感じだった。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://forums.aws.amazon.com/thread.jspa?messageID=249603&#34;&gt;EC2インスタンスでの時刻同期について&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;ntpを入れる&#34;&gt;NTPを入れる&lt;/h2&gt;&#xA;&lt;p&gt;根本解決のため、NTPサーバー機能をいれる。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get install -y ntp&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;そんで設定ファイルを編集する。&#xA;&lt;strong&gt;/etc/ntp.conf&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;デフォルトの時刻サーバーをコメントアウト&lt;/li&gt;&#xA;&lt;li&gt;代わりに&lt;code&gt;server ntp.nict.jp&lt;/code&gt;を3行書く&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;上記の設定と内容の説明については他人の記事をご参照ください。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=ntp&#34;&gt;NTPサーバーの構築&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://debianj.com/ubuntu/install/ntp&#34;&gt;NTPで時刻合わせ&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;編集したらNTPサーバービスを再起動する&lt;/p&gt;&#xA;&lt;h2 id=&#34;ぐおタイムゾーンが&#34;&gt;ぐお、タイムゾーンが&lt;/h2&gt;&#xA;&lt;p&gt;作業したサーバー(どちらもUbuntu14.04)のうち、1つがUTC、1つがJSTのタイムゾーンになってて、キモティ悪かったので、揃える。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo timedatectl set-timezone Asia/Tokyo&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;これでOK&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
       <link>https://tech.k-zak.com/posts/challenge-ansible/</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/challenge-ansible/</guid>
-      <description>・botoが使えないってエラーになる。
-　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
-つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
-　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか
-・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを
-　使ったら成功した。なんで？
-・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。
-・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。
-　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。
-　なので「NameVirtuakHost *:80」の記述があれば、その後&amp;lt;virtualhost *:80&amp;gt;VirtualHostディレクティブが
-　ないといけない。
-もしも&amp;lt;virtualhost {{hostname}}:80&amp;gt;みたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
-整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。
-・Ubuntuに入ってるApache2のVirtualHostの有効化無効化
-　sites-availableディレクトリにVirtualHost設定書く
-　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化
-・Hostの指定が足りない！？
-Could not reliably determine the server’s fully qualified domain name, using for ServerName
-こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った
-　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、
-　そこに{{hostname}}.localを追記する処理追加
-・Ansible用MySQLの設定追加
-Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)
-host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)
-リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要
-・netstat -ant で現在使ってるポートとか観れる
-　(適当な解釈、後で意味をちゃんと調べる…かも)
-・MySQLが外部からつながらぬ
-webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。
-my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。
-これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。
-・ApacheのRewriteの設定漏れ
-UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。
-　AllowOverride をAllにしなかった。。。</description>
+      <description>&lt;p&gt;・botoが使えないってエラーになる。&lt;/p&gt;&#xA;&lt;p&gt;　→次のURLで解決 &lt;a href=&#34;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&#34;&gt;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか&lt;/p&gt;&#xA;&lt;p&gt;　　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか&lt;/p&gt;&#xA;&lt;p&gt;・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを&lt;/p&gt;&#xA;&lt;p&gt;　使ったら成功した。なんで？&lt;/p&gt;&#xA;&lt;p&gt;・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。&lt;/p&gt;&#xA;&lt;p&gt;・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。&lt;/p&gt;&#xA;&lt;p&gt;　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。&lt;/p&gt;&#xA;&lt;p&gt;　なので「NameVirtuakHost *:80」の記述があれば、その後&amp;lt;virtualhost *:80&amp;gt;VirtualHostディレクティブが&lt;/p&gt;&#xA;&lt;p&gt;　ないといけない。&lt;/p&gt;&#xA;&lt;p&gt;もしも&lt;!-- raw HTML omitted --&gt;&amp;lt;virtualhost {{hostname}}:80&amp;gt;みたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。&lt;/p&gt;&#xA;&lt;p&gt;整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。&lt;/p&gt;&#xA;&lt;p&gt;・Ubuntuに入ってるApache2のVirtualHostの有効化無効化&lt;/p&gt;&#xA;&lt;p&gt;　sites-availableディレクトリにVirtualHost設定書く&lt;/p&gt;&#xA;&lt;p&gt;　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化&lt;/p&gt;&#xA;&lt;p&gt;・Hostの指定が足りない！？&lt;/p&gt;&#xA;&lt;p&gt;Could not reliably determine the server’s fully qualified domain name, using for ServerName&lt;/p&gt;&#xA;&lt;p&gt;こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った&lt;/p&gt;&#xA;&lt;p&gt;　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、&lt;/p&gt;&#xA;&lt;p&gt;　そこに{{hostname}}.localを追記する処理追加&lt;/p&gt;&#xA;&lt;p&gt;・Ansible用MySQLの設定追加&lt;/p&gt;&#xA;&lt;p&gt;Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)&lt;/p&gt;&#xA;&lt;p&gt;host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)&lt;/p&gt;&#xA;&lt;p&gt;リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる</title>
       <link>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</link>
       <pubDate>Sat, 02 Aug 2014 16:02:30 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/challenge-vagrant-ansible/</guid>
-      <description>Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。
-の、前にAWSのS3試したので。
-・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る
-・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折
-・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。
-・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。
-Ansible試す ・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。
-・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる
-・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。
-・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う
-・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ
-以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事
-・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう
-・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する</description>
+      <description>&lt;p&gt;Ansibleに興味があって試そうとして、対象のサーバーをまずはVagrantを使おう、最終的にはEC2を使う形まで持って行こう。という企画です。アプリとしてはAnsibleのチュートリアルに出てきたのでWordPressを構築するのを試します。&lt;/p&gt;&#xA;&lt;p&gt;の、前にAWSのS3試したので。&lt;/p&gt;&#xA;&lt;p&gt;・IAMでアカウント作ってセキュリティポリシーでS3の接続出来るバケット制限したり、操作権限制限したり出来る&lt;/p&gt;&#xA;&lt;p&gt;・Pythonのbotoを入れて最初S3の操作しようと思ったけど、マルチパートアップロードのやり方が分からなくて挫折&lt;/p&gt;&#xA;&lt;p&gt;・AWS-CLIが楽ちん、S3に対して勝手にマルチパートアップロードしてくれる。でもWindowsで扱う場合、お決まりの文字コード警告がでますね。&lt;/p&gt;&#xA;&lt;p&gt;・PHPのSDKでS3に対するファイルのリスト取得、ダウンロード、アップロード(マルチパートアップロード)を作成。思ってたより簡単。&lt;/p&gt;&#xA;&lt;h4 id=&#34;ansible試す&#34;&gt;Ansible試す&lt;/h4&gt;&#xA;&lt;p&gt;・Vagrantで作成したboxにAnsibleでSSHに接続する場合、SSHの設定をansible.cfgにpathを書いていない場合、デフォルトの~/.ssh/configを参照してしまう。&lt;/p&gt;&#xA;&lt;p&gt;・Ansibleはインベントリファイルに書いた名前でSSHする。だからSSHの設定ファイルのHost名は合わせる&lt;/p&gt;&#xA;&lt;p&gt;・AnsibleのDocument(英語)である程度分かるんですが、ansible-docコマンドで、ある程度何が出来るか雰囲気だけ分かる。&lt;/p&gt;&#xA;&lt;p&gt;・Ansibleで指定するモジュールはユーザーを作るadd、ファイルを転送するcopy、shellを実行するshell、ファイルを実行？するcommand、aptやyumあたりがよく使うモジュール、設定ファイルで編集が1行で済む場合はlineinfile、結構いろいろある場合は完成版の設定ファイルをcopyするかJinja2で作成したtemplateファイルを使う&lt;/p&gt;&#xA;&lt;p&gt;・Ansibleのnotifyで呼び出されるのは同じRoleのhandlerに登録されたYamlのnotifyで指定した値と同じnameのものが処理されるようだ&lt;/p&gt;&#xA;&lt;p&gt;以下WordPressでApacheとMySQLを別サーバーにする場合に忘れず行いましょう的なMySQLに関する事&lt;/p&gt;&#xA;&lt;p&gt;・AnsibleでlocalhostだけじゃなくてWebサーバー側のIPのも作成しましょう&lt;/p&gt;&#xA;&lt;p&gt;・Ansibleでmy.cnfでbind_addressでWebサーバーから接続できるようループバックからIPに変更する&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

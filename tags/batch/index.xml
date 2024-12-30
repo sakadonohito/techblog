@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>batch on 開発メモてきな</title>
+    <title>Batch on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/batch/</link>
-    <description>Recent content in batch on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Batch on 開発メモてきな</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/batch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/batch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Not Posted</title>
       <link>https://tech.k-zak.com/posts/2017-12-31-noposts/</link>
       <pubDate>Sun, 31 Dec 2017 11:49:55 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-12-31-noposts/</guid>
-      <description>2017年記事にしそこねたやったこと  コマンドプロンプト(バッチファイル) コマンドプロンプトからPowershell実行 シェルスクリプト AWS System Manager Run Command (sum) VagrantでSQL Server他DBもセットアップしたよ Nano Server試そうとした React Redux…etc Webpack Docker再入門とWP開発環境の作成 WordPressテーマ開発用のベースを作成した AWS Lambda をPythonで AWS Lambda をNode.jsで CakePHP 3 tutorial 少しやった Vagrant でPHP開発環境作成 Terraform試した Hugo用テーマを作成した  忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。
-コマンドプロンプト(バッチファイル) Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。
-例えばこんなこと。実行結果を変数に入れるのが面倒。
-setlocal enabledelayedexpansion for /f %%a in (&#39;whoami&#39;) do @set watashi=%%a echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log 別プロセスで実行する方法
-start %~dp0\called_subscripts\computer_restart.bat %~dp0 はLinuxでいうところのpwdみたいなもの
-コマンドプロンプトからPowershell実行 @powershell てやればできる。
-シェルスクリプト 少し覚えた。 $#は引数の数 $1は引数の一つ目 if [ a op b ]; てやつとaとbをopでチェックできる。変数の値のチェックやファイルの存在チェックなどを行う。 ファイルの存在チェックはシンプルに-e オプションを使う。</description>
+      <description>&lt;h1 id=&#34;2017年記事にしそこねたやったこと&#34;&gt;2017年記事にしそこねたやったこと&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;コマンドプロンプト(バッチファイル)&lt;/li&gt;&#xA;&lt;li&gt;コマンドプロンプトからPowershell実行&lt;/li&gt;&#xA;&lt;li&gt;シェルスクリプト&lt;/li&gt;&#xA;&lt;li&gt;AWS System Manager Run Command (sum)&lt;/li&gt;&#xA;&lt;li&gt;VagrantでSQL Server他DBもセットアップしたよ&lt;/li&gt;&#xA;&lt;li&gt;Nano Server試そうとした&lt;/li&gt;&#xA;&lt;li&gt;React Redux…etc&lt;/li&gt;&#xA;&lt;li&gt;Webpack&lt;/li&gt;&#xA;&lt;li&gt;Docker再入門とWP開発環境の作成&lt;/li&gt;&#xA;&lt;li&gt;WordPressテーマ開発用のベースを作成した&lt;/li&gt;&#xA;&lt;li&gt;AWS Lambda をPythonで&lt;/li&gt;&#xA;&lt;li&gt;AWS Lambda をNode.jsで&lt;/li&gt;&#xA;&lt;li&gt;CakePHP 3 tutorial 少しやった&lt;/li&gt;&#xA;&lt;li&gt;Vagrant でPHP開発環境作成&lt;/li&gt;&#xA;&lt;li&gt;Terraform試した&lt;/li&gt;&#xA;&lt;li&gt;Hugo用テーマを作成した&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。&lt;/p&gt;&#xA;&lt;h3 id=&#34;コマンドプロンプトバッチファイル&#34;&gt;コマンドプロンプト(バッチファイル)&lt;/h3&gt;&#xA;&lt;p&gt;Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。&lt;/p&gt;&#xA;&lt;p&gt;例えばこんなこと。実行結果を変数に入れるのが面倒。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;setlocal enabledelayedexpansion&#xA;for /f %%a in (&amp;#39;whoami&amp;#39;) do @set watashi=%%a&#xA;echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;別プロセスで実行する方法&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

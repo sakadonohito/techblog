@@ -1,94 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>complain on 開発メモてきな</title>
+    <title>Complain on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/complain/</link>
-    <description>Recent content in complain on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Complain on 開発メモてきな</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 Mar 2017 23:52:11 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/complain/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Mar 2017 23:52:11 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/complain/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Agile and Sprint myself</title>
       <link>https://tech.k-zak.com/posts/2017-03-21-thinkagailemyself/</link>
       <pubDate>Tue, 21 Mar 2017 23:52:11 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-03-21-thinkagailemyself/</guid>
-      <description>自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい と、言うことです。
-覚えたいこと、挑戦したいことを目標とするはいいけど、いつまでたっても着手しなかったり遅々として進まなかったりするので優先順位をつけて期限を設けて手中して取り組んでいけば少しは結果が変わってくると信じたい。
-現在の目標  ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) AWSの機能のだいたいを触って感覚を掴んでおきたい Microsoft Azureを触ってAWSとの違いを掴んでおきたい GCC？を以下略 Blumixに挑戦したい FreeBSDを構築したい Alpineを構築して慣れたい Ansibleを一通り触っていろいろできるよういなりたい Dockerをある程度使えるようになりたい IPv6の学習と擬似ネットワークの構築してみたい VPNの設定をGUIじゃなくても設定できるようになりたい VyOS？を試してみたい Shell及びAWKを覚えたい Powershellを覚えたい dot net C#を覚えたい Javaを覚えたい Androidを覚えたい Swiftを覚えたい JavaScriptをもっと使いこなせるようになりmたい Perl6/Perl5を使えるようになりたい PHP7を覚えたい PHPのフレームワーク、Laravelを覚えたい Nginxに組み込むLuaを少し試したい Ruby/Railsを覚えたい Python3をもう少し使えるようになりたい Scalaちょっと覚えたい Lispわかるようになりたい Clojure書けるようになりたい Haskell読めるようになりたい F#ちょっとしたものなら書けるようになりたい ActiveDirectory/OpenDirectoryがわかるようになりたい。 Golang書けるようになりたい Makerel試したい Erlang読み書きできるようになりたい Elasticsearch扱えるようになりたい Neo4j試したい MongoDB試したい DynamoDB試したい Redis扱えるようになりたい  とっても曖昧なものが多い。。
-今もっとも取り組みたいことを多くて3つに絞るなら  ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) Makerel試したい Dockerをある程度使えるようになりたい  以下、打ち消し戦のものは現時点で達成済みのもの
-1. ブログや静的サイトのテーマをつくり込みたい Pelican,Hexo,Jykell,WordPress,Hugo,Sphinxで動かし始めた静的サイトのテーマを一から作ってみたり、採用したテーマをカスタマイズしたりして見やすさやアクセスのしやすさを向上させる。
-目的  各静的サイトジェネレータのテンプレートの書き方を覚える レスポンシブレイアウトを一から作ってみてカラダで覚える GoogleAnalyticsやアフィリエイトコードの埋め込み等を試す  達成条件:5月上旬までに  ベースとなるレスポンシブレイアウトを作成する Pelican用のテーマを一から作成する(jinja2) Hexoで採用したテーマを見直し改良する(ejs) WordPressのテーマを一から作成し、よく使いそうな関数のチーとシート的なものを作成する(PHP) Jekyllのテーマを一から作成してjinjaとの違いを体感する。(?</description>
+      <description>&lt;h1 id=&#34;自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい&#34;&gt;自分の目標をアジャイルにスプリントな感じで少しずつ達成していきたい&lt;/h1&gt;&#xA;&lt;p&gt;と、言うことです。&lt;/p&gt;&#xA;&lt;p&gt;覚えたいこと、挑戦したいことを目標とするはいいけど、いつまでたっても着手しなかったり遅々として進まなかったりするので優先順位をつけて期限を設けて手中して取り組んでいけば少しは結果が変わってくると信じたい。&lt;/p&gt;&#xA;&lt;h2 id=&#34;現在の目標&#34;&gt;現在の目標&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx)&lt;/li&gt;&#xA;&lt;li&gt;AWSの機能のだいたいを触って感覚を掴んでおきたい&lt;/li&gt;&#xA;&lt;li&gt;Microsoft Azureを触ってAWSとの違いを掴んでおきたい&lt;/li&gt;&#xA;&lt;li&gt;GCC？を以下略&lt;/li&gt;&#xA;&lt;li&gt;Blumixに挑戦したい&lt;/li&gt;&#xA;&lt;li&gt;FreeBSDを構築したい&lt;/li&gt;&#xA;&lt;li&gt;Alpineを構築して慣れたい&lt;/li&gt;&#xA;&lt;li&gt;Ansibleを一通り触っていろいろできるよういなりたい&lt;/li&gt;&#xA;&lt;li&gt;Dockerをある程度使えるようになりたい&lt;/li&gt;&#xA;&lt;li&gt;IPv6の学習と擬似ネットワークの構築してみたい&lt;/li&gt;&#xA;&lt;li&gt;VPNの設定をGUIじゃなくても設定できるようになりたい&lt;/li&gt;&#xA;&lt;li&gt;VyOS？を試してみたい&lt;/li&gt;&#xA;&lt;li&gt;Shell及びAWKを覚えたい&lt;/li&gt;&#xA;&lt;li&gt;Powershellを覚えたい&lt;/li&gt;&#xA;&lt;li&gt;dot net C#を覚えたい&lt;/li&gt;&#xA;&lt;li&gt;Javaを覚えたい&lt;/li&gt;&#xA;&lt;li&gt;Androidを覚えたい&lt;/li&gt;&#xA;&lt;li&gt;Swiftを覚えたい&lt;/li&gt;&#xA;&lt;li&gt;JavaScriptをもっと使いこなせるようになりmたい&lt;/li&gt;&#xA;&lt;li&gt;Perl6/Perl5を使えるようになりたい&lt;/li&gt;&#xA;&lt;li&gt;PHP7を覚えたい&lt;/li&gt;&#xA;&lt;li&gt;PHPのフレームワーク、Laravelを覚えたい&lt;/li&gt;&#xA;&lt;li&gt;Nginxに組み込むLuaを少し試したい&lt;/li&gt;&#xA;&lt;li&gt;Ruby/Railsを覚えたい&lt;/li&gt;&#xA;&lt;li&gt;Python3をもう少し使えるようになりたい&lt;/li&gt;&#xA;&lt;li&gt;Scalaちょっと覚えたい&lt;/li&gt;&#xA;&lt;li&gt;Lispわかるようになりたい&lt;/li&gt;&#xA;&lt;li&gt;Clojure書けるようになりたい&lt;/li&gt;&#xA;&lt;li&gt;Haskell読めるようになりたい&lt;/li&gt;&#xA;&lt;li&gt;F#ちょっとしたものなら書けるようになりたい&lt;/li&gt;&#xA;&lt;li&gt;ActiveDirectory/OpenDirectoryがわかるようになりたい。&lt;/li&gt;&#xA;&lt;li&gt;Golang書けるようになりたい&lt;/li&gt;&#xA;&lt;li&gt;Makerel試したい&lt;/li&gt;&#xA;&lt;li&gt;Erlang読み書きできるようになりたい&lt;/li&gt;&#xA;&lt;li&gt;Elasticsearch扱えるようになりたい&lt;/li&gt;&#xA;&lt;li&gt;Neo4j試したい&lt;/li&gt;&#xA;&lt;li&gt;MongoDB試したい&lt;/li&gt;&#xA;&lt;li&gt;DynamoDB試したい&lt;/li&gt;&#xA;&lt;li&gt;Redis扱えるようになりたい&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;とっても曖昧なものが多い。。&lt;/p&gt;&#xA;&lt;h2 id=&#34;今もっとも取り組みたいことを多くて3つに絞るなら&#34;&gt;今もっとも取り組みたいことを多くて3つに絞るなら&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx)&lt;/li&gt;&#xA;&lt;li&gt;Makerel試したい&lt;/li&gt;&#xA;&lt;li&gt;Dockerをある程度使えるようになりたい&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;以下、打ち消し戦のものは現時点で達成済みのもの&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>再始動</title>
       <link>https://tech.k-zak.com/posts/restart/</link>
       <pubDate>Sat, 18 Feb 2017 23:26:18 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/restart/</guid>
-      <description>ブログ引越して再始動 &amp;hellip;の予定
-再始動 契約していたレンタルサーバーを解約して、長らく契約するも放置状態が続いていたVPSにいろいろ引っ越そうと検討。
-ついでにいろいろ構成などを再検討してやり直そうと考えました。
-構成 レンタルサーバー上のMovableTypeで細々と更新していたアニメやゲームについてのブログをVPS上にWordPressに構築し直しす事に。
-ついでにWordPressのカスタマイズの練習台にも使おうという魂胆。
-技術メモ的なこの忘備録ブログは今回を機にHugoで静的サイト構築してGithubPagesに載せる事にしました。
-他にいくつか静的サイトジェネレーターを運営していろいろ触ってみたいと考えている。
-ただ、今の所、上記２ブログ以外は全てS3での静的サイトホスティングでFTPでファイルをアップロードする方法を考えているけど、将来的には違う場所でホスティングしたりデプロイツールを使ったり、CI的なことをしたり、Dockerを使うなどして別の場所にサイトを構築しようかと考えている。
-MovableTypeからWordPressへの引越し テキストをずらずら記述していただけだったので、特に問題はなかった。 単純にエクスポートしてインポートしただけ。 インポート後にコツコツとカテゴリやタグを整理して付け直したり。
-VPSサーバーの設定やHugoについて 後日、それぞれ別の記事にします。</description>
+      <description>&lt;h1 id=&#34;ブログ引越して再始動&#34;&gt;ブログ引越して再始動&lt;/h1&gt;&#xA;&lt;p&gt;&amp;hellip;の予定&lt;/p&gt;&#xA;&lt;h2 id=&#34;再始動&#34;&gt;再始動&lt;/h2&gt;&#xA;&lt;p&gt;契約していたレンタルサーバーを解約して、長らく契約するも放置状態が続いていたVPSにいろいろ引っ越そうと検討。&lt;/p&gt;&#xA;&lt;p&gt;ついでにいろいろ構成などを再検討してやり直そうと考えました。&lt;/p&gt;&#xA;&lt;h2 id=&#34;構成&#34;&gt;構成&lt;/h2&gt;&#xA;&lt;p&gt;レンタルサーバー上のMovableTypeで細々と更新していたアニメやゲームについてのブログをVPS上にWordPressに構築し直しす事に。&lt;/p&gt;&#xA;&lt;p&gt;ついでにWordPressのカスタマイズの練習台にも使おうという魂胆。&lt;/p&gt;&#xA;&lt;p&gt;技術メモ的なこの忘備録ブログは今回を機にHugoで静的サイト構築してGithubPagesに載せる事にしました。&lt;/p&gt;&#xA;&lt;p&gt;他にいくつか静的サイトジェネレーターを運営していろいろ触ってみたいと考えている。&lt;/p&gt;&#xA;&lt;p&gt;ただ、今の所、上記２ブログ以外は全てS3での静的サイトホスティングでFTPでファイルをアップロードする方法を考えているけど、将来的には違う場所でホスティングしたりデプロイツールを使ったり、CI的なことをしたり、Dockerを使うなどして別の場所にサイトを構築しようかと考えている。&lt;/p&gt;&#xA;&lt;h2 id=&#34;movabletypeからwordpressへの引越し&#34;&gt;MovableTypeからWordPressへの引越し&lt;/h2&gt;&#xA;&lt;p&gt;テキストをずらずら記述していただけだったので、特に問題はなかった。&#xA;単純にエクスポートしてインポートしただけ。&#xA;インポート後にコツコツとカテゴリやタグを整理して付け直したり。&lt;/p&gt;&#xA;&lt;h2 id=&#34;vpsサーバーの設定やhugoについて&#34;&gt;VPSサーバーの設定やHugoについて&lt;/h2&gt;&#xA;&lt;p&gt;後日、それぞれ別の記事にします。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>なんとか再開したい</title>
       <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 24 Aug 2013 16:16:57 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone/</guid>
-      <description>memo的な感じで再開したい。
-でもその前にWordPressの勉強をしなおして、改良してから再開したい。
-当面はメモはEvernoteにとどめておくしか無いかな。</description>
+      <description>&lt;p&gt;memo的な感じで再開したい。&lt;/p&gt;&#xA;&lt;p&gt;でもその前にWordPressの勉強をしなおして、改良してから再開したい。&lt;/p&gt;&#xA;&lt;p&gt;当面はメモはEvernoteにとどめておくしか無いかな。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>現状整理</title>
       <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 30 Sep 2012 12:19:52 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone/</guid>
-      <description>現状の整理。ちっとも進まない。。
-開発環境：
-・開発環境のOSはOSX 10.8にアップグレード
-・WebサーバーはローカルのApache、エディタは主にEmacs
- 各言語の勉強進捗：
-・Java・・・お休み中。来年にはAndroidさわさわする一環で復帰したい。
-・Grovy・・・お休み中。たまにメンテナンスで仕事で既存のもののデバッグ用途に使用する程度。
-・Scala・・・未着手。
-・Clojure・・・未着手。
-・Haskell・・・未着手。有名な本は買ったけれど、まともに読んでいない。
-・PHP・・・唯一仕事で使えるレベル。最近は全くふれず、CakePHPやFuelPHPにそろそろ触れねば…
-・Ruby・・・Railsの進化が早すぎるので、もう少し他の言語の習得が進んで余裕が出るまでは手を出さない。
-・Python・・・去年そこそこ触ったきり。まだ仕事で使えるレベルに達していないのに中断中…
-・Perl・・・なぜか最近はPerlを勉強中。基本文法は理解したが…
-・ActionScript・・・簡単なものは分かるとして、使用用途が特殊なのでなかなか…
-・JavaScript・・・一番習得が進んでいると思うが、スマフォ向けや派生言語の習得まで考えると…
-・VB・・・簡単なデスクトップアプリなら…
-・C#・・・来年には着手したい
-・C++・・・いいかげん、そろそろ勉強しないとな〜
-・Objective-C・・・本はいろいろ買い揃えたけれど…
-あぁ、自分の心の弱さに嫌になりますね。</description>
+      <description>&lt;p&gt;現状の整理。ちっとも進まない。。&lt;/p&gt;&#xA;&lt;p&gt;開発環境：&lt;/p&gt;&#xA;&lt;p&gt;・開発環境のOSはOSX 10.8にアップグレード&lt;/p&gt;&#xA;&lt;p&gt;・WebサーバーはローカルのApache、エディタは主にEmacs&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;各言語の勉強進捗：&lt;/p&gt;&#xA;&lt;p&gt;・Java・・・お休み中。来年にはAndroidさわさわする一環で復帰したい。&lt;/p&gt;&#xA;&lt;p&gt;・Grovy・・・お休み中。たまにメンテナンスで仕事で既存のもののデバッグ用途に使用する程度。&lt;/p&gt;&#xA;&lt;p&gt;・Scala・・・未着手。&lt;/p&gt;&#xA;&lt;p&gt;・Clojure・・・未着手。&lt;/p&gt;&#xA;&lt;p&gt;・Haskell・・・未着手。有名な本は買ったけれど、まともに読んでいない。&lt;/p&gt;&#xA;&lt;p&gt;・PHP・・・唯一仕事で使えるレベル。最近は全くふれず、CakePHPやFuelPHPにそろそろ触れねば…&lt;/p&gt;&#xA;&lt;p&gt;・Ruby・・・Railsの進化が早すぎるので、もう少し他の言語の習得が進んで余裕が出るまでは手を出さない。&lt;/p&gt;&#xA;&lt;p&gt;・Python・・・去年そこそこ触ったきり。まだ仕事で使えるレベルに達していないのに中断中…&lt;/p&gt;&#xA;&lt;p&gt;・Perl・・・なぜか最近はPerlを勉強中。基本文法は理解したが…&lt;/p&gt;&#xA;&lt;p&gt;・ActionScript・・・簡単なものは分かるとして、使用用途が特殊なのでなかなか…&lt;/p&gt;&#xA;&lt;p&gt;・JavaScript・・・一番習得が進んでいると思うが、スマフォ向けや派生言語の習得まで考えると…&lt;/p&gt;&#xA;&lt;p&gt;・VB・・・簡単なデスクトップアプリなら…&lt;/p&gt;&#xA;&lt;p&gt;・C#・・・来年には着手したい&lt;/p&gt;&#xA;&lt;p&gt;・C++・・・いいかげん、そろそろ勉強しないとな〜&lt;/p&gt;&#xA;&lt;p&gt;・Objective-C・・・本はいろいろ買い揃えたけれど…&lt;/p&gt;&#xA;&lt;p&gt;あぁ、自分の心の弱さに嫌になりますね。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>趣旨変え</title>
       <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 20 May 2012 09:38:56 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone/</guid>
-      <description>ここのブログの内容の趣旨を変えました。
-元々のネタはBlogger？Googleのところに移動。
-ここは元々MTで少しやってた勉強メモに変更。それに伴いMTでからデータも適当に移行。</description>
+      <description>&lt;p&gt;ここのブログの内容の趣旨を変えました。&lt;/p&gt;&#xA;&lt;p&gt;元々のネタはBlogger？Googleのところに移動。&lt;/p&gt;&#xA;&lt;p&gt;ここは元々MTで少しやってた勉強メモに変更。それに伴いMTでからデータも適当に移行。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

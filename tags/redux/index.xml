@@ -4,49 +4,23 @@
     <title>Redux on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/redux/</link>
     <description>Recent content in Redux on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/redux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Dec 2017 11:49:55 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/redux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Not Posted</title>
       <link>https://tech.k-zak.com/posts/2017-12-31-noposts/</link>
       <pubDate>Sun, 31 Dec 2017 11:49:55 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-12-31-noposts/</guid>
-      <description>2017年記事にしそこねたやったこと  コマンドプロンプト(バッチファイル) コマンドプロンプトからPowershell実行 シェルスクリプト AWS System Manager Run Command (sum) VagrantでSQL Server他DBもセットアップしたよ Nano Server試そうとした React Redux…etc Webpack Docker再入門とWP開発環境の作成 WordPressテーマ開発用のベースを作成した AWS Lambda をPythonで AWS Lambda をNode.jsで CakePHP 3 tutorial 少しやった Vagrant でPHP開発環境作成 Terraform試した Hugo用テーマを作成した  忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。
-コマンドプロンプト(バッチファイル) Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。
-例えばこんなこと。実行結果を変数に入れるのが面倒。
-setlocal enabledelayedexpansion for /f %%a in (&#39;whoami&#39;) do @set watashi=%%a echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log 別プロセスで実行する方法
-start %~dp0\called_subscripts\computer_restart.bat %~dp0 はLinuxでいうところのpwdみたいなもの
-コマンドプロンプトからPowershell実行 @powershell てやればできる。
-シェルスクリプト 少し覚えた。 $#は引数の数 $1は引数の一つ目 if [ a op b ]; てやつとaとbをopでチェックできる。変数の値のチェックやファイルの存在チェックなどを行う。 ファイルの存在チェックはシンプルに-e オプションを使う。</description>
+      <description>&lt;h1 id=&#34;2017年記事にしそこねたやったこと&#34;&gt;2017年記事にしそこねたやったこと&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;コマンドプロンプト(バッチファイル)&lt;/li&gt;&#xA;&lt;li&gt;コマンドプロンプトからPowershell実行&lt;/li&gt;&#xA;&lt;li&gt;シェルスクリプト&lt;/li&gt;&#xA;&lt;li&gt;AWS System Manager Run Command (sum)&lt;/li&gt;&#xA;&lt;li&gt;VagrantでSQL Server他DBもセットアップしたよ&lt;/li&gt;&#xA;&lt;li&gt;Nano Server試そうとした&lt;/li&gt;&#xA;&lt;li&gt;React Redux…etc&lt;/li&gt;&#xA;&lt;li&gt;Webpack&lt;/li&gt;&#xA;&lt;li&gt;Docker再入門とWP開発環境の作成&lt;/li&gt;&#xA;&lt;li&gt;WordPressテーマ開発用のベースを作成した&lt;/li&gt;&#xA;&lt;li&gt;AWS Lambda をPythonで&lt;/li&gt;&#xA;&lt;li&gt;AWS Lambda をNode.jsで&lt;/li&gt;&#xA;&lt;li&gt;CakePHP 3 tutorial 少しやった&lt;/li&gt;&#xA;&lt;li&gt;Vagrant でPHP開発環境作成&lt;/li&gt;&#xA;&lt;li&gt;Terraform試した&lt;/li&gt;&#xA;&lt;li&gt;Hugo用テーマを作成した&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;忙しいというよりは怠惰だったのと、Hugoのテーマを変えてからやろうと言い訳してるうちに忘れてしまった。&lt;/p&gt;&#xA;&lt;h3 id=&#34;コマンドプロンプトバッチファイル&#34;&gt;コマンドプロンプト(バッチファイル)&lt;/h3&gt;&#xA;&lt;p&gt;Windowsサーバーでバッチファイルで操作しようとした時に少しおぼえた。&lt;/p&gt;&#xA;&lt;p&gt;例えばこんなこと。実行結果を変数に入れるのが面倒。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;setlocal enabledelayedexpansion&#xA;for /f %%a in (&amp;#39;whoami&amp;#39;) do @set watashi=%%a&#xA;echo %date% %time% !watashi! &amp;gt;&amp;gt; execute.log&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;別プロセスで実行する方法&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>think about redux</title>
       <link>https://tech.k-zak.com/posts/2017-03-31-redux/</link>
       <pubDate>Sun, 02 Apr 2017 22:49:50 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-03-31-redux/</guid>
-      <description>Reduxについて感化されたこと Reduxについて不満に思っている部分について考察している記事を見かけた。
-自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。
-理解して納得していること Reactの場合は上からもらうプロパティはPropsで読み取り専用。
-要素ごとにstateという読み書き可能なプロパティを持つ。
-ReduxはFluxアーキテクチャの実装。
-1つの状態を管理するStoreのみ。
-Actionを呼びReducerが状態を更新する。それぞれはプレーンなjavacsriptで書く。
-ここまではいい。とても素敵に感じた。
-受け入れがたいところ javascriptといえば、画面上の何かを触ったらイベントを拾って画面を変えたりとか、非同期で外からデータを持ってくるとかですよね。
-その非同期処理をReduxではどう書くのか、実はActionは処理のオブジェクトを生成するだけだし、Reducerは更新結果の状態を同期処理で作るだけ。
-ビジネスロジック的なものや非同期処理はどこに書くのか？
-基本的には無い。なので後付け？でてきたMiddlewareてのを作る。
-Reduxの思想では、非同期の処理前、処理中、処理結果(成功・失敗)をそれぞれ状態として更新する。
-その処理をMiddlewareに書くのだけれど&amp;hellip;書くのだけれど、これがすごく気持ち悪いと感じていた。
-いろいろ他の書き方が無いのかとか本来自分はどう書きたいのかということを考えると、乖離が大きく、辛い。
-その辺りをReducerの状態を更新する処理のところで非同期処理を呼び出して結果を入れる書き方を考えた方がいらっしゃって、外国のReduxのコミュニティに投稿したら、disられてた。
-Reduxの基本設計に不備があって、それをごまかすためのMiddlewareは許されて、Reducerに非同期処理結果を突っ込むのは違うとかって言うの、どうなの？
-まとめ ReduxのMiddlewareがいまいち気に入らないので、非同期処理も考慮されたFluxアーキテクチャのオレオレ実装を作るしか無いのか。。。</description>
+      <description>&lt;h1 id=&#34;reduxについて感化されたこと&#34;&gt;Reduxについて感化されたこと&lt;/h1&gt;&#xA;&lt;p&gt;Reduxについて不満に思っている部分について考察している記事を見かけた。&lt;/p&gt;&#xA;&lt;p&gt;自分もReduxを少し触ってみて「？」と思っていたことなどが言語されていた。&lt;/p&gt;&#xA;&lt;h2 id=&#34;理解して納得していること&#34;&gt;理解して納得していること&lt;/h2&gt;&#xA;&lt;p&gt;Reactの場合は上からもらうプロパティはPropsで読み取り専用。&lt;/p&gt;&#xA;&lt;p&gt;要素ごとにstateという読み書き可能なプロパティを持つ。&lt;/p&gt;&#xA;&lt;p&gt;ReduxはFluxアーキテクチャの実装。&lt;/p&gt;&#xA;&lt;p&gt;1つの状態を管理するStoreのみ。&lt;/p&gt;&#xA;&lt;p&gt;Actionを呼びReducerが状態を更新する。それぞれはプレーンなjavacsriptで書く。&lt;/p&gt;&#xA;&lt;p&gt;ここまではいい。とても素敵に感じた。&lt;/p&gt;&#xA;&lt;h2 id=&#34;受け入れがたいところ&#34;&gt;受け入れがたいところ&lt;/h2&gt;&#xA;&lt;p&gt;javascriptといえば、画面上の何かを触ったらイベントを拾って画面を変えたりとか、非同期で外からデータを持ってくるとかですよね。&lt;/p&gt;&#xA;&lt;p&gt;その非同期処理をReduxではどう書くのか、実はActionは処理のオブジェクトを生成するだけだし、Reducerは更新結果の状態を同期処理で作るだけ。&lt;/p&gt;&#xA;&lt;p&gt;ビジネスロジック的なものや非同期処理はどこに書くのか？&lt;/p&gt;&#xA;&lt;p&gt;基本的には無い。なので後付け？でてきたMiddlewareてのを作る。&lt;/p&gt;&#xA;&lt;p&gt;Reduxの思想では、非同期の処理前、処理中、処理結果(成功・失敗)をそれぞれ状態として更新する。&lt;/p&gt;&#xA;&lt;p&gt;その処理をMiddlewareに書くのだけれど&amp;hellip;書くのだけれど、これがすごく気持ち悪いと感じていた。&lt;/p&gt;&#xA;&lt;p&gt;いろいろ他の書き方が無いのかとか本来自分はどう書きたいのかということを考えると、乖離が大きく、辛い。&lt;/p&gt;&#xA;&lt;p&gt;その辺りをReducerの状態を更新する処理のところで非同期処理を呼び出して結果を入れる書き方を考えた方がいらっしゃって、外国のReduxのコミュニティに投稿したら、disられてた。&lt;/p&gt;&#xA;&lt;p&gt;Reduxの基本設計に不備があって、それをごまかすためのMiddlewareは許されて、Reducerに非同期処理結果を突っ込むのは違うとかって言うの、どうなの？&lt;/p&gt;&#xA;&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;&#xA;&lt;p&gt;ReduxのMiddlewareがいまいち気に入らないので、非同期処理も考慮されたFluxアーキテクチャのオレオレ実装を作るしか無いのか。。。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

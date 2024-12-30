@@ -4,93 +4,37 @@
     <title>Emacs on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/emacs/</link>
     <description>Recent content in Emacs on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 15 Sep 2014 15:48:13 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Sep 2014 15:48:13 +0000</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>新しく開発環境作成中</title>
       <link>https://tech.k-zak.com/posts/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/dev-env-vm/</guid>
-      <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
-  ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
-  設定画面が出てくるので、そのままOK
-    VMWare toolsをインストール
- VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行    aptのアップデートとアップグレード sudo apt-get update
-sudo apt-get upgrade
-  Dropboxクライアントのインストール
- FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから    Emacsのインストール sudo apt-get install emacs24
- Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
-mv ~/emacs.d ~/.emacs.d    バージョン管理のインストール sudo apt-get install git
-sudo apt-get install mercurial</description>
+      <description>&lt;h3 id=&#34;ubuntu1464bitのvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;イメージからVMWareFusionに作成&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ターミナルから LANG=C xdg-user-dirs-gtk-update を実行&#xA;LANG=C xdg-user-dirs-gtk-update&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;設定画面が出てくるので、そのままOK&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;VMWare toolsをインストール&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開&lt;/li&gt;&#xA;&lt;li&gt;展開したディレクトリの中に入ってインストール実行&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;aptのアップデートとアップグレード&#xA;sudo apt-get update&lt;br&gt;&#xA;sudo apt-get upgrade&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Dropboxクライアントのインストール&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール&lt;/li&gt;&#xA;&lt;li&gt;Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Emacsのインストール&#xA;sudo apt-get install emacs24&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成&lt;/li&gt;&#xA;&lt;li&gt;作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった&#xA;ln -s ~/Dropbox/emacs.d ~/emacs.d&lt;br&gt;&#xA;mv ~/emacs.d ~/.emacs.d&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;バージョン管理のインストール&#xA;sudo apt-get install git&lt;br&gt;&#xA;sudo apt-get install mercurial&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>最近やったいろいろ</title>
       <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone/</guid>
-      <description>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
-◆PostgreSQLのSQLダンプ
-　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
-◆残念VBSバッチスクリプト
-　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない
-　・windowsのコマンドでディレクトリ削除するコマンド
-◆謎！IISの設定
-　・IISのRewrite設定
-　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定
-　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、
-　DefaultWebSiteにリダイレクトするやり方がある。
-　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない
-◆Win8.1
-　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。
-　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。
-　・win8でSQLServer2012のodbc設定がうまくいかない
-　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも
-◆PHP
-　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。
-　・PHPで頼りになるのはやはりPHP.net
-　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。
-　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。
-　※セッション制御が楽かも
-　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。
-　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ
-　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない
-　・php5.4以降はセーフモード使えない
-　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。
-　・ファイルのオーナーとかに気をつけましょう
-◆Apacheの設定
-　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く
-　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて
-　vhost.confの方に書いた
-◆SSH
-　・SSHで認証鍵ファイルを使う場合の設定方法
-　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む
-　・~/.ssh/に設定ファイルを置いておくと楽
-◆ポートフォワーディング
-　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、
-　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。</description>
+      <description>&lt;p&gt;最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。&lt;/p&gt;&#xA;&lt;p&gt;◆PostgreSQLのSQLダンプ&lt;/p&gt;&#xA;&lt;p&gt;　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！&lt;/p&gt;&#xA;&lt;p&gt;◆残念VBSバッチスクリプト&lt;/p&gt;&#xA;&lt;p&gt;　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない&lt;/p&gt;&#xA;&lt;p&gt;　・windowsのコマンドでディレクトリ削除するコマンド&lt;/p&gt;&#xA;&lt;p&gt;◆謎！IISの設定&lt;/p&gt;&#xA;&lt;p&gt;　・IISのRewrite設定&lt;/p&gt;&#xA;&lt;p&gt;　　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定&lt;/p&gt;&#xA;&lt;p&gt;　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、&lt;/p&gt;&#xA;&lt;p&gt;　　DefaultWebSiteにリダイレクトするやり方がある。&lt;/p&gt;&#xA;&lt;p&gt;　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない&lt;/p&gt;&#xA;&lt;p&gt;◆Win8.1&lt;/p&gt;&#xA;&lt;p&gt;　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。&lt;/p&gt;&#xA;&lt;p&gt;　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。&lt;/p&gt;&#xA;&lt;p&gt;　・win8でSQLServer2012のodbc設定がうまくいかない&lt;/p&gt;&#xA;&lt;p&gt;　　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも&lt;/p&gt;&#xA;&lt;p&gt;◆PHP&lt;/p&gt;&#xA;&lt;p&gt;　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。&lt;/p&gt;&#xA;&lt;p&gt;　・PHPで頼りになるのはやはりPHP.net&lt;/p&gt;&#xA;&lt;p&gt;　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。&lt;/p&gt;&#xA;&lt;p&gt;　　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。&lt;/p&gt;&#xA;&lt;p&gt;　　※セッション制御が楽かも&lt;/p&gt;&#xA;&lt;p&gt;　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。&lt;/p&gt;&#xA;&lt;p&gt;　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ&lt;/p&gt;&#xA;&lt;p&gt;　　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない&lt;/p&gt;&#xA;&lt;p&gt;　・php5.4以降はセーフモード使えない&lt;/p&gt;&#xA;&lt;p&gt;　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。&lt;/p&gt;&#xA;&lt;p&gt;　・ファイルのオーナーとかに気をつけましょう&lt;/p&gt;&#xA;&lt;p&gt;◆Apacheの設定&lt;/p&gt;&#xA;&lt;p&gt;　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く&lt;/p&gt;&#xA;&lt;p&gt;　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて&lt;/p&gt;&#xA;&lt;p&gt;　　vhost.confの方に書いた&lt;/p&gt;&#xA;&lt;p&gt;◆SSH&lt;/p&gt;&#xA;&lt;p&gt;　・SSHで認証鍵ファイルを使う場合の設定方法&lt;/p&gt;&#xA;&lt;p&gt;　　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む&lt;/p&gt;&#xA;&lt;p&gt;　・~/.ssh/に設定ファイルを置いておくと楽&lt;/p&gt;&#xA;&lt;p&gt;◆ポートフォワーディング&lt;/p&gt;&#xA;&lt;p&gt;　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、&lt;/p&gt;&#xA;&lt;p&gt;　　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。&lt;/p&gt;&#xA;&lt;p&gt;◆忘れちゃうからメモ(Linuxコマンド)&lt;/p&gt;&#xA;&lt;p&gt;　・scp&lt;/p&gt;&#xA;&lt;p&gt;　　scp sourcefile remotehost target&lt;/p&gt;&#xA;&lt;p&gt;◆emacs&lt;/p&gt;&#xA;&lt;p&gt;　・ssh→sudo or su root する方法&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>シンポナシウム</title>
       <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 05 Nov 2011 03:34:57 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone/</guid>
-      <description>前回の更新からはや4ヶ月超。どのような進歩があったと言うと…</description>
+      <description>&lt;p&gt;前回の更新からはや4ヶ月超。どのような進歩があったと言うと…&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>emacs初めてみようか</title>
       <link>https://tech.k-zak.com/posts/emacs-setting/</link>
       <pubDate>Fri, 29 Apr 2011 17:47:06 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/emacs-setting/</guid>
-      <description>現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている</description>
+      <description>&lt;p&gt;現在使っているEclipse、試しに入れてみたNetBeans、ちょっとした編集等に使っている&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,26 +4,16 @@
     <title>Network on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/network/</link>
     <description>Recent content in Network on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 08 Mar 2015 05:02:32 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Mar 2015 05:02:32 +0000</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>嘘でしょう。。。</title>
       <link>https://tech.k-zak.com/posts/ubuntu-wifi/</link>
       <pubDate>Sun, 08 Mar 2015 05:02:32 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/ubuntu-wifi/</guid>
-      <description>長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。
-実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。
-悩まされていた問題 会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。
-VMのネットワーク設定を「Macと共有」の時は問題なくて「自動検出」にするとVMのUbuntuのIPが正しく設定されない。
-ひとまず解決？ 前提として、このUbuntuはDesktop 14.04LTSです。なのでUbuntuServerの場合は違うかも。
-/etc/NetworkManager/system-connections/ 配下のネットワークの設定ファイルのファイル名に日本語(マルチバイト文字)が含まれていたので、ASCII文字のみに変更。
-/etc/NetworkManager/system-connections/ のファイル名を変更したものを開く
-この設定ファイルの中の「connection」にあるidの設定を変更したファイル名に合わせる。
-これだけでネットワークつながるようになった。というかipが正しくふられるようになった。
-まさかのマルチバイト文字ファイル名問題？</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;長い間悩まされていた問題が解決したかもしれないので、ここに書いておきましょう。&lt;/p&gt;&#xA;&lt;p&gt;実際に解決したかどうかは、会社と自宅とPocket-Wifiで何回かネットワークを切り替えてから。&lt;/p&gt;&#xA;&lt;h3 id=&#34;悩まされていた問題&#34;&gt;悩まされていた問題&lt;/h3&gt;&#xA;&lt;p&gt;会社やPocket-Wifiでは問題ないが、なぜか自宅のWifi環境だとMacのVM上のUbuntu(開発環境)のネットワークが繋がらなくなる。&lt;/p&gt;&#xA;&lt;p&gt;VMのネットワーク設定を「Macと共有」の時は問題なくて「自動検出」にするとVMのUbuntuのIPが正しく設定されない。&lt;/p&gt;&#xA;&lt;h3 id=&#34;ひとまず解決&#34;&gt;ひとまず解決？&lt;/h3&gt;&#xA;&lt;p&gt;前提として、このUbuntuはDesktop 14.04LTSです。なのでUbuntuServerの場合は違うかも。&lt;/p&gt;&#xA;&lt;p&gt;/etc/NetworkManager/system-connections/ 配下のネットワークの設定ファイルのファイル名に日本語(マルチバイト文字)が含まれていたので、ASCII文字のみに変更。&lt;/p&gt;&#xA;&lt;p&gt;/etc/NetworkManager/system-connections/ のファイル名を変更したものを開く&lt;/p&gt;&#xA;&lt;p&gt;この設定ファイルの中の「connection」にあるidの設定を変更したファイル名に合わせる。&lt;/p&gt;&#xA;&lt;p&gt;これだけでネットワークつながるようになった。というかipが正しくふられるようになった。&lt;/p&gt;&#xA;&lt;p&gt;まさかのマルチバイト文字ファイル名問題？&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

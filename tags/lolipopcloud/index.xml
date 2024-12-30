@@ -4,22 +4,16 @@
     <title>LolipopCloud on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/lolipopcloud/</link>
     <description>Recent content in LolipopCloud on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 25 Dec 2017 14:13:02 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/lolipopcloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Dec 2017 14:13:02 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/lolipopcloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lolipop Cloud</title>
       <link>https://tech.k-zak.com/posts/2017-12-25-lolipop-cloud/</link>
       <pubDate>Mon, 25 Dec 2017 14:13:02 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-12-25-lolipop-cloud/</guid>
-      <description>Lolipopマネージドクラウドを試してみた まだベータで無料で少し使えるようだったので試した。
-簡単に作れた。恐らくコンテナで動いている。
-PHPのコンテナを作成すると別の場所にあるMySQLにデータベース領域を与えられる。 PHPからは提供されたDBのホスト名で接続できる。
-LolipopCloudのデータベースについて charset として utf8mb4 は使える。 collate は utf8mb4_unicode_general_ciになる。なんでutf8mb4_binじゃないの？
-オマケ ついでにグリッドレイアウトも試した。
-忘れていたこと metaタグにviewport指定しておかないとメディアクエリーの指定が効かない。 CSSにメディアクエリー書く場合、デフォルトのスタイルは最も小さいサイズで書くとよいっぽい。 グリッドレイアウトは1frで指定しておくとグリッドそのもののflexbox指定はいらないかもね。</description>
+      <description>&lt;h1 id=&#34;lolipopマネージドクラウドを試してみた&#34;&gt;Lolipopマネージドクラウドを試してみた&lt;/h1&gt;&#xA;&lt;p&gt;まだベータで無料で少し使えるようだったので試した。&lt;/p&gt;&#xA;&lt;p&gt;簡単に作れた。恐らくコンテナで動いている。&lt;/p&gt;&#xA;&lt;p&gt;PHPのコンテナを作成すると別の場所にあるMySQLにデータベース領域を与えられる。&#xA;PHPからは提供されたDBのホスト名で接続できる。&lt;/p&gt;&#xA;&lt;h2 id=&#34;lolipopcloudのデータベースについて&#34;&gt;LolipopCloudのデータベースについて&lt;/h2&gt;&#xA;&lt;p&gt;charset として utf8mb4 は使える。&#xA;collate は utf8mb4_unicode_general_ciになる。なんでutf8mb4_binじゃないの？&lt;/p&gt;&#xA;&lt;h2 id=&#34;オマケ&#34;&gt;オマケ&lt;/h2&gt;&#xA;&lt;p&gt;ついでにグリッドレイアウトも試した。&lt;/p&gt;&#xA;&lt;h3 id=&#34;忘れていたこと&#34;&gt;忘れていたこと&lt;/h3&gt;&#xA;&lt;p&gt;metaタグにviewport指定しておかないとメディアクエリーの指定が効かない。&#xA;CSSにメディアクエリー書く場合、デフォルトのスタイルは最も小さいサイズで書くとよいっぽい。&#xA;グリッドレイアウトは1frで指定しておくとグリッドそのもののflexbox指定はいらないかもね。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

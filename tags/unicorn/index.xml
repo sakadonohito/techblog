@@ -1,74 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>unicorn on 開発メモてきな</title>
+    <title>Unicorn on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/unicorn/</link>
-    <description>Recent content in unicorn on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Unicorn on 開発メモてきな</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 15 Sep 2014 15:48:13 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/unicorn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Sep 2014 15:48:13 +0000</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/unicorn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>新しく開発環境作成中</title>
       <link>https://tech.k-zak.com/posts/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/dev-env-vm/</guid>
-      <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
-  ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
-  設定画面が出てくるので、そのままOK
-    VMWare toolsをインストール
- VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行    aptのアップデートとアップグレード sudo apt-get update
-sudo apt-get upgrade
-  Dropboxクライアントのインストール
- FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから    Emacsのインストール sudo apt-get install emacs24
- Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
-mv ~/emacs.d ~/.emacs.d    バージョン管理のインストール sudo apt-get install git
-sudo apt-get install mercurial</description>
+      <description>&lt;h3 id=&#34;ubuntu1464bitのvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;イメージからVMWareFusionに作成&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ターミナルから LANG=C xdg-user-dirs-gtk-update を実行&#xA;LANG=C xdg-user-dirs-gtk-update&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;設定画面が出てくるので、そのままOK&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;VMWare toolsをインストール&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開&lt;/li&gt;&#xA;&lt;li&gt;展開したディレクトリの中に入ってインストール実行&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;aptのアップデートとアップグレード&#xA;sudo apt-get update&lt;br&gt;&#xA;sudo apt-get upgrade&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Dropboxクライアントのインストール&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール&lt;/li&gt;&#xA;&lt;li&gt;Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Emacsのインストール&#xA;sudo apt-get install emacs24&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成&lt;/li&gt;&#xA;&lt;li&gt;作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった&#xA;ln -s ~/Dropbox/emacs.d ~/emacs.d&lt;br&gt;&#xA;mv ~/emacs.d ~/.emacs.d&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;バージョン管理のインストール&#xA;sudo apt-get install git&lt;br&gt;&#xA;sudo apt-get install mercurial&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2014年の目標達成進捗管理的な</title>
       <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone/</guid>
-      <description>新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
-事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
-とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
-そういう話を聞いたので、ならば達成出来るように達成可能と思えるような目標をredmineでマイルストーンをチケットとして分解して期日を設定して進捗管理するのはどうだろうかと考えた。
-要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。
-という事で設定作業開始
-環境:  ホストOS：OS X10.9 ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T)) nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します) ruby2.0.0dev(rbenv) unicorn4.7.0 rails3.2.16 redmine2.4.2  rbenvにruby2.0を追加してデフォルトにする rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。
-参考：rbenvを利用して複数バージョンのRubyをインストール※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
-rehashの時だけsh-rehashがうんたらってエラーになる。
-ruby2.0の状態でgem update でアップデートしてbundler入れる。
-MySQL側の準備 redmienユーザーの作成と
-データベース：redmineの作成
-redmine入れる ここから最新のredmineをダウンロード(今回は2.4.2)
-うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。
-DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。
-redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。
-bundleでのインストールが初めてだったので、なんか引数与えてやってみたかったてのと、
-最初rmagick関連でエラー出たっぽいのでwithoutに指定した。原因は究明しない！
-ここまでで自分が詰まったのは、最初bundler入れた後rehashしてなくてbundle installのとろこで、bundler入ってねぇよ！apt-getで入れろ！ってエラー出てアワアワしてた。どうもbundler入れた後にもrehashが必要らしい。今は何故かは調べない。
-必要最小限にしてなかったせいか、ここでワンサカいろいろインストールされた。気がする。
-インストールされたgemを見た所、railsは上記環境で記載したバージョンになっていたです。
-終わったら、database.ymlのproductionの所を編集して自分の環境でDB接続できるようにする。
-開発用じゃなくてredmine使うだけなので最初からproduction。
-ここで一旦Webrickで動くか確認。
-動かねぇ！調べてたらお決まりの必要な処理がある事を知った。
-その１その２書いてあることの真似をする。
-終わったら再度チャレンジでWebrickが起動しました。やったね。
-redmineのadminユーザーのデフォルトのパスワードがわからない！ 解決策はここ。
-unicornの設定 めんどくさくなってきた。上記の２リンクと関連リンクのGithubと、やや簡潔にかいてあるブログを参考に設定ファイルを書いていきましたので詳細は省きます。
-１，unicorn.rbを作成。
-２，unicornのデーモン
-自分が作業した手順としては一気にnginxの設定編集までしてから確認して動かない！ってなったんだけど、問題切り分けのために、
- unicornの設定する前段階でWebrickで動かくか(例えば、http://0.0.0.0:3000) unicornの設定した段階でredmine動くか(例えば、http://0.0.0.0:8080)  て接続確認しながら進めたほうが良いと思われます。
-nginxの設定編集 既にnginxが動いている環境のため、redmine専用の設定どうするのか戸惑ったけど、単にserverディレクティブを追加すればいいみたい。upstreamディレクティブも既存の仮想ホスト設定に悪影響は出ていないみたいだ。
-最終的な結論から言うと動いたけど、参考にしたブログなんかと設定がちょい違う。
- ローカルで動かしているせいかhostsファイルにredmine用の仮想URLを追記したら動いた。※追記前は参考記事と同じ設定にしても動かなかった。 動かすのに使った指定は  upstreamのunixソケットの指定 追加仮想ホストのlisten port 追加仮想ホストのserver_name 追加仮想ホストのroot 追加仮想ホストのaccess_log 追加仮想ホストのerror_log 追加仮想ホストのlocation / にファイルじゃなかったらproxy_passの分岐 上記if文が真の時のproxy_passの指定を「http://」+「upstreamに記述した名前」    proxy_pass以外のproxyの設定は一つも書いてないけど動きます。なんでだろう。</description>
+      <description>&lt;h2 id=&#34;新年明けましておめでとうございました良いお年を&#34;&gt;新年、明けましておめでとうございました。良いお年を。&lt;/h2&gt;&#xA;&lt;p&gt;今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。&lt;/p&gt;&#xA;&lt;p&gt;事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。&lt;/p&gt;&#xA;&lt;p&gt;とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。&lt;/p&gt;&#xA;&lt;p&gt;そういう話を聞いたので、ならば達成出来るように達成可能と思えるような目標をredmineでマイルストーンをチケットとして分解して期日を設定して進捗管理するのはどうだろうかと考えた。&lt;/p&gt;&#xA;&lt;p&gt;要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。&lt;/p&gt;&#xA;&lt;p&gt;という事で設定作業開始&lt;/p&gt;&#xA;&lt;h2 id=&#34;環境&#34;&gt;環境:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ホストOS：OS X10.9&lt;/li&gt;&#xA;&lt;li&gt;ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T))&lt;/li&gt;&#xA;&lt;li&gt;nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します)&lt;/li&gt;&#xA;&lt;li&gt;ruby2.0.0dev(rbenv)&lt;/li&gt;&#xA;&lt;li&gt;unicorn4.7.0&lt;/li&gt;&#xA;&lt;li&gt;rails3.2.16&lt;/li&gt;&#xA;&lt;li&gt;redmine2.4.2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;rbenvにruby20を追加してデフォルトにする&#34;&gt;rbenvにruby2.0を追加してデフォルトにする&lt;/h2&gt;&#xA;&lt;p&gt;rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。&lt;/p&gt;&#xA;&lt;p&gt;参考：&lt;!-- raw HTML omitted --&gt;rbenvを利用して複数バージョンのRubyをインストール&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。&lt;/p&gt;&#xA;&lt;p&gt;rehashの時だけsh-rehashがうんたらってエラーになる。&lt;/p&gt;&#xA;&lt;p&gt;ruby2.0の状態でgem update でアップデートしてbundler入れる。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;mysql側の準備&#34;&gt;MySQL側の準備&lt;/h2&gt;&#xA;&lt;p&gt;redmienユーザーの作成と&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

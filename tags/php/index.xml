@@ -4,450 +4,156 @@
     <title>PHP on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/php/</link>
     <description>Recent content in PHP on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 16 Feb 2015 16:09:59 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Feb 2015 16:09:59 +0000</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
       <link>https://tech.k-zak.com/posts/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/challenge-fmxj/</guid>
-      <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
-https://github.com/seedcode/fmxj
-概要としては、FileMaker Server の XML公開を使う。
-Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。
-◆ハマった事：サンプルPHPの内容
-サンプルのPHPをよく読んでなかった。。。
-JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。
--db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに
-u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数
-ていうのがくっついてPHPにpostされてくる。
-それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。
-そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。
-なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。
-サンプルって事でいろいろハードコーディングされてるけど、気にしない。
-◆ハマった：Nginxの設定
-欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら
-WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
-これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
-しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
-※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても
-　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
-その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
-最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
-自分はUbuntuの環境なので、
- sudo apt-get install nginx-extras
- 後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
-more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
-を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
-これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
-いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</description>
+      <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;概要としては、FileMaker Server の XML公開を使う。&lt;/p&gt;&#xA;&lt;p&gt;Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。&lt;/p&gt;&#xA;&lt;p&gt;◆ハマった事：サンプルPHPの内容&lt;/p&gt;&#xA;&lt;p&gt;サンプルのPHPをよく読んでなかった。。。&lt;/p&gt;&#xA;&lt;p&gt;JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。&lt;/p&gt;&#xA;&lt;p&gt;-db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに&lt;/p&gt;&#xA;&lt;p&gt;u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数&lt;/p&gt;&#xA;&lt;p&gt;ていうのがくっついてPHPにpostされてくる。&lt;/p&gt;&#xA;&lt;p&gt;それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。&lt;/p&gt;&#xA;&lt;p&gt;そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。&lt;/p&gt;&#xA;&lt;p&gt;なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。&lt;/p&gt;&#xA;&lt;p&gt;サンプルって事でいろいろハードコーディングされてるけど、気にしない。&lt;/p&gt;&#xA;&lt;p&gt;◆ハマった：Nginxの設定&lt;/p&gt;&#xA;&lt;p&gt;欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら&lt;/p&gt;&#xA;&lt;p&gt;WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。&lt;/p&gt;&#xA;&lt;p&gt;これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。&lt;/p&gt;&#xA;&lt;p&gt;しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。&lt;/p&gt;&#xA;&lt;p&gt;※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても&lt;/p&gt;&#xA;&lt;p&gt;　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。&lt;/p&gt;&#xA;&lt;p&gt;その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。&lt;/p&gt;&#xA;&lt;p&gt;最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。&lt;/p&gt;&#xA;&lt;p&gt;自分はUbuntuの環境なので、&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;sudo apt-get install nginx-extras&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)&lt;/p&gt;&#xA;&lt;p&gt;more_set_headers ‘Content-Type: application/xml; charset=UTF8’;&lt;/p&gt;&#xA;&lt;p&gt;を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！&lt;/p&gt;&#xA;&lt;p&gt;これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Ubuntu14.04 でphpでメール受信とか</title>
       <link>https://tech.k-zak.com/posts/php-mail/</link>
       <pubDate>Sun, 01 Feb 2015 14:51:57 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/php-mail/</guid>
-      <description>## install postfix
-“`
-sudo apt-get install postfix postfix-dev sasl2-bin
-sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt
-“`
-## Settings
-“`
-sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf
-sudo emacs -nw /etc/postfix/main.cf
-“`
-### 参考
-– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail
-– http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2
-### gmailに転送する設定に変更
-relayhostにgmailを指定
-パスワードの設定とかね。
-## phpでメールを受信出来るよう設定
-メールサーバ受信DNS設定とか面倒だからやめた。
-phpinfoを見ると案の定imap入ってませんでしたので、php5.5系の落としてきてimapのディレクトリ移動してphpize
-### configureで失敗する
-configureしたらutf8_mime2text()がうんたらと出てきた。
-ググると、どうもphpにimapとかメール関係入れる時にライブラリが足りないと出るエラーのようだ。
-sudo apt-cache search libc-client
-→libc-client2007e libc-client2007e-dev てのが出てくるので両方インストール
-### imapうまく動かない？
-この後無事imapインストールできたけどなぜか受信出来ない。いろいろ調べて片っ端からSSL関連インストールしたけどうまくいかない。
-### 何が原因だったのか不明
-結局、何かのSSL関係のライブラリインストールが最初足りなくてGmail受信失敗してた。
-gmailからさくらのレンサバのメールアカウントで試した場合はアカウント名の指定を間違えてた。
-テストで受信するだけだから、普通のimapアカウントの場合はnotlsをflagにつける。
-gmailの場合は/ssl/novalidation-certみたいのつける</description>
+      <description>&lt;p&gt;## install postfix&lt;/p&gt;&#xA;&lt;p&gt;“`&lt;/p&gt;&#xA;&lt;p&gt;sudo apt-get install postfix postfix-dev sasl2-bin&lt;/p&gt;&#xA;&lt;p&gt;sudo apt-get install dovecot-core dovecot-dev dovecot-pop3d dovecot-imapd dovecot-gssapt&lt;/p&gt;&#xA;&lt;p&gt;“`&lt;/p&gt;&#xA;&lt;p&gt;## Settings&lt;/p&gt;&#xA;&lt;p&gt;“`&lt;/p&gt;&#xA;&lt;p&gt;sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf&lt;/p&gt;&#xA;&lt;p&gt;sudo emacs -nw /etc/postfix/main.cf&lt;/p&gt;&#xA;&lt;p&gt;“`&lt;/p&gt;&#xA;&lt;p&gt;### 参考&lt;/p&gt;&#xA;&lt;p&gt;– &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;– &lt;a href=&#34;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&#34;&gt;http://www.server-world.info/query?os=Ubuntu_14.04&amp;amp;p=mail&amp;amp;f=2&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;### gmailに転送する設定に変更&lt;/p&gt;&#xA;&lt;p&gt;relayhostにgmailを指定&lt;/p&gt;&#xA;&lt;p&gt;パスワードの設定とかね。&lt;/p&gt;&#xA;&lt;p&gt;## phpでメールを受信出来るよう設定&lt;/p&gt;&#xA;&lt;p&gt;メールサーバ受信DNS設定とか面倒だからやめた。&lt;/p&gt;&#xA;&lt;p&gt;phpinfoを見ると案の定imap入ってませんでしたので、php5.5系の落としてきてimapのディレクトリ移動してphpize&lt;/p&gt;&#xA;&lt;p&gt;### configureで失敗する&lt;/p&gt;&#xA;&lt;p&gt;configureしたらutf8_mime2text()がうんたらと出てきた。&lt;/p&gt;&#xA;&lt;p&gt;ググると、どうもphpにimapとかメール関係入れる時にライブラリが足りないと出るエラーのようだ。&lt;/p&gt;&#xA;&lt;p&gt;sudo apt-cache search libc-client&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
       <link>https://tech.k-zak.com/posts/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone-serverside/</guid>
-      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
-まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
-Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
-Perl,Python,Rubyについては全然触れなくてフラストレーション。
-PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。
-本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。
-家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
-PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
-枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
+      <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る&lt;/p&gt;&#xA;&lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;&#xA;&lt;p&gt;Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。&lt;/p&gt;&#xA;&lt;p&gt;Perl,Python,Rubyについては全然触れなくてフラストレーション。&lt;/p&gt;&#xA;&lt;p&gt;PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。&lt;/p&gt;&#xA;&lt;p&gt;本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。&lt;/p&gt;&#xA;&lt;p&gt;家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。&lt;/p&gt;&#xA;&lt;p&gt;PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は&lt;/p&gt;&#xA;&lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;&#xA;&lt;p&gt;Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>新しく開発環境作成中</title>
       <link>https://tech.k-zak.com/posts/dev-env-vm/</link>
       <pubDate>Mon, 15 Sep 2014 15:48:13 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/dev-env-vm/</guid>
-      <description>Ubuntu14(64bit)のVM作成   イメージからVMWareFusionに作成  ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更
-  ターミナルから LANG=C xdg-user-dirs-gtk-update を実行 LANG=C xdg-user-dirs-gtk-update
-  設定画面が出てくるので、そのままOK
-    VMWare toolsをインストール
- VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開 展開したディレクトリの中に入ってインストール実行    aptのアップデートとアップグレード sudo apt-get update
-sudo apt-get upgrade
-  Dropboxクライアントのインストール
- FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから    Emacsのインストール sudo apt-get install emacs24
- Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成 作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった ln -s ~/Dropbox/emacs.d ~/emacs.d
-mv ~/emacs.d ~/.emacs.d    バージョン管理のインストール sudo apt-get install git
-sudo apt-get install mercurial</description>
+      <description>&lt;h3 id=&#34;ubuntu1464bitのvm作成&#34;&gt;Ubuntu14(64bit)のVM作成&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;イメージからVMWareFusionに作成&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ホームディレクトリ以下のディレクトリ群が日本語なので英語名に変更&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ターミナルから LANG=C xdg-user-dirs-gtk-update を実行&#xA;LANG=C xdg-user-dirs-gtk-update&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;設定画面が出てくるので、そのままOK&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;VMWare toolsをインストール&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;VMWareのメニューバーからインストールってやると仮想CDがマウントされるのでデスクトップあたりに展開&lt;/li&gt;&#xA;&lt;li&gt;展開したディレクトリの中に入ってインストール実行&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;aptのアップデートとアップグレード&#xA;sudo apt-get update&lt;br&gt;&#xA;sudo apt-get upgrade&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Dropboxクライアントのインストール&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;FirefoxでDropbox検索してログイン→クライアントツールをダウンロードしてインストール&lt;/li&gt;&#xA;&lt;li&gt;Dropboxを入れる理由は次のEmacsの設定ファイルをDropboxで共有しているから&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Emacsのインストール&#xA;sudo apt-get install emacs24&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dropboxにある設定ファイル群(emacs.d)のシンボリックリンクを作成&lt;/li&gt;&#xA;&lt;li&gt;作成したシンボリックリンクの名前変更 ※ダイレクトに.emacs.dのリンクを作成だとうまく行かなかった&#xA;ln -s ~/Dropbox/emacs.d ~/emacs.d&lt;br&gt;&#xA;mv ~/emacs.d ~/.emacs.d&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;バージョン管理のインストール&#xA;sudo apt-get install git&lt;br&gt;&#xA;sudo apt-get install mercurial&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PHPのファイルアップロードについて</title>
       <link>https://tech.k-zak.com/posts/setting-php/</link>
       <pubDate>Sun, 07 Sep 2014 17:34:12 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/setting-php/</guid>
-      <description>PHPで大きなファイルアップロードを作成する
-・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。
-・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file
-・phpの設定でmax_file_size,post_max_size,タイムアウト、memory_limitなどの設定が必要
-・Apacheのバージョンが古いと2だか4GBが上限。という噂。
-・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。</description>
+      <description>&lt;p&gt;PHPで大きなファイルアップロードを作成する&lt;/p&gt;&#xA;&lt;p&gt;・Webサーバー側でBody Max Lengthの指定で大きなサイズを指定しておきましょう。&lt;/p&gt;&#xA;&lt;p&gt;・formのhtmlでenc-typeの指定はもちろん、hiddenでMaxFileSizeの値の指定、その後にinput file&lt;/p&gt;&#xA;&lt;p&gt;・phpの設定でmax_file_size,post_max_size,タイムアウト、memory_limitなどの設定が必要&lt;/p&gt;&#xA;&lt;p&gt;・Apacheのバージョンが古いと2だか4GBが上限。という噂。&lt;/p&gt;&#xA;&lt;p&gt;・サーバーが32bitだとメモリを3.7GB？くらいまでしか扱えないらしいから5GBクラスの巨大ファイルはアップロード無理だと思われる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PHPあべし！</title>
       <link>https://tech.k-zak.com/posts/spec-php5.5/</link>
       <pubDate>Sat, 02 Aug 2014 15:34:29 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/spec-php5.5/</guid>
-      <description>最近PHP触ってて「あべし！」ってなった事。
-PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。
-愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。</description>
+      <description>&lt;p&gt;最近PHP触ってて「あべし！」ってなった事。&lt;/p&gt;&#xA;&lt;p&gt;PHP5.5でempty()の仕様が若干変わっているから注意。他人がPHP5.5で作成したものが自分の開発環境のPHP5.4だとエラーになるから調べてたら。php.netに書いてあった。ついでにPHP5.5で追加された関数とか増えてるの気づいた。&lt;/p&gt;&#xA;&lt;p&gt;愚痴、FuelPHPのファイルとクラスの命名規則の関係はどうにかならないものか。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>最近やったいろいろ</title>
       <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sun, 16 Mar 2014 15:12:56 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone/</guid>
-      <description>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。
-◆PostgreSQLのSQLダンプ
-　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！
-◆残念VBSバッチスクリプト
-　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない
-　・windowsのコマンドでディレクトリ削除するコマンド
-◆謎！IISの設定
-　・IISのRewrite設定
-　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定
-　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、
-　DefaultWebSiteにリダイレクトするやり方がある。
-　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない
-◆Win8.1
-　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。
-　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。
-　・win8でSQLServer2012のodbc設定がうまくいかない
-　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも
-◆PHP
-　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。
-　・PHPで頼りになるのはやはりPHP.net
-　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。
-　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。
-　※セッション制御が楽かも
-　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。
-　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ
-　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない
-　・php5.4以降はセーフモード使えない
-　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。
-　・ファイルのオーナーとかに気をつけましょう
-◆Apacheの設定
-　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く
-　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて
-　vhost.confの方に書いた
-◆SSH
-　・SSHで認証鍵ファイルを使う場合の設定方法
-　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む
-　・~/.ssh/に設定ファイルを置いておくと楽
-◆ポートフォワーディング
-　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、
-　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。</description>
+      <description>&lt;p&gt;最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。&lt;/p&gt;&#xA;&lt;p&gt;◆PostgreSQLのSQLダンプ&lt;/p&gt;&#xA;&lt;p&gt;　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！&lt;/p&gt;&#xA;&lt;p&gt;◆残念VBSバッチスクリプト&lt;/p&gt;&#xA;&lt;p&gt;　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない&lt;/p&gt;&#xA;&lt;p&gt;　・windowsのコマンドでディレクトリ削除するコマンド&lt;/p&gt;&#xA;&lt;p&gt;◆謎！IISの設定&lt;/p&gt;&#xA;&lt;p&gt;　・IISのRewrite設定&lt;/p&gt;&#xA;&lt;p&gt;　　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定&lt;/p&gt;&#xA;&lt;p&gt;　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、&lt;/p&gt;&#xA;&lt;p&gt;　　DefaultWebSiteにリダイレクトするやり方がある。&lt;/p&gt;&#xA;&lt;p&gt;　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない&lt;/p&gt;&#xA;&lt;p&gt;◆Win8.1&lt;/p&gt;&#xA;&lt;p&gt;　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。&lt;/p&gt;&#xA;&lt;p&gt;　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。&lt;/p&gt;&#xA;&lt;p&gt;　・win8でSQLServer2012のodbc設定がうまくいかない&lt;/p&gt;&#xA;&lt;p&gt;　　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも&lt;/p&gt;&#xA;&lt;p&gt;◆PHP&lt;/p&gt;&#xA;&lt;p&gt;　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。&lt;/p&gt;&#xA;&lt;p&gt;　・PHPで頼りになるのはやはりPHP.net&lt;/p&gt;&#xA;&lt;p&gt;　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。&lt;/p&gt;&#xA;&lt;p&gt;　　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。&lt;/p&gt;&#xA;&lt;p&gt;　　※セッション制御が楽かも&lt;/p&gt;&#xA;&lt;p&gt;　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。&lt;/p&gt;&#xA;&lt;p&gt;　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ&lt;/p&gt;&#xA;&lt;p&gt;　　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない&lt;/p&gt;&#xA;&lt;p&gt;　・php5.4以降はセーフモード使えない&lt;/p&gt;&#xA;&lt;p&gt;　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。&lt;/p&gt;&#xA;&lt;p&gt;　・ファイルのオーナーとかに気をつけましょう&lt;/p&gt;&#xA;&lt;p&gt;◆Apacheの設定&lt;/p&gt;&#xA;&lt;p&gt;　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く&lt;/p&gt;&#xA;&lt;p&gt;　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて&lt;/p&gt;&#xA;&lt;p&gt;　　vhost.confの方に書いた&lt;/p&gt;&#xA;&lt;p&gt;◆SSH&lt;/p&gt;&#xA;&lt;p&gt;　・SSHで認証鍵ファイルを使う場合の設定方法&lt;/p&gt;&#xA;&lt;p&gt;　　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む&lt;/p&gt;&#xA;&lt;p&gt;　・~/.ssh/に設定ファイルを置いておくと楽&lt;/p&gt;&#xA;&lt;p&gt;◆ポートフォワーディング&lt;/p&gt;&#xA;&lt;p&gt;　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、&lt;/p&gt;&#xA;&lt;p&gt;　　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。&lt;/p&gt;&#xA;&lt;p&gt;◆忘れちゃうからメモ(Linuxコマンド)&lt;/p&gt;&#xA;&lt;p&gt;　・scp&lt;/p&gt;&#xA;&lt;p&gt;　　scp sourcefile remotehost target&lt;/p&gt;&#xA;&lt;p&gt;◆emacs&lt;/p&gt;&#xA;&lt;p&gt;　・ssh→sudo or su root する方法&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>パスカルのなんとか</title>
       <link>https://tech.k-zak.com/posts/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/pascal-logic/</guid>
-      <description>今回は、パスカルの三角定理？みたいなやつ
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-Rubyはもっとシンプルな書き方があるのかもしれない。</description>
+      <description>&lt;p&gt;今回は、パスカルの三角定理？みたいなやつ&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyはもっとシンプルな書き方があるのかもしれない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ06</title>
       <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
-      <description>リハビリその3
-今回は、バブルソート
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-習熟度が低いのでPerlとPHPが同じ内容になる。
-pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。
-すんなり1つのリストだけでできないものか……</description>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;&#xA;&lt;p&gt;今回は、バブルソート&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;習熟度が低いのでPerlとPHPが同じ内容になる。&lt;/p&gt;&#xA;&lt;p&gt;pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。&lt;/p&gt;&#xA;&lt;p&gt;すんなり1つのリストだけでできないものか……&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ04</title>
       <link>https://tech.k-zak.com/posts/coding-memo04/</link>
       <pubDate>Fri, 06 Dec 2013 16:06:49 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo04/</guid>
-      <description>今回は与えられた文字列が全てユニークな文字の構成かどうか調べる。
-そういう問題を出されてスマートに答えられなかったので、調べた。
-1,回答した内容を修正したもの
-2,PHPのリファレンス見てて思いついた方法
-3,文字列のままチェック
-4,PHPの関数とか出てこなくて回答できなかった、頭の中にあったロジックを具現化したもの
-　配列に変換してshiftしながらチェックする方法
-どうも実行してみると2や3が早いようだ。1文字でもユニークでなければFalseにする3が内容によっては最速
-やはり何回も配列を操作するとコストが高くなりますね。模範解答が欲しい。</description>
+      <description>&lt;p&gt;今回は与えられた文字列が全てユニークな文字の構成かどうか調べる。&lt;/p&gt;&#xA;&lt;p&gt;そういう問題を出されてスマートに答えられなかったので、調べた。&lt;/p&gt;&#xA;&lt;p&gt;1,回答した内容を修正したもの&lt;/p&gt;&#xA;&lt;p&gt;2,PHPのリファレンス見てて思いついた方法&lt;/p&gt;&#xA;&lt;p&gt;3,文字列のままチェック&lt;/p&gt;&#xA;&lt;p&gt;4,PHPの関数とか出てこなくて回答できなかった、頭の中にあったロジックを具現化したもの&lt;/p&gt;&#xA;&lt;p&gt;　配列に変換してshiftしながらチェックする方法&lt;/p&gt;&#xA;&lt;p&gt;どうも実行してみると2や3が早いようだ。1文字でもユニークでなければFalseにする3が内容によっては最速&lt;/p&gt;&#xA;&lt;p&gt;やはり何回も配列を操作するとコストが高くなりますね。模範解答が欲しい。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ03</title>
       <link>https://tech.k-zak.com/posts/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo03/</guid>
-      <description>リハビリその3
-今回は、バブルソート
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-Rubyが一番スマートかな</description>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;&#xA;&lt;p&gt;今回は、バブルソート&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyが一番スマートかな&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ02</title>
       <link>https://tech.k-zak.com/posts/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo02/</guid>
-      <description>リハビリその２
-今回は、ファイル読み込みとその時の簡単な例外処理
-読み込むテキストファイルの内容は以下の通り、
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-うるう年の判定処理は適当。pythonが一番しっくりくるかな。
-rubyはreturnを省略した場合に最後に評価された値がreturnされるんだけど、pythonもだと勘違いしててハマった。</description>
+      <description>&lt;p&gt;リハビリその２&lt;/p&gt;&#xA;&lt;p&gt;今回は、ファイル読み込みとその時の簡単な例外処理&lt;/p&gt;&#xA;&lt;p&gt;読み込むテキストファイルの内容は以下の通り、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;うるう年の判定処理は適当。pythonが一番しっくりくるかな。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ01</title>
       <link>https://tech.k-zak.com/posts/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo01/</guid>
-      <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
-paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
-という事でリハビリ。
-今回は標準入力。
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-標準入力が「gets」だけで取れるRubyはダンディ。</description>
+      <description>&lt;p&gt;一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;paiza&lt;!-- raw HTML omitted --&gt;なんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。&lt;/p&gt;&#xA;&lt;p&gt;という事でリハビリ。&lt;/p&gt;&#xA;&lt;p&gt;今回は標準入力。&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;標準入力が「gets」だけで取れるRubyはダンディ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Laravel4触り始めました</title>
       <link>https://tech.k-zak.com/posts/study-larabel4/</link>
       <pubDate>Fri, 06 Dec 2013 14:07:20 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/study-larabel4/</guid>
-      <description>Laravel4がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。
-テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。
-{{– コメントアウトしたいコード –}}って書かないといけない。ていうか、そもそもの外で変な書き方してたのが悪い。
-あと、migrationの使い方全然理解していないのでそこで詰まった。
-検索フォームの値を受け取ってモデルに検索処理投げてレコードオブジェクト(モデルイングタンス？)受け取る処理はコントローラーに書くの？それともViewファイル？
-わかりません。。。</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Laravel4&lt;!-- raw HTML omitted --&gt;がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。&lt;/p&gt;&#xA;&lt;p&gt;テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。&lt;/p&gt;&#xA;&lt;p&gt;{{– コメントアウトしたいコード –}}って書かないといけない。ていうか、そもそも&lt;!-- raw HTML omitted --&gt;の外で変な書き方してたのが悪い。&lt;/p&gt;&#xA;&lt;p&gt;あと、migrationの使い方全然理解していないのでそこで詰まった。&lt;/p&gt;&#xA;&lt;p&gt;検索フォームの値を受け取ってモデルに検索処理投げてレコードオブジェクト(モデルイングタンス？)受け取る処理はコントローラーに書くの？それともViewファイル？&lt;/p&gt;&#xA;&lt;p&gt;わかりません。。。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</title>
       <link>https://tech.k-zak.com/posts/trouble-charset/</link>
       <pubDate>Wed, 13 Nov 2013 15:27:30 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/trouble-charset/</guid>
-      <description>FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、
-Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！ (PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)
-→アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。
-FuelPHPのUpload::save()を行う前に
-ってやってアップロードファイル名をエンコードする。
-弊害としては本来は内部エンコードのまま処理が進むはずだったので、同名ファイルが有る場合に枝番を付加する処理なんかが正常に動作しなくなる。
-これでWindowsサーバーのフォルダに読める文字のファイル名でアップロードされる。
-最初エンコードをSJISにしてたけど、CP932にしたら、①みたいなMS拡張の機種依存文字も大丈夫になった。
-本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも とかやったら良かったのかな？
-文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け！ (ま、そりゃそうですね)
-→上記１の結果を受けてメール送信のメソッドに引数として添付ファイル名を渡す。その処理は何も加工しない。
-メール送信用のメソッドの中で、引数で受け取った添付ファイル名をFuelPHPのmailに渡す処理を加工
-それでも、メールヘッダがISO-2022-JPなので、機種依存文字の類はメールを受信した時に「?」とかになってるけど、それはしょうがないよね。
-メールの件名が文字化けすることがある！ →犯人は半角カナ。使わないで！件名はFuelPHP側で送信時にISO-2022-JPに変換してるっぽいので、mb_convert_kana関数使って件名に含まれている半角カナを全角に変換して誤魔化す。
-以上、うんこメモでした。</description>
+      <description>&lt;p&gt;FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、&lt;/p&gt;&#xA;&lt;h2 id=&#34;windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている&#34;&gt;Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！&lt;/h2&gt;&#xA;&lt;p&gt;(PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)&lt;/p&gt;&#xA;&lt;p&gt;→アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。&lt;/p&gt;&#xA;&lt;p&gt;FuelPHPのUpload::save()を行う前に&lt;/p&gt;&#xA;&lt;p&gt;ってやってアップロードファイル名をエンコードする。&lt;/p&gt;&#xA;&lt;p&gt;弊害としては本来は内部エンコードのまま処理が進むはずだったので、同名ファイルが有る場合に枝番を付加する処理なんかが正常に動作しなくなる。&lt;/p&gt;&#xA;&lt;p&gt;これでWindowsサーバーのフォルダに読める文字のファイル名でアップロードされる。&lt;/p&gt;&#xA;&lt;p&gt;最初エンコードをSJISにしてたけど、CP932にしたら、①みたいなMS拡張の機種依存文字も大丈夫になった。&lt;/p&gt;&#xA;&lt;p&gt;本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも 　　&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;とかやったら良かったのかな？&lt;/p&gt;&#xA;&lt;h2 id=&#34;文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け&#34;&gt;文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け！&lt;/h2&gt;&#xA;&lt;p&gt;(ま、そりゃそうですね)&lt;/p&gt;&#xA;&lt;p&gt;→上記１の結果を受けてメール送信のメソッドに引数として添付ファイル名を渡す。その処理は何も加工しない。&lt;/p&gt;&#xA;&lt;p&gt;メール送信用のメソッドの中で、引数で受け取った添付ファイル名をFuelPHPのmailに渡す処理を加工&lt;/p&gt;&#xA;&lt;p&gt;それでも、メールヘッダがISO-2022-JPなので、機種依存文字の類はメールを受信した時に「?」とかになってるけど、それはしょうがないよね。&lt;/p&gt;&#xA;&lt;h2 id=&#34;メールの件名が文字化けすることがある&#34;&gt;メールの件名が文字化けすることがある！&lt;/h2&gt;&#xA;&lt;p&gt;→犯人は半角カナ。使わないで！件名はFuelPHP側で送信時にISO-2022-JPに変換してるっぽいので、mb_convert_kana関数使って件名に含まれている半角カナを全角に変換して誤魔化す。&lt;/p&gt;&#xA;&lt;p&gt;以上、うんこメモでした。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>fuelphp使って分からなかったこと</title>
       <link>https://tech.k-zak.com/posts/challenge-fuelphp/</link>
       <pubDate>Sun, 25 Aug 2013 12:51:13 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/challenge-fuelphp/</guid>
-      <description>fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな
-感じなんですけど。
-以下に分からなかったことなど
-１，modelの検索メソッドがクラスメソッド
-検索条件を検索メソッドに渡してレコードオブジェクトを受け取るんだから別に
-インスタンスメソッドである必要はないんだけど、じゃぁ返ってきたモノは
-ただの連想配列なのかモデルオブジェクトの塊なのか…
-昔、Javaを少し自習した時にレコードオブジェクトのクラスとオブジェクトの塊を保持する
-クラスが別になる書き方があって、自分にはその方がしっくり来るんだけど、多分塊を保持
-するクラスが余計っていう考えなのだろうか。
-何にしっくりこないかというと、モデルクラスの1インスタンスが1レコードオブジェクトなのか
-その塊(1個以上)が1インスタンスなのかという事。
-Model_Crudのメソッド見てるとhas_next()とかあるから、1個以上のレコードオブジェクトを
-保持するイテレータオブジェクトが1インスタンスなのかなーって思う。でもそうすると、fuelphp
-においては1レコードオブジェクトってのは1モデルインスタンスが保持するただの連想配列なのか
-な？
-このあたりは、PHPの他のフレームワーク勉強したり他の言語のフレームワーク勉強していくしか
-ないかな。
-２，FieldSetクラスという便利なものの中のcheckboxの名前の付け方
-これは多分自分の学習が足りないだけなんだと思うけど、PHPでinputフォームのチェックボックス
-を複数用意する時、name属性をname=”◯◯[]”とかにして受け取ったPHPで値を配列で扱うんだけ
-ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=”◯◯[i]”って[]の中
-に数字を入れてくるんです。受け取るPHP側では配列として受け取れるぽいんだけど、fuelphpの
-Validationでこのチェックボックスグループらのどれか1つにはチェックしていること！みたいな
-事が出来ない。あと、jQueryのvalidationプラグインが動かない。別のものとして扱ってしまう。
-core/classes/foeldset/の中にあるファイルのcheckboxのフォームの名前属性を作る部分を直接
-書き換えて(本当はappフォルダにコピーするべき)使っている。
-３，FieldSetオブジェクトのフォームオブジェクトのラベル出力の時に出力されるラベル要素に
-クラス(htmlのclass)を追加する手段が分からない。
-こいつ、checkboxやradioのグループ出力する場合はタグ出力しないんだぜ。意味不明。親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用
-されなくて、仕方なく、requiredの場合出力されるデフォルト「*」のやつを「(必須)」てかえて
-それを赤字にした(requiredの時に出力される奴はlabel要素外)。
-４，単にどこに何を書くかがまだ理解できていない。
-controllerのactionメソッド内にloginチェックの詳細処理を書いてるんだけど、そこは外に
-切り出すべきなんじゃないの？とかactionメソッド内でのみ使う提携処理＆ちょっと複雑みたいな
-のは外に切り出すべきなんだろうけど、それは別のcomponentクラスとかにクラスメソッドとして
-出すべきなのか、同じcontrollクラスのprivateメソッドとして切り出すべきなのか。今は別の
-クラスでも使う汎用的なものはcomponentクラスに、特定のactionメソッドからのみ呼び出すよう
-なものは同じクラス内のprivateメソッドにしてる。actionメソッド内の記述がシンプルになれば
-privateメソッド増産してcontrollerクラス内の行数は多くても良いのか、別クラスにどんどん
-出していくべきなのか。でも、publicにしたくないメソッドとかあるんですよ。
-あとはやっぱりmodelとViewModelとView。検索して取り出したレコードオブジェクトを展開する
-のはViewModelなのかViewでやるのか、Pagenationは？formオブジェクトにデータぶっこむのは？
-とか分からんですし、ViewModelとViewの連携のさせ方とかまだ理解できていない。
-５，やっぱりPHPのクロージャの使い所が分からない
-JavaScriptは分かるんですよ。callbackとかその時だけの処理をそこに直接書くとか、function
-定義しちゃうとグローバル領域にはいっちゃうから変数の中にいれといて、特定の処理の時に呼び出す
-とかね。
-でもPHPてクラスメソッドとかインスタンスメソッドとか定義してるわけじゃないですか、だから
-JavaScriptと同じ用途ってない気がして…ちょっとだけViewファイルの中で書いたりもしたけれど、
-Helper作る程でもない処理専用って事？後は再帰定義のcallbaclくらい？よく分からんです。</description>
+      <description>&lt;p&gt;fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな&lt;/p&gt;&#xA;&lt;p&gt;感じなんですけど。&lt;/p&gt;&#xA;&lt;p&gt;以下に分からなかったことなど&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;１，modelの検索メソッドがクラスメソッド&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;検索条件を検索メソッドに渡してレコードオブジェクトを受け取るんだから別に&lt;/p&gt;&#xA;&lt;p&gt;インスタンスメソッドである必要はないんだけど、じゃぁ返ってきたモノは&lt;/p&gt;&#xA;&lt;p&gt;ただの連想配列なのかモデルオブジェクトの塊なのか…&lt;/p&gt;&#xA;&lt;p&gt;昔、Javaを少し自習した時にレコードオブジェクトのクラスとオブジェクトの塊を保持する&lt;/p&gt;&#xA;&lt;p&gt;クラスが別になる書き方があって、自分にはその方がしっくり来るんだけど、多分塊を保持&lt;/p&gt;&#xA;&lt;p&gt;するクラスが余計っていう考えなのだろうか。&lt;/p&gt;&#xA;&lt;p&gt;何にしっくりこないかというと、モデルクラスの1インスタンスが1レコードオブジェクトなのか&lt;/p&gt;&#xA;&lt;p&gt;その塊(1個以上)が1インスタンスなのかという事。&lt;/p&gt;&#xA;&lt;p&gt;Model_Crudのメソッド見てるとhas_next()とかあるから、1個以上のレコードオブジェクトを&lt;/p&gt;&#xA;&lt;p&gt;保持するイテレータオブジェクトが1インスタンスなのかなーって思う。でもそうすると、fuelphp&lt;/p&gt;&#xA;&lt;p&gt;においては1レコードオブジェクトってのは1モデルインスタンスが保持するただの連想配列なのか&lt;/p&gt;&#xA;&lt;p&gt;な？&lt;/p&gt;&#xA;&lt;p&gt;このあたりは、PHPの他のフレームワーク勉強したり他の言語のフレームワーク勉強していくしか&lt;/p&gt;&#xA;&lt;p&gt;ないかな。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;２，FieldSetクラスという便利なものの中のcheckboxの名前の付け方&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;これは多分自分の学習が足りないだけなんだと思うけど、PHPでinputフォームのチェックボックス&lt;/p&gt;&#xA;&lt;p&gt;を複数用意する時、name属性をname=”◯◯[]”とかにして受け取ったPHPで値を配列で扱うんだけ&lt;/p&gt;&#xA;&lt;p&gt;ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=”◯◯[i]”って[]の中&lt;/p&gt;&#xA;&lt;p&gt;に数字を入れてくるんです。受け取るPHP側では配列として受け取れるぽいんだけど、fuelphpの&lt;/p&gt;&#xA;&lt;p&gt;Validationでこのチェックボックスグループらのどれか1つにはチェックしていること！みたいな&lt;/p&gt;&#xA;&lt;p&gt;事が出来ない。あと、jQueryのvalidationプラグインが動かない。別のものとして扱ってしまう。&lt;/p&gt;&#xA;&lt;p&gt;core/classes/foeldset/の中にあるファイルのcheckboxのフォームの名前属性を作る部分を直接&lt;/p&gt;&#xA;&lt;p&gt;書き換えて(本当はappフォルダにコピーするべき)使っている。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;３，FieldSetオブジェクトのフォームオブジェクトのラベル出力の時に出力されるラベル要素に&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;クラス(htmlのclass)を追加する手段が分からない。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;こいつ、checkboxやradioのグループ出力する場合は&lt;!-- raw HTML omitted --&gt;タグ出力しないんだぜ。意味不明。&lt;!-- raw HTML omitted --&gt; 親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用&lt;/p&gt;&#xA;&lt;p&gt;されなくて、仕方なく、requiredの場合出力されるデフォルト「*」のやつを「(必須)」てかえて&lt;/p&gt;&#xA;&lt;p&gt;それを赤字にした(requiredの時に出力される奴はlabel要素外)。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;４，単にどこに何を書くかがまだ理解できていない。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;controllerのactionメソッド内にloginチェックの詳細処理を書いてるんだけど、そこは外に&lt;/p&gt;&#xA;&lt;p&gt;切り出すべきなんじゃないの？とかactionメソッド内でのみ使う提携処理＆ちょっと複雑みたいな&lt;/p&gt;&#xA;&lt;p&gt;のは外に切り出すべきなんだろうけど、それは別のcomponentクラスとかにクラスメソッドとして&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>フレームワークちょいちょい</title>
       <link>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</guid>
-      <description>ここ最近はフレームワークを少し触ってる。
-Perl：Mojolicious::Lite
-→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
-各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
-layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
-このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
- Ruby：Sinatra
-→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
-ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
-これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
- PHP：FuelPHP
-→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
-これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
-コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
-public/assetsて階層に配置するんですね。
- PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
-OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
-出来ないとかで……</description>
+      <description>&lt;p&gt;ここ最近はフレームワークを少し触ってる。&lt;/p&gt;&#xA;&lt;p&gt;Perl：Mojolicious::Lite&lt;/p&gt;&#xA;&lt;p&gt;→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に&lt;/p&gt;&#xA;&lt;p&gt;各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/&lt;/p&gt;&#xA;&lt;p&gt;layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。&lt;/p&gt;&#xA;&lt;p&gt;このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Ruby：Sinatra&lt;/p&gt;&#xA;&lt;p&gt;→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか&lt;/p&gt;&#xA;&lt;p&gt;ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。&lt;/p&gt;&#xA;&lt;p&gt;これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;PHP：FuelPHP&lt;/p&gt;&#xA;&lt;p&gt;→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。&lt;/p&gt;&#xA;&lt;p&gt;これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや&lt;/p&gt;&#xA;&lt;p&gt;コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは&lt;/p&gt;&#xA;&lt;p&gt;public/assetsて階層に配置するんですね。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。&lt;/p&gt;&#xA;&lt;p&gt;OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート&lt;/p&gt;&#xA;&lt;p&gt;出来ないとかで……&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>CakePHPでぐはぁ</title>
       <link>https://tech.k-zak.com/posts/study-cakephp/</link>
       <pubDate>Tue, 14 Jun 2011 13:00:58 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/study-cakephp/</guid>
-      <description>CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ</description>
+      <description>&lt;p&gt;CakePHP1.3をちょいと触ろうとしたら、エラーがたくさん出てビビったｗ&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>WebフレームワークとFileMaker</title>
       <link>https://tech.k-zak.com/posts/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/web-filemaker/</guid>
-      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く</description>
+      <description>&lt;p&gt;FileMaker用のブログに書こうかと思ったけどこちらに書く&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>PHPのフレームワーク試す</title>
       <link>https://tech.k-zak.com/posts/php-frameworks/</link>
       <pubDate>Sun, 24 Apr 2011 14:04:24 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/php-frameworks/</guid>
-      <description>PHPのフレームワークをいくつか試してみた。</description>
+      <description>&lt;p&gt;PHPのフレームワークをいくつか試してみた。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>macにphpMyAdmin</title>
       <link>https://tech.k-zak.com/posts/mcrypt/</link>
       <pubDate>Fri, 03 Sep 2010 15:42:34 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/mcrypt/</guid>
-      <description>忘れないうちにメモ</description>
+      <description>&lt;p&gt;忘れないうちにメモ&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
   </channel>
 </rss>

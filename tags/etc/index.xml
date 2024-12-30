@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>etc on 開発メモてきな</title>
+    <title>Etc on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/etc/</link>
-    <description>Recent content in etc on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Etc on 開発メモてきな</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 02 Apr 2017 22:50:25 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/etc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Dec 2024 21:11:52 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/etc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2024 12 30 Testpost</title>
+      <link>https://tech.k-zak.com/posts/2024-12-30-testpost/</link>
+      <pubDate>Mon, 30 Dec 2024 21:11:52 +0900</pubDate>
+      <guid>https://tech.k-zak.com/posts/2024-12-30-testpost/</guid>
+      <description>&lt;h1 id=&#34;久しぶりのhugo更新&#34;&gt;久しぶりのHugo更新&lt;/h1&gt;&#xA;&lt;p&gt;とっても久しぶりにHugoを更新してみる。&lt;/p&gt;&#xA;&lt;h2 id=&#34;なぜ&#34;&gt;なぜ？&lt;/h2&gt;&#xA;&lt;p&gt;テーマを新しく自作しようと前々から思っていたのをようやく行動に起こした。&lt;/p&gt;&#xA;&lt;p&gt;すっかりやりかたを忘れていたので、ChatGPTに聞きながらになった。&#xA;便利ですねChatGPT。&lt;/p&gt;&#xA;&lt;p&gt;記事ネタはかなり溜まっていたので、テーマを更新したら記事を追加してきたい。&lt;/p&gt;&#xA;&lt;p&gt;さてさて、この後はビルドとGitHubへのpush作業などがまっています。。&#xA;公開に必要なファイル削除してしまったので、ここからまた一難&amp;hellip;&amp;hellip;&lt;/p&gt;&#xA;&lt;h2 id=&#34;これからについて&#34;&gt;これからについて&lt;/h2&gt;&#xA;&lt;p&gt;軌道に乗ったら過去記事の編集や溜まったネタを記事にしたりを行いたい。&#xA;また、Analyticsの設定も古いバージョンのままだった気がするので、そのあたりも更新したい。&lt;/p&gt;&#xA;&lt;p&gt;そんな感じ。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>agile progress</title>
       <link>https://tech.k-zak.com/posts/2017-04-02-daily/</link>
       <pubDate>Sun, 02 Apr 2017 22:50:25 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-04-02-daily/</guid>
-      <description>進捗 直近の目標に対する結果と進捗
- ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx) Makerel試したい Dockerをある程度使えるようになりたい  ブログや静的サイトのテーマをつくり込みたい Plican,Hexo,Jekyllについては完了。 Jekyllは二度と触りたく無い。
-4月にWordPressのテーマ作成他のテンプレートを作りたい。
-進捗としてはまぁまぁ。
-期限：5月で変わらず
-Makerel試したい 試した。
-カスタムメトリクスは真面目にきちんと時間を取らないとだめっぽいので諦めた。
-とにかく試したので完了とみなす。
-ちなみにトライアル期間終わったのでお金払わないとフル機能試せなくなった。
-Dockerをある程度使えるようになりたい 久しぶりに触った。
-SwarmやKubernetesはハードル高いので今は諦めた。
-ひとまず現状のバージョンのDockerに入れ替えた。
-完了としたい。
-4月の目標 ブログテーマの作成は引き続き行う。
-仕事上の別件が忙しくなるので他の課題を設定せず欲張らず地道にやっていきたい。</description>
+      <description>&lt;h1 id=&#34;進捗&#34;&gt;進捗&lt;/h1&gt;&#xA;&lt;p&gt;直近の目標に対する結果と進捗&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ブログや静的サイトのテーマをつくり込みたい(Pelican,Hexo,Jekyll,WordPress,Hugo,Sphinx)&lt;/li&gt;&#xA;&lt;li&gt;Makerel試したい&lt;/li&gt;&#xA;&lt;li&gt;Dockerをある程度使えるようになりたい&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;ブログや静的サイトのテーマをつくり込みたい&#34;&gt;ブログや静的サイトのテーマをつくり込みたい&lt;/h2&gt;&#xA;&lt;p&gt;Plican,Hexo,Jekyllについては完了。&#xA;Jekyllは二度と触りたく無い。&lt;/p&gt;&#xA;&lt;p&gt;4月にWordPressのテーマ作成他のテンプレートを作りたい。&lt;/p&gt;&#xA;&lt;p&gt;進捗としてはまぁまぁ。&lt;/p&gt;&#xA;&lt;p&gt;期限：5月で変わらず&lt;/p&gt;&#xA;&lt;h2 id=&#34;makerel試したい&#34;&gt;Makerel試したい&lt;/h2&gt;&#xA;&lt;p&gt;試した。&lt;/p&gt;&#xA;&lt;p&gt;カスタムメトリクスは真面目にきちんと時間を取らないとだめっぽいので諦めた。&lt;/p&gt;&#xA;&lt;p&gt;とにかく試したので完了とみなす。&lt;/p&gt;&#xA;&lt;p&gt;ちなみにトライアル期間終わったのでお金払わないとフル機能試せなくなった。&lt;/p&gt;&#xA;&lt;h2 id=&#34;dockerをある程度使えるようになりたい&#34;&gt;Dockerをある程度使えるようになりたい&lt;/h2&gt;&#xA;&lt;p&gt;久しぶりに触った。&lt;/p&gt;&#xA;&lt;p&gt;SwarmやKubernetesはハードル高いので今は諦めた。&lt;/p&gt;&#xA;&lt;p&gt;ひとまず現状のバージョンのDockerに入れ替えた。&lt;/p&gt;&#xA;&lt;p&gt;完了としたい。&lt;/p&gt;&#xA;&lt;h2 id=&#34;4月の目標&#34;&gt;4月の目標&lt;/h2&gt;&#xA;&lt;p&gt;ブログテーマの作成は引き続き行う。&lt;/p&gt;&#xA;&lt;p&gt;仕事上の別件が忙しくなるので他の課題を設定せず欲張らず地道にやっていきたい。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

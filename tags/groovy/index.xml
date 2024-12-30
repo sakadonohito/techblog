@@ -4,39 +4,23 @@
     <title>Groovy on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/groovy/</link>
     <description>Recent content in Groovy on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 12 Dec 2017 14:04:58 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/groovy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Dec 2017 14:04:58 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/groovy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Groovy TLS</title>
       <link>https://tech.k-zak.com/posts/2017-12-12-groovy-tls/</link>
       <pubDate>Tue, 12 Dec 2017 14:04:58 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-12-12-groovy-tls/</guid>
-      <description>久しぶりにGroovyを触った Groovyで作成したプログラムがTLSで通信できるようにしないといけなくなったので少し調べた。
-Javaの場合 javaで強制的にTLS1.2を使うようにするにはJVM起動時オプションを渡す Java7はデフォルトでTLS利用可能 Java8はデフォルトでTLS1.2使える
-JVM起動オプションに
--Dhttps.protocols=TLSv1.1,TLSv1.2 -Djdk.tls.client.protocols=TLSv1.1,TLSv1.2 を指定する。Eclipse等IDEの場合はJREの起動VMオプション設定に追加する。
-Groovyの場合 System.properties[‘https.protocols’] = ‘TLSv1.1,TLSv1.2 ’ System.properties[‘jdk.tls.client.protocols’] = ‘TLSv1.1,TLSv1.2 ’ これシステムプロパティを書き換えてるので、同時に他社のJVMプログラムとかあったりすると影響与えそうなんだけど&amp;hellip;&amp;hellip;</description>
+      <description>&lt;h1 id=&#34;久しぶりにgroovyを触った&#34;&gt;久しぶりにGroovyを触った&lt;/h1&gt;&#xA;&lt;p&gt;Groovyで作成したプログラムがTLSで通信できるようにしないといけなくなったので少し調べた。&lt;/p&gt;&#xA;&lt;h2 id=&#34;javaの場合&#34;&gt;Javaの場合&lt;/h2&gt;&#xA;&lt;p&gt;javaで強制的にTLS1.2を使うようにするにはJVM起動時オプションを渡す&#xA;Java7はデフォルトでTLS利用可能&#xA;Java8はデフォルトでTLS1.2使える&lt;/p&gt;&#xA;&lt;p&gt;JVM起動オプションに&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Dhttps.&lt;span style=&#34;color:#a6e22e&#34;&gt;protocols&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;TLSv1.&lt;span style=&#34;color:#a6e22e&#34;&gt;1&lt;/span&gt;,TLSv1.&lt;span style=&#34;color:#a6e22e&#34;&gt;2&lt;/span&gt; &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;Djdk.&lt;span style=&#34;color:#a6e22e&#34;&gt;tls&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;client&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;protocols&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;TLSv1.&lt;span style=&#34;color:#a6e22e&#34;&gt;1&lt;/span&gt;,TLSv1.&lt;span style=&#34;color:#a6e22e&#34;&gt;2&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;を指定する。Eclipse等IDEの場合はJREの起動VMオプション設定に追加する。&lt;/p&gt;&#xA;&lt;h2 id=&#34;groovyの場合&#34;&gt;Groovyの場合&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;System&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;properties&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;‘&lt;/span&gt;https&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;protocols&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;’&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;‘&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;TLSv1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;TLSv1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;’&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;System&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;properties&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;‘&lt;/span&gt;jdk&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tls&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;client&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;protocols&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;’&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;‘&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;TLSv1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;TLSv1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;’&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;これシステムプロパティを書き換えてるので、同時に他社のJVMプログラムとかあったりすると影響与えそうなんだけど&amp;hellip;&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
       <link>https://tech.k-zak.com/posts/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone-serverside/</guid>
-      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
-まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
-Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
-Perl,Python,Rubyについては全然触れなくてフラストレーション。
-PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。
-本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。
-家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
-PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
-枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
+      <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る&lt;/p&gt;&#xA;&lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;&#xA;&lt;p&gt;Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。&lt;/p&gt;&#xA;&lt;p&gt;Perl,Python,Rubyについては全然触れなくてフラストレーション。&lt;/p&gt;&#xA;&lt;p&gt;PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。&lt;/p&gt;&#xA;&lt;p&gt;本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。&lt;/p&gt;&#xA;&lt;p&gt;家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。&lt;/p&gt;&#xA;&lt;p&gt;PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は&lt;/p&gt;&#xA;&lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;&#xA;&lt;p&gt;Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

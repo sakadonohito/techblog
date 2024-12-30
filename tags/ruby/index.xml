@@ -4,286 +4,100 @@
     <title>Ruby on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/ruby/</link>
     <description>Recent content in Ruby on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 27 Mar 2017 23:36:40 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Mar 2017 23:36:40 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>challenge mackerel plugin</title>
       <link>https://tech.k-zak.com/posts/2017-03-27-mackerel-plugin/</link>
       <pubDate>Mon, 27 Mar 2017 23:36:40 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-03-27-mackerel-plugin/</guid>
-      <description>Mackerelのカスタムメトリクスに挑戦 して撃沈。
-何が起きたか 公式のヘルプ を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。
-YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;quot;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;quot;}\&amp;quot; unexpected (expecting \&amp;quot;then\&amp;quot;)\n&amp;quot; 改行が足りない？
-rubyファイルを単独で実行すると動くので謎。
-これだからRubyは。
-とりあえず、Mackerelは初期設定のままのメトリクスだけでいいや。</description>
+      <description>&lt;h1 id=&#34;mackerelのカスタムメトリクスに挑戦&#34;&gt;Mackerelのカスタムメトリクスに挑戦&lt;/h1&gt;&#xA;&lt;p&gt;して撃沈。&lt;/p&gt;&#xA;&lt;h2 id=&#34;何が起きたか&#34;&gt;何が起きたか&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://mackerel.io/ja/docs/entry/advanced/custom-metrics&#34;&gt;公式のヘルプ&lt;/a&gt; を見ながら写経してUbuntu 16.04のサーバー上でカスタムメトリクスを作成して設定したが、うまくいかない。エラーが出る。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;YYYY/MM/DD 時分秒 INFO &amp;lt;metrics.plugin&amp;gt; command /path/to/sample-metrics.rb outputted to STDERR: &amp;#34;/path/to/sample-metrics.rb: 10: /home/osawa/sample-metrics.rb: Syntax error: \&amp;#34;}\&amp;#34; unexpected (expecting \&amp;#34;then\&amp;#34;)\n&amp;#34;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;改行が足りない？&lt;/p&gt;&#xA;&lt;p&gt;rubyファイルを単独で実行すると動くので謎。&lt;/p&gt;&#xA;&lt;p&gt;これだからRubyは。&lt;/p&gt;&#xA;&lt;p&gt;とりあえず、Mackerelは初期設定のままのメトリクスだけでいいや。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Challenged Jekyll template and hate</title>
       <link>https://tech.k-zak.com/posts/2017-03-26-jekyll/</link>
       <pubDate>Sun, 26 Mar 2017 18:32:49 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-03-26-jekyll/</guid>
-      <description>Jekyllの画面(テンプレート)作った 結論から言うと、二度と使いたくない。
-Pelicanの方がいいや。
-やりたかったこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る アーカイブ(年月)ごとの記事一覧ページを作る アーカイブ(年月)の一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る  できたこと  TOPページ：直近5件程の記事タイトルを表示する タグごとの記事一覧ページを作る タグの一覧ページ作る カテゴリごとの記事一覧ページを作る カテゴリの一覧ページ作る Aboutの固定ページを作る サイドバーにカテゴリ、タグ、Aboutのリンクを作る  乗り越えた事 HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。
-標準で機能がついてなくて、pluginディレクトリにページを生成するモジュール？を書いて対応した。
-公式に載っているコードをほぼそのまま使いまわしたんだけど、Rubyの世界というかJekyllではカテゴリやタグごとのページ生成は静的サイトジェネレーターの標準機能のうちには入らないらしい。
-あきらめた事 アーカイブページ 上記のカテゴリやタグのページ生成のノリでいけるかと思ったけど無理だった。
-正確には気持ちが切れた。
-Pelicanの場合、記事リストをgroup by　した結果をそのままfor分で使えるのだけれど、Jekyllが使っているテンプレートエンジンではできないらしく、いちいち変数にアサインしないといけない。そのくせ、変数にアサインする時はgroup by も sort もできるらしい。
-あと、気づかなかったんだけど、記事のデータに投稿年月日の年や月のデータがないので結局こねくり回さないと、年や月でgroup byした記事リストの抽出がうまくできない。
-この、年月ごとに記事リストを抽出したオブジェクトが簡単には生成できないので、サイドバーの表示もアーカイブリストの生成もうまくできそうにないので諦めた。
-あと、ググって出てきた書き方が汚いというか美しくないというか、「え？こんな手続き型なめんどくさい記述をテンプレートで書くの？」みたいなのが散見されて嫌になった。
-まったくもう。
-参考 Jekyll公式
-まとめ Rubyを理解したら見直せるかもしれないけど、それまではもう触りたくない。
-記事の投稿だけはして使い続けてみる。</description>
+      <description>&lt;h1 id=&#34;jekyllの画面テンプレート作った&#34;&gt;Jekyllの画面(テンプレート)作った&lt;/h1&gt;&#xA;&lt;p&gt;結論から言うと、二度と使いたくない。&lt;/p&gt;&#xA;&lt;p&gt;Pelicanの方がいいや。&lt;/p&gt;&#xA;&lt;h2 id=&#34;やりたかったこと&#34;&gt;やりたかったこと&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;TOPページ：直近5件程の記事タイトルを表示する&lt;/li&gt;&#xA;&lt;li&gt;タグごとの記事一覧ページを作る&lt;/li&gt;&#xA;&lt;li&gt;タグの一覧ページ作る&lt;/li&gt;&#xA;&lt;li&gt;カテゴリごとの記事一覧ページを作る&lt;/li&gt;&#xA;&lt;li&gt;カテゴリの一覧ページ作る&lt;/li&gt;&#xA;&lt;li&gt;アーカイブ(年月)ごとの記事一覧ページを作る&lt;/li&gt;&#xA;&lt;li&gt;アーカイブ(年月)の一覧ページ作る&lt;/li&gt;&#xA;&lt;li&gt;Aboutの固定ページを作る&lt;/li&gt;&#xA;&lt;li&gt;サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;できたこと&#34;&gt;できたこと&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;TOPページ：直近5件程の記事タイトルを表示する&lt;/li&gt;&#xA;&lt;li&gt;タグごとの記事一覧ページを作る&lt;/li&gt;&#xA;&lt;li&gt;タグの一覧ページ作る&lt;/li&gt;&#xA;&lt;li&gt;カテゴリごとの記事一覧ページを作る&lt;/li&gt;&#xA;&lt;li&gt;カテゴリの一覧ページ作る&lt;/li&gt;&#xA;&lt;li&gt;Aboutの固定ページを作る&lt;/li&gt;&#xA;&lt;li&gt;サイドバーにカテゴリ、タグ、Aboutのリンクを作る&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;乗り越えた事&#34;&gt;乗り越えた事&lt;/h2&gt;&#xA;&lt;p&gt;HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。&lt;/p&gt;&#xA;&lt;p&gt;標準で機能がついてなくて、pluginディレクトリにページを生成するモジュール？を書いて対応した。&lt;/p&gt;&#xA;&lt;p&gt;公式に載っているコードをほぼそのまま使いまわしたんだけど、Rubyの世界というかJekyllではカテゴリやタグごとのページ生成は静的サイトジェネレーターの標準機能のうちには入らないらしい。&lt;/p&gt;&#xA;&lt;h2 id=&#34;あきらめた事&#34;&gt;あきらめた事&lt;/h2&gt;&#xA;&lt;h3 id=&#34;アーカイブページ&#34;&gt;アーカイブページ&lt;/h3&gt;&#xA;&lt;p&gt;上記のカテゴリやタグのページ生成のノリでいけるかと思ったけど無理だった。&lt;/p&gt;&#xA;&lt;p&gt;正確には気持ちが切れた。&lt;/p&gt;&#xA;&lt;p&gt;Pelicanの場合、記事リストをgroup by　した結果をそのままfor分で使えるのだけれど、Jekyllが使っているテンプレートエンジンではできないらしく、いちいち変数にアサインしないといけない。そのくせ、変数にアサインする時はgroup by も sort もできるらしい。&lt;/p&gt;&#xA;&lt;p&gt;あと、気づかなかったんだけど、記事のデータに投稿年月日の年や月のデータがないので結局こねくり回さないと、年や月でgroup byした記事リストの抽出がうまくできない。&lt;/p&gt;&#xA;&lt;p&gt;この、年月ごとに記事リストを抽出したオブジェクトが簡単には生成できないので、サイドバーの表示もアーカイブリストの生成もうまくできそうにないので諦めた。&lt;/p&gt;&#xA;&lt;p&gt;あと、ググって出てきた書き方が汚いというか美しくないというか、「え？こんな手続き型なめんどくさい記述をテンプレートで書くの？」みたいなのが散見されて嫌になった。&lt;/p&gt;&#xA;&lt;p&gt;まったくもう。&lt;/p&gt;&#xA;&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://jekyllrb.com/docs/home/&#34;&gt;Jekyll公式&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;&#xA;&lt;p&gt;Rubyを理解したら見直せるかもしれないけど、それまではもう触りたくない。&lt;/p&gt;&#xA;&lt;p&gt;記事の投稿だけはして使い続けてみる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
       <link>https://tech.k-zak.com/posts/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone-serverside/</guid>
-      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
-まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
-Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
-Perl,Python,Rubyについては全然触れなくてフラストレーション。
-PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。
-本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。
-家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
-PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
-枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
+      <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る&lt;/p&gt;&#xA;&lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;&#xA;&lt;p&gt;Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。&lt;/p&gt;&#xA;&lt;p&gt;Perl,Python,Rubyについては全然触れなくてフラストレーション。&lt;/p&gt;&#xA;&lt;p&gt;PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。&lt;/p&gt;&#xA;&lt;p&gt;本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。&lt;/p&gt;&#xA;&lt;p&gt;家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。&lt;/p&gt;&#xA;&lt;p&gt;PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は&lt;/p&gt;&#xA;&lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;&#xA;&lt;p&gt;Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2014年の目標達成進捗管理的な</title>
       <link>https://tech.k-zak.com/posts/milestone/</link>
       <pubDate>Sat, 04 Jan 2014 09:23:26 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone/</guid>
-      <description>新年、明けましておめでとうございました。良いお年を。 今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。
-事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。
-とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。
-そういう話を聞いたので、ならば達成出来るように達成可能と思えるような目標をredmineでマイルストーンをチケットとして分解して期日を設定して進捗管理するのはどうだろうかと考えた。
-要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。
-という事で設定作業開始
-環境:  ホストOS：OS X10.9 ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T)) nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します) ruby2.0.0dev(rbenv) unicorn4.7.0 rails3.2.16 redmine2.4.2  rbenvにruby2.0を追加してデフォルトにする rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。
-参考：rbenvを利用して複数バージョンのRubyをインストール※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。
-rehashの時だけsh-rehashがうんたらってエラーになる。
-ruby2.0の状態でgem update でアップデートしてbundler入れる。
-MySQL側の準備 redmienユーザーの作成と
-データベース：redmineの作成
-redmine入れる ここから最新のredmineをダウンロード(今回は2.4.2)
-うっかり、nginxで設定済みのweb公開領域に入れてしまった。まぁいいか。
-DLしたredmineを解凍して任意のパスにredmineという名前にリネームして配置。
-redmineディレクトリ直下にGemfile.localを作成し、中に「gem unicorn」と書いておく。
-bundleでのインストールが初めてだったので、なんか引数与えてやってみたかったてのと、
-最初rmagick関連でエラー出たっぽいのでwithoutに指定した。原因は究明しない！
-ここまでで自分が詰まったのは、最初bundler入れた後rehashしてなくてbundle installのとろこで、bundler入ってねぇよ！apt-getで入れろ！ってエラー出てアワアワしてた。どうもbundler入れた後にもrehashが必要らしい。今は何故かは調べない。
-必要最小限にしてなかったせいか、ここでワンサカいろいろインストールされた。気がする。
-インストールされたgemを見た所、railsは上記環境で記載したバージョンになっていたです。
-終わったら、database.ymlのproductionの所を編集して自分の環境でDB接続できるようにする。
-開発用じゃなくてredmine使うだけなので最初からproduction。
-ここで一旦Webrickで動くか確認。
-動かねぇ！調べてたらお決まりの必要な処理がある事を知った。
-その１その２書いてあることの真似をする。
-終わったら再度チャレンジでWebrickが起動しました。やったね。
-redmineのadminユーザーのデフォルトのパスワードがわからない！ 解決策はここ。
-unicornの設定 めんどくさくなってきた。上記の２リンクと関連リンクのGithubと、やや簡潔にかいてあるブログを参考に設定ファイルを書いていきましたので詳細は省きます。
-１，unicorn.rbを作成。
-２，unicornのデーモン
-自分が作業した手順としては一気にnginxの設定編集までしてから確認して動かない！ってなったんだけど、問題切り分けのために、
- unicornの設定する前段階でWebrickで動かくか(例えば、http://0.0.0.0:3000) unicornの設定した段階でredmine動くか(例えば、http://0.0.0.0:8080)  て接続確認しながら進めたほうが良いと思われます。
-nginxの設定編集 既にnginxが動いている環境のため、redmine専用の設定どうするのか戸惑ったけど、単にserverディレクティブを追加すればいいみたい。upstreamディレクティブも既存の仮想ホスト設定に悪影響は出ていないみたいだ。
-最終的な結論から言うと動いたけど、参考にしたブログなんかと設定がちょい違う。
- ローカルで動かしているせいかhostsファイルにredmine用の仮想URLを追記したら動いた。※追記前は参考記事と同じ設定にしても動かなかった。 動かすのに使った指定は  upstreamのunixソケットの指定 追加仮想ホストのlisten port 追加仮想ホストのserver_name 追加仮想ホストのroot 追加仮想ホストのaccess_log 追加仮想ホストのerror_log 追加仮想ホストのlocation / にファイルじゃなかったらproxy_passの分岐 上記if文が真の時のproxy_passの指定を「http://」+「upstreamに記述した名前」    proxy_pass以外のproxyの設定は一つも書いてないけど動きます。なんでだろう。</description>
+      <description>&lt;h2 id=&#34;新年明けましておめでとうございました良いお年を&#34;&gt;新年、明けましておめでとうございました。良いお年を。&lt;/h2&gt;&#xA;&lt;p&gt;今回は、プログラムの勉強のために作成して使っているVM(Ubuntu)にredmineを動かす。という話。&lt;/p&gt;&#xA;&lt;p&gt;事の発端は新年に目標を掲げるのは意味がない。なぜならば年が改まるとかそういうタイミングでしか掲げられないような目標は普段から取り組めない達成できない目標だから。&lt;/p&gt;&#xA;&lt;p&gt;とか、意志薄弱な人間は日が経てば目標自体忘れて結果達成できない。とか、変にハードルの高い目標にしてしまって達成できなくて早々に諦めてしまうとか。&lt;/p&gt;&#xA;&lt;p&gt;そういう話を聞いたので、ならば達成出来るように達成可能と思えるような目標をredmineでマイルストーンをチケットとして分解して期日を設定して進捗管理するのはどうだろうかと考えた。&lt;/p&gt;&#xA;&lt;p&gt;要は2014年の目標はredmineで適当な目標の進捗管理を行い、その目標を達成できるよう行動する。のが目標。&lt;/p&gt;&#xA;&lt;p&gt;という事で設定作業開始&lt;/p&gt;&#xA;&lt;h2 id=&#34;環境&#34;&gt;環境:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ホストOS：OS X10.9&lt;/li&gt;&#xA;&lt;li&gt;ゲストOS(今回使用する環境)：Ubuntu13.10 32bit(ずっと64bitいれたと思っていた(T_T))&lt;/li&gt;&#xA;&lt;li&gt;nginx1.4.1(以前から使用していて今回はredmine向けに設定を変更します)&lt;/li&gt;&#xA;&lt;li&gt;ruby2.0.0dev(rbenv)&lt;/li&gt;&#xA;&lt;li&gt;unicorn4.7.0&lt;/li&gt;&#xA;&lt;li&gt;rails3.2.16&lt;/li&gt;&#xA;&lt;li&gt;redmine2.4.2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;rbenvにruby20を追加してデフォルトにする&#34;&gt;rbenvにruby2.0を追加してデフォルトにする&lt;/h2&gt;&#xA;&lt;p&gt;rbenvは元から入れていたので、今回は2.0を追加する作業だけ。折角だから最新を使おうってだけ。&lt;/p&gt;&#xA;&lt;p&gt;参考：&lt;!-- raw HTML omitted --&gt;rbenvを利用して複数バージョンのRubyをインストール&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;※自分の環境ではrehashのみ、フルパス指定じゃないとエラーになる。なんでだろう。&lt;/p&gt;&#xA;&lt;p&gt;rehashの時だけsh-rehashがうんたらってエラーになる。&lt;/p&gt;&#xA;&lt;p&gt;ruby2.0の状態でgem update でアップデートしてbundler入れる。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;mysql側の準備&#34;&gt;MySQL側の準備&lt;/h2&gt;&#xA;&lt;p&gt;redmienユーザーの作成と&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>パスカルのなんとか</title>
       <link>https://tech.k-zak.com/posts/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/pascal-logic/</guid>
-      <description>今回は、パスカルの三角定理？みたいなやつ
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-Rubyはもっとシンプルな書き方があるのかもしれない。</description>
+      <description>&lt;p&gt;今回は、パスカルの三角定理？みたいなやつ&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyはもっとシンプルな書き方があるのかもしれない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ06</title>
       <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
-      <description>リハビリその3
-今回は、バブルソート
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-習熟度が低いのでPerlとPHPが同じ内容になる。
-pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。
-すんなり1つのリストだけでできないものか……</description>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;&#xA;&lt;p&gt;今回は、バブルソート&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;習熟度が低いのでPerlとPHPが同じ内容になる。&lt;/p&gt;&#xA;&lt;p&gt;pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。&lt;/p&gt;&#xA;&lt;p&gt;すんなり1つのリストだけでできないものか……&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ05</title>
       <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
-      <description>昨日の文字チェックをPHP以外で試す。
-与えられた文字列が全てユニークな文字で構成されているかのチェック。
-PHPは前回やっているので、今回は掲載無し。
-Perlでは、
-Pythonでは、
-Rubyでは、
-文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。
-配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。
-pythonが一番スッキリしているようだけど、やっぱりRubyかな</description>
+      <description>&lt;p&gt;昨日の文字チェックをPHP以外で試す。&lt;/p&gt;&#xA;&lt;p&gt;与えられた文字列が全てユニークな文字で構成されているかのチェック。&lt;/p&gt;&#xA;&lt;p&gt;PHPは前回やっているので、今回は掲載無し。&lt;/p&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。&lt;/p&gt;&#xA;&lt;p&gt;配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。&lt;/p&gt;&#xA;&lt;p&gt;pythonが一番スッキリしているようだけど、やっぱりRubyかな&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ03</title>
       <link>https://tech.k-zak.com/posts/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo03/</guid>
-      <description>リハビリその3
-今回は、バブルソート
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-Rubyが一番スマートかな</description>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;&#xA;&lt;p&gt;今回は、バブルソート&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyが一番スマートかな&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ02</title>
       <link>https://tech.k-zak.com/posts/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo02/</guid>
-      <description>リハビリその２
-今回は、ファイル読み込みとその時の簡単な例外処理
-読み込むテキストファイルの内容は以下の通り、
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-うるう年の判定処理は適当。pythonが一番しっくりくるかな。
-rubyはreturnを省略した場合に最後に評価された値がreturnされるんだけど、pythonもだと勘違いしててハマった。</description>
+      <description>&lt;p&gt;リハビリその２&lt;/p&gt;&#xA;&lt;p&gt;今回は、ファイル読み込みとその時の簡単な例外処理&lt;/p&gt;&#xA;&lt;p&gt;読み込むテキストファイルの内容は以下の通り、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;うるう年の判定処理は適当。pythonが一番しっくりくるかな。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ01</title>
       <link>https://tech.k-zak.com/posts/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo01/</guid>
-      <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
-paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
-という事でリハビリ。
-今回は標準入力。
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-標準入力が「gets」だけで取れるRubyはダンディ。</description>
+      <description>&lt;p&gt;一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;paiza&lt;!-- raw HTML omitted --&gt;なんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。&lt;/p&gt;&#xA;&lt;p&gt;という事でリハビリ。&lt;/p&gt;&#xA;&lt;p&gt;今回は標準入力。&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;標準入力が「gets」だけで取れるRubyはダンディ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>フレームワークちょいちょい</title>
       <link>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</guid>
-      <description>ここ最近はフレームワークを少し触ってる。
-Perl：Mojolicious::Lite
-→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
-各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
-layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
-このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
- Ruby：Sinatra
-→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
-ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
-これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
- PHP：FuelPHP
-→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
-これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
-コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
-public/assetsて階層に配置するんですね。
- PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
-OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
-出来ないとかで……</description>
+      <description>&lt;p&gt;ここ最近はフレームワークを少し触ってる。&lt;/p&gt;&#xA;&lt;p&gt;Perl：Mojolicious::Lite&lt;/p&gt;&#xA;&lt;p&gt;→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に&lt;/p&gt;&#xA;&lt;p&gt;各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/&lt;/p&gt;&#xA;&lt;p&gt;layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。&lt;/p&gt;&#xA;&lt;p&gt;このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Ruby：Sinatra&lt;/p&gt;&#xA;&lt;p&gt;→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか&lt;/p&gt;&#xA;&lt;p&gt;ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。&lt;/p&gt;&#xA;&lt;p&gt;これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;PHP：FuelPHP&lt;/p&gt;&#xA;&lt;p&gt;→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。&lt;/p&gt;&#xA;&lt;p&gt;これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや&lt;/p&gt;&#xA;&lt;p&gt;コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは&lt;/p&gt;&#xA;&lt;p&gt;public/assetsて階層に配置するんですね。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。&lt;/p&gt;&#xA;&lt;p&gt;OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート&lt;/p&gt;&#xA;&lt;p&gt;出来ないとかで……&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>FileMakerとRubyのSinatra</title>
       <link>https://tech.k-zak.com/posts/study-sinatra/</link>
       <pubDate>Sat, 07 Jan 2012 10:50:19 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/study-sinatra/</guid>
-      <description>Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？
-と思ったのでやってみました。
-gihyo.jp:第９回 SinatraとSequel・Hamlで掲示板アプリを作る
-http://gihyo.jp/dev/serial/01/ruby/0009
-が自分がチュートリアル(以下、見本)としてやってみみたもので、これのmodel部分をFileMakerに
-置換えました。
-※FileMakerやRuby、Sinatraそのものの細かい説明は省きます。
-最終的な階層は以下(見本のファイルも混在してます)
-—
-—
-FileMaker部分
-・bbsテーブルの作成、カラムは見本のapp/model/comment.rb内で定義しているクラス
-Commentsを真似て定義。但し、posted_dateはFileMaker側ではtimestamp型で作成時に自動で
-現在のタイムスタンプが入るよう設定。
-Ruby部分
-・app/model/comment.rbにFileMakerとの接続クラス追加
-—以下をcomment.rbに追加—
-・hamlを編集(追加)
-—app/view/fmbbs.haml
-※HamlはPythonのようにインデントが文法になってるので注意！
-・app/start.rbを編集
-—app/start.rbを以下のように変更—
-・rfm(lardawge-rfm)をインストールするの忘れずに！
-$ sudo gem install lardawge-rfm
-GitHub：https://github.com/lardawge/rfm
-これでstart.rbのある位置をカレントにして
-$ ruby -rubygems start.rb
-これで
-http://localhost:4567/fmbbs
-で試せます。簡単ですね！
-今回、自分がつまずいた所は、
-１，rfm経由でFileMakerにレコード作成(多分編集も同じ)でtimestamp型のカラムに値を
-設定するための方法が分からなかった。※DateTime型だとエラーになる、整形してもエラー
-になる。なんでや！
-→読み込みは出来るので、FileMaker側で作成時自動で値設定にした。
-２，投稿済みデータの降順ソートがうまくいかない！
-→lardawge-rfmでは降順の指定が”desc”ではなく、”descend”だった。
-Railsでやるほどじゃないけどちょっと簡単にFileMakerとWebアプリつなぎたいとか、これで
-どうでしょうか？</description>
+      <description>&lt;p&gt;Sinatraのチュートリアルを少し触って、これなら簡単にFileMakerと接続出来るんじゃない？&lt;/p&gt;&#xA;&lt;p&gt;と思ったのでやってみました。&lt;/p&gt;&#xA;&lt;p&gt;gihyo.jp:第９回 SinatraとSequel・Hamlで掲示板アプリを作る&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://gihyo.jp/dev/serial/01/ruby/0009&#34;&gt;http://gihyo.jp/dev/serial/01/ruby/0009&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;が自分がチュートリアル(以下、見本)としてやってみみたもので、これのmodel部分をFileMakerに&lt;/p&gt;&#xA;&lt;p&gt;置換えました。&lt;/p&gt;&#xA;&lt;p&gt;※FileMakerやRuby、Sinatraそのものの細かい説明は省きます。&lt;/p&gt;&#xA;&lt;p&gt;最終的な階層は以下(見本のファイルも混在してます)&lt;/p&gt;&#xA;&lt;p&gt;—&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;—&lt;/p&gt;&#xA;&lt;p&gt;FileMaker部分&lt;/p&gt;&#xA;&lt;p&gt;・bbsテーブルの作成、カラムは見本のapp/model/comment.rb内で定義しているクラス&lt;/p&gt;&#xA;&lt;p&gt;Commentsを真似て定義。但し、posted_dateはFileMaker側ではtimestamp型で作成時に自動で&lt;/p&gt;&#xA;&lt;p&gt;現在のタイムスタンプが入るよう設定。&lt;/p&gt;&#xA;&lt;p&gt;Ruby部分&lt;/p&gt;&#xA;&lt;p&gt;・app/model/comment.rbにFileMakerとの接続クラス追加&lt;/p&gt;&#xA;&lt;p&gt;—以下をcomment.rbに追加—&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;・hamlを編集(追加)&lt;/p&gt;&#xA;&lt;p&gt;—app/view/fmbbs.haml&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;※HamlはPythonのようにインデントが文法になってるので注意！&lt;/p&gt;&#xA;&lt;p&gt;・app/start.rbを編集&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>WebフレームワークとFileMaker</title>
       <link>https://tech.k-zak.com/posts/web-filemaker/</link>
       <pubDate>Sun, 29 May 2011 04:16:39 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/web-filemaker/</guid>
-      <description>FileMaker用のブログに書こうかと思ったけどこちらに書く</description>
+      <description>&lt;p&gt;FileMaker用のブログに書こうかと思ったけどこちらに書く&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
   </channel>
 </rss>

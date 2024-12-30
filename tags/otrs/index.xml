@@ -4,20 +4,16 @@
     <title>OTRS on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/otrs/</link>
     <description>Recent content in OTRS on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 28 Nov 2017 22:00:00 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/otrs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Nov 2017 22:00:00 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/otrs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup OTRS</title>
       <link>https://tech.k-zak.com/posts/2017-11-28-otrs-install/</link>
       <pubDate>Tue, 28 Nov 2017 22:00:00 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-11-28-otrs-install/</guid>
-      <description>OTRSをインストールしてみた オープンソースのチケット管理システム的なもの主にサービス・サポート部署で使うようなもの
-セットアップ 環境はUbuntu16.04
-基本はダウンロードしてきて実行するだけ。 本体はWeb公開領域におけばいいかな?
-つまったところ  anynevを使おうとして詰まった、anyenvをシステムワイドに使う場合は割り切ってrootで設定する plenvをインストールすることはすんなりいくが、モジュールパスなどで使おうとすると詰まる  -&amp;gt;システムのperlを結局使うことに   cpanmでDBD::mysqlをインストールする場合、以下の事が必要  先にMySQLがインストールされていること Ubuntuの場合はlibmysqlclient-devがインストールされていること   というか/opt/otrs/bin/otrs.CheckModules.pl の実行で必要なモジュールが確認できる モジュールが依存するライブラリも存在するので合わせて入れること  感想 domainやメールの設定がちゃんとできていれば特に躓くこと無くセットアップできそう。 最終調整？セットアップがGUIのため、Ansibleでセットアップとかは難しそう。</description>
+      <description>&lt;h1 id=&#34;otrsをインストールしてみた&#34;&gt;OTRSをインストールしてみた&lt;/h1&gt;&#xA;&lt;p&gt;オープンソースのチケット管理システム的なもの主にサービス・サポート部署で使うようなもの&lt;/p&gt;&#xA;&lt;h2 id=&#34;セットアップ&#34;&gt;セットアップ&lt;/h2&gt;&#xA;&lt;p&gt;環境はUbuntu16.04&lt;/p&gt;&#xA;&lt;p&gt;基本はダウンロードしてきて実行するだけ。&#xA;本体はWeb公開領域におけばいいかな?&lt;/p&gt;&#xA;&lt;h3 id=&#34;つまったところ&#34;&gt;つまったところ&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;anynevを使おうとして詰まった、anyenvをシステムワイドに使う場合は割り切ってrootで設定する&lt;/li&gt;&#xA;&lt;li&gt;plenvをインストールすることはすんなりいくが、モジュールパスなどで使おうとすると詰まる&#xA;&lt;ul&gt;&#xA;&lt;li&gt;-&amp;gt;システムのperlを結局使うことに&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;cpanmでDBD::mysqlをインストールする場合、以下の事が必要&#xA;&lt;ul&gt;&#xA;&lt;li&gt;先にMySQLがインストールされていること&lt;/li&gt;&#xA;&lt;li&gt;Ubuntuの場合はlibmysqlclient-devがインストールされていること&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;というか/opt/otrs/bin/otrs.CheckModules.pl の実行で必要なモジュールが確認できる&lt;/li&gt;&#xA;&lt;li&gt;モジュールが依存するライブラリも存在するので合わせて入れること&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;感想&#34;&gt;感想&lt;/h3&gt;&#xA;&lt;p&gt;domainやメールの設定がちゃんとできていれば特に躓くこと無くセットアップできそう。&#xA;最終調整？セットアップがGUIのため、Ansibleでセットアップとかは難しそう。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

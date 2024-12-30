@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Etc on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/categories/etc/</link>
+    <description>Recent content in Etc on 開発メモてきな</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 30 Dec 2024 21:11:52 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/categories/etc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2024 12 30 Testpost</title>
+      <link>https://tech.k-zak.com/posts/2024-12-30-testpost/</link>
+      <pubDate>Mon, 30 Dec 2024 21:11:52 +0900</pubDate>
+      <guid>https://tech.k-zak.com/posts/2024-12-30-testpost/</guid>
+      <description>&lt;h1 id=&#34;久しぶりのhugo更新&#34;&gt;久しぶりのHugo更新&lt;/h1&gt;&#xA;&lt;p&gt;とっても久しぶりにHugoを更新してみる。&lt;/p&gt;&#xA;&lt;h2 id=&#34;なぜ&#34;&gt;なぜ？&lt;/h2&gt;&#xA;&lt;p&gt;テーマを新しく自作しようと前々から思っていたのをようやく行動に起こした。&lt;/p&gt;&#xA;&lt;p&gt;すっかりやりかたを忘れていたので、ChatGPTに聞きながらになった。&#xA;便利ですねChatGPT。&lt;/p&gt;&#xA;&lt;p&gt;記事ネタはかなり溜まっていたので、テーマを更新したら記事を追加してきたい。&lt;/p&gt;&#xA;&lt;p&gt;さてさて、この後はビルドとGitHubへのpush作業などがまっています。。&#xA;公開に必要なファイル削除してしまったので、ここからまた一難&amp;hellip;&amp;hellip;&lt;/p&gt;&#xA;&lt;h2 id=&#34;これからについて&#34;&gt;これからについて&lt;/h2&gt;&#xA;&lt;p&gt;軌道に乗ったら過去記事の編集や溜まったネタを記事にしたりを行いたい。&#xA;また、Analyticsの設定も古いバージョンのままだった気がするので、そのあたりも更新したい。&lt;/p&gt;&#xA;&lt;p&gt;そんな感じ。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

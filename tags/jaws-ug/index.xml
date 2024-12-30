@@ -4,36 +4,16 @@
     <title>JAWS-UG on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/jaws-ug/</link>
     <description>Recent content in JAWS-UG on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 31 Mar 2017 18:01:34 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/jaws-ug/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Mar 2017 18:01:34 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/jaws-ug/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>jaws-ug container</title>
       <link>https://tech.k-zak.com/posts/2017-03-30-jaws-container/</link>
       <pubDate>Fri, 31 Mar 2017 18:01:34 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-03-30-jaws-container/</guid>
-      <description>JAWS-UG コンテナ支部 の勉強会に行ってきた 行ってきた。。
-前佛さんのお話 Dockerは仕様でコンテナが技術っていう話。
-開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。
-Dockerのイメージ・レイヤの概念のおかげで？ベースイメージを共有したり、イメージをコピーするのにも差分レイヤだけコピーするので早いとか。
-他のコンテナ技術との大きな違い 今までに同様の技術はあったが、Dockerが大きく違うのは、DockerHubの存在。
-自分が作ったイメージはもちろん、他人が作ったものも共有(流用)できる。
-docker イメージの Github版。
-注意点 ストレージドライバについては要件を考慮して決めましょう的な話。
-このあたりを読むと理解が深まるのでしょう。
-イメージ、コンテナ、ストレージ・ドライバの理解
-ストレージ・ドライバの選択
-ECS関連のアップデート Windows コンテナ も試せる Windows Server 2016 の AMIもでてるよ。とか。
-ECRについて  フルマネージドDockerレジストリサービス イメージの容量に対して課金 コンテナイメージは自動的に暗号化できる設定がある もちろんIAM使える ECRをCloudTrailで追跡可能 CredentialHelper使ってね  業務上プライベートなDockerイメージを置く場所を作りたい場合なんかいいですね。
-社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた 既存の触りたくないバッチ環境をそのままに、API Gateway、ECS、SQSなんかを活用してバッチ処理環境を改善した話。
-既存のサーバーには何も追加したくない、が、curlは基本的に入っているので処理スタートをcurlから始める。
-API Gateway を通じてリクエストを受け取り、ECS環境でバッチ処理、処理結果をSQSで通知みたいな。
-ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。
-すごい。
-NTTとDocker ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。
-ECSを活用する上での勘所 データについて  なるべくDocker Volumeを使わないで済む設計にする  いつでもインスタンスを捨てられるようにする設計 永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する awslogs ログドライバ便利です。積極的に使っていきましょう。   URLパスの設計  ALBを活用しましょう 関連サービスのエントリポイントとかは環境変数で渡しましょう。   セッションの管理  インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い ElastiCache,Redis,Memcachedを活用しましょう。    環境構築について 書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな</description>
+      <description>&lt;h1 id=&#34;jaws-ug-コンテナ支部-の勉強会に行ってきた&#34;&gt;JAWS-UG コンテナ支部 の勉強会に行ってきた&lt;/h1&gt;&#xA;&lt;p&gt;行ってきた。。&lt;/p&gt;&#xA;&lt;h2 id=&#34;前佛さんのお話&#34;&gt;前佛さんのお話&lt;/h2&gt;&#xA;&lt;p&gt;Dockerは仕様でコンテナが技術っていう話。&lt;/p&gt;&#xA;&lt;p&gt;開発環境と本番とかステージングの環境が違うっていう問題はコンテナで解決できますね。&lt;/p&gt;&#xA;&lt;p&gt;Dockerのイメージ・レイヤの概念のおかげで？ベースイメージを共有したり、イメージをコピーするのにも差分レイヤだけコピーするので早いとか。&lt;/p&gt;&#xA;&lt;h3 id=&#34;他のコンテナ技術との大きな違い&#34;&gt;他のコンテナ技術との大きな違い&lt;/h3&gt;&#xA;&lt;p&gt;今までに同様の技術はあったが、Dockerが大きく違うのは、DockerHubの存在。&lt;/p&gt;&#xA;&lt;p&gt;自分が作ったイメージはもちろん、他人が作ったものも共有(流用)できる。&lt;/p&gt;&#xA;&lt;p&gt;docker イメージの Github版。&lt;/p&gt;&#xA;&lt;h3 id=&#34;注意点&#34;&gt;注意点&lt;/h3&gt;&#xA;&lt;p&gt;ストレージドライバについては要件を考慮して決めましょう的な話。&lt;/p&gt;&#xA;&lt;p&gt;このあたりを読むと理解が深まるのでしょう。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://docs.docker.jp/engine/userguide/storagedriver/imagesandcontainers.html&#34;&gt;イメージ、コンテナ、ストレージ・ドライバの理解&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://docs.docker.jp/engine/userguide/storagedriver/selectadriver.html&#34;&gt;ストレージ・ドライバの選択&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;ecs関連のアップデート&#34;&gt;ECS関連のアップデート&lt;/h2&gt;&#xA;&lt;p&gt;Windows コンテナ も試せる Windows Server 2016 の AMIもでてるよ。とか。&lt;/p&gt;&#xA;&lt;h3 id=&#34;ecrについて&#34;&gt;ECRについて&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;フルマネージドDockerレジストリサービス&lt;/li&gt;&#xA;&lt;li&gt;イメージの容量に対して課金&lt;/li&gt;&#xA;&lt;li&gt;コンテナイメージは自動的に暗号化できる設定がある&lt;/li&gt;&#xA;&lt;li&gt;もちろんIAM使える&lt;/li&gt;&#xA;&lt;li&gt;ECRをCloudTrailで追跡可能&lt;/li&gt;&#xA;&lt;li&gt;CredentialHelper使ってね&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;業務上プライベートなDockerイメージを置く場所を作りたい場合なんかいいですね。&lt;/p&gt;&#xA;&lt;h2 id=&#34;社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた&#34;&gt;社内ビッグデータ基盤にバッチ用コンテナ環境を構築してみた&lt;/h2&gt;&#xA;&lt;p&gt;既存の触りたくないバッチ環境をそのままに、API Gateway、ECS、SQSなんかを活用してバッチ処理環境を改善した話。&lt;/p&gt;&#xA;&lt;p&gt;既存のサーバーには何も追加したくない、が、curlは基本的に入っているので処理スタートをcurlから始める。&lt;/p&gt;&#xA;&lt;p&gt;API Gateway を通じてリクエストを受け取り、ECS環境でバッチ処理、処理結果をSQSで通知みたいな。&lt;/p&gt;&#xA;&lt;p&gt;ボリュームはできるだけ使わない。ログは全てCloudWatchLogsに流す。&lt;/p&gt;&#xA;&lt;p&gt;すごい。&lt;/p&gt;&#xA;&lt;h2 id=&#34;nttとdocker&#34;&gt;NTTとDocker&lt;/h2&gt;&#xA;&lt;p&gt;ECSで複数コンテナ構成な場合、SpotFleetを活用するとコストを抑えられますって話。&lt;/p&gt;&#xA;&lt;h3 id=&#34;ecsを活用する上での勘所&#34;&gt;ECSを活用する上での勘所&lt;/h3&gt;&#xA;&lt;h4 id=&#34;データについて&#34;&gt;データについて&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;なるべくDocker Volumeを使わないで済む設計にする&#xA;&lt;ul&gt;&#xA;&lt;li&gt;いつでもインスタンスを捨てられるようにする設計&lt;/li&gt;&#xA;&lt;li&gt;永続DBデータはRDS,DynamoDBに、ファイルはS3に、ログはCloudWatchLogsを活用する&lt;/li&gt;&#xA;&lt;li&gt;awslogs ログドライバ便利です。積極的に使っていきましょう。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;URLパスの設計&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ALBを活用しましょう&lt;/li&gt;&#xA;&lt;li&gt;関連サービスのエントリポイントとかは環境変数で渡しましょう。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;セッションの管理&#xA;&lt;ul&gt;&#xA;&lt;li&gt;インスタンスにセッションを任せてしまうのは複数コンテナでサービスというのと相性悪い&lt;/li&gt;&#xA;&lt;li&gt;ElastiCache,Redis,Memcachedを活用しましょう。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;環境構築について&#34;&gt;環境構築について&lt;/h3&gt;&#xA;&lt;p&gt;書き洩らした。ECS-optimized AMIを使いましょうというのとSpotFleet活用しようみたいな&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

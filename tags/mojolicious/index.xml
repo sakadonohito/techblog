@@ -4,46 +4,16 @@
     <title>Mojolicious on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/mojolicious/</link>
     <description>Recent content in Mojolicious on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 16 Feb 2015 16:09:59 +0000</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/mojolicious/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Feb 2015 16:09:59 +0000</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/mojolicious/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
       <link>https://tech.k-zak.com/posts/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/challenge-fmxj/</guid>
-      <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
-https://github.com/seedcode/fmxj
-概要としては、FileMaker Server の XML公開を使う。
-Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。
-◆ハマった事：サンプルPHPの内容
-サンプルのPHPをよく読んでなかった。。。
-JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。
--db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに
-u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数
-ていうのがくっついてPHPにpostされてくる。
-それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。
-そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。
-なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。
-サンプルって事でいろいろハードコーディングされてるけど、気にしない。
-◆ハマった：Nginxの設定
-欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら
-WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
-これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
-しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
-※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても
-　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
-その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
-最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
-自分はUbuntuの環境なので、
- sudo apt-get install nginx-extras
- 後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
-more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
-を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
-これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
-いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</description>
+      <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;概要としては、FileMaker Server の XML公開を使う。&lt;/p&gt;&#xA;&lt;p&gt;Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。&lt;/p&gt;&#xA;&lt;p&gt;◆ハマった事：サンプルPHPの内容&lt;/p&gt;&#xA;&lt;p&gt;サンプルのPHPをよく読んでなかった。。。&lt;/p&gt;&#xA;&lt;p&gt;JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。&lt;/p&gt;&#xA;&lt;p&gt;-db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに&lt;/p&gt;&#xA;&lt;p&gt;u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数&lt;/p&gt;&#xA;&lt;p&gt;ていうのがくっついてPHPにpostされてくる。&lt;/p&gt;&#xA;&lt;p&gt;それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。&lt;/p&gt;&#xA;&lt;p&gt;そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。&lt;/p&gt;&#xA;&lt;p&gt;なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。&lt;/p&gt;&#xA;&lt;p&gt;サンプルって事でいろいろハードコーディングされてるけど、気にしない。&lt;/p&gt;&#xA;&lt;p&gt;◆ハマった：Nginxの設定&lt;/p&gt;&#xA;&lt;p&gt;欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら&lt;/p&gt;&#xA;&lt;p&gt;WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。&lt;/p&gt;&#xA;&lt;p&gt;これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。&lt;/p&gt;&#xA;&lt;p&gt;しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。&lt;/p&gt;&#xA;&lt;p&gt;※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても&lt;/p&gt;&#xA;&lt;p&gt;　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。&lt;/p&gt;&#xA;&lt;p&gt;その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。&lt;/p&gt;&#xA;&lt;p&gt;最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。&lt;/p&gt;&#xA;&lt;p&gt;自分はUbuntuの環境なので、&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;sudo apt-get install nginx-extras&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)&lt;/p&gt;&#xA;&lt;p&gt;more_set_headers ‘Content-Type: application/xml; charset=UTF8’;&lt;/p&gt;&#xA;&lt;p&gt;を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！&lt;/p&gt;&#xA;&lt;p&gt;これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

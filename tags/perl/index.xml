@@ -4,323 +4,100 @@
     <title>Perl on 開発メモてきな</title>
     <link>https://tech.k-zak.com/tags/perl/</link>
     <description>Recent content in Perl on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 28 Nov 2017 22:00:00 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/tags/perl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Nov 2017 22:00:00 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/perl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup OTRS</title>
       <link>https://tech.k-zak.com/posts/2017-11-28-otrs-install/</link>
       <pubDate>Tue, 28 Nov 2017 22:00:00 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-11-28-otrs-install/</guid>
-      <description>OTRSをインストールしてみた オープンソースのチケット管理システム的なもの主にサービス・サポート部署で使うようなもの
-セットアップ 環境はUbuntu16.04
-基本はダウンロードしてきて実行するだけ。 本体はWeb公開領域におけばいいかな?
-つまったところ  anynevを使おうとして詰まった、anyenvをシステムワイドに使う場合は割り切ってrootで設定する plenvをインストールすることはすんなりいくが、モジュールパスなどで使おうとすると詰まる  -&amp;gt;システムのperlを結局使うことに   cpanmでDBD::mysqlをインストールする場合、以下の事が必要  先にMySQLがインストールされていること Ubuntuの場合はlibmysqlclient-devがインストールされていること   というか/opt/otrs/bin/otrs.CheckModules.pl の実行で必要なモジュールが確認できる モジュールが依存するライブラリも存在するので合わせて入れること  感想 domainやメールの設定がちゃんとできていれば特に躓くこと無くセットアップできそう。 最終調整？セットアップがGUIのため、Ansibleでセットアップとかは難しそう。</description>
+      <description>&lt;h1 id=&#34;otrsをインストールしてみた&#34;&gt;OTRSをインストールしてみた&lt;/h1&gt;&#xA;&lt;p&gt;オープンソースのチケット管理システム的なもの主にサービス・サポート部署で使うようなもの&lt;/p&gt;&#xA;&lt;h2 id=&#34;セットアップ&#34;&gt;セットアップ&lt;/h2&gt;&#xA;&lt;p&gt;環境はUbuntu16.04&lt;/p&gt;&#xA;&lt;p&gt;基本はダウンロードしてきて実行するだけ。&#xA;本体はWeb公開領域におけばいいかな?&lt;/p&gt;&#xA;&lt;h3 id=&#34;つまったところ&#34;&gt;つまったところ&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;anynevを使おうとして詰まった、anyenvをシステムワイドに使う場合は割り切ってrootで設定する&lt;/li&gt;&#xA;&lt;li&gt;plenvをインストールすることはすんなりいくが、モジュールパスなどで使おうとすると詰まる&#xA;&lt;ul&gt;&#xA;&lt;li&gt;-&amp;gt;システムのperlを結局使うことに&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;cpanmでDBD::mysqlをインストールする場合、以下の事が必要&#xA;&lt;ul&gt;&#xA;&lt;li&gt;先にMySQLがインストールされていること&lt;/li&gt;&#xA;&lt;li&gt;Ubuntuの場合はlibmysqlclient-devがインストールされていること&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;というか/opt/otrs/bin/otrs.CheckModules.pl の実行で必要なモジュールが確認できる&lt;/li&gt;&#xA;&lt;li&gt;モジュールが依存するライブラリも存在するので合わせて入れること&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;感想&#34;&gt;感想&lt;/h3&gt;&#xA;&lt;p&gt;domainやメールの設定がちゃんとできていれば特に躓くこと無くセットアップできそう。&#xA;最終調整？セットアップがGUIのため、Ansibleでセットアップとかは難しそう。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</title>
       <link>https://tech.k-zak.com/posts/challenge-fmxj/</link>
       <pubDate>Mon, 16 Feb 2015 16:09:59 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/challenge-fmxj/</guid>
-      <description>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。
-https://github.com/seedcode/fmxj
-概要としては、FileMaker Server の XML公開を使う。
-Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。
-◆ハマった事：サンプルPHPの内容
-サンプルのPHPをよく読んでなかった。。。
-JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。
--db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに
-u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数
-ていうのがくっついてPHPにpostされてくる。
-それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。
-そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。
-なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。
-サンプルって事でいろいろハードコーディングされてるけど、気にしない。
-◆ハマった：Nginxの設定
-欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら
-WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。
-これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。
-しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。
-※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても
-　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。
-その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。
-最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。
-自分はUbuntuの環境なので、
- sudo apt-get install nginx-extras
- 後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)
-more_set_headers ‘Content-Type: application/xml; charset=UTF8’;
-を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！
-これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。
-いろいろとしょーもないミスを沢山した。CGIでサクッと試すだけにしておけば今頃はPythonもRubyも試せてかもしれないのに、残念でした。</description>
+      <description>&lt;p&gt;先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/seedcode/fmxj&#34;&gt;https://github.com/seedcode/fmxj&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;概要としては、FileMaker Server の XML公開を使う。&lt;/p&gt;&#xA;&lt;p&gt;Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。&lt;/p&gt;&#xA;&lt;p&gt;◆ハマった事：サンプルPHPの内容&lt;/p&gt;&#xA;&lt;p&gt;サンプルのPHPをよく読んでなかった。。。&lt;/p&gt;&#xA;&lt;p&gt;JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。&lt;/p&gt;&#xA;&lt;p&gt;-db=dbname&amp;amp;-lay=layname&amp;amp;-query=(q1)&amp;amp;-q1=Status&amp;amp;-q1.value=Vendor&amp;amp;-findquery みたいな通常のクエリデータに&lt;/p&gt;&#xA;&lt;p&gt;u=undefined&amp;amp;p=undefined&amp;amp;l=コンテンツの文字数&lt;/p&gt;&#xA;&lt;p&gt;ていうのがくっついてPHPにpostされてくる。&lt;/p&gt;&#xA;&lt;p&gt;それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。&lt;/p&gt;&#xA;&lt;p&gt;そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。&lt;/p&gt;&#xA;&lt;p&gt;なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。&lt;/p&gt;&#xA;&lt;p&gt;サンプルって事でいろいろハードコーディングされてるけど、気にしない。&lt;/p&gt;&#xA;&lt;p&gt;◆ハマった：Nginxの設定&lt;/p&gt;&#xA;&lt;p&gt;欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら&lt;/p&gt;&#xA;&lt;p&gt;WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。&lt;/p&gt;&#xA;&lt;p&gt;これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。&lt;/p&gt;&#xA;&lt;p&gt;しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。&lt;/p&gt;&#xA;&lt;p&gt;※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても&lt;/p&gt;&#xA;&lt;p&gt;　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。&lt;/p&gt;&#xA;&lt;p&gt;その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。&lt;/p&gt;&#xA;&lt;p&gt;最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。&lt;/p&gt;&#xA;&lt;p&gt;自分はUbuntuの環境なので、&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;sudo apt-get install nginx-extras&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)&lt;/p&gt;&#xA;&lt;p&gt;more_set_headers ‘Content-Type: application/xml; charset=UTF8’;&lt;/p&gt;&#xA;&lt;p&gt;を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！&lt;/p&gt;&#xA;&lt;p&gt;これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Ubuntu14.04 LTS でNginx FasCGI Perl</title>
       <link>https://tech.k-zak.com/posts/perl-cgi/</link>
       <pubDate>Mon, 05 Jan 2015 15:51:41 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/perl-cgi/</guid>
-      <description>古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ
-最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。
-502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。
-結局、
-sudo apt-get install fcgiwrap  ※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも
-/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで
-sudo sysv-rc-conf on fcgiwrap sudo service fcgiwrap start  でFastCGIが動くようになる。
-最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、
-参考：http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/
-これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。
-Nginxの設定はlocationディレクティブだけ抜粋すると
-#拡張子が.plで終わるリクエストの場合 location ~ \.pl$ { try_files $uri = 404; gzip off; #インストールしたfcgiwrapのソケットファイルのパス fastcgi_pass unix:/var/run/fcgiwrap.socket; fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; #/etc/nginx/fastcgi_paramsの内容を読み込む。 include fastcgi_params; }  で
-sudo service nginx restart  これで適用にperl書いて(シェバンはもちろん#!/usr/bin/env perl ですよ)試したら動きました。
-自分はplenvを使っているのですが、システムのperl読み込まれてライブラリねーぞゴルァなった事があった。謎。
-plenvの場合、require syscall.ph とかあると駄目っぽい？
-この記事書いてる時に見つけた他の方のWeb。先にここを見つけたかった。。。
-参考：http://ekzemplaro.org/data_base/doc/web_server/nginx/</description>
+      <description>&lt;p&gt;古いPerlのサンプルを参考に復習したくなって、やむなく自分の開発環境にFastCGI環境をセットアップ&lt;/p&gt;&#xA;&lt;p&gt;最初、コードが間違っているのに気づかず3日ほどあれこれ調べまわっても解決せず時間を浪費した。&lt;/p&gt;&#xA;&lt;p&gt;502 bad gatewayのエラーでて、ログを見ると Cannot execute script って出てて、調べても分からんし、権限は間違ってるはず無いしでずっとつまずいてた。&lt;/p&gt;&#xA;&lt;p&gt;結局、&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;sudo apt-get install fcgiwrap&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;※もしかしたら libgcgi-perlも必要？でもなんか下記のfastcgi-wrapper.plを使う場合に必要なやつかも&lt;br&gt;&#xA;/etc/init.d/fcgiwrap のFCGI_USERあたりを動かしたいユーザーやグループに変更。※お好みで&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;sudo sysv-rc-conf on fcgiwrap&#xA;sudo service fcgiwrap start&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;でFastCGIが動くようになる。&lt;br&gt;&#xA;最初、fastcgi-wrapper.plを使う場合を参考にしてたけど、&lt;br&gt;&#xA;参考：&lt;a href=&#34;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&#34;&gt;http://ubuntu.flowconsult.at/linux/nginx-perl-fastcgi-installation-ubuntu-linux-14-04/&lt;/a&gt;&lt;br&gt;&#xA;これだとなんかPerlのみっぽかったしTCPだったので、Unixソケットで通信にしたかったのとpythonやRubyでも動かしたかったのでfcgiwrapを使うようにした。&lt;/p&gt;&#xA;&lt;p&gt;Nginxの設定はlocationディレクティブだけ抜粋すると&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;#拡張子が.plで終わるリクエストの場合&#xA;location ~ \.pl$ {&#xA;    try_files $uri = 404;&#xA;    gzip off;&#xA;    #インストールしたfcgiwrapのソケットファイルのパス&#xA;    fastcgi_pass unix:/var/run/fcgiwrap.socket;&#xA;    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;&#xA;    #/etc/nginx/fastcgi_paramsの内容を読み込む。&#xA;    include fastcgi_params;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;で&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2014年を振り返る サーバーサイドプログラミング</title>
       <link>https://tech.k-zak.com/posts/milestone-serverside/</link>
       <pubDate>Tue, 30 Dec 2014 09:43:52 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/milestone-serverside/</guid>
-      <description>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る
-まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。
-Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。
-Perl,Python,Rubyについては全然触れなくてフラストレーション。
-PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。
-本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。
-家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。
-PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は
-枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。
-Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</description>
+      <description>&lt;p&gt;サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る&lt;/p&gt;&#xA;&lt;p&gt;まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。&lt;/p&gt;&#xA;&lt;p&gt;Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。&lt;/p&gt;&#xA;&lt;p&gt;Perl,Python,Rubyについては全然触れなくてフラストレーション。&lt;/p&gt;&#xA;&lt;p&gt;PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。&lt;/p&gt;&#xA;&lt;p&gt;本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。&lt;/p&gt;&#xA;&lt;p&gt;家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。&lt;/p&gt;&#xA;&lt;p&gt;PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は&lt;/p&gt;&#xA;&lt;p&gt;枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。&lt;/p&gt;&#xA;&lt;p&gt;Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>パスカルのなんとか</title>
       <link>https://tech.k-zak.com/posts/pascal-logic/</link>
       <pubDate>Sun, 22 Dec 2013 18:32:30 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/pascal-logic/</guid>
-      <description>今回は、パスカルの三角定理？みたいなやつ
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-Rubyはもっとシンプルな書き方があるのかもしれない。</description>
+      <description>&lt;p&gt;今回は、パスカルの三角定理？みたいなやつ&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyはもっとシンプルな書き方があるのかもしれない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ06</title>
       <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 15:43:32 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
-      <description>リハビリその3
-今回は、バブルソート
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-習熟度が低いのでPerlとPHPが同じ内容になる。
-pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。
-すんなり1つのリストだけでできないものか……</description>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;&#xA;&lt;p&gt;今回は、バブルソート&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;習熟度が低いのでPerlとPHPが同じ内容になる。&lt;/p&gt;&#xA;&lt;p&gt;pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。&lt;/p&gt;&#xA;&lt;p&gt;すんなり1つのリストだけでできないものか……&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ05</title>
       <link>https://tech.k-zak.com/posts/coding-memo05/</link>
       <pubDate>Sun, 08 Dec 2013 11:47:50 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo05/</guid>
-      <description>昨日の文字チェックをPHP以外で試す。
-与えられた文字列が全てユニークな文字で構成されているかのチェック。
-PHPは前回やっているので、今回は掲載無し。
-Perlでは、
-Pythonでは、
-Rubyでは、
-文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。
-配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。
-pythonが一番スッキリしているようだけど、やっぱりRubyかな</description>
+      <description>&lt;p&gt;昨日の文字チェックをPHP以外で試す。&lt;/p&gt;&#xA;&lt;p&gt;与えられた文字列が全てユニークな文字で構成されているかのチェック。&lt;/p&gt;&#xA;&lt;p&gt;PHPは前回やっているので、今回は掲載無し。&lt;/p&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;文字列のまま操作するなら指定の文字が同じ位置にあるのか先頭から検索と最後尾から検索でインデックスが同じか調べる。&lt;/p&gt;&#xA;&lt;p&gt;配列で操作するなら、重複不可の配列を作って要素数が変わってないか調べる。&lt;/p&gt;&#xA;&lt;p&gt;pythonが一番スッキリしているようだけど、やっぱりRubyかな&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ03</title>
       <link>https://tech.k-zak.com/posts/coding-memo03/</link>
       <pubDate>Fri, 06 Dec 2013 15:56:43 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo03/</guid>
-      <description>リハビリその3
-今回は、バブルソート
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-Rubyが一番スマートかな</description>
+      <description>&lt;p&gt;リハビリその3&lt;/p&gt;&#xA;&lt;p&gt;今回は、バブルソート&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyが一番スマートかな&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ02</title>
       <link>https://tech.k-zak.com/posts/coding-memo02/</link>
       <pubDate>Fri, 06 Dec 2013 15:27:55 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo02/</guid>
-      <description>リハビリその２
-今回は、ファイル読み込みとその時の簡単な例外処理
-読み込むテキストファイルの内容は以下の通り、
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-うるう年の判定処理は適当。pythonが一番しっくりくるかな。
-rubyはreturnを省略した場合に最後に評価された値がreturnされるんだけど、pythonもだと勘違いしててハマった。</description>
+      <description>&lt;p&gt;リハビリその２&lt;/p&gt;&#xA;&lt;p&gt;今回は、ファイル読み込みとその時の簡単な例外処理&lt;/p&gt;&#xA;&lt;p&gt;読み込むテキストファイルの内容は以下の通り、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;うるう年の判定処理は適当。pythonが一番しっくりくるかな。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コーディングリハビリ01</title>
       <link>https://tech.k-zak.com/posts/coding-memo01/</link>
       <pubDate>Fri, 06 Dec 2013 14:34:06 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/coding-memo01/</guid>
-      <description>一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。
-paizaなんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。
-という事でリハビリ。
-今回は標準入力。
-PHPでは、
-Perlでは、
-Pythonでは、
-Rubyでは、
-標準入力が「gets」だけで取れるRubyはダンディ。</description>
+      <description>&lt;p&gt;一定時間未満の習得状態だと、日々使ってないとすぐ書けなくなりますね。プログラミング言語というのは。&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;paiza&lt;!-- raw HTML omitted --&gt;なんかの超初級問題も関数のリファレンスとか見ながらじゃないと全く解けない。&lt;/p&gt;&#xA;&lt;p&gt;という事でリハビリ。&lt;/p&gt;&#xA;&lt;p&gt;今回は標準入力。&lt;/p&gt;&#xA;&lt;p&gt;PHPでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Perlでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Pythonでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Rubyでは、&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;標準入力が「gets」だけで取れるRubyはダンディ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Perlの動作環境？について</title>
       <link>https://tech.k-zak.com/posts/study-perl/</link>
       <pubDate>Sun, 20 Jan 2013 15:25:11 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/study-perl/</guid>
-      <description>長らく更新してませんでしたが、その間にFlask試したり、最近なんかは
-ちょっとだけVisual C++を初心者本見ながら動かしてました。
-C++分かんない。
-さて、PerlをVPS上で動かす＆Mojolicious::Liteで作成中の簡単なFAQアプリの為、Perlを
-どうやって動かすのか、簡単に試したのでまとめてみた。(まとまってないし解説にもなってない)
-perlを使えるように設定する
-１，Perlを入れましょう。既に入っている場合はバージョンを確認してできるだけ偶数ナンバーの最新版を入れましょう
-※奇数番号のバージョンは実験要素が強いと聞いたことがありますのでperl-14.xが良いかと
-※perl -v でバージョンの確認ができます。
-２，Perlbrewを入れましょうバージョンを切り替えたりライブラリを追加したりが楽になるそうです。
-３，ターミナルベースで動かす
-ファイルの拡張子を「.pl」とかにして内容はprint “Hello,World\n”;とか書いて
-ターミナルで「perl aaa.pl」とかやると起動して処理実行しますね。
-厳密にはファイルエンコードはUTF-8にしましょうとか、ソースの行頭にお決まりの書き方をするとかありますけど
-その内容については省略するので他で調べてください。
-４，ApacheにCGIの設定して動かす
-特になんの設定もせずPerlファイルをWeb公開領域に置いてもソースをそのまま画面に出力したり、
-エラーになったりします。
-・ApacheにCGIの設定を書いていない
-・作成したPerlファイルに実行権限がついていない
-などが主な理由です。権限についてはchmodコマンドで実行権限を付与してください。
-Apacheの設定ファイル「httpd.conf」もしくはVirtual-Hostの設定をしているなら「httpd-vhost.conf」を
-開いて設定を記述します。
-———-
-&amp;lt;Directory “/virtualhostdirectory/hoge”&amp;gt;
-AddHandler cgi-script .cgi .pl .py .rb
-Options All
-AllowOverride All
-Order allow,deny
-Allow from all
-———-
-こんな感じで。「AddHandler cgi-script」に対象拡張子を連ねる感じで記述すると動くようになります。
-※当然LoadModuleのところでmod_cgiを読み込んでいるのが前提です。
-※上の例では、Perl以外にもRubyやPythonもCGiで動く設定にしてますのん。
-５，Apacheにmod_perlの設定をして動かす
-まず自分の使っているApacheの拡張モジュール置き場にmod_perl.soがいる確認。自分の場合はMBP 10.8の
-組込み?のApacheを使っているので/usr/libexec/apache2/mod_perl.soを確認。いた!
-所定の場所にファイルがない人は別途調べてファイルを入手なりコンパイルなりしてください。
-※ URL:http://perl.apache.org/download/index.html
-・httpd.confのLoadModuleが沢山記述されているあたりの最後尾に「LoadModule perl_module /usr/libexec/apache2/mod_perl.so」
-を追記
-・適当なとこに下記の記述※自分の場合は上記のvirtualhostディレクトリ内に追記
-・上記の設定で既に普通のCGIでPerlが動くようになってしまっているのでPerl関係拡張子を除外しておくこと!
-———-
-&amp;lt;FilesMatch “.(pl|cgi)$”&amp;gt;
-SetHandler perl-script
-PerlHandler ModPerl::Registry</description>
+      <description>&lt;p&gt;長らく更新してませんでしたが、その間にFlask試したり、最近なんかは&lt;/p&gt;&#xA;&lt;p&gt;ちょっとだけVisual C++を初心者本見ながら動かしてました。&lt;/p&gt;&#xA;&lt;p&gt;C++分かんない。&lt;/p&gt;&#xA;&lt;p&gt;さて、PerlをVPS上で動かす＆Mojolicious::Liteで作成中の簡単なFAQアプリの為、Perlを&lt;/p&gt;&#xA;&lt;p&gt;どうやって動かすのか、簡単に試したのでまとめてみた。(まとまってないし解説にもなってない)&lt;/p&gt;&#xA;&lt;p&gt;perlを使えるように設定する&lt;/p&gt;&#xA;&lt;p&gt;１，Perlを入れましょう。既に入っている場合はバージョンを確認してできるだけ偶数ナンバーの最新版を入れましょう&lt;/p&gt;&#xA;&lt;p&gt;※奇数番号のバージョンは実験要素が強いと聞いたことがありますのでperl-14.xが良いかと&lt;/p&gt;&#xA;&lt;p&gt;※perl -v でバージョンの確認ができます。&lt;/p&gt;&#xA;&lt;p&gt;２，Perlbrewを入れましょうバージョンを切り替えたりライブラリを追加したりが楽になるそうです。&lt;/p&gt;&#xA;&lt;p&gt;３，ターミナルベースで動かす&lt;/p&gt;&#xA;&lt;p&gt;ファイルの拡張子を「.pl」とかにして内容はprint “Hello,World\n”;とか書いて&lt;/p&gt;&#xA;&lt;p&gt;ターミナルで「perl aaa.pl」とかやると起動して処理実行しますね。&lt;/p&gt;&#xA;&lt;p&gt;厳密にはファイルエンコードはUTF-8にしましょうとか、ソースの行頭にお決まりの書き方をするとかありますけど&lt;/p&gt;&#xA;&lt;p&gt;その内容については省略するので他で調べてください。&lt;/p&gt;&#xA;&lt;p&gt;４，ApacheにCGIの設定して動かす&lt;/p&gt;&#xA;&lt;p&gt;特になんの設定もせずPerlファイルをWeb公開領域に置いてもソースをそのまま画面に出力したり、&lt;/p&gt;&#xA;&lt;p&gt;エラーになったりします。&lt;/p&gt;&#xA;&lt;p&gt;・ApacheにCGIの設定を書いていない&lt;/p&gt;&#xA;&lt;p&gt;・作成したPerlファイルに実行権限がついていない&lt;/p&gt;&#xA;&lt;p&gt;などが主な理由です。権限についてはchmodコマンドで実行権限を付与してください。&lt;/p&gt;&#xA;&lt;p&gt;Apacheの設定ファイル「httpd.conf」もしくはVirtual-Hostの設定をしているなら「httpd-vhost.conf」を&lt;/p&gt;&#xA;&lt;p&gt;開いて設定を記述します。&lt;/p&gt;&#xA;&lt;p&gt;———-&lt;/p&gt;&#xA;&lt;p&gt;&amp;lt;Directory “/virtualhostdirectory/hoge”&amp;gt;&lt;/p&gt;&#xA;&lt;p&gt;AddHandler cgi-script .cgi .pl .py .rb&lt;/p&gt;&#xA;&lt;p&gt;Options All&lt;/p&gt;&#xA;&lt;p&gt;AllowOverride All&lt;/p&gt;&#xA;&lt;p&gt;Order allow,deny&lt;/p&gt;&#xA;&lt;p&gt;Allow from all&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;———-&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>フレームワークちょいちょい</title>
       <link>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</link>
       <pubDate>Sun, 21 Oct 2012 14:00:56 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/scriptlanguage-frameworks/</guid>
-      <description>ここ最近はフレームワークを少し触ってる。
-Perl：Mojolicious::Lite
-→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に
-各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/
-layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。
-このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。
- Ruby：Sinatra
-→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか
-ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。
-これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。
- PHP：FuelPHP
-→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。
-これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや
-コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは
-public/assetsて階層に配置するんですね。
- PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。
-OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート
-出来ないとかで……</description>
+      <description>&lt;p&gt;ここ最近はフレームワークを少し触ってる。&lt;/p&gt;&#xA;&lt;p&gt;Perl：Mojolicious::Lite&lt;/p&gt;&#xA;&lt;p&gt;→DBをFileMakerで簡単な検索をするものを作成。Liteの場合は？APPPATH/templates直下に&lt;/p&gt;&#xA;&lt;p&gt;各ビューテンプレートファイルを置く。ベースとするレイアウトはAPPPATH/templates/&lt;/p&gt;&#xA;&lt;p&gt;layouts直下にdefault.html.epて名前で配置する。静的ファイルはAPPPATH/public配下に配置する。&lt;/p&gt;&#xA;&lt;p&gt;このあたりの説明でドンピシャ説明しているのが見つからなくて、なかなかつまづいた。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Ruby：Sinatra&lt;/p&gt;&#xA;&lt;p&gt;→Hamlの書き方とか忘れてて大苦戦。あとなんかサーバー再起動しないと変更が摘要されない感じとか&lt;/p&gt;&#xA;&lt;p&gt;ちょっと苦労。Mojolicious::Liteでやったのと同じ事をSinatraでも実践。という訳でDBはFileMaker。&lt;/p&gt;&#xA;&lt;p&gt;これは前に一度やっているのでコードをちょっと変える程度だったのにとにかく上記の不可思議で苦戦。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;PHP：FuelPHP&lt;/p&gt;&#xA;&lt;p&gt;→最初はSilexで挑戦してたんだけど、意味不明過ぎて挫折。そんでシンプルそうなFuelに手を出す。&lt;/p&gt;&#xA;&lt;p&gt;これもDBをFileMakerで簡単な一覧表示検索という上の２つと同じ事をやるものを作成。たいぽや&lt;/p&gt;&#xA;&lt;p&gt;コンテキストでちょいちょい間違えて詰まったけど、割と簡単だった。FuelPHPの時は静的ファイルは&lt;/p&gt;&#xA;&lt;p&gt;public/assetsて階層に配置するんですね。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;PythonのFlaskに手を出す予定だったのに時間が足りなかったから来週はFlaskかな。&lt;/p&gt;&#xA;&lt;p&gt;OS再インストールしたせいだと思うけど、前に作ったDjangoが動かなくなってた。モジュールがインポート&lt;/p&gt;&#xA;&lt;p&gt;出来ないとかで……&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Perl勉強してるメモ１</title>
       <link>https://tech.k-zak.com/posts/study-perl/</link>
       <pubDate>Tue, 09 Oct 2012 05:02:19 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/study-perl/</guid>
-      <description>何故か最近Perlの勉強を始めた。
-気になった箇所のまとめ、
-■変数と型
-・普通(単一)のデータはスカラー変数で扱う：$val = ‘Hello’;
-・配列は「$」の代わりに「＠」でも中の要素を扱う時は「$」でインデックスの指定は[]
-：@array = (1,2,3,4,5); print $array[0] # 1
-・ハッシュは「$」の代わりに「%」でも中の要素を扱う時は「$」で指定は{}
-：%hash = (‘a’=&amp;gt;’1′,’b’=&amp;gt;’2’); print $hash{a} # 1
-■変数スコープ
-・{}ブロックでスコープは仕切られている。そのため変数はmyを使ってスコープを意識した変数宣言を
-すると良いとされている。
-・ファイルスコープは実は１ファイル１パッケージ的な扱いでパッケージスコープ。
-・例えばファイル直下の位置で$cgi = CGI-&amp;gt;new; とかやっておけば、subを呼ぶ時に毎回$cgiを
-引数として渡す必要はない。
-参考 Gist：https://gist.github.com/3855891
- ■リファレンス
-・C言語で言うところのポインタ？配列やハッシュをサブルーチンに渡す際に変数のリファレンスを
-渡す。そうしないと呼び出し先では１つの引数データに連結されてしまっているのでうまく復元できない。
-・リファレンスで渡された値をsubスコープ内の新たな変数に入れてデリファレンスして編集すると、
-元の変数の値が変わっている。デリファレンスした値を新たな変数に入れて編集した場合は影響しない。
-参考Gist：https://gist.github.com/3850245
-https://gist.github.com/3856617
- ■ファイルの扱いなど
-・use IO=&amp;gt;’utf8′; としておくとUTF-8でファイルIOで扱う。
-・ファイルハンドルはレキシカルスコープ変数を使うようにしましょう。
-・またopen関数は3引数の形で使いましょう。
-open(my $fh,&#39;&amp;lt;‘,$file_path);
- ■モジュールについて
-・use strict;と use warnings; はワンライナー(or実験)以外では必ずつけましょう。
-・use feature ‘say’;とするとsay関数が使える。これはprint関数+改行らしい。便利。
-・自作外部ファイル、PHPでいうところのrequire用ファイルのようなファイルは拡張子を
-「.pm」にする。
- ■他
-・qq や qw は便利なので積極的に使って行きましょう。
-例：qq({name}”/&amp;gt;);
-て感じで使える。</description>
+      <description>&lt;p&gt;何故か最近Perlの勉強を始めた。&lt;/p&gt;&#xA;&lt;p&gt;気になった箇所のまとめ、&lt;/p&gt;&#xA;&lt;p&gt;■変数と型&lt;/p&gt;&#xA;&lt;p&gt;・普通(単一)のデータはスカラー変数で扱う：$val = ‘Hello’;&lt;/p&gt;&#xA;&lt;p&gt;・配列は「$」の代わりに「＠」でも中の要素を扱う時は「$」でインデックスの指定は[]&lt;/p&gt;&#xA;&lt;p&gt;：@array = (1,2,3,4,5); print $array[0] # 1&lt;/p&gt;&#xA;&lt;p&gt;・ハッシュは「$」の代わりに「%」でも中の要素を扱う時は「$」で指定は{}&lt;/p&gt;&#xA;&lt;p&gt;：%hash = (‘a’=&amp;gt;’1′,’b’=&amp;gt;’2’); print $hash{a} # 1&lt;/p&gt;&#xA;&lt;p&gt;■変数スコープ&lt;/p&gt;&#xA;&lt;p&gt;・{}ブロックでスコープは仕切られている。そのため変数はmyを使ってスコープを意識した変数宣言を&lt;/p&gt;&#xA;&lt;p&gt;すると良いとされている。&lt;/p&gt;&#xA;&lt;p&gt;・ファイルスコープは実は１ファイル１パッケージ的な扱いでパッケージスコープ。&lt;/p&gt;&#xA;&lt;p&gt;・例えばファイル直下の位置で$cgi = CGI-&amp;gt;new; とかやっておけば、subを呼ぶ時に毎回$cgiを&lt;/p&gt;&#xA;&lt;p&gt;引数として渡す必要はない。&lt;/p&gt;&#xA;&lt;p&gt;参考 Gist：&lt;a href=&#34;https://gist.github.com/3855891&#34; title=&#34;https://gist.github.com/3855891&#34;&gt;https://gist.github.com/3855891&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;■リファレンス&lt;/p&gt;&#xA;&lt;p&gt;・C言語で言うところのポインタ？配列やハッシュをサブルーチンに渡す際に変数のリファレンスを&lt;/p&gt;&#xA;&lt;p&gt;渡す。そうしないと呼び出し先では１つの引数データに連結されてしまっているのでうまく復元できない。&lt;/p&gt;&#xA;&lt;p&gt;・リファレンスで渡された値をsubスコープ内の新たな変数に入れてデリファレンスして編集すると、&lt;/p&gt;&#xA;&lt;p&gt;元の変数の値が変わっている。デリファレンスした値を新たな変数に入れて編集した場合は影響しない。&lt;/p&gt;&#xA;&lt;p&gt;参考Gist：&lt;a href=&#34;https://gist.github.com/3850245&#34; title=&#34;https://gist.github.com/3850245&#34;&gt;https://gist.github.com/3850245&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://gist.github.com/3856617&#34; title=&#34;https://gist.github.com/3856617&#34;&gt;https://gist.github.com/3856617&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;■ファイルの扱いなど&lt;/p&gt;&#xA;&lt;p&gt;・use IO=&amp;gt;’utf8′; としておくとUTF-8でファイルIOで扱う。&lt;/p&gt;&#xA;&lt;p&gt;・ファイルハンドルはレキシカルスコープ変数を使うようにしましょう。&lt;/p&gt;&#xA;&lt;p&gt;・またopen関数は3引数の形で使いましょう。&lt;/p&gt;&#xA;&lt;p&gt;open(my $fh,&amp;rsquo;&amp;lt;‘,$file_path);&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;■モジュールについて&lt;/p&gt;&#xA;&lt;p&gt;・use strict;と use warnings; はワンライナー(or実験)以外では必ずつけましょう。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

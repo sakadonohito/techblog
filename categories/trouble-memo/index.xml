@@ -1,139 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>trouble-memo on 開発メモてきな</title>
+    <title>Trouble-Memo on 開発メモてきな</title>
     <link>https://tech.k-zak.com/categories/trouble-memo/</link>
-    <description>Recent content in trouble-memo on 開発メモてきな</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Trouble-Memo on 開発メモてきな</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 29 Dec 2017 14:36:17 +0900</lastBuildDate><atom:link href="https://tech.k-zak.com/categories/trouble-memo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Dec 2017 14:36:17 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/categories/trouble-memo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mac Account Broken</title>
       <link>https://tech.k-zak.com/posts/2017-12-29-mac-account/</link>
       <pubDate>Fri, 29 Dec 2017 14:36:17 +0900</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/2017-12-29-mac-account/</guid>
-      <description>Macのデータ移行時のトラブル  Macデータ移行した アカウントの権限を壊してしまった。  データ移行した TimeMachineを使うと時間はかかるが何も考えなくても諸々移行できるので便利。用途不定になってしまったHDD(1TB)があったのでそれを新たにTimeMachine用にすることにした
-アカウントの権限を壊してしまった。 データ移行のついでにアカウント名やアカウント情報を変更したら、管理者権限が外れてしまった。まじ焦った。 権限変更やアカウント情報変更用アカウントを用意してそのアカウントでログインして対象アカウントの情報を変更すべき。
-管理者権限が外れてしまったアカウントを復旧させる方法  シングルユーザーモードで起動する(cmd+s押しっぱなし)  rootユーザーでのターミナル操作になる   /sbin/mount -uw / を実行してディスクへの書込許可状態にする rm /var/db/.AppleSetupDoneを実行してセットアップ完了フラグファイルを削除 reboot実行  上記で最初のセットアップウィザードが始まるので、そこで新規に管理者権限を作成する
-その後はその新規管理者権限でログインし、権限が壊れてしまった対象アカウントを再度管理者に設定する。
-これでめでたしめでたし。</description>
+      <description>&lt;h1 id=&#34;macのデータ移行時のトラブル&#34;&gt;Macのデータ移行時のトラブル&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Macデータ移行した&lt;/li&gt;&#xA;&lt;li&gt;アカウントの権限を壊してしまった。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;データ移行した&#34;&gt;データ移行した&lt;/h3&gt;&#xA;&lt;p&gt;TimeMachineを使うと時間はかかるが何も考えなくても諸々移行できるので便利。用途不定になってしまったHDD(1TB)があったのでそれを新たにTimeMachine用にすることにした&lt;/p&gt;&#xA;&lt;h3 id=&#34;アカウントの権限を壊してしまった&#34;&gt;アカウントの権限を壊してしまった。&lt;/h3&gt;&#xA;&lt;p&gt;データ移行のついでにアカウント名やアカウント情報を変更したら、管理者権限が外れてしまった。まじ焦った。&#xA;権限変更やアカウント情報変更用アカウントを用意してそのアカウントでログインして対象アカウントの情報を変更すべき。&lt;/p&gt;&#xA;&lt;h4 id=&#34;管理者権限が外れてしまったアカウントを復旧させる方法&#34;&gt;管理者権限が外れてしまったアカウントを復旧させる方法&lt;/h4&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;シングルユーザーモードで起動する(cmd+s押しっぱなし)&#xA;&lt;ul&gt;&#xA;&lt;li&gt;rootユーザーでのターミナル操作になる&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;/sbin/mount -uw / &lt;/code&gt;を実行してディスクへの書込許可状態にする&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;rm /var/db/.AppleSetupDone&lt;/code&gt;を実行してセットアップ完了フラグファイルを削除&lt;/li&gt;&#xA;&lt;li&gt;reboot実行&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;上記で最初のセットアップウィザードが始まるので、そこで新規に管理者権限を作成する&lt;/p&gt;&#xA;&lt;p&gt;その後はその新規管理者権限でログインし、権限が壊れてしまった対象アカウントを再度管理者に設定する。&lt;/p&gt;&#xA;&lt;p&gt;これでめでたしめでたし。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vagrant、最終的にはEC2にAnsibleでWordPressを構築を試みる2</title>
       <link>https://tech.k-zak.com/posts/challenge-ansible/</link>
       <pubDate>Sun, 07 Sep 2014 17:28:17 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/challenge-ansible/</guid>
-      <description>・botoが使えないってエラーになる。
-　→次のURLで解決 https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk
-つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか
-　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか
-・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを
-　使ったら成功した。なんで？
-・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。
-・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。
-　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。
-　なので「NameVirtuakHost *:80」の記述があれば、その後&amp;lt;virtualhost *:80&amp;gt;VirtualHostディレクティブが
-　ないといけない。
-もしも&amp;lt;virtualhost {{hostname}}:80&amp;gt;みたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。
-整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。
-・Ubuntuに入ってるApache2のVirtualHostの有効化無効化
-　sites-availableディレクトリにVirtualHost設定書く
-　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化
-・Hostの指定が足りない！？
-Could not reliably determine the server’s fully qualified domain name, using for ServerName
-こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った
-　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、
-　そこに{{hostname}}.localを追記する処理追加
-・Ansible用MySQLの設定追加
-Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)
-host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)
-リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要
-・netstat -ant で現在使ってるポートとか観れる
-　(適当な解釈、後で意味をちゃんと調べる…かも)
-・MySQLが外部からつながらぬ
-webとdbをVagrantで分けて作ったら、mysqlコマンドではwebサーバーから接続できるのに、PHPからだと駄目っぽい。
-my.cnfの[mysqld]のところに「skip-name-resolve」を追加した。
-これは、名前の解決をしないという設定。Vagrantでプライベートネットワークでやっているので、IP直接指定で行っているのでこれでいいや。
-・ApacheのRewriteの設定漏れ
-UbuntuのApache2.2でRewriteをa2enmodで使えるようにしたはずなのに、動かないな〜って思ってたら、confの設定漏れてた。
-　AllowOverride をAllにしなかった。。。</description>
+      <description>&lt;p&gt;・botoが使えないってエラーになる。&lt;/p&gt;&#xA;&lt;p&gt;　→次のURLで解決 &lt;a href=&#34;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&#34;&gt;https://groups.google.com/forum/#!topic/ansible-project/ftlmfIC1DHk&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;つまり、ansibleがなぜか現在動いているバージョンのライブラリを参照出来ないっぽいのでこれまたなぜか&lt;/p&gt;&#xA;&lt;p&gt;　　hostsにどこのpythonを使っているのか書いてあげる必要があったということ。なぜansible.cfgではないのか&lt;/p&gt;&#xA;&lt;p&gt;・契約アカウント？で試してたらCredentialエラーが出てて、試しにIAMアカウント作成してそのIAMアカウントを&lt;/p&gt;&#xA;&lt;p&gt;　使ったら成功した。なんで？&lt;/p&gt;&#xA;&lt;p&gt;・ApacheのVHOSTのRootディレクトリが700だったので403エラーで表示されなかった。755に変更して解決。&lt;/p&gt;&#xA;&lt;p&gt;・VirtualHostの設定を行う場合、どこかに「NameVirtualHost」の記述が必要。&lt;/p&gt;&#xA;&lt;p&gt;　というより、NameVirtualHostの記述内容とその後のVirtualHostディレクティブの内容に整合性がないといけない。&lt;/p&gt;&#xA;&lt;p&gt;　なので「NameVirtuakHost *:80」の記述があれば、その後&amp;lt;virtualhost *:80&amp;gt;VirtualHostディレクティブが&lt;/p&gt;&#xA;&lt;p&gt;　ないといけない。&lt;/p&gt;&#xA;&lt;p&gt;もしも&lt;!-- raw HTML omitted --&gt;&amp;lt;virtualhost {{hostname}}:80&amp;gt;みたいな記述をしていた場合、NameVirtualHost {{hostname}}:80の宣言もないといけない。&lt;/p&gt;&#xA;&lt;p&gt;整合性が撮れてないと、宣言が足りないとかそんなVirtualHostディレクティブはないとか警告が出る。&lt;/p&gt;&#xA;&lt;p&gt;・Ubuntuに入ってるApache2のVirtualHostの有効化無効化&lt;/p&gt;&#xA;&lt;p&gt;　sites-availableディレクトリにVirtualHost設定書く&lt;/p&gt;&#xA;&lt;p&gt;　a2ensite {{vhost_filename}} で有効化、a2dissite {{vhost_filename}} で無効化&lt;/p&gt;&#xA;&lt;p&gt;・Hostの指定が足りない！？&lt;/p&gt;&#xA;&lt;p&gt;Could not reliably determine the server’s fully qualified domain name, using for ServerName&lt;/p&gt;&#xA;&lt;p&gt;こんなエラーが出る。hostsファイルに127.0.1.1 にhogehoge.localを追記してあげたら直った&lt;/p&gt;&#xA;&lt;p&gt;　つまり、hostsファイルにhostnameが127.0.1.1で定義されている場合、Apacheが名前解決のエラー出すので、&lt;/p&gt;&#xA;&lt;p&gt;　そこに{{hostname}}.localを追記する処理追加&lt;/p&gt;&#xA;&lt;p&gt;・Ansible用MySQLの設定追加&lt;/p&gt;&#xA;&lt;p&gt;Ansibleでmysql_userモジュールを使ってユーザーを追加する際に、MySQLが外部サーバーの場合は(Webサーバーから接続用ユーザーの作成の場合は)&lt;/p&gt;&#xA;&lt;p&gt;host=%,host=localhostの記述が必要、同時に作れるのか試してない。自分は別のtaskとしてそれぞれ実行(同じユーザー名で別hostのユーザーを2回作成)&lt;/p&gt;&#xA;&lt;p&gt;リモートユーザーにあたる側(今回はWebサーバー側)にはmysql_clientのインストールが必要&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>低レベルプログラマだからJavaScriptで知らなかった事</title>
       <link>https://tech.k-zak.com/posts/spec-js/</link>
       <pubDate>Sat, 02 Aug 2014 15:29:50 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/spec-js/</guid>
-      <description>JavaScriptで知らないせいでハマったところなどなど
-Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。
-そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。
-JS数字計算で2進数から10進数への変換誤差がでて死ぬる。
-100+10.1とかやろうとすると物凄い小さい数字が誤差として丸められず残る。</description>
+      <description>&lt;p&gt;JavaScriptで知らないせいでハマったところなどなど&lt;/p&gt;&#xA;&lt;p&gt;Chromeで確認した時に動いたせいで気付かなかったんだけど、イベントトリガの関数定義で引数にeventオブジェクトを明示して渡さないとIE系では正しく動かない。これはChromeが異常なのかも。&lt;/p&gt;&#xA;&lt;p&gt;そらそうだという話なんですが、フォームの値は基本テキスト型だからJSで数字として扱って計算したい場合は数字型に変換が必要。そうしないと足し算しようとしたのに文字列連結になってしまう。&lt;/p&gt;&#xA;&lt;p&gt;JS数字計算で2進数から10進数への変換誤差がでて死ぬる。&lt;/p&gt;&#xA;&lt;p&gt;100+10.1とかやろうとすると物凄い小さい数字が誤差として丸められず残る。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>NginxでPermission denied</title>
       <link>https://tech.k-zak.com/posts/trouble-nginx/</link>
       <pubDate>Thu, 16 Jan 2014 01:44:58 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/trouble-nginx/</guid>
-      <description>開発環境
-OS:Ubuntu12?
-Webサーバー：Nginx
-という環境下でWindowsでホストしていたお客さんのサイトを持ってきて改修しようとしたら、
-jsやらcssやら画像やらが軒のみPermission denied でエラーでて表示されない。
-ググってみたけれども該当するものがない。
-※自身のテスト用のものなどはちゃんと画像等問題なく読み込める。オーナーや権限も問題ない
-んで、ざっとファイル見ててなんとなく気になって「Thumbs.db」を削除したら表示されるようになった。
-Nginxのセキュリティ機能？なのでしょうか。仕組みは調べていない。ちゃんと勉強が必要ですね。
-追記：どうも原因は別にあったかも。再現できない。</description>
+      <description>&lt;p&gt;開発環境&lt;/p&gt;&#xA;&lt;p&gt;OS:Ubuntu12?&lt;/p&gt;&#xA;&lt;p&gt;Webサーバー：Nginx&lt;/p&gt;&#xA;&lt;p&gt;という環境下でWindowsでホストしていたお客さんのサイトを持ってきて改修しようとしたら、&lt;/p&gt;&#xA;&lt;p&gt;jsやらcssやら画像やらが軒のみPermission denied でエラーでて表示されない。&lt;/p&gt;&#xA;&lt;p&gt;ググってみたけれども該当するものがない。&lt;/p&gt;&#xA;&lt;p&gt;※自身のテスト用のものなどはちゃんと画像等問題なく読み込める。オーナーや権限も問題ない&lt;/p&gt;&#xA;&lt;p&gt;んで、ざっとファイル見ててなんとなく気になって「Thumbs.db」を削除したら表示されるようになった。&lt;/p&gt;&#xA;&lt;p&gt;Nginxのセキュリティ機能？なのでしょうか。仕組みは調べていない。ちゃんと勉強が必要ですね。&lt;/p&gt;&#xA;&lt;p&gt;追記：どうも原因は別にあったかも。再現できない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>FuelPHPで文字化けーアップロードファイル名とメール添付ファイル名</title>
       <link>https://tech.k-zak.com/posts/trouble-charset/</link>
       <pubDate>Wed, 13 Nov 2013 15:27:30 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/trouble-charset/</guid>
-      <description>FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、
-Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！ (PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)
-→アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。
-FuelPHPのUpload::save()を行う前に
-ってやってアップロードファイル名をエンコードする。
-弊害としては本来は内部エンコードのまま処理が進むはずだったので、同名ファイルが有る場合に枝番を付加する処理なんかが正常に動作しなくなる。
-これでWindowsサーバーのフォルダに読める文字のファイル名でアップロードされる。
-最初エンコードをSJISにしてたけど、CP932にしたら、①みたいなMS拡張の機種依存文字も大丈夫になった。
-本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも とかやったら良かったのかな？
-文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け！ (ま、そりゃそうですね)
-→上記１の結果を受けてメール送信のメソッドに引数として添付ファイル名を渡す。その処理は何も加工しない。
-メール送信用のメソッドの中で、引数で受け取った添付ファイル名をFuelPHPのmailに渡す処理を加工
-それでも、メールヘッダがISO-2022-JPなので、機種依存文字の類はメールを受信した時に「?」とかになってるけど、それはしょうがないよね。
-メールの件名が文字化けすることがある！ →犯人は半角カナ。使わないで！件名はFuelPHP側で送信時にISO-2022-JPに変換してるっぽいので、mb_convert_kana関数使って件名に含まれている半角カナを全角に変換して誤魔化す。
-以上、うんこメモでした。</description>
+      <description>&lt;p&gt;FuelPHPをUbuntu上で作成してWindows環境(Win2003、IIS6)に納品した結果、&lt;/p&gt;&#xA;&lt;h2 id=&#34;windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている&#34;&gt;Windowsのクライアントからファイルアップロードするとアップロードされたファイル名が文字化けしている！&lt;/h2&gt;&#xA;&lt;p&gt;(PHPの内部エンコードがUTF-8だけどWinがShift-JISだから)&lt;/p&gt;&#xA;&lt;p&gt;→アップロードは送信メールに添付したいがためにしているだけなので文字化け解消しなくても良かったのですが、後でアップロードフォルダ内の整理や確認等人力で行う場合に視認性が悪いので無理やり対応。&lt;/p&gt;&#xA;&lt;p&gt;FuelPHPのUpload::save()を行う前に&lt;/p&gt;&#xA;&lt;p&gt;ってやってアップロードファイル名をエンコードする。&lt;/p&gt;&#xA;&lt;p&gt;弊害としては本来は内部エンコードのまま処理が進むはずだったので、同名ファイルが有る場合に枝番を付加する処理なんかが正常に動作しなくなる。&lt;/p&gt;&#xA;&lt;p&gt;これでWindowsサーバーのフォルダに読める文字のファイル名でアップロードされる。&lt;/p&gt;&#xA;&lt;p&gt;最初エンコードをSJISにしてたけど、CP932にしたら、①みたいなMS拡張の機種依存文字も大丈夫になった。&lt;/p&gt;&#xA;&lt;p&gt;本当はもっとスマートな方法が欲しかったんだけど、ファイルを置くところの処理がCoreファイルで作られていて入り込む余地が無いように思えた。それとも 　　&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;とかやったら良かったのかな？&lt;/p&gt;&#xA;&lt;h2 id=&#34;文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け&#34;&gt;文字化け状態でアップロードされたファイルをメールの添付に加えると添付ファイル名も文字化け！&lt;/h2&gt;&#xA;&lt;p&gt;(ま、そりゃそうですね)&lt;/p&gt;&#xA;&lt;p&gt;→上記１の結果を受けてメール送信のメソッドに引数として添付ファイル名を渡す。その処理は何も加工しない。&lt;/p&gt;&#xA;&lt;p&gt;メール送信用のメソッドの中で、引数で受け取った添付ファイル名をFuelPHPのmailに渡す処理を加工&lt;/p&gt;&#xA;&lt;p&gt;それでも、メールヘッダがISO-2022-JPなので、機種依存文字の類はメールを受信した時に「?」とかになってるけど、それはしょうがないよね。&lt;/p&gt;&#xA;&lt;h2 id=&#34;メールの件名が文字化けすることがある&#34;&gt;メールの件名が文字化けすることがある！&lt;/h2&gt;&#xA;&lt;p&gt;→犯人は半角カナ。使わないで！件名はFuelPHP側で送信時にISO-2022-JPに変換してるっぽいので、mb_convert_kana関数使って件名に含まれている半角カナを全角に変換して誤魔化す。&lt;/p&gt;&#xA;&lt;p&gt;以上、うんこメモでした。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>印刷用CSSでハマった</title>
       <link>https://tech.k-zak.com/posts/trouble-css/</link>
       <pubDate>Wed, 02 Oct 2013 16:53:01 +0000</pubDate>
-      
       <guid>https://tech.k-zak.com/posts/trouble-css/</guid>
-      <description>この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。
-問題のCSS: page-break-before
-いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと
-していたんだけど、ChromeではなるのにIE(対応対象はVer 9)だと改ページしてくれない。
-IEでも解釈されるはずなのになんで？ってなって諦めてたんだけど、調べてたら出てきた。
-IEの場合はpage-break-beforeが適用される要素がページをまたぐような位置にいる場合は
-無視されるそうです。で、ちゃんとは調べてないのですがpage-break-beforeの場合はその
-要素がpage-break-afterの場合は次の要素が判定基準になるっぽぽぽぽいです。
-対処方法としては改ページしたい場所にからのdivを入れてその要素に対して改ページ指定の
-cssを適用させるって方法。Web素人には分からんよ。Web上でCSSリファレンスをさっと見ても
-そのことについての記述なかったし。んもう！</description>
+      <description>&lt;p&gt;この間、印刷用CSSを回収していて「そんなん知らねーよ！」ってなった事。&lt;/p&gt;&#xA;&lt;p&gt;問題のCSS: page-break-before&lt;/p&gt;&#xA;&lt;p&gt;いやコレでね強制改ページできるんで特定のdivタグのところで改ページさせようと&lt;/p&gt;&#xA;&lt;p&gt;していたんだけど、ChromeではなるのにIE(対応対象はVer 9)だと改ページしてくれない。&lt;/p&gt;&#xA;&lt;p&gt;IEでも解釈されるはずなのになんで？ってなって諦めてたんだけど、調べてたら出てきた。&lt;/p&gt;&#xA;&lt;p&gt;IEの場合はpage-break-beforeが適用される要素がページをまたぐような位置にいる場合は&lt;/p&gt;&#xA;&lt;p&gt;無視されるそうです。で、ちゃんとは調べてないのですがpage-break-beforeの場合はその&lt;/p&gt;&#xA;&lt;p&gt;要素がpage-break-afterの場合は次の要素が判定基準になるっぽぽぽぽいです。&lt;/p&gt;&#xA;&lt;p&gt;対処方法としては改ページしたい場所にからのdivを入れてその要素に対して改ページ指定の&lt;/p&gt;&#xA;&lt;p&gt;cssを適用させるって方法。Web素人には分からんよ。Web上でCSSリファレンスをさっと見ても&lt;/p&gt;&#xA;&lt;p&gt;そのことについての記述なかったし。んもう！&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
