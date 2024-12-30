@@ -33,18 +33,18 @@
     
 <meta property="og:locale" content="ja_JP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Perl勉強してるメモ１">
+<meta property="og:title" content="Perlの動作環境？について">
 <meta property="og:description" content="">
 <meta property="og:url" content="https://tech.k-zak.com/posts/study-perl/">
 <meta property="og:site_name" content="開発メモてきな">
 
-<meta property="og:image" content="/static/images/default_thumbnail.png">
+<meta property="og:image" content="/images/default_thumbnail.png">
 
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Perl勉強してるメモ１">
+<meta name="twitter:title" content="Perlの動作環境？について">
 <meta name="twitter:description" content="" />
-<meta name="twitter:image:src" content="https://tech.k-zak.com/posts/study-perl/" />
+<meta name="twitter:image:src" content="/images/default_thumbnail.png" />
 
 
     
@@ -145,50 +145,103 @@
     <main class="main">
       <article class="main__contents">
 	<div>
-	  <h1>Perl勉強してるメモ１</h1>
+	  <h1>Perlの動作環境？について</h1>
 	</div>
-	<p>何故か最近Perlの勉強を始めた。</p>
-<p>気になった箇所のまとめ、</p>
-<p>■変数と型</p>
-<p>・普通(単一)のデータはスカラー変数で扱う：$val = ‘Hello’;</p>
-<p>・配列は「$」の代わりに「＠」でも中の要素を扱う時は「$」でインデックスの指定は[]</p>
-<p>：@array = (1,2,3,4,5); print $array[0] # 1</p>
-<p>・ハッシュは「$」の代わりに「%」でも中の要素を扱う時は「$」で指定は{}</p>
-<p>：%hash = (‘a’=&gt;’1′,’b’=&gt;’2’); print $hash{a} # 1</p>
-<p>■変数スコープ</p>
-<p>・{}ブロックでスコープは仕切られている。そのため変数はmyを使ってスコープを意識した変数宣言を</p>
-<p>すると良いとされている。</p>
-<p>・ファイルスコープは実は１ファイル１パッケージ的な扱いでパッケージスコープ。</p>
-<p>・例えばファイル直下の位置で$cgi = CGI-&gt;new; とかやっておけば、subを呼ぶ時に毎回$cgiを</p>
-<p>引数として渡す必要はない。</p>
-<p>参考 Gist：<a href="https://gist.github.com/3855891" title="https://gist.github.com/3855891">https://gist.github.com/3855891</a></p>
-<p> </p>
-<p>■リファレンス</p>
-<p>・C言語で言うところのポインタ？配列やハッシュをサブルーチンに渡す際に変数のリファレンスを</p>
-<p>渡す。そうしないと呼び出し先では１つの引数データに連結されてしまっているのでうまく復元できない。</p>
-<p>・リファレンスで渡された値をsubスコープ内の新たな変数に入れてデリファレンスして編集すると、</p>
-<p>元の変数の値が変わっている。デリファレンスした値を新たな変数に入れて編集した場合は影響しない。</p>
-<p>参考Gist：<a href="https://gist.github.com/3850245" title="https://gist.github.com/3850245">https://gist.github.com/3850245</a></p>
-<p><a href="https://gist.github.com/3856617" title="https://gist.github.com/3856617">https://gist.github.com/3856617</a></p>
-<p> </p>
-<p>■ファイルの扱いなど</p>
-<p>・use IO=&gt;’utf8′; としておくとUTF-8でファイルIOで扱う。</p>
-<p>・ファイルハンドルはレキシカルスコープ変数を使うようにしましょう。</p>
-<p>・またopen関数は3引数の形で使いましょう。</p>
-<p>open(my $fh,&rsquo;&lt;‘,$file_path);</p>
-<p> </p>
-<p>■モジュールについて</p>
-<p>・use strict;と use warnings; はワンライナー(or実験)以外では必ずつけましょう。</p>
-<p>・use feature ‘say’;とするとsay関数が使える。これはprint関数+改行らしい。便利。</p>
-<p>・自作外部ファイル、PHPでいうところのrequire用ファイルのようなファイルは拡張子を</p>
-<p>「.pm」にする。</p>
-<p> </p>
-<p>■他</p>
-<p>・qq や qw は便利なので積極的に使って行きましょう。</p>
-<p>例：qq(<!-- raw HTML omitted -->{name}”/&gt;);</p>
-<p>て感じで使える。</p>
-<p> </p>
-<p>まぁ、こんな感じで。</p>
+	<p>長らく更新してませんでしたが、その間にFlask試したり、最近なんかは</p>
+<p>ちょっとだけVisual C++を初心者本見ながら動かしてました。</p>
+<p>C++分かんない。</p>
+<p>さて、PerlをVPS上で動かす＆Mojolicious::Liteで作成中の簡単なFAQアプリの為、Perlを</p>
+<p>どうやって動かすのか、簡単に試したのでまとめてみた。(まとまってないし解説にもなってない)</p>
+<p>perlを使えるように設定する</p>
+<p>１，Perlを入れましょう。既に入っている場合はバージョンを確認してできるだけ偶数ナンバーの最新版を入れましょう</p>
+<p>※奇数番号のバージョンは実験要素が強いと聞いたことがありますのでperl-14.xが良いかと</p>
+<p>※perl -v でバージョンの確認ができます。</p>
+<p>２，Perlbrewを入れましょうバージョンを切り替えたりライブラリを追加したりが楽になるそうです。</p>
+<p>３，ターミナルベースで動かす</p>
+<p>ファイルの拡張子を「.pl」とかにして内容はprint “Hello,World\n”;とか書いて</p>
+<p>ターミナルで「perl aaa.pl」とかやると起動して処理実行しますね。</p>
+<p>厳密にはファイルエンコードはUTF-8にしましょうとか、ソースの行頭にお決まりの書き方をするとかありますけど</p>
+<p>その内容については省略するので他で調べてください。</p>
+<p>４，ApacheにCGIの設定して動かす</p>
+<p>特になんの設定もせずPerlファイルをWeb公開領域に置いてもソースをそのまま画面に出力したり、</p>
+<p>エラーになったりします。</p>
+<p>・ApacheにCGIの設定を書いていない</p>
+<p>・作成したPerlファイルに実行権限がついていない</p>
+<p>などが主な理由です。権限についてはchmodコマンドで実行権限を付与してください。</p>
+<p>Apacheの設定ファイル「httpd.conf」もしくはVirtual-Hostの設定をしているなら「httpd-vhost.conf」を</p>
+<p>開いて設定を記述します。</p>
+<p>———-</p>
+<p>&lt;Directory “/virtualhostdirectory/hoge”&gt;</p>
+<p>AddHandler cgi-script .cgi .pl .py .rb</p>
+<p>Options All</p>
+<p>AllowOverride All</p>
+<p>Order allow,deny</p>
+<p>Allow from all</p>
+<!-- raw HTML omitted -->
+<p>———-</p>
+<p>こんな感じで。「AddHandler cgi-script」に対象拡張子を連ねる感じで記述すると動くようになります。</p>
+<p>※当然LoadModuleのところでmod_cgiを読み込んでいるのが前提です。</p>
+<p>※上の例では、Perl以外にもRubyやPythonもCGiで動く設定にしてますのん。</p>
+<p>５，Apacheにmod_perlの設定をして動かす</p>
+<p>まず自分の使っているApacheの拡張モジュール置き場にmod_perl.soがいる確認。自分の場合はMBP 10.8の</p>
+<p>組込み?のApacheを使っているので/usr/libexec/apache2/mod_perl.soを確認。いた!</p>
+<p>所定の場所にファイルがない人は別途調べてファイルを入手なりコンパイルなりしてください。</p>
+<p>※ URL:http://perl.apache.org/download/index.html</p>
+<p>・httpd.confのLoadModuleが沢山記述されているあたりの最後尾に「LoadModule perl_module /usr/libexec/apache2/mod_perl.so」</p>
+<p>を追記</p>
+<p>・適当なとこに下記の記述※自分の場合は上記のvirtualhostディレクトリ内に追記</p>
+<p>・上記の設定で既に普通のCGIでPerlが動くようになってしまっているのでPerl関係拡張子を除外しておくこと!</p>
+<p>———-</p>
+<!-- raw HTML omitted -->
+<p>&lt;FilesMatch “.(pl|cgi)$”&gt;</p>
+<p>SetHandler perl-script</p>
+<p>PerlHandler ModPerl::Registry</p>
+<p># Options +ExecCGII</p>
+<p>Options All</p>
+<p>PerlSendHeader On</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>———-</p>
+<p>※自分の場合はOptions +ExecCGIでは動かなかったので、Allにしちゃった。</p>
+<p>apache2を再起動してうごけばmod_perlが動作していることでしょう。</p>
+<p>６，Plackで動かす</p>
+<p>・cpanmでPlackを入れる</p>
+<p>・こんな感じのソースを書く(ファイル名はsample.psgi)</p>
+<p>———-</p>
+<p>#!/usr/bin/env perl</p>
+<p>#-*- coding:utf-8 -*-</p>
+<p>use strict;</p>
+<p>use warnings;</p>
+<p>my $app = sub{</p>
+<p>my $env = shift;</p>
+<p>return [</p>
+<p>200,</p>
+<p>[‘Content-Type’=&gt;’text/plain’],</p>
+<p>[“Hello World”],</p>
+<p>];</p>
+<p>};</p>
+<p>return $app;</p>
+<p>———-</p>
+<p>・書いたソースファイルの有る場所で以下のコマンド実行</p>
+<p>$ plack sample.psgi</p>
+<p>・http://localhost:5000 にアクセスHello Worldが表示されれば成功!</p>
+<p>７，StarmanてやつならMojoliciousで作ったアプリも動くらしいぜ!?</p>
+<p>・cpanmでStarmanを入れる</p>
+<p>・Mojolicious(※自分のはLite)のルートディレクトリに移動して以下のコマンド実行</p>
+<p>$ starman myapp.pl ※自分のMojoアプリのメイン?ファイルの名前がmyapp.pl</p>
+<p>うまくいくと、http://localhost:5000/でMojoのルートにアクセスできーる。</p>
+<p>８，ApacheにProxyの設定してApache経由でStarmanのMojoアプリにアクセス</p>
+<p>・ApacheにProxy_moduleとProxy_http_moduleが入っているか確認</p>
+<p>・Apacheの設定ファイル編集(※自分の場合はvirtualhostの部分に追記)</p>
+<p>※以下の内容をVirtualhostディレクティブ内に追記、自分の場合はDirectoryディレクティブの前に記述</p>
+<p>———-</p>
+<p>ProxyPass /studies/studyPerl/psgi/ http://localhost:5000/</p>
+<p>ProxyPassReverse /studies/studyPerl/psgi http://localhost:5000/</p>
+<p>———-</p>
+<p>※pathはもちろん適宜読み替えましょうね</p>
+<p>これで上記プロキシに設定したURLにアクセスして無事Mojoアプリが動いてたらOK!</p>
+<p>※Apacheの設定変えたらApache再起動とかアクセスする前にStarman起動済みなのはモチロンですよ</p>
+<p>これでVPSにperl入れてMojoアプリ動かす準備が出来たかな?</p>
 
       </article>
       
