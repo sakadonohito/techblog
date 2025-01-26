@@ -158,6 +158,54 @@
 	  
 	  <div class="card">
 	    <div class="card__thumbnail">
+	      <a href="https://tech.k-zak.com/posts/2025-01-26-emacs-setting-update/">
+		<img src="https://tech.k-zak.com/images/EmacsIcon.svg.png" alt="2025 01 26 Emacs Setting Update">
+	      </a>
+	    </div>
+
+	    <div class="card__content">
+	      <div class="card__meta">
+		<span class="card__meta__date">2025.01.26</span>
+		
+		<a href="https://tech.k-zak.com/categories/setting-construction" class="card__meta__category">setting-construction</a> 
+		
+	      </div>
+	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/2025-01-26-emacs-setting-update/">2025 01 26 Emacs Setting Update</a></h2>
+	      <div class="card__excerpt">
+		<p>ずーーーーーっとやりたいと思っていたEmacsの設定棚卸しとアップデート、ようやく着手して一段落つきました。</p>
+<h2 id="何した">何した？</h2>
+<p><a href="https://github.com/sakadonohito/emacs-settings">ひとまずの完成形(2025.01.26時点)</a></p>
+<h3 id="1-leafの導入">1. leafの導入</h3>
+<p>なんだかわからないまま使っていたuse-packageをやめてstraight.elを導入したけど、leafがいいって聞いたので、設定をleafに書き換えた。</p>
+<p>たくさんエラー出た。。</p>
+<p>ちょっとでも依頼内容端折ったり適当するとChatGPTが意図しない内容返してくるのでホントに苦戦した。</p>
+<p>たまにstraight.elならインストールできたのにleafだとインストールできないパッケージもあった。</p>
+<p>そういうのはめんどうだから設定からスポイルした。</p>
+<p>straight.elだとGitHubを指定してインストールできるが、leafだとそのあたりうまくいかなかった。</p>
+<p>leafでも「:vc」キーワードがあるのだが、なんかうまくいかなかった。。</p>
+<h3 id="2-各プログラミング言語用設定の整理と追加">2. 各プログラミング言語用設定の整理と追加</h3>
+<p>html及びテンプレートファイル用、CSS用、JS系など既にある設定のの見直しと、今まで先延ばししていた他言語の設定ファイルを追加した。</p>
+<p>eglot関連でまだ実際には使わないLSPのインストールは対象URLだけメモして先延ばしにした。</p>
+<h3 id="3-codeiumの導入">3. codeiumの導入</h3>
+<p>これも先延ばししていた、AIの導入。</p>
+<p>とりあえず無料で始められるCodeiumを導入した。</p>
+<p>Codeium + eglot + Corfu がどうもうまく連携取れていない感じだけど、ひとまず動かないこともない状態になったので一段落とした。</p>
+<h3 id="4-全然分かってないこと">4. 全然分かってないこと</h3>
+<p>元々companyを入れていたのだけど、今回Corfuに変えてみた。</p>
+<p>全く理解していないので、現在の設定でいいのかどうかも分かっていない。</p>
+<h2 id="困る">困る</h2>
+<p>他の方設定を参考にしようにも千差万別の設定内容で、自分の困ってるに微妙にハマらない。</p>
+<p>初心者や弱々な人でもこういう設定にしたい、このパッケージはこうするとよい。など見やすく分かりやすいドキュメントサイトがあればいいのになって思った。</p>
+<h3 id="今後">今後</h3>
+<p>今後は実際にコーディングしながら、自分のスタイルに応じて設定を追加したい。</p>
+<p>この記事を書いている時も、Codeiumが動いて文章提案してくるのちょっとウザい。</p>
+	      </div>
+	      <p><a href="https://tech.k-zak.com/posts/2025-01-26-emacs-setting-update/">[Read More…]</a></p>
+	    </div>
+	  </div>
+	  
+	  <div class="card">
+	    <div class="card__thumbnail">
 	      <a href="https://tech.k-zak.com/posts/2017-04-24-ntp/">
 		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="setting ntp on Ubuntu">
 	      </a>
@@ -606,60 +654,6 @@ themeディレクトリがなかったら作ってその中で<code>git clone</c
 	    </div>
 	  </div>
 	  
-	  <div class="card">
-	    <div class="card__thumbnail">
-	      <a href="https://tech.k-zak.com/posts/challenge-fmxj/">
-		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す">
-	      </a>
-	    </div>
-
-	    <div class="card__content">
-	      <div class="card__meta">
-		<span class="card__meta__date">2015.02.16</span>
-		
-		<a href="https://tech.k-zak.com/categories/study-daily" class="card__meta__category">study-daily</a> 
-		
-		<a href="https://tech.k-zak.com/categories/setting-construction" class="card__meta__category">setting-construction</a> 
-		
-	      </div>
-	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/challenge-fmxj/">fmxj.js のサーバーサイドをPHPじゃなくてPerl(Mojolicious)で試す</a></h2>
-	      <div class="card__excerpt">
-		<p>先日、SeedCodeの方がFileMakerのCustom Web Publishing の為のJavaScriptとServer side で使うPHPのサンプルをGithubで公開されてました。</p>
-<p><a href="https://github.com/seedcode/fmxj">https://github.com/seedcode/fmxj</a></p>
-<p>概要としては、FileMaker Server の XML公開を使う。</p>
-<p>Web公開エンジンにXML公開のためのリクエストをJavaScriptで生成してサーバーサイドスクリプト(SeedCodeのサンプルではPHP)にpostする。</p>
-<p>◆ハマった事：サンプルPHPの内容</p>
-<p>サンプルのPHPをよく読んでなかった。。。</p>
-<p>JavaScriptからFileMakerのユーザーアカウントとパスワードをpost出来るようにキーバリューを元々のpostデータに加えている。それから本来のpostデータからおまけを除くための追加分のパラメータ文字数もpostに加えている。この辺りの仕様にもんりょりする。</p>
-<p>-db=dbname&amp;-lay=layname&amp;-query=(q1)&amp;-q1=Status&amp;-q1.value=Vendor&amp;-findquery みたいな通常のクエリデータに</p>
-<p>u=undefined&amp;p=undefined&amp;l=コンテンツの文字数</p>
-<p>ていうのがくっついてPHPにpostされてくる。</p>
-<p>それをPHP側でphp://inputでリクエストのボディを取得して余計なパラメータを削ってpostデータを作り直してcurl使ってPOSTしてた。</p>
-<p>そこに気づかずperlで再現しようとした時にpostデータを丸投げしてエラーになってしまっていた。</p>
-<p>なんでpostデータをわざわざこねくり回してるんだろう？て思ってた。</p>
-<p>サンプルって事でいろいろハードコーディングされてるけど、気にしない。</p>
-<p>◆ハマった：Nginxの設定</p>
-<p>欲をかいてPerlでサーバーサイド書くにあたって、FastCGIでさらっと書くじゃなくてMojolicious使うことにしたら</p>
-<p>WebServer→Nginxでバーチャルホスト(hoge.sample.comみたいな)とmorboで127.0.0.1:3000で動くMojoliciousになって、何が起きたかって言うとクロスドメインの問題が発生してしまい、エラーになる。</p>
-<p>これについてはNginxの設定でproxy_passでMojoliciousにリクエストがリバースプロキシされるようにして解決。</p>
-<p>しかしNginx、デフォルトではContent-Typeの書き換えができず、JavaScriptにレスポンスされるデータがXMLになっていなくて、意図する結果に終わらない。既にあるヘッダーに値を追加する処理を行ってしまう。</p>
-<p>※Nginxで add_header Content-Type ‘application/xml’してもmime-typeの設定ファイルに追記しても</p>
-<p>　Content-Type text/html;charset=UTF-8に application/xmlの値が追記されるだけになる。</p>
-<p>その結果、fmxj.jsがXMLHttpRequestのresponseXMLに値がセットされない。そしてresponseXMLがあるの前提になっているXMLをパースする処理のところで結果が空欄になって処理が終わってしまう。</p>
-<p>最初fmxj.js内部を書き換えて(responseTextをXMLに変換して)みたんだけど、コアのライブラリを触るのはよくないので、Nginxでちゃんとヘッダを書き換えられる方法を調べる、nginx-extrasを追加でインストールするとmore-set-headerというのが使えるようになり、ヘッダーの書き換えができるようになるとの事だったのでインストール。</p>
-<p>自分はUbuntuの環境なので、</p>
-<blockquote>
-<p>sudo apt-get install nginx-extras</p>
-</blockquote>
-<p>後はNginxの設定ファイルに(厳密に言うとリクエストを受け付けるLocationディレクティブで)</p>
-<p>more_set_headers ‘Content-Type: application/xml; charset=UTF8’;</p>
-<p>を追記、more…がヘッダーの追記ではなく書き換えなのでcharsetも忘れずに書く！</p>
-<p>これでようやく、Sample.html → fmxj.jsを使ってServerにpostリクエスト → 受けたリクエストをNginxがMojoliciousを動かしてるmorboにリバースプロキシ → MojoliciousがPOSTリクエスト受け取りXML公開のクエリパラメータ付きURLを生成して(生成しなおして)cURLをラップしたライブラリからPOST送信 → JavaScriptにレスポンスが返り、完成。</p>
-	      </div>
-	      <p><a href="https://tech.k-zak.com/posts/challenge-fmxj/">[Read More…]</a></p>
-	    </div>
-	  </div>
-	  
 
 	</div>
 	
@@ -686,7 +680,7 @@ themeディレクトリがなかったら作ってその中で<code>git clone</c
 	  
 	  <li>
             <a href="https://tech.k-zak.com/categories/setting-construction/" class="genre-link">Setting-Construction</a>
-            <span class="genre-count">37</span>
+            <span class="genre-count">38</span>
 	  </li>
 	  
 	  <li>
@@ -704,6 +698,8 @@ themeディレクトリがなかったら作ってその中で<code>git clone</c
 	<h3 class="sidebar-title">タグ(Top10)</h3>
 	<hr/>
 	<ul class="genre-list">
+	  
+	  
 	  
 	  
 	  
@@ -937,8 +933,8 @@ themeディレクトリがなかったら作ってその中で<code>git clone</c
 	  </li>
 	  
 	  <li>
-	    <a href="https://tech.k-zak.com/tags/apache/" class="genre-link">apache</a>
-            <span class="genre-count">4</span>
+	    <a href="https://tech.k-zak.com/tags/emacs/" class="genre-link">emacs</a>
+            <span class="genre-count">5</span>
 	  </li>
 	  
 	</ul>
@@ -1159,8 +1155,13 @@ themeディレクトリがなかったら作ってその中で<code>git clone</c
 	    
   	  
 	    
+  	  
+	    
 	    
 
+	    
+	    <a href="https://tech.k-zak.com/tags/ai/">ai</a>
+	    , 
 	    
 	    <a href="https://tech.k-zak.com/tags/ansible/">ansible</a>
 	    , 

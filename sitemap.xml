@@ -2,25 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tech.k-zak.com/posts/2024-12-30-testpost/</loc>
-    <lastmod>2024-12-30T21:11:52+09:00</lastmod>
+    <loc>https://tech.k-zak.com/posts/2025-01-26-emacs-setting-update/</loc>
+    <lastmod>2025-01-26T20:59:03+09:00</lastmod>
+  </url><url>
+    <loc>https://tech.k-zak.com/tags/ai/</loc>
+    <lastmod>2025-01-26T20:59:03+09:00</lastmod>
   </url><url>
     <loc>https://tech.k-zak.com/categories/</loc>
+    <lastmod>2025-01-26T20:59:03+09:00</lastmod>
+  </url><url>
+    <loc>https://tech.k-zak.com/tags/emacs/</loc>
+    <lastmod>2025-01-26T20:59:03+09:00</lastmod>
+  </url><url>
+    <loc>https://tech.k-zak.com/posts/</loc>
+    <lastmod>2025-01-26T20:59:03+09:00</lastmod>
+  </url><url>
+    <loc>https://tech.k-zak.com/categories/setting-construction/</loc>
+    <lastmod>2025-01-26T20:59:03+09:00</lastmod>
+  </url><url>
+    <loc>https://tech.k-zak.com/tags/</loc>
+    <lastmod>2025-01-26T20:59:03+09:00</lastmod>
+  </url><url>
+    <loc>https://tech.k-zak.com/</loc>
+    <lastmod>2025-01-26T20:59:03+09:00</lastmod>
+  </url><url>
+    <loc>https://tech.k-zak.com/posts/2024-12-30-testpost/</loc>
     <lastmod>2024-12-30T21:11:52+09:00</lastmod>
   </url><url>
     <loc>https://tech.k-zak.com/tags/etc/</loc>
     <lastmod>2024-12-30T21:11:52+09:00</lastmod>
   </url><url>
     <loc>https://tech.k-zak.com/categories/etc/</loc>
-    <lastmod>2024-12-30T21:11:52+09:00</lastmod>
-  </url><url>
-    <loc>https://tech.k-zak.com/posts/</loc>
-    <lastmod>2024-12-30T21:11:52+09:00</lastmod>
-  </url><url>
-    <loc>https://tech.k-zak.com/tags/</loc>
-    <lastmod>2024-12-30T21:11:52+09:00</lastmod>
-  </url><url>
-    <loc>https://tech.k-zak.com/</loc>
     <lastmod>2024-12-30T21:11:52+09:00</lastmod>
   </url><url>
     <loc>https://tech.k-zak.com/archives/</loc>
@@ -38,7 +50,7 @@
     <loc>https://tech.k-zak.com/categories/study-daily/</loc>
     <lastmod>2021-12-01T07:53:12+09:00</lastmod>
   </url><url>
-    <loc>https://tech.k-zak.com/posts/2021-02-24-%E3%81%8A%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%A7%E3%81%99/</loc>
+    <loc>https://tech.k-zak.com/posts/2021-02-24-been-a-while/</loc>
     <lastmod>2021-02-24T04:25:49+09:00</lastmod>
   </url><url>
     <loc>https://tech.k-zak.com/tags/hugo/</loc>
@@ -192,9 +204,6 @@
     <lastmod>2017-04-24T13:48:14+09:00</lastmod>
   </url><url>
     <loc>https://tech.k-zak.com/posts/2017-04-24-ntp/</loc>
-    <lastmod>2017-04-24T13:48:14+09:00</lastmod>
-  </url><url>
-    <loc>https://tech.k-zak.com/categories/setting-construction/</loc>
     <lastmod>2017-04-24T13:48:14+09:00</lastmod>
   </url><url>
     <loc>https://tech.k-zak.com/tags/ubuntu/</loc>
@@ -388,9 +397,6 @@
   </url><url>
     <loc>https://tech.k-zak.com/posts/milestone/</loc>
     <lastmod>2014-10-25T16:10:39+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.k-zak.com/tags/emacs/</loc>
-    <lastmod>2014-09-15T15:48:13+00:00</lastmod>
   </url><url>
     <loc>https://tech.k-zak.com/tags/env/</loc>
     <lastmod>2014-09-15T15:48:13+00:00</lastmod>

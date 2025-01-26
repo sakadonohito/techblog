@@ -158,6 +158,47 @@
 	  <div class="card">
 	    <div class="card__thumbnail">
 	      <a href="https://tech.k-zak.com/posts/coding-memo05/">
+		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="コーディングリハビリ06">
+	      </a>
+	    </div>
+
+	    <div class="card__content">
+	      <div class="card__meta">
+		<span class="card__meta__date">2013.12.08</span>
+		
+		
+		
+		<a href="https://tech.k-zak.com/categories/study-daily" class="card__meta__category">study-daily</a>
+		 
+		
+	      </div>
+	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/coding-memo05/">コーディングリハビリ06</a></h2>
+	      <div class="card__excerpt">
+		<p>リハビリその3</p>
+<p>今回は、バブルソート</p>
+<p>PHPでは、</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Perlでは、</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Pythonでは、</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Rubyでは、</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>習熟度が低いのでPerlとPHPが同じ内容になる。</p>
+<p>pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。</p>
+<p>すんなり1つのリストだけでできないものか……</p>
+	      </div>
+	      <p><a href="https://tech.k-zak.com/posts/coding-memo05/">[Read More…]</a></p>
+	    </div>
+	  </div>
+	  
+	  <div class="card">
+	    <div class="card__thumbnail">
+	      <a href="https://tech.k-zak.com/posts/coding-memo05/">
 		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="コーディングリハビリ05">
 	      </a>
 	    </div>
@@ -369,7 +410,7 @@
 	      <div class="card__excerpt">
 		<p><!-- raw HTML omitted -->Laravel4<!-- raw HTML omitted -->がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。</p>
 <p>テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。</p>
-<p>{{– コメントアウトしたいコード –}}って書かないといけない。ていうか、そもそも<!-- raw HTML omitted -->の外で変な書き方してたのが悪い。</p>
+<p>{{– コメントアウトしたいコード –}}って書かないといけない。ていうか、そもそもの外で変な書き方してたのが悪い。</p>
 <p>あと、migrationの使い方全然理解していないのでそこで詰まった。</p>
 <p>検索フォームの値を受け取ってモデルに検索処理投げてレコードオブジェクト(モデルイングタンス？)受け取る処理はコントローラーに書くの？それともViewファイル？</p>
 <p>わかりません。。。</p>
@@ -507,67 +548,6 @@
 	    </div>
 	  </div>
 	  
-	  <div class="card">
-	    <div class="card__thumbnail">
-	      <a href="https://tech.k-zak.com/posts/challenge-fuelphp/">
-		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="fuelphp使って分からなかったこと">
-	      </a>
-	    </div>
-
-	    <div class="card__content">
-	      <div class="card__meta">
-		<span class="card__meta__date">2013.08.25</span>
-		
-		
-		
-		<a href="https://tech.k-zak.com/categories/study-daily" class="card__meta__category">study-daily</a>
-		 
-		
-	      </div>
-	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/challenge-fuelphp/">fuelphp使って分からなかったこと</a></h2>
-	      <div class="card__excerpt">
-		<p>fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな</p>
-<p>感じなんですけど。</p>
-<p>以下に分からなかったことなど</p>
-<p><strong>１，modelの検索メソッドがクラスメソッド</strong></p>
-<p>検索条件を検索メソッドに渡してレコードオブジェクトを受け取るんだから別に</p>
-<p>インスタンスメソッドである必要はないんだけど、じゃぁ返ってきたモノは</p>
-<p>ただの連想配列なのかモデルオブジェクトの塊なのか…</p>
-<p>昔、Javaを少し自習した時にレコードオブジェクトのクラスとオブジェクトの塊を保持する</p>
-<p>クラスが別になる書き方があって、自分にはその方がしっくり来るんだけど、多分塊を保持</p>
-<p>するクラスが余計っていう考えなのだろうか。</p>
-<p>何にしっくりこないかというと、モデルクラスの1インスタンスが1レコードオブジェクトなのか</p>
-<p>その塊(1個以上)が1インスタンスなのかという事。</p>
-<p>Model_Crudのメソッド見てるとhas_next()とかあるから、1個以上のレコードオブジェクトを</p>
-<p>保持するイテレータオブジェクトが1インスタンスなのかなーって思う。でもそうすると、fuelphp</p>
-<p>においては1レコードオブジェクトってのは1モデルインスタンスが保持するただの連想配列なのか</p>
-<p>な？</p>
-<p>このあたりは、PHPの他のフレームワーク勉強したり他の言語のフレームワーク勉強していくしか</p>
-<p>ないかな。</p>
-<p><strong>２，FieldSetクラスという便利なものの中のcheckboxの名前の付け方</strong></p>
-<p>これは多分自分の学習が足りないだけなんだと思うけど、PHPでinputフォームのチェックボックス</p>
-<p>を複数用意する時、name属性をname=”◯◯[]”とかにして受け取ったPHPで値を配列で扱うんだけ</p>
-<p>ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=”◯◯[i]”って[]の中</p>
-<p>に数字を入れてくるんです。受け取るPHP側では配列として受け取れるぽいんだけど、fuelphpの</p>
-<p>Validationでこのチェックボックスグループらのどれか1つにはチェックしていること！みたいな</p>
-<p>事が出来ない。あと、jQueryのvalidationプラグインが動かない。別のものとして扱ってしまう。</p>
-<p>core/classes/foeldset/の中にあるファイルのcheckboxのフォームの名前属性を作る部分を直接</p>
-<p>書き換えて(本当はappフォルダにコピーするべき)使っている。</p>
-<p><strong>３，FieldSetオブジェクトのフォームオブジェクトのラベル出力の時に出力されるラベル要素に</strong></p>
-<p><strong>クラス(htmlのclass)を追加する手段が分からない。</strong></p>
-<p>こいつ、checkboxやradioのグループ出力する場合は<!-- raw HTML omitted -->タグ出力しないんだぜ。意味不明。<!-- raw HTML omitted --> 親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。<!-- raw HTML omitted --></p>
-<p>やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用</p>
-<p>されなくて、仕方なく、requiredの場合出力されるデフォルト「*」のやつを「(必須)」てかえて</p>
-<p>それを赤字にした(requiredの時に出力される奴はlabel要素外)。</p>
-<p><strong>４，単にどこに何を書くかがまだ理解できていない。</strong></p>
-<p>controllerのactionメソッド内にloginチェックの詳細処理を書いてるんだけど、そこは外に</p>
-<p>切り出すべきなんじゃないの？とかactionメソッド内でのみ使う提携処理＆ちょっと複雑みたいな</p>
-<p>のは外に切り出すべきなんだろうけど、それは別のcomponentクラスとかにクラスメソッドとして</p>
-	      </div>
-	      <p><a href="https://tech.k-zak.com/posts/challenge-fuelphp/">[Read More…]</a></p>
-	    </div>
-	  </div>
-	  
 
 	</div>
 	
@@ -594,7 +574,7 @@
 	  
 	  <li>
             <a href="https://tech.k-zak.com/categories/setting-construction/" class="genre-link">Setting-Construction</a>
-            <span class="genre-count">37</span>
+            <span class="genre-count">38</span>
 	  </li>
 	  
 	  <li>
@@ -612,6 +592,8 @@
 	<h3 class="sidebar-title">タグ(Top10)</h3>
 	<hr/>
 	<ul class="genre-list">
+	  
+	  
 	  
 	  
 	  
@@ -845,8 +827,8 @@
 	  </li>
 	  
 	  <li>
-	    <a href="https://tech.k-zak.com/tags/apache/" class="genre-link">apache</a>
-            <span class="genre-count">4</span>
+	    <a href="https://tech.k-zak.com/tags/emacs/" class="genre-link">emacs</a>
+            <span class="genre-count">5</span>
 	  </li>
 	  
 	</ul>
@@ -1067,8 +1049,13 @@
 	    
   	  
 	    
+  	  
+	    
 	    
 
+	    
+	    <a href="https://tech.k-zak.com/tags/ai/">ai</a>
+	    , 
 	    
 	    <a href="https://tech.k-zak.com/tags/ansible/">ansible</a>
 	    , 

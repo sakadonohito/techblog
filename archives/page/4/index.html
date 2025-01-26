@@ -157,6 +157,73 @@
 	  
 	  <div class="card">
 	    <div class="card__thumbnail">
+	      <a href="https://tech.k-zak.com/posts/2017-03-26-jekyll/">
+		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="Challenged Jekyll template and hate">
+	      </a>
+	    </div>
+
+	    <div class="card__content">
+	      <div class="card__meta">
+		<span class="card__meta__date">2017.03.26</span>
+		
+		
+		
+		<a href="https://tech.k-zak.com/categories/study-daily" class="card__meta__category">study-daily</a>
+		 
+		
+	      </div>
+	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/2017-03-26-jekyll/">Challenged Jekyll template and hate</a></h2>
+	      <div class="card__excerpt">
+		<h1 id="jekyllの画面テンプレート作った">Jekyllの画面(テンプレート)作った</h1>
+<p>結論から言うと、二度と使いたくない。</p>
+<p>Pelicanの方がいいや。</p>
+<h2 id="やりたかったこと">やりたかったこと</h2>
+<ul>
+<li>TOPページ：直近5件程の記事タイトルを表示する</li>
+<li>タグごとの記事一覧ページを作る</li>
+<li>タグの一覧ページ作る</li>
+<li>カテゴリごとの記事一覧ページを作る</li>
+<li>カテゴリの一覧ページ作る</li>
+<li>アーカイブ(年月)ごとの記事一覧ページを作る</li>
+<li>アーカイブ(年月)の一覧ページ作る</li>
+<li>Aboutの固定ページを作る</li>
+<li>サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る</li>
+</ul>
+<h2 id="できたこと">できたこと</h2>
+<ul>
+<li>TOPページ：直近5件程の記事タイトルを表示する</li>
+<li>タグごとの記事一覧ページを作る</li>
+<li>タグの一覧ページ作る</li>
+<li>カテゴリごとの記事一覧ページを作る</li>
+<li>カテゴリの一覧ページ作る</li>
+<li>Aboutの固定ページを作る</li>
+<li>サイドバーにカテゴリ、タグ、Aboutのリンクを作る</li>
+</ul>
+<h2 id="乗り越えた事">乗り越えた事</h2>
+<p>HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。</p>
+<p>標準で機能がついてなくて、pluginディレクトリにページを生成するモジュール？を書いて対応した。</p>
+<p>公式に載っているコードをほぼそのまま使いまわしたんだけど、Rubyの世界というかJekyllではカテゴリやタグごとのページ生成は静的サイトジェネレーターの標準機能のうちには入らないらしい。</p>
+<h2 id="あきらめた事">あきらめた事</h2>
+<h3 id="アーカイブページ">アーカイブページ</h3>
+<p>上記のカテゴリやタグのページ生成のノリでいけるかと思ったけど無理だった。</p>
+<p>正確には気持ちが切れた。</p>
+<p>Pelicanの場合、記事リストをgroup by　した結果をそのままfor分で使えるのだけれど、Jekyllが使っているテンプレートエンジンではできないらしく、いちいち変数にアサインしないといけない。そのくせ、変数にアサインする時はgroup by も sort もできるらしい。</p>
+<p>あと、気づかなかったんだけど、記事のデータに投稿年月日の年や月のデータがないので結局こねくり回さないと、年や月でgroup byした記事リストの抽出がうまくできない。</p>
+<p>この、年月ごとに記事リストを抽出したオブジェクトが簡単には生成できないので、サイドバーの表示もアーカイブリストの生成もうまくできそうにないので諦めた。</p>
+<p>あと、ググって出てきた書き方が汚いというか美しくないというか、「え？こんな手続き型なめんどくさい記述をテンプレートで書くの？」みたいなのが散見されて嫌になった。</p>
+<p>まったくもう。</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://jekyllrb.com/docs/home/">Jekyll公式</a></p>
+<h2 id="まとめ">まとめ</h2>
+<p>Rubyを理解したら見直せるかもしれないけど、それまではもう触りたくない。</p>
+<p>記事の投稿だけはして使い続けてみる。</p>
+	      </div>
+	      <p><a href="https://tech.k-zak.com/posts/2017-03-26-jekyll/">[Read More…]</a></p>
+	    </div>
+	  </div>
+	  
+	  <div class="card">
+	    <div class="card__thumbnail">
 	      <a href="https://tech.k-zak.com/posts/2017-03-25-replace/">
 		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="replace hugo post rule">
 	      </a>
@@ -601,80 +668,6 @@ urlは公開したいドメイン、rootはトップレベルにした。</p>
 	    </div>
 	  </div>
 	  
-	  <div class="card">
-	    <div class="card__thumbnail">
-	      <a href="https://tech.k-zak.com/posts/first-hugo/">
-		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="WordPressからHugoへ移行">
-	      </a>
-	    </div>
-
-	    <div class="card__content">
-	      <div class="card__meta">
-		<span class="card__meta__date">2017.02.19</span>
-		
-		
-		
-		<a href="https://tech.k-zak.com/categories/setting-construction" class="card__meta__category">setting-construction</a>
-		 
-		
-	      </div>
-	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/first-hugo/">WordPressからHugoへ移行</a></h2>
-	      <div class="card__excerpt">
-		<h2 id="開発メモブログをwordpressからhugoへの移行">開発メモブログをWordPressからHugoへの移行</h2>
-<ol>
-<li>WordPressから記事をエクスポート</li>
-<li>Hugoをインストール</li>
-<li>エクスポートした記事を放り込む</li>
-</ol>
-<h2 id="wordpressから記事をエクスポート">WordPressから記事をエクスポート</h2>
-<ul>
-<li>WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す
-<ul>
-<li><a href="https://mano.xyz/post/2015-09-25-migration-to-hugo-from-wordpress/">参考</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="hugoをインストール">Hugoをインストール</h2>
-<pre tabindex="0"><code>brew install hugo
-hugo new site techblog
-cd  techblog
-</code></pre><h2 id="書き出した記事を放り込む">書き出した記事を放り込む</h2>
-<p>プラグインを使ってエクスポートした記事データはHugoの<code>content/post</code>のpostディレクトリ相当のものが吐き出されているので、中身を<code>content/post/</code>にぶちまける。</p>
-<h2 id="細かい設定">細かい設定</h2>
-<h3 id="テーマを入れる">テーマを入れる</h3>
-<p>適当なテーマをインストール。今回はPolymer。
-themeディレクトリがなかったら作ってその中で<code>git clone</code>したらいいよ。</p>
-<h3 id="configtomlを編集">config.tomlを編集</h3>
-<p>title,baseurl,languageCode,theme,paginateを修正する。</p>
-<p>後で独自ドメインでGitHubPagesで運用するため、canonifyurls = trueを設定する。</p>
-<p>GoogleAnalyticsのコードを入れるため、config.tomlに以下を追記</p>
-<pre tabindex="0"><code>[params]
-  googleAnalyticsUserID = &#34;&lt;&lt;code&gt;&gt;&#34;
-</code></pre><p>またURLの構造を検討する。
-今回からパーマリンクを以下のようにした。permelink設定を追加</p>
-<pre tabindex="0"><code>[permalinks]
-  post = &#34;/:year/:month/:day/:slug&#34;
-</code></pre><p>これでyyyy/mm/dd/slugというようなURLになる。</p>
-<p>URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。</p>
-<p>新しい記事を追加する時には</p>
-<pre tabindex="0"><code>hugo new post/&lt;&lt;post-name&gt;&gt;.md
-</code></pre><p>で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。</p>
-<h2 id="githubpagesで公開する">GitHubPagesで公開する</h2>
-<ol>
-<li>GitHubにリポジトリを追加</li>
-<li>hugoコマンドで出力されるpublicディレクトリの静的ファイルをコミット</li>
-<li>settingsのGitHub Pagesの項にあるCustom domainにドメインを入れて保存。</li>
-<li>hugoのpublicにCNAMEというファイルを追加。内容は公開ドメイン名</li>
-<li>再度publicディレクトリの内容をコミット</li>
-<li>DNS(今回はRoute53)でCNAMEの設定をする。</li>
-</ol>
-<p>今回はひとまずこんな感じ。
-今後は記事の追加だけじゃなく、テーマを自作していきたい。</p>
-	      </div>
-	      <p><a href="https://tech.k-zak.com/posts/first-hugo/">[Read More…]</a></p>
-	    </div>
-	  </div>
-	  
 
 	</div>
 	
@@ -701,7 +694,7 @@ themeディレクトリがなかったら作ってその中で<code>git clone</c
 	  
 	  <li>
             <a href="https://tech.k-zak.com/categories/setting-construction/" class="genre-link">Setting-Construction</a>
-            <span class="genre-count">37</span>
+            <span class="genre-count">38</span>
 	  </li>
 	  
 	  <li>
@@ -719,6 +712,8 @@ themeディレクトリがなかったら作ってその中で<code>git clone</c
 	<h3 class="sidebar-title">タグ(Top10)</h3>
 	<hr/>
 	<ul class="genre-list">
+	  
+	  
 	  
 	  
 	  
@@ -952,8 +947,8 @@ themeディレクトリがなかったら作ってその中で<code>git clone</c
 	  </li>
 	  
 	  <li>
-	    <a href="https://tech.k-zak.com/tags/apache/" class="genre-link">apache</a>
-            <span class="genre-count">4</span>
+	    <a href="https://tech.k-zak.com/tags/emacs/" class="genre-link">emacs</a>
+            <span class="genre-count">5</span>
 	  </li>
 	  
 	</ul>
@@ -1174,8 +1169,13 @@ themeディレクトリがなかったら作ってその中で<code>git clone</c
 	    
   	  
 	    
+  	  
+	    
 	    
 
+	    
+	    <a href="https://tech.k-zak.com/tags/ai/">ai</a>
+	    , 
 	    
 	    <a href="https://tech.k-zak.com/tags/ansible/">ansible</a>
 	    , 

@@ -157,6 +157,80 @@
 	  
 	  <div class="card">
 	    <div class="card__thumbnail">
+	      <a href="https://tech.k-zak.com/posts/first-hugo/">
+		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="WordPressからHugoへ移行">
+	      </a>
+	    </div>
+
+	    <div class="card__content">
+	      <div class="card__meta">
+		<span class="card__meta__date">2017.02.19</span>
+		
+		
+		
+		<a href="https://tech.k-zak.com/categories/setting-construction" class="card__meta__category">setting-construction</a>
+		 
+		
+	      </div>
+	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/first-hugo/">WordPressからHugoへ移行</a></h2>
+	      <div class="card__excerpt">
+		<h2 id="開発メモブログをwordpressからhugoへの移行">開発メモブログをWordPressからHugoへの移行</h2>
+<ol>
+<li>WordPressから記事をエクスポート</li>
+<li>Hugoをインストール</li>
+<li>エクスポートした記事を放り込む</li>
+</ol>
+<h2 id="wordpressから記事をエクスポート">WordPressから記事をエクスポート</h2>
+<ul>
+<li>WordPressにHugo向けにエクスポートするプラグインを入れてデータを出す
+<ul>
+<li><a href="https://mano.xyz/post/2015-09-25-migration-to-hugo-from-wordpress/">参考</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="hugoをインストール">Hugoをインストール</h2>
+<pre tabindex="0"><code>brew install hugo
+hugo new site techblog
+cd  techblog
+</code></pre><h2 id="書き出した記事を放り込む">書き出した記事を放り込む</h2>
+<p>プラグインを使ってエクスポートした記事データはHugoの<code>content/post</code>のpostディレクトリ相当のものが吐き出されているので、中身を<code>content/post/</code>にぶちまける。</p>
+<h2 id="細かい設定">細かい設定</h2>
+<h3 id="テーマを入れる">テーマを入れる</h3>
+<p>適当なテーマをインストール。今回はPolymer。
+themeディレクトリがなかったら作ってその中で<code>git clone</code>したらいいよ。</p>
+<h3 id="configtomlを編集">config.tomlを編集</h3>
+<p>title,baseurl,languageCode,theme,paginateを修正する。</p>
+<p>後で独自ドメインでGitHubPagesで運用するため、canonifyurls = trueを設定する。</p>
+<p>GoogleAnalyticsのコードを入れるため、config.tomlに以下を追記</p>
+<pre tabindex="0"><code>[params]
+  googleAnalyticsUserID = &#34;&lt;&lt;code&gt;&gt;&#34;
+</code></pre><p>またURLの構造を検討する。
+今回からパーマリンクを以下のようにした。permelink設定を追加</p>
+<pre tabindex="0"><code>[permalinks]
+  post = &#34;/:year/:month/:day/:slug&#34;
+</code></pre><p>これでyyyy/mm/dd/slugというようなURLになる。</p>
+<p>URL構造を変更したため、取り込んだ記事のURL属性を消して代わりにSlug属性を追加。結構時間かかった。</p>
+<p>新しい記事を追加する時には</p>
+<pre tabindex="0"><code>hugo new post/&lt;&lt;post-name&gt;&gt;.md
+</code></pre><p>で記事の初期状態のものが作られるので後は内容をMarkdownで記述していく。</p>
+<h2 id="githubpagesで公開する">GitHubPagesで公開する</h2>
+<ol>
+<li>GitHubにリポジトリを追加</li>
+<li>hugoコマンドで出力されるpublicディレクトリの静的ファイルをコミット</li>
+<li>settingsのGitHub Pagesの項にあるCustom domainにドメインを入れて保存。</li>
+<li>hugoのpublicにCNAMEというファイルを追加。内容は公開ドメイン名</li>
+<li>再度publicディレクトリの内容をコミット</li>
+<li>DNS(今回はRoute53)でCNAMEの設定をする。</li>
+</ol>
+<p>今回はひとまずこんな感じ。
+今後は記事の追加だけじゃなく、テーマを自作していきたい。</p>
+	      </div>
+	      <p><a href="https://tech.k-zak.com/posts/first-hugo/">[Read More…]</a></p>
+	    </div>
+	  </div>
+	  
+	  <div class="card">
+	    <div class="card__thumbnail">
 	      <a href="https://tech.k-zak.com/posts/restart/">
 		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="再始動">
 	      </a>
@@ -588,40 +662,6 @@ location ~ \.pl$ {
 	    </div>
 	  </div>
 	  
-	  <div class="card">
-	    <div class="card__thumbnail">
-	      <a href="https://tech.k-zak.com/posts/milestone-serverside/">
-		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="2014年を振り返る サーバーサイドプログラミング">
-	      </a>
-	    </div>
-
-	    <div class="card__content">
-	      <div class="card__meta">
-		<span class="card__meta__date">2014.12.30</span>
-		
-		
-		
-		<a href="https://tech.k-zak.com/categories/study-daily" class="card__meta__category">study-daily</a>
-		 
-		
-	      </div>
-	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/milestone-serverside/">2014年を振り返る サーバーサイドプログラミング</a></h2>
-	      <div class="card__excerpt">
-		<p>サーバーサイドプログラミング(Perl,PHP,Python,Ruby,etc…)について振り返る</p>
-<p>まず、コンパイルする系の言語には全然手を出さなかったのでノーコメント。</p>
-<p>Groovyはちょっとだけ久しぶりに触ったらバージョンが上がってて言語仕様変わってた箇所でトラブった。</p>
-<p>Perl,Python,Rubyについては全然触れなくてフラストレーション。</p>
-<p>PHPは少し触ってたけど、使用バージョンがPHP5.4→PHP5.5→PHP5.6といろいろ触ってその間の言語仕様の変更に惑わされたりした。</p>
-<p>本当はテストコードがしっかり書けるようになりたかったけど、いろいろ自分が足りなくて駄目だった。</p>
-<p>家にたまった古い書籍も含めて処分していきたいので2015年はバシバシコードを書捨てていきたい。</p>
-<p>PHP7が来年だか再来年にリリースされることによって現場には相当バージョン違いのプロジェクトが出てしまうと思うので、できれば新規案件は</p>
-<p>枯れたPerl5系かPython3系(サポートがだいぶ長引くことになった2系も場合によっては)でチャレンジしたい。</p>
-<p>Rubyは…どうだろう。試しやプロトタイプにはいいのかも、ただしSinatra限定。ツールはRuby系が多いのでRubyでいろいろ学習してから他の言語のものを使うようにするといいのかもしれない。</p>
-	      </div>
-	      <p><a href="https://tech.k-zak.com/posts/milestone-serverside/">[Read More…]</a></p>
-	    </div>
-	  </div>
-	  
 
 	</div>
 	
@@ -648,7 +688,7 @@ location ~ \.pl$ {
 	  
 	  <li>
             <a href="https://tech.k-zak.com/categories/setting-construction/" class="genre-link">Setting-Construction</a>
-            <span class="genre-count">37</span>
+            <span class="genre-count">38</span>
 	  </li>
 	  
 	  <li>
@@ -666,6 +706,8 @@ location ~ \.pl$ {
 	<h3 class="sidebar-title">タグ(Top10)</h3>
 	<hr/>
 	<ul class="genre-list">
+	  
+	  
 	  
 	  
 	  
@@ -899,8 +941,8 @@ location ~ \.pl$ {
 	  </li>
 	  
 	  <li>
-	    <a href="https://tech.k-zak.com/tags/apache/" class="genre-link">apache</a>
-            <span class="genre-count">4</span>
+	    <a href="https://tech.k-zak.com/tags/emacs/" class="genre-link">emacs</a>
+            <span class="genre-count">5</span>
 	  </li>
 	  
 	</ul>
@@ -1121,8 +1163,13 @@ location ~ \.pl$ {
 	    
   	  
 	    
+  	  
+	    
 	    
 
+	    
+	    <a href="https://tech.k-zak.com/tags/ai/">ai</a>
+	    , 
 	    
 	    <a href="https://tech.k-zak.com/tags/ansible/">ansible</a>
 	    , 

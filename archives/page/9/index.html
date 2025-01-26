@@ -157,6 +157,67 @@
 	  
 	  <div class="card">
 	    <div class="card__thumbnail">
+	      <a href="https://tech.k-zak.com/posts/challenge-fuelphp/">
+		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="fuelphp使って分からなかったこと">
+	      </a>
+	    </div>
+
+	    <div class="card__content">
+	      <div class="card__meta">
+		<span class="card__meta__date">2013.08.25</span>
+		
+		
+		
+		<a href="https://tech.k-zak.com/categories/study-daily" class="card__meta__category">study-daily</a>
+		 
+		
+	      </div>
+	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/challenge-fuelphp/">fuelphp使って分からなかったこと</a></h2>
+	      <div class="card__excerpt">
+		<p>fuelphp使うって言ってもmodelにmysql使ったりしてないんでイレギュラーな</p>
+<p>感じなんですけど。</p>
+<p>以下に分からなかったことなど</p>
+<p><strong>１，modelの検索メソッドがクラスメソッド</strong></p>
+<p>検索条件を検索メソッドに渡してレコードオブジェクトを受け取るんだから別に</p>
+<p>インスタンスメソッドである必要はないんだけど、じゃぁ返ってきたモノは</p>
+<p>ただの連想配列なのかモデルオブジェクトの塊なのか…</p>
+<p>昔、Javaを少し自習した時にレコードオブジェクトのクラスとオブジェクトの塊を保持する</p>
+<p>クラスが別になる書き方があって、自分にはその方がしっくり来るんだけど、多分塊を保持</p>
+<p>するクラスが余計っていう考えなのだろうか。</p>
+<p>何にしっくりこないかというと、モデルクラスの1インスタンスが1レコードオブジェクトなのか</p>
+<p>その塊(1個以上)が1インスタンスなのかという事。</p>
+<p>Model_Crudのメソッド見てるとhas_next()とかあるから、1個以上のレコードオブジェクトを</p>
+<p>保持するイテレータオブジェクトが1インスタンスなのかなーって思う。でもそうすると、fuelphp</p>
+<p>においては1レコードオブジェクトってのは1モデルインスタンスが保持するただの連想配列なのか</p>
+<p>な？</p>
+<p>このあたりは、PHPの他のフレームワーク勉強したり他の言語のフレームワーク勉強していくしか</p>
+<p>ないかな。</p>
+<p><strong>２，FieldSetクラスという便利なものの中のcheckboxの名前の付け方</strong></p>
+<p>これは多分自分の学習が足りないだけなんだと思うけど、PHPでinputフォームのチェックボックス</p>
+<p>を複数用意する時、name属性をname=”◯◯[]”とかにして受け取ったPHPで値を配列で扱うんだけ</p>
+<p>ど、fuelphpのFieldSetクラスから生成したcheckboxがname属性をname=”◯◯[i]”って[]の中</p>
+<p>に数字を入れてくるんです。受け取るPHP側では配列として受け取れるぽいんだけど、fuelphpの</p>
+<p>Validationでこのチェックボックスグループらのどれか1つにはチェックしていること！みたいな</p>
+<p>事が出来ない。あと、jQueryのvalidationプラグインが動かない。別のものとして扱ってしまう。</p>
+<p>core/classes/foeldset/の中にあるファイルのcheckboxのフォームの名前属性を作る部分を直接</p>
+<p>書き換えて(本当はappフォルダにコピーするべき)使っている。</p>
+<p><strong>３，FieldSetオブジェクトのフォームオブジェクトのラベル出力の時に出力されるラベル要素に</strong></p>
+<p><strong>クラス(htmlのclass)を追加する手段が分からない。</strong></p>
+<p>こいつ、checkboxやradioのグループ出力する場合は<!-- raw HTML omitted -->タグ出力しないんだぜ。意味不明。<!-- raw HTML omitted --> 親要素のclassに装飾の指定しても無視されたりするし、ホンマむかちく(ただの勉強不足)。<!-- raw HTML omitted --></p>
+<p>やりたかったのは、必須入力のフォーム要素にはラベル名称を赤字にしたかったんだけど、css適用</p>
+<p>されなくて、仕方なく、requiredの場合出力されるデフォルト「*」のやつを「(必須)」てかえて</p>
+<p>それを赤字にした(requiredの時に出力される奴はlabel要素外)。</p>
+<p><strong>４，単にどこに何を書くかがまだ理解できていない。</strong></p>
+<p>controllerのactionメソッド内にloginチェックの詳細処理を書いてるんだけど、そこは外に</p>
+<p>切り出すべきなんじゃないの？とかactionメソッド内でのみ使う提携処理＆ちょっと複雑みたいな</p>
+<p>のは外に切り出すべきなんだろうけど、それは別のcomponentクラスとかにクラスメソッドとして</p>
+	      </div>
+	      <p><a href="https://tech.k-zak.com/posts/challenge-fuelphp/">[Read More…]</a></p>
+	    </div>
+	  </div>
+	  
+	  <div class="card">
+	    <div class="card__thumbnail">
 	      <a href="https://tech.k-zak.com/posts/jquery-memo/">
 		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="jQueryでまた使い方忘れて調べそうなやつらメモ">
 	      </a>
@@ -518,52 +579,6 @@
 	    </div>
 	  </div>
 	  
-	  <div class="card">
-	    <div class="card__thumbnail">
-	      <a href="https://tech.k-zak.com/posts/milestone/">
-		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="現状整理">
-	      </a>
-	    </div>
-
-	    <div class="card__content">
-	      <div class="card__meta">
-		<span class="card__meta__date">2012.09.30</span>
-		
-		
-		
-		<a href="https://tech.k-zak.com/categories/study-daily" class="card__meta__category">study-daily</a>
-		 
-		
-	      </div>
-	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/milestone/">現状整理</a></h2>
-	      <div class="card__excerpt">
-		<p>現状の整理。ちっとも進まない。。</p>
-<p>開発環境：</p>
-<p>・開発環境のOSはOSX 10.8にアップグレード</p>
-<p>・WebサーバーはローカルのApache、エディタは主にEmacs</p>
-<p> </p>
-<p>各言語の勉強進捗：</p>
-<p>・Java・・・お休み中。来年にはAndroidさわさわする一環で復帰したい。</p>
-<p>・Grovy・・・お休み中。たまにメンテナンスで仕事で既存のもののデバッグ用途に使用する程度。</p>
-<p>・Scala・・・未着手。</p>
-<p>・Clojure・・・未着手。</p>
-<p>・Haskell・・・未着手。有名な本は買ったけれど、まともに読んでいない。</p>
-<p>・PHP・・・唯一仕事で使えるレベル。最近は全くふれず、CakePHPやFuelPHPにそろそろ触れねば…</p>
-<p>・Ruby・・・Railsの進化が早すぎるので、もう少し他の言語の習得が進んで余裕が出るまでは手を出さない。</p>
-<p>・Python・・・去年そこそこ触ったきり。まだ仕事で使えるレベルに達していないのに中断中…</p>
-<p>・Perl・・・なぜか最近はPerlを勉強中。基本文法は理解したが…</p>
-<p>・ActionScript・・・簡単なものは分かるとして、使用用途が特殊なのでなかなか…</p>
-<p>・JavaScript・・・一番習得が進んでいると思うが、スマフォ向けや派生言語の習得まで考えると…</p>
-<p>・VB・・・簡単なデスクトップアプリなら…</p>
-<p>・C#・・・来年には着手したい</p>
-<p>・C++・・・いいかげん、そろそろ勉強しないとな〜</p>
-<p>・Objective-C・・・本はいろいろ買い揃えたけれど…</p>
-<p>あぁ、自分の心の弱さに嫌になりますね。</p>
-	      </div>
-	      <p><a href="https://tech.k-zak.com/posts/milestone/">[Read More…]</a></p>
-	    </div>
-	  </div>
-	  
 
 	</div>
 	
@@ -590,7 +605,7 @@
 	  
 	  <li>
             <a href="https://tech.k-zak.com/categories/setting-construction/" class="genre-link">Setting-Construction</a>
-            <span class="genre-count">37</span>
+            <span class="genre-count">38</span>
 	  </li>
 	  
 	  <li>
@@ -608,6 +623,8 @@
 	<h3 class="sidebar-title">タグ(Top10)</h3>
 	<hr/>
 	<ul class="genre-list">
+	  
+	  
 	  
 	  
 	  
@@ -841,8 +858,8 @@
 	  </li>
 	  
 	  <li>
-	    <a href="https://tech.k-zak.com/tags/apache/" class="genre-link">apache</a>
-            <span class="genre-count">4</span>
+	    <a href="https://tech.k-zak.com/tags/emacs/" class="genre-link">emacs</a>
+            <span class="genre-count">5</span>
 	  </li>
 	  
 	</ul>
@@ -1063,8 +1080,13 @@
 	    
   	  
 	    
+  	  
+	    
 	    
 
+	    
+	    <a href="https://tech.k-zak.com/tags/ai/">ai</a>
+	    , 
 	    
 	    <a href="https://tech.k-zak.com/tags/ansible/">ansible</a>
 	    , 

@@ -157,6 +157,80 @@
 	  
 	  <div class="card">
 	    <div class="card__thumbnail">
+	      <a href="https://tech.k-zak.com/posts/milestone/">
+		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="最近やったいろいろ">
+	      </a>
+	    </div>
+
+	    <div class="card__content">
+	      <div class="card__meta">
+		<span class="card__meta__date">2014.03.16</span>
+		
+		
+		
+		<a href="https://tech.k-zak.com/categories/study-daily" class="card__meta__category">study-daily</a>
+		 
+		
+		
+		
+		<a href="https://tech.k-zak.com/categories/setting-construction" class="card__meta__category">setting-construction</a>
+		 
+		
+	      </div>
+	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/milestone/">最近やったいろいろ</a></h2>
+	      <div class="card__excerpt">
+		<p>最近やったいろいろな作業。こまかく書くのめんどいから一つにまとめちゃった。</p>
+<p>◆PostgreSQLのSQLダンプ</p>
+<p>　・sqlダンプコマンドして移行先で復旧コマンドで取り込み。楽ちん！</p>
+<p>◆残念VBSバッチスクリプト</p>
+<p>　・サーバーのローカルでEscキーを送信するバッチ処理作ったけど、リモート等で開いてないと正常に動作しない</p>
+<p>　・windowsのコマンドでディレクトリ削除するコマンド</p>
+<p>◆謎！IISの設定</p>
+<p>　・IISのRewrite設定</p>
+<p>　　直接変更すると適用されない場合がある？わかりにくいGUIからRewrite設定</p>
+<p>　・DefaultWebSiteは外部からの通信を遮断して、仮想サイトだけが外部からのリクエストを受付け、</p>
+<p>　　DefaultWebSiteにリダイレクトするやり方がある。</p>
+<p>　・IISの接続数制限はユーザー単位ではなく、リクエスト単位なので1ブラウザ6リクエスト位使うため、6の倍数で設定しないと、意図した制御に出来ない</p>
+<p>◆Win8.1</p>
+<p>　・スタートパネルの左下にひっそりとアプリ一覧に移動するアイコンが。</p>
+<p>　・デスクトップやスタートパネルからwin+fで検索してもアプリ出てこない。</p>
+<p>　・win8でSQLServer2012のodbc設定がうまくいかない</p>
+<p>　　解決していない。接続先サーバーが選択できない。何か設定が足りてないのかも</p>
+<p>◆PHP</p>
+<p>　・古いやり方のPHP(PEAR使ってる)のinclude設定。ホントめんどい。</p>
+<p>　・PHPで頼りになるのはやはりPHP.net</p>
+<p>　・問い合せフォームやるとバランスよく覚える気がする(Javascript、css、php)。</p>
+<p>　　確認レイアウトを制御phpが適宜incudeするやり方はスマートかもしれない。</p>
+<p>　　※セッション制御が楽かも</p>
+<p>　・メール送信は確実なのはqdmail＆qdsmtpなんだけど、遅い。</p>
+<p>　・メール送信はPHP5.3以降でiconvモジュールが無効になっていないならZendでいいやろ</p>
+<p>　　※まさかのiconvモジュールが無効になっていると関連ライブラリでエラー出てZendMail使えない</p>
+<p>　・php5.4以降はセーフモード使えない</p>
+<p>　・システムレベルの操作を行う関数に影響が出るのでcgiで動かしましょう。</p>
+<p>　・ファイルのオーナーとかに気をつけましょう</p>
+<p>◆Apacheの設定</p>
+<p>　・SSLのヴァーチャルホスト設定する時には証明書のパスを書く</p>
+<p>　・ReWriteEngineの書き方、.htaccessにリダイレクトの設定書こうとしたけど、うまくいかなくて</p>
+<p>　　vhost.confの方に書いた</p>
+<p>◆SSH</p>
+<p>　・SSHで認証鍵ファイルを使う場合の設定方法</p>
+<p>　　ローカルで認証鍵を作成して、公開鍵をサーバーのSSHログインアカウントの~/.ssh/に放り込む</p>
+<p>　・~/.ssh/に設定ファイルを置いておくと楽</p>
+<p>◆ポートフォワーディング</p>
+<p>　・1つ目のsshがリモートサーバーに対して22ポートで接続するが別のサーバーに任意のポートを転送する設定、</p>
+<p>　　転送するポートは22じゃなくても良いので、3389転送してRDPとか出来る。</p>
+<p>◆忘れちゃうからメモ(Linuxコマンド)</p>
+<p>　・scp</p>
+<p>　　scp sourcefile remotehost target</p>
+<p>◆emacs</p>
+<p>　・ssh→sudo or su root する方法</p>
+	      </div>
+	      <p><a href="https://tech.k-zak.com/posts/milestone/">[Read More…]</a></p>
+	    </div>
+	  </div>
+	  
+	  <div class="card">
+	    <div class="card__thumbnail">
 	      <a href="https://tech.k-zak.com/posts/batch-python-03/">
 		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="Win上のpythonでバッチ処理3">
 	      </a>
@@ -463,47 +537,6 @@
 	    </div>
 	  </div>
 	  
-	  <div class="card">
-	    <div class="card__thumbnail">
-	      <a href="https://tech.k-zak.com/posts/coding-memo05/">
-		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="コーディングリハビリ06">
-	      </a>
-	    </div>
-
-	    <div class="card__content">
-	      <div class="card__meta">
-		<span class="card__meta__date">2013.12.08</span>
-		
-		
-		
-		<a href="https://tech.k-zak.com/categories/study-daily" class="card__meta__category">study-daily</a>
-		 
-		
-	      </div>
-	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/coding-memo05/">コーディングリハビリ06</a></h2>
-	      <div class="card__excerpt">
-		<p>リハビリその3</p>
-<p>今回は、バブルソート</p>
-<p>PHPでは、</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Perlでは、</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Pythonでは、</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Rubyでは、</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>習熟度が低いのでPerlとPHPが同じ内容になる。</p>
-<p>pythonが好みだけど毎回２つリストを生成してmapしてるのでコスト高そう。</p>
-<p>すんなり1つのリストだけでできないものか……</p>
-	      </div>
-	      <p><a href="https://tech.k-zak.com/posts/coding-memo05/">[Read More…]</a></p>
-	    </div>
-	  </div>
-	  
 
 	</div>
 	
@@ -530,7 +563,7 @@
 	  
 	  <li>
             <a href="https://tech.k-zak.com/categories/setting-construction/" class="genre-link">Setting-Construction</a>
-            <span class="genre-count">37</span>
+            <span class="genre-count">38</span>
 	  </li>
 	  
 	  <li>
@@ -548,6 +581,8 @@
 	<h3 class="sidebar-title">タグ(Top10)</h3>
 	<hr/>
 	<ul class="genre-list">
+	  
+	  
 	  
 	  
 	  
@@ -781,8 +816,8 @@
 	  </li>
 	  
 	  <li>
-	    <a href="https://tech.k-zak.com/tags/apache/" class="genre-link">apache</a>
-            <span class="genre-count">4</span>
+	    <a href="https://tech.k-zak.com/tags/emacs/" class="genre-link">emacs</a>
+            <span class="genre-count">5</span>
 	  </li>
 	  
 	</ul>
@@ -1003,8 +1038,13 @@
 	    
   	  
 	    
+  	  
+	    
 	    
 
+	    
+	    <a href="https://tech.k-zak.com/tags/ai/">ai</a>
+	    , 
 	    
 	    <a href="https://tech.k-zak.com/tags/ansible/">ansible</a>
 	    , 

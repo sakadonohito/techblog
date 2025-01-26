@@ -157,6 +157,41 @@
 	  
 	  <div class="card">
 	    <div class="card__thumbnail">
+	      <a href="https://tech.k-zak.com/posts/2017-04-09-daily/">
+		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="2017 04 09 daily">
+	      </a>
+	    </div>
+
+	    <div class="card__content">
+	      <div class="card__meta">
+		<span class="card__meta__date">2017.04.09</span>
+		
+		
+		
+		<a href="https://tech.k-zak.com/categories/study-daily" class="card__meta__category">study-daily</a>
+		 
+		
+	      </div>
+	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/2017-04-09-daily/">2017 04 09 daily</a></h2>
+	      <div class="card__excerpt">
+		<h1 id="進捗ありません">進捗ありません</h1>
+<p>この1週間、調子が悪かったり仕事に追われたりしていて何も勉強できていない。
+少しだけReduxのサンプルを写経して動かない箇所を動くように修正した程度。</p>
+<h2 id="es2015で理解が足りていない事">ES2015で理解が足りていない事</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Hoge</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./hoge&#39;</span>; <span style="color:#75715e">//hogeファイルの中でexport defaultされたものをHogeとなづけてimport
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">Hoge</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./hoge&#39;</span>; <span style="color:#75715e">//hogeファイルの中でexportされたもの全てをHogeオブジェクトとしてimport
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Hoge</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./hoge&#39;</span>; <span style="color:#75715e">//hogeファイルの中でHogeという名でexportされたものをimport
+</span></span></span></code></pre></div><p>という理解だったのだけれど、Reduxのサンプルで意図する挙動をしなくて困った。
+最終的に記述ミスだったのか、勘違いだったのか、動くようになったけど。</p>
+<p>いっぺん基礎を網羅的に勉強しないとダメですね。
+しかし、ECMAScript2015のドキュメント原文を読むのはなー。。。</p>
+	      </div>
+	      <p><a href="https://tech.k-zak.com/posts/2017-04-09-daily/">[Read More…]</a></p>
+	    </div>
+	  </div>
+	  
+	  <div class="card">
+	    <div class="card__thumbnail">
 	      <a href="https://tech.k-zak.com/posts/2017-04-03-markdown/">
 		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="I use Markdown">
 	      </a>
@@ -645,73 +680,6 @@ Setup.exe /s /qn
 	    </div>
 	  </div>
 	  
-	  <div class="card">
-	    <div class="card__thumbnail">
-	      <a href="https://tech.k-zak.com/posts/2017-03-26-jekyll/">
-		<img src="https://tech.k-zak.com/images/default-thumbnail.webp" alt="Challenged Jekyll template and hate">
-	      </a>
-	    </div>
-
-	    <div class="card__content">
-	      <div class="card__meta">
-		<span class="card__meta__date">2017.03.26</span>
-		
-		
-		
-		<a href="https://tech.k-zak.com/categories/study-daily" class="card__meta__category">study-daily</a>
-		 
-		
-	      </div>
-	      <h2 class="card__title"><a href="https://tech.k-zak.com/posts/2017-03-26-jekyll/">Challenged Jekyll template and hate</a></h2>
-	      <div class="card__excerpt">
-		<h1 id="jekyllの画面テンプレート作った">Jekyllの画面(テンプレート)作った</h1>
-<p>結論から言うと、二度と使いたくない。</p>
-<p>Pelicanの方がいいや。</p>
-<h2 id="やりたかったこと">やりたかったこと</h2>
-<ul>
-<li>TOPページ：直近5件程の記事タイトルを表示する</li>
-<li>タグごとの記事一覧ページを作る</li>
-<li>タグの一覧ページ作る</li>
-<li>カテゴリごとの記事一覧ページを作る</li>
-<li>カテゴリの一覧ページ作る</li>
-<li>アーカイブ(年月)ごとの記事一覧ページを作る</li>
-<li>アーカイブ(年月)の一覧ページ作る</li>
-<li>Aboutの固定ページを作る</li>
-<li>サイドバーにカテゴリ、タグ、アーカイブ、Aboutのリンクを作る</li>
-</ul>
-<h2 id="できたこと">できたこと</h2>
-<ul>
-<li>TOPページ：直近5件程の記事タイトルを表示する</li>
-<li>タグごとの記事一覧ページを作る</li>
-<li>タグの一覧ページ作る</li>
-<li>カテゴリごとの記事一覧ページを作る</li>
-<li>カテゴリの一覧ページ作る</li>
-<li>Aboutの固定ページを作る</li>
-<li>サイドバーにカテゴリ、タグ、Aboutのリンクを作る</li>
-</ul>
-<h2 id="乗り越えた事">乗り越えた事</h2>
-<p>HexoやHugoは既存のテーマをそのまま使ったからなんとも言えないけど、Pelicanは一から作った際にも苦労しなかったカテゴリやタグの一覧ページを作るのにJekyllは苦労した。</p>
-<p>標準で機能がついてなくて、pluginディレクトリにページを生成するモジュール？を書いて対応した。</p>
-<p>公式に載っているコードをほぼそのまま使いまわしたんだけど、Rubyの世界というかJekyllではカテゴリやタグごとのページ生成は静的サイトジェネレーターの標準機能のうちには入らないらしい。</p>
-<h2 id="あきらめた事">あきらめた事</h2>
-<h3 id="アーカイブページ">アーカイブページ</h3>
-<p>上記のカテゴリやタグのページ生成のノリでいけるかと思ったけど無理だった。</p>
-<p>正確には気持ちが切れた。</p>
-<p>Pelicanの場合、記事リストをgroup by　した結果をそのままfor分で使えるのだけれど、Jekyllが使っているテンプレートエンジンではできないらしく、いちいち変数にアサインしないといけない。そのくせ、変数にアサインする時はgroup by も sort もできるらしい。</p>
-<p>あと、気づかなかったんだけど、記事のデータに投稿年月日の年や月のデータがないので結局こねくり回さないと、年や月でgroup byした記事リストの抽出がうまくできない。</p>
-<p>この、年月ごとに記事リストを抽出したオブジェクトが簡単には生成できないので、サイドバーの表示もアーカイブリストの生成もうまくできそうにないので諦めた。</p>
-<p>あと、ググって出てきた書き方が汚いというか美しくないというか、「え？こんな手続き型なめんどくさい記述をテンプレートで書くの？」みたいなのが散見されて嫌になった。</p>
-<p>まったくもう。</p>
-<h2 id="参考">参考</h2>
-<p><a href="https://jekyllrb.com/docs/home/">Jekyll公式</a></p>
-<h2 id="まとめ">まとめ</h2>
-<p>Rubyを理解したら見直せるかもしれないけど、それまではもう触りたくない。</p>
-<p>記事の投稿だけはして使い続けてみる。</p>
-	      </div>
-	      <p><a href="https://tech.k-zak.com/posts/2017-03-26-jekyll/">[Read More…]</a></p>
-	    </div>
-	  </div>
-	  
 
 	</div>
 	
@@ -738,7 +706,7 @@ Setup.exe /s /qn
 	  
 	  <li>
             <a href="https://tech.k-zak.com/categories/setting-construction/" class="genre-link">Setting-Construction</a>
-            <span class="genre-count">37</span>
+            <span class="genre-count">38</span>
 	  </li>
 	  
 	  <li>
@@ -756,6 +724,8 @@ Setup.exe /s /qn
 	<h3 class="sidebar-title">タグ(Top10)</h3>
 	<hr/>
 	<ul class="genre-list">
+	  
+	  
 	  
 	  
 	  
@@ -989,8 +959,8 @@ Setup.exe /s /qn
 	  </li>
 	  
 	  <li>
-	    <a href="https://tech.k-zak.com/tags/apache/" class="genre-link">apache</a>
-            <span class="genre-count">4</span>
+	    <a href="https://tech.k-zak.com/tags/emacs/" class="genre-link">emacs</a>
+            <span class="genre-count">5</span>
 	  </li>
 	  
 	</ul>
@@ -1211,8 +1181,13 @@ Setup.exe /s /qn
 	    
   	  
 	    
+  	  
+	    
 	    
 
+	    
+	    <a href="https://tech.k-zak.com/tags/ai/">ai</a>
+	    , 
 	    
 	    <a href="https://tech.k-zak.com/tags/ansible/">ansible</a>
 	    , 

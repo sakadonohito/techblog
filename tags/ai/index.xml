@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on 開発メモてきな</title>
+    <link>https://tech.k-zak.com/tags/ai/</link>
+    <description>Recent content in AI on 開発メモてきな</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 26 Jan 2025 20:59:03 +0900</lastBuildDate>
+    <atom:link href="https://tech.k-zak.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2025 01 26 Emacs Setting Update</title>
+      <link>https://tech.k-zak.com/posts/2025-01-26-emacs-setting-update/</link>
+      <pubDate>Sun, 26 Jan 2025 20:59:03 +0900</pubDate>
+      <guid>https://tech.k-zak.com/posts/2025-01-26-emacs-setting-update/</guid>
+      <description>&lt;p&gt;ずーーーーーっとやりたいと思っていたEmacsの設定棚卸しとアップデート、ようやく着手して一段落つきました。&lt;/p&gt;&#xA;&lt;h2 id=&#34;何した&#34;&gt;何した？&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/sakadonohito/emacs-settings&#34;&gt;ひとまずの完成形(2025.01.26時点)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-leafの導入&#34;&gt;1. leafの導入&lt;/h3&gt;&#xA;&lt;p&gt;なんだかわからないまま使っていたuse-packageをやめてstraight.elを導入したけど、leafがいいって聞いたので、設定をleafに書き換えた。&lt;/p&gt;&#xA;&lt;p&gt;たくさんエラー出た。。&lt;/p&gt;&#xA;&lt;p&gt;ちょっとでも依頼内容端折ったり適当するとChatGPTが意図しない内容返してくるのでホントに苦戦した。&lt;/p&gt;&#xA;&lt;p&gt;たまにstraight.elならインストールできたのにleafだとインストールできないパッケージもあった。&lt;/p&gt;&#xA;&lt;p&gt;そういうのはめんどうだから設定からスポイルした。&lt;/p&gt;&#xA;&lt;p&gt;straight.elだとGitHubを指定してインストールできるが、leafだとそのあたりうまくいかなかった。&lt;/p&gt;&#xA;&lt;p&gt;leafでも「:vc」キーワードがあるのだが、なんかうまくいかなかった。。&lt;/p&gt;&#xA;&lt;h3 id=&#34;2-各プログラミング言語用設定の整理と追加&#34;&gt;2. 各プログラミング言語用設定の整理と追加&lt;/h3&gt;&#xA;&lt;p&gt;html及びテンプレートファイル用、CSS用、JS系など既にある設定のの見直しと、今まで先延ばししていた他言語の設定ファイルを追加した。&lt;/p&gt;&#xA;&lt;p&gt;eglot関連でまだ実際には使わないLSPのインストールは対象URLだけメモして先延ばしにした。&lt;/p&gt;&#xA;&lt;h3 id=&#34;3-codeiumの導入&#34;&gt;3. codeiumの導入&lt;/h3&gt;&#xA;&lt;p&gt;これも先延ばししていた、AIの導入。&lt;/p&gt;&#xA;&lt;p&gt;とりあえず無料で始められるCodeiumを導入した。&lt;/p&gt;&#xA;&lt;p&gt;Codeium + eglot + Corfu がどうもうまく連携取れていない感じだけど、ひとまず動かないこともない状態になったので一段落とした。&lt;/p&gt;&#xA;&lt;h3 id=&#34;4-全然分かってないこと&#34;&gt;4. 全然分かってないこと&lt;/h3&gt;&#xA;&lt;p&gt;元々companyを入れていたのだけど、今回Corfuに変えてみた。&lt;/p&gt;&#xA;&lt;p&gt;全く理解していないので、現在の設定でいいのかどうかも分かっていない。&lt;/p&gt;&#xA;&lt;h2 id=&#34;困る&#34;&gt;困る&lt;/h2&gt;&#xA;&lt;p&gt;他の方設定を参考にしようにも千差万別の設定内容で、自分の困ってるに微妙にハマらない。&lt;/p&gt;&#xA;&lt;p&gt;初心者や弱々な人でもこういう設定にしたい、このパッケージはこうするとよい。など見やすく分かりやすいドキュメントサイトがあればいいのになって思った。&lt;/p&gt;&#xA;&lt;h3 id=&#34;今後&#34;&gt;今後&lt;/h3&gt;&#xA;&lt;p&gt;今後は実際にコーディングしながら、自分のスタイルに応じて設定を追加したい。&lt;/p&gt;&#xA;&lt;p&gt;この記事を書いている時も、Codeiumが動いて文章提案してくるのちょっとウザい。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

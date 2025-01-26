@@ -13,7 +13,7 @@
       <link>https://tech.k-zak.com/posts/study-larabel4/</link>
       <pubDate>Fri, 06 Dec 2013 14:07:20 +0000</pubDate>
       <guid>https://tech.k-zak.com/posts/study-larabel4/</guid>
-      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Laravel4&lt;!-- raw HTML omitted --&gt;がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。&lt;/p&gt;&#xA;&lt;p&gt;テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。&lt;/p&gt;&#xA;&lt;p&gt;{{– コメントアウトしたいコード –}}って書かないといけない。ていうか、そもそも&lt;!-- raw HTML omitted --&gt;の外で変な書き方してたのが悪い。&lt;/p&gt;&#xA;&lt;p&gt;あと、migrationの使い方全然理解していないのでそこで詰まった。&lt;/p&gt;&#xA;&lt;p&gt;検索フォームの値を受け取ってモデルに検索処理投げてレコードオブジェクト(モデルイングタンス？)受け取る処理はコントローラーに書くの？それともViewファイル？&lt;/p&gt;&#xA;&lt;p&gt;わかりません。。。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Laravel4&lt;!-- raw HTML omitted --&gt;がこれから流行るかなーって思ってちょっとチュートリアル(クイックスタート)なんかを触り始めました。&lt;/p&gt;&#xA;&lt;p&gt;テンプレートエンジン用ファイル上でのコメントアウトの書き方を理解していなくて、変数見つからないエラーとか出しまくってた。&lt;/p&gt;&#xA;&lt;p&gt;{{– コメントアウトしたいコード –}}って書かないといけない。ていうか、そもそもの外で変な書き方してたのが悪い。&lt;/p&gt;&#xA;&lt;p&gt;あと、migrationの使い方全然理解していないのでそこで詰まった。&lt;/p&gt;&#xA;&lt;p&gt;検索フォームの値を受け取ってモデルに検索処理投げてレコードオブジェクト(モデルイングタンス？)受け取る処理はコントローラーに書くの？それともViewファイル？&lt;/p&gt;&#xA;&lt;p&gt;わかりません。。。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
